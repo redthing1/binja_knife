@@ -1,0 +1,30 @@
+{
+  "pluginmetadataversion": 2,
+  "name": "Knife Server",
+  "description": "RPyC server + sessions for agentic Binary Ninja workflows",
+  "author": "redthing1",
+  "version": "0.1.0",
+  "minimumBinaryNinjaVersion": 3164,
+  "type": [
+    "core",
+    "binaryview",
+    "ui"
+  ],
+  "api": [
+    "python3"
+  ],
+  "platforms": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "dependencies": {
+    "pip": [
+      "rpyc>=6.0.0"
+    ]
+  },
+  "license": {
+    "name": "proprietary",
+    "text": "Copyright (c) 2026 redthing1. All rights reserved."
+  }
+}
