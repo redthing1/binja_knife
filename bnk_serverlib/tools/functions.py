@@ -109,9 +109,6 @@ def function_summary(*, bv: Any, name_or_addr: Any) -> Dict[str, Any]:
         "total_bytes_hex": total_bytes_hex,
         "basic_blocks": basic_blocks,
         "too_large": bool(getattr(func, "too_large", False)),
-        "has_hlil": getattr(func, "hlil_if_available", None) is not None,
-        "has_mlil": getattr(func, "mlil_if_available", None) is not None,
-        "has_llil": getattr(func, "llil", None) is not None,
         "type": str(getattr(func, "type", "")),
     }
 

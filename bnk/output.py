@@ -88,6 +88,30 @@ def _preferred_columns(cols: list[str]) -> list[str]:
     return pref + rest
 
 
+def _drop_redundant_hex_fields(fields: list[str]) -> list[str]:
+    # token-compact default: if both int and *_hex variants exist, prefer *_hex.
+    pairs = [
+        ("address", "address_hex"),
+        ("start", "start_hex"),
+        ("end", "end_hex"),
+        ("data_offset", "data_offset_hex"),
+        ("data_end", "data_end_hex"),
+    ]
+
+    field_set = set(fields)
+    drop: set[str] = set()
+    for base, hex_field in pairs:
+        if base in field_set and hex_field in field_set:
+            drop.add(base)
+
+    if "idx" in field_set:
+        drop.add("idx")
+
+    if not drop:
+        return fields
+    return [f for f in fields if f not in drop]
+
+
 def _table(records: list[dict[str, Any]]) -> Optional[str]:
     if not records:
         return None
@@ -102,6 +126,7 @@ def _table(records: list[dict[str, Any]]) -> Optional[str]:
             seen.add(key)
             cols.append(key)
 
+    cols = _drop_redundant_hex_fields(cols)
     cols = _preferred_columns(cols)
 
     rows: list[list[str]] = []
@@ -188,9 +213,18 @@ def _format_any(lines: list[str], value: Any, *, indent: int) -> None:
             lines.append(f"{pad}{{}}")
             return
 
-        keys = [str(k) for k in value.keys()]
+        items = list(value.items())
+
+        # prefer hex addresses over redundant int forms in text output
+        item_keys = [str(k) for k, _ in items]
+        keep_keys = _drop_redundant_hex_fields(item_keys)
+        if keep_keys != item_keys:
+            keep = set(keep_keys)
+            items = [(k, v) for k, v in items if str(k) in keep]
+
+        keys = [str(k) for k, _ in items]
         key_pad = max((len(k) for k in keys), default=0)
-        for k, v in value.items():
+        for k, v in items:
             ks = str(k)
             if isinstance(v, str) and ("\n" in v or "\r" in v):
                 lines.append(f"{pad}{ks.ljust(key_pad)}:")
