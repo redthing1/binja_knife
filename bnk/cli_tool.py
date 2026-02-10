@@ -305,13 +305,14 @@ def tool_tags_list(
 def tool_tags_at(
     ctx: typer.Context,
     addr: str = typer.Argument(...),
+    limit: Optional[int] = typer.Option(None, "--limit"),
     auto: bool = typer.Option(False, "--auto", help="only auto tags"),
     user: bool = typer.Option(False, "--user", help="only user tags"),
 ) -> None:
     _call(
         ctx,
         "tags.at",
-        {"addr": addr, "auto": _auto_flag_value(auto=auto, user=user)},
+        {"addr": addr, "limit": limit, "auto": _auto_flag_value(auto=auto, user=user)},
     )
 
 
@@ -320,6 +321,7 @@ def tool_tags_function(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
     tag_type: Optional[str] = typer.Option(None, "--type"),
+    limit: Optional[int] = typer.Option(None, "--limit"),
     auto: bool = typer.Option(False, "--auto", help="only auto tags"),
     user: bool = typer.Option(False, "--user", help="only user tags"),
 ) -> None:
@@ -329,6 +331,7 @@ def tool_tags_function(
         {
             "name_or_addr": name_or_addr,
             "tag_type": tag_type,
+            "limit": limit,
             "auto": _auto_flag_value(auto=auto, user=user),
         },
     )
