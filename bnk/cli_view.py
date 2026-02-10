@@ -25,6 +25,12 @@ def view_list(
         lambda c: c.view_list(cfg.session, include_unnamed=include_unnamed, full=full),
     )
     print_value(cfg, out)
+    if not cfg.json_output:
+        all_flag = "--all " if include_unnamed else ""
+        typer.echo()
+        typer.echo(
+            f"attach: bnk view attach {all_flag}--index <index>  (or: bnk view attach {all_flag}--match <substr>)"
+        )
 
 
 @app.command("attach")
