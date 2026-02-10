@@ -1,0 +1,18 @@
+[project]
+name = "binja-knife"
+version = "0.1.0"
+description = "bnk: binaryninja knife client"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "redthing1" }]
+dependencies = ["rpyc>=6.0.0", "typer>=0.16.0"]
+
+[project.scripts]
+bnk = "bnk.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.24.2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["bnk", "bnk_serverlib"]

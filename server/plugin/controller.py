@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import threading
 from typing import Optional
 
@@ -50,27 +51,57 @@ def _register_settings() -> None:
     if not settings.register_group(SETTINGS_GROUP, PLUGIN_NAME):
         return
 
-    def reg(name: str, json_spec: str) -> None:
+    ignore_scopes = ["SettingsProjectScope", "SettingsResourceScope"]
+
+    def reg(name: str, spec: dict) -> None:
         full = f"{SETTINGS_GROUP}.{name}"
         if settings.contains(full):
             return
-        settings.register_setting(full, json_spec)
+        settings.register_setting(full, json.dumps(spec))
 
     reg(
         SETTING_AUTOSTART,
-        """{ "title" : "Auto Start", "description" : "Automatically start the server when Binary Ninja opens", "type" : "boolean", "default" : false, "ignore" : ["SettingsProjectScope", "SettingsResourceScope"]}""",
+        {
+            "title": "Auto Start",
+            "description": "Automatically start the server when Binary Ninja opens",
+            "type": "boolean",
+            "default": False,
+            "ignore": ignore_scopes,
+        },
     )
     reg(
         SETTING_HOST,
-        f"""{{ "title" : "TCP Listen Host", "description" : "Interface the server should listen", "type" : "string", "default" : "{DEFAULT_HOST}", "ignore" : ["SettingsProjectScope", "SettingsResourceScope"]}}""",
+        {
+            "title": "TCP Listen Host",
+            "description": "Interface the server should listen on",
+            "type": "string",
+            "default": DEFAULT_HOST,
+            "ignore": ignore_scopes,
+        },
     )
     reg(
         SETTING_PORT,
-        f"""{{ "title" : "TCP Listen Port", "description" : "TCP port the server should listen", "type" : "number", "minValue": 1, "maxValue": 65535,  "default" : {DEFAULT_PORT}, "ignore" : ["SettingsProjectScope", "SettingsResourceScope"]}}""",
+        {
+            "title": "TCP Listen Port",
+            "description": "TCP port the server should listen on",
+            "type": "number",
+            "minValue": 1,
+            "maxValue": 65535,
+            "default": DEFAULT_PORT,
+            "ignore": ignore_scopes,
+        },
     )
     reg(
         SETTING_TIMEOUT,
-        f"""{{ "title" : "Request Timeout (seconds)", "description" : "Timeout for synchronous RPyC requests in seconds", "type" : "number", "minValue": 0, "maxValue": 86400,  "default" : {DEFAULT_TIMEOUT}, "ignore" : ["SettingsProjectScope", "SettingsResourceScope"]}}""",
+        {
+            "title": "Request Timeout (seconds)",
+            "description": "Timeout for synchronous RPyC requests in seconds",
+            "type": "number",
+            "minValue": 0,
+            "maxValue": 86400,
+            "default": DEFAULT_TIMEOUT,
+            "ignore": ignore_scopes,
+        },
     )
 
 

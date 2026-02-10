@@ -6,7 +6,7 @@ import json
 import sys
 import traceback
 from contextlib import redirect_stderr, redirect_stdout
-from typing import Any, Dict, Optional
+from typing import Any, Callable, Dict, Optional
 
 import binaryninja  # type: ignore
 
@@ -36,32 +36,32 @@ def _ensure_rpyc() -> None:
         raise RuntimeError(f"rpyc import failed: {_RPYC_IMPORT_ERROR}")
 
 
-def _run_file(
-    path: str, g: Dict[str, Any], argv=None, capture_output: bool = True
+def _run_exec(
+    make_compiled: Callable[[], Any],
+    g: Dict[str, Any],
+    *,
+    argv0: str,
+    argv=None,
+    capture_output: bool = True,
 ) -> Dict[str, Any]:
     argv = argv or []
-    g["__file__"] = path
-    g["__name__"] = "__main__"
-    g["__package__"] = None
 
     stdout = io.StringIO()
     stderr = io.StringIO()
     old_argv = sys.argv
-    sys.argv = [path] + list(argv)
+    sys.argv = [argv0] + list(argv)
     try:
-        with open(path, "r", encoding="utf-8") as fh:
-            source = fh.read()
-        compiled = compile(source, path, "exec")
+        compiled = make_compiled()
         if capture_output:
             with redirect_stdout(stdout), redirect_stderr(stderr):
                 exec(compiled, g, g)
         else:
             exec(compiled, g, g)
-        return {
+
+        payload: Dict[str, Any] = {
             "ok": True,
             "stdout": stdout.getvalue(),
             "stderr": stderr.getvalue(),
-            "result": g.get("__result__"),
         }
     except SystemExit as exc:
         code = exc.code
@@ -70,14 +70,12 @@ def _run_file(
             "ok": ok,
             "stdout": stdout.getvalue(),
             "stderr": stderr.getvalue(),
-            "result": g.get("__result__"),
             "exit_code": code,
         }
         if not ok:
             payload["error"] = f"SystemExit({code})"
-        return payload
     except Exception:
-        return {
+        payload = {
             "ok": False,
             "stdout": stdout.getvalue(),
             "stderr": stderr.getvalue(),
@@ -85,55 +83,52 @@ def _run_file(
         }
     finally:
         sys.argv = old_argv
+
+    if "__result__" in g:
+        payload["result"] = g["__result__"]
+    return payload
+
+
+def _run_file(
+    path: str, g: Dict[str, Any], argv=None, capture_output: bool = True
+) -> Dict[str, Any]:
+    g.pop("__result__", None)
+    g["__file__"] = path
+    g["__name__"] = "__main__"
+    g["__package__"] = None
+
+    def make_compiled():
+        with open(path, "r", encoding="utf-8") as fh:
+            source = fh.read()
+        return compile(source, path, "exec")
+
+    return _run_exec(
+        make_compiled,
+        g,
+        argv0=path,
+        argv=argv,
+        capture_output=capture_output,
+    )
 
 
 def _run_code(
     code: str, g: Dict[str, Any], argv=None, capture_output: bool = True
 ) -> Dict[str, Any]:
-    argv = argv or []
+    g.pop("__result__", None)
     g["__file__"] = None
     g["__name__"] = "__main__"
     g["__package__"] = None
 
-    stdout = io.StringIO()
-    stderr = io.StringIO()
-    old_argv = sys.argv
-    sys.argv = ["<knife_server>"] + list(argv)
-    try:
-        compiled = compile(code, "<knife_server>", "exec")
-        if capture_output:
-            with redirect_stdout(stdout), redirect_stderr(stderr):
-                exec(compiled, g, g)
-        else:
-            exec(compiled, g, g)
-        return {
-            "ok": True,
-            "stdout": stdout.getvalue(),
-            "stderr": stderr.getvalue(),
-            "result": g.get("__result__"),
-        }
-    except SystemExit as exc:
-        code = exc.code
-        ok = code in (0, None)
-        payload = {
-            "ok": ok,
-            "stdout": stdout.getvalue(),
-            "stderr": stderr.getvalue(),
-            "result": g.get("__result__"),
-            "exit_code": code,
-        }
-        if not ok:
-            payload["error"] = f"SystemExit({code})"
-        return payload
-    except Exception:
-        return {
-            "ok": False,
-            "stdout": stdout.getvalue(),
-            "stderr": stderr.getvalue(),
-            "error": traceback.format_exc(),
-        }
-    finally:
-        sys.argv = old_argv
+    def make_compiled():
+        return compile(code, "<knife_server>", "exec")
+
+    return _run_exec(
+        make_compiled,
+        g,
+        argv0="<knife_server>",
+        argv=argv,
+        capture_output=capture_output,
+    )
 
 
 class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server threads

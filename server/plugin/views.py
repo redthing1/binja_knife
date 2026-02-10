@@ -19,6 +19,42 @@ def _safe_getattr(obj: Any, name: str, default: Any = None) -> Any:
         return default
 
 
+def _iter_frame_views(frame: Any):
+    for attr in ("getCurrentView", "getView"):
+        getter = _safe_getattr(frame, attr)
+        if callable(getter):
+            try:
+                view = getter()
+            except Exception:
+                continue
+            if view is not None:
+                yield view
+
+    for attr in ("getViews", "getAllViews"):
+        getter = _safe_getattr(frame, attr)
+        if callable(getter):
+            try:
+                views = getter() or []
+            except Exception:
+                continue
+            for view in views:
+                if view is not None:
+                    yield view
+
+
+def _view_to_bv(view: Any) -> Optional[Any]:
+    for attr in ("getData", "getBinaryView", "getCurrentBinaryView"):
+        getter = _safe_getattr(view, attr)
+        if callable(getter):
+            try:
+                bv = getter()
+            except Exception:
+                continue
+            if bv is not None:
+                return bv
+    return None
+
+
 def view_info_full(bv: Any) -> Dict[str, Any]:
     file_obj = _safe_getattr(bv, "file")
     filename = None
@@ -97,10 +133,40 @@ def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
                     bv = item
                 if bv is None:
                     continue
+                if not filename:
+                    file_obj = _safe_getattr(bv, "file")
+                    filename = (
+                        _safe_getattr(file_obj, "filename")
+                        or _safe_getattr(file_obj, "original_filename")
+                        or ""
+                    )
                 info: Dict[str, Any] = {
                     "filename": filename or "",
-                    "repr": filename or "<BinaryView>",
+                    "repr": filename or _safe_str(bv),
                     "source": "ui",
+                }
+                out.append((bv, info))
+
+        try:
+            frames = list(ui.ViewFrame.viewFrames())
+        except Exception:
+            frames = []
+
+        for frame in frames:
+            for view in _iter_frame_views(frame):
+                bv = _view_to_bv(view)
+                if bv is None:
+                    continue
+                file_obj = _safe_getattr(bv, "file")
+                filename = (
+                    _safe_getattr(file_obj, "filename")
+                    or _safe_getattr(file_obj, "original_filename")
+                    or ""
+                )
+                info: Dict[str, Any] = {
+                    "filename": filename or "",
+                    "repr": filename or _safe_str(bv),
+                    "source": "viewframe",
                 }
                 out.append((bv, info))
         return out
@@ -123,19 +189,44 @@ def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
                 bv = None
             if bv is None:
                 continue
-            info = {"filename": "", "repr": _safe_str(bv), "source": "scripting"}
+            file_obj = _safe_getattr(bv, "file")
+            filename = (
+                _safe_getattr(file_obj, "filename")
+                or _safe_getattr(file_obj, "original_filename")
+                or ""
+            )
+            info = {
+                "filename": filename or "",
+                "repr": filename or _safe_str(bv),
+                "source": "scripting",
+            }
             entries.append((bv, info))
 
-    # dedupe primarily by filename (when available) and by object id fallback
-    unique: List[Tuple[Any, Dict[str, Any]]] = []
-    seen: set[str] = set()
+    # dedupe by object identity, but merge metadata from multiple sources
+    by_id: Dict[int, Tuple[Any, Dict[str, Any]]] = {}
     for bv, info in entries:
-        filename = (info.get("filename") or "").strip()
-        key = filename or f"id:{id(bv)}"
-        if key in seen:
+        key = id(bv)
+        cur = by_id.get(key)
+        if cur is None:
+            by_id[key] = (bv, dict(info))
             continue
-        seen.add(key)
-        unique.append((bv, info))
+
+        _cur_bv, cur_info = cur
+        cur_filename = (cur_info.get("filename") or "").strip()
+        new_filename = (info.get("filename") or "").strip()
+        if not cur_filename and new_filename:
+            cur_info["filename"] = new_filename
+            cur_info["repr"] = new_filename or cur_info.get("repr", "")
+
+        cur_source = (cur_info.get("source") or "").strip()
+        new_source = (info.get("source") or "").strip()
+        if new_source:
+            parts = [p for p in cur_source.split(",") if p]
+            if new_source not in parts:
+                parts.append(new_source)
+                cur_info["source"] = ",".join(parts)
+
+    unique = list(by_id.values())
     dbg(f"collect_gui_bvs: {len(unique)} unique views")
     return unique
 
