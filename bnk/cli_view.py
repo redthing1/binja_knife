@@ -59,7 +59,12 @@ def view_status(ctx: typer.Context) -> None:
 @app.command("load")
 def view_load(
     ctx: typer.Context,
-    path: Path = typer.Argument(..., exists=True),
+    path: str = typer.Argument(..., help="path to binary (default: validated/canonicalized locally)"),
+    local_path: bool = typer.Option(
+        True,
+        "--local/--remote",
+        help="Interpret PATH on the client filesystem (--local) vs on the server filesystem (--remote).",
+    ),
     update_analysis: bool = typer.Option(
         True, "--update-analysis/--no-update-analysis", help="run analysis"
     ),
@@ -68,7 +73,14 @@ def view_load(
     ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
-    path = path.expanduser().resolve()
+    if local_path:
+        p = Path(path).expanduser().resolve()
+        if not p.exists():
+            raise typer.BadParameter(f"path does not exist: {p}")
+        path_str = str(p)
+    else:
+        # Do not rewrite remote paths (docker mounts, SSH FS, etc.). Pass through as-is.
+        path_str = path
 
     options: Optional[Dict[str, Any]] = None
     if options_json:
@@ -83,7 +95,7 @@ def view_load(
         cfg,
         lambda c: c.view_load(
             cfg.session,
-            str(path),
+            path_str,
             update_analysis=update_analysis,
             options=options,
         ),
