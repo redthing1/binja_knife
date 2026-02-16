@@ -2,7 +2,31 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
-from .util import enum_name, hex_addr, ref_address, ref_function_name, section_range
+from .util import (
+    compile_bytes_regex,
+    enum_name,
+    hex_addr,
+    make_text_matcher,
+    ref_address,
+    ref_function_name,
+    section_range,
+)
+
+
+def _resolve_data_region(bv: Any, section: Optional[str]) -> tuple[int, int]:
+    start = length = None
+    if section:
+        sec = section_range(bv, section)
+        if not sec:
+            raise ValueError(f"unknown section: {section}")
+        start, end = sec
+        length = end - start
+
+    if start is None:
+        start = bv.start
+        length = bv.length
+
+    return int(start), int(start + (length or 0))
 
 
 def strings_like(
@@ -11,6 +35,7 @@ def strings_like(
     pattern: str,
     section: Optional[str] = None,
     case_insensitive: bool = True,
+    regex: bool = False,
     limit: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     if bv is None:
@@ -20,7 +45,11 @@ def strings_like(
     if limit is not None and limit < 0:
         raise ValueError("limit must be >= 0")
 
-    needle = pattern.lower() if case_insensitive else pattern
+    matches_pattern = make_text_matcher(
+        pattern,
+        case_insensitive=case_insensitive,
+        regex=regex,
+    )
 
     start = length = None
     if section:
@@ -34,8 +63,7 @@ def strings_like(
     strings = bv.get_strings(start, length) if start is not None else bv.get_strings()
     for sref in strings:
         value = str(sref.value)
-        hay = value.lower() if case_insensitive else value
-        if needle not in hay:
+        if not matches_pattern(value):
             continue
         matches.append(
             {
@@ -70,6 +98,7 @@ def strings_like_data(
     pattern: str,
     section: Optional[str] = None,
     case_insensitive: bool = True,
+    regex: bool = False,
     limit: Optional[int] = None,
     max_len: int = 256,
 ) -> List[Dict[str, Any]]:
@@ -80,27 +109,31 @@ def strings_like_data(
     if limit is not None and limit < 0:
         raise ValueError("limit must be >= 0")
 
+    start, end = _resolve_data_region(bv, section)
+
+    results: List[Dict[str, Any]] = []
+    if regex:
+        data = bytes(bv.read(start, max(0, end - start)))
+        compiled = compile_bytes_regex(pattern, case_insensitive=case_insensitive)
+        for match in compiled.finditer(data):
+            addr = start + int(match.start())
+            results.append(
+                {
+                    "address": addr,
+                    "address_hex": hex_addr(addr),
+                    "string": _extract_cstring(bv, addr, max_len=max_len),
+                }
+            )
+            if limit is not None and len(results) >= limit:
+                break
+        return results
+
     from binaryninja.enums import FindFlag
 
     needle = pattern.encode("utf-8", errors="ignore")
     flags = (
         FindFlag.FindCaseInsensitive if case_insensitive else FindFlag.FindCaseSensitive
     )
-
-    start = length = None
-    if section:
-        sec = section_range(bv, section)
-        if not sec:
-            raise ValueError(f"unknown section: {section}")
-        start, end = sec
-        length = end - start
-
-    if start is None:
-        start = bv.start
-        length = bv.length
-    end = start + (length or 0)
-
-    results: List[Dict[str, Any]] = []
     for addr, _buf in bv.find_all_data(start, end, needle, flags):
         results.append(
             {
@@ -120,6 +153,7 @@ def xrefs_to_string(
     pattern: str,
     section: Optional[str] = None,
     case_insensitive: bool = True,
+    regex: bool = False,
     string_limit: Optional[int] = None,
     xref_limit: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
@@ -137,6 +171,7 @@ def xrefs_to_string(
         pattern=pattern,
         section=section,
         case_insensitive=case_insensitive,
+        regex=regex,
         limit=string_limit,
     )
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from typing import Any, Optional
+import re
+from typing import Any, Callable, Optional, Pattern
 
 
 def hex_addr(value: Any) -> str:
@@ -118,3 +119,51 @@ def ref_function_name(ref: Any) -> str:
     if func is None:
         return ""
     return getattr(func, "name", "") or ""
+
+
+def make_text_matcher(
+    pattern: str,
+    *,
+    case_insensitive: bool = True,
+    regex: bool = False,
+) -> Callable[[Any], bool]:
+    if pattern is None:
+        raise ValueError("pattern is required")
+
+    if regex:
+        flags = re.IGNORECASE if case_insensitive else 0
+        try:
+            compiled = re.compile(pattern, flags)
+        except re.error as exc:
+            raise ValueError(f"invalid regex pattern: {exc}") from exc
+
+        def _matches(value: Any) -> bool:
+            return bool(compiled.search(str(value)))
+
+        return _matches
+
+    needle = pattern.lower() if case_insensitive else pattern
+
+    if case_insensitive:
+
+        def _matches(value: Any) -> bool:
+            return needle in str(value).lower()
+
+        return _matches
+
+    def _matches(value: Any) -> bool:
+        return needle in str(value)
+
+    return _matches
+
+
+def compile_bytes_regex(
+    pattern: str,
+    *,
+    case_insensitive: bool = True,
+) -> Pattern[bytes]:
+    flags = re.IGNORECASE if case_insensitive else 0
+    try:
+        return re.compile(pattern.encode("utf-8", errors="ignore"), flags)
+    except re.error as exc:
+        raise ValueError(f"invalid regex pattern: {exc}") from exc

@@ -72,8 +72,26 @@ def tool_call(
 
 
 @app.command("summary")
-def tool_summary(ctx: typer.Context, name_or_addr: str = typer.Argument(...)) -> None:
-    _call(ctx, "function.summary", {"name_or_addr": name_or_addr})
+def tool_summary(
+    ctx: typer.Context,
+    function_sample_limit: int = typer.Option(10, "--function-sample-limit"),
+    import_sample_limit: int = typer.Option(10, "--import-sample-limit"),
+    string_sample_limit: int = typer.Option(10, "--string-sample-limit"),
+) -> None:
+    _call(
+        ctx,
+        "binary.summary",
+        {
+            "function_sample_limit": function_sample_limit,
+            "import_sample_limit": import_sample_limit,
+            "string_sample_limit": string_sample_limit,
+        },
+    )
+
+
+@app.command("function")
+def tool_function(ctx: typer.Context, name_or_addr: str = typer.Argument(...)) -> None:
+    _call(ctx, "function.info", {"name_or_addr": name_or_addr})
 
 
 @app.command("hlil")
@@ -118,13 +136,19 @@ def tool_imports(
     ctx: typer.Context,
     pattern: Optional[str] = typer.Argument(None),
     case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
+    regex: bool = typer.Option(False, "--regex/--no-regex"),
     limit: Optional[int] = typer.Option(None, "--limit"),
 ) -> None:
     if pattern:
         _call(
             ctx,
             "imports.like",
-            {"pattern": pattern, "case_insensitive": case_insensitive, "limit": limit},
+            {
+                "pattern": pattern,
+                "case_insensitive": case_insensitive,
+                "regex": regex,
+                "limit": limit,
+            },
         )
     else:
         _call(ctx, "imports.list", {"limit": limit})
@@ -137,6 +161,7 @@ def tool_strings(
     section: Optional[str] = typer.Option(None, "--section"),
     limit: Optional[int] = typer.Option(None, "--limit"),
     case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
+    regex: bool = typer.Option(False, "--regex/--no-regex"),
     data: bool = typer.Option(False, "--data", help="raw byte search"),
     xrefs: bool = typer.Option(False, "--xrefs", help="include xrefs to matches"),
     max_len: int = typer.Option(256, "--max-len", help="max extracted c-string length"),
@@ -154,6 +179,7 @@ def tool_strings(
                 "pattern": pattern,
                 "section": section,
                 "case_insensitive": case_insensitive,
+                "regex": regex,
                 "string_limit": string_limit,
                 "xref_limit": xref_limit,
             },
@@ -168,6 +194,7 @@ def tool_strings(
                 "pattern": pattern,
                 "section": section,
                 "case_insensitive": case_insensitive,
+                "regex": regex,
                 "limit": limit,
                 "max_len": max_len,
             },
@@ -181,6 +208,7 @@ def tool_strings(
             "pattern": pattern,
             "section": section,
             "case_insensitive": case_insensitive,
+            "regex": regex,
             "limit": limit,
         },
     )
@@ -194,6 +222,7 @@ def tool_functions(
         True, "--include-imports/--no-include-imports"
     ),
     case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
+    regex: bool = typer.Option(False, "--regex/--no-regex"),
     limit: Optional[int] = typer.Option(None, "--limit"),
 ) -> None:
     if pattern:
@@ -204,6 +233,7 @@ def tool_functions(
                 "pattern": pattern,
                 "include_imports": include_imports,
                 "case_insensitive": case_insensitive,
+                "regex": regex,
                 "limit": limit,
             },
         )
@@ -221,6 +251,7 @@ def tool_symbols(
     pattern: str = typer.Argument(...),
     symbol_type: str = typer.Option("function", "--type"),
     case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
+    regex: bool = typer.Option(False, "--regex/--no-regex"),
     limit: Optional[int] = typer.Option(None, "--limit"),
 ) -> None:
     _call(
@@ -230,6 +261,7 @@ def tool_symbols(
             "pattern": pattern,
             "symbol_type": symbol_type,
             "case_insensitive": case_insensitive,
+            "regex": regex,
             "limit": limit,
         },
     )

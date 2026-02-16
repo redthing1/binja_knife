@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
-from .util import enum_name, hex_addr
+from .util import enum_name, hex_addr, make_text_matcher
 
 
 def _import_symbols(bv: Any):
@@ -44,6 +44,7 @@ def imports_like(
     bv: Any,
     pattern: str,
     case_insensitive: bool = True,
+    regex: bool = False,
     limit: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     if bv is None:
@@ -53,13 +54,16 @@ def imports_like(
     if limit is not None and limit < 0:
         raise ValueError("limit must be >= 0")
 
-    needle = pattern.lower() if case_insensitive else pattern
+    matches_pattern = make_text_matcher(
+        pattern,
+        case_insensitive=case_insensitive,
+        regex=regex,
+    )
 
     results: List[Dict[str, Any]] = []
     for sym in _import_symbols(bv):
         name = getattr(sym, "name", "") or ""
-        hay = name.lower() if case_insensitive else name
-        if needle not in hay:
+        if not matches_pattern(name):
             continue
         addr = getattr(sym, "address", None)
         results.append(

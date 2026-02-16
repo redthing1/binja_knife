@@ -3,11 +3,12 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, List
 
+from .tools.binary import binary_summary
 from .tools.functions import (
     function_callees,
     function_call_sites,
     function_callers,
-    function_summary,
+    function_info,
     functions_like,
     functions_list,
 )
@@ -45,6 +46,11 @@ class Tool:
 
 
 _TOOLS: List[Tool] = [
+    Tool(
+        name="binary.summary",
+        fn=binary_summary,
+        doc="summary of active binary view",
+    ),
     Tool(name="function.callees", fn=function_callees, doc="callees of a function"),
     Tool(
         name="function.call-sites",
@@ -52,34 +58,44 @@ _TOOLS: List[Tool] = [
         doc="call site addresses in a function",
     ),
     Tool(name="function.callers", fn=function_callers, doc="callers of a function"),
-    Tool(name="function.summary", fn=function_summary, doc="basic function metadata"),
+    Tool(name="function.info", fn=function_info, doc="metadata for one function"),
     Tool(
         name="functions.like",
         fn=functions_like,
-        doc="substring search over function names",
+        doc="search over function names (substring or regex)",
     ),
     Tool(name="functions.list", fn=functions_list, doc="list functions"),
     Tool(name="il.hlil", fn=hlil, doc="HLIL for a function (name or address)"),
     Tool(name="il.llil", fn=llil, doc="LLIL for a function (name or address)"),
     Tool(name="il.mlil", fn=mlil, doc="MLIL for a function (name or address)"),
-    Tool(name="imports.like", fn=imports_like, doc="substring search over imports"),
+    Tool(
+        name="imports.like",
+        fn=imports_like,
+        doc="search over imports (substring or regex)",
+    ),
     Tool(name="imports.list", fn=imports_list, doc="list imported symbols"),
     Tool(name="sections.list", fn=sections_list, doc="list sections"),
     Tool(name="segments.list", fn=segments_list, doc="list segments"),
     Tool(
-        name="strings.like", fn=strings_like, doc="substring search over bv.get_strings"
+        name="strings.like",
+        fn=strings_like,
+        doc="search over bv.get_strings (substring or regex)",
     ),
     Tool(
         name="strings.like-data",
         fn=strings_like_data,
-        doc="raw byte search + nearby c-string extraction",
+        doc="raw byte search (substring or regex) + nearby c-string extraction",
     ),
     Tool(
         name="strings.xrefs",
         fn=xrefs_to_string,
-        doc="raw byte search + xrefs for each match",
+        doc="raw byte search (substring or regex) + xrefs for each match",
     ),
-    Tool(name="symbols.like", fn=symbols_like, doc="substring search over symbols"),
+    Tool(
+        name="symbols.like",
+        fn=symbols_like,
+        doc="search over symbols (substring or regex)",
+    ),
     Tool(name="tags.at", fn=tags_at, doc="data tags at an address"),
     Tool(name="tags.function", fn=tags_function, doc="function tags for a function"),
     Tool(name="tags.list", fn=tags_list, doc="list data tags (optionally filtered)"),

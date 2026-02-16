@@ -2,7 +2,13 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
-from .util import enum_name, hex_addr, ref_address, resolve_function
+from .util import (
+    enum_name,
+    hex_addr,
+    make_text_matcher,
+    ref_address,
+    resolve_function,
+)
 
 
 def _is_import_function(func: Any) -> bool:
@@ -47,6 +53,7 @@ def functions_like(
     pattern: str,
     include_imports: bool = True,
     case_insensitive: bool = True,
+    regex: bool = False,
     limit: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     if bv is None:
@@ -56,15 +63,18 @@ def functions_like(
     if limit is not None and limit < 0:
         raise ValueError("limit must be >= 0")
 
-    needle = pattern.lower() if case_insensitive else pattern
+    matches_pattern = make_text_matcher(
+        pattern,
+        case_insensitive=case_insensitive,
+        regex=regex,
+    )
 
     results: List[Dict[str, Any]] = []
     for func in bv.functions:
         if not include_imports and _is_import_function(func):
             continue
         name = getattr(func, "name", "") or ""
-        hay = name.lower() if case_insensitive else name
-        if needle not in hay:
+        if not matches_pattern(name):
             continue
 
         start = int(getattr(func, "start", 0) or 0)
@@ -80,7 +90,7 @@ def functions_like(
     return results
 
 
-def function_summary(*, bv: Any, name_or_addr: Any) -> Dict[str, Any]:
+def function_info(*, bv: Any, name_or_addr: Any) -> Dict[str, Any]:
     if bv is None:
         raise ValueError("bv is required")
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
-from .util import enum_name, hex_addr
+from .util import enum_name, hex_addr, make_text_matcher
 
 
 def symbols_like(
@@ -11,6 +11,7 @@ def symbols_like(
     pattern: str,
     symbol_type: str = "function",
     case_insensitive: bool = True,
+    regex: bool = False,
     limit: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     if bv is None:
@@ -34,7 +35,11 @@ def symbols_like(
     if not types:
         raise ValueError(f"unknown symbol_type: {symbol_type}")
 
-    needle = pattern.lower() if case_insensitive else pattern
+    matches_pattern = make_text_matcher(
+        pattern,
+        case_insensitive=case_insensitive,
+        regex=regex,
+    )
 
     results: List[Dict[str, Any]] = []
     for sym_type in types:
@@ -44,8 +49,7 @@ def symbols_like(
             continue
         for sym in syms:
             name = getattr(sym, "name", "") or ""
-            hay = name.lower() if case_insensitive else name
-            if needle not in hay:
+            if not matches_pattern(name):
                 continue
             addr = getattr(sym, "address", None)
             results.append(
