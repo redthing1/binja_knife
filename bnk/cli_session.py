@@ -46,3 +46,17 @@ def session_close(
     sess = name or cfg.session
     out = with_client(cfg, lambda c: c.session_close(sess))
     print_value(cfg, out)
+
+
+@app.command("status")
+def session_status(ctx: typer.Context) -> None:
+    cfg = cfg_from_ctx(ctx)
+    out = with_client(cfg, lambda c: c.request_status())
+    print_value(cfg, out)
+
+
+@app.command("interrupt")
+def session_interrupt(ctx: typer.Context) -> None:
+    cfg = cfg_from_ctx(ctx)
+    out = with_client(cfg, lambda c: c.request_interrupt())
+    print_value(cfg, out)

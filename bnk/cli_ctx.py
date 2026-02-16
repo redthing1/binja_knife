@@ -35,9 +35,41 @@ def connect(cfg: Config) -> KnifeClient:
 T = TypeVar("T")
 
 
+def _attempt_server_interrupt(cfg: Config) -> Dict[str, Any]:
+    short_timeout = 2.0
+    try:
+        with KnifeClient(
+            ConnectConfig(host=cfg.host, port=cfg.port, timeout=short_timeout)
+        ) as c:
+            out = c.request_interrupt()
+    except Exception as exc:
+        return {"ok": False, "interrupted": False, "error": str(exc)}
+    return out
+
+
 def with_client(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
     with connect(cfg) as c:
-        return fn(c)
+        try:
+            return fn(c)
+        except TimeoutError as exc:
+            msg = f"request timed out after {cfg.timeout:g}s"
+            interrupt = _attempt_server_interrupt(cfg)
+            if interrupt.get("interrupted"):
+                name = interrupt.get("name")
+                elapsed = interrupt.get("elapsed_s")
+                details = f"interrupt sent to active request"
+                if name:
+                    details += f" ({name})"
+                if isinstance(elapsed, (int, float)):
+                    details += f" at {elapsed:.2f}s"
+                msg = f"{msg}; {details}"
+            else:
+                err = interrupt.get("error")
+                if err:
+                    msg = f"{msg}; interrupt attempt failed: {err}"
+                else:
+                    msg = f"{msg}; no active request to interrupt"
+            raise click.ClickException(msg) from exc
 
 
 def with_session(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
