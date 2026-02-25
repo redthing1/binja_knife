@@ -103,6 +103,9 @@ class KnifeClient:
     def view_status(self, session: str) -> Dict[str, Any]:
         return dict(self._obtain(self.root.view_status(session)))
 
+    def view_close(self, session: str, *, force: bool = False) -> Dict[str, Any]:
+        return dict(self._obtain(self.root.view_close(session, force=bool(force))))
+
     def view_load(
         self,
         session: str,

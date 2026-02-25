@@ -62,6 +62,20 @@ def view_status(ctx: typer.Context) -> None:
     print_value(cfg, out)
 
 
+@app.command("close")
+def view_close(
+    ctx: typer.Context,
+    force: bool = typer.Option(
+        False,
+        "--force",
+        help="also close non-owned attached views (for attached GUI views)",
+    ),
+) -> None:
+    cfg = cfg_from_ctx(ctx)
+    out = with_session(cfg, lambda c: c.view_close(cfg.session, force=force))
+    print_value(cfg, out)
+
+
 @app.command("load")
 def view_load(
     ctx: typer.Context,

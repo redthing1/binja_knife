@@ -8,6 +8,7 @@ import sys
 import threading
 import time
 import traceback
+import weakref
 from contextlib import contextmanager
 from contextlib import redirect_stderr, redirect_stdout
 from typing import Any, Callable, Dict, Optional
@@ -327,12 +328,22 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         return SESSIONS.list_names()
 
     def exposed_session_close(self, name: str) -> bool:
+        try:
+            sess = SESSIONS.get(name)
+        except KeyError:
+            return False
+
+        with sess.lock, BN_LOCK:
+            with _track_active_request(f"session.{name}.session_close"):
+                sess.detach_bv(close_owned=True, force_close=False)
+                sess.clear_views_cache()
         return SESSIONS.close(name)
 
     def exposed_session_reset(self, name: str, keep_bv: bool = True) -> bool:
         sess = SESSIONS.get(name)
-        with sess.lock:
-            sess.reset(keep_bv=keep_bv)
+        with sess.lock, BN_LOCK:
+            with _track_active_request(f"session.{name}.session_reset"):
+                sess.reset(keep_bv=keep_bv)
         return True
 
     def exposed_view_list(
@@ -348,7 +359,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                         for bv, info in entries
                         if (info.get("filename") or "").strip()
                     ]
-                sess.views_cache = entries
+                sess.views_cache = [(weakref.ref(bv), info) for bv, info in entries]
                 sess.views_cache_include_unnamed = include_unnamed
 
                 views = []
@@ -384,10 +395,10 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                             for bv, info in entries
                             if (info.get("filename") or "").strip()
                         ]
-                    sess.views_cache = entries
+                    sess.views_cache = [(weakref.ref(bv), info) for bv, info in entries]
                     sess.views_cache_include_unnamed = include_unnamed
 
-                views = [info for _bv, info in sess.views_cache]
+                views = [info for _bv_ref, info in sess.views_cache]
 
                 chosen_index: Optional[int] = None
                 if index is not None:
@@ -407,8 +418,14 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                 if chosen_index < 0 or chosen_index >= len(sess.views_cache):
                     raise IndexError(f"index out of range: {chosen_index}")
 
-                bv, info = sess.views_cache[chosen_index]
-                sess.set_bv(bv)
+                bv_ref, info = sess.views_cache[chosen_index]
+                bv = bv_ref()
+                if bv is None:
+                    raise RuntimeError(
+                        "selected view is no longer available; run 'bnk view list' again"
+                    )
+
+                sess.set_bv(bv, owned=False)
                 out = view_info_full(bv)
                 out["index"] = chosen_index
                 out["source"] = info.get("source", "")
@@ -422,6 +439,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                     return {"attached": False}
                 out = view_info_full(sess.bv)
                 out["attached"] = True
+                out["owned"] = bool(sess.owns_bv)
                 return out
 
     def exposed_view_load(
@@ -440,10 +458,24 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                 bv = binaryninja.load(
                     path, update_analysis=update_analysis, options=options
                 )
-                sess.set_bv(bv)
+                if bv is None:
+                    raise RuntimeError(f"failed to load view from {path!r}")
+
+                replace_info = sess.set_bv(bv, owned=True)
                 out = view_info_full(bv)
                 out["attached"] = True
+                out["owned"] = True
                 out["source"] = "load"
+                out["replaced"] = bool(replace_info.get("replaced"))
+                out["previous_closed"] = bool(replace_info.get("previous_closed"))
+                return out
+
+    def exposed_view_close(self, name: str, force: bool = False):
+        sess = SESSIONS.get(name)
+        with sess.lock, BN_LOCK:
+            with _track_active_request(f"session.{name}.view_close"):
+                out = sess.detach_bv(close_owned=True, force_close=bool(force))
+                out["attached"] = False
                 return out
 
     def exposed_run_code(

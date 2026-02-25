@@ -3,6 +3,24 @@ from __future__ import annotations
 from typing import Any, Dict
 
 
+def _run_on_main_thread(fn):
+    try:
+        from binaryninja import mainthread
+    except Exception:
+        return fn()
+
+    box: Dict[str, Any] = {}
+
+    def wrapper() -> None:
+        box["value"] = fn()
+
+    try:
+        mainthread.execute_on_main_thread_and_wait(wrapper)
+    except Exception:
+        return fn()
+    return box.get("value")
+
+
 def db_status(*, bv: Any) -> Dict[str, Any]:
     if bv is None:
         raise ValueError("bv is required")
@@ -49,12 +67,12 @@ def db_save(*, bv: Any) -> Dict[str, Any]:
             "saved_flag": saved_before,
         }
 
-    ok = bool(bv.save_auto_snapshot())
+    ok = bool(_run_on_main_thread(lambda: bv.save_auto_snapshot()))
 
     modified_after = bool(getattr(f, "modified", False))
     saved_after = bool(getattr(f, "saved", False))
 
-    return {
+    out = {
         "saved": ok,
         "filename": filename,
         "has_database": has_database,
@@ -63,6 +81,11 @@ def db_save(*, bv: Any) -> Dict[str, Any]:
         "saved_before": saved_before,
         "saved_after": saved_after,
     }
+    if not ok:
+        out["error"] = (
+            "save_auto_snapshot returned false; database may be locked by another open view"
+        )
+    return out
 
 
 def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
@@ -77,7 +100,7 @@ def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
     if not dest.lower().endswith(".bndb"):
         dest = f"{dest}.bndb"
 
-    ok = bool(bv.create_database(dest))
+    ok = bool(_run_on_main_thread(lambda: bv.create_database(dest)))
 
     f = getattr(bv, "file", None)
     filename = getattr(f, "filename", "") or ""
@@ -85,7 +108,7 @@ def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
     modified = bool(getattr(f, "modified", False)) if f is not None else False
     saved = bool(getattr(f, "saved", False)) if f is not None else False
 
-    return {
+    out = {
         "saved": ok,
         "path": dest,
         "filename": filename,
@@ -93,3 +116,6 @@ def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
         "modified": modified,
         "saved_flag": saved,
     }
+    if not ok:
+        out["error"] = "create_database returned false"
+    return out
