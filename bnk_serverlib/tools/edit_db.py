@@ -3,6 +3,18 @@ from __future__ import annotations
 from typing import Any, Dict
 
 
+def _make_compact_save_settings():
+    try:
+        from binaryninja import SaveOption, SaveSettings
+    except Exception:
+        return None
+
+    settings = SaveSettings()
+    settings.set_option(SaveOption.TrimSnapshots)
+    settings.set_option(SaveOption.RemoveUndoData)
+    return settings
+
+
 def _run_on_main_thread(fn):
     try:
         from binaryninja import mainthread
@@ -67,7 +79,8 @@ def db_save(*, bv: Any) -> Dict[str, Any]:
             "saved_flag": saved_before,
         }
 
-    ok = bool(_run_on_main_thread(lambda: bv.save_auto_snapshot()))
+    settings = _make_compact_save_settings()
+    ok = bool(_run_on_main_thread(lambda: bv.save_auto_snapshot(settings=settings)))
 
     modified_after = bool(getattr(f, "modified", False))
     saved_after = bool(getattr(f, "saved", False))
@@ -100,7 +113,8 @@ def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
     if not dest.lower().endswith(".bndb"):
         dest = f"{dest}.bndb"
 
-    ok = bool(_run_on_main_thread(lambda: bv.create_database(dest)))
+    settings = _make_compact_save_settings()
+    ok = bool(_run_on_main_thread(lambda: bv.create_database(dest, settings=settings)))
 
     f = getattr(bv, "file", None)
     filename = getattr(f, "filename", "") or ""
