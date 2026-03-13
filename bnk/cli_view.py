@@ -29,7 +29,7 @@ def view_list(
         all_flag = "--all " if include_unnamed else ""
         typer.echo()
         typer.echo(
-            f"attach: bnk view attach {all_flag}--index <index>  (or: bnk view attach {all_flag}--match <substr>)"
+            f"attach: bnk view attach {all_flag}--index <index>  (attachable rows only; or: bnk view attach {all_flag}--match <substr>)"
         )
 
 

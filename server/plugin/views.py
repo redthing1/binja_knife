@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import weakref
 from typing import Any, Dict, List, Optional, Tuple
 
 from .log import dbg
@@ -84,6 +85,129 @@ def view_info_full(bv: Any) -> Dict[str, Any]:
     if not info["filename"]:
         info["filename"] = info["repr"]
     return info
+
+
+def safe_view_filename(bv: Any) -> str:
+    file_obj = _safe_getattr(bv, "file")
+    if file_obj is None:
+        return ""
+    return str(
+        _safe_getattr(file_obj, "filename")
+        or _safe_getattr(file_obj, "original_filename")
+        or ""
+    )
+
+
+def merge_csv_field(current: str, new_value: str) -> str:
+    parts: List[str] = []
+    for value in (current, new_value):
+        for item in str(value or "").split(","):
+            item = item.strip()
+            if item and item not in parts:
+                parts.append(item)
+    return ",".join(parts)
+
+
+def is_attachable_source(source: str) -> bool:
+    parts = {item.strip() for item in str(source or "").split(",") if item.strip()}
+    return bool(parts & {"ui", "viewframe", "scripting"})
+
+
+def build_view_inventory(
+    gui_entries: List[Tuple[Any, Dict[str, Any]]],
+    session_views: List[Dict[str, Any]],
+    *,
+    current_session: str,
+    include_unnamed: bool = False,
+    full: bool = False,
+) -> List[Tuple[weakref.ReferenceType[Any], Dict[str, Any]]]:
+    by_id: Dict[int, Tuple[weakref.ReferenceType[Any], Dict[str, Any]]] = {}
+
+    def add_entry(bv: Any, info: Dict[str, Any]) -> None:
+        filename = str(info.get("filename", "") or "")
+        if not include_unnamed and not filename.strip():
+            return
+
+        key = id(bv)
+        existing = by_id.get(key)
+        if existing is None:
+            entry = dict(info)
+            if full:
+                try:
+                    entry.update(view_info_full(bv))
+                except Exception:
+                    pass
+            entry["attachable"] = bool(entry.get("attachable", False))
+            entry["owned"] = bool(entry.get("owned", False))
+            entry["current"] = bool(entry.get("current", False))
+            by_id[key] = (weakref.ref(bv), entry)
+            return
+
+        _bv_ref, entry = existing
+        entry["source"] = merge_csv_field(
+            str(entry.get("source", "")), str(info.get("source", ""))
+        )
+        entry["session"] = merge_csv_field(
+            str(entry.get("session", "")), str(info.get("session", ""))
+        )
+        entry["attachable"] = bool(entry.get("attachable", False)) or bool(
+            info.get("attachable", False)
+        )
+        entry["owned"] = bool(entry.get("owned", False)) or bool(info.get("owned", False))
+        entry["current"] = bool(entry.get("current", False)) or bool(
+            info.get("current", False)
+        )
+
+        if not str(entry.get("filename", "") or "").strip() and filename.strip():
+            entry["filename"] = filename
+            if not str(entry.get("repr", "") or "").strip():
+                entry["repr"] = filename
+
+        if full:
+            try:
+                entry.update(view_info_full(bv))
+            except Exception:
+                pass
+
+    for bv, info in gui_entries:
+        gui_source = str(info.get("source", "") or "ui")
+        add_entry(
+            bv,
+            {
+                "filename": str(info.get("filename", "") or safe_view_filename(bv)),
+                "repr": str(info.get("repr", "") or ""),
+                "source": gui_source,
+                "session": "",
+                "owned": False,
+                "current": False,
+                "attachable": is_attachable_source(gui_source),
+            },
+        )
+
+    for item in session_views:
+        bv = item["bv"]
+        add_entry(
+            bv,
+            {
+                "filename": safe_view_filename(bv),
+                "repr": "",
+                "source": "load" if item["owned"] else "session",
+                "session": str(item["session"]),
+                "owned": bool(item["owned"]),
+                "current": str(item["session"]) == current_session,
+                "attachable": False,
+            },
+        )
+
+    rows = list(by_id.values())
+    rows.sort(
+        key=lambda item: (
+            str(item[1].get("filename", "") or ""),
+            str(item[1].get("session", "") or ""),
+            str(item[1].get("source", "") or ""),
+        )
+    )
+    return rows
 
 
 def _run_on_main_thread(fn):

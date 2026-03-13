@@ -11,7 +11,7 @@ import traceback
 import weakref
 from contextlib import contextmanager
 from contextlib import redirect_stderr, redirect_stdout
-from typing import Any, Callable, Dict, Optional
+from typing import Any, Callable, Dict, List, Optional
 
 import binaryninja  # type: ignore
 
@@ -28,7 +28,7 @@ from .constants import PLUGIN_NAME, SETTINGS_GROUP
 from .log import dbg
 from .root_state import reset_root_globals, root_bv, root_globals, set_root_bv
 from .sessions import SessionManager
-from .views import collect_gui_bvs, match_views, view_info_full
+from .views import build_view_inventory, collect_gui_bvs, match_views, view_info_full
 
 
 SESSIONS = SessionManager()
@@ -247,6 +247,43 @@ def _run_code(
     )
 
 
+def _snapshot_session_views() -> List[Dict[str, Any]]:
+    snapshots: List[Dict[str, Any]] = []
+    for session_name in SESSIONS.list_names():
+        try:
+            sess = SESSIONS.get(session_name)
+        except KeyError:
+            continue
+        with sess.lock:
+            bv = sess.bv
+            owns_bv = sess.owns_bv
+        if bv is None:
+            continue
+        snapshots.append(
+            {
+                "session": session_name,
+                "bv": bv,
+                "owned": bool(owns_bv),
+            }
+        )
+    return snapshots
+
+
+def _build_view_inventory(
+    current_session: str,
+    session_views: List[Dict[str, Any]],
+    include_unnamed: bool = False,
+    full: bool = False,
+) -> List[tuple[weakref.ReferenceType[Any], Dict[str, Any]]]:
+    return build_view_inventory(
+        collect_gui_bvs(),
+        session_views,
+        current_session=current_session,
+        include_unnamed=include_unnamed,
+        full=full,
+    )
+
+
 class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server threads
     """RPyC service exposing root and session primitives."""
 
@@ -350,27 +387,22 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         self, name: str, include_unnamed: bool = False, full: bool = False
     ):
         sess = SESSIONS.get(name)
+        session_views = _snapshot_session_views()
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.view_list"):
-                entries = collect_gui_bvs()
-                if not include_unnamed:
-                    entries = [
-                        (bv, info)
-                        for bv, info in entries
-                        if (info.get("filename") or "").strip()
-                    ]
-                sess.views_cache = [(weakref.ref(bv), info) for bv, info in entries]
+                entries = _build_view_inventory(
+                    current_session=name,
+                    session_views=session_views,
+                    include_unnamed=include_unnamed,
+                    full=full,
+                )
+                sess.views_cache = entries
                 sess.views_cache_include_unnamed = include_unnamed
 
                 views = []
-                for idx, (_bv, info) in enumerate(entries):
+                for idx, (_bv_ref, info) in enumerate(entries):
                     out = dict(info)
                     out["index"] = idx
-                    if full:
-                        try:
-                            out.update(view_info_full(_bv))
-                        except Exception:
-                            pass
                     views.append(out)
                 return views
 
@@ -382,20 +414,19 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         include_unnamed: bool = False,
     ):
         sess = SESSIONS.get(name)
+        session_views = _snapshot_session_views()
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.view_attach"):
                 # if cache is empty (or missing unnamed views), refresh the listing
                 if not sess.views_cache or (
                     include_unnamed and not sess.views_cache_include_unnamed
                 ):
-                    entries = collect_gui_bvs()
-                    if not include_unnamed:
-                        entries = [
-                            (bv, info)
-                            for bv, info in entries
-                            if (info.get("filename") or "").strip()
-                        ]
-                    sess.views_cache = [(weakref.ref(bv), info) for bv, info in entries]
+                    sess.views_cache = _build_view_inventory(
+                        current_session=name,
+                        session_views=session_views,
+                        include_unnamed=include_unnamed,
+                        full=False,
+                    )
                     sess.views_cache_include_unnamed = include_unnamed
 
                 views = [info for _bv_ref, info in sess.views_cache]
@@ -424,11 +455,16 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                     raise RuntimeError(
                         "selected view is no longer available; run 'bnk view list' again"
                     )
+                if not bool(info.get("attachable", False)):
+                    raise ValueError(
+                        "selected view is not attachable; session-owned/background views are informational in 'bnk view list'"
+                    )
 
                 sess.set_bv(bv, owned=False)
                 out = view_info_full(bv)
                 out["index"] = chosen_index
                 out["source"] = info.get("source", "")
+                out["session"] = name
                 return out
 
     def exposed_view_status(self, name: str):

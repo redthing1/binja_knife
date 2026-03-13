@@ -59,7 +59,7 @@ class Session:
     bv: Optional[Any] = None
     owns_bv: bool = False
     globals: Dict[str, Any] = field(default_factory=dict)
-    # cached results from the most recent view listing: list of (weakref(binaryview), info dict)
+    # Cached rows from the most recent global view inventory.
     views_cache: List[Tuple[weakref.ReferenceType[Any], Dict[str, Any]]] = field(
         default_factory=list
     )
