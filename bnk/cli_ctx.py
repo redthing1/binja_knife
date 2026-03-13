@@ -70,6 +70,12 @@ def with_client(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
                 else:
                     msg = f"{msg}; no active request to interrupt"
             raise click.ClickException(msg) from exc
+        except click.ClickException:
+            raise
+        except Exception as exc:
+            message = str(exc).strip() or exc.__class__.__name__
+            message = message.split("========= Remote Traceback", 1)[0].rstrip()
+            raise click.ClickException(message) from exc
 
 
 def with_session(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
