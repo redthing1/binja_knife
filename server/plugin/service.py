@@ -400,6 +400,17 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                     path, root_globals(), argv=argv, capture_output=capture_output
                 )
 
+    def exposed_session_run_file(
+        self, name: str, path: str, argv=None, capture_output: bool = True
+    ):
+        sess = SESSIONS.get(name)
+        with sess.lock:
+            with _track_active_request(f"session.{name}.run_file", session=name):
+                sess.globals["bv"] = sess.bv
+                return _run_file(
+                    path, sess.globals, argv=argv, capture_output=capture_output
+                )
+
     def exposed_binaryview_load(
         self,
         source: Any,

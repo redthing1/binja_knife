@@ -5,11 +5,35 @@ from pathlib import Path
 
 import typer
 
-from .cli_app import make_app
+from .cli_app import CONTEXT_SETTINGS, make_app
 from .cli_ctx import cfg_from_ctx, print_value, with_session
 
 
 app = make_app()
+RUN_CONTEXT_SETTINGS = dict(
+    CONTEXT_SETTINGS,
+    allow_extra_args=True,
+    ignore_unknown_options=True,
+)
+
+
+def _run_session_code(
+    ctx: typer.Context,
+    code: str,
+    *,
+    argv: list[str],
+) -> None:
+    cfg = cfg_from_ctx(ctx)
+    out = with_session(
+        cfg,
+        lambda c: c.run_code(cfg.session, code, argv=argv, capture_output=True),
+    )
+    print_value(cfg, out)
+
+
+def _script_argv(ctx: typer.Context, argv: list[str]) -> list[str]:
+    # Support both repeated --argv and trailing pass-through args after PATH.
+    return [*argv, *ctx.args]
 
 
 @app.command("exec")
@@ -18,14 +42,9 @@ def py_exec(
     code: str = typer.Argument(..., help="python code, or '-' to read from stdin"),
     argv: list[str] = typer.Option([], "--argv", help="arguments for sys.argv[1:]"),
 ) -> None:
-    cfg = cfg_from_ctx(ctx)
     if code == "-":
         code = sys.stdin.read()
-    out = with_session(
-        cfg,
-        lambda c: c.run_code(cfg.session, code, argv=list(argv), capture_output=True),
-    )
-    print_value(cfg, out)
+    _run_session_code(ctx, code, argv=list(argv))
 
 
 @app.command("eval")
@@ -34,45 +53,31 @@ def py_eval(
     expr: str = typer.Argument(...),
     argv: list[str] = typer.Option([], "--argv", help="arguments for sys.argv[1:]"),
 ) -> None:
-    cfg = cfg_from_ctx(ctx)
     code = f"__result__ = ({expr})"
-    out = with_session(
-        cfg,
-        lambda c: c.run_code(cfg.session, code, argv=list(argv), capture_output=True),
-    )
-    print_value(cfg, out)
+    _run_session_code(ctx, code, argv=list(argv))
 
 
-@app.command("run")
+@app.command("run", context_settings=RUN_CONTEXT_SETTINGS)
 def py_run(
     ctx: typer.Context,
     path: Path = typer.Argument(..., exists=True),
-    argv: list[str] = typer.Option([], "--argv", help="arguments for sys.argv[1:]"),
+    argv: list[str] = typer.Option(
+        [],
+        "--argv",
+        help="arguments for sys.argv[1:] (repeat --argv or pass trailing args after PATH)",
+    ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
     path = path.expanduser().resolve()
-
-    code = "\n".join(
-        [
-            "import sys",
-            f"_path = {str(path)!r}",
-            "_old_argv = sys.argv",
-            "sys.argv = [_path] + sys.argv[1:]",
-            "globals()['__file__'] = _path",
-            "globals()['__name__'] = '__main__'",
-            "globals()['__package__'] = None",
-            "try:",
-            "    with open(_path, 'r', encoding='utf-8') as _fh:",
-            "        _source = _fh.read()",
-            "    _compiled = compile(_source, _path, 'exec')",
-            "    exec(_compiled, globals(), globals())",
-            "finally:",
-            "    sys.argv = _old_argv",
-        ]
-    )
+    script_argv = _script_argv(ctx, list(argv))
 
     out = with_session(
         cfg,
-        lambda c: c.run_code(cfg.session, code, argv=list(argv), capture_output=True),
+        lambda c: c.run_file(
+            cfg.session,
+            str(path),
+            argv=script_argv,
+            capture_output=True,
+        ),
     )
     print_value(cfg, out)

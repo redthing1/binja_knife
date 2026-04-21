@@ -52,6 +52,27 @@ class KnifeClient:
             return dict(self._obtain(fn()))
         return dict(self._obtain(fn(session)))
 
+    def _session_exec(
+        self,
+        method: str,
+        session: str,
+        payload: str,
+        *,
+        argv: Optional[List[str]] = None,
+        capture_output: bool = True,
+    ) -> Dict[str, Any]:
+        fn = getattr(self.root, method)
+        return dict(
+            self._obtain(
+                fn(
+                    session,
+                    payload,
+                    argv=argv or [],
+                    capture_output=bool(capture_output),
+                )
+            )
+        )
+
     def request_status(self, session: Optional[str] = None) -> Dict[str, Any]:
         return self._request_control("request_status", session)
 
@@ -144,13 +165,26 @@ class KnifeClient:
         argv: Optional[List[str]] = None,
         capture_output: bool = True,
     ) -> Dict[str, Any]:
-        return dict(
-            self._obtain(
-                self.root.run_code(
-                    session,
-                    code,
-                    argv=argv or [],
-                    capture_output=bool(capture_output),
-                )
-            )
+        return self._session_exec(
+            "run_code",
+            session,
+            code,
+            argv=argv,
+            capture_output=capture_output,
+        )
+
+    def run_file(
+        self,
+        session: str,
+        path: str,
+        *,
+        argv: Optional[List[str]] = None,
+        capture_output: bool = True,
+    ) -> Dict[str, Any]:
+        return self._session_exec(
+            "session_run_file",
+            session,
+            path,
+            argv=argv,
+            capture_output=capture_output,
         )
