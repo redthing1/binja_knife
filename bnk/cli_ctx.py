@@ -41,7 +41,7 @@ def _attempt_server_interrupt(cfg: Config) -> Dict[str, Any]:
         with KnifeClient(
             ConnectConfig(host=cfg.host, port=cfg.port, timeout=short_timeout)
         ) as c:
-            out = c.request_interrupt()
+            out = c.request_interrupt(cfg.session)
     except Exception as exc:
         return {"ok": False, "interrupted": False, "error": str(exc)}
     return out

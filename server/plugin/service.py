@@ -9,6 +9,7 @@ import threading
 import time
 import traceback
 import weakref
+from dataclasses import dataclass
 from contextlib import contextmanager
 from contextlib import redirect_stderr, redirect_stdout
 from typing import Any, Callable, Dict, List, Optional
@@ -35,8 +36,28 @@ SESSIONS = SessionManager()
 
 _ServiceBase = getattr(rpyc, "Service", object) if rpyc is not None else object
 _ACTIVE_REQUEST_LOCK = threading.RLock()
-_ACTIVE_REQUEST: Optional[Dict[str, Any]] = None
+_ACTIVE_REQUESTS: Dict[int, "ActiveRequest"] = {}
 _ACTIVE_REQUEST_NEXT_ID = 0
+
+
+@dataclass(frozen=True)
+class ActiveRequest:
+    id: int
+    name: str
+    thread_id: int
+    started_monotonic: float
+    session: Optional[str] = None
+
+    def snapshot(self) -> Dict[str, Any]:
+        out: Dict[str, Any] = {
+            "id": self.id,
+            "name": self.name,
+            "thread_id": self.thread_id,
+            "elapsed_s": max(0.0, time.monotonic() - self.started_monotonic),
+        }
+        if self.session:
+            out["session"] = self.session
+        return out
 
 
 def _ensure_rpyc() -> None:
@@ -51,40 +72,80 @@ def _next_request_id() -> int:
         return _ACTIVE_REQUEST_NEXT_ID
 
 
-def _active_request_snapshot() -> Optional[Dict[str, Any]]:
+def _select_active_requests(
+    session: Optional[str] = None,
+) -> List[ActiveRequest]:
     with _ACTIVE_REQUEST_LOCK:
-        current = _ACTIVE_REQUEST
-        if current is None:
-            return None
-        snap = dict(current)
-    snap["elapsed_s"] = max(0.0, time.monotonic() - float(snap["started_monotonic"]))
-    snap.pop("started_monotonic", None)
-    return snap
+        requests = [
+            request
+            for request in _ACTIVE_REQUESTS.values()
+            if session is None or request.session == session
+        ]
+    requests.sort(
+        key=lambda request: (request.started_monotonic, request.id)
+    )
+    return requests
+
+
+def _request_response(
+    request: ActiveRequest,
+    *,
+    active: bool,
+    count: int = 1,
+    requests: Optional[List[ActiveRequest]] = None,
+    ok: Optional[bool] = None,
+    interrupted: Optional[bool] = None,
+    error: Optional[str] = None,
+) -> Dict[str, Any]:
+    out = request.snapshot()
+    out["active"] = active
+    out["count"] = count
+    if ok is not None:
+        out["ok"] = ok
+    if interrupted is not None:
+        out["interrupted"] = interrupted
+    if error:
+        out["error"] = error
+    if requests is not None and len(requests) > 1:
+        out["requests"] = [item.snapshot() for item in requests]
+    return out
+
+
+def _active_request_snapshot(session: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    requests = _select_active_requests(session=session)
+    if not requests:
+        return None
+
+    return _request_response(
+        requests[0],
+        active=True,
+        count=len(requests),
+        requests=requests,
+    )
 
 
 @contextmanager
-def _track_active_request(name: str):
-    global _ACTIVE_REQUEST
+def _track_active_request(name: str, *, session: Optional[str] = None):
     token = _next_request_id()
-    started = time.monotonic()
-    thread_id = threading.get_ident()
     with _ACTIVE_REQUEST_LOCK:
-        _ACTIVE_REQUEST = {
-            "id": token,
-            "name": name,
-            "thread_id": thread_id,
-            "started_monotonic": started,
-        }
+        _ACTIVE_REQUESTS[token] = ActiveRequest(
+            id=token,
+            name=name,
+            session=session,
+            thread_id=threading.get_ident(),
+            started_monotonic=time.monotonic(),
+        )
     try:
         yield token
     finally:
         with _ACTIVE_REQUEST_LOCK:
-            current = _ACTIVE_REQUEST
-            if current is not None and int(current.get("id", -1)) == token:
-                _ACTIVE_REQUEST = None
+            _ACTIVE_REQUESTS.pop(token, None)
 
 
 def _async_raise(thread_id: int, exc_type: type[BaseException]) -> bool:
+    # CPython delivers this only when the target thread returns to Python
+    # bytecode. C-level blocking calls (for example time.sleep or socket I/O)
+    # will not stop until they yield back into the interpreter.
     try:
         set_async_exc = ctypes.pythonapi.PyThreadState_SetAsyncExc
     except Exception:
@@ -106,43 +167,40 @@ def _async_raise(thread_id: int, exc_type: type[BaseException]) -> bool:
     return False
 
 
-def _interrupt_active_request() -> Dict[str, Any]:
-    with _ACTIVE_REQUEST_LOCK:
-        current = _ACTIVE_REQUEST
-        if current is None:
-            return {"ok": True, "interrupted": False, "active": False}
+def _interrupt_active_request(session: Optional[str] = None) -> Dict[str, Any]:
+    requests = _select_active_requests(session=session)
+    if not requests:
+        return {"ok": True, "interrupted": False, "active": False}
 
-        thread_id = int(current.get("thread_id", 0))
-        name = str(current.get("name", "request"))
-        req_id = int(current.get("id", -1))
-        started = float(current.get("started_monotonic", time.monotonic()))
-
-        if thread_id == threading.get_ident():
-            return {
-                "ok": False,
-                "interrupted": False,
-                "active": True,
-                "id": req_id,
-                "name": name,
-                "error": "cannot interrupt current request thread",
-            }
-
-        interrupted = _async_raise(thread_id, KeyboardInterrupt)
-        dbg(
-            f"interrupt request id={req_id} name={name} thread={thread_id} interrupted={interrupted}"
+    caller_thread_id = threading.get_ident()
+    target = next(
+        (request for request in requests if request.thread_id != caller_thread_id),
+        None,
+    )
+    if target is None:
+        return _request_response(
+            requests[0],
+            active=True,
+            count=len(requests),
+            requests=requests,
+            ok=False,
+            interrupted=False,
+            error="cannot interrupt current request thread",
         )
-        out: Dict[str, Any] = {
-            "ok": interrupted,
-            "interrupted": interrupted,
-            "active": True,
-            "id": req_id,
-            "name": name,
-            "thread_id": thread_id,
-            "elapsed_s": max(0.0, time.monotonic() - started),
-        }
-        if not interrupted:
-            out["error"] = "failed to inject KeyboardInterrupt"
-        return out
+
+    interrupted = _async_raise(target.thread_id, KeyboardInterrupt)
+    dbg(
+        f"interrupt request id={target.id} name={target.name} thread={target.thread_id} interrupted={interrupted}"
+    )
+    return _request_response(
+        target,
+        active=True,
+        count=len(requests),
+        requests=requests,
+        ok=interrupted,
+        interrupted=interrupted,
+        error=None if interrupted else "failed to inject KeyboardInterrupt",
+    )
 
 
 def _run_exec(
@@ -300,26 +358,26 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
 
     exposed_binaryninja = binaryninja
 
-    def exposed_request_status(self):
-        snap = _active_request_snapshot()
+    def exposed_request_status(self, session: Optional[str] = None):
+        snap = _active_request_snapshot(session=session)
         if snap is None:
             return {"active": False}
         snap["active"] = True
         return snap
 
-    def exposed_request_interrupt(self):
-        return _interrupt_active_request()
+    def exposed_request_interrupt(self, session: Optional[str] = None):
+        return _interrupt_active_request(session=session)
 
     def exposed_bv(self):
         return root_bv()
 
     def exposed_eval(self, cmd: str):
-        with ROOT_LOCK, BN_LOCK:
+        with ROOT_LOCK:
             with _track_active_request("root.eval"):
                 return eval(cmd, root_globals())
 
     def exposed_exec(self, cmd: str):
-        with ROOT_LOCK, BN_LOCK:
+        with ROOT_LOCK:
             with _track_active_request("root.exec"):
                 exec(cmd, root_globals())
         return True
@@ -336,7 +394,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         return True
 
     def exposed_run_file(self, path: str, argv=None, capture_output: bool = True):
-        with ROOT_LOCK, BN_LOCK:
+        with ROOT_LOCK:
             with _track_active_request("root.run_file"):
                 return _run_file(
                     path, root_globals(), argv=argv, capture_output=capture_output
@@ -371,7 +429,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
             return False
 
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.session_close"):
+            with _track_active_request(f"session.{name}.session_close", session=name):
                 sess.detach_bv(close_owned=True, force_close=False)
                 sess.clear_views_cache()
         return SESSIONS.close(name)
@@ -379,7 +437,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
     def exposed_session_reset(self, name: str, keep_bv: bool = True) -> bool:
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.session_reset"):
+            with _track_active_request(f"session.{name}.session_reset", session=name):
                 sess.reset(keep_bv=keep_bv)
         return True
 
@@ -389,7 +447,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         sess = SESSIONS.get(name)
         session_views = _snapshot_session_views()
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_list"):
+            with _track_active_request(f"session.{name}.view_list", session=name):
                 entries = _build_view_inventory(
                     current_session=name,
                     session_views=session_views,
@@ -416,7 +474,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         sess = SESSIONS.get(name)
         session_views = _snapshot_session_views()
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_attach"):
+            with _track_active_request(f"session.{name}.view_attach", session=name):
                 # if cache is empty (or missing unnamed views), refresh the listing
                 if not sess.views_cache or (
                     include_unnamed and not sess.views_cache_include_unnamed
@@ -470,7 +528,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
     def exposed_view_status(self, name: str):
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_status"):
+            with _track_active_request(f"session.{name}.view_status", session=name):
                 if sess.bv is None:
                     return {"attached": False}
                 out = view_info_full(sess.bv)
@@ -490,7 +548,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
             options = json.loads(options_json)
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_load"):
+            with _track_active_request(f"session.{name}.view_load", session=name):
                 bv = binaryninja.load(
                     path, update_analysis=update_analysis, options=options
                 )
@@ -509,7 +567,7 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
     def exposed_view_close(self, name: str, force: bool = False):
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_close"):
+            with _track_active_request(f"session.{name}.view_close", session=name):
                 out = sess.detach_bv(close_owned=True, force_close=bool(force))
                 out["attached"] = False
                 return out
@@ -518,8 +576,10 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         self, name: str, code: str, argv=None, capture_output: bool = True
     ):
         sess = SESSIONS.get(name)
-        with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.run_code"):
+        with sess.lock:
+            with _track_active_request(f"session.{name}.run_code", session=name):
+                # A sleeping or network-bound script in one session must not hold
+                # the global BN lock and starve unrelated sessions.
                 # keep session globals in sync with attached bv
                 sess.globals["bv"] = sess.bv
                 return _run_code(

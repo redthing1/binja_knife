@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import threading
 
-# v1: serialize all bn api usage behind a single global lock
+# Serialize short shared Binary Ninja operations. Do not hold this around
+# arbitrary user code, or one sleeping session will stall unrelated sessions.
 BN_LOCK = threading.RLock()
 
 # root globals are shared across connections; protect them explicitly

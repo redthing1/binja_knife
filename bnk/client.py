@@ -46,11 +46,17 @@ class KnifeClient:
     def core_version(self) -> str:
         return str(self._obtain(self.root.binaryninja.core_version()))
 
-    def request_status(self) -> Dict[str, Any]:
-        return dict(self._obtain(self.root.request_status()))
+    def _request_control(self, method: str, session: Optional[str] = None) -> Dict[str, Any]:
+        fn = getattr(self.root, method)
+        if session is None:
+            return dict(self._obtain(fn()))
+        return dict(self._obtain(fn(session)))
 
-    def request_interrupt(self) -> Dict[str, Any]:
-        return dict(self._obtain(self.root.request_interrupt()))
+    def request_status(self, session: Optional[str] = None) -> Dict[str, Any]:
+        return self._request_control("request_status", session)
+
+    def request_interrupt(self, session: Optional[str] = None) -> Dict[str, Any]:
+        return self._request_control("request_interrupt", session)
 
     # session ops
 
