@@ -342,6 +342,22 @@ def _build_view_inventory(
     )
 
 
+def _release_owned_path(session_name: str, path: str) -> None:
+    if path:
+        SESSIONS.release_owned_path(session_name, path)
+
+
+def _release_previous_owned_path(
+    session_name: str,
+    out: Dict[str, Any],
+    *,
+    keep_path: str = "",
+) -> None:
+    previous_owned_path = str(out.get("previous_owned_path", "") or "")
+    if previous_owned_path and previous_owned_path != keep_path:
+        _release_owned_path(session_name, previous_owned_path)
+
+
 class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server threads
     """RPyC service exposing root and session primitives."""
 
@@ -441,15 +457,17 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
 
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.session_close", session=name):
-                sess.detach_bv(close_owned=True, force_close=False)
+                out = sess.detach_bv(close_owned=True, force_close=False)
                 sess.clear_views_cache()
+                _release_previous_owned_path(name, out)
         return SESSIONS.close(name)
 
     def exposed_session_reset(self, name: str, keep_bv: bool = True) -> bool:
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.session_reset", session=name):
-                sess.reset(keep_bv=keep_bv)
+                out = sess.reset(keep_bv=keep_bv)
+                _release_previous_owned_path(name, out)
         return True
 
     def exposed_view_list(
@@ -529,7 +547,8 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                         "selected view is not attachable; session-owned/background views are informational in 'bnk view list'"
                     )
 
-                sess.set_bv(bv, owned=False)
+                replace_info = sess.set_bv(bv, owned=False)
+                _release_previous_owned_path(name, replace_info)
                 out = view_info_full(bv)
                 out["index"] = chosen_index
                 out["source"] = info.get("source", "")
@@ -559,27 +578,41 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
             options = json.loads(options_json)
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
+            previous_owned_path = sess.owned_path
+            claimed_path = SESSIONS.claim_owned_path(name, path)
+            claimed_new_path = bool(claimed_path and claimed_path != previous_owned_path)
             with _track_active_request(f"session.{name}.view_load", session=name):
-                bv = binaryninja.load(
-                    path, update_analysis=update_analysis, options=options
-                )
-                if bv is None:
-                    raise RuntimeError(f"failed to load view from {path!r}")
+                try:
+                    bv = binaryninja.load(
+                        path, update_analysis=update_analysis, options=options
+                    )
+                    if bv is None:
+                        raise RuntimeError(f"failed to load view from {path!r}")
 
-                replace_info = sess.set_bv(bv, owned=True)
-                out = view_info_full(bv)
-                out["attached"] = True
-                out["owned"] = True
-                out["source"] = "load"
-                out["replaced"] = bool(replace_info.get("replaced"))
-                out["previous_closed"] = bool(replace_info.get("previous_closed"))
-                return out
+                    replace_info = sess.set_bv(bv, owned=True, owned_path=claimed_path)
+                    _release_previous_owned_path(
+                        name,
+                        replace_info,
+                        keep_path=claimed_path,
+                    )
+                    out = view_info_full(bv)
+                    out["attached"] = True
+                    out["owned"] = True
+                    out["source"] = "load"
+                    out["replaced"] = bool(replace_info.get("replaced"))
+                    out["previous_closed"] = bool(replace_info.get("previous_closed"))
+                    return out
+                except Exception:
+                    if claimed_new_path:
+                        _release_owned_path(name, claimed_path)
+                    raise
 
     def exposed_view_close(self, name: str, force: bool = False):
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.view_close", session=name):
                 out = sess.detach_bv(close_owned=True, force_close=bool(force))
+                _release_previous_owned_path(name, out)
                 out["attached"] = False
                 return out
 

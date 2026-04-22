@@ -3,6 +3,7 @@ from __future__ import annotations
 import threading
 import weakref
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import binaryninja  # type: ignore
@@ -52,12 +53,23 @@ def _safe_close_bv(bv: Optional[Any]) -> bool:
         return False
 
 
+def canonical_session_path(path: str) -> str:
+    raw = str(path or "").strip()
+    if not raw:
+        return ""
+    try:
+        return str(Path(raw).expanduser().resolve(strict=False))
+    except Exception:
+        return raw
+
+
 @dataclass
 class Session:
     name: str
     lock: threading.RLock = field(default_factory=threading.RLock)
     bv: Optional[Any] = None
     owns_bv: bool = False
+    owned_path: str = ""
     globals: Dict[str, Any] = field(default_factory=dict)
     # Cached rows from the most recent global view inventory.
     views_cache: List[Tuple[weakref.ReferenceType[Any], Dict[str, Any]]] = field(
@@ -73,9 +85,16 @@ class Session:
         self.views_cache = []
         self.views_cache_include_unnamed = False
 
-    def set_bv(self, bv: Optional[Any], *, owned: bool = False) -> Dict[str, Any]:
+    def set_bv(
+        self,
+        bv: Optional[Any],
+        *,
+        owned: bool = False,
+        owned_path: str = "",
+    ) -> Dict[str, Any]:
         prev_bv = self.bv
         prev_owned = self.owns_bv
+        prev_owned_path = self.owned_path
         prev_filename = _safe_filename(prev_bv)
         replaced = prev_bv is not None and prev_bv is not bv
         previous_closed = False
@@ -86,10 +105,12 @@ class Session:
 
         self.bv = bv
         self.owns_bv = bool(owned and bv is not None)
+        self.owned_path = str(owned_path or "") if self.owns_bv else ""
         self.globals["bv"] = bv
         return {
             "replaced": replaced,
             "previous_owned": prev_owned,
+            "previous_owned_path": prev_owned_path,
             "previous_closed": previous_closed,
             "previous_filename": prev_filename,
         }
@@ -99,6 +120,7 @@ class Session:
     ) -> Dict[str, Any]:
         prev_bv = self.bv
         prev_owned = self.owns_bv
+        prev_owned_path = self.owned_path
         prev_filename = _safe_filename(prev_bv)
         had_attached = prev_bv is not None
         closed = False
@@ -107,32 +129,39 @@ class Session:
 
         self.bv = None
         self.owns_bv = False
+        self.owned_path = ""
         self.globals["bv"] = None
         return {
             "had_attached": had_attached,
             "was_owned": prev_owned,
+            "previous_owned_path": prev_owned_path,
             "closed": closed,
             "filename": prev_filename,
             "forced": bool(force_close),
         }
 
-    def reset(self, keep_bv: bool = True) -> None:
+    def reset(self, keep_bv: bool = True) -> Dict[str, Any]:
+        out: Dict[str, Any] = {"keep_bv": bool(keep_bv), "previous_owned_path": ""}
         if not keep_bv:
-            self.detach_bv(close_owned=True, force_close=False)
+            out = self.detach_bv(close_owned=True, force_close=False)
 
         bv = self.bv if keep_bv else None
         owns_bv = self.owns_bv if keep_bv else False
+        owned_path = self.owned_path if keep_bv else ""
         self.bv = bv
         self.owns_bv = owns_bv
+        self.owned_path = owned_path
         self.globals = _new_globals(bv)
         self.globals["__session_name__"] = self.name
         self.clear_views_cache()
+        return out
 
 
 class SessionManager:
     def __init__(self) -> None:
         self._lock = threading.RLock()
         self._sessions: Dict[str, Session] = {}
+        self._owned_path_claims: Dict[str, str] = {}
 
     def open(self, name: str) -> Session:
         if not name or not isinstance(name, str):
@@ -158,3 +187,24 @@ class SessionManager:
     def close(self, name: str) -> bool:
         with self._lock:
             return self._sessions.pop(name, None) is not None
+
+    def claim_owned_path(self, session_name: str, path: str) -> str:
+        canonical = canonical_session_path(path)
+        if not canonical:
+            return ""
+        with self._lock:
+            owner = self._owned_path_claims.get(canonical)
+            if owner is not None and owner != session_name:
+                raise ValueError(
+                    f"path is already loaded by session {owner!r}: {canonical}"
+                )
+            self._owned_path_claims[canonical] = session_name
+        return canonical
+
+    def release_owned_path(self, session_name: str, path: str) -> None:
+        canonical = canonical_session_path(path)
+        if not canonical:
+            return
+        with self._lock:
+            if self._owned_path_claims.get(canonical) == session_name:
+                self._owned_path_claims.pop(canonical, None)
