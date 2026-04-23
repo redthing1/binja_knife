@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import Any, Dict
 
+_MISSING = object()
+
 
 def _make_compact_save_settings():
     try:
@@ -33,66 +35,78 @@ def _run_on_main_thread(fn):
     return box.get("value")
 
 
-def db_status(*, bv: Any) -> Dict[str, Any]:
+def _require_bv_file(bv: Any) -> Any:
     if bv is None:
         raise ValueError("bv is required")
 
     f = getattr(bv, "file", None)
     if f is None:
         raise ValueError("bv.file is required")
+    return f
 
-    filename = getattr(f, "filename", "") or ""
-    original_filename = getattr(f, "original_filename", "") or ""
-    has_database = bool(getattr(f, "has_database", False))
-    modified = bool(getattr(f, "modified", False))
-    saved = bool(getattr(f, "saved", False))
 
-    return {
-        "filename": filename,
-        "original_filename": original_filename,
-        "has_database": has_database,
-        "modified": modified,
-        "saved": saved,
+def _bool_attr(obj: Any, name: str) -> bool | None:
+    if obj is None:
+        return None
+    try:
+        value = getattr(obj, name, _MISSING)
+    except Exception:
+        return None
+    if value is _MISSING:
+        return None
+    return bool(value)
+
+
+def _db_modified(bv: Any, f: Any) -> bool:
+    for obj, name in (
+        (bv, "analysis_changed"),
+        (f, "analysis_changed"),
+        (bv, "modified"),
+        (f, "modified"),
+    ):
+        value = _bool_attr(obj, name)
+        if value is not None:
+            return value
+    return False
+
+
+def _db_state(bv: Any) -> Dict[str, Any]:
+    f = _require_bv_file(bv)
+    path = getattr(f, "filename", "") or ""
+    source = getattr(f, "original_filename", "") or ""
+    out = {
+        "path": path,
+        "has_database": bool(getattr(f, "has_database", False)),
+        "modified": _db_modified(bv, f),
     }
+    if source and source != path:
+        out["source"] = source
+    return out
+
+
+def db_status(*, bv: Any) -> Dict[str, Any]:
+    return _db_state(bv)
 
 
 def db_save(*, bv: Any) -> Dict[str, Any]:
-    if bv is None:
-        raise ValueError("bv is required")
+    state_before = _db_state(bv)
+    modified_before = bool(state_before["modified"])
 
-    f = getattr(bv, "file", None)
-    if f is None:
-        raise ValueError("bv.file is required")
-
-    filename = getattr(f, "filename", "") or ""
-    has_database = bool(getattr(f, "has_database", False))
-    modified_before = bool(getattr(f, "modified", False))
-    saved_before = bool(getattr(f, "saved", False))
-
-    if not has_database:
+    if not bool(state_before["has_database"]):
         return {
             "saved": False,
             "error": "view is not backed by a database; use 'bnk edit db save-as' first",
-            "filename": filename,
-            "has_database": has_database,
             "modified": modified_before,
-            "saved_flag": saved_before,
         }
 
     settings = _make_compact_save_settings()
     ok = bool(_run_on_main_thread(lambda: bv.save_auto_snapshot(settings=settings)))
 
-    modified_after = bool(getattr(f, "modified", False))
-    saved_after = bool(getattr(f, "saved", False))
+    state_after = _db_state(bv)
 
     out = {
         "saved": ok,
-        "filename": filename,
-        "has_database": has_database,
-        "modified_before": modified_before,
-        "modified_after": modified_after,
-        "saved_before": saved_before,
-        "saved_after": saved_after,
+        "modified": bool(state_after["modified"]),
     }
     if not ok:
         out["error"] = (
@@ -102,8 +116,6 @@ def db_save(*, bv: Any) -> Dict[str, Any]:
 
 
 def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
-    if bv is None:
-        raise ValueError("bv is required")
     if path is None:
         raise ValueError("path is required")
 
@@ -116,19 +128,12 @@ def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
     settings = _make_compact_save_settings()
     ok = bool(_run_on_main_thread(lambda: bv.create_database(dest, settings=settings)))
 
-    f = getattr(bv, "file", None)
-    filename = getattr(f, "filename", "") or ""
-    has_database = bool(getattr(f, "has_database", False))
-    modified = bool(getattr(f, "modified", False)) if f is not None else False
-    saved = bool(getattr(f, "saved", False)) if f is not None else False
+    state = _db_state(bv)
 
     out = {
         "saved": ok,
-        "path": dest,
-        "filename": filename,
-        "has_database": has_database,
-        "modified": modified,
-        "saved_flag": saved,
+        "path": str(state.get("path", "") or dest),
+        "modified": state["modified"],
     }
     if not ok:
         out["error"] = "create_database returned false"
