@@ -6,6 +6,10 @@ from typing import Any, Dict, List, Optional, Tuple
 from .log import dbg
 
 
+_SHARED_VIEW_IDS: Dict[int, str] = {}
+_SHARED_VIEW_NEXT_ID = 0
+
+
 def _safe_str(value: Any) -> str:
     try:
         return str(value)
@@ -98,6 +102,18 @@ def safe_view_filename(bv: Any) -> str:
     )
 
 
+def _shared_view_id(bv: Any) -> str:
+    global _SHARED_VIEW_NEXT_ID
+    key = id(bv)
+    existing = _SHARED_VIEW_IDS.get(key)
+    if existing is not None:
+        return existing
+    _SHARED_VIEW_NEXT_ID += 1
+    view_id = f"v{_SHARED_VIEW_NEXT_ID}"
+    _SHARED_VIEW_IDS[key] = view_id
+    return view_id
+
+
 def merge_csv_field(current: str, new_value: str) -> str:
     parts: List[str] = []
     for value in (current, new_value):
@@ -108,16 +124,14 @@ def merge_csv_field(current: str, new_value: str) -> str:
     return ",".join(parts)
 
 
-def is_attachable_source(source: str) -> bool:
+def is_shared_view_source(source: str) -> bool:
     parts = {item.strip() for item in str(source or "").split(",") if item.strip()}
     return bool(parts & {"ui", "viewframe", "scripting"})
 
 
-def build_view_inventory(
+def build_shared_view_inventory(
     gui_entries: List[Tuple[Any, Dict[str, Any]]],
-    session_views: List[Dict[str, Any]],
     *,
-    current_session: str,
     include_unnamed: bool = False,
     full: bool = False,
 ) -> List[Tuple[weakref.ReferenceType[Any], Dict[str, Any]]]:
@@ -131,83 +145,103 @@ def build_view_inventory(
         key = id(bv)
         existing = by_id.get(key)
         if existing is None:
-            entry = dict(info)
+            entry = {
+                "id": _shared_view_id(bv),
+                "target": filename,
+            }
             if full:
+                entry.update(
+                    {
+                        "source": str(info.get("source", "") or ""),
+                        "repr": str(info.get("repr", "") or ""),
+                    }
+                )
                 try:
-                    entry.update(view_info_full(bv))
+                    full_info = view_info_full(bv)
+                    entry.update(
+                        {
+                            "view_type": full_info.get("view_type", ""),
+                            "arch": full_info.get("arch", ""),
+                            "analysis_state": full_info.get("analysis_state", ""),
+                            "start_hex": full_info.get("start_hex", ""),
+                            "length_hex": full_info.get("length_hex", ""),
+                            "repr": full_info.get("repr", entry.get("repr", "")),
+                        }
+                    )
                 except Exception:
                     pass
-            entry["attachable"] = bool(entry.get("attachable", False))
-            entry["owned"] = bool(entry.get("owned", False))
-            entry["current"] = bool(entry.get("current", False))
+            else:
+                try:
+                    full_info = view_info_full(bv)
+                    entry["view_type"] = full_info.get("view_type", "")
+                    entry["arch"] = full_info.get("arch", "")
+                except Exception:
+                    entry["view_type"] = ""
+                    entry["arch"] = ""
             by_id[key] = (weakref.ref(bv), entry)
             return
 
         _bv_ref, entry = existing
-        entry["source"] = merge_csv_field(
-            str(entry.get("source", "")), str(info.get("source", ""))
-        )
-        entry["session"] = merge_csv_field(
-            str(entry.get("session", "")), str(info.get("session", ""))
-        )
-        entry["attachable"] = bool(entry.get("attachable", False)) or bool(
-            info.get("attachable", False)
-        )
-        entry["owned"] = bool(entry.get("owned", False)) or bool(info.get("owned", False))
-        entry["current"] = bool(entry.get("current", False)) or bool(
-            info.get("current", False)
-        )
-
-        if not str(entry.get("filename", "") or "").strip() and filename.strip():
-            entry["filename"] = filename
-            if not str(entry.get("repr", "") or "").strip():
-                entry["repr"] = filename
-
         if full:
-            try:
-                entry.update(view_info_full(bv))
-            except Exception:
-                pass
+            entry["source"] = merge_csv_field(
+                str(entry.get("source", "")), str(info.get("source", ""))
+            )
+        if not str(entry.get("target", "") or "").strip() and filename.strip():
+            entry["target"] = filename
 
     for bv, info in gui_entries:
         gui_source = str(info.get("source", "") or "ui")
+        if not is_shared_view_source(gui_source):
+            continue
         add_entry(
             bv,
             {
                 "filename": str(info.get("filename", "") or safe_view_filename(bv)),
                 "repr": str(info.get("repr", "") or ""),
                 "source": gui_source,
-                "session": "",
-                "owned": False,
-                "current": False,
-                "attachable": is_attachable_source(gui_source),
-            },
-        )
-
-    for item in session_views:
-        bv = item["bv"]
-        add_entry(
-            bv,
-            {
-                "filename": safe_view_filename(bv),
-                "repr": "",
-                "source": "load" if item["owned"] else "session",
-                "session": str(item["session"]),
-                "owned": bool(item["owned"]),
-                "current": str(item["session"]) == current_session,
-                "attachable": False,
             },
         )
 
     rows = list(by_id.values())
     rows.sort(
         key=lambda item: (
-            str(item[1].get("filename", "") or ""),
-            str(item[1].get("session", "") or ""),
-            str(item[1].get("source", "") or ""),
+            str(item[1].get("target", "") or ""),
+            str(item[1].get("id", "") or ""),
         )
     )
     return rows
+
+
+def shared_view_inventory(
+    *,
+    include_unnamed: bool = False,
+    full: bool = False,
+) -> List[Tuple[weakref.ReferenceType[Any], Dict[str, Any]]]:
+    return build_shared_view_inventory(
+        collect_gui_bvs(),
+        include_unnamed=include_unnamed,
+        full=full,
+    )
+
+
+def find_shared_view(
+    view_id: str,
+    *,
+    include_unnamed: bool = False,
+) -> Tuple[Any, Dict[str, Any]]:
+    wanted = str(view_id or "").strip()
+    if not wanted:
+        raise ValueError("view id is required")
+
+    for bv_ref, info in shared_view_inventory(include_unnamed=include_unnamed):
+        if str(info.get("id", "")) != wanted:
+            continue
+        bv = bv_ref()
+        if bv is None:
+            raise RuntimeError("selected shared view is no longer available")
+        return bv, dict(info)
+
+    raise ValueError(f"unknown shared view id: {wanted}")
 
 
 def _run_on_main_thread(fn):
@@ -353,13 +387,3 @@ def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
     unique = list(by_id.values())
     dbg(f"collect_gui_bvs: {len(unique)} unique views")
     return unique
-
-
-def match_views(views: List[Dict[str, Any]], match: str) -> List[int]:
-    needle = (match or "").lower()
-    matches: List[int] = []
-    for idx, info in enumerate(views):
-        haystacks = [info.get("filename", ""), info.get("repr", "")]
-        if any(needle in (h or "").lower() for h in haystacks):
-            matches.append(idx)
-    return matches

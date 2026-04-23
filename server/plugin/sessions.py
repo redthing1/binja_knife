@@ -1,10 +1,9 @@
 from __future__ import annotations
 
 import threading
-import weakref
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Optional
 
 import binaryninja  # type: ignore
 
@@ -35,6 +34,13 @@ def _safe_filename(bv: Optional[Any]) -> str:
         )
     except Exception:
         return ""
+
+
+def _safe_getattr(obj: Any, name: str, default: Any = "") -> Any:
+    try:
+        return getattr(obj, name)
+    except Exception:
+        return default
 
 
 def _safe_close_bv(bv: Optional[Any]) -> bool:
@@ -71,19 +77,10 @@ class Session:
     owns_bv: bool = False
     owned_path: str = ""
     globals: Dict[str, Any] = field(default_factory=dict)
-    # Cached rows from the most recent global view inventory.
-    views_cache: List[Tuple[weakref.ReferenceType[Any], Dict[str, Any]]] = field(
-        default_factory=list
-    )
-    views_cache_include_unnamed: bool = False
 
     def __post_init__(self) -> None:
         self.globals = _new_globals(self.bv)
         self.globals["__session_name__"] = self.name
-
-    def clear_views_cache(self) -> None:
-        self.views_cache = []
-        self.views_cache_include_unnamed = False
 
     def set_bv(
         self,
@@ -95,7 +92,6 @@ class Session:
         prev_bv = self.bv
         prev_owned = self.owns_bv
         prev_owned_path = self.owned_path
-        prev_filename = _safe_filename(prev_bv)
         replaced = prev_bv is not None and prev_bv is not bv
         previous_closed = False
 
@@ -109,22 +105,44 @@ class Session:
         self.globals["bv"] = bv
         return {
             "replaced": replaced,
-            "previous_owned": prev_owned,
             "previous_owned_path": prev_owned_path,
             "previous_closed": previous_closed,
-            "previous_filename": prev_filename,
         }
 
-    def detach_bv(
-        self, *, close_owned: bool = True, force_close: bool = False
-    ) -> Dict[str, Any]:
+    def snapshot(self, *, busy: bool = False) -> Dict[str, Any]:
+        if self.bv is None:
+            return {
+                "name": self.name,
+                "mode": "empty",
+                "target": "",
+                "busy": bool(busy),
+            }
+
+        info: Dict[str, Any] = {
+            "name": self.name,
+            "mode": "load" if self.owns_bv else "attach",
+            "target": _safe_filename(self.bv),
+            "busy": bool(busy),
+        }
+        arch = _safe_getattr(self.bv, "arch", None)
+        analysis_state = _safe_getattr(self.bv, "analysis_state", None)
+        info.update(
+            {
+                "view_type": _safe_getattr(self.bv, "view_type", "") or "",
+                "arch": _safe_getattr(arch, "name", "") or str(arch or ""),
+                "analysis_state": _safe_getattr(analysis_state, "name", "")
+                or str(analysis_state or ""),
+            }
+        )
+        return info
+
+    def detach_bv(self, *, close_owned: bool = True) -> Dict[str, Any]:
         prev_bv = self.bv
         prev_owned = self.owns_bv
         prev_owned_path = self.owned_path
-        prev_filename = _safe_filename(prev_bv)
         had_attached = prev_bv is not None
         closed = False
-        if had_attached and (force_close or (close_owned and prev_owned)):
+        if had_attached and close_owned and prev_owned:
             closed = _safe_close_bv(prev_bv)
 
         self.bv = None
@@ -133,17 +151,14 @@ class Session:
         self.globals["bv"] = None
         return {
             "had_attached": had_attached,
-            "was_owned": prev_owned,
             "previous_owned_path": prev_owned_path,
             "closed": closed,
-            "filename": prev_filename,
-            "forced": bool(force_close),
         }
 
     def reset(self, keep_bv: bool = True) -> Dict[str, Any]:
         out: Dict[str, Any] = {"keep_bv": bool(keep_bv), "previous_owned_path": ""}
         if not keep_bv:
-            out = self.detach_bv(close_owned=True, force_close=False)
+            out = self.detach_bv(close_owned=True)
 
         bv = self.bv if keep_bv else None
         owns_bv = self.owns_bv if keep_bv else False
@@ -153,7 +168,6 @@ class Session:
         self.owned_path = owned_path
         self.globals = _new_globals(bv)
         self.globals["__session_name__"] = self.name
-        self.clear_views_cache()
         return out
 
 
@@ -164,6 +178,10 @@ class SessionManager:
         self._owned_path_claims: Dict[str, str] = {}
 
     def open(self, name: str) -> Session:
+        sess, _created = self.open_with_created(name)
+        return sess
+
+    def open_with_created(self, name: str) -> tuple[Session, bool]:
         if not name or not isinstance(name, str):
             raise ValueError("session name must be a non-empty string")
         with self._lock:
@@ -171,7 +189,8 @@ class SessionManager:
             if sess is None:
                 sess = Session(name=name)
                 self._sessions[name] = sess
-            return sess
+                return sess, True
+            return sess, False
 
     def get(self, name: str) -> Session:
         with self._lock:
@@ -180,7 +199,11 @@ class SessionManager:
                 raise KeyError(f"unknown session: {name}")
             return sess
 
-    def list_names(self) -> List[str]:
+    def get_optional(self, name: str) -> Optional[Session]:
+        with self._lock:
+            return self._sessions.get(name)
+
+    def list_names(self) -> list[str]:
         with self._lock:
             return sorted(self._sessions.keys())
 

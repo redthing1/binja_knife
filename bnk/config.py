@@ -10,7 +10,7 @@ class Config:
     host: str = "127.0.0.1"
     port: int = 18812
     timeout: float = 3600.0
-    session: str = "default"
+    session: Optional[str] = None
     json_output: bool = False
     pretty: bool = False
     tool_root: Optional[str] = None
@@ -40,5 +40,5 @@ def env_default_timeout() -> float:
         raise ValueError(f"invalid BNK_TIMEOUT={raw!r}") from exc
 
 
-def env_default_session() -> str:
-    return os.environ.get("BNK_SESSION", "default")
+def env_default_session() -> Optional[str]:
+    return os.environ.get("BNK_SESSION")

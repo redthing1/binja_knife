@@ -8,6 +8,15 @@ it talks to the [`Knife Server`](./server) plugin over rpyc and provides:
 - batteries-included tools (strings, xrefs, IL, tags, common edits)
 - arbitrary server-side python execution (`bnk py *`)
 
+## core model
+
+`session` is the durable work context. Headless analysis lives in a named
+session and is reused with `-s NAME`.
+
+`view` lists shared GUI/live BinaryViews that can be attached to a session.
+
+`request` reports or interrupts currently running operations.
+
 ## quick start
 
 server:
@@ -18,10 +27,12 @@ client:
 ```sh
 uv run bnk -h
 uv run bnk ping
+uv run bnk session list
 ```
 
 multiline python:
 ```sh
+uv run bnk -s demo session load /path/to/binary
 cat <<'PY' | uv run bnk -s demo py exec -
 print("hello from binja")
 __result__ = 123

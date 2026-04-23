@@ -6,7 +6,7 @@ from pathlib import Path
 import typer
 
 from .cli_app import CONTEXT_SETTINGS, make_app
-from .cli_ctx import cfg_from_ctx, print_value, with_session
+from .cli_ctx import cfg_from_ctx, print_value, require_session, with_session
 
 
 app = make_app()
@@ -24,9 +24,10 @@ def _run_session_code(
     argv: list[str],
 ) -> None:
     cfg = cfg_from_ctx(ctx)
+    session = require_session(cfg)
     out = with_session(
         cfg,
-        lambda c: c.run_code(cfg.session, code, argv=argv, capture_output=True),
+        lambda c: c.run_code(session, code, argv=argv, capture_output=True),
     )
     print_value(cfg, out)
 
@@ -68,13 +69,14 @@ def py_run(
     ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
+    session = require_session(cfg)
     path = path.expanduser().resolve()
     script_argv = _script_argv(ctx, list(argv))
 
     out = with_session(
         cfg,
         lambda c: c.run_file(
-            cfg.session,
+            session,
             str(path),
             argv=script_argv,
             capture_output=True,

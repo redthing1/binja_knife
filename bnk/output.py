@@ -59,7 +59,11 @@ def _format_block(lines: list[str], header: str, text: str, *, indent: int) -> N
 def _preferred_columns(cols: list[str]) -> list[str]:
     preferred = [
         "index",
+        "id",
         "name",
+        "mode",
+        "target",
+        "busy",
         "filename",
         "address_hex",
         "address",

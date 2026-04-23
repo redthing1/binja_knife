@@ -21,6 +21,12 @@ def cfg_from_ctx(ctx: typer.Context) -> Config:
     return cfg
 
 
+def require_session(cfg: Config) -> str:
+    if not cfg.session:
+        raise click.ClickException("provide -s/--session or set BNK_SESSION")
+    return cfg.session
+
+
 def connect(cfg: Config) -> KnifeClient:
     try:
         return KnifeClient(
@@ -79,8 +85,9 @@ def with_client(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
 
 
 def with_session(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
+    require_session(cfg)
+
     def wrapped(c: KnifeClient) -> T:
-        c.session_open(cfg.session)
         return fn(c)
 
     return with_client(cfg, wrapped)
@@ -116,8 +123,9 @@ def tool_root(cfg: Config) -> Path:
 
 
 def _run_in_session(cfg: Config, code: str) -> Any:
+    session = require_session(cfg)
     return with_session(
-        cfg, lambda c: c.run_code(cfg.session, code, capture_output=True)
+        cfg, lambda c: c.run_code(session, code, capture_output=True)
     )
 
 

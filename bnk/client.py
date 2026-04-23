@@ -81,59 +81,39 @@ class KnifeClient:
 
     # session ops
 
-    def session_open(self, name: str) -> str:
-        return str(self._obtain(self.root.session_open(name)))
+    def session_open(self, name: str) -> Dict[str, Any]:
+        return dict(self._obtain(self.root.session_open(name)))
 
-    def session_list(self) -> List[str]:
+    def session_list(self) -> List[Dict[str, Any]]:
         return list(self._obtain(self.root.session_list()))
 
-    def session_close(self, name: str) -> bool:
-        return bool(self._obtain(self.root.session_close(name)))
+    def session_show(self, name: str) -> Dict[str, Any]:
+        return dict(self._obtain(self.root.session_show(name)))
 
-    def session_reset(self, name: str, *, keep_bv: bool = True) -> bool:
-        return bool(self._obtain(self.root.session_reset(name, keep_bv=keep_bv)))
+    def session_close(self, name: str) -> Dict[str, Any]:
+        return dict(self._obtain(self.root.session_close(name)))
 
-    # view ops
+    def session_reset(self, name: str, *, keep_bv: bool = True) -> Dict[str, Any]:
+        return dict(self._obtain(self.root.session_reset(name, keep_bv=keep_bv)))
 
-    def view_list(
+    def session_attach(
         self,
         session: str,
         *,
-        include_unnamed: bool = False,
-        full: bool = False,
-    ) -> List[Dict[str, Any]]:
-        return list(
-            self._obtain(
-                self.root.view_list(session, include_unnamed=include_unnamed, full=full)
-            )
-        )
-
-    def view_attach(
-        self,
-        session: str,
-        *,
-        index: Optional[int] = None,
-        match: Optional[str] = None,
+        view_id: str,
         include_unnamed: bool = False,
     ) -> Dict[str, Any]:
         return dict(
             self._obtain(
-                self.root.view_attach(
+                self.root.session_attach(
                     session,
-                    index=index,
-                    match=match,
+                    view_id,
                     include_unnamed=include_unnamed,
                 )
             )
         )
 
-    def view_status(self, session: str) -> Dict[str, Any]:
-        return dict(self._obtain(self.root.view_status(session)))
-
-    def view_close(self, session: str, *, force: bool = False) -> Dict[str, Any]:
-        return dict(self._obtain(self.root.view_close(session, force=bool(force))))
-
-    def view_load(
+    def session_load(
         self,
         session: str,
         path: str,
@@ -146,12 +126,29 @@ class KnifeClient:
             options_json = json.dumps(options)
         return dict(
             self._obtain(
-                self.root.view_load(
+                self.root.session_load(
                     session,
                     path,
                     update_analysis=update_analysis,
                     options_json=options_json,
                 )
+            )
+        )
+
+    def session_detach(self, session: str) -> Dict[str, Any]:
+        return dict(self._obtain(self.root.session_detach(session)))
+
+    # view ops
+
+    def view_list(
+        self,
+        *,
+        include_unnamed: bool = False,
+        full: bool = False,
+    ) -> List[Dict[str, Any]]:
+        return list(
+            self._obtain(
+                self.root.view_list(include_unnamed=include_unnamed, full=full)
             )
         )
 

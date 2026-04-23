@@ -9,6 +9,7 @@ from .cli_app import make_app
 from .cli_ctx import cfg_from_ctx, print_value, with_client
 from .cli_edit import app as edit_app
 from .cli_py import app as py_app
+from .cli_request import app as request_app
 from .cli_session import app as session_app
 from .cli_tool import app as tool_app
 from .cli_view import app as view_app
@@ -25,6 +26,7 @@ from .endpoint import parse_endpoint
 app = make_app(name="bnk", help="bnk: binaryninja knife")
 app.add_typer(session_app, name="session")
 app.add_typer(view_app, name="view")
+app.add_typer(request_app, name="request")
 app.add_typer(py_app, name="py")
 app.add_typer(tool_app, name="tool")
 app.add_typer(edit_app, name="edit")
@@ -46,11 +48,11 @@ def main_cb(
         "--timeout",
         help="RPyC sync_request_timeout seconds (0 disables timeout)",
     ),
-    session: str = typer.Option(
+    session: Optional[str] = typer.Option(
         env_default_session(),
         "-s",
         "--session",
-        help="named server-side session",
+        help="named server-side session (required for session-bound commands)",
     ),
     json_output: bool = typer.Option(
         False, "-j", "--json", help="output machine-readable json"

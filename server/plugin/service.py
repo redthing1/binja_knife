@@ -8,7 +8,6 @@ import sys
 import threading
 import time
 import traceback
-import weakref
 from dataclasses import dataclass
 from contextlib import contextmanager
 from contextlib import redirect_stderr, redirect_stdout
@@ -28,8 +27,8 @@ from .locks import BN_LOCK, ROOT_LOCK
 from .constants import PLUGIN_NAME, SETTINGS_GROUP
 from .log import dbg
 from .root_state import reset_root_globals, root_bv, root_globals, set_root_bv
-from .sessions import SessionManager
-from .views import build_view_inventory, collect_gui_bvs, match_views, view_info_full
+from .sessions import Session, SessionManager
+from .views import find_shared_view, shared_view_inventory
 
 
 SESSIONS = SessionManager()
@@ -122,6 +121,14 @@ def _active_request_snapshot(session: Optional[str] = None) -> Optional[Dict[str
         count=len(requests),
         requests=requests,
     )
+
+
+def _busy_sessions() -> set[str]:
+    return {
+        request.session
+        for request in _select_active_requests()
+        if request.session is not None
+    }
 
 
 @contextmanager
@@ -305,41 +312,31 @@ def _run_code(
     )
 
 
-def _snapshot_session_views() -> List[Dict[str, Any]]:
-    snapshots: List[Dict[str, Any]] = []
-    for session_name in SESSIONS.list_names():
+def _session_snapshot(name: str) -> Dict[str, Any]:
+    sess = SESSIONS.get(name)
+    return _snapshot_session(sess, busy=name in _busy_sessions())
+
+
+def _session_snapshots() -> List[Dict[str, Any]]:
+    busy = _busy_sessions()
+    out: List[Dict[str, Any]] = []
+    for name in SESSIONS.list_names():
         try:
-            sess = SESSIONS.get(session_name)
+            sess = SESSIONS.get(name)
         except KeyError:
             continue
-        with sess.lock:
-            bv = sess.bv
-            owns_bv = sess.owns_bv
-        if bv is None:
-            continue
-        snapshots.append(
-            {
-                "session": session_name,
-                "bv": bv,
-                "owned": bool(owns_bv),
-            }
-        )
-    return snapshots
+        out.append(_snapshot_session(sess, busy=name in busy))
+    return out
 
 
-def _build_view_inventory(
-    current_session: str,
-    session_views: List[Dict[str, Any]],
-    include_unnamed: bool = False,
-    full: bool = False,
-) -> List[tuple[weakref.ReferenceType[Any], Dict[str, Any]]]:
-    return build_view_inventory(
-        collect_gui_bvs(),
-        session_views,
-        current_session=current_session,
-        include_unnamed=include_unnamed,
-        full=full,
-    )
+def _snapshot_session(sess: Session, *, busy: bool) -> Dict[str, Any]:
+    locked = sess.lock.acquire(blocking=False)
+    try:
+        snap = sess.snapshot(busy=busy or not locked)
+    finally:
+        if locked:
+            sess.lock.release()
+    return snap
 
 
 def _release_owned_path(session_name: str, path: str) -> None:
@@ -442,131 +439,65 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                     source, update_analysis=update_analysis, options=options
                 )
 
-    def exposed_session_open(self, name: str) -> str:
-        SESSIONS.open(name)
-        return name
+    def exposed_session_open(self, name: str):
+        sess = SESSIONS.open(name)
+        with sess.lock:
+            return sess.snapshot(busy=False)
 
     def exposed_session_list(self):
-        return SESSIONS.list_names()
+        return _session_snapshots()
+
+    def exposed_session_show(self, name: str):
+        return _session_snapshot(name)
 
     def exposed_session_close(self, name: str) -> bool:
         try:
             sess = SESSIONS.get(name)
         except KeyError:
-            return False
+            return {"name": name, "closed": False}
 
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.session_close", session=name):
-                out = sess.detach_bv(close_owned=True, force_close=False)
-                sess.clear_views_cache()
+                out = sess.detach_bv(close_owned=True)
                 _release_previous_owned_path(name, out)
-        return SESSIONS.close(name)
+        return {"name": name, "closed": SESSIONS.close(name)}
 
-    def exposed_session_reset(self, name: str, keep_bv: bool = True) -> bool:
+    def exposed_session_reset(self, name: str, keep_bv: bool = True):
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
             with _track_active_request(f"session.{name}.session_reset", session=name):
                 out = sess.reset(keep_bv=keep_bv)
                 _release_previous_owned_path(name, out)
-        return True
+                snap = sess.snapshot(busy=False)
+                snap["reset"] = True
+                return snap
 
-    def exposed_view_list(
-        self, name: str, include_unnamed: bool = False, full: bool = False
-    ):
-        sess = SESSIONS.get(name)
-        session_views = _snapshot_session_views()
-        with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_list", session=name):
-                entries = _build_view_inventory(
-                    current_session=name,
-                    session_views=session_views,
-                    include_unnamed=include_unnamed,
-                    full=full,
-                )
-                sess.views_cache = entries
-                sess.views_cache_include_unnamed = include_unnamed
-
-                views = []
-                for idx, (_bv_ref, info) in enumerate(entries):
-                    out = dict(info)
-                    out["index"] = idx
-                    views.append(out)
-                return views
-
-    def exposed_view_attach(
+    def exposed_session_attach(
         self,
         name: str,
-        index: Optional[int] = None,
-        match: Optional[str] = None,
+        view_id: str,
         include_unnamed: bool = False,
     ):
-        sess = SESSIONS.get(name)
-        session_views = _snapshot_session_views()
+        with BN_LOCK:
+            bv, info = find_shared_view(
+                view_id,
+                include_unnamed=include_unnamed,
+            )
+
+        sess = SESSIONS.open(name)
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_attach", session=name):
-                # if cache is empty (or missing unnamed views), refresh the listing
-                if not sess.views_cache or (
-                    include_unnamed and not sess.views_cache_include_unnamed
-                ):
-                    sess.views_cache = _build_view_inventory(
-                        current_session=name,
-                        session_views=session_views,
-                        include_unnamed=include_unnamed,
-                        full=False,
-                    )
-                    sess.views_cache_include_unnamed = include_unnamed
-
-                views = [info for _bv_ref, info in sess.views_cache]
-
-                chosen_index: Optional[int] = None
-                if index is not None:
-                    if not isinstance(index, int):
-                        raise ValueError("index must be an int")
-                    chosen_index = index
-                elif match:
-                    matches = match_views(views, match)
-                    if not matches:
-                        raise ValueError(f"no views match {match!r}")
-                    if len(matches) > 1:
-                        raise ValueError(f"multiple views match {match!r}: {matches}")
-                    chosen_index = matches[0]
-                else:
-                    raise ValueError("attach requires index or match")
-
-                if chosen_index < 0 or chosen_index >= len(sess.views_cache):
-                    raise IndexError(f"index out of range: {chosen_index}")
-
-                bv_ref, info = sess.views_cache[chosen_index]
-                bv = bv_ref()
-                if bv is None:
-                    raise RuntimeError(
-                        "selected view is no longer available; run 'bnk view list' again"
-                    )
-                if not bool(info.get("attachable", False)):
-                    raise ValueError(
-                        "selected view is not attachable; session-owned/background views are informational in 'bnk view list'"
-                    )
-
+            with _track_active_request(f"session.{name}.session_attach", session=name):
                 replace_info = sess.set_bv(bv, owned=False)
                 _release_previous_owned_path(name, replace_info)
-                out = view_info_full(bv)
-                out["index"] = chosen_index
-                out["source"] = info.get("source", "")
-                out["session"] = name
+                out = sess.snapshot(busy=False)
+                out["id"] = info.get("id", "")
+                if replace_info.get("replaced"):
+                    out["replaced"] = True
+                if replace_info.get("previous_closed"):
+                    out["previous_closed"] = True
                 return out
 
-    def exposed_view_status(self, name: str):
-        sess = SESSIONS.get(name)
-        with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_status", session=name):
-                if sess.bv is None:
-                    return {"attached": False}
-                out = view_info_full(sess.bv)
-                out["attached"] = True
-                out["owned"] = bool(sess.owns_bv)
-                return out
-
-    def exposed_view_load(
+    def exposed_session_load(
         self,
         name: str,
         path: str,
@@ -576,13 +507,25 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
         options = {}
         if options_json is not None:
             options = json.loads(options_json)
-        sess = SESSIONS.get(name)
+
+        sess = SESSIONS.get_optional(name)
+        created_session = sess is None
+        claimed_path = ""
+        claimed_new_path = False
+        if created_session:
+            claimed_path = SESSIONS.claim_owned_path(name, path)
+            claimed_new_path = bool(claimed_path)
+            sess, created_session = SESSIONS.open_with_created(name)
+
         with sess.lock, BN_LOCK:
             previous_owned_path = sess.owned_path
-            claimed_path = SESSIONS.claim_owned_path(name, path)
-            claimed_new_path = bool(claimed_path and claimed_path != previous_owned_path)
-            with _track_active_request(f"session.{name}.view_load", session=name):
-                try:
+            try:
+                if not claimed_path:
+                    claimed_path = SESSIONS.claim_owned_path(name, path)
+                    claimed_new_path = bool(
+                        claimed_path and claimed_path != previous_owned_path
+                    )
+                with _track_active_request(f"session.{name}.session_load", session=name):
                     bv = binaryninja.load(
                         path, update_analysis=update_analysis, options=options
                     )
@@ -595,26 +538,45 @@ class KnifeServerService(_ServiceBase):  # instantiated by rpyc in server thread
                         replace_info,
                         keep_path=claimed_path,
                     )
-                    out = view_info_full(bv)
-                    out["attached"] = True
-                    out["owned"] = True
-                    out["source"] = "load"
-                    out["replaced"] = bool(replace_info.get("replaced"))
-                    out["previous_closed"] = bool(replace_info.get("previous_closed"))
+                    out = sess.snapshot(busy=False)
+                    if replace_info.get("replaced"):
+                        out["replaced"] = True
+                    if replace_info.get("previous_closed"):
+                        out["previous_closed"] = True
                     return out
-                except Exception:
-                    if claimed_new_path:
-                        _release_owned_path(name, claimed_path)
-                    raise
+            except Exception:
+                if claimed_new_path:
+                    _release_owned_path(name, claimed_path)
+                if created_session:
+                    out = sess.detach_bv(close_owned=True)
+                    _release_previous_owned_path(name, out)
+                    SESSIONS.close(name)
+                raise
 
-    def exposed_view_close(self, name: str, force: bool = False):
+    def exposed_session_detach(self, name: str):
         sess = SESSIONS.get(name)
         with sess.lock, BN_LOCK:
-            with _track_active_request(f"session.{name}.view_close", session=name):
-                out = sess.detach_bv(close_owned=True, force_close=bool(force))
+            with _track_active_request(f"session.{name}.session_detach", session=name):
+                out = sess.detach_bv(close_owned=True)
                 _release_previous_owned_path(name, out)
-                out["attached"] = False
-                return out
+                snap = sess.snapshot(busy=False)
+                if out.get("had_attached"):
+                    snap["detached"] = True
+                if out.get("closed"):
+                    snap["closed"] = True
+                return snap
+
+    def exposed_view_list(self, include_unnamed: bool = False, full: bool = False):
+        with BN_LOCK:
+            with _track_active_request("view_list"):
+                views = []
+                entries = shared_view_inventory(
+                    include_unnamed=include_unnamed,
+                    full=full,
+                )
+                for _bv_ref, info in entries:
+                    views.append(dict(info))
+                return views
 
     def exposed_run_code(
         self, name: str, code: str, argv=None, capture_output: bool = True
