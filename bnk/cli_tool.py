@@ -49,9 +49,9 @@ def tool_call(
     tool: str = typer.Argument(..., help="tool name, e.g. strings.like-data"),
     kv: list[str] = typer.Argument([], help="KEY=VALUE (repeatable)"),
     params_json: Optional[str] = typer.Option(
-        None, "--params-json", help="json object"
+        None, "--params-json", "-J", help="json object"
     ),
-    arg: list[str] = typer.Option([], "--arg", help="KEY=VALUE (repeatable)"),
+    arg: list[str] = typer.Option([], "--arg", "-a", help="KEY=VALUE"),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
 
@@ -74,9 +74,9 @@ def tool_call(
 @app.command("summary")
 def tool_summary(
     ctx: typer.Context,
-    function_sample_limit: int = typer.Option(10, "--function-sample-limit"),
-    import_sample_limit: int = typer.Option(10, "--import-sample-limit"),
-    string_sample_limit: int = typer.Option(10, "--string-sample-limit"),
+    function_sample_limit: int = typer.Option(10, "--function-sample-limit", "-F"),
+    import_sample_limit: int = typer.Option(10, "--import-sample-limit", "-I"),
+    string_sample_limit: int = typer.Option(10, "--string-sample-limit", "-S"),
 ) -> None:
     _call(
         ctx,
@@ -98,7 +98,7 @@ def tool_function(ctx: typer.Context, name_or_addr: str = typer.Argument(...)) -
 def tool_hlil(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    max_lines: Optional[int] = typer.Option(None, "--max-lines"),
+    max_lines: Optional[int] = typer.Option(None, "--max-lines", "-n"),
 ) -> None:
     _call(ctx, "il.hlil", {"name_or_addr": name_or_addr, "max_lines": max_lines})
 
@@ -107,7 +107,7 @@ def tool_hlil(
 def tool_mlil(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    max_lines: Optional[int] = typer.Option(None, "--max-lines"),
+    max_lines: Optional[int] = typer.Option(None, "--max-lines", "-n"),
 ) -> None:
     _call(ctx, "il.mlil", {"name_or_addr": name_or_addr, "max_lines": max_lines})
 
@@ -116,7 +116,7 @@ def tool_mlil(
 def tool_llil(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    max_lines: Optional[int] = typer.Option(None, "--max-lines"),
+    max_lines: Optional[int] = typer.Option(None, "--max-lines", "-n"),
 ) -> None:
     _call(ctx, "il.llil", {"name_or_addr": name_or_addr, "max_lines": max_lines})
 
@@ -135,9 +135,16 @@ def tool_segments(ctx: typer.Context) -> None:
 def tool_imports(
     ctx: typer.Context,
     pattern: Optional[str] = typer.Argument(None),
-    case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
-    regex: bool = typer.Option(False, "--regex/--no-regex"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    case_insensitive: bool = typer.Option(
+        True,
+        "--case-insensitive/--case-sensitive",
+        "-i/-I",
+        show_default=False,
+    ),
+    regex: bool = typer.Option(
+        False, "--regex/--no-regex", "-r/-R", show_default=False
+    ),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     if pattern:
         _call(
@@ -158,15 +165,24 @@ def tool_imports(
 def tool_strings(
     ctx: typer.Context,
     pattern: str = typer.Argument(...),
-    section: Optional[str] = typer.Option(None, "--section"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
-    case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
-    regex: bool = typer.Option(False, "--regex/--no-regex"),
-    data: bool = typer.Option(False, "--data", help="raw byte search"),
-    xrefs: bool = typer.Option(False, "--xrefs", help="include xrefs to matches"),
-    max_len: int = typer.Option(256, "--max-len", help="max extracted c-string length"),
-    string_limit: Optional[int] = typer.Option(None, "--string-limit"),
-    xref_limit: Optional[int] = typer.Option(None, "--xref-limit"),
+    section: Optional[str] = typer.Option(None, "--section", "-S"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
+    case_insensitive: bool = typer.Option(
+        True,
+        "--case-insensitive/--case-sensitive",
+        "-i/-I",
+        show_default=False,
+    ),
+    regex: bool = typer.Option(
+        False, "--regex/--no-regex", "-r/-R", show_default=False
+    ),
+    data: bool = typer.Option(False, "--data", "-d", help="raw bytes"),
+    xrefs: bool = typer.Option(False, "--xrefs", "-x", help="with xrefs"),
+    max_len: int = typer.Option(
+        256, "--max-len", "-m", help="max c-string len"
+    ),
+    string_limit: Optional[int] = typer.Option(None, "--string-limit", "-L"),
+    xref_limit: Optional[int] = typer.Option(None, "--xref-limit", "-X"),
 ) -> None:
     if data and xrefs:
         raise typer.BadParameter("--data and --xrefs are mutually exclusive")
@@ -219,11 +235,18 @@ def tool_functions(
     ctx: typer.Context,
     pattern: Optional[str] = typer.Argument(None),
     include_imports: bool = typer.Option(
-        True, "--include-imports/--no-include-imports"
+        True, "--include-imports/--no-include-imports", show_default=False
     ),
-    case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
-    regex: bool = typer.Option(False, "--regex/--no-regex"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    case_insensitive: bool = typer.Option(
+        True,
+        "--case-insensitive/--case-sensitive",
+        "-i/-I",
+        show_default=False,
+    ),
+    regex: bool = typer.Option(
+        False, "--regex/--no-regex", "-r/-R", show_default=False
+    ),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     if pattern:
         _call(
@@ -249,10 +272,17 @@ def tool_functions(
 def tool_symbols(
     ctx: typer.Context,
     pattern: str = typer.Argument(...),
-    symbol_type: str = typer.Option("function", "--type"),
-    case_insensitive: bool = typer.Option(True, "--case-insensitive/--case-sensitive"),
-    regex: bool = typer.Option(False, "--regex/--no-regex"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    symbol_type: str = typer.Option("function", "--type", "-t"),
+    case_insensitive: bool = typer.Option(
+        True,
+        "--case-insensitive/--case-sensitive",
+        "-i/-I",
+        show_default=False,
+    ),
+    regex: bool = typer.Option(
+        False, "--regex/--no-regex", "-r/-R", show_default=False
+    ),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     _call(
         ctx,
@@ -271,7 +301,7 @@ def tool_symbols(
 def tool_callers(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     _call(ctx, "function.callers", {"name_or_addr": name_or_addr, "limit": limit})
 
@@ -280,7 +310,7 @@ def tool_callers(
 def tool_callees(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     _call(ctx, "function.callees", {"name_or_addr": name_or_addr, "limit": limit})
 
@@ -289,7 +319,7 @@ def tool_callees(
 def tool_call_sites(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     _call(ctx, "function.call-sites", {"name_or_addr": name_or_addr, "limit": limit})
 
@@ -298,9 +328,9 @@ def tool_call_sites(
 def tool_xrefs(
     ctx: typer.Context,
     target: str = typer.Argument(...),
-    code: bool = typer.Option(True, "--code/--no-code"),
-    data: bool = typer.Option(True, "--data/--no-data"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
+    code: bool = typer.Option(True, "--code/--no-code", "-c/-C", show_default=False),
+    data: bool = typer.Option(True, "--data/--no-data", "-d/-D", show_default=False),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
 ) -> None:
     _call(
         ctx,
@@ -317,10 +347,10 @@ def tool_tags_types(ctx: typer.Context) -> None:
 @tags_app.command("list")
 def tool_tags_list(
     ctx: typer.Context,
-    tag_type: Optional[str] = typer.Option(None, "--type"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
-    auto: bool = typer.Option(False, "--auto", help="only auto tags"),
-    user: bool = typer.Option(False, "--user", help="only user tags"),
+    tag_type: Optional[str] = typer.Option(None, "--type", "-t"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
+    auto: bool = typer.Option(False, "--auto", "-a", help="auto tags"),
+    user: bool = typer.Option(False, "--user", "-u", help="user tags"),
 ) -> None:
     _call(
         ctx,
@@ -337,9 +367,9 @@ def tool_tags_list(
 def tool_tags_at(
     ctx: typer.Context,
     addr: str = typer.Argument(...),
-    limit: Optional[int] = typer.Option(None, "--limit"),
-    auto: bool = typer.Option(False, "--auto", help="only auto tags"),
-    user: bool = typer.Option(False, "--user", help="only user tags"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
+    auto: bool = typer.Option(False, "--auto", "-a", help="auto tags"),
+    user: bool = typer.Option(False, "--user", "-u", help="user tags"),
 ) -> None:
     _call(
         ctx,
@@ -352,10 +382,10 @@ def tool_tags_at(
 def tool_tags_function(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
-    tag_type: Optional[str] = typer.Option(None, "--type"),
-    limit: Optional[int] = typer.Option(None, "--limit"),
-    auto: bool = typer.Option(False, "--auto", help="only auto tags"),
-    user: bool = typer.Option(False, "--user", help="only user tags"),
+    tag_type: Optional[str] = typer.Option(None, "--type", "-t"),
+    limit: Optional[int] = typer.Option(None, "--limit", "-l"),
+    auto: bool = typer.Option(False, "--auto", "-a", help="auto tags"),
+    user: bool = typer.Option(False, "--user", "-u", help="user tags"),
 ) -> None:
     _call(
         ctx,

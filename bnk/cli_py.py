@@ -40,8 +40,10 @@ def _script_argv(ctx: typer.Context, argv: list[str]) -> list[str]:
 @app.command("exec")
 def py_exec(
     ctx: typer.Context,
-    code: str = typer.Argument(..., help="python code, or '-' to read from stdin"),
-    argv: list[str] = typer.Option([], "--argv", help="arguments for sys.argv[1:]"),
+    code: str = typer.Argument(..., help="code or '-'"),
+    argv: list[str] = typer.Option(
+        [], "--argv", "-a", help="sys.argv[1:]"
+    ),
 ) -> None:
     if code == "-":
         code = sys.stdin.read()
@@ -52,7 +54,9 @@ def py_exec(
 def py_eval(
     ctx: typer.Context,
     expr: str = typer.Argument(...),
-    argv: list[str] = typer.Option([], "--argv", help="arguments for sys.argv[1:]"),
+    argv: list[str] = typer.Option(
+        [], "--argv", "-a", help="sys.argv[1:]"
+    ),
 ) -> None:
     code = f"__result__ = ({expr})"
     _run_session_code(ctx, code, argv=list(argv))
@@ -65,7 +69,8 @@ def py_run(
     argv: list[str] = typer.Option(
         [],
         "--argv",
-        help="arguments for sys.argv[1:] (repeat --argv or pass trailing args after PATH)",
+        "-a",
+        help="sys.argv[1:]",
     ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)

@@ -12,8 +12,10 @@ app = make_app()
 @app.command("list")
 def view_list(
     ctx: typer.Context,
-    include_unnamed: bool = typer.Option(False, "--all", help="include unnamed views"),
-    full: bool = typer.Option(False, "--full", help="include full metadata"),
+    include_unnamed: bool = typer.Option(
+        False, "--all", "-a", help="include unnamed views"
+    ),
+    full: bool = typer.Option(False, "--full", "-f", help="include full metadata"),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
     out = with_client(

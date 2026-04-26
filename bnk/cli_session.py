@@ -51,13 +51,19 @@ def session_load(
     local_path: bool = typer.Option(
         True,
         "--local/--remote",
-        help="Interpret PATH on the client filesystem (--local) vs on the server filesystem (--remote).",
+        "-L/-R",
+        help="client vs server path",
+        show_default=False,
     ),
     update_analysis: bool = typer.Option(
-        True, "--update-analysis/--no-update-analysis", help="run analysis"
+        True,
+        "--update-analysis/--no-update-analysis",
+        "-u/-U",
+        help="run analysis",
+        show_default=False,
     ),
     options_json: Optional[str] = typer.Option(
-        None, "--options-json", help="json dict"
+        None, "--options-json", "-O", help="load options JSON"
     ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
@@ -95,7 +101,9 @@ def session_load(
 def session_attach(
     ctx: typer.Context,
     view_id: str = typer.Argument(..., help="id from 'bnk view list'"),
-    include_unnamed: bool = typer.Option(False, "--all", help="include unnamed views"),
+    include_unnamed: bool = typer.Option(
+        False, "--all", "-a", help="include unnamed views"
+    ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)
     session = require_session(cfg)
@@ -122,7 +130,11 @@ def session_detach(ctx: typer.Context) -> None:
 def session_reset(
     ctx: typer.Context,
     keep_target: bool = typer.Option(
-        True, "--keep-target/--drop-target", help="keep current target"
+        True,
+        "--keep-target/--drop-target",
+        "-k/-d",
+        help="keep target",
+        show_default=False,
     ),
 ) -> None:
     cfg = cfg_from_ctx(ctx)

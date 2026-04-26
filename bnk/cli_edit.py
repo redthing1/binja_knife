@@ -48,7 +48,7 @@ def fn_rename(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
     new_name: str = typer.Argument(...),
-    analysis: str = typer.Option("none", "--analysis", help="none|update|wait"),
+    analysis: str = typer.Option("none", "--analysis", "-A", help="none|update|wait"),
 ) -> None:
     _edit(
         ctx,
@@ -62,7 +62,7 @@ def fn_type(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(...),
     proto: str = typer.Argument(..., help="C function prototype string"),
-    analysis: str = typer.Option("update", "--analysis", help="none|update|wait"),
+    analysis: str = typer.Option("update", "--analysis", "-A", help="none|update|wait"),
 ) -> None:
     _edit(
         ctx,
@@ -84,11 +84,11 @@ def var_rename(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(..., help="function name or address"),
     var: str = typer.Argument(
-        ..., help="variable identifier (hex/dec) or variable name"
+        ..., help="var ident/name"
     ),
     new_name: str = typer.Argument(...),
-    by: str = typer.Option("auto", "--by", help="auto|ident|name"),
-    analysis: str = typer.Option("update", "--analysis", help="none|update|wait"),
+    by: str = typer.Option("auto", "--by", "-b", help="auto|ident|name"),
+    analysis: str = typer.Option("update", "--analysis", "-A", help="none|update|wait"),
 ) -> None:
     _edit(
         ctx,
@@ -108,11 +108,11 @@ def var_type(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(..., help="function name or address"),
     var: str = typer.Argument(
-        ..., help="variable identifier (hex/dec) or variable name"
+        ..., help="var ident/name"
     ),
     type_str: str = typer.Argument(..., help="C type string"),
-    by: str = typer.Option("auto", "--by", help="auto|ident|name"),
-    analysis: str = typer.Option("update", "--analysis", help="none|update|wait"),
+    by: str = typer.Option("auto", "--by", "-b", help="auto|ident|name"),
+    analysis: str = typer.Option("update", "--analysis", "-A", help="none|update|wait"),
 ) -> None:
     _edit(
         ctx,
@@ -137,7 +137,7 @@ def _read_text_arg(text: str) -> str:
 def comment_view(
     ctx: typer.Context,
     addr: str = typer.Argument(...),
-    comment: str = typer.Argument(..., help="comment text, or '-' to read from stdin"),
+    comment: str = typer.Argument(..., help="text or '-'"),
 ) -> None:
     _edit(
         ctx,
@@ -151,7 +151,7 @@ def comment_func(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(..., help="function name or address"),
     addr: str = typer.Argument(...),
-    comment: str = typer.Argument(..., help="comment text, or '-' to read from stdin"),
+    comment: str = typer.Argument(..., help="text or '-'"),
 ) -> None:
     _edit(
         ctx,
@@ -188,7 +188,7 @@ def xref_code_add(
     from_addr: str = typer.Argument(...),
     to_addr: str = typer.Argument(...),
     function: Optional[str] = typer.Option(
-        None, "--function", "-f", help="function name or address (optional)"
+        None, "--function", "-f", help="function"
     ),
 ) -> None:
     _edit(
@@ -204,7 +204,7 @@ def xref_code_remove(
     from_addr: str = typer.Argument(...),
     to_addr: str = typer.Argument(...),
     function: Optional[str] = typer.Option(
-        None, "--function", "-f", help="function name or address (optional)"
+        None, "--function", "-f", help="function"
     ),
 ) -> None:
     _edit(
@@ -219,9 +219,9 @@ def tag_data_add(
     ctx: typer.Context,
     addr: str = typer.Argument(...),
     tag_type: str = typer.Argument(...),
-    data: str = typer.Argument(..., help="tag data, or '-' to read from stdin"),
+    data: str = typer.Argument(..., help="data or '-'"),
     auto: bool = typer.Option(
-        False, "--auto", help="create an auto tag (not user tag)"
+        False, "--auto", "-a", help="auto tag"
     ),
 ) -> None:
     _edit(
@@ -241,7 +241,7 @@ def tag_data_remove_type(
     ctx: typer.Context,
     addr: str = typer.Argument(...),
     tag_type: str = typer.Argument(...),
-    auto: bool = typer.Option(False, "--auto", help="remove auto tags (not user tags)"),
+    auto: bool = typer.Option(False, "--auto", "-a", help="auto tags"),
 ) -> None:
     _edit(
         ctx,
@@ -255,9 +255,9 @@ def tag_func_add(
     ctx: typer.Context,
     name_or_addr: str = typer.Argument(..., help="function name or address"),
     tag_type: str = typer.Argument(...),
-    data: str = typer.Argument(..., help="tag data, or '-' to read from stdin"),
-    addr: Optional[str] = typer.Option(None, "--addr", help="add an address tag"),
-    auto: bool = typer.Option(False, "--auto", help="create an auto tag"),
+    data: str = typer.Argument(..., help="data or '-'"),
+    addr: Optional[str] = typer.Option(None, "--addr", "-a", help="address tag"),
+    auto: bool = typer.Option(False, "--auto", "-A", help="auto tag"),
 ) -> None:
     _edit(
         ctx,
@@ -278,9 +278,9 @@ def tag_func_remove_type(
     name_or_addr: str = typer.Argument(..., help="function name or address"),
     tag_type: str = typer.Argument(...),
     addr: Optional[str] = typer.Option(
-        None, "--addr", help="remove address tags at addr"
+        None, "--addr", "-a", help="address tag"
     ),
-    auto: bool = typer.Option(False, "--auto", help="remove auto tags"),
+    auto: bool = typer.Option(False, "--auto", "-A", help="auto tags"),
 ) -> None:
     _edit(
         ctx,

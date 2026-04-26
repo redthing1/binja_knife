@@ -39,30 +39,32 @@ def main_cb(
         None,
         "--connect",
         "-c",
-        help="RPyC endpoint HOST:PORT (overrides --host/--port)",
+        help="HOST:PORT",
     ),
-    host: str = typer.Option(env_default_host(), "--host", help="RPyC host"),
-    port: int = typer.Option(env_default_port(), "--port", help="RPyC port"),
+    host: str = typer.Option(env_default_host(), "--host", "-H", help="host"),
+    port: int = typer.Option(env_default_port(), "--port", "-p", help="port"),
     timeout: float = typer.Option(
         env_default_timeout(),
         "--timeout",
-        help="RPyC sync_request_timeout seconds (0 disables timeout)",
+        "-t",
+        help="timeout seconds (0 disables)",
     ),
     session: Optional[str] = typer.Option(
         env_default_session(),
         "-s",
         "--session",
-        help="named server-side session (required for session-bound commands)",
+        help="session name",
     ),
     json_output: bool = typer.Option(
-        False, "-j", "--json", help="output machine-readable json"
+        False, "-j", "--json", help="json"
     ),
-    pretty: bool = typer.Option(False, "--pretty", help="pretty json output"),
+    pretty: bool = typer.Option(False, "--pretty", "-P", help="pretty json"),
     tool_root: Optional[Path] = typer.Option(
         None,
         "--tool-root",
+        "-T",
         envvar="BNK_TOOL_ROOT",
-        help="path added to Binja sys.path for bnk_serverlib imports (defaults: auto-detect from cwd)",
+        help="serverlib root",
     ),
 ) -> None:
     if connect:
