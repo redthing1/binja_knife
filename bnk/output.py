@@ -1,7 +1,69 @@
 from __future__ import annotations
 
 import json
+from dataclasses import dataclass
 from typing import Any, Iterable, Optional
+
+
+_TABLE_CELL_MAX = 120
+
+_HEX_FIELD_PAIRS = [
+    ("address", "address_hex"),
+    ("start", "start_hex"),
+    ("end", "end_hex"),
+    ("data_offset", "data_offset_hex"),
+    ("data_end", "data_end_hex"),
+]
+
+_PREFERRED_COLUMNS = [
+    "index",
+    "id",
+    "name",
+    "mode",
+    "target",
+    "busy",
+    "filename",
+    "address_hex",
+    "address",
+    "start_hex",
+    "start",
+    "end_hex",
+    "end",
+    "length_hex",
+    "length",
+    "data_offset_hex",
+    "data_offset",
+    "data_end_hex",
+    "data_end",
+    "data_length_hex",
+    "data_length",
+    "type",
+    "arch",
+    "view_type",
+    "analysis_state",
+    "il",
+    "ref_type",
+    "function",
+]
+
+
+@dataclass(frozen=True)
+class _Listing:
+    header: str
+    records: list[Any]
+
+
+def dump_json(value: Any, *, pretty: bool) -> str:
+    data = _jsonable(value)
+    if pretty:
+        return json.dumps(data, indent=2, sort_keys=False)
+    return json.dumps(data, separators=(",", ":"), sort_keys=False)
+
+
+def format_text(value: Any) -> str:
+    renderer = _TextRenderer()
+    renderer.render(value)
+    return renderer.text()
 
 
 def _jsonable(value: Any) -> Any:
@@ -12,23 +74,13 @@ def _jsonable(value: Any) -> Any:
     if isinstance(value, list):
         return [_jsonable(v) for v in value]
     if isinstance(value, dict):
-        out = {}
-        for k, v in value.items():
-            out[str(k)] = _jsonable(v)
-        return out
+        return {str(k): _jsonable(v) for k, v in value.items()}
 
     try:
         json.dumps(value)
         return value
     except TypeError:
         return {"type": type(value).__name__, "repr": repr(value)}
-
-
-def dump_json(value: Any, *, pretty: bool) -> str:
-    data = _jsonable(value)
-    if pretty:
-        return json.dumps(data, indent=2, sort_keys=False)
-    return json.dumps(data, separators=(",", ":"), sort_keys=False)
 
 
 def _is_scalar(value: Any) -> bool:
@@ -43,234 +95,272 @@ def _to_text(value: Any) -> str:
     return str(value)
 
 
-def _is_run_result(d: dict[str, Any]) -> bool:
-    return "ok" in d and "stdout" in d and "stderr" in d
+def _is_run_result(value: dict[str, Any]) -> bool:
+    return "ok" in value and "stdout" in value and "stderr" in value
 
 
-def _format_block(lines: list[str], header: str, text: str, *, indent: int) -> None:
-    if not text:
-        return
-    pad = " " * indent
-    lines.append(f"{pad}{header}:")
-    for line in text.rstrip("\n").splitlines():
-        lines.append(f"{pad}  {line}")
+def _listing_from_mapping(value: dict[str, Any]) -> Optional[_Listing]:
+    records = value.get("lines")
+    if not isinstance(records, list):
+        return None
+
+    if {"function", "address_hex", "il", "count"}.issubset(value.keys()):
+        return _Listing(header=_il_header(value), records=records)
+
+    return None
 
 
-def _preferred_columns(cols: list[str]) -> list[str]:
-    preferred = [
-        "index",
-        "id",
-        "name",
-        "mode",
-        "target",
-        "busy",
-        "filename",
-        "address_hex",
-        "address",
-        "start_hex",
-        "start",
-        "end_hex",
-        "end",
-        "length_hex",
-        "length",
-        "data_offset_hex",
-        "data_offset",
-        "data_end_hex",
-        "data_end",
-        "data_length_hex",
-        "data_length",
-        "type",
-        "arch",
-        "view_type",
-        "analysis_state",
-        "il",
-        "ref_type",
-        "function",
-    ]
-    pref = [c for c in preferred if c in cols]
-    rest = [c for c in cols if c not in pref]
-    return pref + rest
+def _il_header(value: dict[str, Any]) -> str:
+    header = (
+        f"{value.get('il', 'il')} {value.get('function', '')} "
+        f"@ {value.get('address_hex', '')}"
+    ).strip()
+    count = value.get("count")
+    if count is not None:
+        header = f"{header} ({count} lines)"
+    return header
 
 
-def _drop_redundant_hex_fields(fields: list[str]) -> list[str]:
-    # token-compact default: if both int and *_hex variants exist, prefer *_hex.
-    pairs = [
-        ("address", "address_hex"),
-        ("start", "start_hex"),
-        ("end", "end_hex"),
-        ("data_offset", "data_offset_hex"),
-        ("data_end", "data_end_hex"),
-    ]
+def _ordered_columns(records: list[dict[str, Any]]) -> list[str]:
+    cols: list[str] = []
+    seen: set[str] = set()
 
+    for rec in records:
+        for key in rec.keys():
+            name = str(key)
+            if name in seen:
+                continue
+            seen.add(name)
+            cols.append(name)
+
+    cols = _drop_redundant_fields(cols)
+    preferred = [col for col in _PREFERRED_COLUMNS if col in cols]
+    rest = [col for col in cols if col not in preferred]
+    return preferred + rest
+
+
+def _drop_redundant_fields(fields: list[str]) -> list[str]:
     field_set = set(fields)
-    drop: set[str] = set()
-    for base, hex_field in pairs:
-        if base in field_set and hex_field in field_set:
-            drop.add(base)
-
+    drop = {
+        base
+        for base, hex_field in _HEX_FIELD_PAIRS
+        if base in field_set and hex_field in field_set
+    }
     if "idx" in field_set:
         drop.add("idx")
 
     if not drop:
         return fields
-    return [f for f in fields if f not in drop]
+    return [field for field in fields if field not in drop]
 
 
-def _table(records: list[dict[str, Any]]) -> Optional[str]:
+def _table_lines(records: list[dict[str, Any]]) -> Optional[list[str]]:
     if not records:
         return None
 
-    cols: list[str] = []
-    seen: set[str] = set()
-    for rec in records:
-        for k in rec.keys():
-            key = str(k)
-            if key in seen:
-                continue
-            seen.add(key)
-            cols.append(key)
-
-    cols = _drop_redundant_hex_fields(cols)
-    cols = _preferred_columns(cols)
-
-    rows: list[list[str]] = []
-    widths: dict[str, int] = {c: len(c) for c in cols}
-    align_right: dict[str, bool] = {c: True for c in cols}
-
-    for rec in records:
-        row: list[str] = []
-        for c in cols:
-            v = rec.get(c, "")
-            if not _is_scalar(v):
-                return None
-            s = _to_text(v)
-            if "\n" in s:
-                return None
-            if len(s) > 120:
-                return None
-
-            if v is not None and not isinstance(v, (int, float)):
-                align_right[c] = False
-
-            widths[c] = max(widths[c], len(s))
-            row.append(s)
-        rows.append(row)
-
+    cols = _ordered_columns(records)
     if not cols:
         return None
 
+    rows: list[list[str]] = []
+    widths: dict[str, int] = {col: len(col) for col in cols}
+    align_right: dict[str, bool] = {col: True for col in cols}
+
+    for rec in records:
+        row: list[str] = []
+        for col in cols:
+            value = rec.get(col, "")
+            if not _is_table_cell(value):
+                return None
+
+            text = _to_text(value)
+            if value is not None and not isinstance(value, (int, float)):
+                align_right[col] = False
+
+            widths[col] = max(widths[col], len(text))
+            row.append(text)
+        rows.append(row)
+
+    return _render_table(cols, rows, widths=widths, align_right=align_right)
+
+
+def _is_table_cell(value: Any) -> bool:
+    if not _is_scalar(value):
+        return False
+    text = _to_text(value)
+    return "\n" not in text and len(text) <= _TABLE_CELL_MAX
+
+
+def _render_table(
+    cols: list[str],
+    rows: list[list[str]],
+    *,
+    widths: dict[str, int],
+    align_right: dict[str, bool],
+) -> list[str]:
     def render_row(values: Iterable[str]) -> str:
         parts: list[str] = []
-        for c, cell in zip(cols, values):
-            w = widths[c]
-            if align_right.get(c, False):
-                parts.append(cell.rjust(w))
+        for col, cell in zip(cols, values):
+            width = widths[col]
+            if align_right.get(col, False):
+                parts.append(cell.rjust(width))
             else:
-                parts.append(cell.ljust(w))
+                parts.append(cell.ljust(width))
         return "  ".join(parts).rstrip()
 
-    out_lines = [render_row(cols), render_row(["-" * widths[c] for c in cols])]
-    for row in rows:
-        out_lines.append(render_row(row))
-    return "\n".join(out_lines)
+    out = [render_row(cols), render_row(["-" * widths[col] for col in cols])]
+    out.extend(render_row(row) for row in rows)
+    return out
 
 
-def format_text(value: Any) -> str:
-    lines: list[str] = []
-    _format_any(lines, value, indent=0)
-    return "\n".join(lines).rstrip("\n")
+class _TextRenderer:
+    def __init__(self) -> None:
+        self._lines: list[str] = []
 
+    def text(self) -> str:
+        return "\n".join(self._lines).rstrip("\n")
 
-def _format_any(lines: list[str], value: Any, *, indent: int) -> None:
-    pad = " " * indent
+    def render(self, value: Any, *, indent: int = 0) -> None:
+        if isinstance(value, dict):
+            self._mapping(value, indent=indent)
+            return
 
-    if isinstance(value, dict):
+        if isinstance(value, list):
+            self._sequence(value, indent=indent)
+            return
+
+        if _is_scalar(value):
+            self._emit(indent, _to_text(value))
+            return
+
+        self._emit(indent, repr(value))
+
+    def _mapping(self, value: dict[str, Any], *, indent: int) -> None:
         if _is_run_result(value):
-            ok = bool(value.get("ok", False))
-            stdout = str(value.get("stdout", ""))
-            stderr = str(value.get("stderr", ""))
-            has_exit_code = "exit_code" in value
-            exit_code = value.get("exit_code") if has_exit_code else None
-            has_result = "result" in value
-            result = value.get("result", None)
+            self._run_result(value, indent=indent)
+            return
 
-            # common happy-path output: return only the result
-            if ok and not stdout and not stderr and not has_exit_code and has_result:
-                _format_any(lines, result, indent=indent)
-                return
-
-            lines.append(f"{pad}ok: {'true' if ok else 'false'}")
-            _format_block(lines, "stdout", stdout, indent=indent)
-            _format_block(lines, "stderr", stderr, indent=indent)
-            if not ok:
-                _format_block(
-                    lines, "error", str(value.get("error", "")), indent=indent
-                )
-            if exit_code is not None:
-                lines.append(f"{pad}exit_code: {_to_text(exit_code)}")
-            if has_result:
-                lines.append(f"{pad}result:")
-                _format_any(lines, result, indent=indent + 2)
+        listing = _listing_from_mapping(value)
+        if listing is not None:
+            self._listing(listing, indent=indent)
             return
 
         if not value:
-            lines.append(f"{pad}{{}}")
+            self._emit(indent, "{}")
             return
 
-        items = list(value.items())
+        self._plain_mapping(value, indent=indent)
 
-        # prefer hex addresses over redundant int forms in text output
-        item_keys = [str(k) for k, _ in items]
-        keep_keys = _drop_redundant_hex_fields(item_keys)
-        if keep_keys != item_keys:
-            keep = set(keep_keys)
-            items = [(k, v) for k, v in items if str(k) in keep]
+    def _run_result(self, value: dict[str, Any], *, indent: int) -> None:
+        ok = bool(value.get("ok", False))
+        stdout = str(value.get("stdout", ""))
+        stderr = str(value.get("stderr", ""))
+        has_exit_code = "exit_code" in value
+        exit_code = value.get("exit_code") if has_exit_code else None
+        has_result = "result" in value
+        result = value.get("result", None)
 
-        keys = [str(k) for k, _ in items]
-        key_pad = max((len(k) for k in keys), default=0)
-        for k, v in items:
-            ks = str(k)
-            if isinstance(v, str) and ("\n" in v or "\r" in v):
-                lines.append(f"{pad}{ks.ljust(key_pad)}:")
-                pad2 = " " * (indent + 2)
-                for line in v.rstrip("\n").splitlines():
-                    lines.append(f"{pad2}{line}")
+        if ok and not stdout and not stderr and not has_exit_code and has_result:
+            self.render(result, indent=indent)
+            return
+
+        self._emit(indent, f"ok: {'true' if ok else 'false'}")
+        self._block("stdout", stdout, indent=indent)
+        self._block("stderr", stderr, indent=indent)
+        if not ok:
+            self._block("error", str(value.get("error", "")), indent=indent)
+        if exit_code is not None:
+            self._emit(indent, f"exit_code: {_to_text(exit_code)}")
+        if has_result:
+            self._emit(indent, "result:")
+            self.render(result, indent=indent + 2)
+
+    def _listing(self, listing: _Listing, *, indent: int) -> None:
+        self._emit(indent, listing.header)
+        for record in listing.records:
+            self._listing_record(record, indent=indent + 2)
+
+    def _listing_record(self, record: Any, *, indent: int) -> None:
+        if not isinstance(record, dict):
+            self._emit(indent, _to_text(record))
+            return
+
+        idx = str(record.get("idx", "")).rjust(4)
+        addr = record.get("address_hex", "")
+        text = _to_text(record.get("text", ""))
+        prefix = f"{idx}  {addr}" if addr else idx
+        self._emit(indent, f"{prefix}  {text}".rstrip())
+
+    def _plain_mapping(self, value: dict[str, Any], *, indent: int) -> None:
+        items = _visible_items(value)
+        key_pad = max((len(str(key)) for key, _value in items), default=0)
+
+        for key, item in items:
+            name = str(key)
+            if isinstance(item, str) and _is_multiline(item):
+                self._emit(indent, f"{name.ljust(key_pad)}:")
+                self._block_lines(item, indent=indent + 2)
                 continue
-            if _is_scalar(v):
-                lines.append(f"{pad}{ks.ljust(key_pad)}: {_to_text(v)}")
-                continue
-            lines.append(f"{pad}{ks.ljust(key_pad)}:")
-            _format_any(lines, v, indent=indent + 2)
-        return
 
-    if isinstance(value, list):
+            if _is_scalar(item):
+                self._emit(indent, f"{name.ljust(key_pad)}: {_to_text(item)}")
+                continue
+
+            self._emit(indent, f"{name.ljust(key_pad)}:")
+            self.render(item, indent=indent + 2)
+
+    def _sequence(self, value: list[Any], *, indent: int) -> None:
         if not value:
-            lines.append(f"{pad}[]")
+            self._emit(indent, "[]")
             return
 
-        if all(isinstance(v, dict) for v in value):
-            tbl = _table([v for v in value if isinstance(v, dict)])
-            if tbl is not None:
-                for line in tbl.splitlines():
-                    lines.append(f"{pad}{line}")
+        if all(isinstance(item, dict) for item in value):
+            table = _table_lines([item for item in value if isinstance(item, dict)])
+            if table is not None:
+                self._lines.extend(f"{self._pad(indent)}{line}" for line in table)
                 return
 
         for idx, item in enumerate(value):
-            if isinstance(item, str) and ("\n" in item or "\r" in item):
-                lines.append(f"{pad}[{idx}]")
-                pad2 = " " * (indent + 2)
-                for line in item.rstrip("\n").splitlines():
-                    lines.append(f"{pad2}{line}")
+            if isinstance(item, str) and _is_multiline(item):
+                self._emit(indent, f"[{idx}]")
+                self._block_lines(item, indent=indent + 2)
                 continue
+
             if _is_scalar(item):
-                lines.append(f"{pad}[{idx}] {_to_text(item)}")
+                self._emit(indent, f"[{idx}] {_to_text(item)}")
                 continue
-            lines.append(f"{pad}[{idx}]")
-            _format_any(lines, item, indent=indent + 2)
-        return
 
-    if _is_scalar(value):
-        lines.append(f"{pad}{_to_text(value)}")
-        return
+            self._emit(indent, f"[{idx}]")
+            self.render(item, indent=indent + 2)
 
-    lines.append(f"{pad}{repr(value)}")
+    def _block(self, header: str, text: str, *, indent: int) -> None:
+        if not text:
+            return
+        self._emit(indent, f"{header}:")
+        self._block_lines(text, indent=indent + 2)
+
+    def _block_lines(self, text: str, *, indent: int) -> None:
+        for line in text.rstrip("\n").splitlines():
+            self._emit(indent, line)
+
+    def _emit(self, indent: int, text: str) -> None:
+        self._lines.append(f"{self._pad(indent)}{text}")
+
+    @staticmethod
+    def _pad(indent: int) -> str:
+        return " " * indent
+
+
+def _visible_items(value: dict[str, Any]) -> list[tuple[Any, Any]]:
+    items = list(value.items())
+    keys = [str(key) for key, _item in items]
+    keep_keys = _drop_redundant_fields(keys)
+    if keep_keys == keys:
+        return items
+
+    keep = set(keep_keys)
+    return [(key, item) for key, item in items if str(key) in keep]
+
+
+def _is_multiline(value: str) -> bool:
+    return "\n" in value or "\r" in value
