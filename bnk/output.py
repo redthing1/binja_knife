@@ -110,14 +110,23 @@ def _listing_from_mapping(value: dict[str, Any]) -> Optional[_Listing]:
     return None
 
 
+def _is_il_text(value: dict[str, Any]) -> bool:
+    return {"function", "address_hex", "il", "line_count", "text"}.issubset(
+        value.keys()
+    ) and isinstance(value.get("text"), str)
+
+
 def _il_header(value: dict[str, Any]) -> str:
     header = (
         f"{value.get('il', 'il')} {value.get('function', '')} "
         f"@ {value.get('address_hex', '')}"
     ).strip()
-    count = value.get("count")
-    if count is not None:
-        header = f"{header} ({count} lines)"
+    count = value.get("line_count", value.get("count"))
+    if isinstance(count, int):
+        suffix = f"{count} lines"
+        if value.get("truncated"):
+            suffix += ", truncated"
+        header = f"{header} ({suffix})"
     return header
 
 
@@ -240,6 +249,10 @@ class _TextRenderer:
             self._run_result(value, indent=indent)
             return
 
+        if _is_il_text(value):
+            self._il_text(value, indent=indent)
+            return
+
         listing = _listing_from_mapping(value)
         if listing is not None:
             self._listing(listing, indent=indent)
@@ -279,6 +292,12 @@ class _TextRenderer:
         self._emit(indent, listing.header)
         for record in listing.records:
             self._listing_record(record, indent=indent + 2)
+
+    def _il_text(self, value: dict[str, Any], *, indent: int) -> None:
+        self._emit(indent, _il_header(value))
+        text = str(value.get("text", ""))
+        if text:
+            self._block_lines(text, indent=indent)
 
     def _listing_record(self, record: Any, *, indent: int) -> None:
         if not isinstance(record, dict):
