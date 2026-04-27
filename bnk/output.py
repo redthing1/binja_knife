@@ -179,10 +179,10 @@ def _table_lines(records: list[dict[str, Any]]) -> Optional[list[str]]:
         row: list[str] = []
         for col in cols:
             value = rec.get(col, "")
-            if not _is_table_cell(value):
+            text = _table_cell_text(value)
+            if text is None:
                 return None
 
-            text = _to_text(value)
             if value is not None and not isinstance(value, (int, float)):
                 align_right[col] = False
 
@@ -193,11 +193,32 @@ def _table_lines(records: list[dict[str, Any]]) -> Optional[list[str]]:
     return _render_table(cols, rows, widths=widths, align_right=align_right)
 
 
-def _is_table_cell(value: Any) -> bool:
+def _table_cell_text(value: Any) -> Optional[str]:
     if not _is_scalar(value):
-        return False
-    text = _to_text(value)
-    return "\n" not in text and len(text) <= _TABLE_CELL_MAX
+        return None
+    text = _escape_table_text(_to_text(value))
+    if len(text) > _TABLE_CELL_MAX:
+        return f"{text[: _TABLE_CELL_MAX - 3]}..."
+    return text
+
+
+def _escape_table_text(text: str) -> str:
+    out: list[str] = []
+    for char in text:
+        code = ord(char)
+        if char == "\\":
+            out.append("\\\\")
+        elif char == "\n":
+            out.append("\\n")
+        elif char == "\r":
+            out.append("\\r")
+        elif char == "\t":
+            out.append("\\t")
+        elif code < 0x20 or code == 0x7F:
+            out.append(f"\\x{code:02x}")
+        else:
+            out.append(char)
+    return "".join(out)
 
 
 def _render_table(
