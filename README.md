@@ -25,15 +25,15 @@ server:
 
 client:
 ```sh
-uv run bnk -h
-uv run bnk ping
-uv run bnk session list
+uv run --locked bnk -h
+uv run --locked bnk ping
+uv run --locked bnk session list
 ```
 
 multiline python:
 ```sh
-uv run bnk -s demo session load /path/to/binary
-cat <<'PY' | uv run bnk -s demo py exec -
+uv run --locked bnk -s demo session load /path/to/binary
+cat <<'PY' | uv run --locked bnk -s demo py exec -
 print("hello from binja")
 __result__ = 123
 PY

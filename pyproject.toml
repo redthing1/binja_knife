@@ -3,9 +3,9 @@ name = "binja-knife"
 version = "0.1.0"
 description = "bnk: binaryninja knife client"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{ name = "redthing1" }]
-dependencies = ["rpyc>=6.0.0", "typer>=0.16.0"]
+dependencies = ["click>=8.1.0", "rpyc>=6.0.0", "typer>=0.16.0"]
 
 [project.scripts]
 bnk = "bnk.cli:main"
