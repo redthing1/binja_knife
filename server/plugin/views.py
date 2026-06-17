@@ -3,6 +3,7 @@ from __future__ import annotations
 import weakref
 from typing import Any, Dict, List, Optional, Tuple
 
+from .bn_compat import run_on_main_thread, safe_getattr, safe_str, view_filename
 from .log import dbg
 
 
@@ -10,23 +11,9 @@ _SHARED_VIEW_IDS: Dict[int, str] = {}
 _SHARED_VIEW_NEXT_ID = 0
 
 
-def _safe_str(value: Any) -> str:
-    try:
-        return str(value)
-    except Exception:
-        return repr(value)
-
-
-def _safe_getattr(obj: Any, name: str, default: Any = None) -> Any:
-    try:
-        return getattr(obj, name)
-    except Exception:
-        return default
-
-
 def _iter_frame_views(frame: Any):
     for attr in ("getCurrentView", "getView"):
-        getter = _safe_getattr(frame, attr)
+        getter = safe_getattr(frame, attr)
         if callable(getter):
             try:
                 view = getter()
@@ -36,7 +23,7 @@ def _iter_frame_views(frame: Any):
                 yield view
 
     for attr in ("getViews", "getAllViews"):
-        getter = _safe_getattr(frame, attr)
+        getter = safe_getattr(frame, attr)
         if callable(getter):
             try:
                 views = getter() or []
@@ -49,7 +36,7 @@ def _iter_frame_views(frame: Any):
 
 def _view_to_bv(view: Any) -> Optional[Any]:
     for attr in ("getData", "getBinaryView", "getCurrentBinaryView"):
-        getter = _safe_getattr(view, attr)
+        getter = safe_getattr(view, attr)
         if callable(getter):
             try:
                 bv = getter()
@@ -61,45 +48,34 @@ def _view_to_bv(view: Any) -> Optional[Any]:
 
 
 def view_info_full(bv: Any) -> Dict[str, Any]:
-    file_obj = _safe_getattr(bv, "file")
+    file_obj = safe_getattr(bv, "file")
     filename = None
     if file_obj is not None:
-        filename = _safe_getattr(file_obj, "filename") or _safe_getattr(
+        filename = safe_getattr(file_obj, "filename") or safe_getattr(
             file_obj, "original_filename"
         )
-    arch = _safe_getattr(bv, "arch")
-    analysis_state = _safe_getattr(bv, "analysis_state")
-    start = _safe_getattr(bv, "start") or 0
-    length = _safe_getattr(bv, "length") or 0
+    arch = safe_getattr(bv, "arch")
+    analysis_state = safe_getattr(bv, "analysis_state")
+    start = safe_getattr(bv, "start") or 0
+    length = safe_getattr(bv, "length") or 0
     info = {
         "filename": filename or "",
-        "view_type": _safe_getattr(bv, "view_type") or "",
-        "arch": _safe_getattr(arch, "name") or _safe_str(arch) if arch else "",
+        "view_type": safe_getattr(bv, "view_type") or "",
+        "arch": safe_getattr(arch, "name") or safe_str(arch) if arch else "",
         "analysis_state": (
-            _safe_getattr(analysis_state, "name") or _safe_str(analysis_state)
+            safe_getattr(analysis_state, "name") or safe_str(analysis_state)
             if analysis_state
             else ""
         ),
         "start": start,
         "length": length,
-        "repr": _safe_str(bv),
+        "repr": safe_str(bv),
     }
     info["start_hex"] = f"0x{start:x}"
     info["length_hex"] = f"0x{length:x}"
     if not info["filename"]:
         info["filename"] = info["repr"]
     return info
-
-
-def safe_view_filename(bv: Any) -> str:
-    file_obj = _safe_getattr(bv, "file")
-    if file_obj is None:
-        return ""
-    return str(
-        _safe_getattr(file_obj, "filename")
-        or _safe_getattr(file_obj, "original_filename")
-        or ""
-    )
 
 
 def _shared_view_id(bv: Any) -> str:
@@ -196,7 +172,7 @@ def build_shared_view_inventory(
         add_entry(
             bv,
             {
-                "filename": str(info.get("filename", "") or safe_view_filename(bv)),
+                "filename": str(info.get("filename", "") or view_filename(bv)),
                 "repr": str(info.get("repr", "") or ""),
                 "source": gui_source,
             },
@@ -244,23 +220,6 @@ def find_shared_view(
     raise ValueError(f"unknown shared view id: {wanted}")
 
 
-def _run_on_main_thread(fn):
-    try:
-        from binaryninja import mainthread
-    except Exception:
-        return fn()
-    box: Dict[str, Any] = {}
-
-    def wrapper():
-        box["value"] = fn()
-
-    try:
-        mainthread.execute_on_main_thread_and_wait(wrapper)
-    except Exception:
-        return fn()
-    return box.get("value")
-
-
 def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
     try:
         import binaryninjaui as ui  # type: ignore
@@ -292,15 +251,15 @@ def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
                 if bv is None:
                     continue
                 if not filename:
-                    file_obj = _safe_getattr(bv, "file")
+                    file_obj = safe_getattr(bv, "file")
                     filename = (
-                        _safe_getattr(file_obj, "filename")
-                        or _safe_getattr(file_obj, "original_filename")
+                        safe_getattr(file_obj, "filename")
+                        or safe_getattr(file_obj, "original_filename")
                         or ""
                     )
                 info: Dict[str, Any] = {
                     "filename": filename or "",
-                    "repr": filename or _safe_str(bv),
+                    "repr": filename or safe_str(bv),
                     "source": "ui",
                 }
                 out.append((bv, info))
@@ -315,21 +274,21 @@ def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
                 bv = _view_to_bv(view)
                 if bv is None:
                     continue
-                file_obj = _safe_getattr(bv, "file")
+                file_obj = safe_getattr(bv, "file")
                 filename = (
-                    _safe_getattr(file_obj, "filename")
-                    or _safe_getattr(file_obj, "original_filename")
+                    safe_getattr(file_obj, "filename")
+                    or safe_getattr(file_obj, "original_filename")
                     or ""
                 )
                 info: Dict[str, Any] = {
                     "filename": filename or "",
-                    "repr": filename or _safe_str(bv),
+                    "repr": filename or safe_str(bv),
                     "source": "viewframe",
                 }
                 out.append((bv, info))
         return out
 
-    entries = _run_on_main_thread(_collect) or []
+    entries = run_on_main_thread(_collect) or []
 
     # optional: also attempt to discover bvs from scripting provider instances
     try:
@@ -347,15 +306,15 @@ def collect_gui_bvs() -> List[Tuple[Any, Dict[str, Any]]]:
                 bv = None
             if bv is None:
                 continue
-            file_obj = _safe_getattr(bv, "file")
+            file_obj = safe_getattr(bv, "file")
             filename = (
-                _safe_getattr(file_obj, "filename")
-                or _safe_getattr(file_obj, "original_filename")
+                safe_getattr(file_obj, "filename")
+                or safe_getattr(file_obj, "original_filename")
                 or ""
             )
             info = {
                 "filename": filename or "",
-                "repr": filename or _safe_str(bv),
+                "repr": filename or safe_str(bv),
                 "source": "scripting",
             }
             entries.append((bv, info))

@@ -2,37 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict
 
-_MISSING = object()
-
-
-def _make_compact_save_settings():
-    try:
-        from binaryninja import SaveOption, SaveSettings
-    except Exception:
-        return None
-
-    settings = SaveSettings()
-    settings.set_option(SaveOption.TrimSnapshots)
-    settings.set_option(SaveOption.RemoveUndoData)
-    return settings
-
-
-def _run_on_main_thread(fn):
-    try:
-        from binaryninja import mainthread
-    except Exception:
-        return fn()
-
-    box: Dict[str, Any] = {}
-
-    def wrapper() -> None:
-        box["value"] = fn()
-
-    try:
-        mainthread.execute_on_main_thread_and_wait(wrapper)
-    except Exception:
-        return fn()
-    return box.get("value")
+from .bn_compat import bool_attr, compact_save_settings, run_on_main_thread
 
 
 def _require_bv_file(bv: Any) -> Any:
@@ -45,18 +15,6 @@ def _require_bv_file(bv: Any) -> Any:
     return f
 
 
-def _bool_attr(obj: Any, name: str) -> bool | None:
-    if obj is None:
-        return None
-    try:
-        value = getattr(obj, name, _MISSING)
-    except Exception:
-        return None
-    if value is _MISSING:
-        return None
-    return bool(value)
-
-
 def _db_modified(bv: Any, f: Any) -> bool:
     for obj, name in (
         (bv, "analysis_changed"),
@@ -64,7 +22,7 @@ def _db_modified(bv: Any, f: Any) -> bool:
         (bv, "modified"),
         (f, "modified"),
     ):
-        value = _bool_attr(obj, name)
+        value = bool_attr(obj, name)
         if value is not None:
             return value
     return False
@@ -99,8 +57,8 @@ def db_save(*, bv: Any) -> Dict[str, Any]:
             "modified": modified_before,
         }
 
-    settings = _make_compact_save_settings()
-    ok = bool(_run_on_main_thread(lambda: bv.save_auto_snapshot(settings=settings)))
+    settings = compact_save_settings()
+    ok = bool(run_on_main_thread(lambda: bv.save_auto_snapshot(settings=settings)))
 
     state_after = _db_state(bv)
 
@@ -125,8 +83,8 @@ def db_save_as(*, bv: Any, path: str) -> Dict[str, Any]:
     if not dest.lower().endswith(".bndb"):
         dest = f"{dest}.bndb"
 
-    settings = _make_compact_save_settings()
-    ok = bool(_run_on_main_thread(lambda: bv.create_database(dest, settings=settings)))
+    settings = compact_save_settings()
+    ok = bool(run_on_main_thread(lambda: bv.create_database(dest, settings=settings)))
 
     state = _db_state(bv)
 

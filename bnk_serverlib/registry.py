@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Callable, Dict, List
+from typing import Any, Callable, Dict, List, Tuple
 
 from .tools.binary import binary_summary
 from .tools.functions import (
@@ -45,7 +45,7 @@ class Tool:
     doc: str
 
 
-_TOOLS: List[Tool] = [
+_TOOLS: Tuple[Tool, ...] = (
     Tool(
         name="binary.summary",
         fn=binary_summary,
@@ -143,21 +143,30 @@ _TOOLS: List[Tool] = [
     Tool(
         name="edit.xref.code.remove", fn=xref_code_remove, doc="remove a user code xref"
     ),
-]
+)
+
+
+def _build_tool_map(tools: Tuple[Tool, ...]) -> Dict[str, Tool]:
+    out: Dict[str, Tool] = {}
+    for tool in tools:
+        if tool.name in out:
+            raise RuntimeError(f"duplicate tool registration: {tool.name}")
+        out[tool.name] = tool
+    return out
+
+
+_TOOLS_BY_NAME = _build_tool_map(_TOOLS)
 
 
 def list_tools() -> List[Dict[str, Any]]:
-    out: List[Dict[str, Any]] = []
-    for tool in _TOOLS:
-        out.append({"name": tool.name, "doc": tool.doc})
-    return out
+    return [{"name": tool.name, "doc": tool.doc} for tool in _TOOLS]
 
 
 def call_tool(name: str, *, bv, **params) -> Any:
     if bv is None:
         raise ValueError("bv is required (attach a view first)")
-    for tool in _TOOLS:
-        if tool.name == name:
-            return tool.fn(bv=bv, **params)
-    known = ", ".join(t.name for t in _TOOLS)
-    raise KeyError(f"unknown tool: {name!r} (known: {known})")
+    tool = _TOOLS_BY_NAME.get(name)
+    if tool is None:
+        known = ", ".join(_TOOLS_BY_NAME)
+        raise KeyError(f"unknown tool: {name!r} (known: {known})")
+    return tool.fn(bv=bv, **params)
