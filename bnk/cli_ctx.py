@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 from typing import Any, Callable, Dict, TypeVar
 
-import click
 import typer
 
 from .client import ConnectConfig, KnifeClient
@@ -12,6 +11,10 @@ from .config import Config
 from .output import dump_json, format_text
 from .serverlib import ServerlibCall, make_tool_call_code, make_tool_list_code
 from .tool_root import find_tool_root
+
+
+class BnkError(RuntimeError):
+    """User-facing CLI error."""
 
 
 def cfg_from_ctx(ctx: typer.Context) -> Config:
@@ -23,7 +26,7 @@ def cfg_from_ctx(ctx: typer.Context) -> Config:
 
 def require_session(cfg: Config) -> str:
     if not cfg.session:
-        raise click.ClickException("provide -s/--session or set BNK_SESSION")
+        raise BnkError("provide -s/--session or set BNK_SESSION")
     return cfg.session
 
 
@@ -33,9 +36,7 @@ def connect(cfg: Config) -> KnifeClient:
             ConnectConfig(host=cfg.host, port=cfg.port, timeout=cfg.timeout)
         )
     except (EOFError, OSError) as exc:
-        raise click.ClickException(
-            f"could not connect to {cfg.host}:{cfg.port}: {exc}"
-        ) from exc
+        raise BnkError(f"could not connect to {cfg.host}:{cfg.port}: {exc}") from exc
 
 
 T = TypeVar("T")
@@ -75,13 +76,13 @@ def with_client(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:
                     msg = f"{msg}; interrupt attempt failed: {err}"
                 else:
                     msg = f"{msg}; no active request to interrupt"
-            raise click.ClickException(msg) from exc
-        except click.ClickException:
+            raise BnkError(msg) from exc
+        except BnkError:
             raise
         except Exception as exc:
             message = str(exc).strip() or exc.__class__.__name__
             message = message.split("========= Remote Traceback", 1)[0].rstrip()
-            raise click.ClickException(message) from exc
+            raise BnkError(message) from exc
 
 
 def with_session(cfg: Config, fn: Callable[[KnifeClient], T]) -> T:

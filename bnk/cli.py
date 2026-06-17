@@ -1,12 +1,13 @@
 from __future__ import annotations
 
+import sys
 from pathlib import Path
 from typing import Optional
 
 import typer
 
 from .cli_app import make_app
-from .cli_ctx import cfg_from_ctx, print_value, with_client
+from .cli_ctx import BnkError, cfg_from_ctx, print_value, with_client
 from .cli_edit import app as edit_app
 from .cli_py import app as py_app
 from .cli_request import app as request_app
@@ -93,7 +94,11 @@ def ping(ctx: typer.Context) -> None:
 
 
 def main() -> None:
-    app()
+    try:
+        app()
+    except BnkError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        raise SystemExit(1) from exc
 
 
 if __name__ == "__main__":
