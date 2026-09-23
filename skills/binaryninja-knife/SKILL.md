@@ -63,7 +63,7 @@ bnk code main --at 0x400800
 
 `find` lists strings, functions, or symbols without a query and filters them when a query is supplied; exact bytes require a pattern. A result address or name is meant to feed directly into `inspect`, `refs`, `code`, or `edit`.
 
-`inspect` keeps the requested address visible and shows containing instruction, string, or data anchors when relevant. `code FUNCTION` reads a function from the start; `code ADDRESS` focuses on that instruction, including addresses inside its bytes. HLIL is the default, with MLIL, LLIL, and native disassembly available through `--level`. `refs` keeps exact-address results separate from any referenced containing anchor. `refs --from` reads an instruction site or a whole named function; at a numeric function entry it shows both scopes separately.
+`inspect` keeps the requested address visible and shows containing instruction, string, or data anchors when relevant. `code FUNCTION` reads a function from the start; `code ADDRESS` focuses on that instruction, including addresses inside its bytes. HLIL is the default, with MLIL, LLIL, and native disassembly available through `--level`. `refs` keeps exact-address results separate from any referenced containing anchor. `refs --from` reads an instruction site or a whole named function, including possible call sites without resolved targets; at a numeric function entry it shows both scopes separately.
 
 Function inspection shows parameters and a local count. Use `bnk inspect main --vars` for a bounded variable inventory, or inspect a specific `main::variable`. Exact `function::#IDENTIFIER` targets remain available when names collide.
 

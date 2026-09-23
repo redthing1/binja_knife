@@ -287,16 +287,16 @@ def refs(
         bool,
         typer.Option(
             "--from",
-            help="Show outgoing refs; named functions scan the whole body.",
+            help="Show outgoing refs and call sites; named functions scan the whole body.",
         ),
     ] = False,
-    limit: Annotated[int, typer.Option("--limit", "-n", min=1, help="Maximum references.")] = 50,
+    limit: Annotated[int, typer.Option("--limit", "-n", min=1, help="Maximum results.")] = 50,
     session: Annotated[
         str | None,
         typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to read."),
     ] = None,
 ) -> None:
-    """Show code and data references at a site or across a function."""
+    """Show references and possible call sites at a site or across a function."""
     _remote(
         context,
         "refs",

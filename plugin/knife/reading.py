@@ -85,8 +85,12 @@ class ReadActions:
                     "variable_target": True,
                 }
 
-            function = try_function(view, target)
-            address = int(function.start) if function is not None else resolve_address(view, target)
+            if parse_address(target) is not None:
+                address = resolve_address(view, target)
+                function = view.get_function_at(address)
+            else:
+                function = try_function(view, target)
+                address = int(function.start) if function is not None else resolve_address(view, target)
             containers = list(view.get_functions_containing(address))
             if function is None and len(containers) == 1:
                 function = containers[0]
@@ -512,12 +516,15 @@ def _outbound_refs(
         sites = list(dict.fromkeys(int(site) for _, site in function.instructions))
 
     items: list[dict[str, Any]] = []
-    seen: set[tuple[str, int, int]] = set()
+    seen: set[tuple[str, int, int | None]] = set()
     for site in sites:
         code_kind = "call" if site in call_sites else "code"
         code_targets = view.get_code_refs_from(site, func=function)
         for target in code_targets:
             if _append_reference(items, seen, view, code_kind, site, int(target), max_items):
+                return items
+        if site in call_sites and not code_targets:
+            if _append_reference(items, seen, view, "call site", site, None, max_items):
                 return items
         for target in view.get_data_refs_from(site):
             if _append_reference(items, seen, view, "data", site, int(target), max_items):
@@ -527,11 +534,11 @@ def _outbound_refs(
 
 def _append_reference(
     items: list[dict[str, Any]],
-    seen: set[tuple[str, int, int]],
+    seen: set[tuple[str, int, int | None]],
     view: Any,
     kind: str,
     site: int,
-    target: int,
+    target: int | None,
     max_items: int,
 ) -> bool:
     key = (kind, site, target)
@@ -541,8 +548,8 @@ def _append_reference(
             {
                 "kind": kind,
                 "site": hex_address(site),
-                "target": hex_address(target),
-                "function": _target_name(view, target),
+                "target": hex_address(target) if target is not None else "?",
+                "function": _target_name(view, target) if target is not None else None,
             }
         )
     return len(items) >= max_items

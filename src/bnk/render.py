@@ -432,7 +432,7 @@ def _reference_rows(items: Any, more: Any) -> list[str]:
         return ["none"]
     lines = [_reference_line(item) for item in items if isinstance(item, dict)]
     if more:
-        lines.append(f"… more references; rerun with --limit above {len(items)}")
+        lines.append(f"… more results; rerun with --limit above {len(items)}")
     return lines
 
 
