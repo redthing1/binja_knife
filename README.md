@@ -1,48 +1,52 @@
-
 # binja-knife
 
-a cli, `bnk`, for driving a binaryninja server.
+a sharp, stateful cli for binary ninja.
 
-it talks to the [`Knife Server`](./server) plugin over rpyc and provides:
-- named, stateful sessions
-- batteries-included tools (strings, xrefs, IL, tags, common edits)
-- arbitrary server-side python execution (`bnk py *`)
+`bnk` keeps analyzed binaries alive between commands, turning the shell into a fast, continuous reversing workspace.
 
-## core model
+- retained, named sessions—headless by default
+- focused tools for exploring and changing a binary
+- unrestricted Binary Ninja Python when the workflow needs more
 
-`session` is the durable work context. Headless analysis lives in a named
-session and is reused with `-s NAME`.
+```sh
+bnk open ./program
+bnk summary
+bnk find strings 'parse failed' --refs
+bnk inspect 0x401234
+bnk code main
+```
 
-`view` lists shared GUI/live BinaryViews that can be attached to a session.
-
-`request` reports or interrupts currently running operations.
+With one open session, commands select it automatically. Use `-s NAME` when you want several.
 
 ## quick start
 
-server:
-- in the gui, run `Knife Server/Start server`
-- defaults: `127.0.0.1:18812`
+Install the client:
 
-client:
 ```sh
-uv run --locked bnk -h
-uv run --locked bnk ping
-uv run --locked bnk session list
-```
-
-multiline python:
-```sh
-uv run --locked bnk -s demo session load /path/to/binary
-cat <<'PY' | uv run --locked bnk -s demo py exec -
-print("hello from binja")
-__result__ = 123
-PY
-```
-
-## install `bnk`
-
-for a global `bnk` command:
-```sh
-uv tool install -e .
+uv tool install .
 bnk -h
 ```
+
+Link or copy [`plugin/`](plugin/) into Binary Ninja's plugin directory as `knife_server`. The Knife Server starts automatically and works equally well headlessly, in a container, or alongside the GUI.
+
+When the client and Binary Ninja see different filesystems, pass an absolute plugin-visible path with `--server-path`.
+
+## full power, close at hand
+
+The direct commands cover the everyday loop: orienting to the binary, reading its sections and segments, finding evidence, following references, reading IL, making common edits, patching bytes, and saving the result. `bnk -h` is the compact map.
+
+For everything else, `eval`, `exec`, and `run` expose the real Binary Ninja Python API without giving up the retained session:
+
+```sh
+bnk eval 'len(bv.functions)'
+bnk exec 'print(bv.entry_point); result = bv.arch.name'
+bnk run analysis.py -- arg1 arg2
+```
+
+## agents
+
+The repository includes an [agent skill](skills/binaryninja-knife/SKILL.md) with the matching Binary Ninja 5.3 API reference. Link it into your agent's skill directory to keep guidance and code together.
+
+## develop
+
+Development notes live in [`doc/development.md`](doc/development.md). For the small client/plugin split, see [`doc/architecture.md`](doc/architecture.md).
