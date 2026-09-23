@@ -4,7 +4,7 @@ Use this reference before an unfamiliar Binary Ninja Python API call. The mirror
 
 ## Version and location
 
-The mirror targets Binary Ninja 5.3:
+The mirror records its API version in:
 
 - `binja-docs/INDEX.md` records the version and module list;
 - `binja-docs/.binja-docs.json` records the generated mirror metadata;
@@ -49,7 +49,7 @@ Once an API has been grounded for the current work, use it normally; repeated ca
 The maintainer refreshes the mirror deliberately when the targeted Binary Ninja release changes:
 
 ```sh
-uv run --script references/binja-docs/sync.py --version 5.3
+uv run --script references/binja-docs/sync.py --update-version
 ```
 
-Use `--update-version` only when intentionally adopting the version currently published by the official API site.
+This adopts the version currently published by the official API site.

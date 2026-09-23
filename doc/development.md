@@ -24,8 +24,6 @@ edit -> undo -> redo -> save -> close -> reopen
 exec/run -> patch -> undo -> save -> export
 ```
 
-The plugin metadata currently targets Binary Ninja build 9757, and the repository skill carries the matching 5.3 API documentation.
-
 Build both distributions with:
 
 ```sh

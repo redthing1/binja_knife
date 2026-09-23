@@ -98,6 +98,6 @@ Each request receives a fresh namespace with `bn`, the selected `bv`, `session`,
 
 ## Binary Ninja API documentation
 
-The bundled documentation mirrors the Binary Ninja 5.3 Python API. Before writing a script that uses an unfamiliar Binary Ninja API—or changing bnk's plugin—read [references/docs-guide.md](references/docs-guide.md) and search the relevant vendored module page. Use it to confirm names, signatures, return values, and mutation behavior instead of guessing from memory.
+Before writing a script that uses an unfamiliar Binary Ninja API—or changing bnk's plugin—read [references/docs-guide.md](references/docs-guide.md) and search the relevant vendored module page. Use it to confirm names, signatures, return values, and mutation behavior instead of guessing from memory.
 
 CLI syntax comes from `bnk -h`; Binary Ninja Python semantics come from the bundled API docs.
