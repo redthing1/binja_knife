@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+
+repo=$(CDPATH= cd "$(dirname "$0")/.." && pwd -P)
+skill="$repo/skills/binaryninja-knife"
+directory=${1:-"$HOME/.agents/skills/rt1_tools"}
+link="$directory/binaryninja-knife"
+
+mkdir -p "$directory"
+if [ -L "$link" ] && [ "$(readlink "$link")" = "$skill" ]; then
+    printf 'already linked: %s\n' "$link"
+    exit 0
+fi
+if [ -e "$link" ] || [ -L "$link" ]; then
+    printf 'already exists: %s\n' "$link" >&2
+    exit 1
+fi
+
+ln -s "$skill" "$link"
+printf 'linked: %s -> %s\n' "$link" "$skill"

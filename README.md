@@ -45,7 +45,7 @@ bnk run analysis.py -- arg1 arg2
 
 ## agents
 
-The repository includes an [agent skill](skills/binaryninja-knife/SKILL.md) with the matching Binary Ninja 5.3 API reference. Link it into your agent's skill directory to keep guidance and code together.
+The repository includes an [agent skill](skills/binaryninja-knife/SKILL.md) with the matching Binary Ninja 5.3 API reference. Run `./scripts/link-skill` to link it into `~/.agents/skills/rt1_tools/`, or pass another skill directory.
 
 ## develop
 
