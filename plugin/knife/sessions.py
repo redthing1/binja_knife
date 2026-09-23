@@ -384,6 +384,7 @@ def _reject_args(args: dict[str, Any]) -> None:
 
 def _summary(session: Session) -> dict[str, Any]:
     view = session.bv
+    functions = view.functions
     return {
         "session": session.name,
         "path": session.path,
@@ -395,7 +396,10 @@ def _summary(session: Session) -> dict[str, Any]:
         "length": view.length,
         "entry": hex(view.entry_point),
         "analysis": _analysis_name(view.analysis_state),
-        "function_count": len(view.functions),
+        "function_count": len(functions),
+        "skipped_function_count": sum(
+            bool(getattr(item, "analysis_skipped", False)) for item in functions
+        ),
         "import_count": _import_count(view),
         "string_count": sum(1 for _ in view.get_strings()),
         "section_count": len(view.sections),

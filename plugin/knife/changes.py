@@ -89,6 +89,9 @@ class ChangeActions:
         only(args, "path")
         with self.sessions.use(session_name) as session:
             view = session.bv
+            settings = self.bn.SaveSettings()
+            settings.set_option(self.bn.SaveOption.TrimSnapshots)
+            settings.set_option(self.bn.SaveOption.RemoveUndoData)
             with session.changes:
                 if path is None:
                     if not view.file.has_database:
@@ -96,13 +99,13 @@ class ChangeActions:
                             "this view has no database; provide a .bndb path", kind="save"
                         )
                     try:
-                        ok = bool(view.save_auto_snapshot())
+                        ok = bool(view.save_auto_snapshot(settings=settings))
                     except Exception as error:
                         raise SessionError(f"save failed: {error}", kind="save") from error
                     destination = str(view.file.filename)
                 else:
                     try:
-                        ok = bool(view.create_database(path))
+                        ok = bool(view.create_database(path, settings=settings))
                     except Exception as error:
                         raise SessionError(f"save failed: {error}", kind="save") from error
                     destination = path

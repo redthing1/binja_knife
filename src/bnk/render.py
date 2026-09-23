@@ -86,13 +86,20 @@ def summary_text(value: dict[str, Any]) -> str:
         ("entry", _line(value.get("entry", "unknown"))),
         ("analysis", _line(value.get("analysis", "unknown"))),
         ("functions", _line(value.get("function_count", "unknown"))),
-        ("imports", _line(value.get("import_count", "unknown"))),
-        ("strings", _line(value.get("string_count", "unknown"))),
-        ("sections", _line(value.get("section_count", "unknown"))),
-        ("segments", _line(value.get("segment_count", "unknown"))),
-        ("database", "yes" if value.get("has_database") else "no"),
-        ("dirty", _dirty(value)),
     ]
+    if value.get("skipped_function_count"):
+        count = value["skipped_function_count"]
+        rows.append(("skipped", f"{count} {'function' if count == 1 else 'functions'}"))
+    rows.extend(
+        [
+            ("imports", _line(value.get("import_count", "unknown"))),
+            ("strings", _line(value.get("string_count", "unknown"))),
+            ("sections", _line(value.get("section_count", "unknown"))),
+            ("segments", _line(value.get("segment_count", "unknown"))),
+            ("database", "yes" if value.get("has_database") else "no"),
+            ("dirty", _dirty(value)),
+        ]
+    )
     return _rows(rows)
 
 
@@ -127,9 +134,13 @@ def find_text(value: dict[str, Any]) -> str:
                         f"run bnk refs {_line(item.get('address', '?'))}"
                     )
         elif kind == "functions":
+            skip = (
+                f"  [analysis skipped: {_line(item['skip_reason'])}]"
+                if item.get("skip_reason") else ""
+            )
             lines.append(
                 f"{_line(item.get('address', '?'))}  {_line(item.get('name', '?'))}  "
-                f"{item.get('size', '?')} bytes  {item.get('blocks', '?')} blocks\n"
+                f"{item.get('size', '?')} bytes  {item.get('blocks', '?')} blocks{skip}\n"
                 f"  {_line(item.get('type', ''))}"
             )
         elif kind == "symbols":
@@ -156,6 +167,8 @@ def inspect_text(value: dict[str, Any]) -> str:
             ("parameter", "yes" if variable.get("parameter") else "no"),
             ("exact", f"{function_name}::{_line(variable.get('target', '?'))}"),
         ]
+        if isinstance(function, dict) and function.get("skip_reason"):
+            rows.append(("analysis", f"skipped: {_line(function['skip_reason'])}"))
         return _rows(rows)
 
     address = _line(value.get("address", "unknown"))
@@ -178,6 +191,8 @@ def inspect_text(value: dict[str, Any]) -> str:
                 ("signature", _line(function.get("type", ""))),
             ]
         )
+        if function.get("skip_reason"):
+            rows.append(("analysis", f"skipped: {_line(function['skip_reason'])}"))
     functions = value.get("functions")
     if isinstance(functions, list) and functions:
         names = ", ".join(
@@ -263,6 +278,8 @@ def code_text(value: dict[str, Any]) -> str:
         instruction_address = value.get("instruction_address")
         if isinstance(instruction_address, str) and instruction_address != value["at"]:
             header += f" (instruction {_anchor(instruction_address, value['at'])})"
+    if value.get("skip_reason"):
+        header += f"\nanalysis skipped: {_line(value['skip_reason'])}"
     raw_lines = value.get("lines")
     if not isinstance(raw_lines, list) or not raw_lines:
         return f"{header}\n(no matching lines)"

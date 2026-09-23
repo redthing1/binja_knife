@@ -167,6 +167,7 @@ class ReadActions:
 
         with self.sessions.use(session_name) as session:
             function = resolve_function(session.bv, target)
+            skip_reason = _skip_reason(function)
             if at is None:
                 target_address = parse_address(target)
                 if target_address is not None and target_address != int(function.start):
@@ -191,6 +192,7 @@ class ReadActions:
                 if instruction_address is not None else None,
                 "lines": shown,
                 "more": more,
+                "skip_reason": skip_reason,
             }
 
     def refs(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
@@ -394,6 +396,13 @@ def _code_lines(function: Any, level: str, *, ssa: bool, at: int | None) -> list
 
     il = getattr(function, level)
     if il is None:
+        skip_reason = _skip_reason(function)
+        if skip_reason is not None:
+            raise SessionError(
+                f"{level} is unavailable: Binary Ninja skipped analysis ({skip_reason}); "
+                "try --level disasm",
+                kind="code",
+            )
         raise SessionError(f"{level} is not available", kind="code")
     if at is not None:
         instructions = _mapped_instructions(function, level, at)
@@ -616,7 +625,25 @@ def _function_item(function: Any) -> dict[str, Any]:
         "type": str(function.type),
         "size": int(function.total_bytes),
         "blocks": len(list(function.basic_blocks)),
+        "skip_reason": _skip_reason(function),
     }
+
+
+def _skip_reason(function: Any) -> str | None:
+    if not bool(getattr(function, "analysis_skipped", False)):
+        return None
+    reason = enum_name(function.analysis_skip_reason)
+    return {
+        "AlwaysSkipReason": "disabled",
+        "ExceedFunctionSizeSkipReason": "function size limit",
+        "ExceedFunctionAnalysisTimeSkipReason": "analysis time limit",
+        "ExceedFunctionUpdateCountSkipReason": "analysis update limit",
+        "NewAutoFunctionAnalysisSuppressedReason": "automatic function analysis suppressed",
+        "BasicAnalysisSkipReason": "basic analysis only",
+        "IntermediateAnalysisSkipReason": "intermediate analysis only",
+        "AnalysisPipelineSuspendedReason": "analysis pipeline suspended",
+        "NoSkipReason": "reason unavailable",
+    }.get(reason, reason)
 
 
 def _symbol_item(symbol: Any) -> dict[str, Any]:
