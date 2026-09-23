@@ -1,6 +1,6 @@
-# Binary Ninja Python API Docs (v5.3)
+# Binary Ninja Python API Docs (v6.0.10601)
 
-Source: https://api.binary.ninja/
+Source: Binary Ninja 6.0.10601 bundled api-docs
 
 These files are the Binary Ninja Python API module docs, converted to Markdown.
 The version and module list are recorded in `.binja-docs.json` alongside this file.
@@ -13,7 +13,6 @@ The version and module list are recorded in `.binja-docs.json` alongside this fi
 - `binaryview.md`
 - `bncompleter.md`
 - `callingconvention.md`
-- `collaboration.md`
 - `commonil.md`
 - `component.md`
 - `constantrenderer.md`
@@ -26,13 +25,12 @@ The version and module list are recorded in `.binja-docs.json` alongside this fi
 - `demangle.md`
 - `deprecation.md`
 - `downloadprovider.md`
-- `enterprise.md`
 - `enums.md`
 - `exceptions.md`
+- `extensionmanager.md`
 - `externallibrary.md`
 - `fileaccessor.md`
 - `filemetadata.md`
-- `firmwareninja.md`
 - `flowgraph.md`
 - `function.md`
 - `functionrecognizer.md`
@@ -50,13 +48,14 @@ The version and module list are recorded in `.binja-docs.json` alongside this fi
 - `metadata.md`
 - `platform.md`
 - `plugin.md`
-- `pluginmanager.md`
 - `project.md`
 - `renderlayer.md`
+- `requirementcheck.md`
 - `scriptingprovider.md`
 - `secretsprovider.md`
 - `settings.md`
 - `sharedcache.md`
+- `similarity.md`
 - `stringrecognizer.md`
 - `transform.md`
 - `typearchive.md`
@@ -66,6 +65,7 @@ The version and module list are recorded in `.binja-docs.json` alongside this fi
 - `typeprinter.md`
 - `types.md`
 - `undo.md`
+- `unicode.md`
 - `update.md`
 - `variable.md`
 - `warp.md`

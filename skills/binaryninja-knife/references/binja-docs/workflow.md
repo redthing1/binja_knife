@@ -29,17 +29,17 @@
     __init__(*configuration: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *handle: LP_BNActivity | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *action: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")], [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *eligibility: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")], [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#Activity.__init__)
     :   Parameters:
         :   - **configuration** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
-            - **handle** (*LP_BNActivity* *|* *None*) –
+              Python v3.14)"))
+            - **handle** (*LP_BNActivity* *|* *None*)
             - **action** ([*Callable*](https://docs.python.org/3/library/typing.html#typing.Callable
               "(in Python
               v3.14)")*[**[*[*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
-              Python v3.14)")*]**,* *None**]* *|* *None*) –
+              Python v3.14)")*]**,* *None**]* *|* *None*)
             - **eligibility**
               ([*Callable*](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python
               v3.14)")*[**[*[*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
               Python v3.14)")*]**,* [*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")*]* *|* *None*) –
+              "(in Python v3.14)")*]* *|* *None*)
 
     *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
     :   Activity name (read-only)
@@ -59,7 +59,7 @@
 
     __init__(*handle: LP_BNAnalysisContext*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#AnalysisContext.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNAnalysisContext*) –
+        :   **handle** (*LP_BNAnalysisContext*)
 
     get_backed_address_ranges() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[tuple](https://docs.python.org/3/library/stdtypes.html#tuple "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#AnalysisContext.get_backed_address_ranges)
     :   Get all backed address ranges from the cached memory map.
@@ -290,7 +290,7 @@
     inform(*request: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#AnalysisContext.inform)
     :   Parameters:
         :   **request** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -422,11 +422,11 @@
         Parameters:
         :   - **new_func**
               ([*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
-              "binaryninja.mediumlevelil.MediumLevelILFunction")) –
+              "binaryninja.mediumlevelil.MediumLevelILFunction"))
             - **llil_ssa_to_mlil_instr_map** (*mediumlevelil.LLILSSAToMLILInstructionMapping* *|*
-              *None*) –
+              *None*)
             - **llil_ssa_to_mlil_expr_map** (*mediumlevelil.LLILSSAToMLILExpressionMapping* *|*
-              *None*) –
+              *None*)
 
         Return type:
         :   *None*
@@ -507,14 +507,14 @@
     workflow.register()
     ```
 
-    __init__(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *handle: LP_BNWorkflow | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *query_registry: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *object_handle: LP_BNFunction | LP_BNBinaryView | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#Workflow.__init__)
+    __init__(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *handle: LP_BNWorkflow = None*, *query_registry: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *object_handle: LP_BNFunction | LP_BNBinaryView = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#Workflow.__init__)
     :   Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
-            - **handle** (*LP_BNWorkflow* *|* *None*) –
+              v3.14)"))
+            - **handle** (*LP_BNWorkflow*)
             - **query_registry** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
-            - **object_handle** (*LP_BNFunction* *|* *LP_BNBinaryView* *|* *None*) –
+              Python v3.14)"))
+            - **object_handle** (*LP_BNFunction* *|* *LP_BNBinaryView*)
 
     activity_roots(*activity: [Activity](#binaryninja.workflow.Activity "binaryninja.workflow.Activity") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#Workflow.activity_roots)
     :   `activity_roots` Retrieve the list of activity roots for the Workflow, or if specified
@@ -558,7 +558,7 @@
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
 
-    clone(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *activity: [Activity](#binaryninja.workflow.Activity "binaryninja.workflow.Activity") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*) → [Workflow](#binaryninja.workflow.Workflow "binaryninja.workflow.Workflow")[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#Workflow.clone)
+    clone(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = None*, *activity: [Activity](#binaryninja.workflow.Activity "binaryninja.workflow.Activity") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*) → [Workflow](#binaryninja.workflow.Workflow "binaryninja.workflow.Workflow")[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#Workflow.clone)
     :   `clone` Clone a new Workflow, copying all Activities and the execution strategy.
 
         Parameters:
@@ -776,9 +776,9 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    __init__(*handle: LP_BNFunction | LP_BNBinaryView | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.__init__)
+    __init__(*handle: LP_BNFunction | LP_BNBinaryView = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNFunction* *|* *LP_BNBinaryView* *|* *None*) –
+        :   **handle** (*LP_BNFunction* *|* *LP_BNBinaryView*)
 
     breakpoint_delete(*activities*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.breakpoint_delete)
 
@@ -791,9 +791,9 @@
     configure(*advanced: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *incremental: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.configure)
     :   Parameters:
         :   - **advanced** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **incremental** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     delay(*duration*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.delay)
 
@@ -808,16 +808,16 @@
     log(*enable: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *is_global: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.log)
     :   Parameters:
         :   - **enable** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **is_global** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     metrics(*enable: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *is_global: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.metrics)
     :   Parameters:
         :   - **enable** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **is_global** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     override_clear(*activity*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.override_clear)
 
@@ -832,16 +832,16 @@
     resume(*advanced: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *incremental: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.resume)
     :   Parameters:
         :   - **advanced** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **incremental** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     run(*advanced: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *incremental: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.run)
     :   Parameters:
         :   - **advanced** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **incremental** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     show_metrics() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachine.show_metrics)
     :   Return type:
@@ -875,7 +875,7 @@
 
         Parameters:
         :   **machine** ([*WorkflowMachine*](#binaryninja.workflow.WorkflowMachine
-            "binaryninja.workflow.WorkflowMachine")) –
+            "binaryninja.workflow.WorkflowMachine"))
 
     do_breakpoint(*line*)[[source]](https://api.binary.ninja/_modules/binaryninja/workflow.html#WorkflowMachineCLI.do_breakpoint)
     :   Handle breakpoint commands.

@@ -16,6 +16,8 @@
 | [`binaryninja.types.EnumerationType`](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType") | `class Type` allows you to interact with the Binary Ninja type system. Note that the `repr`… |
 | [`binaryninja.types.FloatBuilder`](#binaryninja.types.FloatBuilder "binaryninja.types.FloatBuilder") | All TypeBuilder objects should not be instantiated directly but created via `.create` APIs. |
 | [`binaryninja.types.FloatType`](#binaryninja.types.FloatType "binaryninja.types.FloatType") | `class Type` allows you to interact with the Binary Ninja type system. Note that the `repr`… |
+| [`binaryninja.types.FragmentBuilder`](#binaryninja.types.FragmentBuilder "binaryninja.types.FragmentBuilder") | Mutable builder for a bitwise slice, with live size and container placement measured in bits. |
+| [`binaryninja.types.FragmentType`](#binaryninja.types.FragmentType "binaryninja.types.FragmentType") | A bitwise slice of a larger source type carried in an integer-like container. Its live size and… |
 | [`binaryninja.types.FunctionBuilder`](#binaryninja.types.FunctionBuilder "binaryninja.types.FunctionBuilder") | All TypeBuilder objects should not be instantiated directly but created via `.create` APIs. |
 | [`binaryninja.types.FunctionParameter`](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter") |  |
 | [`binaryninja.types.FunctionType`](#binaryninja.types.FunctionType "binaryninja.types.FunctionType") | `class Type` allows you to interact with the Binary Ninja type system. Note that the `repr`… |
@@ -33,6 +35,7 @@
 | [`binaryninja.types.QualifiedName`](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName") |  |
 | [`binaryninja.types.RegisterSet`](#binaryninja.types.RegisterSet "binaryninja.types.RegisterSet") |  |
 | [`binaryninja.types.RegisterStackAdjustmentWithConfidence`](#binaryninja.types.RegisterStackAdjustmentWithConfidence "binaryninja.types.RegisterStackAdjustmentWithConfidence") |  |
+| [`binaryninja.types.ReturnValue`](#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue") |  |
 | [`binaryninja.types.StructureBuilder`](#binaryninja.types.StructureBuilder "binaryninja.types.StructureBuilder") | All TypeBuilder objects should not be instantiated directly but created via `.create` APIs. |
 | [`binaryninja.types.StructureMember`](#binaryninja.types.StructureMember "binaryninja.types.StructureMember") |  |
 | [`binaryninja.types.StructureType`](#binaryninja.types.StructureType "binaryninja.types.StructureType") | `class Type` allows you to interact with the Binary Ninja type system. Note that the `repr`… |
@@ -43,6 +46,9 @@
 | [`binaryninja.types.TypeDefinitionLine`](#binaryninja.types.TypeDefinitionLine "binaryninja.types.TypeDefinitionLine") |  |
 | [`binaryninja.types.TypeFieldReference`](#binaryninja.types.TypeFieldReference "binaryninja.types.TypeFieldReference") |  |
 | [`binaryninja.types.TypeReferenceSource`](#binaryninja.types.TypeReferenceSource "binaryninja.types.TypeReferenceSource") |  |
+| [`binaryninja.types.ValueLocation`](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") |  |
+| [`binaryninja.types.ValueLocationComponent`](#binaryninja.types.ValueLocationComponent "binaryninja.types.ValueLocationComponent") |  |
+| [`binaryninja.types.ValueLocationWithConfidence`](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") |  |
 | [`binaryninja.types.VoidBuilder`](#binaryninja.types.VoidBuilder "binaryninja.types.VoidBuilder") | All TypeBuilder objects should not be instantiated directly but created via `.create` APIs. |
 | [`binaryninja.types.VoidType`](#binaryninja.types.VoidType "binaryninja.types.VoidType") | `class Type` allows you to interact with the Binary Ninja type system. Note that the `repr`… |
 | [`binaryninja.types.WideCharBuilder`](#binaryninja.types.WideCharBuilder "binaryninja.types.WideCharBuilder") | All TypeBuilder objects should not be instantiated directly but created via `.create` APIs. |
@@ -61,13 +67,13 @@
     :   Parameters:
         :   - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **element_count** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*ArrayBuilder*](#binaryninja.types.ArrayBuilder "binaryninja.types.ArrayBuilder")
@@ -85,13 +91,13 @@
 
     *classmethod* create(*element_type: [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *count: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [ArrayType](#binaryninja.types.ArrayType "binaryninja.types.ArrayType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ArrayType.create)
     :   Parameters:
-        :   - **element_type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) –
+        :   - **element_type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
             - **count** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*ArrayType*](#binaryninja.types.ArrayType "binaryninja.types.ArrayType")
@@ -109,18 +115,15 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    BaseStructure(type: Union[ForwardRef(‘NamedTypeReferenceType’),
-    ForwardRef(‘StructureType’)], offset: int, width: int = 0)
-
     __init__(*type: [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType") | [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#BaseStructure.__init__)
     :   Parameters:
         :   - **type** ([*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
               "binaryninja.types.NamedTypeReferenceType") *|*
-              [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")) –
+              [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -136,9 +139,9 @@
     *classmethod* create(*platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [BoolBuilder](#binaryninja.types.BoolBuilder "binaryninja.types.BoolBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#BoolBuilder.create)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*BoolBuilder*](#binaryninja.types.BoolBuilder "binaryninja.types.BoolBuilder")
@@ -151,9 +154,9 @@
     *classmethod* create(*platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [BoolType](#binaryninja.types.BoolType "binaryninja.types.BoolType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#BoolType.create)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*BoolType*](#binaryninja.types.BoolType "binaryninja.types.BoolType")
@@ -164,21 +167,19 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    BoolWithConfidence(value: bool, confidence: int = 255)
-
     __init__(*value: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
 
     *classmethod* from_core_struct(*core_struct: BNBoolWithConfidence*) → [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#BoolWithConfidence.from_core_struct)
     :   Parameters:
-        :   **core_struct** (*BNBoolWithConfidence*) –
+        :   **core_struct** (*BNBoolWithConfidence*)
 
         Return type:
         :   [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
@@ -188,9 +189,9 @@
     :   Parameters:
         :   - **value** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *BNBoolWithConfidence*
@@ -208,11 +209,11 @@
     *classmethod* create(*alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [CharBuilder](#binaryninja.types.CharBuilder "binaryninja.types.CharBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#CharBuilder.create)
     :   Parameters:
         :   - **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*CharBuilder*](#binaryninja.types.CharBuilder "binaryninja.types.CharBuilder")
@@ -225,11 +226,11 @@
     *classmethod* create(*altname: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = 'char'*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [CharType](#binaryninja.types.CharType "binaryninja.types.CharType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#CharType.create)
     :   Parameters:
         :   - **altname** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*CharType*](#binaryninja.types.CharType "binaryninja.types.CharType")
@@ -242,12 +243,12 @@
 
     __init__(*handle: LP_BNSymbol*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#CoreSymbol.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNSymbol*) –
+        :   **handle** (*LP_BNSymbol*)
 
     imported_function_from_import_address_symbol(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [CoreSymbol](#binaryninja.types.CoreSymbol "binaryninja.types.CoreSymbol") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#CoreSymbol.imported_function_from_import_address_symbol)
     :   Parameters:
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*CoreSymbol*](#binaryninja.types.CoreSymbol "binaryninja.types.CoreSymbol") | *None*
@@ -294,19 +295,19 @@
 
     __init__(*handle: LP_BNTypeBuilder*, *enum_builder_handle: LP_BNEnumerationBuilder*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationBuilder.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNTypeBuilder*) –
-            - **enum_builder_handle** (*LP_BNEnumerationBuilder*) –
+        :   - **handle** (*LP_BNTypeBuilder*)
+            - **enum_builder_handle** (*LP_BNEnumerationBuilder*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     append(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationBuilder.append)
     :   Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
         Return type:
         :   [*EnumerationBuilder*](#binaryninja.types.EnumerationBuilder
@@ -323,18 +324,18 @@
               v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)")*]* *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*EnumerationMember*](#binaryninja.types.EnumerationMember
-              "binaryninja.types.EnumerationMember")*]* *|* *None*) –
+              "binaryninja.types.EnumerationMember")*]* *|* *None*)
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*EnumerationBuilder*](#binaryninja.types.EnumerationBuilder
@@ -343,7 +344,7 @@
     remove(*i: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationBuilder.remove)
     :   Parameters:
         :   **i** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*EnumerationBuilder*](#binaryninja.types.EnumerationBuilder
@@ -352,11 +353,11 @@
     replace(*i: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationBuilder.replace)
     :   Parameters:
         :   - **i** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*EnumerationBuilder*](#binaryninja.types.EnumerationBuilder
@@ -371,14 +372,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    EnumerationMember(name: str, value: Optional[int] = None)
-
     __init__(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
         Return type:
         :   *None*
@@ -395,9 +394,9 @@
     __init__(*handle*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationType.__init__)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* create(*members: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[EnumerationMember](#binaryninja.types.EnumerationMember "binaryninja.types.EnumerationMember")]*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [EnumerationType](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationType.create)
     :   Parameters:
@@ -410,18 +409,18 @@
               v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)")*]* *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*EnumerationMember*](#binaryninja.types.EnumerationMember
-              "binaryninja.types.EnumerationMember")*]*) –
+              "binaryninja.types.EnumerationMember")*]*)
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*EnumerationType*](#binaryninja.types.EnumerationType
@@ -430,13 +429,13 @@
     generate_named_type_reference(*guid: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationType.generate_named_type_reference)
     :   Parameters:
         :   - **guid** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
     mutable_copy() → [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#EnumerationType.mutable_copy)
     :   Return type:
@@ -454,13 +453,13 @@
     *classmethod* create(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [FloatBuilder](#binaryninja.types.FloatBuilder "binaryninja.types.FloatBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FloatBuilder.create)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*FloatBuilder*](#binaryninja.types.FloatBuilder "binaryninja.types.FloatBuilder")
@@ -479,12 +478,157 @@
             - **altname** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)")) – alternate name for type
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*FloatType*](#binaryninja.types.FloatType "binaryninja.types.FloatType")
+
+## FragmentBuilder
+
+*class* FragmentBuilder[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FragmentBuilder)
+:   Bases: [`TypeBuilder`](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")
+
+    Mutable builder for a bitwise slice, with live size and container placement measured in
+    bits.
+
+    *classmethod* create(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *endianness: [Endianness](enums.md#binaryninja.enums.Endianness "binaryninja.enums.Endianness") = Endianness.LittleEndian*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [FragmentBuilder](#binaryninja.types.FragmentBuilder "binaryninja.types.FragmentBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FragmentBuilder.create)
+    :   Create a mutable fragment whose live bits initially fill a container whose width is
+        measured in bytes.
+
+        Parameters:
+        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) – larger source
+              type of which the fragment is a slice
+            - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – container width in bytes; the initial live fragment size is `width * 8` bits
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – original source byte offset within `type`
+            - **endianness** ([*Endianness*](enums.md#binaryninja.enums.Endianness
+              "binaryninja.enums.Endianness")) – byte order used to map source-layout bytes to
+              container bits
+            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – confidence in the resulting type
+
+        Returns:
+        :   Mutable fragment type builder
+
+        Return type:
+        :   [*FragmentBuilder*](#binaryninja.types.FragmentBuilder
+            "binaryninja.types.FragmentBuilder")
+
+        Example:
+        :   ```
+            >>> source = Type.array(Type.int(1, False), 16)
+            >>> fragment = FragmentBuilder.create(source, 8, 4, Endianness.BigEndian)
+            >>> fragment.offset, fragment.fragment_width_bits
+            (4, 64)
+            ```
+
+    *property* endianness*: [Endianness](enums.md#binaryninja.enums.Endianness "binaryninja.enums.Endianness")*
+    :   Byte order used to map source-layout bytes to bit positions in the current container.
+
+    *property* fragment_original_width*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Width in bytes of the original source window, not the live fragment’s bit size.
+
+    *property* fragment_start_bit*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Bit offset of the live fragment in the current container, where the least-significant
+        bit is zero.
+
+    *property* fragment_truncated_start_bits*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Number of original low-order logical fragment bits no longer represented.
+
+    *property* fragment_width_bits*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Size in bits of the live fragment represented in the current container.
+
+    *property* fragment_wrap_bit*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Saved historical wrap boundary; zero means the current container width is used.
+
+    *property* offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Original source byte offset, not the live fragment’s placement within the container.
+
+## FragmentType
+
+*class* FragmentType[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FragmentType)
+:   Bases: [`Type`](#binaryninja.types.Type "binaryninja.types.Type")
+
+    A bitwise slice of a larger source type carried in an integer-like container. Its live
+    size and placement within the container are measured in bits.
+
+    Fragments are generally transient analysis types. They commonly arise when a calling
+    convention moves part of a structure through a register or when optimized code performs
+    an inline `memcpy` using register-sized moves. Retaining a byte-aligned source window,
+    the source-to-container byte-order mapping, and subsequent bit transformations lets
+    analysis preserve source and member types through those partial moves. Advanced bit
+    state is normally produced by analysis; use
+    [`create`](#binaryninja.types.FragmentType.create
+    "binaryninja.types.FragmentType.create") or
+    [`Type.fragment`](#binaryninja.types.Type.fragment "binaryninja.types.Type.fragment") to
+    create a fresh fragment.
+
+    *classmethod* create(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *endianness: [Endianness](enums.md#binaryninja.enums.Endianness "binaryninja.enums.Endianness") = Endianness.LittleEndian*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [FragmentType](#binaryninja.types.FragmentType "binaryninja.types.FragmentType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FragmentType.create)
+    :   Create a fresh fragment whose live bits initially fill a container whose width is
+        measured in bytes.
+
+        Parameters:
+        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) – larger source
+              type of which the fragment is a slice
+            - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – container width in bytes; the initial live fragment size is `width * 8` bits
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – original source byte offset within `type`
+            - **endianness** ([*Endianness*](enums.md#binaryninja.enums.Endianness
+              "binaryninja.enums.Endianness")) – byte order used to map source-layout bytes to
+              container bits
+            - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
+              "binaryninja.platform.Platform")) – optional platform associated with the type
+            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – confidence in the resulting type
+
+        Returns:
+        :   Immutable fragment type
+
+        Return type:
+        :   [*FragmentType*](#binaryninja.types.FragmentType "binaryninja.types.FragmentType")
+
+        Example:
+        :   ```
+            >>> source = Type.array(Type.int(1, False), 16)
+            >>> fragment = FragmentType.create(source, 8, 4, Endianness.BigEndian)
+            >>> fragment.fragment_original_width_bytes
+            8
+            >>> fragment.fragment_endianness == Endianness.BigEndian
+            True
+            ```
+
+    *property* fragment_endianness*: [Endianness](enums.md#binaryninja.enums.Endianness "binaryninja.enums.Endianness")*
+    :   Byte order used to map source-layout bytes to bit positions in the current container
+        (read-only).
+
+    *property* fragment_original_width_bytes*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Width in bytes of the original source window, not the live fragment’s bit size
+        (read-only).
+
+    *property* fragment_start_bit*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Bit offset of the live fragment in the current container, where the least-significant
+        bit is zero (read-only).
+
+    *property* fragment_truncated_start_bits*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Number of original low-order logical fragment bits no longer represented (read-only).
+
+    *property* fragment_width_bits*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Size in bits of the live fragment represented in the current container (read-only).
+
+    *property* fragment_wrap_bit*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Saved historical wrap boundary; zero means the current container width is used
+        (read-only).
+
+    *property* offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    :   Original source byte offset, not the live fragment’s placement within the container
+        (read-only).
+
+    *property* target*: [Type](#binaryninja.types.Type "binaryninja.types.Type")*
+    :   Larger source type of which this fragment is a slice (read-only).
 
 ## FunctionBuilder
 
@@ -496,18 +640,19 @@
         :   - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
               "binaryninja.types.Type") *|* [*FunctionParameter*](#binaryninja.types.FunctionParameter
-              "binaryninja.types.FunctionParameter")) –
+              "binaryninja.types.FunctionParameter"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
-    *classmethod* create(*return_type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *var_args: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *stack_adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *platform: _platform.Platform | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *can_return: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *reg_stack_adjust: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[architecture.RegisterName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *return_regs: [RegisterSet](#binaryninja.types.RegisterSet "binaryninja.types.RegisterSet") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterType] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *name_type: [NameType](enums.md#binaryninja.enums.NameType "binaryninja.enums.NameType") = NameType.NoNameType*, *pure: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [FunctionBuilder](#binaryninja.types.FunctionBuilder "binaryninja.types.FunctionBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionBuilder.create)
+    *classmethod* create(*return_type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [ReturnValue](#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *var_args: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *stack_adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *can_return: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *reg_stack_adjust: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *name_type: [NameType](enums.md#binaryninja.enums.NameType "binaryninja.enums.NameType") = NameType.NoNameType*, *pure: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [FunctionBuilder](#binaryninja.types.FunctionBuilder "binaryninja.types.FunctionBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionBuilder.create)
     :   Parameters:
         :   - **return_type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type") *|* *None*) –
+              "binaryninja.types.Type") *|* [*ReturnValue*](#binaryninja.types.ReturnValue
+              "binaryninja.types.ReturnValue") *|* *None*)
             - **calling_convention**
               ([*CallingConvention*](callingconvention.md#binaryninja.callingconvention.CallingConvention
-              "binaryninja.callingconvention.CallingConvention") *|* *None*) –
+              "binaryninja.callingconvention.CallingConvention") *|* *None*)
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*]* *|*
               [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -517,31 +662,28 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)")*,* [*Type*](#binaryninja.types.Type "binaryninja.types.Type")*]**]* *|*
-              *None*) –
+              *None*)
             - **var_args** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence") *|* *None*) –
+              "binaryninja.types.BoolWithConfidence") *|* *None*)
             - **stack_adjust** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
               Python v3.14)") *|* [*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence") *|* *None*) –
-            - **platform** (*_platform.Platform* *|* *None*) –
+              "binaryninja.types.OffsetWithConfidence") *|* *None*)
+            - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **can_return** ([*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence") *|* *None*) –
+              "binaryninja.types.BoolWithConfidence") *|* *None*)
             - **reg_stack_adjust** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict
-              "(in Python v3.14)")*[**architecture.RegisterName**,*
+              "(in Python v3.14)")*[**RegisterName**,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") *|*
               [*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")*]* *|* *None*) –
-            - **return_regs** ([*RegisterSet*](#binaryninja.types.RegisterSet
-              "binaryninja.types.RegisterSet") *|*
-              [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-              v3.14)")*[**architecture.RegisterType**]* *|* *None*) –
+              "binaryninja.types.OffsetWithConfidence")*]* *|* *None*)
             - **name_type** ([*NameType*](enums.md#binaryninja.enums.NameType
-              "binaryninja.enums.NameType")) –
+              "binaryninja.enums.NameType"))
             - **pure** ([*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence") *|* *None*) –
+              "binaryninja.types.BoolWithConfidence") *|* *None*)
 
         Return type:
         :   [*FunctionBuilder*](#binaryninja.types.FunctionBuilder
@@ -562,6 +704,8 @@
 
     *property* return_value*: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*
 
+    *property* return_value_location*: [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+
     *property* stack_adjust*: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")*
 
     *property* stack_adjustment*: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")*
@@ -574,22 +718,21 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    FunctionParameter(type: Union[ForwardRef(‘TypeBuilder’), ForwardRef(‘Type’)], name: str
-    = ‘’, location: Optional[ForwardRef(‘variable.VariableNameAndType’)] = None)
-
-    __init__(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *location: [VariableNameAndType](variable.md#binaryninja.variable.VariableNameAndType "binaryninja.variable.VariableNameAndType") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *location: [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *source: [ValueLocationSource](enums.md#binaryninja.enums.ValueLocationSource "binaryninja.enums.ValueLocationSource") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionParameter.__init__)
     :   Parameters:
         :   - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
-            - **location**
-              ([*VariableNameAndType*](variable.md#binaryninja.variable.VariableNameAndType
-              "binaryninja.variable.VariableNameAndType") *|* *None*) –
-
-        Return type:
-        :   *None*
+              v3.14)"))
+            - **location** ([*ValueLocation*](#binaryninja.types.ValueLocation
+              "binaryninja.types.ValueLocation") *|*
+              [*ValueLocationWithConfidence*](#binaryninja.types.ValueLocationWithConfidence
+              "binaryninja.types.ValueLocationWithConfidence") *|*
+              [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+              "binaryninja.variable.CoreVariable") *|* *None*)
+            - **source** ([*ValueLocationSource*](enums.md#binaryninja.enums.ValueLocationSource
+              "binaryninja.enums.ValueLocationSource") *|* *None*)
 
     immutable_copy() → [FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionParameter.immutable_copy)
     :   Return type:
@@ -601,7 +744,9 @@
         :   [*FunctionParameter*](#binaryninja.types.FunctionParameter
             "binaryninja.types.FunctionParameter")
 
-    location*: [VariableNameAndType](variable.md#binaryninja.variable.VariableNameAndType "binaryninja.variable.VariableNameAndType") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    location*: [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+
+    location_source*: [ValueLocationSource](enums.md#binaryninja.enums.ValueLocationSource "binaryninja.enums.ValueLocationSource")* *= 0*
 
     name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")* *= ''*
 
@@ -612,9 +757,11 @@
 *class* FunctionType[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionType)
 :   Bases: [`Type`](#binaryninja.types.Type "binaryninja.types.Type")
 
-    *classmethod* create(*ret: [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *variable_arguments: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *stack_adjust: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") = OffsetWithConfidence(value=0, confidence=255)*, *platform: _platform.Platform | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *can_return: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *reg_stack_adjust: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[architecture.RegisterName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *return_regs: [RegisterSet](#binaryninja.types.RegisterSet "binaryninja.types.RegisterSet") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterType] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *name_type: [NameType](enums.md#binaryninja.enums.NameType "binaryninja.enums.NameType") = NameType.NoNameType*, *pure: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [FunctionType](#binaryninja.types.FunctionType "binaryninja.types.FunctionType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionType.create)
+    *classmethod* create(*ret: [Type](#binaryninja.types.Type "binaryninja.types.Type") | [ReturnValue](#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *variable_arguments: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *stack_adjust: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") = OffsetWithConfidence(value=0, confidence=255)*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *can_return: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *reg_stack_adjust: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *name_type: [NameType](enums.md#binaryninja.enums.NameType "binaryninja.enums.NameType") = NameType.NoNameType*, *pure: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [FunctionType](#binaryninja.types.FunctionType "binaryninja.types.FunctionType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#FunctionType.create)
     :   Parameters:
-        :   - **ret** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type") *|* *None*) –
+        :   - **ret** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type") *|*
+              [*ReturnValue*](#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue") *|*
+              *None*)
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*]* *|*
               [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -624,35 +771,32 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)")*,* [*Type*](#binaryninja.types.Type "binaryninja.types.Type")*]**]* *|*
-              *None*) –
+              *None*)
             - **calling_convention**
               ([*CallingConvention*](callingconvention.md#binaryninja.callingconvention.CallingConvention
-              "binaryninja.callingconvention.CallingConvention") *|* *None*) –
+              "binaryninja.callingconvention.CallingConvention") *|* *None*)
             - **variable_arguments** ([*bool*](https://docs.python.org/3/library/functions.html#bool
               "(in Python v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **stack_adjust** ([*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")) –
-            - **platform** (*_platform.Platform* *|* *None*) –
+              "binaryninja.types.OffsetWithConfidence"))
+            - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **can_return** ([*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
               "binaryninja.types.BoolWithConfidence") *|*
-              [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")) –
+              [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)"))
             - **reg_stack_adjust** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict
-              "(in Python v3.14)")*[**architecture.RegisterName**,*
+              "(in Python v3.14)")*[**RegisterName**,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") *|*
               [*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")*]* *|* *None*) –
-            - **return_regs** ([*RegisterSet*](#binaryninja.types.RegisterSet
-              "binaryninja.types.RegisterSet") *|*
-              [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-              v3.14)")*[**architecture.RegisterType**]* *|* *None*) –
+              "binaryninja.types.OffsetWithConfidence")*]* *|* *None*)
             - **name_type** ([*NameType*](enums.md#binaryninja.enums.NameType
-              "binaryninja.enums.NameType")) –
+              "binaryninja.enums.NameType"))
             - **pure** ([*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
               "binaryninja.types.BoolWithConfidence") *|*
-              [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")) –
+              [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)"))
 
         Return type:
         :   [*FunctionType*](#binaryninja.types.FunctionType "binaryninja.types.FunctionType")
@@ -680,6 +824,9 @@
     *property* return_value*: [Type](#binaryninja.types.Type "binaryninja.types.Type")*
     :   Return value (read-only)
 
+    *property* return_value_location*: [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    :   Return value location (read-only)
+
     *property* stack_adjustment*: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")*
     :   Stack adjustment for function (read-only)
 
@@ -689,19 +836,16 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    InheritedStructureMember(base: ‘NamedTypeReferenceType’, base_offset: int, member:
-    binaryninja.types.StructureMember, member_index: int)
-
     __init__(*base: [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")*, *base_offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *member: [StructureMember](#binaryninja.types.StructureMember "binaryninja.types.StructureMember")*, *member_index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **base** ([*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
-              "binaryninja.types.NamedTypeReferenceType")) –
+              "binaryninja.types.NamedTypeReferenceType"))
             - **base_offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **member** ([*StructureMember*](#binaryninja.types.StructureMember
-              "binaryninja.types.StructureMember")) –
+              "binaryninja.types.StructureMember"))
             - **member_index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*
@@ -725,16 +869,16 @@
     __init__(*value: [InlineDuringAnalysis](enums.md#binaryninja.enums.InlineDuringAnalysis "binaryninja.enums.InlineDuringAnalysis")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*InlineDuringAnalysis*](enums.md#binaryninja.enums.InlineDuringAnalysis
-              "binaryninja.enums.InlineDuringAnalysis")) –
+              "binaryninja.enums.InlineDuringAnalysis"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
 
     *classmethod* from_core_struct(*core_struct: BNInlineDuringAnalysisWithConfidence*) → [InlineDuringAnalysisWithConfidence](#binaryninja.types.InlineDuringAnalysisWithConfidence "binaryninja.types.InlineDuringAnalysisWithConfidence")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#InlineDuringAnalysisWithConfidence.from_core_struct)
     :   Parameters:
-        :   **core_struct** (*BNInlineDuringAnalysisWithConfidence*) –
+        :   **core_struct** (*BNInlineDuringAnalysisWithConfidence*)
 
         Return type:
         :   [*InlineDuringAnalysisWithConfidence*](#binaryninja.types.InlineDuringAnalysisWithConfidence
@@ -752,16 +896,16 @@
     *classmethod* create(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = True*, *alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [IntegerBuilder](#binaryninja.types.IntegerBuilder "binaryninja.types.IntegerBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#IntegerBuilder.create)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*IntegerBuilder*](#binaryninja.types.IntegerBuilder "binaryninja.types.IntegerBuilder")
@@ -774,23 +918,23 @@
     __init__(*handle*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#IntegerType.__init__)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* create(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = True*, *alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [IntegerType](#binaryninja.types.IntegerType "binaryninja.types.IntegerType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#IntegerType.create)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*IntegerType*](#binaryninja.types.IntegerType "binaryninja.types.IntegerType")
@@ -804,25 +948,21 @@
 :   Bases: [`Generic`](https://docs.python.org/3/library/typing.html#typing.Generic "(in
     Python v3.14)")[`TB`]
 
-    MutableTypeBuilder(type: ~TB, container: Union[ForwardRef(‘binaryview.BinaryView’),
-    ForwardRef(‘typelibrary.TypeLibrary’)], name: binaryninja.types.QualifiedName, platform:
-    Optional[ForwardRef(‘_platform.Platform’)], confidence: int, user: bool = True)
-
     __init__(*type: TB*, *container: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [TypeLibrary](typelibrary.md#binaryninja.typelibrary.TypeLibrary "binaryninja.typelibrary.TypeLibrary")*, *name: [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *user: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
-        :   - **type** (*TB*) –
+        :   - **type** (*TB*)
             - **container** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*TypeLibrary*](typelibrary.md#binaryninja.typelibrary.TypeLibrary
-              "binaryninja.typelibrary.TypeLibrary")) –
+              "binaryninja.typelibrary.TypeLibrary"))
             - **name** ([*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **user** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -851,7 +991,7 @@
             v3.14)") *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
             Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
             Python v3.14)")*]* *|* [*NameSpace*](#binaryninja.types.NameSpace
-            "binaryninja.types.NameSpace") *|* *None*) –
+            "binaryninja.types.NameSpace") *|* *None*)
 
         Return type:
         :   *BNNameSpace* | *None*
@@ -863,40 +1003,40 @@
 
     __init__(*handle: LP_BNTypeBuilder*, *ntr_builder_handle: LP_BNNamedTypeReferenceBuilder*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceBuilder.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNTypeBuilder*) –
-            - **ntr_builder_handle** (*LP_BNNamedTypeReferenceBuilder*) –
+        :   - **handle** (*LP_BNTypeBuilder*)
+            - **ntr_builder_handle** (*LP_BNNamedTypeReferenceBuilder*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* create(*type_class: [NamedTypeReferenceClass](enums.md#binaryninja.enums.NamedTypeReferenceClass "binaryninja.enums.NamedTypeReferenceClass") = NamedTypeReferenceClass.UnknownNamedTypeClass*, *type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName") = ''*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *align: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 1*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*) → [NamedTypeReferenceBuilder](#binaryninja.types.NamedTypeReferenceBuilder "binaryninja.types.NamedTypeReferenceBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceBuilder.create)
     :   Parameters:
         :   - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass")) –
+              "binaryninja.enums.NamedTypeReferenceClass"))
             - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **align** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -906,17 +1046,17 @@
     :   Parameters:
         :   - **named_type**
               ([*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
-              "binaryninja.types.NamedTypeReferenceBuilder")) –
+              "binaryninja.types.NamedTypeReferenceBuilder"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **align** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -925,13 +1065,13 @@
     *static* named_type_from_registered_type(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [NamedTypeReferenceBuilder](#binaryninja.types.NamedTypeReferenceBuilder "binaryninja.types.NamedTypeReferenceBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceBuilder.named_type_from_registered_type)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -944,10 +1084,10 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass") *|* *None*) –
+              "binaryninja.enums.NamedTypeReferenceClass") *|* *None*)
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -956,16 +1096,16 @@
     *static* named_type_from_type_and_id(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [NamedTypeReferenceBuilder](#binaryninja.types.NamedTypeReferenceBuilder "binaryninja.types.NamedTypeReferenceBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceBuilder.named_type_from_type_and_id)
     :   Parameters:
         :   - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type") *|* *None*) –
+              "binaryninja.types.Type") *|* *None*)
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -987,37 +1127,37 @@
     __init__(*handle*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *ntr_handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceType.__init__)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* create(*named_type_class: [NamedTypeReferenceClass](enums.md#binaryninja.enums.NamedTypeReferenceClass "binaryninja.enums.NamedTypeReferenceClass")*, *guid: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *alignment: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*) → [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceType.create)
     :   Parameters:
         :   - **named_type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass")) –
+              "binaryninja.enums.NamedTypeReferenceClass"))
             - **guid** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **alignment** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -1028,34 +1168,34 @@
 
         Parameters:
         :   - **alignment** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
     *classmethod* create_from_registered_type(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceType.create_from_registered_type)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -1068,22 +1208,22 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type") *|* *None*) –
+              "binaryninja.types.Type") *|* *None*)
             - **guid** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -1093,27 +1233,27 @@
     :   Parameters:
         :   - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass")) –
+              "binaryninja.enums.NamedTypeReferenceClass"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
     *static* generate_auto_type_ref(*type_class: [NamedTypeReferenceClass](enums.md#binaryninja.enums.NamedTypeReferenceClass "binaryninja.enums.NamedTypeReferenceClass")*, *source: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceType.generate_auto_type_ref)
     :   Parameters:
         :   - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass")) –
+              "binaryninja.enums.NamedTypeReferenceClass"))
             - **source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
     mutable_copy()[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#NamedTypeReferenceType.mutable_copy)
 
@@ -1142,21 +1282,19 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    OffsetWithConfidence(value: int, confidence: int = 255)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
 
     *classmethod* from_core_struct(*core_struct: BNOffsetWithConfidence*) → [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#OffsetWithConfidence.from_core_struct)
     :   Parameters:
-        :   **core_struct** (*BNOffsetWithConfidence*) –
+        :   **core_struct** (*BNOffsetWithConfidence*)
 
         Return type:
         :   [*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
@@ -1166,9 +1304,9 @@
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|* [*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")) –
+              "binaryninja.types.OffsetWithConfidence"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *BNOffsetWithConfidence*
@@ -1188,29 +1326,29 @@
 
         Parameters:
         :   **suffix** ([*PointerSuffix*](enums.md#binaryninja.enums.PointerSuffix
-            "binaryninja.enums.PointerSuffix")) –
+            "binaryninja.enums.PointerSuffix"))
 
     *classmethod* create(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 4*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [PointerBuilder](#binaryninja.types.PointerBuilder "binaryninja.types.PointerBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#PointerBuilder.create)
     :   Parameters:
         :   - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType")) –
+              "binaryninja.enums.ReferenceType"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PointerBuilder*](#binaryninja.types.PointerBuilder "binaryninja.types.PointerBuilder")
@@ -1221,7 +1359,7 @@
 
         Parameters:
         :   **base_confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")) –
+            Python v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1235,9 +1373,9 @@
 
         Parameters:
         :   - **base_type** ([*PointerBaseType*](enums.md#binaryninja.enums.PointerBaseType
-              "binaryninja.enums.PointerBaseType")) –
+              "binaryninja.enums.PointerBaseType"))
             - **base_offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     *property* children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")]*
 
@@ -1270,22 +1408,22 @@
     *classmethod* create(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [PointerType](#binaryninja.types.PointerType "binaryninja.types.PointerType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#PointerType.create)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType")) –
+              "binaryninja.enums.ReferenceType"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PointerType*](#binaryninja.types.PointerType "binaryninja.types.PointerType")
@@ -1293,22 +1431,22 @@
     *classmethod* create_with_width(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [PointerType](#binaryninja.types.PointerType "binaryninja.types.PointerType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#PointerType.create_with_width)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType") *|* *None*) –
+              "binaryninja.enums.ReferenceType") *|* *None*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PointerType*](#binaryninja.types.PointerType "binaryninja.types.PointerType")
@@ -1317,10 +1455,10 @@
     :   Parameters:
         :   - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
@@ -1335,7 +1473,7 @@
 
         Parameters:
         :   **base_confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")) –
+            Python v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1345,7 +1483,7 @@
     origin(*bv: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#PointerType.origin)
     :   Parameters:
         :   **bv** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-            "binaryninja.binaryview.BinaryView") *|* *None*) –
+            "binaryninja.binaryview.BinaryView") *|* *None*)
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
@@ -1387,9 +1525,9 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName") *|* *None*) –
+              "binaryninja.types.QualifiedName") *|* *None*)
             - **join** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *static* escape(*name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *escaping: [TokenEscapingType](enums.md#binaryninja.enums.TokenEscapingType "binaryninja.enums.TokenEscapingType")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#QualifiedName.escape)
     :   Parameters:
@@ -1398,9 +1536,9 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **escaping** ([*TokenEscapingType*](enums.md#binaryninja.enums.TokenEscapingType
-              "binaryninja.enums.TokenEscapingType")) –
+              "binaryninja.enums.TokenEscapingType"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -1412,9 +1550,9 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **escaping** ([*TokenEscapingType*](enums.md#binaryninja.enums.TokenEscapingType
-              "binaryninja.enums.TokenEscapingType")) –
+              "binaryninja.enums.TokenEscapingType"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -1429,14 +1567,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    RegisterSet(regs: List[ForwardRef(‘architecture.RegisterName’)], confidence: int = 255)
-
     __init__(*regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[RegisterName]*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-              v3.14)")*[**RegisterName**]*) –
+              v3.14)")*[**RegisterName**]*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -1453,14 +1589,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    RegisterStackAdjustmentWithConfidence(value: int, confidence: int = 255)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -1469,6 +1603,27 @@
 
     value*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
+## ReturnValue
+
+*class* ReturnValue[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ReturnValue)
+:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
+    v3.14)")
+
+    __init__(*ty: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *location: [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ReturnValue.__init__)
+    :   Parameters:
+        :   - **ty** ([*TypeBuilder*](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")
+              *|* [*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
+            - **location** ([*ValueLocation*](#binaryninja.types.ValueLocation
+              "binaryninja.types.ValueLocation") *|*
+              [*ValueLocationWithConfidence*](#binaryninja.types.ValueLocationWithConfidence
+              "binaryninja.types.ValueLocationWithConfidence") *|*
+              [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+              "binaryninja.variable.CoreVariable") *|* *None*)
+
+    location*: [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+
+    type*: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*
+
 ## StructureBuilder
 
 *class* StructureBuilder[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder)
@@ -1476,32 +1631,32 @@
 
     __init__(*handle: LP_BNTypeBuilder*, *builder_handle: LP_BNStructureBuilder*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNTypeBuilder*) –
-            - **builder_handle** (*LP_BNStructureBuilder*) –
+        :   - **handle** (*LP_BNTypeBuilder*)
+            - **builder_handle** (*LP_BNStructureBuilder*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     add_member_at_offset(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *overwrite_existing: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *access: [MemberAccess](enums.md#binaryninja.enums.MemberAccess "binaryninja.enums.MemberAccess") = MemberAccess.NoAccess*, *scope: [MemberScope](enums.md#binaryninja.enums.MemberScope "binaryninja.enums.MemberScope") = MemberScope.NoScope*, *bit_position: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *bit_width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [StructureBuilder](#binaryninja.types.StructureBuilder "binaryninja.types.StructureBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.add_member_at_offset)
     :   Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **overwrite_existing** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **access** ([*MemberAccess*](enums.md#binaryninja.enums.MemberAccess
-              "binaryninja.enums.MemberAccess")) –
+              "binaryninja.enums.MemberAccess"))
             - **scope** ([*MemberScope*](enums.md#binaryninja.enums.MemberScope
-              "binaryninja.enums.MemberScope")) –
+              "binaryninja.enums.MemberScope"))
             - **bit_position** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **bit_width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureBuilder*](#binaryninja.types.StructureBuilder
@@ -1511,13 +1666,13 @@
     :   Parameters:
         :   - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **access** ([*MemberAccess*](enums.md#binaryninja.enums.MemberAccess
-              "binaryninja.enums.MemberAccess")) –
+              "binaryninja.enums.MemberAccess"))
             - **scope** ([*MemberScope*](enums.md#binaryninja.enums.MemberScope
-              "binaryninja.enums.MemberScope")) –
+              "binaryninja.enums.MemberScope"))
 
         Return type:
         :   [*StructureBuilder*](#binaryninja.types.StructureBuilder
@@ -1534,17 +1689,17 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **type** ([*StructureVariant*](enums.md#binaryninja.enums.StructureVariant
-              "binaryninja.enums.StructureVariant")) –
+              "binaryninja.enums.StructureVariant"))
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureBuilder*](#binaryninja.types.StructureBuilder
@@ -1553,7 +1708,7 @@
     index_by_name(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.index_by_name)
     :   Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") |
@@ -1562,7 +1717,7 @@
     index_by_offset(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.index_by_offset)
     :   Parameters:
         :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") |
@@ -1571,27 +1726,27 @@
     insert(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *overwrite_existing: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *access: [MemberAccess](enums.md#binaryninja.enums.MemberAccess "binaryninja.enums.MemberAccess") = MemberAccess.NoAccess*, *scope: [MemberScope](enums.md#binaryninja.enums.MemberScope "binaryninja.enums.MemberScope") = MemberScope.NoScope*, *bit_position: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *bit_width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.insert)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **overwrite_existing** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **access** ([*MemberAccess*](enums.md#binaryninja.enums.MemberAccess
-              "binaryninja.enums.MemberAccess")) –
+              "binaryninja.enums.MemberAccess"))
             - **scope** ([*MemberScope*](enums.md#binaryninja.enums.MemberScope
-              "binaryninja.enums.MemberScope")) –
+              "binaryninja.enums.MemberScope"))
             - **bit_position** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **bit_width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     member_at_offset(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [StructureMember](#binaryninja.types.StructureMember "binaryninja.types.StructureMember") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.member_at_offset)
     :   Parameters:
         :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*StructureMember*](#binaryninja.types.StructureMember
@@ -1600,19 +1755,19 @@
     remove(*index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.remove)
     :   Parameters:
         :   **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     replace(*index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *overwrite_existing: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureBuilder.replace)
     :   Parameters:
         :   - **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **overwrite_existing** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
 
     *property* alignment*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -1643,26 +1798,21 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    StructureMember(type: ‘Type’, name: str, offset: int, access:
-    binaryninja.enums.MemberAccess = <MemberAccess.NoAccess: 0>, scope:
-    binaryninja.enums.MemberScope = <MemberScope.NoScope: 0>, bit_position: int = 0,
-    bit_width: int = 0)
-
     __init__(*type: [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *access: [MemberAccess](enums.md#binaryninja.enums.MemberAccess "binaryninja.enums.MemberAccess") = MemberAccess.NoAccess*, *scope: [MemberScope](enums.md#binaryninja.enums.MemberScope "binaryninja.enums.MemberScope") = MemberScope.NoScope*, *bit_position: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *bit_width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
-        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) –
+        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **access** ([*MemberAccess*](enums.md#binaryninja.enums.MemberAccess
-              "binaryninja.enums.MemberAccess")) –
+              "binaryninja.enums.MemberAccess"))
             - **scope** ([*MemberScope*](enums.md#binaryninja.enums.MemberScope
-              "binaryninja.enums.MemberScope")) –
+              "binaryninja.enums.MemberScope"))
             - **bit_position** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **bit_width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -1694,9 +1844,9 @@
     __init__(*handle*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureType.__init__)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* create(*members: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[StructureMember](#binaryninja.types.StructureMember "binaryninja.types.StructureMember")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *packed: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*, *type: [StructureVariant](enums.md#binaryninja.enums.StructureVariant "binaryninja.enums.StructureVariant") = StructureVariant.StructStructureType*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureType.create)
     :   Parameters:
@@ -1709,22 +1859,22 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*StructureVariant*](enums.md#binaryninja.enums.StructureVariant
-              "binaryninja.enums.StructureVariant")) –
+              "binaryninja.enums.StructureVariant"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")
 
     *classmethod* from_core_struct(*structure: BNStructure*) → [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureType.from_core_struct)
     :   Parameters:
-        :   **structure** (*BNStructure*) –
+        :   **structure** (*BNStructure*)
 
         Return type:
         :   [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")
@@ -1732,18 +1882,18 @@
     generate_named_type_reference(*guid: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureType.generate_named_type_reference)
     :   Parameters:
         :   - **guid** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
     member_at_offset(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [StructureMember](#binaryninja.types.StructureMember "binaryninja.types.StructureMember")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureType.member_at_offset)
     :   Parameters:
         :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*StructureMember*](#binaryninja.types.StructureMember
@@ -1754,9 +1904,9 @@
 
         Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*InheritedStructureMember*](#binaryninja.types.InheritedStructureMember
@@ -1769,7 +1919,7 @@
         :   **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
             "binaryninja.binaryview.BinaryView") *|*
             [*TypeContainer*](typecontainer.md#binaryninja.typecontainer.TypeContainer
-            "binaryninja.typecontainer.TypeContainer")) –
+            "binaryninja.typecontainer.TypeContainer"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1784,11 +1934,11 @@
     resolve_member_or_base_member(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *resolve_func: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType"), [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [StructureMember](#binaryninja.types.StructureMember "binaryninja.types.StructureMember")], [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")]*, *member_index_hint: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#StructureType.resolve_member_or_base_member)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **resolve_func**
               ([*Callable*](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python
               v3.14)")*[**[*[*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -1798,9 +1948,9 @@
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*,*
               [*StructureMember*](#binaryninja.types.StructureMember
-              "binaryninja.types.StructureMember")*]**,* *None**]*) –
+              "binaryninja.types.StructureMember")*]**,* *None**]*)
             - **member_index_hint** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)") *|* *None*) –
+              Python v3.14)") *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -1885,15 +2035,15 @@
     __init__(*handle*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.__init__)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *static* array(*type: [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *count: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [ArrayType](#binaryninja.types.ArrayType "binaryninja.types.ArrayType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.array)
     :   Parameters:
-        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) –
+        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
             - **count** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*ArrayType*](#binaryninja.types.ArrayType "binaryninja.types.ArrayType")
@@ -1905,15 +2055,15 @@
     *static* builder(*bv: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *name: [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [MutableTypeBuilder](#binaryninja.types.MutableTypeBuilder "binaryninja.types.MutableTypeBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.builder)
     :   Parameters:
         :   - **bv** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **name** ([*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName") *|* *None*) –
+              "binaryninja.types.QualifiedName") *|* *None*)
             - **id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
-              *|* *None*) –
+              *|* *None*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*MutableTypeBuilder*](#binaryninja.types.MutableTypeBuilder
@@ -1922,7 +2072,7 @@
     *static* char(*alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*) → [CharType](#binaryninja.types.CharType "binaryninja.types.CharType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.char)
     :   Parameters:
         :   **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)")) –
+            Python v3.14)"))
 
         Return type:
         :   [*CharType*](#binaryninja.types.CharType "binaryninja.types.CharType")
@@ -1938,20 +2088,20 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")
 
     *classmethod* create(*handle: LP_BNType*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [Type](#binaryninja.types.Type "binaryninja.types.Type")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.create)
     :   Parameters:
-        :   - **handle** (*LP_BNType*) –
+        :   - **handle** (*LP_BNType*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*Type*](#binaryninja.types.Type "binaryninja.types.Type")
@@ -1974,7 +2124,7 @@
     *static* enumeration(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *members: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[EnumerationMember](#binaryninja.types.EnumerationMember "binaryninja.types.EnumerationMember")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*) → [EnumerationType](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.enumeration)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **members** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
@@ -1984,25 +2134,25 @@
               v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)")*]* *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*EnumerationMember*](#binaryninja.types.EnumerationMember
-              "binaryninja.types.EnumerationMember")*]* *|* *None*) –
+              "binaryninja.types.EnumerationMember")*]* *|* *None*)
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*EnumerationType*](#binaryninja.types.EnumerationType
             "binaryninja.types.EnumerationType")
 
-    *static* enumeration_type(*arch*, *enum: [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [EnumerationType](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.enumeration_type)
+    *static* enumeration_type(*arch*, *enum: [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = None*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [EnumerationType](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.enumeration_type)
     :   Parameters:
         :   - **enum** ([*EnumerationBuilder*](#binaryninja.types.EnumerationBuilder
-              "binaryninja.types.EnumerationBuilder")) –
+              "binaryninja.types.EnumerationBuilder"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)"))
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*EnumerationType*](#binaryninja.types.EnumerationType
@@ -2020,11 +2170,42 @@
         Return type:
         :   [*FloatType*](#binaryninja.types.FloatType "binaryninja.types.FloatType")
 
+    *static* fragment(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *endianness: [Endianness](enums.md#binaryninja.enums.Endianness "binaryninja.enums.Endianness") = Endianness.LittleEndian*) → [FragmentType](#binaryninja.types.FragmentType "binaryninja.types.FragmentType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.fragment)
+    :   Create a fresh fragment whose live bits initially fill a container whose width is
+        measured in bytes.
+
+        Parameters:
+        :   - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) – larger source
+              type of which the fragment is a slice
+            - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – container width in bytes; the initial live fragment size is `width * 8` bits
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – original source byte offset within `type`
+            - **endianness** ([*Endianness*](enums.md#binaryninja.enums.Endianness
+              "binaryninja.enums.Endianness")) – byte order used to map source-layout bytes to
+              container bits
+
+        Returns:
+        :   Immutable fragment type
+
+        Return type:
+        :   [*FragmentType*](#binaryninja.types.FragmentType "binaryninja.types.FragmentType")
+
+        Example:
+        :   ```
+            >>> source = Type.array(Type.int(1, False), 16)
+            >>> fragment = Type.fragment(source, 8, 4, Endianness.BigEndian)
+            >>> fragment.target == source
+            True
+            >>> fragment.width, fragment.offset
+            (8, 4)
+            ```
+
     *static* from_core_struct(*core_type: BNType*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.from_core_struct)
     :   Parameters:
-        :   **core_type** (*BNType*) –
+        :   **core_type** (*BNType*)
 
-    *static* function(*ret: [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *variable_arguments: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *stack_adjust: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") = OffsetWithConfidence(value=0, confidence=255)*) → [FunctionType](#binaryninja.types.FunctionType "binaryninja.types.FunctionType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.function)
+    *static* function(*ret: [Type](#binaryninja.types.Type "binaryninja.types.Type") | [ReturnValue](#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *variable_arguments: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *stack_adjust: [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") = OffsetWithConfidence(value=0, confidence=255)*) → [FunctionType](#binaryninja.types.FunctionType "binaryninja.types.FunctionType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.function)
     :   `function` class method for creating a function Type.
 
         Parameters:
@@ -2041,7 +2222,7 @@
               "(in Python v3.14)")) – optional boolean, true if the function has a variable number of
               arguments
             - **stack_adjust** ([*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")) –
+              "binaryninja.types.OffsetWithConfidence"))
 
         Return type:
         :   [*FunctionType*](#binaryninja.types.FunctionType "binaryninja.types.FunctionType")
@@ -2053,7 +2234,7 @@
             Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
             Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
             Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-            "binaryninja.types.QualifiedName")) –
+            "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -2061,13 +2242,13 @@
     *static* generate_auto_type_id(*source: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.generate_auto_type_id)
     :   Parameters:
         :   - **source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -2075,13 +2256,13 @@
     *static* generate_named_type_reference(*guid: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.generate_named_type_reference)
     :   Parameters:
         :   - **guid** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -2094,7 +2275,7 @@
     get_builder(*bv: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*) → [MutableTypeBuilder](#binaryninja.types.MutableTypeBuilder "binaryninja.types.MutableTypeBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.get_builder)
     :   Parameters:
         :   **bv** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-            "binaryninja.binaryview.BinaryView")) –
+            "binaryninja.binaryview.BinaryView"))
 
         Return type:
         :   [*MutableTypeBuilder*](#binaryninja.types.MutableTypeBuilder
@@ -2282,7 +2463,7 @@
     :   Parameters:
         :   **named_type**
             ([*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
-            "binaryninja.types.NamedTypeReferenceBuilder")) –
+            "binaryninja.types.NamedTypeReferenceBuilder"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -2291,13 +2472,13 @@
     *static* named_type_from_registered_type(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.named_type_from_registered_type)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -2310,10 +2491,10 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -2322,16 +2503,16 @@
     *static* named_type_from_type_and_id(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.named_type_from_type_and_id)
     :   Parameters:
         :   - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type") *|* *None*) –
+              "binaryninja.types.Type") *|* *None*)
 
         Return type:
         :   [*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
@@ -2341,43 +2522,43 @@
     :   Parameters:
         :   - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass")) –
+              "binaryninja.enums.NamedTypeReferenceClass"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **alignment** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
-    *static* pointer(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PointerType](#binaryninja.types.PointerType "binaryninja.types.PointerType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.pointer)
+    *static* pointer(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = None*) → [PointerType](#binaryninja.types.PointerType "binaryninja.types.PointerType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.pointer)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType")) –
+              "binaryninja.enums.ReferenceType"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)"))
 
         Return type:
         :   [*PointerType*](#binaryninja.types.PointerType "binaryninja.types.PointerType")
@@ -2385,18 +2566,18 @@
     *static* pointer_of_width(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = False*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*) → [PointerType](#binaryninja.types.PointerType "binaryninja.types.PointerType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.pointer_of_width)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType")) –
+              "binaryninja.enums.ReferenceType"))
 
         Return type:
         :   [*PointerType*](#binaryninja.types.PointerType "binaryninja.types.PointerType")
@@ -2412,11 +2593,11 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*StructureVariant*](enums.md#binaryninja.enums.StructureVariant
-              "binaryninja.enums.StructureVariant")) –
+              "binaryninja.enums.StructureVariant"))
 
         Return type:
         :   [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")
@@ -2424,7 +2605,7 @@
     *static* structure_type(*structure: [StructureBuilder](#binaryninja.types.StructureBuilder "binaryninja.types.StructureBuilder")*) → [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.structure_type)
     :   Parameters:
         :   **structure** ([*StructureBuilder*](#binaryninja.types.StructureBuilder
-            "binaryninja.types.StructureBuilder")) –
+            "binaryninja.types.StructureBuilder"))
 
         Return type:
         :   [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")
@@ -2440,9 +2621,9 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureType*](#binaryninja.types.StructureType "binaryninja.types.StructureType")
@@ -2466,7 +2647,7 @@
     with_confidence(*confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Type](#binaryninja.types.Type "binaryninja.types.Type")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.with_confidence)
     :   Parameters:
         :   **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*Type*](#binaryninja.types.Type "binaryninja.types.Type")
@@ -2474,23 +2655,23 @@
     with_replaced_enumeration(*from_enum: [EnumerationType](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType")*, *to_enum: [EnumerationType](#binaryninja.types.EnumerationType "binaryninja.types.EnumerationType")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.with_replaced_enumeration)
     :   Parameters:
         :   - **from_enum** ([*EnumerationType*](#binaryninja.types.EnumerationType
-              "binaryninja.types.EnumerationType")) –
+              "binaryninja.types.EnumerationType"))
             - **to_enum** ([*EnumerationType*](#binaryninja.types.EnumerationType
-              "binaryninja.types.EnumerationType")) –
+              "binaryninja.types.EnumerationType"))
 
     with_replaced_named_type_reference(*from_ref: [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")*, *to_ref: [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.with_replaced_named_type_reference)
     :   Parameters:
         :   - **from_ref** ([*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
-              "binaryninja.types.NamedTypeReferenceType")) –
+              "binaryninja.types.NamedTypeReferenceType"))
             - **to_ref** ([*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
-              "binaryninja.types.NamedTypeReferenceType")) –
+              "binaryninja.types.NamedTypeReferenceType"))
 
     with_replaced_structure(*from_struct: [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType")*, *to_struct: [StructureType](#binaryninja.types.StructureType "binaryninja.types.StructureType")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#Type.with_replaced_structure)
     :   Parameters:
         :   - **from_struct** ([*StructureType*](#binaryninja.types.StructureType
-              "binaryninja.types.StructureType")) –
+              "binaryninja.types.StructureType"))
             - **to_struct** ([*StructureType*](#binaryninja.types.StructureType
-              "binaryninja.types.StructureType")) –
+              "binaryninja.types.StructureType"))
 
     *property* alignment*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
     :   Type alignment (read-only)
@@ -2507,6 +2688,9 @@
 
     *property* const
     :   Whether type is const (read/write)
+
+    *property* display_type*: [IntegerDisplayType](enums.md#binaryninja.enums.IntegerDisplayType "binaryninja.enums.IntegerDisplayType")*
+    :   Integer display type for this type.
 
     *property* handle
 
@@ -2546,19 +2730,19 @@
 
     __init__(*handle: LP_BNTypeBuilder*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNTypeBuilder*) –
+        :   - **handle** (*LP_BNTypeBuilder*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *static* array(*type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *count: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [ArrayBuilder](#binaryninja.types.ArrayBuilder "binaryninja.types.ArrayBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.array)
     :   Parameters:
         :   - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **count** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*ArrayBuilder*](#binaryninja.types.ArrayBuilder "binaryninja.types.ArrayBuilder")
@@ -2572,15 +2756,15 @@
         :   - **container** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*TypeLibrary*](typelibrary.md#binaryninja.typelibrary.TypeLibrary
-              "binaryninja.typelibrary.TypeLibrary")) –
+              "binaryninja.typelibrary.TypeLibrary"))
             - **name** ([*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **user** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*MutableTypeBuilder*](#binaryninja.types.MutableTypeBuilder
@@ -2589,7 +2773,7 @@
     *static* char(*alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*) → [CharBuilder](#binaryninja.types.CharBuilder "binaryninja.types.CharBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.char)
     :   Parameters:
         :   **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)")) –
+            Python v3.14)"))
 
         Return type:
         :   [*CharBuilder*](#binaryninja.types.CharBuilder "binaryninja.types.CharBuilder")
@@ -2605,9 +2789,9 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureBuilder*](#binaryninja.types.StructureBuilder
@@ -2622,7 +2806,7 @@
     *static* enumeration(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *members: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[EnumerationMember](#binaryninja.types.EnumerationMember "binaryninja.types.EnumerationMember")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *sign: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*) → [EnumerationBuilder](#binaryninja.types.EnumerationBuilder "binaryninja.types.EnumerationBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.enumeration)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **members** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
@@ -2632,12 +2816,12 @@
               v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)")*]* *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*EnumerationMember*](#binaryninja.types.EnumerationMember
-              "binaryninja.types.EnumerationMember")*]* *|* *None*) –
+              "binaryninja.types.EnumerationMember")*]* *|* *None*)
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **sign** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*EnumerationBuilder*](#binaryninja.types.EnumerationBuilder
@@ -2655,7 +2839,7 @@
         Return type:
         :   [*FloatBuilder*](#binaryninja.types.FloatBuilder "binaryninja.types.FloatBuilder")
 
-    *static* function(*ret: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *variable_arguments: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *stack_adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [FunctionBuilder](#binaryninja.types.FunctionBuilder "binaryninja.types.FunctionBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.function)
+    *static* function(*ret: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [ReturnValue](#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Type](#binaryninja.types.Type "binaryninja.types.Type")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FunctionParameter](#binaryninja.types.FunctionParameter "binaryninja.types.FunctionParameter")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *calling_convention: [CallingConvention](callingconvention.md#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *variable_arguments: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *stack_adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [FunctionBuilder](#binaryninja.types.FunctionBuilder "binaryninja.types.FunctionBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.function)
     :   `function` class method for creating a function Type.
 
         Parameters:
@@ -2673,7 +2857,7 @@
               arguments
             - **stack_adjust** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
               Python v3.14)") *|* [*OffsetWithConfidence*](#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence") *|* *None*) –
+              "binaryninja.types.OffsetWithConfidence") *|* *None*)
 
         Return type:
         :   [*FunctionBuilder*](#binaryninja.types.FunctionBuilder
@@ -2702,9 +2886,9 @@
     *static* named_type_from_registered_type(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *name: [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [NamedTypeReferenceBuilder](#binaryninja.types.NamedTypeReferenceBuilder "binaryninja.types.NamedTypeReferenceBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.named_type_from_registered_type)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **name** ([*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -2717,10 +2901,10 @@
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass") *|* *None*) –
+              "binaryninja.enums.NamedTypeReferenceClass") *|* *None*)
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -2729,16 +2913,16 @@
     *static* named_type_from_type_and_id(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")] | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [NamedTypeReferenceBuilder](#binaryninja.types.NamedTypeReferenceBuilder "binaryninja.types.NamedTypeReferenceBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.named_type_from_type_and_id)
     :   Parameters:
         :   - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type") *|* *None*) –
+              "binaryninja.types.Type") *|* *None*)
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -2748,21 +2932,21 @@
     :   Parameters:
         :   - **type_class**
               ([*NamedTypeReferenceClass*](enums.md#binaryninja.enums.NamedTypeReferenceClass
-              "binaryninja.enums.NamedTypeReferenceClass")) –
+              "binaryninja.enums.NamedTypeReferenceClass"))
             - **name** ([*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **alignment** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   [*NamedTypeReferenceBuilder*](#binaryninja.types.NamedTypeReferenceBuilder
@@ -2771,18 +2955,18 @@
     *static* pointer(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*) → [PointerBuilder](#binaryninja.types.PointerBuilder "binaryninja.types.PointerBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.pointer)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType")) –
+              "binaryninja.enums.ReferenceType"))
 
         Return type:
         :   [*PointerBuilder*](#binaryninja.types.PointerBuilder "binaryninja.types.PointerBuilder")
@@ -2790,18 +2974,18 @@
     *static* pointer_of_width(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *const: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *volatile: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence") = BoolWithConfidence(value=False, confidence=255)*, *ref_type: [ReferenceType](enums.md#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") = ReferenceType.PointerReferenceType*) → [PointerBuilder](#binaryninja.types.PointerBuilder "binaryninja.types.PointerBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilder.pointer_of_width)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
               "binaryninja.types.TypeBuilder") *|* [*Type*](#binaryninja.types.Type
-              "binaryninja.types.Type")) –
+              "binaryninja.types.Type"))
             - **const** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **volatile** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)") *|* [*BoolWithConfidence*](#binaryninja.types.BoolWithConfidence
-              "binaryninja.types.BoolWithConfidence")) –
+              "binaryninja.types.BoolWithConfidence"))
             - **ref_type** ([*ReferenceType*](enums.md#binaryninja.enums.ReferenceType
-              "binaryninja.enums.ReferenceType")) –
+              "binaryninja.enums.ReferenceType"))
 
         Return type:
         :   [*PointerBuilder*](#binaryninja.types.PointerBuilder "binaryninja.types.PointerBuilder")
@@ -2817,11 +3001,11 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*StructureVariant*](enums.md#binaryninja.enums.StructureVariant
-              "binaryninja.enums.StructureVariant")) –
+              "binaryninja.enums.StructureVariant"))
 
         Return type:
         :   [*StructureBuilder*](#binaryninja.types.StructureBuilder
@@ -2838,9 +3022,9 @@
               v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[*[*Type*](#binaryninja.types.Type "binaryninja.types.Type")*,*
               [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*]**]*
-              *|* *None*) –
+              *|* *None*)
             - **packed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*StructureBuilder*](#binaryninja.types.StructureBuilder
@@ -2877,6 +3061,9 @@
     *property* const*: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence")*
     :   Whether type is const (read/write)
 
+    *property* display_type*: [IntegerDisplayType](enums.md#binaryninja.enums.IntegerDisplayType "binaryninja.enums.IntegerDisplayType")*
+    :   Integer display type for this type.
+
     *property* signed*: [BoolWithConfidence](#binaryninja.types.BoolWithConfidence "binaryninja.types.BoolWithConfidence")*
 
     *property* system_call_number*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
@@ -2898,7 +3085,7 @@
     __init__(*builder: [TypeBuilder](#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*, **args*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#TypeBuilderAttributes.__init__)
     :   Parameters:
         :   **builder** ([*TypeBuilder*](#binaryninja.types.TypeBuilder
-            "binaryninja.types.TypeBuilder")) –
+            "binaryninja.types.TypeBuilder"))
 
 ## TypeDefinitionLine
 
@@ -2906,34 +3093,28 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    TypeDefinitionLine(line_type: binaryninja.enums.TypeDefinitionLineType, tokens:
-    List[ForwardRef(‘_function.InstructionTextToken’)], type: ‘Type’, parent_type: ‘Type’,
-    root_type: ‘Type’, root_type_name: str, base_type:
-    Optional[ForwardRef(‘NamedTypeReferenceType’)], base_offset: int, offset: int,
-    field_index: int)
-
     __init__(*line_type: [TypeDefinitionLineType](enums.md#binaryninja.enums.TypeDefinitionLineType "binaryninja.enums.TypeDefinitionLineType")*, *tokens: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *type: [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *parent_type: [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *root_type: [Type](#binaryninja.types.Type "binaryninja.types.Type")*, *root_type_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *base_type: [NamedTypeReferenceType](#binaryninja.types.NamedTypeReferenceType "binaryninja.types.NamedTypeReferenceType") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *base_offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *field_index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **line_type**
               ([*TypeDefinitionLineType*](enums.md#binaryninja.enums.TypeDefinitionLineType
-              "binaryninja.enums.TypeDefinitionLineType")) –
+              "binaryninja.enums.TypeDefinitionLineType"))
             - **tokens** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-              "binaryninja.architecture.InstructionTextToken")*]*) –
-            - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) –
-            - **parent_type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) –
-            - **root_type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type")) –
+              "binaryninja.architecture.InstructionTextToken")*]*)
+            - **type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
+            - **parent_type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
+            - **root_type** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type"))
             - **root_type_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **base_type** ([*NamedTypeReferenceType*](#binaryninja.types.NamedTypeReferenceType
-              "binaryninja.types.NamedTypeReferenceType") *|* *None*) –
+              "binaryninja.types.NamedTypeReferenceType") *|* *None*)
             - **base_offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **field_index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*
@@ -2964,22 +3145,17 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    TypeFieldReference(func: Optional[ForwardRef(‘_function.Function’)], arch:
-    Optional[ForwardRef(‘architecture.Architecture’)], address: int, size: int,
-    incomingType: Optional[binaryninja.types.Type])
-
     __init__(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *incomingType: [Type](#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function") *|* *None*) –
+              "binaryninja.function.Function") *|* *None*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **incomingType** ([*Type*](#binaryninja.types.Type "binaryninja.types.Type") *|* *None*)
-              –
 
         Return type:
         :   *None*
@@ -3000,17 +3176,14 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    TypeReferenceSource(name: binaryninja.types.QualifiedName, offset: int, ref_type:
-    binaryninja.enums.TypeReferenceType)
-
     __init__(*name: [QualifiedName](#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *ref_type: [TypeReferenceType](enums.md#binaryninja.enums.TypeReferenceType "binaryninja.enums.TypeReferenceType")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **name** ([*QualifiedName*](#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
+              "binaryninja.types.QualifiedName"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **ref_type** ([*TypeReferenceType*](enums.md#binaryninja.enums.TypeReferenceType
-              "binaryninja.enums.TypeReferenceType")) –
+              "binaryninja.enums.TypeReferenceType"))
 
         Return type:
         :   *None*
@@ -3021,6 +3194,126 @@
 
     ref_type*: [TypeReferenceType](enums.md#binaryninja.enums.TypeReferenceType "binaryninja.enums.TypeReferenceType")*
 
+## ValueLocation
+
+*class* ValueLocation[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocation)
+:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
+    v3.14)")
+
+    __init__(*components: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocationComponent](#binaryninja.types.ValueLocationComponent "binaryninja.types.ValueLocationComponent")]*, *indirect: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*, *returned_pointer: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **components** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
+              Python v3.14)")*[*[*ValueLocationComponent*](#binaryninja.types.ValueLocationComponent
+              "binaryninja.types.ValueLocationComponent")*]*)
+            - **indirect** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **returned_pointer** ([*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+              "binaryninja.variable.CoreVariable") *|* *None*)
+
+        Return type:
+        :   *None*
+
+    *static* parse(*string: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*) → [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocation.parse)
+    :   Parameters:
+        :   - **string** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+              v3.14)"))
+            - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+
+        Return type:
+        :   [*ValueLocation*](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")
+
+    to_string(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocation.to_string)
+    :   Parameters:
+        :   **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+            "binaryninja.architecture.Architecture") *|* *None*)
+
+    variable_for_parameter(*idx: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocation.variable_for_parameter)
+    :   Parameters:
+        :   **idx** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            "binaryninja.variable.CoreVariable") | *None*
+
+    with_confidence(*confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocation.with_confidence)
+    :   Parameters:
+        :   **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*ValueLocationWithConfidence*](#binaryninja.types.ValueLocationWithConfidence
+            "binaryninja.types.ValueLocationWithConfidence")
+
+    components*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocationComponent](#binaryninja.types.ValueLocationComponent "binaryninja.types.ValueLocationComponent")]*
+
+    indirect*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")* *= False*
+
+    returned_pointer*: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+
+## ValueLocationComponent
+
+*class* ValueLocationComponent[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocationComponent)
+:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
+    v3.14)")
+
+    __init__(*var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **var** ([*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+              "binaryninja.variable.CoreVariable"))
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)") *|* *None*)
+
+        Return type:
+        :   *None*
+
+    to_string(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocationComponent.to_string)
+    :   Parameters:
+        :   **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+            "binaryninja.architecture.Architecture") *|* *None*)
+
+    offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")* *= 0*
+
+    size*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+
+    var*: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*
+
+## ValueLocationWithConfidence
+
+*class* ValueLocationWithConfidence[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocationWithConfidence)
+:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
+    v3.14)")
+
+    __init__(*location: [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **location** ([*ValueLocation*](#binaryninja.types.ValueLocation
+              "binaryninja.types.ValueLocation"))
+            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+        Return type:
+        :   *None*
+
+    *static* from_optional_location(*location: [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [ValueLocationWithConfidence](#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#ValueLocationWithConfidence.from_optional_location)
+    :   Parameters:
+        :   **location** ([*ValueLocation*](#binaryninja.types.ValueLocation
+            "binaryninja.types.ValueLocation") *|*
+            [*ValueLocationWithConfidence*](#binaryninja.types.ValueLocationWithConfidence
+            "binaryninja.types.ValueLocationWithConfidence") *|*
+            [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            "binaryninja.variable.CoreVariable") *|* *None*)
+
+        Return type:
+        :   [*ValueLocationWithConfidence*](#binaryninja.types.ValueLocationWithConfidence
+            "binaryninja.types.ValueLocationWithConfidence") | *None*
+
+    confidence*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")* *= 255*
+
+    location*: [ValueLocation](#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")*
+
 ## VoidBuilder
 
 *class* VoidBuilder[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#VoidBuilder)
@@ -3029,9 +3322,9 @@
     *classmethod* create(*platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [VoidBuilder](#binaryninja.types.VoidBuilder "binaryninja.types.VoidBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#VoidBuilder.create)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*VoidBuilder*](#binaryninja.types.VoidBuilder "binaryninja.types.VoidBuilder")
@@ -3044,9 +3337,9 @@
     *classmethod* create(*platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [VoidType](#binaryninja.types.VoidType "binaryninja.types.VoidType")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#VoidType.create)
     :   Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*VoidType*](#binaryninja.types.VoidType "binaryninja.types.VoidType")
@@ -3059,13 +3352,13 @@
     *classmethod* create(*width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *alternate_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*) → [WideCharBuilder](#binaryninja.types.WideCharBuilder "binaryninja.types.WideCharBuilder")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#WideCharBuilder.create)
     :   Parameters:
         :   - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*WideCharBuilder*](#binaryninja.types.WideCharBuilder
@@ -3085,9 +3378,9 @@
             - **alternate_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)")) – alternate name for type
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*WideCharType*](#binaryninja.types.WideCharType "binaryninja.types.WideCharType")
@@ -3097,11 +3390,11 @@
 convert_integer(*value: [c_ulong](https://docs.python.org/3/library/ctypes.html#ctypes.c_ulong "(in Python v3.14)")*, *signed: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/types.html#convert_integer)
 :   Parameters:
     :   - **value** ([*c_ulong*](https://docs.python.org/3/library/ctypes.html#ctypes.c_ulong "(in
-          Python v3.14)")) –
+          Python v3.14)"))
         - **signed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-          v3.14)")) –
+          v3.14)"))
         - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-          v3.14)")) –
+          v3.14)"))
 
     Return type:
     :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")

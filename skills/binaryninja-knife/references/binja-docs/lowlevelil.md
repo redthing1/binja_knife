@@ -9,6 +9,7 @@
 | [`binaryninja.lowlevelil.ILRegisterStack`](#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack") |  |
 | [`binaryninja.lowlevelil.ILSemanticFlagClass`](#binaryninja.lowlevelil.ILSemanticFlagClass "binaryninja.lowlevelil.ILSemanticFlagClass") |  |
 | [`binaryninja.lowlevelil.ILSemanticFlagGroup`](#binaryninja.lowlevelil.ILSemanticFlagGroup "binaryninja.lowlevelil.ILSemanticFlagGroup") |  |
+| [`binaryninja.lowlevelil.LowLevelILAbs`](#binaryninja.lowlevelil.LowLevelILAbs "binaryninja.lowlevelil.LowLevelILAbs") |  |
 | [`binaryninja.lowlevelil.LowLevelILAdc`](#binaryninja.lowlevelil.LowLevelILAdc "binaryninja.lowlevelil.LowLevelILAdc") |  |
 | [`binaryninja.lowlevelil.LowLevelILAdd`](#binaryninja.lowlevelil.LowLevelILAdd "binaryninja.lowlevelil.LowLevelILAdd") |  |
 | [`binaryninja.lowlevelil.LowLevelILAddOverflow`](#binaryninja.lowlevelil.LowLevelILAddOverflow "binaryninja.lowlevelil.LowLevelILAddOverflow") |  |
@@ -20,6 +21,7 @@
 | [`binaryninja.lowlevelil.LowLevelILBinaryBase`](#binaryninja.lowlevelil.LowLevelILBinaryBase "binaryninja.lowlevelil.LowLevelILBinaryBase") |  |
 | [`binaryninja.lowlevelil.LowLevelILBoolToInt`](#binaryninja.lowlevelil.LowLevelILBoolToInt "binaryninja.lowlevelil.LowLevelILBoolToInt") |  |
 | [`binaryninja.lowlevelil.LowLevelILBp`](#binaryninja.lowlevelil.LowLevelILBp "binaryninja.lowlevelil.LowLevelILBp") |  |
+| [`binaryninja.lowlevelil.LowLevelILBswap`](#binaryninja.lowlevelil.LowLevelILBswap "binaryninja.lowlevelil.LowLevelILBswap") |  |
 | [`binaryninja.lowlevelil.LowLevelILCall`](#binaryninja.lowlevelil.LowLevelILCall "binaryninja.lowlevelil.LowLevelILCall") |  |
 | [`binaryninja.lowlevelil.LowLevelILCallOutputSsa`](#binaryninja.lowlevelil.LowLevelILCallOutputSsa "binaryninja.lowlevelil.LowLevelILCallOutputSsa") |  |
 | [`binaryninja.lowlevelil.LowLevelILCallParam`](#binaryninja.lowlevelil.LowLevelILCallParam "binaryninja.lowlevelil.LowLevelILCallParam") |  |
@@ -28,6 +30,8 @@
 | [`binaryninja.lowlevelil.LowLevelILCallStackSsa`](#binaryninja.lowlevelil.LowLevelILCallStackSsa "binaryninja.lowlevelil.LowLevelILCallStackSsa") |  |
 | [`binaryninja.lowlevelil.LowLevelILCarryBase`](#binaryninja.lowlevelil.LowLevelILCarryBase "binaryninja.lowlevelil.LowLevelILCarryBase") |  |
 | [`binaryninja.lowlevelil.LowLevelILCeil`](#binaryninja.lowlevelil.LowLevelILCeil "binaryninja.lowlevelil.LowLevelILCeil") |  |
+| [`binaryninja.lowlevelil.LowLevelILCls`](#binaryninja.lowlevelil.LowLevelILCls "binaryninja.lowlevelil.LowLevelILCls") |  |
+| [`binaryninja.lowlevelil.LowLevelILClz`](#binaryninja.lowlevelil.LowLevelILClz "binaryninja.lowlevelil.LowLevelILClz") |  |
 | [`binaryninja.lowlevelil.LowLevelILCmpE`](#binaryninja.lowlevelil.LowLevelILCmpE "binaryninja.lowlevelil.LowLevelILCmpE") |  |
 | [`binaryninja.lowlevelil.LowLevelILCmpNe`](#binaryninja.lowlevelil.LowLevelILCmpNe "binaryninja.lowlevelil.LowLevelILCmpNe") |  |
 | [`binaryninja.lowlevelil.LowLevelILCmpSge`](#binaryninja.lowlevelil.LowLevelILCmpSge "binaryninja.lowlevelil.LowLevelILCmpSge") |  |
@@ -42,6 +46,7 @@
 | [`binaryninja.lowlevelil.LowLevelILConst`](#binaryninja.lowlevelil.LowLevelILConst "binaryninja.lowlevelil.LowLevelILConst") |  |
 | [`binaryninja.lowlevelil.LowLevelILConstPtr`](#binaryninja.lowlevelil.LowLevelILConstPtr "binaryninja.lowlevelil.LowLevelILConstPtr") |  |
 | [`binaryninja.lowlevelil.LowLevelILConstantBase`](#binaryninja.lowlevelil.LowLevelILConstantBase "binaryninja.lowlevelil.LowLevelILConstantBase") |  |
+| [`binaryninja.lowlevelil.LowLevelILCtz`](#binaryninja.lowlevelil.LowLevelILCtz "binaryninja.lowlevelil.LowLevelILCtz") |  |
 | [`binaryninja.lowlevelil.LowLevelILDivs`](#binaryninja.lowlevelil.LowLevelILDivs "binaryninja.lowlevelil.LowLevelILDivs") |  |
 | [`binaryninja.lowlevelil.LowLevelILDivsDp`](#binaryninja.lowlevelil.LowLevelILDivsDp "binaryninja.lowlevelil.LowLevelILDivsDp") |  |
 | [`binaryninja.lowlevelil.LowLevelILDivu`](#binaryninja.lowlevelil.LowLevelILDivu "binaryninja.lowlevelil.LowLevelILDivu") |  |
@@ -92,9 +97,13 @@
 | [`binaryninja.lowlevelil.LowLevelILLowPart`](#binaryninja.lowlevelil.LowLevelILLowPart "binaryninja.lowlevelil.LowLevelILLowPart") |  |
 | [`binaryninja.lowlevelil.LowLevelILLsl`](#binaryninja.lowlevelil.LowLevelILLsl "binaryninja.lowlevelil.LowLevelILLsl") |  |
 | [`binaryninja.lowlevelil.LowLevelILLsr`](#binaryninja.lowlevelil.LowLevelILLsr "binaryninja.lowlevelil.LowLevelILLsr") |  |
+| [`binaryninja.lowlevelil.LowLevelILMaxs`](#binaryninja.lowlevelil.LowLevelILMaxs "binaryninja.lowlevelil.LowLevelILMaxs") |  |
+| [`binaryninja.lowlevelil.LowLevelILMaxu`](#binaryninja.lowlevelil.LowLevelILMaxu "binaryninja.lowlevelil.LowLevelILMaxu") |  |
 | [`binaryninja.lowlevelil.LowLevelILMemPhi`](#binaryninja.lowlevelil.LowLevelILMemPhi "binaryninja.lowlevelil.LowLevelILMemPhi") |  |
 | [`binaryninja.lowlevelil.LowLevelILMemoryIntrinsicOutputSsa`](#binaryninja.lowlevelil.LowLevelILMemoryIntrinsicOutputSsa "binaryninja.lowlevelil.LowLevelILMemoryIntrinsicOutputSsa") |  |
 | [`binaryninja.lowlevelil.LowLevelILMemoryIntrinsicSsa`](#binaryninja.lowlevelil.LowLevelILMemoryIntrinsicSsa "binaryninja.lowlevelil.LowLevelILMemoryIntrinsicSsa") |  |
+| [`binaryninja.lowlevelil.LowLevelILMins`](#binaryninja.lowlevelil.LowLevelILMins "binaryninja.lowlevelil.LowLevelILMins") |  |
+| [`binaryninja.lowlevelil.LowLevelILMinu`](#binaryninja.lowlevelil.LowLevelILMinu "binaryninja.lowlevelil.LowLevelILMinu") |  |
 | [`binaryninja.lowlevelil.LowLevelILMods`](#binaryninja.lowlevelil.LowLevelILMods "binaryninja.lowlevelil.LowLevelILMods") |  |
 | [`binaryninja.lowlevelil.LowLevelILModsDp`](#binaryninja.lowlevelil.LowLevelILModsDp "binaryninja.lowlevelil.LowLevelILModsDp") |  |
 | [`binaryninja.lowlevelil.LowLevelILModu`](#binaryninja.lowlevelil.LowLevelILModu "binaryninja.lowlevelil.LowLevelILModu") |  |
@@ -109,7 +118,9 @@
 | [`binaryninja.lowlevelil.LowLevelILOperationAndSize`](#binaryninja.lowlevelil.LowLevelILOperationAndSize "binaryninja.lowlevelil.LowLevelILOperationAndSize") |  |
 | [`binaryninja.lowlevelil.LowLevelILOr`](#binaryninja.lowlevelil.LowLevelILOr "binaryninja.lowlevelil.LowLevelILOr") |  |
 | [`binaryninja.lowlevelil.LowLevelILPop`](#binaryninja.lowlevelil.LowLevelILPop "binaryninja.lowlevelil.LowLevelILPop") |  |
+| [`binaryninja.lowlevelil.LowLevelILPopcnt`](#binaryninja.lowlevelil.LowLevelILPopcnt "binaryninja.lowlevelil.LowLevelILPopcnt") |  |
 | [`binaryninja.lowlevelil.LowLevelILPush`](#binaryninja.lowlevelil.LowLevelILPush "binaryninja.lowlevelil.LowLevelILPush") |  |
+| [`binaryninja.lowlevelil.LowLevelILRbit`](#binaryninja.lowlevelil.LowLevelILRbit "binaryninja.lowlevelil.LowLevelILRbit") |  |
 | [`binaryninja.lowlevelil.LowLevelILReg`](#binaryninja.lowlevelil.LowLevelILReg "binaryninja.lowlevelil.LowLevelILReg") |  |
 | [`binaryninja.lowlevelil.LowLevelILRegPhi`](#binaryninja.lowlevelil.LowLevelILRegPhi "binaryninja.lowlevelil.LowLevelILRegPhi") |  |
 | [`binaryninja.lowlevelil.LowLevelILRegSplit`](#binaryninja.lowlevelil.LowLevelILRegSplit "binaryninja.lowlevelil.LowLevelILRegSplit") |  |
@@ -180,34 +191,29 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    CoreLowLevelILInstruction(operation: binaryninja.enums.LowLevelILOperation, attributes:
-    int, size: int, flags: int, source_operand: <function NewType.<locals>.new_type at
-    0x10a719790>, operands: Tuple[ExpressionIndex, ExpressionIndex, ExpressionIndex,
-    ExpressionIndex], address: int)
-
     __init__(*operation: [LowLevelILOperation](enums.md#binaryninja.enums.LowLevelILOperation "binaryninja.enums.LowLevelILOperation")*, *attributes: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *flags: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *source_operand: ExpressionIndex*, *operands: [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[ExpressionIndex, ExpressionIndex, ExpressionIndex, ExpressionIndex]*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **operation** ([*LowLevelILOperation*](enums.md#binaryninja.enums.LowLevelILOperation
-              "binaryninja.enums.LowLevelILOperation")) –
+              "binaryninja.enums.LowLevelILOperation"))
             - **attributes** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **flags** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **source_operand** (*ExpressionIndex*) –
+              v3.14)"))
+            - **source_operand** (*ExpressionIndex*)
             - **operands** ([*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[**ExpressionIndex**,* *ExpressionIndex**,* *ExpressionIndex**,*
-              *ExpressionIndex**]*) –
+              *ExpressionIndex**]*)
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
 
     *classmethod* from_BNLowLevelILInstruction(*instr: BNLowLevelILInstruction*) → [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#CoreLowLevelILInstruction.from_BNLowLevelILInstruction)
     :   Parameters:
-        :   **instr** (*BNLowLevelILInstruction*) –
+        :   **instr** (*BNLowLevelILInstruction*)
 
         Return type:
         :   [*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
@@ -233,13 +239,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILFlag(arch: ‘architecture.Architecture’, index: ‘architecture.FlagIndex’)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *index: FlagIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
-            - **index** (*FlagIndex*) –
+              "binaryninja.architecture.Architecture"))
+            - **index** (*FlagIndex*)
 
         Return type:
         :   *None*
@@ -258,13 +262,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILIntrinsic(arch: ‘architecture.Architecture’, index: ‘architecture.IntrinsicIndex’)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *index: IntrinsicIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
-            - **index** (*IntrinsicIndex*) –
+              "binaryninja.architecture.Architecture"))
+            - **index** (*IntrinsicIndex*)
 
         Return type:
         :   *None*
@@ -287,13 +289,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILRegister(arch: ‘architecture.Architecture’, index: ‘architecture.RegisterIndex’)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *index: RegisterIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
-            - **index** (*RegisterIndex*) –
+              "binaryninja.architecture.Architecture"))
+            - **index** (*RegisterIndex*)
 
         Return type:
         :   *None*
@@ -314,14 +314,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILRegisterStack(arch: ‘architecture.Architecture’, index:
-    ‘architecture.RegisterStackIndex’)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *index: RegisterStackIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
-            - **index** (*RegisterStackIndex*) –
+              "binaryninja.architecture.Architecture"))
+            - **index** (*RegisterStackIndex*)
 
         Return type:
         :   *None*
@@ -340,14 +337,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILSemanticFlagClass(arch: ‘architecture.Architecture’, index:
-    ‘architecture.SemanticClassIndex’)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *index: SemanticClassIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
-            - **index** (*SemanticClassIndex*) –
+              "binaryninja.architecture.Architecture"))
+            - **index** (*SemanticClassIndex*)
 
         Return type:
         :   *None*
@@ -364,14 +358,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILSemanticFlagGroup(arch: ‘architecture.Architecture’, index:
-    ‘architecture.SemanticGroupIndex’)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *index: SemanticGroupIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
-            - **index** (*SemanticGroupIndex*) –
+              "binaryninja.architecture.Architecture"))
+            - **index** (*SemanticGroupIndex*)
 
         Return type:
         :   *None*
@@ -382,37 +373,45 @@
 
     *property* name*: SemanticGroupName*
 
+## LowLevelILAbs
+
+*class* LowLevelILAbs[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILAbs)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
+
 ## LowLevelILAdc
 
 *class* LowLevelILAdc[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILAdc)
 :   Bases: [`LowLevelILCarryBase`](#binaryninja.lowlevelil.LowLevelILCarryBase
     "binaryninja.lowlevelil.LowLevelILCarryBase")
 
-    LowLevelILAdc(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILAdd
 
@@ -422,31 +421,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILAdd(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILAddOverflow
 
@@ -456,31 +442,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILAddOverflow(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILAnd
 
@@ -490,31 +463,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILAnd(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILAsr
 
@@ -524,31 +484,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILAsr(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILAssert
 
@@ -556,33 +503,20 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILAssert(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
     *property* constraint*: [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
 
@@ -593,33 +527,20 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILAssertSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
     *property* constraint*: [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
 
@@ -634,11 +555,11 @@
 
     __init__(*handle: LP_BNBasicBlock*, *owner: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILBasicBlock.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNBasicBlock*) –
+        :   - **handle** (*LP_BNBasicBlock*)
             - **owner** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     *property* il_function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
     :   IL Function of which this block is a part, if the block is part of an IL Function.
@@ -653,20 +574,15 @@
     [`BinaryOperation`](commonil.md#binaryninja.commonil.BinaryOperation
     "binaryninja.commonil.BinaryOperation")
 
-    LowLevelILBinaryBase(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -675,14 +591,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* left*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -694,20 +602,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILBoolToInt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -716,14 +619,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -734,31 +629,39 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILBp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
-    expr_index*: ExpressionIndex*
+## LowLevelILBswap
 
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
+*class* LowLevelILBswap[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILBswap)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
 
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+        Return type:
+        :   *None*
 
 ## LowLevelILCall
 
@@ -768,20 +671,15 @@
     [`Localcall`](commonil.md#binaryninja.commonil.Localcall
     "binaryninja.commonil.Localcall")
 
-    LowLevelILCall(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -793,14 +691,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILCallOutputSsa
 
 *class* LowLevelILCallOutputSsa[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILCallOutputSsa)
@@ -808,20 +698,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILCallOutputSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -835,14 +720,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILCallParam
 
 *class* LowLevelILCallParam[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILCallParam)
@@ -850,20 +727,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILCallParam(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -872,14 +744,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")]*
 
@@ -892,20 +756,15 @@
     "binaryninja.commonil.Localcall"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILCallSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -916,14 +775,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* output*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")]*
 
@@ -941,20 +792,15 @@
     [`Localcall`](commonil.md#binaryninja.commonil.Localcall
     "binaryninja.commonil.Localcall")
 
-    LowLevelILCallStackAdjust(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -965,14 +811,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* reg_stack_adjustments*: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterStackName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
 
@@ -985,20 +823,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILCallStackSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -1007,14 +840,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
 
@@ -1027,20 +852,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Carry`](commonil.md#binaryninja.commonil.Carry "binaryninja.commonil.Carry")
 
-    LowLevelILCarryBase(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -1051,14 +871,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* left*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -1074,20 +886,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILCeil(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -1097,15 +904,49 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
+
+## LowLevelILCls
+
+*class* LowLevelILCls[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILCls)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
+
+## LowLevelILClz
+
+*class* LowLevelILClz[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILClz)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
 
 ## LowLevelILCmpE
 
@@ -1113,31 +954,18 @@
 :   Bases: [`LowLevelILComparisonBase`](#binaryninja.lowlevelil.LowLevelILComparisonBase
     "binaryninja.lowlevelil.LowLevelILComparisonBase")
 
-    LowLevelILCmpE(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpNe
 
@@ -1145,31 +973,18 @@
 :   Bases: [`LowLevelILComparisonBase`](#binaryninja.lowlevelil.LowLevelILComparisonBase
     "binaryninja.lowlevelil.LowLevelILComparisonBase")
 
-    LowLevelILCmpNe(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpSge
 
@@ -1178,31 +993,18 @@
     "binaryninja.lowlevelil.LowLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    LowLevelILCmpSge(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpSgt
 
@@ -1211,31 +1013,18 @@
     "binaryninja.lowlevelil.LowLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    LowLevelILCmpSgt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpSle
 
@@ -1244,31 +1033,18 @@
     "binaryninja.lowlevelil.LowLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    LowLevelILCmpSle(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpSlt
 
@@ -1277,31 +1053,18 @@
     "binaryninja.lowlevelil.LowLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    LowLevelILCmpSlt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpUge
 
@@ -1309,31 +1072,18 @@
 :   Bases: [`LowLevelILComparisonBase`](#binaryninja.lowlevelil.LowLevelILComparisonBase
     "binaryninja.lowlevelil.LowLevelILComparisonBase")
 
-    LowLevelILCmpUge(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpUgt
 
@@ -1341,31 +1091,18 @@
 :   Bases: [`LowLevelILComparisonBase`](#binaryninja.lowlevelil.LowLevelILComparisonBase
     "binaryninja.lowlevelil.LowLevelILComparisonBase")
 
-    LowLevelILCmpUgt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpUle
 
@@ -1373,31 +1110,18 @@
 :   Bases: [`LowLevelILComparisonBase`](#binaryninja.lowlevelil.LowLevelILComparisonBase
     "binaryninja.lowlevelil.LowLevelILComparisonBase")
 
-    LowLevelILCmpUle(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILCmpUlt
 
@@ -1405,31 +1129,18 @@
 :   Bases: [`LowLevelILComparisonBase`](#binaryninja.lowlevelil.LowLevelILComparisonBase
     "binaryninja.lowlevelil.LowLevelILComparisonBase")
 
-    LowLevelILCmpUlt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILComparisonBase
 
@@ -1439,31 +1150,18 @@
     [`Comparison`](commonil.md#binaryninja.commonil.Comparison
     "binaryninja.commonil.Comparison")
 
-    LowLevelILComparisonBase(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILConst
 
@@ -1471,31 +1169,18 @@
 :   Bases: [`LowLevelILConstantBase`](#binaryninja.lowlevelil.LowLevelILConstantBase
     "binaryninja.lowlevelil.LowLevelILConstantBase")
 
-    LowLevelILConst(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILConstPtr
 
@@ -1503,31 +1188,18 @@
 :   Bases: [`LowLevelILConstantBase`](#binaryninja.lowlevelil.LowLevelILConstantBase
     "binaryninja.lowlevelil.LowLevelILConstantBase")
 
-    LowLevelILConstPtr(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILConstantBase
 
@@ -1536,20 +1208,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    LowLevelILConstantBase(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -1561,13 +1228,26 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
+## LowLevelILCtz
 
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
+*class* LowLevelILCtz[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILCtz)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
 
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+        Return type:
+        :   *None*
 
 ## LowLevelILDivs
 
@@ -1578,31 +1258,18 @@
     "binaryninja.commonil.Arithmetic"), [`Signed`](commonil.md#binaryninja.commonil.Signed
     "binaryninja.commonil.Signed")
 
-    LowLevelILDivs(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILDivsDp
 
@@ -1613,31 +1280,18 @@
     "binaryninja.commonil.DoublePrecision"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    LowLevelILDivsDp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILDivu
 
@@ -1647,31 +1301,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILDivu(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILDivuDp
 
@@ -1681,31 +1322,18 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    LowLevelILDivuDp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILExpr
 
@@ -1721,7 +1349,7 @@
 
     __init__(*index: ExpressionIndex*)[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILExpr.__init__)
     :   Parameters:
-        :   **index** (*ExpressionIndex*) –
+        :   **index** (*ExpressionIndex*)
 
     *property* index*: ExpressionIndex*
 
@@ -1731,20 +1359,15 @@
 :   Bases: [`LowLevelILConstantBase`](#binaryninja.lowlevelil.LowLevelILConstantBase
     "binaryninja.lowlevelil.LowLevelILConstantBase")
 
-    LowLevelILExternPtr(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -1755,14 +1378,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -1776,20 +1391,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFabs(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -1798,14 +1408,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -1819,31 +1421,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFadd(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpE
 
@@ -1853,31 +1442,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpE(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpGe
 
@@ -1887,31 +1463,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpGe(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpGt
 
@@ -1921,31 +1484,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpGt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpLe
 
@@ -1955,31 +1505,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpLe(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpLt
 
@@ -1989,31 +1526,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpLt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpNe
 
@@ -2023,31 +1547,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpNe(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpO
 
@@ -2057,31 +1568,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpO(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFcmpUo
 
@@ -2091,31 +1589,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFcmpUo(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFdiv
 
@@ -2127,31 +1612,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFdiv(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFlag
 
@@ -2159,20 +1631,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILFlag(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2182,14 +1649,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [ILFlag](#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag")*
 
 ## LowLevelILFlagBit
@@ -2198,20 +1657,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILFlagBit(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2222,14 +1676,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [ILFlag](#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag")*
 
@@ -2240,20 +1686,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILFlagBitSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2265,14 +1706,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [SSAFlag](#binaryninja.lowlevelil.SSAFlag "binaryninja.lowlevelil.SSAFlag")*
 
 ## LowLevelILFlagCond
@@ -2281,20 +1714,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILFlagCond(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2306,14 +1734,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* semantic_class*: [ILSemanticFlagClass](#binaryninja.lowlevelil.ILSemanticFlagClass "binaryninja.lowlevelil.ILSemanticFlagClass") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFlagGroup
@@ -2322,20 +1742,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILFlagGroup(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2344,14 +1759,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* semantic_group*: [ILSemanticFlagGroup](#binaryninja.lowlevelil.ILSemanticFlagGroup "binaryninja.lowlevelil.ILSemanticFlagGroup")*
 
@@ -2362,20 +1769,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Phi`](commonil.md#binaryninja.commonil.Phi "binaryninja.commonil.Phi")
 
-    LowLevelILFlagPhi(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2387,14 +1789,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAFlag](#binaryninja.lowlevelil.SSAFlag "binaryninja.lowlevelil.SSAFlag")]*
 
 ## LowLevelILFlagSsa
@@ -2404,20 +1798,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILFlagSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2426,14 +1815,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [SSAFlag](#binaryninja.lowlevelil.SSAFlag "binaryninja.lowlevelil.SSAFlag")*
 
@@ -2445,20 +1826,15 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFloatConst(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2470,14 +1846,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILFloatConv
 
 *class* LowLevelILFloatConv[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFloatConv)
@@ -2488,20 +1856,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFloatConv(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2510,14 +1873,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -2531,20 +1886,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFloatToInt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2553,14 +1903,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -2574,20 +1916,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFloor(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2596,14 +1933,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -2617,31 +1946,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFmul(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFneg
 
@@ -2653,20 +1969,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFneg(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2676,14 +1987,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
 ## LowLevelILForceVer
@@ -2692,33 +1995,20 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILForceVer(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
     *property* dest*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILForceVerSsa
 
@@ -2727,33 +2017,20 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILForceVerSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
     *property* dest*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
 
@@ -2767,20 +2044,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFsqrt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2789,14 +2061,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -2810,31 +2074,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILFsub(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILFtrunc
 
@@ -2846,20 +2097,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILFtrunc(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -2868,14 +2114,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -2915,10 +2153,28 @@
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: BNLowLevelILFunction | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *source_func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.__init__)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
-            - **handle** (*BNLowLevelILFunction* *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
+            - **handle** (*BNLowLevelILFunction* *|* *None*)
             - **source_func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function") *|* *None*) –
+              "binaryninja.function.Function") *|* *None*)
+
+    absolute_value(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.absolute_value)
+    :   `absolute_value` signed absolute value of expression `value` of size `size` potentially
+        setting flags
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to take the absolute value of
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `abs.<size>{<flags>}(value)`
+
+        Return type:
+        :   ExpressionIndex
 
     add(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.add)
     :   `add` adds expression `a` to expression `b` potentially setting flags `flags` and
@@ -3120,6 +2376,24 @@
         Return type:
         :   ExpressionIndex
 
+    byte_swap(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.byte_swap)
+    :   `byte_swap` reverses the byte order of expression `value` of size `size` potentially
+        setting flags
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to byte swap
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `bswap.<size>{<flags>}(value)`
+
+        Return type:
+        :   ExpressionIndex
+
     cache_possible_value_set(*pvs: [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.cache_possible_value_set)
     :   Cache a PossibleValueSet in the IL function, returning its index for use in an
         expression operand :param pvs: PossibleValueSet to cache :return: Index of the
@@ -3127,7 +2401,7 @@
 
         Parameters:
         :   **pvs** ([*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
-            "binaryninja.variable.PossibleValueSet")) –
+            "binaryninja.variable.PossibleValueSet"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
@@ -3159,12 +2433,12 @@
             - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
               "binaryninja.commonil.ILSourceLocation")) – location of returned expression
             - **stack_adjust** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **reg_stack_adjustments**
               ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python
               v3.14)")*[**architecture.RegisterStackType**,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]* *|*
-              *None*) –
+              *None*)
 
         Returns:
         :   The expression `call(dest), stack += stack_adjust`
@@ -3425,7 +2699,7 @@
         :   The index of the newly copied expression
 
         Return type:
-        :   ExpressionIndex
+        :   *ExpressionIndex*
 
     copy_expr_to(*expr: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*, *dest: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *sub_expr_handler: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")], ExpressionIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.copy_expr_to)
     :   `copy_expr_to` deep copies an expression from this function into a target function If
@@ -3451,13 +2725,67 @@
         :   Index of the copied expression in the target function
 
         Return type:
+        :   *ExpressionIndex*
+
+    count_leading_signs(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.count_leading_signs)
+    :   `count_leading_signs` counts the leading sign bits in expression `value` of size `size`
+        (the number of bits below the sign bit that match it) potentially setting flags
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count leading sign bits in
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `cls.<size>{<flags>}(value)`
+
+        Return type:
+        :   ExpressionIndex
+
+    count_leading_zeros(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.count_leading_zeros)
+    :   `count_leading_zeros` counts the leading zero bits in expression `value` of size `size`
+        potentially setting flags. The result is `8 * size` when `value` is zero.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count leading zero bits in
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `clz.<size>{<flags>}(value)`
+
+        Return type:
+        :   ExpressionIndex
+
+    count_trailing_zeros(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.count_trailing_zeros)
+    :   `count_trailing_zeros` counts the trailing zero bits in expression `value` of size
+        `size` potentially setting flags. The result is `8 * size` when `value` is zero.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count trailing zero bits in
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `ctz.<size>{<flags>}(value)`
+
+        Return type:
         :   ExpressionIndex
 
     create_graph(*settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CoreFlowGraph](flowgraph.md#binaryninja.flowgraph.CoreFlowGraph "binaryninja.flowgraph.CoreFlowGraph")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.create_graph)
     :   Parameters:
         :   **settings**
             ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-            "binaryninja.function.DisassemblySettings") *|* *None*) –
+            "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*CoreFlowGraph*](flowgraph.md#binaryninja.flowgraph.CoreFlowGraph
@@ -3467,7 +2795,7 @@
     :   Parameters:
         :   **settings**
             ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-            "binaryninja.function.DisassemblySettings") *|* *None*) –
+            "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*CoreFlowGraph*](flowgraph.md#binaryninja.flowgraph.CoreFlowGraph
@@ -3553,19 +2881,19 @@
 
     expr(*operation*, *a: ExpressionIndex = 0*, *b: ExpressionIndex = 0*, *c: ExpressionIndex = 0*, *d: ExpressionIndex = 0*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *source_location: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.expr)
     :   Parameters:
-        :   - **a** (*ExpressionIndex*) –
-            - **b** (*ExpressionIndex*) –
-            - **c** (*ExpressionIndex*) –
-            - **d** (*ExpressionIndex*) –
+        :   - **a** (*ExpressionIndex*)
+            - **b** (*ExpressionIndex*)
+            - **c** (*ExpressionIndex*)
+            - **d** (*ExpressionIndex*)
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **flags** (*FlagWriteTypeName* *|* *FlagWriteTypeIndex* *|* *None*) –
+              v3.14)"))
+            - **flags** (*FlagWriteTypeName* *|* *FlagWriteTypeIndex* *|* *None*)
             - **source_location**
               ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
-              "binaryninja.commonil.ILSourceLocation") *|* *None*) –
+              "binaryninja.commonil.ILSourceLocation") *|* *None*)
 
         Return type:
-        :   ExpressionIndex
+        :   *ExpressionIndex*
 
     extern_pointer(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.extern_pointer)
     :   `extern_pointer` returns an expression for the constant external pointer `value` with
@@ -4095,11 +3423,11 @@
 
     get_exits_for_instr(*idx: InstructionIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[InstructionIndex][[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_exits_for_instr)
     :   Parameters:
-        :   **idx** (*InstructionIndex*) –
+        :   **idx** (*InstructionIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[InstructionIndex]
+            v3.14)")[*InstructionIndex*]
 
     get_expr(*index: ExpressionIndex*) → [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_expr)
     :   `get_expr` retrieves the IL expression at a given expression index in the function.
@@ -4141,41 +3469,41 @@
 
     get_expr_index_for_instruction(*instr: InstructionIndex*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_expr_index_for_instruction)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   ExpressionIndex
+        :   *ExpressionIndex*
 
     get_high_level_il_expr_index(*expr: ExpressionIndex*) → ExpressionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_high_level_il_expr_index)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
-        :   ExpressionIndex | *None*
+        :   *ExpressionIndex* | *None*
 
     get_high_level_il_instruction_index(*instr: InstructionIndex*) → InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_high_level_il_instruction_index)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   InstructionIndex | *None*
+        :   *InstructionIndex* | *None*
 
     get_instruction_index_for_expr(*expr: ExpressionIndex*) → InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_instruction_index_for_expr)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
-        :   InstructionIndex | *None*
+        :   *InstructionIndex* | *None*
 
     get_instruction_start(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_instruction_start)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
-        :   InstructionIndex | *None*
+        :   *InstructionIndex* | *None*
 
     get_instructions_at(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[InstructionIndex][[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_instructions_at)
     :   `get_instructions_at` gets the InstructionIndex(s) corresponding to the given virtual
@@ -4218,7 +3546,7 @@
 
         Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)")) – IL Address label to retrieve
 
@@ -4260,51 +3588,51 @@
 
     get_mapped_medium_level_il_expr_index(*expr: ExpressionIndex*) → ExpressionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_mapped_medium_level_il_expr_index)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
-        :   ExpressionIndex | *None*
+        :   *ExpressionIndex* | *None*
 
     get_mapped_medium_level_il_instruction_index(*instr: InstructionIndex*) → InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_mapped_medium_level_il_instruction_index)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   InstructionIndex | *None*
+        :   *InstructionIndex* | *None*
 
     get_medium_level_il_expr_index(*expr: ExpressionIndex*) → ExpressionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_medium_level_il_expr_index)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
-        :   ExpressionIndex | *None*
+        :   *ExpressionIndex* | *None*
 
     get_medium_level_il_expr_indexes(*expr: ExpressionIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[ExpressionIndex][[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_medium_level_il_expr_indexes)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[ExpressionIndex]
+            v3.14)")[*ExpressionIndex*]
 
     get_medium_level_il_instruction_index(*instr: InstructionIndex*) → InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_medium_level_il_instruction_index)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   InstructionIndex | *None*
+        :   *InstructionIndex* | *None*
 
     get_non_ssa_instruction_index(*instr: InstructionIndex*) → InstructionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_non_ssa_instruction_index)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   InstructionIndex
+        :   *InstructionIndex*
 
     get_ssa_flag_definition(*flag_ssa: [SSAFlag](#binaryninja.lowlevelil.SSAFlag "binaryninja.lowlevelil.SSAFlag")*) → [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_flag_definition)
     :   Parameters:
         :   **flag_ssa** ([*SSAFlag*](#binaryninja.lowlevelil.SSAFlag
-            "binaryninja.lowlevelil.SSAFlag")) –
+            "binaryninja.lowlevelil.SSAFlag"))
 
         Return type:
         :   [*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
@@ -4313,7 +3641,7 @@
     get_ssa_flag_uses(*flag_ssa: [SSAFlag](#binaryninja.lowlevelil.SSAFlag "binaryninja.lowlevelil.SSAFlag")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_flag_uses)
     :   Parameters:
         :   **flag_ssa** ([*SSAFlag*](#binaryninja.lowlevelil.SSAFlag
-            "binaryninja.lowlevelil.SSAFlag")) –
+            "binaryninja.lowlevelil.SSAFlag"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4323,7 +3651,7 @@
     get_ssa_flag_value(*flag_ssa: [SSAFlag](#binaryninja.lowlevelil.SSAFlag "binaryninja.lowlevelil.SSAFlag")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_flag_value)
     :   Parameters:
         :   **flag_ssa** ([*SSAFlag*](#binaryninja.lowlevelil.SSAFlag
-            "binaryninja.lowlevelil.SSAFlag")) –
+            "binaryninja.lowlevelil.SSAFlag"))
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -4331,15 +3659,15 @@
 
     get_ssa_instruction_index(*instr: InstructionIndex*) → InstructionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_instruction_index)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   InstructionIndex
+        :   *InstructionIndex*
 
     get_ssa_memory_definition(*index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_memory_definition)
     :   Parameters:
         :   **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
@@ -4348,7 +3676,7 @@
     get_ssa_memory_uses(*index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_memory_uses)
     :   Parameters:
         :   **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4358,7 +3686,7 @@
     get_ssa_reg_definition(*reg_ssa: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*) → [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_reg_definition)
     :   Parameters:
         :   **reg_ssa** ([*SSARegister*](#binaryninja.lowlevelil.SSARegister
-            "binaryninja.lowlevelil.SSARegister")) –
+            "binaryninja.lowlevelil.SSARegister"))
 
         Return type:
         :   [*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
@@ -4367,7 +3695,7 @@
     get_ssa_reg_uses(*reg_ssa: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_reg_uses)
     :   Parameters:
         :   **reg_ssa** ([*SSARegister*](#binaryninja.lowlevelil.SSARegister
-            "binaryninja.lowlevelil.SSARegister")) –
+            "binaryninja.lowlevelil.SSARegister"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4377,7 +3705,7 @@
     get_ssa_reg_value(*reg_ssa: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.get_ssa_reg_value)
     :   Parameters:
         :   **reg_ssa** ([*SSARegister*](#binaryninja.lowlevelil.SSARegister
-            "binaryninja.lowlevelil.SSARegister")) –
+            "binaryninja.lowlevelil.SSARegister"))
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -4487,7 +3815,7 @@
               "binaryninja.lowlevelil.LowLevelILLabel")*]*) – the list of targets for jump locations
             - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
               "binaryninja.commonil.ILSourceLocation")) – location of returned expression
-            - **targets** –
+            - **targets**
 
         Returns:
         :   The expression `jump(dest)`
@@ -4553,10 +3881,86 @@
 
         Parameters:
         :   **label** ([*LowLevelILLabel*](#binaryninja.lowlevelil.LowLevelILLabel
-            "binaryninja.lowlevelil.LowLevelILLabel")) –
+            "binaryninja.lowlevelil.LowLevelILLabel"))
 
         Return type:
         :   *None*
+
+    max_signed(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.max_signed)
+    :   `max_signed` signed maximum of expressions `a` and `b` potentially setting flags `flags`
+        and returning an expression of `size` bytes.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `maxs.<size>{<flags>}(a, b)`
+
+        Return type:
+        :   ExpressionIndex
+
+    max_unsigned(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.max_unsigned)
+    :   `max_unsigned` unsigned maximum of expressions `a` and `b` potentially setting flags
+        `flags` and returning an expression of `size` bytes.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `maxu.<size>{<flags>}(a, b)`
+
+        Return type:
+        :   ExpressionIndex
+
+    min_signed(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.min_signed)
+    :   `min_signed` signed minimum of expressions `a` and `b` potentially setting flags `flags`
+        and returning an expression of `size` bytes.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `mins.<size>{<flags>}(a, b)`
+
+        Return type:
+        :   ExpressionIndex
+
+    min_unsigned(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.min_unsigned)
+    :   `min_unsigned` unsigned minimum of expressions `a` and `b` potentially setting flags
+        `flags` and returning an expression of `size` bytes.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `minu.<size>{<flags>}(a, b)`
+
+        Return type:
+        :   ExpressionIndex
 
     mod_double_prec_signed(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.mod_double_prec_signed)
     :   `mod_double_prec_signed` signed double precision modulus using expression `a` as a
@@ -4774,8 +4178,8 @@
 
         Parameters:
         :   - **n** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **expr** (*ExpressionIndex*) –
+              v3.14)"))
+            - **expr** (*ExpressionIndex*)
 
         Returns:
         :   returns the expression `expr` unmodified
@@ -4814,6 +4218,24 @@
 
         Returns:
         :   The expression `pop`
+
+        Return type:
+        :   ExpressionIndex
+
+    population_count(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.population_count)
+    :   `population_count` counts the number of set bits in expression `value` of size `size`
+        potentially setting flags
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count set bits in
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `popcnt.<size>{<flags>}(value)`
 
         Return type:
         :   ExpressionIndex
@@ -5017,6 +4439,24 @@
         Return type:
         :   ExpressionIndex
 
+    reverse_bits(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.reverse_bits)
+    :   `reverse_bits` reverses the bit order of expression `value` of size `size` potentially
+        setting flags
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to reverse the bits of
+            - **flags** (*FlagWriteType*) – optional, flag write type caused by this operation
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `rbit.<size>{<flags>}(value)`
+
+        Return type:
+        :   ExpressionIndex
+
     rotate_left(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *flags: FlagWriteTypeName | FlagWriteTypeIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.rotate_left)
     :   `rotate_left` bitwise rotates left expression `a` by expression `b` potentially setting
         flags `flags` and returning an expression of `size` bytes.
@@ -5115,9 +4555,9 @@
     set_current_address(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.set_current_address)
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -5170,7 +4610,6 @@
             v3.14)")*[*[*Architecture*](architecture.md#binaryninja.architecture.Architecture
             "binaryninja.architecture.Architecture")*,*
             [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]**]*)
-            –
 
         Return type:
         :   *None*
@@ -5441,7 +4880,7 @@
               LowLevelILInstruction
             - **args** (*Any*) – Custom user-defined arguments
             - **kwargs** (*Any*) – Custom user-defined keyword arguments
-            - **cb** –
+            - **cb**
 
         Returns:
         :   An iterator of the results of the callback function
@@ -5498,6 +4937,38 @@
 
         Returns:
         :   the unimplemented memory reference expression.
+
+        Return type:
+        :   ExpressionIndex
+
+    unknown(*loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.unknown)
+    :   `unknown` returns an unknown expression for values that are genuinely unknowable at
+        analysis time (e.g. runtime-dependent flags). Renders as `unknown` and suppresses
+        unimplemented warnings.
+
+        Parameters:
+        :   **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+            "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   the unknown expression.
+
+        Return type:
+        :   ExpressionIndex
+
+    unknown_memory_ref(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *addr: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILFunction.unknown_memory_ref)
+    :   `unknown_memory_ref` a memory reference to expression `addr` of size `size` for a
+        genuinely unknowable value. Renders as `unknown` and suppresses unimplemented warnings.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – size in bytes of the memory reference
+            - **addr** (*ExpressionIndex*) – expression to reference memory
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   the unknown memory reference expression.
 
         Return type:
         :   ExpressionIndex
@@ -5695,20 +5166,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILGoto(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -5720,14 +5186,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILIf
 
 *class* LowLevelILIf[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILIf)
@@ -5736,20 +5194,15 @@
     [`ControlFlow`](commonil.md#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    LowLevelILIf(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -5761,15 +5214,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
     *property* false*: InstructionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* true*: InstructionIndex*
 
@@ -5787,12 +5232,12 @@
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -5819,14 +5264,14 @@
         :   Index of the copied expression in the target function
 
         Return type:
-        :   ExpressionIndex
+        :   *ExpressionIndex*
 
     *classmethod* create(*func: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.create)
     :   Parameters:
         :   - **func** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   [*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
@@ -5834,7 +5279,7 @@
 
     get_flag_value(*flag: architecture.FlagType*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_flag_value)
     :   Parameters:
-        :   **flag** (*architecture.FlagType*) –
+        :   **flag** (*architecture.FlagType*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -5842,7 +5287,7 @@
 
     get_flag_value_after(*flag: architecture.FlagType*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_flag_value_after)
     :   Parameters:
-        :   **flag** (*architecture.FlagType*) –
+        :   **flag** (*architecture.FlagType*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -5850,10 +5295,10 @@
 
     get_possible_flag_values(*flag: architecture.FlagType*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DataFlowQueryOption](enums.md#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_possible_flag_values)
     :   Parameters:
-        :   - **flag** (*architecture.FlagType*) –
+        :   - **flag** (*architecture.FlagType*)
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5861,10 +5306,10 @@
 
     get_possible_flag_values_after(*flag: architecture.FlagType*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DataFlowQueryOption](enums.md#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_possible_flag_values_after)
     :   Parameters:
-        :   - **flag** (*architecture.FlagType*) –
+        :   - **flag** (*architecture.FlagType*)
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5872,10 +5317,10 @@
 
     get_possible_reg_values(*reg: architecture.RegisterType*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DataFlowQueryOption](enums.md#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_possible_reg_values)
     :   Parameters:
-        :   - **reg** (*architecture.RegisterType*) –
+        :   - **reg** (*architecture.RegisterType*)
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5883,10 +5328,10 @@
 
     get_possible_reg_values_after(*reg: architecture.RegisterType*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DataFlowQueryOption](enums.md#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_possible_reg_values_after)
     :   Parameters:
-        :   - **reg** (*architecture.RegisterType*) –
+        :   - **reg** (*architecture.RegisterType*)
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5895,12 +5340,12 @@
     get_possible_stack_contents(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DataFlowQueryOption](enums.md#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_possible_stack_contents)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5909,12 +5354,12 @@
     get_possible_stack_contents_after(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DataFlowQueryOption](enums.md#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_possible_stack_contents_after)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+              "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5924,7 +5369,7 @@
     :   Parameters:
         :   **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
             Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-            "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+            "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5932,7 +5377,7 @@
 
     get_reg_value(*reg: architecture.RegisterType*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_reg_value)
     :   Parameters:
-        :   **reg** (*architecture.RegisterType*) –
+        :   **reg** (*architecture.RegisterType*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -5940,7 +5385,7 @@
 
     get_reg_value_after(*reg: architecture.RegisterType*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_reg_value_after)
     :   Parameters:
-        :   **reg** (*architecture.RegisterType*) –
+        :   **reg** (*architecture.RegisterType*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -5949,9 +5394,9 @@
     get_stack_contents(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_stack_contents)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -5960,9 +5405,9 @@
     get_stack_contents_after(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILInstruction.get_stack_contents_after)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -5990,7 +5435,7 @@
               LowLevelILInstruction
             - **args** (*Any*) – Custom user-defined arguments
             - **kwargs** (*Any*) – Custom user-defined keyword arguments
-            - **cb** –
+            - **cb**
 
         Returns:
         :   An iterator of the results of the callback function
@@ -6015,9 +5460,9 @@
         :   - **cb** (*LowLevelILVisitorCallback*) – Callback function that takes the name of the
               operand, the operand, operand type, and parent instruction
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **parent** ([*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
-              "binaryninja.lowlevelil.LowLevelILInstruction") *|* *None*) –
+              "binaryninja.lowlevelil.LowLevelILInstruction") *|* *None*)
 
         Returns:
         :   True if all instructions were visited, False if the callback returned False
@@ -6037,9 +5482,9 @@
         :   - **cb** (*LowLevelILVisitorCallback*) – Callback function that takes the name of the
               operand, the operand, operand type, and parent instruction
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **parent** ([*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
-              "binaryninja.lowlevelil.LowLevelILInstruction") *|* *None*) –
+              "binaryninja.lowlevelil.LowLevelILInstruction") *|* *None*)
 
         Returns:
         :   True if all instructions were visited, False if the callback returned False
@@ -6058,9 +5503,9 @@
         :   - **cb** (*LowLevelILVisitorCallback*) – Callback function that takes the name of the
               operand, the operand, operand type, and parent instruction
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **parent** ([*LowLevelILInstruction*](#binaryninja.lowlevelil.LowLevelILInstruction
-              "binaryninja.lowlevelil.LowLevelILInstruction") *|* *None*) –
+              "binaryninja.lowlevelil.LowLevelILInstruction") *|* *None*)
 
         Returns:
         :   True if all instructions were visited, False if the callback returned False
@@ -6072,7 +5517,7 @@
         [`LowLevelILInstruction.traverse`](#binaryninja.lowlevelil.LowLevelILInstruction.traverse
         "binaryninja.lowlevelil.LowLevelILInstruction.traverse") instead.
 
-    ILOperations*: [ClassVar](https://docs.python.org/3/library/typing.html#typing.ClassVar "(in Python v3.14)")[[Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[LowLevelILOperation](enums.md#binaryninja.enums.LowLevelILOperation "binaryninja.enums.LowLevelILOperation"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]]]* *= {LowLevelILOperation.LLIL_NOP: [], LowLevelILOperation.LLIL_SET_REG: [('dest', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_SPLIT: [('hi', 'reg'), ('lo', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_FLAG: [('dest', 'flag'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_STACK_REL: [('stack', 'reg_stack'), ('dest', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_REG_STACK_PUSH: [('stack', 'reg_stack'), ('src', 'expr')], LowLevelILOperation.LLIL_LOAD: [('src', 'expr')], LowLevelILOperation.LLIL_STORE: [('dest', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_PUSH: [('src', 'expr')], LowLevelILOperation.LLIL_POP: [], LowLevelILOperation.LLIL_REG: [('src', 'reg')], LowLevelILOperation.LLIL_REG_SPLIT: [('hi', 'reg'), ('lo', 'reg')], LowLevelILOperation.LLIL_REG_STACK_REL: [('stack', 'reg_stack'), ('src', 'expr')], LowLevelILOperation.LLIL_REG_STACK_POP: [('stack', 'reg_stack')], LowLevelILOperation.LLIL_REG_STACK_FREE_REG: [('dest', 'reg')], LowLevelILOperation.LLIL_REG_STACK_FREE_REL: [('stack', 'reg_stack'), ('dest', 'expr')], LowLevelILOperation.LLIL_CONST: [('constant', 'int')], LowLevelILOperation.LLIL_CONST_PTR: [('constant', 'int')], LowLevelILOperation.LLIL_EXTERN_PTR: [('constant', 'int'), ('offset', 'int')], LowLevelILOperation.LLIL_FLOAT_CONST: [('constant', 'float')], LowLevelILOperation.LLIL_FLAG: [('src', 'flag')], LowLevelILOperation.LLIL_FLAG_BIT: [('src', 'flag'), ('bit', 'int')], LowLevelILOperation.LLIL_ADD: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ADC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_SUB: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_SBB: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_AND: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_OR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_XOR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_LSL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_LSR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ASR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ROL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_RLC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_ROR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_RRC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_MUL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MULU_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MULS_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVU: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVU_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVS: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVS_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODU: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODU_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODS: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODS_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_NEG: [('src', 'expr')], LowLevelILOperation.LLIL_NOT: [('src', 'expr')], LowLevelILOperation.LLIL_SX: [('src', 'expr')], LowLevelILOperation.LLIL_ZX: [('src', 'expr')], LowLevelILOperation.LLIL_LOW_PART: [('src', 'expr')], LowLevelILOperation.LLIL_JUMP: [('dest', 'expr')], LowLevelILOperation.LLIL_JUMP_TO: [('dest', 'expr'), ('targets', 'target_map')], LowLevelILOperation.LLIL_CALL: [('dest', 'expr')], LowLevelILOperation.LLIL_CALL_STACK_ADJUST: [('dest', 'expr'), ('stack_adjustment', 'int'), ('reg_stack_adjustments', 'reg_stack_adjust')], LowLevelILOperation.LLIL_TAILCALL: [('dest', 'expr')], LowLevelILOperation.LLIL_RET: [('dest', 'expr')], LowLevelILOperation.LLIL_NORET: [], LowLevelILOperation.LLIL_IF: [('condition', 'expr'), ('true', 'int'), ('false', 'int')], LowLevelILOperation.LLIL_GOTO: [('dest', 'int')], LowLevelILOperation.LLIL_FLAG_COND: [('condition', 'cond'), ('semantic_class', 'sem_class')], LowLevelILOperation.LLIL_FLAG_GROUP: [('semantic_group', 'sem_group')], LowLevelILOperation.LLIL_CMP_E: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_NE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SLT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_ULT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SLE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_ULE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SGE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_UGE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SGT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_UGT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_TEST_BIT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_BOOL_TO_INT: [('src', 'expr')], LowLevelILOperation.LLIL_ADD_OVERFLOW: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_SYSCALL: [], LowLevelILOperation.LLIL_BP: [], LowLevelILOperation.LLIL_TRAP: [('vector', 'int')], LowLevelILOperation.LLIL_INTRINSIC: [('output', 'reg_or_flag_list'), ('intrinsic', 'intrinsic'), ('param', 'expr')], LowLevelILOperation.LLIL_UNDEF: [], LowLevelILOperation.LLIL_UNIMPL: [], LowLevelILOperation.LLIL_UNIMPL_MEM: [('src', 'expr')], LowLevelILOperation.LLIL_FADD: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FSUB: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FMUL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FDIV: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FSQRT: [('src', 'expr')], LowLevelILOperation.LLIL_FNEG: [('src', 'expr')], LowLevelILOperation.LLIL_FABS: [('src', 'expr')], LowLevelILOperation.LLIL_FLOAT_TO_INT: [('src', 'expr')], LowLevelILOperation.LLIL_INT_TO_FLOAT: [('src', 'expr')], LowLevelILOperation.LLIL_FLOAT_CONV: [('src', 'expr')], LowLevelILOperation.LLIL_ROUND_TO_INT: [('src', 'expr')], LowLevelILOperation.LLIL_FLOOR: [('src', 'expr')], LowLevelILOperation.LLIL_CEIL: [('src', 'expr')], LowLevelILOperation.LLIL_FTRUNC: [('src', 'expr')], LowLevelILOperation.LLIL_FCMP_E: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_NE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_LT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_LE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_GE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_GT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_O: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_UO: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_SET_REG_SSA: [('dest', 'reg_ssa'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_SSA_PARTIAL: [('full_reg', 'reg_ssa'), ('dest', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_SPLIT_SSA: [('hi', 'expr'), ('lo', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_STACK_REL_SSA: [('stack', 'expr'), ('dest', 'expr'), ('top', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_STACK_ABS_SSA: [('stack', 'expr'), ('dest', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_REG_SPLIT_DEST_SSA: [('dest', 'reg_ssa')], LowLevelILOperation.LLIL_REG_STACK_DEST_SSA: [('src', 'reg_stack_ssa_dest_and_src')], LowLevelILOperation.LLIL_REG_SSA: [('src', 'reg_ssa')], LowLevelILOperation.LLIL_REG_SSA_PARTIAL: [('full_reg', 'reg_ssa'), ('src', 'reg')], LowLevelILOperation.LLIL_REG_SPLIT_SSA: [('hi', 'reg_ssa'), ('lo', 'reg_ssa')], LowLevelILOperation.LLIL_REG_STACK_REL_SSA: [('stack', 'reg_stack_ssa'), ('src', 'expr'), ('top', 'expr')], LowLevelILOperation.LLIL_REG_STACK_ABS_SSA: [('stack', 'reg_stack_ssa'), ('src', 'reg')], LowLevelILOperation.LLIL_REG_STACK_FREE_REL_SSA: [('stack', 'expr'), ('dest', 'expr'), ('top', 'expr')], LowLevelILOperation.LLIL_REG_STACK_FREE_ABS_SSA: [('stack', 'expr'), ('dest', 'reg')], LowLevelILOperation.LLIL_SET_FLAG_SSA: [('dest', 'flag_ssa'), ('src', 'expr')], LowLevelILOperation.LLIL_FLAG_SSA: [('src', 'flag_ssa')], LowLevelILOperation.LLIL_FLAG_BIT_SSA: [('src', 'flag_ssa'), ('bit', 'int')], LowLevelILOperation.LLIL_CALL_SSA: [('output', 'expr'), ('dest', 'expr'), ('stack', 'expr'), ('param', 'expr')], LowLevelILOperation.LLIL_SYSCALL_SSA: [('output', 'expr'), ('stack', 'expr'), ('param', 'expr')], LowLevelILOperation.LLIL_TAILCALL_SSA: [('output', 'expr'), ('dest', 'expr'), ('stack', 'expr'), ('param', 'expr')], LowLevelILOperation.LLIL_CALL_PARAM: [('src', 'expr_list')], LowLevelILOperation.LLIL_CALL_STACK_SSA: [('src', 'reg_ssa'), ('src_memory', 'int')], LowLevelILOperation.LLIL_CALL_OUTPUT_SSA: [('dest_memory', 'int'), ('dest', 'reg_ssa_list')], LowLevelILOperation.LLIL_SEPARATE_PARAM_LIST_SSA: [('src', 'expr_list')], LowLevelILOperation.LLIL_SHARED_PARAM_SLOT_SSA: [('src', 'expr_list')], LowLevelILOperation.LLIL_MEMORY_INTRINSIC_OUTPUT_SSA: [('dest_memory', 'int'), ('output', 'reg_ssa_list')], LowLevelILOperation.LLIL_LOAD_SSA: [('src', 'expr'), ('src_memory', 'int')], LowLevelILOperation.LLIL_STORE_SSA: [('dest', 'expr'), ('dest_memory', 'int'), ('src_memory', 'int'), ('src', 'expr')], LowLevelILOperation.LLIL_INTRINSIC_SSA: [('output', 'reg_or_flag_ssa_list'), ('intrinsic', 'intrinsic'), ('param', 'expr')], LowLevelILOperation.LLIL_MEMORY_INTRINSIC_SSA: [('output', 'expr'), ('intrinsic', 'intrinsic'), ('params', 'expr_list'), ('src_memory', 'int')], LowLevelILOperation.LLIL_REG_PHI: [('dest', 'reg_ssa'), ('src', 'reg_ssa_list')], LowLevelILOperation.LLIL_REG_STACK_PHI: [('dest', 'reg_stack_ssa'), ('src', 'reg_stack_ssa_list')], LowLevelILOperation.LLIL_FLAG_PHI: [('dest', 'flag_ssa'), ('src', 'flag_ssa_list')], LowLevelILOperation.LLIL_MEM_PHI: [('dest_memory', 'int'), ('src_memory', 'int_list')]}*
+    ILOperations*: [ClassVar](https://docs.python.org/3/library/typing.html#typing.ClassVar "(in Python v3.14)")[[Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[LowLevelILOperation](enums.md#binaryninja.enums.LowLevelILOperation "binaryninja.enums.LowLevelILOperation"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]]]* *= {LowLevelILOperation.LLIL_NOP: [], LowLevelILOperation.LLIL_SET_REG: [('dest', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_SPLIT: [('hi', 'reg'), ('lo', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_FLAG: [('dest', 'flag'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_STACK_REL: [('stack', 'reg_stack'), ('dest', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_REG_STACK_PUSH: [('stack', 'reg_stack'), ('src', 'expr')], LowLevelILOperation.LLIL_LOAD: [('src', 'expr')], LowLevelILOperation.LLIL_STORE: [('dest', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_PUSH: [('src', 'expr')], LowLevelILOperation.LLIL_POP: [], LowLevelILOperation.LLIL_REG: [('src', 'reg')], LowLevelILOperation.LLIL_REG_SPLIT: [('hi', 'reg'), ('lo', 'reg')], LowLevelILOperation.LLIL_REG_STACK_REL: [('stack', 'reg_stack'), ('src', 'expr')], LowLevelILOperation.LLIL_REG_STACK_POP: [('stack', 'reg_stack')], LowLevelILOperation.LLIL_REG_STACK_FREE_REG: [('dest', 'reg')], LowLevelILOperation.LLIL_REG_STACK_FREE_REL: [('stack', 'reg_stack'), ('dest', 'expr')], LowLevelILOperation.LLIL_CONST: [('constant', 'int')], LowLevelILOperation.LLIL_CONST_PTR: [('constant', 'int')], LowLevelILOperation.LLIL_EXTERN_PTR: [('constant', 'int'), ('offset', 'int')], LowLevelILOperation.LLIL_FLOAT_CONST: [('constant', 'float')], LowLevelILOperation.LLIL_FLAG: [('src', 'flag')], LowLevelILOperation.LLIL_FLAG_BIT: [('src', 'flag'), ('bit', 'int')], LowLevelILOperation.LLIL_ADD: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ADC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_SUB: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_SBB: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_AND: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_OR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_XOR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_LSL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_LSR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ASR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ROL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_RLC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_ROR: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_RRC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], LowLevelILOperation.LLIL_MUL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MULU_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MULS_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVU: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVU_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVS: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_DIVS_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODU: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODU_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODS: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MODS_DP: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_NEG: [('src', 'expr')], LowLevelILOperation.LLIL_NOT: [('src', 'expr')], LowLevelILOperation.LLIL_SX: [('src', 'expr')], LowLevelILOperation.LLIL_ZX: [('src', 'expr')], LowLevelILOperation.LLIL_LOW_PART: [('src', 'expr')], LowLevelILOperation.LLIL_JUMP: [('dest', 'expr')], LowLevelILOperation.LLIL_JUMP_TO: [('dest', 'expr'), ('targets', 'target_map')], LowLevelILOperation.LLIL_CALL: [('dest', 'expr')], LowLevelILOperation.LLIL_CALL_STACK_ADJUST: [('dest', 'expr'), ('stack_adjustment', 'int'), ('reg_stack_adjustments', 'reg_stack_adjust')], LowLevelILOperation.LLIL_TAILCALL: [('dest', 'expr')], LowLevelILOperation.LLIL_RET: [('dest', 'expr')], LowLevelILOperation.LLIL_NORET: [], LowLevelILOperation.LLIL_IF: [('condition', 'expr'), ('true', 'int'), ('false', 'int')], LowLevelILOperation.LLIL_GOTO: [('dest', 'int')], LowLevelILOperation.LLIL_FLAG_COND: [('condition', 'cond'), ('semantic_class', 'sem_class')], LowLevelILOperation.LLIL_FLAG_GROUP: [('semantic_group', 'sem_group')], LowLevelILOperation.LLIL_CMP_E: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_NE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SLT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_ULT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SLE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_ULE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SGE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_UGE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_SGT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_CMP_UGT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_TEST_BIT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_BOOL_TO_INT: [('src', 'expr')], LowLevelILOperation.LLIL_ADD_OVERFLOW: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_SYSCALL: [], LowLevelILOperation.LLIL_BP: [], LowLevelILOperation.LLIL_TRAP: [('vector', 'int')], LowLevelILOperation.LLIL_INTRINSIC: [('output', 'reg_or_flag_list'), ('intrinsic', 'intrinsic'), ('param', 'expr')], LowLevelILOperation.LLIL_UNDEF: [], LowLevelILOperation.LLIL_UNIMPL: [], LowLevelILOperation.LLIL_UNIMPL_MEM: [('src', 'expr')], LowLevelILOperation.LLIL_FADD: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FSUB: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FMUL: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FDIV: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FSQRT: [('src', 'expr')], LowLevelILOperation.LLIL_FNEG: [('src', 'expr')], LowLevelILOperation.LLIL_FABS: [('src', 'expr')], LowLevelILOperation.LLIL_FLOAT_TO_INT: [('src', 'expr')], LowLevelILOperation.LLIL_INT_TO_FLOAT: [('src', 'expr')], LowLevelILOperation.LLIL_FLOAT_CONV: [('src', 'expr')], LowLevelILOperation.LLIL_ROUND_TO_INT: [('src', 'expr')], LowLevelILOperation.LLIL_FLOOR: [('src', 'expr')], LowLevelILOperation.LLIL_CEIL: [('src', 'expr')], LowLevelILOperation.LLIL_FTRUNC: [('src', 'expr')], LowLevelILOperation.LLIL_FCMP_E: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_NE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_LT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_LE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_GE: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_GT: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_O: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_FCMP_UO: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_SET_REG_SSA: [('dest', 'reg_ssa'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_SSA_PARTIAL: [('full_reg', 'reg_ssa'), ('dest', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_SPLIT_SSA: [('hi', 'expr'), ('lo', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_STACK_REL_SSA: [('stack', 'expr'), ('dest', 'expr'), ('top', 'expr'), ('src', 'expr')], LowLevelILOperation.LLIL_SET_REG_STACK_ABS_SSA: [('stack', 'expr'), ('dest', 'reg'), ('src', 'expr')], LowLevelILOperation.LLIL_REG_SPLIT_DEST_SSA: [('dest', 'reg_ssa')], LowLevelILOperation.LLIL_REG_STACK_DEST_SSA: [('src', 'reg_stack_ssa_dest_and_src')], LowLevelILOperation.LLIL_REG_SSA: [('src', 'reg_ssa')], LowLevelILOperation.LLIL_REG_SSA_PARTIAL: [('full_reg', 'reg_ssa'), ('src', 'reg')], LowLevelILOperation.LLIL_REG_SPLIT_SSA: [('hi', 'reg_ssa'), ('lo', 'reg_ssa')], LowLevelILOperation.LLIL_REG_STACK_REL_SSA: [('stack', 'reg_stack_ssa'), ('src', 'expr'), ('top', 'expr')], LowLevelILOperation.LLIL_REG_STACK_ABS_SSA: [('stack', 'reg_stack_ssa'), ('src', 'reg')], LowLevelILOperation.LLIL_REG_STACK_FREE_REL_SSA: [('stack', 'expr'), ('dest', 'expr'), ('top', 'expr')], LowLevelILOperation.LLIL_REG_STACK_FREE_ABS_SSA: [('stack', 'expr'), ('dest', 'reg')], LowLevelILOperation.LLIL_SET_FLAG_SSA: [('dest', 'flag_ssa'), ('src', 'expr')], LowLevelILOperation.LLIL_FLAG_SSA: [('src', 'flag_ssa')], LowLevelILOperation.LLIL_FLAG_BIT_SSA: [('src', 'flag_ssa'), ('bit', 'int')], LowLevelILOperation.LLIL_CALL_SSA: [('output', 'expr'), ('dest', 'expr'), ('stack', 'expr'), ('param', 'expr')], LowLevelILOperation.LLIL_SYSCALL_SSA: [('output', 'expr'), ('stack', 'expr'), ('param', 'expr')], LowLevelILOperation.LLIL_TAILCALL_SSA: [('output', 'expr'), ('dest', 'expr'), ('stack', 'expr'), ('param', 'expr')], LowLevelILOperation.LLIL_CALL_PARAM: [('src', 'expr_list')], LowLevelILOperation.LLIL_CALL_STACK_SSA: [('src', 'reg_ssa'), ('src_memory', 'int')], LowLevelILOperation.LLIL_CALL_OUTPUT_SSA: [('dest_memory', 'int'), ('dest', 'reg_ssa_list')], LowLevelILOperation.LLIL_SEPARATE_PARAM_LIST_SSA: [('src', 'expr_list')], LowLevelILOperation.LLIL_SHARED_PARAM_SLOT_SSA: [('src', 'expr_list')], LowLevelILOperation.LLIL_MEMORY_INTRINSIC_OUTPUT_SSA: [('dest_memory', 'int'), ('output', 'reg_ssa_list')], LowLevelILOperation.LLIL_LOAD_SSA: [('src', 'expr'), ('src_memory', 'int')], LowLevelILOperation.LLIL_STORE_SSA: [('dest', 'expr'), ('dest_memory', 'int'), ('src_memory', 'int'), ('src', 'expr')], LowLevelILOperation.LLIL_INTRINSIC_SSA: [('output', 'reg_or_flag_ssa_list'), ('intrinsic', 'intrinsic'), ('param', 'expr')], LowLevelILOperation.LLIL_MEMORY_INTRINSIC_SSA: [('output', 'expr'), ('intrinsic', 'intrinsic'), ('params', 'expr_list'), ('src_memory', 'int')], LowLevelILOperation.LLIL_REG_PHI: [('dest', 'reg_ssa'), ('src', 'reg_ssa_list')], LowLevelILOperation.LLIL_REG_STACK_PHI: [('dest', 'reg_stack_ssa'), ('src', 'reg_stack_ssa_list')], LowLevelILOperation.LLIL_FLAG_PHI: [('dest', 'flag_ssa'), ('src', 'flag_ssa_list')], LowLevelILOperation.LLIL_MEM_PHI: [('dest_memory', 'int'), ('src_memory', 'int_list')], LowLevelILOperation.LLIL_BSWAP: [('src', 'expr')], LowLevelILOperation.LLIL_POPCNT: [('src', 'expr')], LowLevelILOperation.LLIL_CLZ: [('src', 'expr')], LowLevelILOperation.LLIL_CTZ: [('src', 'expr')], LowLevelILOperation.LLIL_RBIT: [('src', 'expr')], LowLevelILOperation.LLIL_CLS: [('src', 'expr')], LowLevelILOperation.LLIL_MINS: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MAXS: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MINU: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_MAXU: [('left', 'expr'), ('right', 'expr')], LowLevelILOperation.LLIL_ABS: [('src', 'expr')]}*
 
     *property* address*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -6168,20 +5613,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILIntToFloat(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6190,14 +5630,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -6209,20 +5641,15 @@
     [`Intrinsic`](commonil.md#binaryninja.commonil.Intrinsic
     "binaryninja.commonil.Intrinsic")
 
-    LowLevelILIntrinsic(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6231,14 +5658,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* intrinsic*: [ILIntrinsic](#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic")*
 
@@ -6255,20 +5674,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILIntrinsicSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6277,14 +5691,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* intrinsic*: [ILIntrinsic](#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic")*
 
@@ -6301,20 +5707,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILJump(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6325,14 +5726,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILJumpTo
 
@@ -6340,20 +5733,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILJumpTo(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6364,14 +5752,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* targets*: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
 
@@ -6383,7 +5763,7 @@
 
     __init__(*handle: BNLowLevelILLabel | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILLabel.__init__)
     :   Parameters:
-        :   **handle** (*BNLowLevelILLabel* *|* *None*) –
+        :   **handle** (*BNLowLevelILLabel* *|* *None*)
 
     *property* operand*: InstructionIndex*
 
@@ -6398,20 +5778,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Load`](commonil.md#binaryninja.commonil.Load "binaryninja.commonil.Load")
 
-    LowLevelILLoad(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6420,14 +5795,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -6439,20 +5806,15 @@
     [`Load`](commonil.md#binaryninja.commonil.Load "binaryninja.commonil.Load"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILLoadSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6461,14 +5823,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -6482,31 +5836,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILLowPart(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILLsl
 
@@ -6516,31 +5857,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILLsl(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILLsr
 
@@ -6550,31 +5878,61 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILLsr(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
-    expr_index*: ExpressionIndex*
+## LowLevelILMaxs
 
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
+*class* LowLevelILMaxs[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILMaxs)
+:   Bases: [`LowLevelILBinaryBase`](#binaryninja.lowlevelil.LowLevelILBinaryBase
+    "binaryninja.lowlevelil.LowLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic"), [`Signed`](commonil.md#binaryninja.commonil.Signed
+    "binaryninja.commonil.Signed")
 
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+        Return type:
+        :   *None*
+
+## LowLevelILMaxu
+
+*class* LowLevelILMaxu[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILMaxu)
+:   Bases: [`LowLevelILBinaryBase`](#binaryninja.lowlevelil.LowLevelILBinaryBase
+    "binaryninja.lowlevelil.LowLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
 
 ## LowLevelILMemPhi
 
@@ -6584,20 +5942,15 @@
     [`Memory`](commonil.md#binaryninja.commonil.Memory "binaryninja.commonil.Memory"),
     [`Phi`](commonil.md#binaryninja.commonil.Phi "binaryninja.commonil.Phi")
 
-    LowLevelILMemPhi(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6608,14 +5961,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src_memory*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
 
@@ -6626,20 +5971,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILMemoryIntrinsicOutputSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6650,14 +5990,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* output*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSARegisterOrFlag](#binaryninja.lowlevelil.SSARegisterOrFlag "binaryninja.lowlevelil.SSARegisterOrFlag")]*
 
@@ -6668,20 +6000,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILMemoryIntrinsicSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -6692,14 +6019,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* intrinsic*: [ILIntrinsic](#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic")*
 
@@ -6711,6 +6030,49 @@
 
     *property* src_memory*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
+## LowLevelILMins
+
+*class* LowLevelILMins[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILMins)
+:   Bases: [`LowLevelILBinaryBase`](#binaryninja.lowlevelil.LowLevelILBinaryBase
+    "binaryninja.lowlevelil.LowLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic"), [`Signed`](commonil.md#binaryninja.commonil.Signed
+    "binaryninja.commonil.Signed")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
+
+## LowLevelILMinu
+
+*class* LowLevelILMinu[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILMinu)
+:   Bases: [`LowLevelILBinaryBase`](#binaryninja.lowlevelil.LowLevelILBinaryBase
+    "binaryninja.lowlevelil.LowLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
+
 ## LowLevelILMods
 
 *class* LowLevelILMods[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILMods)
@@ -6720,31 +6082,18 @@
     "binaryninja.commonil.Arithmetic"), [`Signed`](commonil.md#binaryninja.commonil.Signed
     "binaryninja.commonil.Signed")
 
-    LowLevelILMods(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILModsDp
 
@@ -6755,31 +6104,18 @@
     "binaryninja.commonil.DoublePrecision"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    LowLevelILModsDp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILModu
 
@@ -6789,31 +6125,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILModu(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILModuDp
 
@@ -6823,31 +6146,18 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    LowLevelILModuDp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILMul
 
@@ -6857,31 +6167,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILMul(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILMulsDp
 
@@ -6891,31 +6188,18 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    LowLevelILMulsDp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILMuluDp
 
@@ -6925,31 +6209,18 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    LowLevelILMuluDp(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILNeg
 
@@ -6959,31 +6230,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILNeg(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILNop
 
@@ -6991,31 +6249,18 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILNop(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILNoret
 
@@ -7024,31 +6269,18 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILNoret(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILNot
 
@@ -7058,31 +6290,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILNot(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILOperationAndSize
 
@@ -7090,14 +6309,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    LowLevelILOperationAndSize(operation: ‘LowLevelILOperation’, size: int)
-
     __init__(*operation: [LowLevelILOperation](enums.md#binaryninja.enums.LowLevelILOperation "binaryninja.enums.LowLevelILOperation")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **operation** ([*LowLevelILOperation*](enums.md#binaryninja.enums.LowLevelILOperation
-              "binaryninja.enums.LowLevelILOperation")) –
+              "binaryninja.enums.LowLevelILOperation"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -7114,31 +6331,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILOr(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILPop
 
@@ -7148,31 +6352,39 @@
     [`StackOperation`](commonil.md#binaryninja.commonil.StackOperation
     "binaryninja.commonil.StackOperation")
 
-    LowLevelILPop(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
 
-    expr_index*: ExpressionIndex*
+## LowLevelILPopcnt
 
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
+*class* LowLevelILPopcnt[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILPopcnt)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
 
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+        Return type:
+        :   *None*
 
 ## LowLevelILPush
 
@@ -7182,20 +6394,15 @@
     [`StackOperation`](commonil.md#binaryninja.commonil.StackOperation
     "binaryninja.commonil.StackOperation")
 
-    LowLevelILPush(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7205,15 +6412,28 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
+
+## LowLevelILRbit
+
+*class* LowLevelILRbit[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILRbit)
+:   Bases: [`LowLevelILUnaryBase`](#binaryninja.lowlevelil.LowLevelILUnaryBase
+    "binaryninja.lowlevelil.LowLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **instr**
+              ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
+
+        Return type:
+        :   *None*
 
 ## LowLevelILReg
 
@@ -7221,20 +6441,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILReg(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7243,14 +6458,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
 
@@ -7261,20 +6468,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Phi`](commonil.md#binaryninja.commonil.Phi "binaryninja.commonil.Phi")
 
-    LowLevelILRegPhi(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7286,14 +6488,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")]*
 
 ## LowLevelILRegSplit
@@ -7302,20 +6496,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILRegSplit(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7325,15 +6514,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
     *property* hi*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* lo*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
 
@@ -7344,20 +6525,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILRegSplitDestSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7369,14 +6545,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILRegSplitSsa
 
 *class* LowLevelILRegSplitSsa[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILRegSplitSsa)
@@ -7385,20 +6553,15 @@
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILRegSplitSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7408,15 +6571,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
     *property* hi*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* lo*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
 
@@ -7427,20 +6582,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILRegSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7449,14 +6599,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
 
@@ -7468,20 +6610,15 @@
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILRegSsaPartial(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7491,15 +6628,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
     *property* full_reg*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
 
@@ -7512,20 +6641,15 @@
     "binaryninja.commonil.RegisterStack"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILRegStackAbsSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7534,14 +6658,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
 
@@ -7556,20 +6672,15 @@
     "binaryninja.commonil.RegisterStack"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILRegStackDestSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7581,14 +6692,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [SSARegisterStack](#binaryninja.lowlevelil.SSARegisterStack "binaryninja.lowlevelil.SSARegisterStack")*
 
 ## LowLevelILRegStackFreeAbsSsa
@@ -7599,20 +6702,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILRegStackFreeAbsSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7623,14 +6721,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* stack*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -7642,20 +6732,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILRegStackFreeReg(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7667,14 +6752,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILRegStackFreeRel
 
 *class* LowLevelILRegStackFreeRel[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILRegStackFreeRel)
@@ -7683,20 +6760,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILRegStackFreeRel(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7707,14 +6779,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* stack*: [ILRegisterStack](#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack")*
 
@@ -7727,20 +6791,15 @@
     "binaryninja.commonil.RegisterStack"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILRegStackFreeRelSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7751,14 +6810,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* stack*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -7773,20 +6824,15 @@
     "binaryninja.commonil.RegisterStack"), [`Phi`](commonil.md#binaryninja.commonil.Phi
     "binaryninja.commonil.Phi")
 
-    LowLevelILRegStackPhi(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7798,14 +6844,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSARegisterStack](#binaryninja.lowlevelil.SSARegisterStack "binaryninja.lowlevelil.SSARegisterStack")]*
 
 ## LowLevelILRegStackPop
@@ -7816,20 +6854,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILRegStackPop(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7838,14 +6871,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* stack*: [ILRegisterStack](#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack")*
 
@@ -7857,20 +6882,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILRegStackPush(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7879,14 +6899,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -7900,20 +6912,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILRegStackRel(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7922,14 +6929,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -7944,20 +6943,15 @@
     "binaryninja.commonil.RegisterStack"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILRegStackRelSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -7966,14 +6960,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -7988,20 +6974,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Return`](commonil.md#binaryninja.commonil.Return "binaryninja.commonil.Return")
 
-    LowLevelILRet(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8013,45 +6994,24 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
 ## LowLevelILRlc
 
 *class* LowLevelILRlc[[source]](https://api.binary.ninja/_modules/binaryninja/lowlevelil.html#LowLevelILRlc)
 :   Bases: [`LowLevelILCarryBase`](#binaryninja.lowlevelil.LowLevelILCarryBase
     "binaryninja.lowlevelil.LowLevelILCarryBase")
 
-    LowLevelILRlc(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILRol
 
@@ -8061,31 +7021,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILRol(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILRor
 
@@ -8095,31 +7042,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILRor(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILRoundToInt
 
@@ -8131,20 +7065,15 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILRoundToInt(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8153,14 +7082,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -8170,31 +7091,18 @@
 :   Bases: [`LowLevelILCarryBase`](#binaryninja.lowlevelil.LowLevelILCarryBase
     "binaryninja.lowlevelil.LowLevelILCarryBase")
 
-    LowLevelILRrc(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILSbb
 
@@ -8202,31 +7110,18 @@
 :   Bases: [`LowLevelILCarryBase`](#binaryninja.lowlevelil.LowLevelILCarryBase
     "binaryninja.lowlevelil.LowLevelILCarryBase")
 
-    LowLevelILSbb(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILSeparateParamListSsa
 
@@ -8235,20 +7130,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSeparateParamListSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8258,14 +7148,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")]*
 
 ## LowLevelILSetFlag
@@ -8274,20 +7156,15 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILSetFlag(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8299,14 +7176,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
 ## LowLevelILSetFlagSsa
@@ -8316,20 +7185,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSetFlagSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8341,14 +7205,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
 ## LowLevelILSetReg
@@ -8358,20 +7214,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg")
 
-    LowLevelILSetReg(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8383,14 +7234,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
 ## LowLevelILSetRegSplit
@@ -8400,20 +7243,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg")
 
-    LowLevelILSetRegSplit(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8423,15 +7261,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
     *property* hi*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* lo*: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*
 
@@ -8445,20 +7275,15 @@
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSetRegSplitSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8468,15 +7293,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
     *property* hi*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* lo*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -8490,20 +7307,15 @@
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSetRegSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8515,14 +7327,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
 ## LowLevelILSetRegSsaPartial
@@ -8533,20 +7337,15 @@
     [`SetReg`](commonil.md#binaryninja.commonil.SetReg "binaryninja.commonil.SetReg"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSetRegSsaPartial(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8558,15 +7357,7 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
     *property* full_reg*: [SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -8579,20 +7370,15 @@
     "binaryninja.commonil.RegisterStack"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILSetRegStackAbsSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8603,14 +7389,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -8624,20 +7402,15 @@
     [`RegisterStack`](commonil.md#binaryninja.commonil.RegisterStack
     "binaryninja.commonil.RegisterStack")
 
-    LowLevelILSetRegStackRel(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8648,14 +7421,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -8670,20 +7435,15 @@
     "binaryninja.commonil.RegisterStack"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    LowLevelILSetRegStackRelSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8694,14 +7454,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -8716,20 +7468,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSharedParamSlotSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8738,14 +7485,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")]*
 
@@ -8756,20 +7495,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Store`](commonil.md#binaryninja.commonil.Store "binaryninja.commonil.Store")
 
-    LowLevelILStore(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8781,14 +7515,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
 ## LowLevelILStoreSsa
@@ -8799,20 +7525,15 @@
     [`Store`](commonil.md#binaryninja.commonil.Store "binaryninja.commonil.Store"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILStoreSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8826,14 +7547,6 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
-
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
     *property* src_memory*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
@@ -8846,31 +7559,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILSub(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILSx
 
@@ -8880,31 +7580,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILSx(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILSyscall
 
@@ -8913,31 +7600,18 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Syscall`](commonil.md#binaryninja.commonil.Syscall "binaryninja.commonil.Syscall")
 
-    LowLevelILSyscall(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILSyscallSsa
 
@@ -8947,20 +7621,15 @@
     [`Syscall`](commonil.md#binaryninja.commonil.Syscall "binaryninja.commonil.Syscall"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    LowLevelILSyscallSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -8969,14 +7638,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* output*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")]*
 
@@ -8997,20 +7658,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Tailcall`](commonil.md#binaryninja.commonil.Tailcall "binaryninja.commonil.Tailcall")
 
-    LowLevelILTailcall(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -9021,14 +7677,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILTailcallSsa
 
@@ -9039,20 +7687,15 @@
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILTailcallSsa(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -9063,14 +7706,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* output*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSARegister](#binaryninja.lowlevelil.SSARegister "binaryninja.lowlevelil.SSARegister")]*
 
@@ -9090,31 +7725,18 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    LowLevelILTestBit(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILTrap
 
@@ -9123,20 +7745,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILTrap(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -9145,14 +7762,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* vector*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -9164,20 +7773,15 @@
     [`UnaryOperation`](commonil.md#binaryninja.commonil.UnaryOperation
     "binaryninja.commonil.UnaryOperation")
 
-    LowLevelILUnaryBase(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -9186,14 +7790,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -9204,31 +7800,18 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    LowLevelILUndef(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILUnimpl
 
@@ -9236,31 +7819,18 @@
 :   Bases: [`LowLevelILInstruction`](#binaryninja.lowlevelil.LowLevelILInstruction
     "binaryninja.lowlevelil.LowLevelILInstruction")
 
-    LowLevelILUnimpl(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILUnimplMem
 
@@ -9269,20 +7839,15 @@
     "binaryninja.lowlevelil.LowLevelILInstruction"),
     [`Memory`](commonil.md#binaryninja.commonil.Memory "binaryninja.commonil.Memory")
 
-    LowLevelILUnimplMem(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
@@ -9291,14 +7856,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
     *property* src*: [LowLevelILInstruction](#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")*
 
@@ -9310,31 +7867,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILXor(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## LowLevelILZx
 
@@ -9344,31 +7888,18 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    LowLevelILZx(function: ‘LowLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x10a719790>, instr:
-    binaryninja.lowlevelil.CoreLowLevelILInstruction, instr_index:
-    Optional[InstructionIndex])
-
     __init__(*function: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*, *expr_index: ExpressionIndex*, *instr: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*LowLevelILFunction*](#binaryninja.lowlevelil.LowLevelILFunction
-              "binaryninja.lowlevelil.LowLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.lowlevelil.LowLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **instr**
               ([*CoreLowLevelILInstruction*](#binaryninja.lowlevelil.CoreLowLevelILInstruction
-              "binaryninja.lowlevelil.CoreLowLevelILInstruction")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              "binaryninja.lowlevelil.CoreLowLevelILInstruction"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   *None*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [LowLevelILFunction](#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction")*
-
-    instr*: [CoreLowLevelILInstruction](#binaryninja.lowlevelil.CoreLowLevelILInstruction "binaryninja.lowlevelil.CoreLowLevelILInstruction")*
-
-    instr_index*: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
 ## SSAFlag
 
@@ -9376,13 +7907,11 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    SSAFlag(flag: binaryninja.lowlevelil.ILFlag, version: int)
-
     __init__(*flag: [ILFlag](#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag")*, *version: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
-        :   - **flag** ([*ILFlag*](#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag")) –
+        :   - **flag** ([*ILFlag*](#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag"))
             - **version** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -9397,14 +7926,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    SSARegister(reg: binaryninja.lowlevelil.ILRegister, version: int)
-
     __init__(*reg: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister")*, *version: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **reg** ([*ILRegister*](#binaryninja.lowlevelil.ILRegister
-              "binaryninja.lowlevelil.ILRegister")) –
+              "binaryninja.lowlevelil.ILRegister"))
             - **version** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -9419,16 +7946,13 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    SSARegisterOrFlag(reg_or_flag: Union[binaryninja.lowlevelil.ILRegister,
-    binaryninja.lowlevelil.ILFlag], version: int)
-
     __init__(*reg_or_flag: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister") | [ILFlag](#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag")*, *version: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **reg_or_flag** ([*ILRegister*](#binaryninja.lowlevelil.ILRegister
               "binaryninja.lowlevelil.ILRegister") *|* [*ILFlag*](#binaryninja.lowlevelil.ILFlag
-              "binaryninja.lowlevelil.ILFlag")) –
+              "binaryninja.lowlevelil.ILFlag"))
             - **version** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -9443,14 +7967,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    SSARegisterStack(reg_stack: binaryninja.lowlevelil.ILRegisterStack, version: int)
-
     __init__(*reg_stack: [ILRegisterStack](#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack")*, *version: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **reg_stack** ([*ILRegisterStack*](#binaryninja.lowlevelil.ILRegisterStack
-              "binaryninja.lowlevelil.ILRegisterStack")) –
+              "binaryninja.lowlevelil.ILRegisterStack"))
             - **version** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -9465,7 +7987,7 @@ LLIL_GET_TEMP_REG_INDEX(*n: [ILRegister](#binaryninja.lowlevelil.ILRegister "bin
 :   Parameters:
     :   **n** ([*ILRegister*](#binaryninja.lowlevelil.ILRegister
         "binaryninja.lowlevelil.ILRegister") *|*
-        [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")) –
+        [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"))
 
     Return type:
     :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
@@ -9476,7 +7998,7 @@ LLIL_REG_IS_TEMP(*n: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninj
 :   Parameters:
     :   **n** ([*ILRegister*](#binaryninja.lowlevelil.ILRegister
         "binaryninja.lowlevelil.ILRegister") *|*
-        [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")) –
+        [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"))
 
     Return type:
     :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -9487,7 +8009,7 @@ LLIL_TEMP(*n: [ILRegister](#binaryninja.lowlevelil.ILRegister "binaryninja.lowle
 :   Parameters:
     :   **n** ([*ILRegister*](#binaryninja.lowlevelil.ILRegister
         "binaryninja.lowlevelil.ILRegister") *|*
-        [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")) –
+        [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"))
 
     Return type:
-    :   RegisterIndex
+    :   *RegisterIndex*

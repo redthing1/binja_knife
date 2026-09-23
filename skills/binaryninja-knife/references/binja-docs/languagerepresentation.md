@@ -16,7 +16,7 @@
 
     __init__(*handle: LP_BNLanguageRepresentationFunctionType*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#CoreLanguageRepresentationFunctionType.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNLanguageRepresentationFunctionType*) –
+        :   **handle** (*LP_BNLanguageRepresentationFunctionType*)
 
     create(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *owner: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *hlil: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*) → [LanguageRepresentationFunction](#binaryninja.languagerepresentation.LanguageRepresentationFunction "binaryninja.languagerepresentation.LanguageRepresentationFunction")[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#CoreLanguageRepresentationFunctionType.create)
     :   This method must be overridden. This creates the `class LanguageRepresentationFunction`
@@ -24,12 +24,12 @@
 
         Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **owner** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function")) –
+              "binaryninja.function.Function"))
             - **hlil**
               ([*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
 
         Return type:
         :   [*LanguageRepresentationFunction*](#binaryninja.languagerepresentation.LanguageRepresentationFunction
@@ -41,10 +41,10 @@
 
         Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function")) –
+              "binaryninja.function.Function"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -56,7 +56,7 @@
 
         Parameters:
         :   **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-            "binaryninja.binaryview.BinaryView")) –
+            "binaryninja.binaryview.BinaryView"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -97,10 +97,10 @@
         :   Parameters:
             :   - **emitter**
                   ([*HighLevelILTokenEmitter*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter
-                  "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) –
+                  "binaryninja.languagerepresentation.HighLevelILTokenEmitter"))
                 - **hlil_expr**
                   ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-                  "binaryninja.highlevelil.HighLevelILInstruction")) –
+                  "binaryninja.highlevelil.HighLevelILInstruction"))
 
     *class* ZeroConfidenceContext[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.ZeroConfidenceContext)
     :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
@@ -113,13 +113,13 @@
         :   Parameters:
             :   - **emitter**
                   ([*HighLevelILTokenEmitter*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter
-                  "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) –
+                  "binaryninja.languagerepresentation.HighLevelILTokenEmitter"))
                 - **enabled** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-                  v3.14)")) –
+                  v3.14)"))
 
     __init__(*handle: LP_BNHighLevelILTokenEmitter*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNHighLevelILTokenEmitter*) –
+        :   **handle** (*LP_BNHighLevelILTokenEmitter*)
 
     append(*tokens: [InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append)
     :   Appends a token or list of tokens to the output.
@@ -130,7 +130,7 @@
             "binaryninja.architecture.InstructionTextToken") *|*
             [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
             v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-            "binaryninja.architecture.InstructionTextToken")*]*) –
+            "binaryninja.architecture.InstructionTextToken")*]*)
 
     append_array_index_token(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append_array_index_token)
     :   Appends tokens for accessing an array by index.
@@ -138,13 +138,13 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     append_close_brace()[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append_close_brace)
     :   Appends a close brace (`}`) to the output.
@@ -161,26 +161,26 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
             - **precedence** ([*OperatorPrecedence*](enums.md#binaryninja.enums.OperatorPrecedence
-              "binaryninja.enums.OperatorPrecedence")) –
+              "binaryninja.enums.OperatorPrecedence"))
 
     append_float_size_token(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *token_type: [InstructionTextTokenType](enums.md#binaryninja.enums.InstructionTextTokenType "binaryninja.enums.InstructionTextTokenType")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append_float_size_token)
     :   Appends a floating point size token for the given size in the High Level IL syntax.
 
         Parameters:
         :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **token_type**
               ([*InstructionTextTokenType*](enums.md#binaryninja.enums.InstructionTextTokenType
-              "binaryninja.enums.InstructionTextTokenType")) –
+              "binaryninja.enums.InstructionTextTokenType"))
 
     append_integer_text_token(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append_integer_text_token)
     :   Appends tokens for a constant intenger value.
@@ -188,11 +188,11 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     append_open_brace()[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append_open_brace)
     :   Appends an open brace (`{`) to the output.
@@ -209,18 +209,18 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
             - **symbol_display** ([*SymbolDisplayType*](enums.md#binaryninja.enums.SymbolDisplayType
-              "binaryninja.enums.SymbolDisplayType")) –
+              "binaryninja.enums.SymbolDisplayType"))
             - **precedence** ([*OperatorPrecedence*](enums.md#binaryninja.enums.OperatorPrecedence
-              "binaryninja.enums.OperatorPrecedence")) –
+              "binaryninja.enums.OperatorPrecedence"))
             - **allow_short_string** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
 
         Return type:
         :   [*SymbolDisplayResult*](enums.md#binaryninja.enums.SymbolDisplayResult
@@ -234,22 +234,22 @@
 
         Parameters:
         :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **token_type**
               ([*InstructionTextTokenType*](enums.md#binaryninja.enums.InstructionTextTokenType
-              "binaryninja.enums.InstructionTextTokenType")) –
+              "binaryninja.enums.InstructionTextTokenType"))
 
     append_var_text_token(*var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.append_var_text_token)
     :   Appends tokens for access to a variable.
 
         Parameters:
         :   - **var** ([*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
-              "binaryninja.variable.CoreVariable")) –
+              "binaryninja.variable.CoreVariable"))
             - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     begin_scope(*scope_type: [ScopeType](enums.md#binaryninja.enums.ScopeType "binaryninja.enums.ScopeType")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.begin_scope)
     :   Begins a new scope. Insertion of newlines and braces will be handled using the current
@@ -257,7 +257,7 @@
 
         Parameters:
         :   **scope_type** ([*ScopeType*](enums.md#binaryninja.enums.ScopeType
-            "binaryninja.enums.ScopeType")) –
+            "binaryninja.enums.ScopeType"))
 
     decrease_indent()[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.decrease_indent)
     :   Decreases the indentation level by one.
@@ -267,7 +267,7 @@
 
         Parameters:
         :   **scope_type** ([*ScopeType*](enums.md#binaryninja.enums.ScopeType
-            "binaryninja.enums.ScopeType")) –
+            "binaryninja.enums.ScopeType"))
 
     expr(*hlil_expr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*) → [ExprContext](#binaryninja.languagerepresentation.HighLevelILTokenEmitter.ExprContext "binaryninja.languagerepresentation.HighLevelILTokenEmitter.ExprContext")[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.expr)
     :   Returns a context manager that associates the tokens inside the context with the given
@@ -276,7 +276,7 @@
         Parameters:
         :   **hlil_expr**
             ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-            "binaryninja.highlevelil.HighLevelILInstruction")) –
+            "binaryninja.highlevelil.HighLevelILInstruction"))
 
         Return type:
         :   [*ExprContext*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter.ExprContext
@@ -295,7 +295,7 @@
 
         Parameters:
         :   **enabled** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*ZeroConfidenceContext*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter.ZeroConfidenceContext
@@ -314,11 +314,11 @@
 
         Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
-            - **struct_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              "binaryninja.binaryview.BinaryView"))
+            - **struct_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **var**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -352,15 +352,15 @@
             - **discriminator** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
               Python v3.14)")) – Unique discriminator id for the region
             - **function_** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function")) –
+              "binaryninja.function.Function"))
 
     prepend_region_collapse_indicator(*context: [InstructionTextTokenContext](enums.md#binaryninja.enums.InstructionTextTokenContext "binaryninja.enums.InstructionTextTokenContext")*, *hash: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.prepend_region_collapse_indicator)
     :   Parameters:
         :   - **context**
               ([*InstructionTextTokenContext*](enums.md#binaryninja.enums.InstructionTextTokenContext
-              "binaryninja.enums.InstructionTextTokenContext")) –
+              "binaryninja.enums.InstructionTextTokenContext"))
             - **hash** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     scope_continuation(*force_same_line: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.scope_continuation)
     :   Continues the previous scope with a new associated scope. This is most commonly used for
@@ -368,7 +368,7 @@
 
         Parameters:
         :   **force_same_line** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-            Python v3.14)")) –
+            Python v3.14)"))
 
     scope_separator()[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#HighLevelILTokenEmitter.scope_separator)
     :   Indicates that visual separation of scopes is desirable at the current position. By
@@ -410,14 +410,14 @@
     :   Parameters:
         :   - **func_type**
               ([*LanguageRepresentationFunctionType*](#binaryninja.languagerepresentation.LanguageRepresentationFunctionType
-              "binaryninja.languagerepresentation.LanguageRepresentationFunctionType") *|* *None*) –
+              "binaryninja.languagerepresentation.LanguageRepresentationFunctionType") *|* *None*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **owner** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function") *|* *None*) –
+              "binaryninja.function.Function") *|* *None*)
             - **hlil**
               ([*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction") *|* *None*) –
+              "binaryninja.highlevelil.HighLevelILFunction") *|* *None*)
 
     get_block_lines(*block: [HighLevelILBasicBlock](highlevelil.md#binaryninja.highlevelil.HighLevelILBasicBlock "binaryninja.highlevelil.HighLevelILBasicBlock")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#LanguageRepresentationFunction.get_block_lines)
     :   Generates lines for a single High Level IL basic block.
@@ -425,10 +425,10 @@
         Parameters:
         :   - **block**
               ([*HighLevelILBasicBlock*](highlevelil.md#binaryninja.highlevelil.HighLevelILBasicBlock
-              "binaryninja.highlevelil.HighLevelILBasicBlock")) –
+              "binaryninja.highlevelil.HighLevelILBasicBlock"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -441,14 +441,14 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
             - **precedence** ([*OperatorPrecedence*](enums.md#binaryninja.enums.OperatorPrecedence
-              "binaryninja.enums.OperatorPrecedence")) –
+              "binaryninja.enums.OperatorPrecedence"))
             - **statement** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -463,10 +463,10 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -479,10 +479,10 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **tokens**
               ([*HighLevelILTokenEmitter*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter
-              "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) –
+              "binaryninja.languagerepresentation.HighLevelILTokenEmitter"))
 
     perform_end_lines(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *tokens: [HighLevelILTokenEmitter](#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#LanguageRepresentationFunction.perform_end_lines)
     :   This method can be overridden to emit tokens at the end of a function.
@@ -490,10 +490,10 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **tokens**
               ([*HighLevelILTokenEmitter*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter
-              "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) –
+              "binaryninja.languagerepresentation.HighLevelILTokenEmitter"))
 
     perform_get_expr_text(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *tokens: [HighLevelILTokenEmitter](#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence") = OperatorPrecedence.TopLevelOperatorPrecedence*, *statement: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#LanguageRepresentationFunction.perform_get_expr_text)
     :   This method must be overridden by all language representation plugins.
@@ -503,17 +503,17 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **tokens**
               ([*HighLevelILTokenEmitter*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter
-              "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) –
+              "binaryninja.languagerepresentation.HighLevelILTokenEmitter"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
             - **precedence** ([*OperatorPrecedence*](enums.md#binaryninja.enums.OperatorPrecedence
-              "binaryninja.enums.OperatorPrecedence")) –
+              "binaryninja.enums.OperatorPrecedence"))
             - **statement** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     perform_init_token_emitter(*emitter: [HighLevelILTokenEmitter](#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*)[[source]](https://api.binary.ninja/_modules/binaryninja/languagerepresentation.html#LanguageRepresentationFunction.perform_init_token_emitter)
     :   Override this method to initialize the options for the token emitter before it is used.
@@ -521,7 +521,7 @@
         Parameters:
         :   **emitter**
             ([*HighLevelILTokenEmitter*](#binaryninja.languagerepresentation.HighLevelILTokenEmitter
-            "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) –
+            "binaryninja.languagerepresentation.HighLevelILTokenEmitter"))
 
     annotation_end_string *= '}'*
 
@@ -558,12 +558,12 @@
 
         Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **owner** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function")) –
+              "binaryninja.function.Function"))
             - **hlil**
               ([*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
 
         Return type:
         :   [*LanguageRepresentationFunction*](#binaryninja.languagerepresentation.LanguageRepresentationFunction
@@ -575,10 +575,10 @@
 
         Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function")) –
+              "binaryninja.function.Function"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -590,7 +590,7 @@
 
         Parameters:
         :   **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-            "binaryninja.binaryview.BinaryView")) –
+            "binaryninja.binaryview.BinaryView"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")

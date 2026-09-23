@@ -666,9 +666,9 @@
     __init__(*archive: [TypeArchive](#binaryninja.typearchive.TypeArchive "binaryninja.typearchive.TypeArchive")*, *notify: [TypeArchiveNotification](#binaryninja.typearchive.TypeArchiveNotification "binaryninja.typearchive.TypeArchiveNotification")*)[[source]](https://api.binary.ninja/_modules/binaryninja/typearchive.html#TypeArchiveNotificationCallbacks.__init__)
     :   Parameters:
         :   - **archive** ([*TypeArchive*](#binaryninja.typearchive.TypeArchive
-              "binaryninja.typearchive.TypeArchive")) –
+              "binaryninja.typearchive.TypeArchive"))
             - **notify** ([*TypeArchiveNotification*](#binaryninja.typearchive.TypeArchiveNotification
-              "binaryninja.typearchive.TypeArchiveNotification")) –
+              "binaryninja.typearchive.TypeArchiveNotification"))
 
     *property* archive*: [TypeArchive](#binaryninja.typearchive.TypeArchive "binaryninja.typearchive.TypeArchive")*
 

@@ -15,7 +15,7 @@
 
     __init__(*handle: LP_BNUndoAction*)[[source]](https://api.binary.ninja/_modules/binaryninja/undo.html#UndoAction.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNUndoAction*) –
+        :   **handle** (*LP_BNUndoAction*)
 
     *property* summary_text*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
 
@@ -29,7 +29,7 @@
 
     __init__(*handle: LP_BNUndoEntry*)[[source]](https://api.binary.ninja/_modules/binaryninja/undo.html#UndoEntry.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNUndoEntry*) –
+        :   **handle** (*LP_BNUndoEntry*)
 
     *property* actions*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[UndoAction](#binaryninja.undo.UndoAction "binaryninja.undo.UndoAction")]*
     :   Get the list of actions in this entry

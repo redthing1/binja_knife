@@ -46,22 +46,22 @@
               v3.14)")*[**MetadataValueType**]* *|*
               [*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")*]*
               *|* [*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")
-              *|* *None*) –
+              *|* *None*)
             - **signed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **raw** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)") *|* *None*) –
-            - **handle** (*BNMetadata* *|* *None*) –
+              v3.14)") *|* *None*)
+            - **handle** (*BNMetadata* *|* *None*)
 
     append(*value*)[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.append)
     :   Appends a value to the Metadata array.
 
-    get(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.get)
+    get(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)") = None*) → [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.get)
     :   Parameters:
         :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default** ([*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
-              Python v3.14)") *|* *None*) –
+              Python v3.14)"))
 
         Return type:
         :   [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")

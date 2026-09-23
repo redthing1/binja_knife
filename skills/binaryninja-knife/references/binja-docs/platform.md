@@ -12,7 +12,7 @@
 
     __init__(*handle: BNPlatform*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#CorePlatform.__init__)
     :   Parameters:
-        :   **handle** (*BNPlatform*) –
+        :   **handle** (*BNPlatform*)
 
     adjust_type_parser_input(*parser: [TypeParser](typeparser.md#binaryninja.typeparser.TypeParser "binaryninja.typeparser.TypeParser")*, *arguments: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*, *source_files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")], [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#CorePlatform.adjust_type_parser_input)
     :   Modify the arguments passed to the Type Parser with Platform-specific features.
@@ -85,7 +85,7 @@
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.__init__)
     :   Parameters:
         :   **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-            "binaryninja.architecture.Architecture") *|* *None*) –
+            "binaryninja.architecture.Architecture") *|* *None*)
 
     add_related_platform(*arch*, *platform*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.add_related_platform)
 
@@ -130,7 +130,7 @@
 
     get_global_register_type(*reg: architecture.RegisterType*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_global_register_type)
     :   Parameters:
-        :   **reg** (*architecture.RegisterType*) –
+        :   **reg** (*architecture.RegisterType*)
 
     *classmethod* get_list(*os=None*, *arch=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_list)
 

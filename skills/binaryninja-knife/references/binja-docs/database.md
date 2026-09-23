@@ -22,17 +22,28 @@
 
         Parameters:
         :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*Snapshot*](#binaryninja.database.Snapshot "binaryninja.database.Snapshot") | *None*
+
+    *classmethod* open_existing(*path: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Database](#binaryninja.database.Database "binaryninja.database.Database")[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#Database.open_existing)
+    :   Open a Database from a file :param path: Path to file containing database :return:
+        Database instance
+
+        Parameters:
+        :   **path** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*Database*](#binaryninja.database.Database "binaryninja.database.Database")
 
     read_global(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#Database.read_global)
     :   Get a specific global by key
 
         Parameters:
         :   **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -42,7 +53,7 @@
 
         Parameters:
         :   **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
@@ -54,7 +65,7 @@
 
         Parameters:
         :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     trim_snapshot(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#Database.trim_snapshot)
     :   Trim a snapshot’s contents in the database by id, but leave the parent/child hierarchy
@@ -62,34 +73,31 @@
 
         Parameters:
         :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     write_global(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#Database.write_global)
     :   Write a global into the database
 
         Parameters:
         :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     write_global_data(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")*)[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#Database.write_global_data)
     :   Write a binary buffer into a global in the database
 
         Parameters:
         :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
-              "binaryninja.databuffer.DataBuffer")) –
+              "binaryninja.databuffer.DataBuffer"))
 
     *property* analysis_cache*: [KeyValueStore](#binaryninja.database.KeyValueStore "binaryninja.database.KeyValueStore")*
     :   Get the backing analysis cache kvs (read-only)
 
     *property* current_snapshot*: [Snapshot](#binaryninja.database.Snapshot "binaryninja.database.Snapshot") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   Get the current snapshot
-
-    *property* file*: [FileMetadata](filemetadata.md#binaryninja.filemetadata.FileMetadata "binaryninja.filemetadata.FileMetadata")*
-    :   Get the owning FileMetadata (read-only)
 
     *property* global_keys*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
     :   Get a list of keys for all globals in the database (read-only)
@@ -112,14 +120,14 @@
     __init__(*buffer: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#KeyValueStore.__init__)
     :   Parameters:
         :   **buffer** ([*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
-            "binaryninja.databuffer.DataBuffer") *|* *None*) –
+            "binaryninja.databuffer.DataBuffer") *|* *None*)
 
     begin_namespace(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#KeyValueStore.begin_namespace)
     :   Begin storing new keys into a namespace
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     end_namespace()[[source]](https://api.binary.ninja/_modules/binaryninja/database.html#KeyValueStore.end_namespace)
     :   End storing new keys into a namespace
@@ -129,7 +137,7 @@
 
         Parameters:
         :   **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
@@ -140,9 +148,9 @@
 
         Parameters:
         :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
-              "binaryninja.databuffer.DataBuffer")) –
+              "binaryninja.databuffer.DataBuffer"))
 
     *property* data_size*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
     :   Length of serialized data (read-only)
@@ -180,7 +188,6 @@
 
         Parameters:
         :   **other** ([*Snapshot*](#binaryninja.database.Snapshot "binaryninja.database.Snapshot"))
-            –
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")

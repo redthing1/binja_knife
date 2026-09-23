@@ -10,9 +10,6 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    HighlightColor(color=None, mix_color=None, mix=None, red=None, green=None, blue=None,
-    alpha=255)
-
     __init__(*color=None*, *mix_color=None*, *mix=None*, *red=None*, *green=None*, *blue=None*, *alpha=255*)[[source]](https://api.binary.ninja/_modules/binaryninja/highlight.html#HighlightColor.__init__)
 
     alpha*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")* *= 255*

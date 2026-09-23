@@ -41,8 +41,6 @@
 :   Bases: [`VariableInstruction`](#binaryninja.commonil.VariableInstruction
     "binaryninja.commonil.VariableInstruction")
 
-    AliasedVariableInstruction()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -52,8 +50,6 @@
 *class* Arithmetic[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Arithmetic)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    Arithmetic()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -65,8 +61,6 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    BaseILInstruction()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -74,7 +68,7 @@
     *classmethod* add_subgraph(*graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *nodes*) → [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#BaseILInstruction.add_subgraph)
     :   Parameters:
         :   **graph** ([*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
-            "binaryninja.flowgraph.FlowGraph")) –
+            "binaryninja.flowgraph.FlowGraph"))
 
         Return type:
         :   [*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
@@ -83,9 +77,9 @@
     *classmethod* prepend_parent(*graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *node: [FlowGraphNode](flowgraph.md#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")*, *nodes={}*)[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#BaseILInstruction.prepend_parent)
     :   Parameters:
         :   - **graph** ([*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
-              "binaryninja.flowgraph.FlowGraph")) –
+              "binaryninja.flowgraph.FlowGraph"))
             - **node** ([*FlowGraphNode*](flowgraph.md#binaryninja.flowgraph.FlowGraphNode
-              "binaryninja.flowgraph.FlowGraphNode")) –
+              "binaryninja.flowgraph.FlowGraphNode"))
 
     *classmethod* show_hierarchy_graph()[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#BaseILInstruction.show_hierarchy_graph)
 
@@ -94,8 +88,6 @@
 *class* BinaryOperation[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#BinaryOperation)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    BinaryOperation()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -107,8 +99,6 @@
 :   Bases: [`ControlFlow`](#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    Call()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -118,8 +108,6 @@
 *class* Carry[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Carry)
 :   Bases: [`Arithmetic`](#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
-
-    Carry()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -131,8 +119,6 @@
 :   Bases: [`BinaryOperation`](#binaryninja.commonil.BinaryOperation
     "binaryninja.commonil.BinaryOperation")
 
-    Comparison()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -142,8 +128,6 @@
 *class* Constant[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Constant)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    Constant()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -155,8 +139,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    ControlFlow()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -167,8 +149,6 @@
 :   Bases: [`Arithmetic`](#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    DoublePrecision()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -178,8 +158,6 @@
 *class* FloatingPoint[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#FloatingPoint)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    FloatingPoint()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -199,9 +177,9 @@
     __init__(*address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *source_operand: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation.__init__)
     :   Parameters:
         :   - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **source_operand** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     *classmethod* from_instruction(*instr: [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [MediumLevelILInstruction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction "binaryninja.mediumlevelil.MediumLevelILInstruction") | [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *il_direct: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [ILSourceLocation](#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation")[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation.from_instruction)
     :   Get the source location of a given instruction :param instr: Instruction, Low, Medium,
@@ -214,9 +192,9 @@
               [*MediumLevelILInstruction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction
               "binaryninja.mediumlevelil.MediumLevelILInstruction") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **il_direct** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   [*ILSourceLocation*](#binaryninja.commonil.ILSourceLocation
@@ -240,8 +218,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    Intrinsic()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -252,8 +228,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    Load()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -262,8 +236,6 @@
 
 *class* Localcall[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Localcall)
 :   Bases: [`Call`](#binaryninja.commonil.Call "binaryninja.commonil.Call")
-
-    Localcall()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -275,8 +247,6 @@
 :   Bases: [`ControlFlow`](#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    Loop()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -287,8 +257,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    Memory()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -297,8 +265,6 @@
 
 *class* Phi[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Phi)
 :   Bases: [`SSA`](#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
-
-    Phi()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -310,8 +276,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    RegisterStack()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -320,8 +284,6 @@
 
 *class* Return[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Return)
 :   Bases: [`Terminal`](#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
-
-    Return()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -332,8 +294,6 @@
 *class* SSA[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#SSA)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    SSA()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -346,8 +306,6 @@
     [`VariableInstruction`](#binaryninja.commonil.VariableInstruction
     "binaryninja.commonil.VariableInstruction")
 
-    SSAVariableInstruction()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -357,8 +315,6 @@
 *class* SetReg[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#SetReg)
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
-
-    SetReg()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -370,8 +326,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    SetVar()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -381,8 +335,6 @@
 *class* Signed[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Signed)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    Signed()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -394,8 +346,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    StackOperation()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -406,8 +356,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    Store()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -417,8 +365,6 @@
 *class* Syscall[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Syscall)
 :   Bases: [`Call`](#binaryninja.commonil.Call "binaryninja.commonil.Call")
 
-    Syscall()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -427,8 +373,6 @@
 
 *class* Tailcall[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Tailcall)
 :   Bases: [`Localcall`](#binaryninja.commonil.Localcall "binaryninja.commonil.Localcall")
-
-    Tailcall()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
@@ -440,8 +384,6 @@
 :   Bases: [`ControlFlow`](#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    Terminal()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -452,8 +394,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    UnaryOperation()
-
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:
         :   *None*
@@ -463,8 +403,6 @@
 *class* VariableInstruction[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#VariableInstruction)
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
-
-    VariableInstruction()
 
     __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Return type:

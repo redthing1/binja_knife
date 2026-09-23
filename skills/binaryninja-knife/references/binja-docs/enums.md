@@ -2,117 +2,128 @@
 
 | Class | Description |
 | --- | --- |
-| [`binaryninja.enums.ActionType`](#binaryninja.enums.ActionType "binaryninja.enums.ActionType") | An enumeration. |
-| [`binaryninja.enums.AnalysisMode`](#binaryninja.enums.AnalysisMode "binaryninja.enums.AnalysisMode") | An enumeration. |
-| [`binaryninja.enums.AnalysisSkipReason`](#binaryninja.enums.AnalysisSkipReason "binaryninja.enums.AnalysisSkipReason") | An enumeration. |
-| [`binaryninja.enums.AnalysisState`](#binaryninja.enums.AnalysisState "binaryninja.enums.AnalysisState") | An enumeration. |
-| [`binaryninja.enums.AnalysisWarningActionType`](#binaryninja.enums.AnalysisWarningActionType "binaryninja.enums.AnalysisWarningActionType") | An enumeration. |
-| [`binaryninja.enums.BaseAddressDetectionConfidence`](#binaryninja.enums.BaseAddressDetectionConfidence "binaryninja.enums.BaseAddressDetectionConfidence") | An enumeration. |
-| [`binaryninja.enums.BaseAddressDetectionPOISetting`](#binaryninja.enums.BaseAddressDetectionPOISetting "binaryninja.enums.BaseAddressDetectionPOISetting") | An enumeration. |
-| [`binaryninja.enums.BaseAddressDetectionPOIType`](#binaryninja.enums.BaseAddressDetectionPOIType "binaryninja.enums.BaseAddressDetectionPOIType") | An enumeration. |
-| [`binaryninja.enums.BinaryViewEventType`](#binaryninja.enums.BinaryViewEventType "binaryninja.enums.BinaryViewEventType") | An enumeration. |
-| [`binaryninja.enums.BraceRequirement`](#binaryninja.enums.BraceRequirement "binaryninja.enums.BraceRequirement") | An enumeration. |
-| [`binaryninja.enums.BranchType`](#binaryninja.enums.BranchType "binaryninja.enums.BranchType") | An enumeration. |
-| [`binaryninja.enums.BuiltinType`](#binaryninja.enums.BuiltinType "binaryninja.enums.BuiltinType") | An enumeration. |
-| [`binaryninja.enums.CallingConventionName`](#binaryninja.enums.CallingConventionName "binaryninja.enums.CallingConventionName") | An enumeration. |
-| [`binaryninja.enums.CollaborationPermissionLevel`](#binaryninja.enums.CollaborationPermissionLevel "binaryninja.enums.CollaborationPermissionLevel") | An enumeration. |
-| [`binaryninja.enums.DataFlowQueryOption`](#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption") | An enumeration. |
-| [`binaryninja.enums.DeadStoreElimination`](#binaryninja.enums.DeadStoreElimination "binaryninja.enums.DeadStoreElimination") | An enumeration. |
-| [`binaryninja.enums.DerivedStringLocationType`](#binaryninja.enums.DerivedStringLocationType "binaryninja.enums.DerivedStringLocationType") | An enumeration. |
-| [`binaryninja.enums.DisassemblyAddressMode`](#binaryninja.enums.DisassemblyAddressMode "binaryninja.enums.DisassemblyAddressMode") | An enumeration. |
-| [`binaryninja.enums.DisassemblyBlockLabels`](#binaryninja.enums.DisassemblyBlockLabels "binaryninja.enums.DisassemblyBlockLabels") | An enumeration. |
-| [`binaryninja.enums.DisassemblyCallParameterHints`](#binaryninja.enums.DisassemblyCallParameterHints "binaryninja.enums.DisassemblyCallParameterHints") | An enumeration. |
-| [`binaryninja.enums.DisassemblyOption`](#binaryninja.enums.DisassemblyOption "binaryninja.enums.DisassemblyOption") | An enumeration. |
-| [`binaryninja.enums.EarlyReturn`](#binaryninja.enums.EarlyReturn "binaryninja.enums.EarlyReturn") | An enumeration. |
-| [`binaryninja.enums.EdgePenStyle`](#binaryninja.enums.EdgePenStyle "binaryninja.enums.EdgePenStyle") | An enumeration. |
-| [`binaryninja.enums.Endianness`](#binaryninja.enums.Endianness "binaryninja.enums.Endianness") | An enumeration. |
-| [`binaryninja.enums.ExprFolding`](#binaryninja.enums.ExprFolding "binaryninja.enums.ExprFolding") | An enumeration. |
-| [`binaryninja.enums.FindFlag`](#binaryninja.enums.FindFlag "binaryninja.enums.FindFlag") | An enumeration. |
-| [`binaryninja.enums.FindRangeType`](#binaryninja.enums.FindRangeType "binaryninja.enums.FindRangeType") | An enumeration. |
-| [`binaryninja.enums.FindType`](#binaryninja.enums.FindType "binaryninja.enums.FindType") | An enumeration. |
-| [`binaryninja.enums.FirmwareNinjaMemoryAccessType`](#binaryninja.enums.FirmwareNinjaMemoryAccessType "binaryninja.enums.FirmwareNinjaMemoryAccessType") | An enumeration. |
-| [`binaryninja.enums.FirmwareNinjaMemoryHeuristic`](#binaryninja.enums.FirmwareNinjaMemoryHeuristic "binaryninja.enums.FirmwareNinjaMemoryHeuristic") | An enumeration. |
-| [`binaryninja.enums.FirmwareNinjaSectionAnalysisMode`](#binaryninja.enums.FirmwareNinjaSectionAnalysisMode "binaryninja.enums.FirmwareNinjaSectionAnalysisMode") | An enumeration. |
-| [`binaryninja.enums.FirmwareNinjaSectionType`](#binaryninja.enums.FirmwareNinjaSectionType "binaryninja.enums.FirmwareNinjaSectionType") | An enumeration. |
-| [`binaryninja.enums.FlagRole`](#binaryninja.enums.FlagRole "binaryninja.enums.FlagRole") | An enumeration. |
-| [`binaryninja.enums.FlowGraphOption`](#binaryninja.enums.FlowGraphOption "binaryninja.enums.FlowGraphOption") | An enumeration. |
-| [`binaryninja.enums.FormInputFieldType`](#binaryninja.enums.FormInputFieldType "binaryninja.enums.FormInputFieldType") | An enumeration. |
-| [`binaryninja.enums.FunctionAnalysisSkipOverride`](#binaryninja.enums.FunctionAnalysisSkipOverride "binaryninja.enums.FunctionAnalysisSkipOverride") | An enumeration. |
-| [`binaryninja.enums.FunctionGraphType`](#binaryninja.enums.FunctionGraphType "binaryninja.enums.FunctionGraphType") | An enumeration. |
-| [`binaryninja.enums.FunctionUpdateType`](#binaryninja.enums.FunctionUpdateType "binaryninja.enums.FunctionUpdateType") | An enumeration. |
-| [`binaryninja.enums.HighLevelILOperation`](#binaryninja.enums.HighLevelILOperation "binaryninja.enums.HighLevelILOperation") | An enumeration. |
-| [`binaryninja.enums.HighlightColorStyle`](#binaryninja.enums.HighlightColorStyle "binaryninja.enums.HighlightColorStyle") | An enumeration. |
-| [`binaryninja.enums.HighlightStandardColor`](#binaryninja.enums.HighlightStandardColor "binaryninja.enums.HighlightStandardColor") | An enumeration. |
-| [`binaryninja.enums.ILBranchDependence`](#binaryninja.enums.ILBranchDependence "binaryninja.enums.ILBranchDependence") | An enumeration. |
-| [`binaryninja.enums.ILInstructionAttribute`](#binaryninja.enums.ILInstructionAttribute "binaryninja.enums.ILInstructionAttribute") | An enumeration. |
-| [`binaryninja.enums.ImplicitRegisterExtend`](#binaryninja.enums.ImplicitRegisterExtend "binaryninja.enums.ImplicitRegisterExtend") | An enumeration. |
-| [`binaryninja.enums.InlineDuringAnalysis`](#binaryninja.enums.InlineDuringAnalysis "binaryninja.enums.InlineDuringAnalysis") | An enumeration. |
-| [`binaryninja.enums.InstructionTextTokenContext`](#binaryninja.enums.InstructionTextTokenContext "binaryninja.enums.InstructionTextTokenContext") | An enumeration. |
-| [`binaryninja.enums.InstructionTextTokenType`](#binaryninja.enums.InstructionTextTokenType "binaryninja.enums.InstructionTextTokenType") | An enumeration. |
-| [`binaryninja.enums.IntegerDisplayType`](#binaryninja.enums.IntegerDisplayType "binaryninja.enums.IntegerDisplayType") | An enumeration. |
-| [`binaryninja.enums.IntrinsicClass`](#binaryninja.enums.IntrinsicClass "binaryninja.enums.IntrinsicClass") | An enumeration. |
-| [`binaryninja.enums.LinearDisassemblyLineType`](#binaryninja.enums.LinearDisassemblyLineType "binaryninja.enums.LinearDisassemblyLineType") | An enumeration. |
-| [`binaryninja.enums.LinearViewObjectIdentifierType`](#binaryninja.enums.LinearViewObjectIdentifierType "binaryninja.enums.LinearViewObjectIdentifierType") | An enumeration. |
-| [`binaryninja.enums.LogLevel`](#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel") | An enumeration. |
-| [`binaryninja.enums.LowLevelILFlagCondition`](#binaryninja.enums.LowLevelILFlagCondition "binaryninja.enums.LowLevelILFlagCondition") | An enumeration. |
-| [`binaryninja.enums.LowLevelILOperation`](#binaryninja.enums.LowLevelILOperation "binaryninja.enums.LowLevelILOperation") | An enumeration. |
-| [`binaryninja.enums.MediumLevelILOperation`](#binaryninja.enums.MediumLevelILOperation "binaryninja.enums.MediumLevelILOperation") | An enumeration. |
-| [`binaryninja.enums.MemberAccess`](#binaryninja.enums.MemberAccess "binaryninja.enums.MemberAccess") | An enumeration. |
-| [`binaryninja.enums.MemberScope`](#binaryninja.enums.MemberScope "binaryninja.enums.MemberScope") | An enumeration. |
-| [`binaryninja.enums.MergeConflictDataType`](#binaryninja.enums.MergeConflictDataType "binaryninja.enums.MergeConflictDataType") | An enumeration. |
-| [`binaryninja.enums.MessageBoxButtonResult`](#binaryninja.enums.MessageBoxButtonResult "binaryninja.enums.MessageBoxButtonResult") | An enumeration. |
-| [`binaryninja.enums.MessageBoxButtonSet`](#binaryninja.enums.MessageBoxButtonSet "binaryninja.enums.MessageBoxButtonSet") | An enumeration. |
-| [`binaryninja.enums.MessageBoxIcon`](#binaryninja.enums.MessageBoxIcon "binaryninja.enums.MessageBoxIcon") | An enumeration. |
-| [`binaryninja.enums.MetadataType`](#binaryninja.enums.MetadataType "binaryninja.enums.MetadataType") | An enumeration. |
-| [`binaryninja.enums.ModificationStatus`](#binaryninja.enums.ModificationStatus "binaryninja.enums.ModificationStatus") | An enumeration. |
-| [`binaryninja.enums.NameType`](#binaryninja.enums.NameType "binaryninja.enums.NameType") | An enumeration. |
-| [`binaryninja.enums.NamedTypeReferenceClass`](#binaryninja.enums.NamedTypeReferenceClass "binaryninja.enums.NamedTypeReferenceClass") | An enumeration. |
-| [`binaryninja.enums.OperatorPrecedence`](#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence") | An enumeration. |
-| [`binaryninja.enums.PluginCommandType`](#binaryninja.enums.PluginCommandType "binaryninja.enums.PluginCommandType") | An enumeration. |
-| [`binaryninja.enums.PluginLoadOrder`](#binaryninja.enums.PluginLoadOrder "binaryninja.enums.PluginLoadOrder") | An enumeration. |
-| [`binaryninja.enums.PluginLoadStatus`](#binaryninja.enums.PluginLoadStatus "binaryninja.enums.PluginLoadStatus") | An enumeration. |
-| [`binaryninja.enums.PluginOrigin`](#binaryninja.enums.PluginOrigin "binaryninja.enums.PluginOrigin") | An enumeration. |
-| [`binaryninja.enums.PluginStatus`](#binaryninja.enums.PluginStatus "binaryninja.enums.PluginStatus") | An enumeration. |
-| [`binaryninja.enums.PluginType`](#binaryninja.enums.PluginType "binaryninja.enums.PluginType") | An enumeration. |
-| [`binaryninja.enums.PointerBaseType`](#binaryninja.enums.PointerBaseType "binaryninja.enums.PointerBaseType") | An enumeration. |
-| [`binaryninja.enums.PointerSuffix`](#binaryninja.enums.PointerSuffix "binaryninja.enums.PointerSuffix") | An enumeration. |
-| [`binaryninja.enums.ReferenceType`](#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") | An enumeration. |
-| [`binaryninja.enums.RegisterValueType`](#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") | An enumeration. |
-| [`binaryninja.enums.RelocationType`](#binaryninja.enums.RelocationType "binaryninja.enums.RelocationType") | An enumeration. |
-| [`binaryninja.enums.RemoteFileType`](#binaryninja.enums.RemoteFileType "binaryninja.enums.RemoteFileType") | An enumeration. |
-| [`binaryninja.enums.RenderLayerDefaultEnableState`](#binaryninja.enums.RenderLayerDefaultEnableState "binaryninja.enums.RenderLayerDefaultEnableState") | An enumeration. |
-| [`binaryninja.enums.ReportType`](#binaryninja.enums.ReportType "binaryninja.enums.ReportType") | An enumeration. |
-| [`binaryninja.enums.SaveOption`](#binaryninja.enums.SaveOption "binaryninja.enums.SaveOption") | An enumeration. |
-| [`binaryninja.enums.ScopeType`](#binaryninja.enums.ScopeType "binaryninja.enums.ScopeType") | An enumeration. |
-| [`binaryninja.enums.ScriptingProviderExecuteResult`](#binaryninja.enums.ScriptingProviderExecuteResult "binaryninja.enums.ScriptingProviderExecuteResult") | An enumeration. |
-| [`binaryninja.enums.ScriptingProviderInputReadyState`](#binaryninja.enums.ScriptingProviderInputReadyState "binaryninja.enums.ScriptingProviderInputReadyState") | An enumeration. |
-| [`binaryninja.enums.SectionSemantics`](#binaryninja.enums.SectionSemantics "binaryninja.enums.SectionSemantics") | An enumeration. |
-| [`binaryninja.enums.SegmentFlag`](#binaryninja.enums.SegmentFlag "binaryninja.enums.SegmentFlag") | An enumeration. |
-| [`binaryninja.enums.SettingsScope`](#binaryninja.enums.SettingsScope "binaryninja.enums.SettingsScope") | An enumeration. |
-| [`binaryninja.enums.StringType`](#binaryninja.enums.StringType "binaryninja.enums.StringType") | An enumeration. |
-| [`binaryninja.enums.StructureVariant`](#binaryninja.enums.StructureVariant "binaryninja.enums.StructureVariant") | An enumeration. |
-| [`binaryninja.enums.SwitchRecovery`](#binaryninja.enums.SwitchRecovery "binaryninja.enums.SwitchRecovery") | An enumeration. |
-| [`binaryninja.enums.SymbolBinding`](#binaryninja.enums.SymbolBinding "binaryninja.enums.SymbolBinding") | An enumeration. |
-| [`binaryninja.enums.SymbolDisplayResult`](#binaryninja.enums.SymbolDisplayResult "binaryninja.enums.SymbolDisplayResult") | An enumeration. |
-| [`binaryninja.enums.SymbolDisplayType`](#binaryninja.enums.SymbolDisplayType "binaryninja.enums.SymbolDisplayType") | An enumeration. |
-| [`binaryninja.enums.SymbolType`](#binaryninja.enums.SymbolType "binaryninja.enums.SymbolType") | An enumeration. |
-| [`binaryninja.enums.SyncStatus`](#binaryninja.enums.SyncStatus "binaryninja.enums.SyncStatus") | An enumeration. |
-| [`binaryninja.enums.TagReferenceType`](#binaryninja.enums.TagReferenceType "binaryninja.enums.TagReferenceType") | An enumeration. |
-| [`binaryninja.enums.TagTypeType`](#binaryninja.enums.TagTypeType "binaryninja.enums.TagTypeType") | An enumeration. |
-| [`binaryninja.enums.ThemeColor`](#binaryninja.enums.ThemeColor "binaryninja.enums.ThemeColor") | An enumeration. |
-| [`binaryninja.enums.TokenEscapingType`](#binaryninja.enums.TokenEscapingType "binaryninja.enums.TokenEscapingType") | An enumeration. |
-| [`binaryninja.enums.TransformCapabilities`](#binaryninja.enums.TransformCapabilities "binaryninja.enums.TransformCapabilities") | An enumeration. |
-| [`binaryninja.enums.TransformResult`](#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult") | An enumeration. |
-| [`binaryninja.enums.TransformSessionMode`](#binaryninja.enums.TransformSessionMode "binaryninja.enums.TransformSessionMode") | An enumeration. |
-| [`binaryninja.enums.TransformType`](#binaryninja.enums.TransformType "binaryninja.enums.TransformType") | An enumeration. |
-| [`binaryninja.enums.TypeClass`](#binaryninja.enums.TypeClass "binaryninja.enums.TypeClass") | An enumeration. |
-| [`binaryninja.enums.TypeContainerType`](#binaryninja.enums.TypeContainerType "binaryninja.enums.TypeContainerType") | An enumeration. |
-| [`binaryninja.enums.TypeDefinitionLineType`](#binaryninja.enums.TypeDefinitionLineType "binaryninja.enums.TypeDefinitionLineType") | An enumeration. |
-| [`binaryninja.enums.TypeParserErrorSeverity`](#binaryninja.enums.TypeParserErrorSeverity "binaryninja.enums.TypeParserErrorSeverity") | An enumeration. |
-| [`binaryninja.enums.TypeParserOption`](#binaryninja.enums.TypeParserOption "binaryninja.enums.TypeParserOption") | An enumeration. |
-| [`binaryninja.enums.TypeReferenceType`](#binaryninja.enums.TypeReferenceType "binaryninja.enums.TypeReferenceType") | An enumeration. |
-| [`binaryninja.enums.UpdateResult`](#binaryninja.enums.UpdateResult "binaryninja.enums.UpdateResult") | An enumeration. |
-| [`binaryninja.enums.VariableSourceType`](#binaryninja.enums.VariableSourceType "binaryninja.enums.VariableSourceType") | An enumeration. |
+| [`binaryninja.enums.ActionType`](#binaryninja.enums.ActionType "binaryninja.enums.ActionType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.AnalysisMode`](#binaryninja.enums.AnalysisMode "binaryninja.enums.AnalysisMode") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.AnalysisSkipReason`](#binaryninja.enums.AnalysisSkipReason "binaryninja.enums.AnalysisSkipReason") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.AnalysisState`](#binaryninja.enums.AnalysisState "binaryninja.enums.AnalysisState") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.AnalysisWarningActionType`](#binaryninja.enums.AnalysisWarningActionType "binaryninja.enums.AnalysisWarningActionType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BaseAddressDetectionAnalysisMode`](#binaryninja.enums.BaseAddressDetectionAnalysisMode "binaryninja.enums.BaseAddressDetectionAnalysisMode") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BaseAddressDetectionConfidence`](#binaryninja.enums.BaseAddressDetectionConfidence "binaryninja.enums.BaseAddressDetectionConfidence") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BaseAddressDetectionPOISetting`](#binaryninja.enums.BaseAddressDetectionPOISetting "binaryninja.enums.BaseAddressDetectionPOISetting") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BaseAddressDetectionPOIType`](#binaryninja.enums.BaseAddressDetectionPOIType "binaryninja.enums.BaseAddressDetectionPOIType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BinaryViewEventType`](#binaryninja.enums.BinaryViewEventType "binaryninja.enums.BinaryViewEventType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BraceRequirement`](#binaryninja.enums.BraceRequirement "binaryninja.enums.BraceRequirement") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BranchType`](#binaryninja.enums.BranchType "binaryninja.enums.BranchType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.BuiltinType`](#binaryninja.enums.BuiltinType "binaryninja.enums.BuiltinType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.CallingConventionName`](#binaryninja.enums.CallingConventionName "binaryninja.enums.CallingConventionName") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.CollaborationPermissionLevel`](#binaryninja.enums.CollaborationPermissionLevel "binaryninja.enums.CollaborationPermissionLevel") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DataFlowQueryOption`](#binaryninja.enums.DataFlowQueryOption "binaryninja.enums.DataFlowQueryOption") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DeadStoreElimination`](#binaryninja.enums.DeadStoreElimination "binaryninja.enums.DeadStoreElimination") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DerivedStringLocationType`](#binaryninja.enums.DerivedStringLocationType "binaryninja.enums.DerivedStringLocationType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DisassemblyAddressMode`](#binaryninja.enums.DisassemblyAddressMode "binaryninja.enums.DisassemblyAddressMode") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DisassemblyBlockLabels`](#binaryninja.enums.DisassemblyBlockLabels "binaryninja.enums.DisassemblyBlockLabels") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DisassemblyCallParameterHints`](#binaryninja.enums.DisassemblyCallParameterHints "binaryninja.enums.DisassemblyCallParameterHints") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.DisassemblyOption`](#binaryninja.enums.DisassemblyOption "binaryninja.enums.DisassemblyOption") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.EarlyReturn`](#binaryninja.enums.EarlyReturn "binaryninja.enums.EarlyReturn") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.EdgePenStyle`](#binaryninja.enums.EdgePenStyle "binaryninja.enums.EdgePenStyle") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.Endianness`](#binaryninja.enums.Endianness "binaryninja.enums.Endianness") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ExprFolding`](#binaryninja.enums.ExprFolding "binaryninja.enums.ExprFolding") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FindFlag`](#binaryninja.enums.FindFlag "binaryninja.enums.FindFlag") | Support for integer-based Flags |
+| [`binaryninja.enums.FindRangeType`](#binaryninja.enums.FindRangeType "binaryninja.enums.FindRangeType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FindType`](#binaryninja.enums.FindType "binaryninja.enums.FindType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FirmwareNinjaMemoryAccessType`](#binaryninja.enums.FirmwareNinjaMemoryAccessType "binaryninja.enums.FirmwareNinjaMemoryAccessType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FirmwareNinjaMemoryHeuristic`](#binaryninja.enums.FirmwareNinjaMemoryHeuristic "binaryninja.enums.FirmwareNinjaMemoryHeuristic") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FirmwareNinjaSectionAnalysisMode`](#binaryninja.enums.FirmwareNinjaSectionAnalysisMode "binaryninja.enums.FirmwareNinjaSectionAnalysisMode") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FirmwareNinjaSectionType`](#binaryninja.enums.FirmwareNinjaSectionType "binaryninja.enums.FirmwareNinjaSectionType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FlagRole`](#binaryninja.enums.FlagRole "binaryninja.enums.FlagRole") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FlowGraphOption`](#binaryninja.enums.FlowGraphOption "binaryninja.enums.FlowGraphOption") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ForceVersionReason`](#binaryninja.enums.ForceVersionReason "binaryninja.enums.ForceVersionReason") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FormInputFieldType`](#binaryninja.enums.FormInputFieldType "binaryninja.enums.FormInputFieldType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FunctionAnalysisSkipOverride`](#binaryninja.enums.FunctionAnalysisSkipOverride "binaryninja.enums.FunctionAnalysisSkipOverride") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FunctionGraphType`](#binaryninja.enums.FunctionGraphType "binaryninja.enums.FunctionGraphType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.FunctionUpdateType`](#binaryninja.enums.FunctionUpdateType "binaryninja.enums.FunctionUpdateType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.HighLevelILOperation`](#binaryninja.enums.HighLevelILOperation "binaryninja.enums.HighLevelILOperation") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.HighlightColorStyle`](#binaryninja.enums.HighlightColorStyle "binaryninja.enums.HighlightColorStyle") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.HighlightStandardColor`](#binaryninja.enums.HighlightStandardColor "binaryninja.enums.HighlightStandardColor") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ILBranchDependence`](#binaryninja.enums.ILBranchDependence "binaryninja.enums.ILBranchDependence") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ILInstructionAttribute`](#binaryninja.enums.ILInstructionAttribute "binaryninja.enums.ILInstructionAttribute") | Support for integer-based Flags |
+| [`binaryninja.enums.ImplicitRegisterExtend`](#binaryninja.enums.ImplicitRegisterExtend "binaryninja.enums.ImplicitRegisterExtend") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.InlineDuringAnalysis`](#binaryninja.enums.InlineDuringAnalysis "binaryninja.enums.InlineDuringAnalysis") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.InstructionTextTokenContext`](#binaryninja.enums.InstructionTextTokenContext "binaryninja.enums.InstructionTextTokenContext") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.InstructionTextTokenType`](#binaryninja.enums.InstructionTextTokenType "binaryninja.enums.InstructionTextTokenType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.IntegerDisplayType`](#binaryninja.enums.IntegerDisplayType "binaryninja.enums.IntegerDisplayType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.IntrinsicClass`](#binaryninja.enums.IntrinsicClass "binaryninja.enums.IntrinsicClass") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.LinearDisassemblyLineType`](#binaryninja.enums.LinearDisassemblyLineType "binaryninja.enums.LinearDisassemblyLineType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.LinearSweepAnalysisCapability`](#binaryninja.enums.LinearSweepAnalysisCapability "binaryninja.enums.LinearSweepAnalysisCapability") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.LinearViewObjectIdentifierType`](#binaryninja.enums.LinearViewObjectIdentifierType "binaryninja.enums.LinearViewObjectIdentifierType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.LogLevel`](#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.LowLevelILFlagCondition`](#binaryninja.enums.LowLevelILFlagCondition "binaryninja.enums.LowLevelILFlagCondition") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.LowLevelILOperation`](#binaryninja.enums.LowLevelILOperation "binaryninja.enums.LowLevelILOperation") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MediumLevelILOperation`](#binaryninja.enums.MediumLevelILOperation "binaryninja.enums.MediumLevelILOperation") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MemberAccess`](#binaryninja.enums.MemberAccess "binaryninja.enums.MemberAccess") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MemberScope`](#binaryninja.enums.MemberScope "binaryninja.enums.MemberScope") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MergeConflictDataType`](#binaryninja.enums.MergeConflictDataType "binaryninja.enums.MergeConflictDataType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MessageBoxButtonResult`](#binaryninja.enums.MessageBoxButtonResult "binaryninja.enums.MessageBoxButtonResult") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MessageBoxButtonSet`](#binaryninja.enums.MessageBoxButtonSet "binaryninja.enums.MessageBoxButtonSet") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MessageBoxIcon`](#binaryninja.enums.MessageBoxIcon "binaryninja.enums.MessageBoxIcon") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.MetadataStoreFlag`](#binaryninja.enums.MetadataStoreFlag "binaryninja.enums.MetadataStoreFlag") | Support for integer-based Flags |
+| [`binaryninja.enums.MetadataType`](#binaryninja.enums.MetadataType "binaryninja.enums.MetadataType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ModificationStatus`](#binaryninja.enums.ModificationStatus "binaryninja.enums.ModificationStatus") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.NameType`](#binaryninja.enums.NameType "binaryninja.enums.NameType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.NamedTypeReferenceClass`](#binaryninja.enums.NamedTypeReferenceClass "binaryninja.enums.NamedTypeReferenceClass") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.OperatorPrecedence`](#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginCommandType`](#binaryninja.enums.PluginCommandType "binaryninja.enums.PluginCommandType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginDependencyConflictStatus`](#binaryninja.enums.PluginDependencyConflictStatus "binaryninja.enums.PluginDependencyConflictStatus") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginDependencyDecision`](#binaryninja.enums.PluginDependencyDecision "binaryninja.enums.PluginDependencyDecision") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginLoadPhase`](#binaryninja.enums.PluginLoadPhase "binaryninja.enums.PluginLoadPhase") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginLoadStatus`](#binaryninja.enums.PluginLoadStatus "binaryninja.enums.PluginLoadStatus") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginOrigin`](#binaryninja.enums.PluginOrigin "binaryninja.enums.PluginOrigin") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PluginStatus`](#binaryninja.enums.PluginStatus "binaryninja.enums.PluginStatus") | Support for integer-based Flags |
+| [`binaryninja.enums.PluginType`](#binaryninja.enums.PluginType "binaryninja.enums.PluginType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PointerBaseType`](#binaryninja.enums.PointerBaseType "binaryninja.enums.PointerBaseType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.PointerSuffix`](#binaryninja.enums.PointerSuffix "binaryninja.enums.PointerSuffix") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ReferenceType`](#binaryninja.enums.ReferenceType "binaryninja.enums.ReferenceType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.RegisterValueType`](#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.RelocationType`](#binaryninja.enums.RelocationType "binaryninja.enums.RelocationType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.RemoteFileType`](#binaryninja.enums.RemoteFileType "binaryninja.enums.RemoteFileType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.RenderLayerDefaultEnableState`](#binaryninja.enums.RenderLayerDefaultEnableState "binaryninja.enums.RenderLayerDefaultEnableState") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ReportType`](#binaryninja.enums.ReportType "binaryninja.enums.ReportType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SaveOption`](#binaryninja.enums.SaveOption "binaryninja.enums.SaveOption") | Support for integer-based Flags |
+| [`binaryninja.enums.ScopeType`](#binaryninja.enums.ScopeType "binaryninja.enums.ScopeType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ScriptingProviderExecuteResult`](#binaryninja.enums.ScriptingProviderExecuteResult "binaryninja.enums.ScriptingProviderExecuteResult") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ScriptingProviderInputReadyState`](#binaryninja.enums.ScriptingProviderInputReadyState "binaryninja.enums.ScriptingProviderInputReadyState") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SectionSemantics`](#binaryninja.enums.SectionSemantics "binaryninja.enums.SectionSemantics") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SegmentFlag`](#binaryninja.enums.SegmentFlag "binaryninja.enums.SegmentFlag") | Support for integer-based Flags |
+| [`binaryninja.enums.SettingsScope`](#binaryninja.enums.SettingsScope "binaryninja.enums.SettingsScope") | Support for integer-based Flags |
+| [`binaryninja.enums.SimilarityAnnotationType`](#binaryninja.enums.SimilarityAnnotationType "binaryninja.enums.SimilarityAnnotationType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SimilarityApplyStatus`](#binaryninja.enums.SimilarityApplyStatus "binaryninja.enums.SimilarityApplyStatus") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SimilarityEntityType`](#binaryninja.enums.SimilarityEntityType "binaryninja.enums.SimilarityEntityType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SimilarityViewType`](#binaryninja.enums.SimilarityViewType "binaryninja.enums.SimilarityViewType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.StringType`](#binaryninja.enums.StringType "binaryninja.enums.StringType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.StructureVariant`](#binaryninja.enums.StructureVariant "binaryninja.enums.StructureVariant") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SwitchRecovery`](#binaryninja.enums.SwitchRecovery "binaryninja.enums.SwitchRecovery") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SymbolBinding`](#binaryninja.enums.SymbolBinding "binaryninja.enums.SymbolBinding") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SymbolDisplayResult`](#binaryninja.enums.SymbolDisplayResult "binaryninja.enums.SymbolDisplayResult") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SymbolDisplayType`](#binaryninja.enums.SymbolDisplayType "binaryninja.enums.SymbolDisplayType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SymbolType`](#binaryninja.enums.SymbolType "binaryninja.enums.SymbolType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.SyncStatus`](#binaryninja.enums.SyncStatus "binaryninja.enums.SyncStatus") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TagReferenceType`](#binaryninja.enums.TagReferenceType "binaryninja.enums.TagReferenceType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TagTypeType`](#binaryninja.enums.TagTypeType "binaryninja.enums.TagTypeType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ThemeColor`](#binaryninja.enums.ThemeColor "binaryninja.enums.ThemeColor") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TokenEscapingType`](#binaryninja.enums.TokenEscapingType "binaryninja.enums.TokenEscapingType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TransformCapabilities`](#binaryninja.enums.TransformCapabilities "binaryninja.enums.TransformCapabilities") | Support for integer-based Flags |
+| [`binaryninja.enums.TransformResult`](#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TransformSessionMode`](#binaryninja.enums.TransformSessionMode "binaryninja.enums.TransformSessionMode") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TransformType`](#binaryninja.enums.TransformType "binaryninja.enums.TransformType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TypeClass`](#binaryninja.enums.TypeClass "binaryninja.enums.TypeClass") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TypeContainerType`](#binaryninja.enums.TypeContainerType "binaryninja.enums.TypeContainerType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TypeDefinitionLineType`](#binaryninja.enums.TypeDefinitionLineType "binaryninja.enums.TypeDefinitionLineType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TypeParserErrorSeverity`](#binaryninja.enums.TypeParserErrorSeverity "binaryninja.enums.TypeParserErrorSeverity") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TypeParserOption`](#binaryninja.enums.TypeParserOption "binaryninja.enums.TypeParserOption") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.TypeReferenceType`](#binaryninja.enums.TypeReferenceType "binaryninja.enums.TypeReferenceType") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.UpdateResult`](#binaryninja.enums.UpdateResult "binaryninja.enums.UpdateResult") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.ValueLocationSource`](#binaryninja.enums.ValueLocationSource "binaryninja.enums.ValueLocationSource") | Enum where members are also (and must be) ints |
+| [`binaryninja.enums.VariableSourceType`](#binaryninja.enums.VariableSourceType "binaryninja.enums.VariableSourceType") | Enum where members are also (and must be) ints |
 
 ## ActionType
 
@@ -120,7 +131,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AnalysisAction *= 2*
 
@@ -136,7 +147,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BasicAnalysisMode *= 2*
 
@@ -152,7 +163,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlwaysSkipReason *= 1*
 
@@ -178,7 +189,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AnalyzeState *= 5*
 
@@ -200,7 +211,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DisableGuidedAnalysisWarningAction *= 3*
 
@@ -210,13 +221,25 @@
 
     ShowStackGraphWarningAction *= 2*
 
+## BaseAddressDetectionAnalysisMode
+
+*class* BaseAddressDetectionAnalysisMode[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BaseAddressDetectionAnalysisMode)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    InstructionAnalysisBaseAddressDetection *= 0*
+
+    SamplingBaseAddressDetection *= 1*
+
 ## BaseAddressDetectionConfidence
 
 *class* BaseAddressDetectionConfidence[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BaseAddressDetectionConfidence)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     HighConfidence *= 2*
 
@@ -230,7 +253,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     POIAnalysisAll *= 2*
 
@@ -244,7 +267,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     POIDataVariable *= 2*
 
@@ -262,7 +285,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BinaryViewFinalizationEvent *= 0*
 
@@ -274,7 +297,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BracesAlwaysRequired *= 2*
 
@@ -288,7 +311,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CallDestination *= 3*
 
@@ -316,7 +339,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BuiltinMemcpy *= 1*
 
@@ -338,7 +361,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CLRCallCallingConvention *= 6*
 
@@ -368,7 +391,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AdminPermission *= 1*
 
@@ -382,7 +405,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AllowReadingWritableMemoryQueryOption *= 1*
 
@@ -394,7 +417,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AllowDeadStoreElimination *= 2*
 
@@ -408,7 +431,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CodeStringLocation *= 1*
 
@@ -420,7 +443,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AbsoluteDisassemblyAddressMode *= 0*
 
@@ -450,7 +473,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlwaysShowBlockLabels *= 1*
 
@@ -464,7 +487,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlwaysShowParameterHints *= 1*
 
@@ -478,7 +501,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DisableLineFormatting *= 68*
 
@@ -524,7 +547,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DefaultEarlyReturn *= 0*
 
@@ -542,7 +565,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DashDotDotLine *= 5*
 
@@ -562,7 +585,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BigEndian *= 1*
 
@@ -574,7 +597,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AllowExprFolding *= 2*
 
@@ -588,7 +611,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FindCaseInsensitive *= 1*
 
@@ -602,7 +625,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AllRangeType *= 0*
 
@@ -616,7 +639,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FindTypeBytes *= 4*
 
@@ -634,7 +657,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     NoMemoryAccessType *= 0*
 
@@ -648,7 +671,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CallParamOOBPointerMemoryHeuristic *= 6*
 
@@ -670,7 +693,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DefaultSectionAnalysisMode *= 0*
 
@@ -684,7 +707,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CodeSectionType *= 0*
 
@@ -700,7 +723,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CarryFlagRole *= 4*
 
@@ -732,7 +755,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FlowGraphAllowsInlineInstructionEditing *= 4*
 
@@ -750,13 +773,25 @@
 
     FlowGraphUsesInstructionHighlights *= 1*
 
+## ForceVersionReason
+
+*class* ForceVersionReason[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ForceVersionReason)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    PartialAccessAnalysisForceVersionReason *= 1*
+
+    UserForceVersionReason *= 0*
+
 ## FormInputFieldType
 
 *class* FormInputFieldType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FormInputFieldType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddressFormField *= 5*
 
@@ -786,7 +821,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlwaysSkipFunctionAnalysis *= 2*
 
@@ -800,7 +835,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     HighLevelILFunctionGraph *= 8*
 
@@ -832,7 +867,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FullAutoFunctionUpdate *= 1*
 
@@ -846,239 +881,269 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
-    HLIL_ADC *= 35*
+    HLIL_ABS *= 141*
 
-    HLIL_ADD *= 34*
+    HLIL_ADC *= 37*
+
+    HLIL_ADD *= 36*
 
     HLIL_ADDRESS_OF *= 27*
 
-    HLIL_ADD_OVERFLOW *= 77*
+    HLIL_ADD_OVERFLOW *= 79*
 
-    HLIL_AND *= 38*
+    HLIL_AND *= 40*
 
     HLIL_ARRAY_INDEX *= 23*
 
-    HLIL_ARRAY_INDEX_SSA *= 118*
+    HLIL_ARRAY_INDEX_SSA *= 123*
 
-    HLIL_ASR *= 43*
+    HLIL_ASR *= 45*
 
     HLIL_ASSERT *= 20*
 
-    HLIL_ASSERT_SSA *= 116*
+    HLIL_ASSERT_SSA *= 120*
 
     HLIL_ASSIGN *= 17*
 
-    HLIL_ASSIGN_MEM_SSA *= 113*
+    HLIL_ASSIGN_MEM_SSA *= 117*
 
     HLIL_ASSIGN_UNPACK *= 18*
 
-    HLIL_ASSIGN_UNPACK_MEM_SSA *= 114*
+    HLIL_ASSIGN_UNPACK_MEM_SSA *= 118*
 
     HLIL_BLOCK *= 1*
 
-    HLIL_BOOL_TO_INT *= 76*
+    HLIL_BOOL_TO_INT *= 78*
 
-    HLIL_BP *= 81*
+    HLIL_BP *= 83*
 
     HLIL_BREAK *= 8*
 
-    HLIL_CALL *= 64*
+    HLIL_BSWAP *= 131*
 
-    HLIL_CALL_SSA *= 121*
+    HLIL_CALL *= 66*
+
+    HLIL_CALL_SSA *= 126*
 
     HLIL_CASE *= 7*
 
-    HLIL_CEIL *= 98*
+    HLIL_CEIL *= 102*
 
-    HLIL_CMP_E *= 65*
+    HLIL_CLS *= 136*
 
-    HLIL_CMP_NE *= 66*
+    HLIL_CLZ *= 133*
 
-    HLIL_CMP_SGE *= 71*
+    HLIL_CMP_E *= 67*
 
-    HLIL_CMP_SGT *= 73*
+    HLIL_CMP_NE *= 68*
 
-    HLIL_CMP_SLE *= 69*
+    HLIL_CMP_SGE *= 73*
 
-    HLIL_CMP_SLT *= 67*
+    HLIL_CMP_SGT *= 75*
 
-    HLIL_CMP_UGE *= 72*
+    HLIL_CMP_SLE *= 71*
 
-    HLIL_CMP_UGT *= 74*
+    HLIL_CMP_SLT *= 69*
 
-    HLIL_CMP_ULE *= 70*
+    HLIL_CMP_UGE *= 74*
 
-    HLIL_CMP_ULT *= 68*
+    HLIL_CMP_UGT *= 76*
 
-    HLIL_CONST *= 28*
+    HLIL_CMP_ULE *= 72*
 
-    HLIL_CONST_DATA *= 29*
+    HLIL_CMP_ULT *= 70*
 
-    HLIL_CONST_PTR *= 30*
+    HLIL_CONST *= 30*
+
+    HLIL_CONST_DATA *= 31*
+
+    HLIL_CONST_PTR *= 32*
 
     HLIL_CONTINUE *= 9*
+
+    HLIL_CTZ *= 134*
 
     HLIL_DEREF *= 25*
 
     HLIL_DEREF_FIELD *= 26*
 
-    HLIL_DEREF_FIELD_SSA *= 120*
+    HLIL_DEREF_FIELD_SSA *= 125*
 
-    HLIL_DEREF_SSA *= 119*
+    HLIL_DEREF_SSA *= 124*
 
-    HLIL_DIVS *= 53*
+    HLIL_DIVS *= 55*
 
-    HLIL_DIVS_DP *= 54*
+    HLIL_DIVS_DP *= 56*
 
-    HLIL_DIVU *= 51*
+    HLIL_DIVU *= 53*
 
-    HLIL_DIVU_DP *= 52*
+    HLIL_DIVU_DP *= 54*
 
     HLIL_DO_WHILE *= 4*
 
-    HLIL_DO_WHILE_SSA *= 110*
+    HLIL_DO_WHILE_SSA *= 114*
 
-    HLIL_EXTERN_PTR *= 31*
+    HLIL_EXTERN_PTR *= 33*
 
-    HLIL_FABS *= 92*
+    HLIL_FABS *= 96*
 
-    HLIL_FADD *= 86*
+    HLIL_FADD *= 90*
 
-    HLIL_FCMP_E *= 100*
+    HLIL_FCMP_E *= 104*
 
-    HLIL_FCMP_GE *= 104*
+    HLIL_FCMP_GE *= 108*
 
-    HLIL_FCMP_GT *= 105*
+    HLIL_FCMP_GT *= 109*
 
-    HLIL_FCMP_LE *= 103*
+    HLIL_FCMP_LE *= 107*
 
-    HLIL_FCMP_LT *= 102*
+    HLIL_FCMP_LT *= 106*
 
-    HLIL_FCMP_NE *= 101*
+    HLIL_FCMP_NE *= 105*
 
-    HLIL_FCMP_O *= 106*
+    HLIL_FCMP_O *= 110*
 
-    HLIL_FCMP_UO *= 107*
+    HLIL_FCMP_UO *= 111*
 
-    HLIL_FDIV *= 89*
+    HLIL_FDIV *= 93*
 
-    HLIL_FLOAT_CONST *= 32*
+    HLIL_FLOAT_CONST *= 34*
 
-    HLIL_FLOAT_CONV *= 95*
+    HLIL_FLOAT_CONV *= 99*
 
-    HLIL_FLOAT_TO_INT *= 93*
+    HLIL_FLOAT_TO_INT *= 97*
 
-    HLIL_FLOOR *= 97*
+    HLIL_FLOOR *= 101*
 
-    HLIL_FMUL *= 88*
+    HLIL_FMUL *= 92*
 
-    HLIL_FNEG *= 91*
+    HLIL_FNEG *= 95*
 
     HLIL_FOR *= 5*
 
     HLIL_FORCE_VER *= 19*
 
-    HLIL_FORCE_VER_SSA *= 115*
+    HLIL_FORCE_VER_SSA *= 119*
 
-    HLIL_FOR_SSA *= 111*
+    HLIL_FOR_SSA *= 115*
 
-    HLIL_FSQRT *= 90*
+    HLIL_FSQRT *= 94*
 
-    HLIL_FSUB *= 87*
+    HLIL_FSUB *= 91*
 
-    HLIL_FTRUNC *= 99*
+    HLIL_FTRUNC *= 103*
 
     HLIL_GOTO *= 13*
 
     HLIL_IF *= 2*
 
-    HLIL_IMPORT *= 33*
+    HLIL_IMPORT *= 35*
 
-    HLIL_INTRINSIC *= 80*
+    HLIL_INTRINSIC *= 82*
 
-    HLIL_INTRINSIC_SSA *= 123*
+    HLIL_INTRINSIC_SSA *= 128*
 
-    HLIL_INT_TO_FLOAT *= 94*
+    HLIL_INT_TO_FLOAT *= 98*
 
     HLIL_JUMP *= 10*
 
     HLIL_LABEL *= 14*
 
-    HLIL_LOW_PART *= 63*
+    HLIL_LOW_PART *= 65*
 
-    HLIL_LSL *= 41*
+    HLIL_LSL *= 43*
 
-    HLIL_LSR *= 42*
+    HLIL_LSR *= 44*
 
-    HLIL_MEM_PHI *= 125*
+    HLIL_MAXS *= 138*
 
-    HLIL_MODS *= 57*
+    HLIL_MAXU *= 140*
 
-    HLIL_MODS_DP *= 58*
+    HLIL_MEM_PHI *= 130*
 
-    HLIL_MODU *= 55*
+    HLIL_MINS *= 137*
 
-    HLIL_MODU_DP *= 56*
+    HLIL_MINU *= 139*
 
-    HLIL_MUL *= 48*
+    HLIL_MODS *= 59*
 
-    HLIL_MULS_DP *= 50*
+    HLIL_MODS_DP *= 60*
 
-    HLIL_MULU_DP *= 49*
+    HLIL_MODU *= 57*
 
-    HLIL_NEG *= 59*
+    HLIL_MODU_DP *= 58*
+
+    HLIL_MUL *= 50*
+
+    HLIL_MULS_DP *= 52*
+
+    HLIL_MULU_DP *= 51*
+
+    HLIL_NEG *= 61*
 
     HLIL_NOP *= 0*
 
     HLIL_NORET *= 12*
 
-    HLIL_NOT *= 60*
+    HLIL_NOT *= 62*
 
-    HLIL_OR *= 39*
+    HLIL_OR *= 41*
+
+    HLIL_PASS_BY_REF *= 28*
+
+    HLIL_POPCNT *= 132*
+
+    HLIL_RBIT *= 135*
 
     HLIL_RET *= 11*
 
-    HLIL_RLC *= 45*
+    HLIL_RETURN_BY_REF *= 29*
 
-    HLIL_ROL *= 44*
+    HLIL_RLC *= 47*
 
-    HLIL_ROR *= 46*
+    HLIL_ROL *= 46*
 
-    HLIL_ROUND_TO_INT *= 96*
+    HLIL_ROR *= 48*
 
-    HLIL_RRC *= 47*
+    HLIL_ROUND_TO_INT *= 100*
 
-    HLIL_SBB *= 37*
+    HLIL_RRC *= 49*
+
+    HLIL_SBB *= 39*
 
     HLIL_SPLIT *= 24*
 
     HLIL_STRUCT_FIELD *= 22*
 
-    HLIL_SUB *= 36*
+    HLIL_STRUCT_INIT *= 88*
+
+    HLIL_STRUCT_INIT_FIELD *= 89*
+
+    HLIL_SUB *= 38*
 
     HLIL_SWITCH *= 6*
 
-    HLIL_SX *= 61*
+    HLIL_SX *= 63*
 
-    HLIL_SYSCALL *= 78*
+    HLIL_SYSCALL *= 80*
 
-    HLIL_SYSCALL_SSA *= 122*
+    HLIL_SYSCALL_SSA *= 127*
 
-    HLIL_TAILCALL *= 79*
+    HLIL_TAILCALL *= 81*
 
-    HLIL_TEST_BIT *= 75*
+    HLIL_TEST_BIT *= 77*
 
-    HLIL_TRAP *= 82*
+    HLIL_TRAP *= 84*
 
-    HLIL_UNDEF *= 83*
+    HLIL_UNDEF *= 85*
 
-    HLIL_UNIMPL *= 84*
+    HLIL_UNIMPL *= 86*
 
-    HLIL_UNIMPL_MEM *= 85*
+    HLIL_UNIMPL_MEM *= 87*
 
-    HLIL_UNREACHABLE *= 108*
+    HLIL_UNREACHABLE *= 112*
 
     HLIL_VAR *= 21*
 
@@ -1086,19 +1151,21 @@
 
     HLIL_VAR_INIT *= 16*
 
-    HLIL_VAR_INIT_SSA *= 112*
+    HLIL_VAR_INIT_SSA *= 116*
 
-    HLIL_VAR_PHI *= 124*
+    HLIL_VAR_PHI *= 129*
 
-    HLIL_VAR_SSA *= 117*
+    HLIL_VAR_SSA *= 121*
+
+    HLIL_VAR_SSA_PARTIAL *= 122*
 
     HLIL_WHILE *= 3*
 
-    HLIL_WHILE_SSA *= 109*
+    HLIL_WHILE_SSA *= 113*
 
-    HLIL_XOR *= 40*
+    HLIL_XOR *= 42*
 
-    HLIL_ZX *= 62*
+    HLIL_ZX *= 64*
 
 ## HighlightColorStyle
 
@@ -1106,7 +1173,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CustomHighlightColor *= 2*
 
@@ -1120,7 +1187,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BlackHighlightColor *= 9*
 
@@ -1148,7 +1215,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FalseBranchDependent *= 2*
 
@@ -1162,7 +1229,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     HLILEarlyReturnPossible *= 1024*
 
@@ -1180,9 +1247,13 @@
 
     ILPreventDeadStoreElimination *= 2*
 
+    ILStackReturn *= 16384*
+
     ILTransparentCopy *= 4096*
 
     MLILAssumePossibleUse *= 4*
+
+    MLILCallingConventionImplicit *= 8192*
 
     MLILPossiblyUnusedIntermediate *= 128*
 
@@ -1196,7 +1267,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     NoExtend *= 0*
 
@@ -1210,7 +1281,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DoNotInlineCall *= 0*
 
@@ -1224,7 +1295,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ConstDataTokenContext *= 6*
 
@@ -1262,7 +1333,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddressDisplayToken *= 68*
 
@@ -1368,13 +1439,15 @@
 
     UnknownMemoryToken *= 34*
 
+    ValueLocationToken *= 40*
+
 ## IntegerDisplayType
 
 *class* IntegerDisplayType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#IntegerDisplayType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BinaryDisplayType *= 1*
 
@@ -1398,6 +1471,10 @@
 
     SignedOctalDisplayType *= 2*
 
+    UnsignedComplementDecimalDisplayType *= 14*
+
+    UnsignedComplementHexadecimalDisplayType *= 15*
+
     UnsignedDecimalDisplayType *= 5*
 
     UnsignedHexadecimalDisplayType *= 7*
@@ -1410,7 +1487,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     GeneralIntrinsicClass *= 0*
 
@@ -1422,7 +1499,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AnalysisWarningLineType *= 19*
 
@@ -1466,13 +1543,25 @@
 
     SectionStartLineType *= 15*
 
+## LinearSweepAnalysisCapability
+
+*class* LinearSweepAnalysisCapability[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LinearSweepAnalysisCapability)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    BNLinearSweepCallTargetAnalysis *= 1*
+
+    BNLinearSweepGenericControlFlowAnalysis *= 2*
+
 ## LinearViewObjectIdentifierType
 
 *class* LinearViewObjectIdentifierType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LinearViewObjectIdentifierType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddressLinearViewObject *= 1*
 
@@ -1486,7 +1575,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlertLog *= 4*
 
@@ -1504,7 +1593,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     LLFC_E *= 0*
 
@@ -1556,7 +1645,9 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
+
+    LLIL_ABS *= 153*
 
     LLIL_ADC *= 25*
 
@@ -1576,6 +1667,8 @@
 
     LLIL_BP *= 79*
 
+    LLIL_BSWAP *= 143*
+
     LLIL_CALL *= 56*
 
     LLIL_CALL_OUTPUT_SSA *= 131*
@@ -1589,6 +1682,10 @@
     LLIL_CALL_STACK_SSA *= 130*
 
     LLIL_CEIL *= 97*
+
+    LLIL_CLS *= 148*
+
+    LLIL_CLZ *= 145*
 
     LLIL_CMP_E *= 65*
 
@@ -1613,6 +1710,8 @@
     LLIL_CONST *= 18*
 
     LLIL_CONST_PTR *= 19*
+
+    LLIL_CTZ *= 146*
 
     LLIL_DIVS *= 43*
 
@@ -1706,11 +1805,19 @@
 
     LLIL_LSR *= 32*
 
+    LLIL_MAXS *= 150*
+
+    LLIL_MAXU *= 152*
+
     LLIL_MEMORY_INTRINSIC_OUTPUT_SSA *= 134*
 
     LLIL_MEMORY_INTRINSIC_SSA *= 138*
 
     LLIL_MEM_PHI *= 142*
+
+    LLIL_MINS *= 149*
+
+    LLIL_MINU *= 151*
 
     LLIL_MODS *= 47*
 
@@ -1738,7 +1845,11 @@
 
     LLIL_POP *= 11*
 
+    LLIL_POPCNT *= 144*
+
     LLIL_PUSH *= 10*
+
+    LLIL_RBIT *= 147*
 
     LLIL_REG *= 12*
 
@@ -1850,287 +1961,327 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
-    MLIL_ADC *= 22*
+    MLIL_ABS *= 159*
 
-    MLIL_ADD *= 21*
+    MLIL_ADC *= 24*
+
+    MLIL_ADD *= 23*
 
     MLIL_ADDRESS_OF *= 13*
 
     MLIL_ADDRESS_OF_FIELD *= 14*
 
-    MLIL_ADD_OVERFLOW *= 76*
+    MLIL_ADD_OVERFLOW *= 80*
 
-    MLIL_AND *= 25*
+    MLIL_AND *= 27*
 
-    MLIL_ASR *= 30*
+    MLIL_ASR *= 32*
 
     MLIL_ASSERT *= 4*
 
-    MLIL_ASSERT_SSA *= 120*
+    MLIL_ASSERT_SSA *= 124*
 
-    MLIL_BOOL_TO_INT *= 75*
+    MLIL_BLOCK_TO_EXPAND *= 148*
 
-    MLIL_BP *= 83*
+    MLIL_BOOL_TO_INT *= 79*
 
-    MLIL_CALL *= 54*
+    MLIL_BP *= 87*
 
-    MLIL_CALL_OUTPUT *= 56*
+    MLIL_BSWAP *= 149*
 
-    MLIL_CALL_OUTPUT_SSA *= 129*
+    MLIL_CALL *= 56*
 
-    MLIL_CALL_PARAM *= 57*
+    MLIL_CALL_OUTPUT_SSA *= 133*
 
-    MLIL_CALL_PARAM_SSA *= 128*
+    MLIL_CALL_PARAM *= 58*
 
-    MLIL_CALL_SSA *= 122*
+    MLIL_CALL_PARAM_SSA *= 132*
 
-    MLIL_CALL_UNTYPED *= 55*
+    MLIL_CALL_SSA *= 126*
 
-    MLIL_CALL_UNTYPED_SSA *= 123*
+    MLIL_CALL_UNTYPED *= 57*
 
-    MLIL_CEIL *= 100*
+    MLIL_CALL_UNTYPED_SSA *= 127*
 
-    MLIL_CMP_E *= 64*
+    MLIL_CEIL *= 104*
 
-    MLIL_CMP_NE *= 65*
+    MLIL_CLS *= 154*
 
-    MLIL_CMP_SGE *= 70*
+    MLIL_CLZ *= 151*
 
-    MLIL_CMP_SGT *= 72*
+    MLIL_CMP_E *= 68*
 
-    MLIL_CMP_SLE *= 68*
+    MLIL_CMP_NE *= 69*
 
-    MLIL_CMP_SLT *= 66*
+    MLIL_CMP_SGE *= 74*
 
-    MLIL_CMP_UGE *= 71*
+    MLIL_CMP_SGT *= 76*
 
-    MLIL_CMP_UGT *= 73*
+    MLIL_CMP_SLE *= 72*
 
-    MLIL_CMP_ULE *= 69*
+    MLIL_CMP_SLT *= 70*
 
-    MLIL_CMP_ULT *= 67*
+    MLIL_CMP_UGE *= 75*
 
-    MLIL_CONST *= 15*
+    MLIL_CMP_UGT *= 77*
 
-    MLIL_CONST_DATA *= 16*
+    MLIL_CMP_ULE *= 73*
 
-    MLIL_CONST_PTR *= 17*
+    MLIL_CMP_ULT *= 71*
 
-    MLIL_DIVS *= 40*
+    MLIL_CONST *= 17*
 
-    MLIL_DIVS_DP *= 41*
+    MLIL_CONST_DATA *= 18*
 
-    MLIL_DIVU *= 38*
+    MLIL_CONST_PTR *= 19*
 
-    MLIL_DIVU_DP *= 39*
+    MLIL_CTZ *= 152*
 
-    MLIL_EXTERN_PTR *= 18*
+    MLIL_DIVS *= 42*
 
-    MLIL_FABS *= 94*
+    MLIL_DIVS_DP *= 43*
 
-    MLIL_FADD *= 88*
+    MLIL_DIVU *= 40*
 
-    MLIL_FCMP_E *= 102*
+    MLIL_DIVU_DP *= 41*
 
-    MLIL_FCMP_GE *= 106*
+    MLIL_EXTERN_PTR *= 20*
 
-    MLIL_FCMP_GT *= 107*
+    MLIL_FABS *= 98*
 
-    MLIL_FCMP_LE *= 105*
+    MLIL_FADD *= 92*
 
-    MLIL_FCMP_LT *= 104*
+    MLIL_FCMP_E *= 106*
 
-    MLIL_FCMP_NE *= 103*
+    MLIL_FCMP_GE *= 110*
 
-    MLIL_FCMP_O *= 108*
+    MLIL_FCMP_GT *= 111*
 
-    MLIL_FCMP_UO *= 109*
+    MLIL_FCMP_LE *= 109*
 
-    MLIL_FDIV *= 91*
+    MLIL_FCMP_LT *= 108*
 
-    MLIL_FLOAT_CONST *= 19*
+    MLIL_FCMP_NE *= 107*
 
-    MLIL_FLOAT_CONV *= 97*
+    MLIL_FCMP_O *= 112*
 
-    MLIL_FLOAT_TO_INT *= 95*
+    MLIL_FCMP_UO *= 113*
 
-    MLIL_FLOOR *= 99*
+    MLIL_FDIV *= 95*
 
-    MLIL_FMUL *= 90*
+    MLIL_FLOAT_CONST *= 21*
 
-    MLIL_FNEG *= 93*
+    MLIL_FLOAT_CONV *= 101*
+
+    MLIL_FLOAT_TO_INT *= 99*
+
+    MLIL_FLOOR *= 103*
+
+    MLIL_FMUL *= 94*
+
+    MLIL_FNEG *= 97*
 
     MLIL_FORCE_VER *= 5*
 
-    MLIL_FORCE_VER_SSA *= 121*
+    MLIL_FORCE_VER_SSA *= 125*
 
-    MLIL_FREE_VAR_SLOT *= 82*
+    MLIL_FREE_VAR_SLOT *= 86*
 
-    MLIL_FREE_VAR_SLOT_SSA *= 137*
+    MLIL_FREE_VAR_SLOT_SSA *= 145*
 
-    MLIL_FSQRT *= 92*
+    MLIL_FSQRT *= 96*
 
-    MLIL_FSUB *= 89*
+    MLIL_FSUB *= 93*
 
-    MLIL_FTRUNC *= 101*
+    MLIL_FTRUNC *= 105*
 
-    MLIL_GOTO *= 63*
+    MLIL_GOTO *= 67*
 
-    MLIL_IF *= 62*
+    MLIL_IF *= 66*
 
-    MLIL_IMPORT *= 20*
+    MLIL_IMPORT *= 22*
 
-    MLIL_INTRINSIC *= 81*
+    MLIL_INTRINSIC *= 85*
 
-    MLIL_INTRINSIC_SSA *= 135*
+    MLIL_INTRINSIC_SSA *= 143*
 
-    MLIL_INT_TO_FLOAT *= 96*
+    MLIL_INT_TO_FLOAT *= 100*
 
-    MLIL_JUMP *= 51*
+    MLIL_JUMP *= 53*
 
-    MLIL_JUMP_TO *= 52*
+    MLIL_JUMP_TO *= 54*
 
     MLIL_LOAD *= 6*
 
-    MLIL_LOAD_SSA *= 131*
+    MLIL_LOAD_SSA *= 139*
 
     MLIL_LOAD_STRUCT *= 7*
 
-    MLIL_LOAD_STRUCT_SSA *= 132*
+    MLIL_LOAD_STRUCT_SSA *= 140*
 
-    MLIL_LOW_PART *= 50*
+    MLIL_LOW_PART *= 52*
 
-    MLIL_LSL *= 28*
+    MLIL_LSL *= 30*
 
-    MLIL_LSR *= 29*
+    MLIL_LSR *= 31*
 
-    MLIL_MEMORY_INTRINSIC_OUTPUT_SSA *= 130*
+    MLIL_MAXS *= 156*
 
-    MLIL_MEMORY_INTRINSIC_SSA *= 136*
+    MLIL_MAXU *= 158*
 
-    MLIL_MEM_PHI *= 139*
+    MLIL_MEMORY_INTRINSIC_OUTPUT_SSA *= 138*
 
-    MLIL_MODS *= 44*
+    MLIL_MEMORY_INTRINSIC_SSA *= 144*
 
-    MLIL_MODS_DP *= 45*
+    MLIL_MEM_PHI *= 147*
 
-    MLIL_MODU *= 42*
+    MLIL_MINS *= 155*
 
-    MLIL_MODU_DP *= 43*
+    MLIL_MINU *= 157*
 
-    MLIL_MUL *= 35*
+    MLIL_MODS *= 46*
 
-    MLIL_MULS_DP *= 37*
+    MLIL_MODS_DP *= 47*
 
-    MLIL_MULU_DP *= 36*
+    MLIL_MODU *= 44*
 
-    MLIL_NEG *= 46*
+    MLIL_MODU_DP *= 45*
+
+    MLIL_MUL *= 37*
+
+    MLIL_MULS_DP *= 39*
+
+    MLIL_MULU_DP *= 38*
+
+    MLIL_NEG *= 48*
 
     MLIL_NOP *= 0*
 
-    MLIL_NORET *= 61*
+    MLIL_NORET *= 65*
 
-    MLIL_NOT *= 47*
+    MLIL_NOT *= 49*
 
-    MLIL_OR *= 26*
+    MLIL_OR *= 28*
 
-    MLIL_RET *= 60*
+    MLIL_PASS_BY_REF *= 15*
 
-    MLIL_RET_HINT *= 53*
+    MLIL_POPCNT *= 150*
 
-    MLIL_RLC *= 32*
+    MLIL_RBIT *= 153*
 
-    MLIL_ROL *= 31*
+    MLIL_RET *= 64*
 
-    MLIL_ROR *= 33*
+    MLIL_RETURN_BY_REF *= 16*
 
-    MLIL_ROUND_TO_INT *= 98*
+    MLIL_RET_HINT *= 55*
 
-    MLIL_RRC *= 34*
+    MLIL_RLC *= 34*
 
-    MLIL_SBB *= 24*
+    MLIL_ROL *= 33*
 
-    MLIL_SEPARATE_PARAM_LIST *= 58*
+    MLIL_ROR *= 35*
+
+    MLIL_ROUND_TO_INT *= 102*
+
+    MLIL_RRC *= 36*
+
+    MLIL_SBB *= 26*
+
+    MLIL_SEPARATE_PARAM_LIST *= 59*
 
     MLIL_SET_VAR *= 1*
 
-    MLIL_SET_VAR_ALIASED *= 113*
+    MLIL_SET_VAR_ALIASED *= 117*
 
-    MLIL_SET_VAR_ALIASED_FIELD *= 114*
+    MLIL_SET_VAR_ALIASED_FIELD *= 118*
 
     MLIL_SET_VAR_FIELD *= 2*
 
     MLIL_SET_VAR_SPLIT *= 3*
 
-    MLIL_SET_VAR_SPLIT_SSA *= 112*
+    MLIL_SET_VAR_SPLIT_SSA *= 116*
 
-    MLIL_SET_VAR_SSA *= 110*
+    MLIL_SET_VAR_SSA *= 114*
 
-    MLIL_SET_VAR_SSA_FIELD *= 111*
+    MLIL_SET_VAR_SSA_FIELD *= 115*
 
-    MLIL_SHARED_PARAM_SLOT *= 59*
+    MLIL_SHARED_PARAM_SLOT *= 60*
 
     MLIL_STORE *= 8*
 
-    MLIL_STORE_SSA *= 133*
+    MLIL_STORE_OUTPUT *= 63*
+
+    MLIL_STORE_SSA *= 141*
 
     MLIL_STORE_STRUCT *= 9*
 
-    MLIL_STORE_STRUCT_SSA *= 134*
+    MLIL_STORE_STRUCT_SSA *= 142*
 
-    MLIL_SUB *= 23*
+    MLIL_SUB *= 25*
 
-    MLIL_SX *= 48*
+    MLIL_SX *= 50*
 
-    MLIL_SYSCALL *= 77*
+    MLIL_SYSCALL *= 81*
 
-    MLIL_SYSCALL_SSA *= 124*
+    MLIL_SYSCALL_SSA *= 128*
 
-    MLIL_SYSCALL_UNTYPED *= 78*
+    MLIL_SYSCALL_UNTYPED *= 82*
 
-    MLIL_SYSCALL_UNTYPED_SSA *= 125*
+    MLIL_SYSCALL_UNTYPED_SSA *= 129*
 
-    MLIL_TAILCALL *= 79*
+    MLIL_TAILCALL *= 83*
 
-    MLIL_TAILCALL_SSA *= 126*
+    MLIL_TAILCALL_SSA *= 130*
 
-    MLIL_TAILCALL_UNTYPED *= 80*
+    MLIL_TAILCALL_UNTYPED *= 84*
 
-    MLIL_TAILCALL_UNTYPED_SSA *= 127*
+    MLIL_TAILCALL_UNTYPED_SSA *= 131*
 
-    MLIL_TEST_BIT *= 74*
+    MLIL_TEST_BIT *= 78*
 
-    MLIL_TRAP *= 84*
+    MLIL_TRAP *= 88*
 
-    MLIL_UNDEF *= 85*
+    MLIL_UNDEF *= 89*
 
-    MLIL_UNIMPL *= 86*
+    MLIL_UNIMPL *= 90*
 
-    MLIL_UNIMPL_MEM *= 87*
+    MLIL_UNIMPL_MEM *= 91*
 
     MLIL_VAR *= 10*
 
-    MLIL_VAR_ALIASED *= 117*
+    MLIL_VAR_ALIASED *= 121*
 
-    MLIL_VAR_ALIASED_FIELD *= 118*
+    MLIL_VAR_ALIASED_FIELD *= 122*
 
     MLIL_VAR_FIELD *= 11*
 
-    MLIL_VAR_PHI *= 138*
+    MLIL_VAR_OUTPUT *= 61*
+
+    MLIL_VAR_OUTPUT_ALIASED *= 136*
+
+    MLIL_VAR_OUTPUT_ALIASED_FIELD *= 137*
+
+    MLIL_VAR_OUTPUT_FIELD *= 62*
+
+    MLIL_VAR_OUTPUT_SSA *= 134*
+
+    MLIL_VAR_OUTPUT_SSA_FIELD *= 135*
+
+    MLIL_VAR_PHI *= 146*
 
     MLIL_VAR_SPLIT *= 12*
 
-    MLIL_VAR_SPLIT_SSA *= 119*
+    MLIL_VAR_SPLIT_SSA *= 123*
 
-    MLIL_VAR_SSA *= 115*
+    MLIL_VAR_SSA *= 119*
 
-    MLIL_VAR_SSA_FIELD *= 116*
+    MLIL_VAR_SSA_FIELD *= 120*
 
-    MLIL_XOR *= 27*
+    MLIL_XOR *= 29*
 
-    MLIL_ZX *= 49*
+    MLIL_ZX *= 51*
 
 ## MemberAccess
 
@@ -2138,7 +2289,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     NoAccess *= 0*
 
@@ -2154,7 +2305,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FriendScope *= 4*
 
@@ -2172,7 +2323,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BinaryConflictDataType *= 2*
 
@@ -2186,7 +2337,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CancelButton *= 3*
 
@@ -2202,7 +2353,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     OKButtonSet *= 0*
 
@@ -2216,7 +2367,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ErrorIcon *= 3*
 
@@ -2226,13 +2377,27 @@
 
     WarningIcon *= 2*
 
+## MetadataStoreFlag
+
+*class* MetadataStoreFlag[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MetadataStoreFlag)
+:   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    MetadataStoreEphemeral *= 0*
+
+    MetadataStoreMarksAnalysisChanged *= 2*
+
+    MetadataStorePersistent *= 1*
+
 ## MetadataType
 
 *class* MetadataType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MetadataType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ArrayDataType *= 8*
 
@@ -2258,7 +2423,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     Changed *= 1*
 
@@ -2272,7 +2437,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ConstructorNameType *= 1*
 
@@ -2460,7 +2625,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ClassNamedTypeClass *= 2*
 
@@ -2480,7 +2645,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddOperatorPrecedence *= 11*
 
@@ -2528,7 +2693,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddressPluginCommand *= 1*
 
@@ -2554,19 +2719,45 @@
 
     RangePluginCommand *= 2*
 
-## PluginLoadOrder
+## PluginDependencyConflictStatus
 
-*class* PluginLoadOrder[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginLoadOrder)
+*class* PluginDependencyConflictStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginDependencyConflictStatus)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
-    EarlyPluginLoadOrder *= 0*
+    PluginDependencyProvenConflict *= 0*
 
-    LatePluginLoadOrder *= 2*
+    PluginDependencyUnknownCompatibility *= 1*
 
-    NormalPluginLoadOrder *= 1*
+## PluginDependencyDecision
+
+*class* PluginDependencyDecision[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginDependencyDecision)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    PluginDependencyDisable *= 1*
+
+    PluginDependencyLoadAnyway *= 2*
+
+    PluginDependencyReinstall *= 0*
+
+## PluginLoadPhase
+
+*class* PluginLoadPhase[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginLoadPhase)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    NativePluginLoadPhase *= 0*
+
+    ScriptPluginLoadPhase *= 2*
+
+    ScriptingProviderLoadPhase *= 1*
 
 ## PluginLoadStatus
 
@@ -2574,7 +2765,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     LoadFailedStatus *= 2*
 
@@ -2588,7 +2779,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CommunityPluginOrigin *= 1*
 
@@ -2602,7 +2793,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BeingDeletedPluginStatus *= 2048*
 
@@ -2632,7 +2823,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ArchitecturePluginType *= 2*
 
@@ -2652,7 +2843,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AbsolutePointerBaseType *= 0*
 
@@ -2668,7 +2859,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     LvalueSuffix *= 4*
 
@@ -2686,7 +2877,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     NoReference *= 3*
 
@@ -2702,7 +2893,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ConstantDataAggregateValue *= 32771*
 
@@ -2722,21 +2913,25 @@
 
     ImportedAddressValue *= 7*
 
-    InSetOfValues *= 11*
+    InSetOfValues *= 13*
 
-    LookupTableValue *= 10*
+    LookupTableValue *= 12*
 
-    NotInSetOfValues *= 12*
+    NotInSetOfValues *= 14*
+
+    ParameterPointerValue *= 9*
+
+    ResultPointerValue *= 8*
 
     ReturnAddressValue *= 6*
 
-    SignedRangeValue *= 8*
+    SignedRangeValue *= 10*
 
     StackFrameOffset *= 5*
 
     UndeterminedValue *= 0*
 
-    UnsignedRangeValue *= 9*
+    UnsignedRangeValue *= 11*
 
 ## RelocationType
 
@@ -2744,7 +2939,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ELFCopyRelocationType *= 1*
 
@@ -2764,7 +2959,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BinaryViewAnalysisFileType *= 1*
 
@@ -2780,7 +2975,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlwaysEnabledRenderLayerDefaultEnableState *= 2*
 
@@ -2794,7 +2989,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     FlowGraphReportType *= 3*
 
@@ -2810,7 +3005,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     PurgeOriginalFilenamePath *= 2*
 
@@ -2824,7 +3019,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BlockScopeType *= 2*
 
@@ -2842,7 +3037,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     IncompleteScriptInput *= 1*
 
@@ -2858,7 +3053,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     NotReadyForInput *= 0*
 
@@ -2872,7 +3067,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DefaultSectionSemantics *= 0*
 
@@ -2890,7 +3085,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     SegmentContainsCode *= 16*
 
@@ -2912,7 +3107,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     SettingsAutoScope *= 1*
 
@@ -2926,13 +3121,67 @@
 
     SettingsUserScope *= 4*
 
+## SimilarityAnnotationType
+
+*class* SimilarityAnnotationType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityAnnotationType)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    SimilarityAnnotationAdded *= 0*
+
+    SimilarityAnnotationChanged *= 2*
+
+    SimilarityAnnotationRemoved *= 1*
+
+## SimilarityApplyStatus
+
+*class* SimilarityApplyStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityApplyStatus)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    SimilarityApplyEntityNotFound *= 2*
+
+    SimilarityApplyFailed *= 4*
+
+    SimilarityApplyNodeInactive *= 1*
+
+    SimilarityApplySuccess *= 0*
+
+    SimilarityApplyUnsupported *= 3*
+
+## SimilarityEntityType
+
+*class* SimilarityEntityType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityEntityType)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    SimilarityEntityFunction *= 0*
+
+## SimilarityViewType
+
+*class* SimilarityViewType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityViewType)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    SimilarityViewFlowGraph *= 0*
+
+    SimilarityViewLinear *= 1*
+
 ## StringType
 
 *class* StringType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#StringType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AsciiString *= 0*
 
@@ -2948,7 +3197,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ClassStructureType *= 0*
 
@@ -2962,7 +3211,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AllowSwitchRecovery *= 2*
 
@@ -2976,7 +3225,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     GlobalBinding *= 2*
 
@@ -2992,7 +3241,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DataSymbolResult *= 1*
 
@@ -3006,7 +3255,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddressOfDataSymbols *= 1*
 
@@ -3020,7 +3269,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DataSymbol *= 3*
 
@@ -3046,7 +3295,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CanPullSyncStatus *= 4*
 
@@ -3068,7 +3317,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AddressTagReference *= 0*
 
@@ -3082,7 +3331,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BookmarksTagType *= 2*
 
@@ -3096,7 +3345,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ActivePaneBackgroundColor *= 96*
 
@@ -3358,7 +3607,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BackticksTokenEscapingType *= 1*
 
@@ -3374,7 +3623,7 @@
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     TransformNoCapabilities *= 0*
 
@@ -3388,7 +3637,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     TransformFailure *= 2*
 
@@ -3404,7 +3653,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     TransformSessionModeDisabled *= 0*
 
@@ -3418,7 +3667,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BinaryCodecTransform *= 0*
 
@@ -3444,7 +3693,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ArrayTypeClass *= 7*
 
@@ -3453,6 +3702,8 @@
     EnumerationTypeClass *= 5*
 
     FloatTypeClass *= 3*
+
+    FragmentTypeClass *= 13*
 
     FunctionTypeClass *= 8*
 
@@ -3478,7 +3729,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AnalysisAutoTypeContainerType *= 1*
 
@@ -3504,7 +3755,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     CollapsedPaddingLineType *= 9*
 
@@ -3534,7 +3785,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     ErrorSeverity *= 4*
 
@@ -3554,7 +3805,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     BuiltinMacros *= 1*
 
@@ -3566,7 +3817,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     DirectTypeReferenceType *= 0*
 
@@ -3580,7 +3831,7 @@
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
 
     AlreadyUpToDate *= 2*
 
@@ -3590,13 +3841,33 @@
 
     UpdateSuccess *= 1*
 
+## ValueLocationSource
+
+*class* ValueLocationSource[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ValueLocationSource)
+:   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
+    v3.14)")
+
+    __new__(*value*)
+
+    CustomLocationSource *= 3*
+
+    DefaultLocationSource *= 0*
+
+    PassByReferenceLocationSource *= 2*
+
+    PassByValueLocationSource *= 1*
+
 ## VariableSourceType
 
 *class* VariableSourceType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#VariableSourceType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
     v3.14)")
 
-    An enumeration.
+    __new__(*value*)
+
+    CompositeParameterSourceType *= 4*
+
+    CompositeReturnValueSourceType *= 3*
 
     FlagVariableSourceType *= 2*
 

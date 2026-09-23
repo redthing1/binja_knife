@@ -20,25 +20,20 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    BasicTypeParserResult(types: Dict[ForwardRef(‘types.QualifiedName’),
-    ForwardRef(‘types.Type’)], variables: Dict[ForwardRef(‘types.QualifiedName’),
-    ForwardRef(‘types.Type’)], functions: Dict[ForwardRef(‘types.QualifiedName’),
-    ForwardRef(‘types.Type’)])
-
     __init__(*types: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*, *variables: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*, *functions: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **types** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in
               Python v3.14)")*[*[*QualifiedName*](types.md#binaryninja.types.QualifiedName
               "binaryninja.types.QualifiedName")*,* [*Type*](types.md#binaryninja.types.Type
-              "binaryninja.types.Type")*]*) –
+              "binaryninja.types.Type")*]*)
             - **variables** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in
               Python v3.14)")*[*[*QualifiedName*](types.md#binaryninja.types.QualifiedName
               "binaryninja.types.QualifiedName")*,* [*Type*](types.md#binaryninja.types.Type
-              "binaryninja.types.Type")*]*) –
+              "binaryninja.types.Type")*]*)
             - **functions** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in
               Python v3.14)")*[*[*QualifiedName*](types.md#binaryninja.types.QualifiedName
               "binaryninja.types.QualifiedName")*,* [*Type*](types.md#binaryninja.types.Type
-              "binaryninja.types.Type")*]*) –
+              "binaryninja.types.Type")*]*)
 
         Return type:
         :   *None*
@@ -167,14 +162,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ParsedType(name: ‘types.QualifiedNameType’, type: ‘types.Type’, is_user: bool)
-
     __init__(*name: types.QualifiedNameType*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *is_user: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
-        :   - **name** (*types.QualifiedNameType*) –
-            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+        :   - **name** (*types.QualifiedNameType*)
+            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **is_user** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -191,14 +184,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    QualifiedNameTypeAndId(name: ‘types.QualifiedNameType’, id: str, type: ‘types.Type’)
-
     __init__(*name: types.QualifiedNameType*, *id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
-        :   - **name** (*types.QualifiedNameType*) –
+        :   - **name** (*types.QualifiedNameType*)
             - **id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
-            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              v3.14)"))
+            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
 
         Return type:
         :   *None*
@@ -334,22 +325,19 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    TypeParserError(severity: binaryninja.enums.TypeParserErrorSeverity, message: str,
-    file_name: str, line: int, column: int)
-
     __init__(*severity: [TypeParserErrorSeverity](enums.md#binaryninja.enums.TypeParserErrorSeverity "binaryninja.enums.TypeParserErrorSeverity")*, *message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *file_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *line: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *column: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **severity**
               ([*TypeParserErrorSeverity*](enums.md#binaryninja.enums.TypeParserErrorSeverity
-              "binaryninja.enums.TypeParserErrorSeverity")) –
+              "binaryninja.enums.TypeParserErrorSeverity"))
             - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **file_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **line** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **column** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -370,21 +358,17 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    TypeParserResult(types: List[binaryninja.typeparser.ParsedType], variables:
-    List[binaryninja.typeparser.ParsedType], functions:
-    List[binaryninja.typeparser.ParsedType])
-
     __init__(*types: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ParsedType](#binaryninja.typeparser.ParsedType "binaryninja.typeparser.ParsedType")]*, *variables: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ParsedType](#binaryninja.typeparser.ParsedType "binaryninja.typeparser.ParsedType")]*, *functions: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ParsedType](#binaryninja.typeparser.ParsedType "binaryninja.typeparser.ParsedType")]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **types** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*ParsedType*](#binaryninja.typeparser.ParsedType
-              "binaryninja.typeparser.ParsedType")*]*) –
+              "binaryninja.typeparser.ParsedType")*]*)
             - **variables** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*ParsedType*](#binaryninja.typeparser.ParsedType
-              "binaryninja.typeparser.ParsedType")*]*) –
+              "binaryninja.typeparser.ParsedType")*]*)
             - **functions** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*ParsedType*](#binaryninja.typeparser.ParsedType
-              "binaryninja.typeparser.ParsedType")*]*) –
+              "binaryninja.typeparser.ParsedType")*]*)
 
         Return type:
         :   *None*

@@ -206,7 +206,7 @@
               Python v3.14)")*]* *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*QualifiedName*](types.md#binaryninja.types.QualifiedName
               "binaryninja.types.QualifiedName")*,* [*Type*](types.md#binaryninja.types.Type
-              "binaryninja.types.Type")*]**]*) –
+              "binaryninja.types.Type")*]**]*)
 
         Returns:
         :   All the types in a string

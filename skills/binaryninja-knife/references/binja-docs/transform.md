@@ -216,7 +216,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     create_child(*data: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")*, *filename: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *result: [TransformResult](enums.md#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult") = TransformResult.TransformSuccess*, *message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *filename_is_descriptor: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.create_child)
     :   Create a new child context with the given data, filename, result status, and message
@@ -245,7 +245,7 @@
 
         Parameters:
         :   **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*TransformContext*](#binaryninja.transform.TransformContext
@@ -256,7 +256,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -627,11 +627,11 @@
     :   Parameters:
         :   - **filename_or_view** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)") *|* [*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **options** ([*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping
               "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)")*,* [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
-              Python v3.14)")*]*) –
+              Python v3.14)")*]*)
 
     process() → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.process)
     :   Process the transform session from the root context.
@@ -668,7 +668,7 @@
 
         Parameters:
         :   **context** ([*TransformContext*](#binaryninja.transform.TransformContext
-            "binaryninja.transform.TransformContext")) –
+            "binaryninja.transform.TransformContext"))
 
         In **Interactive Mode**, this returns `False` when user selection is needed at the
         current stage. In **Full Mode**, this recursively processes all child contexts and

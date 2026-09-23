@@ -5,7 +5,7 @@
 | [`binaryninja.function.AdvancedFunctionAnalysisDataRequestor`](#binaryninja.function.AdvancedFunctionAnalysisDataRequestor "binaryninja.function.AdvancedFunctionAnalysisDataRequestor") |  |
 | [`binaryninja.function.ArchAndAddr`](#binaryninja.function.ArchAndAddr "binaryninja.function.ArchAndAddr") |  |
 | [`binaryninja.function.BasicBlockList`](#binaryninja.function.BasicBlockList "binaryninja.function.BasicBlockList") |  |
-| [`binaryninja.function.DisassemblySettings`](#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") |  |
+| [`binaryninja.function.DisassemblySettings`](#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | `class DisassemblySettings` contains the options used when rendering disassembly or IL text. |
 | [`binaryninja.function.DisassemblyTextLine`](#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine") |  |
 | [`binaryninja.function.DisassemblyTextLineTypeInfo`](#binaryninja.function.DisassemblyTextLineTypeInfo "binaryninja.function.DisassemblyTextLineTypeInfo") |  |
 | [`binaryninja.function.DisassemblyTextRenderer`](#binaryninja.function.DisassemblyTextRenderer "binaryninja.function.DisassemblyTextRenderer") |  |
@@ -27,7 +27,7 @@
     __init__(*func: [Function](#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#AdvancedFunctionAnalysisDataRequestor.__init__)
     :   Parameters:
         :   **func** ([*Function*](#binaryninja.function.Function "binaryninja.function.Function")
-            *|* *None*) –
+            *|* *None*)
 
     close() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#AdvancedFunctionAnalysisDataRequestor.close)
     :   Return type:
@@ -41,14 +41,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ArchAndAddr(arch: ‘architecture.Architecture’, addr: int)
-
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -72,7 +70,7 @@
             [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
             "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
             [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-            "binaryninja.highlevelil.HighLevelILFunction")) –
+            "binaryninja.highlevelil.HighLevelILFunction"))
 
 ## DisassemblySettings
 
@@ -80,9 +78,22 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
+    `class DisassemblySettings` contains the options used when rendering disassembly or IL
+    text.
+
+    Note
+
+    Not every [`DisassemblyOption`](enums.md#binaryninja.enums.DisassemblyOption
+    "binaryninja.enums.DisassemblyOption") applies to every representation. `IndentHLILBody`
+    and `ShowAddress` are applied by linear view, not by
+    [`get_lines`](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction.get_lines
+    "binaryninja.highlevelil.HighLevelILInstruction.get_lines"); options acting on nested
+    bodies, such as `ShowCollapseIndicators`, only apply to HLIL in AST form. See [AST and
+    Non-AST Forms](https://docs.binary.ninja/dev/bnil-hlil.html#ast-and-non-ast-forms).
+
     __init__(*handle: LP_BNDisassemblySettings | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblySettings.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNDisassemblySettings* *|* *None*) –
+        :   **handle** (*LP_BNDisassemblySettings* *|* *None*)
 
     *static* default_graph_settings() → [DisassemblySettings](#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblySettings.default_graph_settings)
     :   Return type:
@@ -102,7 +113,7 @@
     is_option_set(*option: [DisassemblyOption](enums.md#binaryninja.enums.DisassemblyOption "binaryninja.enums.DisassemblyOption")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblySettings.is_option_set)
     :   Parameters:
         :   **option** ([*DisassemblyOption*](enums.md#binaryninja.enums.DisassemblyOption
-            "binaryninja.enums.DisassemblyOption")) –
+            "binaryninja.enums.DisassemblyOption"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -110,9 +121,9 @@
     set_option(*option: [DisassemblyOption](enums.md#binaryninja.enums.DisassemblyOption "binaryninja.enums.DisassemblyOption")*, *state: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblySettings.set_option)
     :   Parameters:
         :   - **option** ([*DisassemblyOption*](enums.md#binaryninja.enums.DisassemblyOption
-              "binaryninja.enums.DisassemblyOption")) –
+              "binaryninja.enums.DisassemblyOption"))
             - **state** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -127,39 +138,31 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    DisassemblyTextLine(tokens: List[ForwardRef(‘InstructionTextToken’)], address:
-    Optional[int] = None, il_instr: Union[ForwardRef(‘lowlevelil.LowLevelILInstruction’),
-    ForwardRef(‘mediumlevelil.MediumLevelILInstruction’),
-    ForwardRef(‘highlevelil.HighLevelILInstruction’), NoneType] = None, color:
-    Union[ForwardRef(‘_highlight.HighlightColor’), binaryninja.enums.HighlightStandardColor,
-    NoneType] = None, tags: Optional[List[ForwardRef(‘binaryview.Tag’)]] = None, type_info:
-    Optional[binaryninja.function.DisassemblyTextLineTypeInfo] = None)
-
     __init__(*tokens: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *il_instr: [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [MediumLevelILInstruction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction "binaryninja.mediumlevelil.MediumLevelILInstruction") | [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor") | [HighlightStandardColor](enums.md#binaryninja.enums.HighlightStandardColor "binaryninja.enums.HighlightStandardColor") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *tags: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tag](binaryview.md#binaryninja.binaryview.Tag "binaryninja.binaryview.Tag")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *type_info: [DisassemblyTextLineTypeInfo](#binaryninja.function.DisassemblyTextLineTypeInfo "binaryninja.function.DisassemblyTextLineTypeInfo") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextLine.__init__)
     :   Parameters:
         :   - **tokens** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-              "binaryninja.architecture.InstructionTextToken")*]*) –
+              "binaryninja.architecture.InstructionTextToken")*]*)
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **il_instr**
               ([*LowLevelILInstruction*](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction
               "binaryninja.lowlevelil.LowLevelILInstruction") *|*
               [*MediumLevelILInstruction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction
               "binaryninja.mediumlevelil.MediumLevelILInstruction") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*) –
+              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*)
             - **color** ([*HighlightColor*](highlight.md#binaryninja.highlight.HighlightColor
               "binaryninja.highlight.HighlightColor") *|*
               [*HighlightStandardColor*](enums.md#binaryninja.enums.HighlightStandardColor
-              "binaryninja.enums.HighlightStandardColor") *|* *None*) –
+              "binaryninja.enums.HighlightStandardColor") *|* *None*)
             - **tags** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
               v3.14)")*[*[*Tag*](binaryview.md#binaryninja.binaryview.Tag
-              "binaryninja.binaryview.Tag")*]* *|* *None*) –
+              "binaryninja.binaryview.Tag")*]* *|* *None*)
             - **type_info**
               ([*DisassemblyTextLineTypeInfo*](#binaryninja.function.DisassemblyTextLineTypeInfo
-              "binaryninja.function.DisassemblyTextLineTypeInfo") *|* *None*) –
+              "binaryninja.function.DisassemblyTextLineTypeInfo") *|* *None*)
 
     address*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -185,17 +188,14 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    DisassemblyTextLineTypeInfo(parent_type: Optional[ForwardRef(‘types.Type’)],
-    field_index: int, offset: int)
-
     __init__(*parent_type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *field_index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **parent_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
-              *None*) –
+              *None*)
             - **field_index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -220,24 +220,24 @@
               [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
               "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
               [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction") *|* *None*) –
+              "binaryninja.highlevelil.HighLevelILFunction") *|* *None*)
             - **settings** ([*DisassemblySettings*](#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
-            - **handle** (*BNDisassemblySettings* *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
+            - **handle** (*BNDisassemblySettings* *|* *None*)
 
     add_integer_token(*tokens: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *int_token: [InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.add_integer_token)
     :   Parameters:
         :   - **tokens** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-              "binaryninja.architecture.InstructionTextToken")*]*) –
+              "binaryninja.architecture.InstructionTextToken")*]*)
             - **int_token**
               ([*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-              "binaryninja.architecture.InstructionTextToken")) –
+              "binaryninja.architecture.InstructionTextToken"))
             - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -247,10 +247,10 @@
         :   - **tokens** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-              "binaryninja.architecture.InstructionTextToken")*]*) –
+              "binaryninja.architecture.InstructionTextToken")*]*)
             - **ref**
               ([*StackVariableReference*](variable.md#binaryninja.variable.StackVariableReference
-              "binaryninja.variable.StackVariableReference")) –
+              "binaryninja.variable.StackVariableReference"))
 
         Return type:
         :   *None*
@@ -260,13 +260,13 @@
         :   - **tokens** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-              "binaryninja.architecture.InstructionTextToken")*]*) –
+              "binaryninja.architecture.InstructionTextToken")*]*)
             - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **operand** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -274,7 +274,7 @@
     get_disassembly_text(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Generator](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[DisassemblyTextLine](#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")], [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.get_disassembly_text)
     :   Parameters:
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*Generator*](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python
@@ -284,10 +284,26 @@
             [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")],
             *None*, *None*]
 
+    *static* get_display_string_for_integer(*binary_view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *display_type: [IntegerDisplayType](enums.md#binaryninja.enums.IntegerDisplayType "binaryninja.enums.IntegerDisplayType")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *input_width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *is_signed: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.get_display_string_for_integer)
+    :   Parameters:
+        :   - **binary_view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
+              "binaryninja.binaryview.BinaryView") *|* *None*)
+            - **display_type** ([*IntegerDisplayType*](enums.md#binaryninja.enums.IntegerDisplayType
+              "binaryninja.enums.IntegerDisplayType"))
+            - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **input_width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)"))
+            - **is_signed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
+              Python v3.14)"))
+
+        Return type:
+        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+
     get_instruction_annotations(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.get_instruction_annotations)
     :   Parameters:
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -297,7 +313,7 @@
     get_instruction_text(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Generator](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[DisassemblyTextLine](#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")], [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.get_instruction_text)
     :   Parameters:
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*Generator*](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python
@@ -311,7 +327,7 @@
     :   Parameters:
         :   **token**
             ([*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
-            "binaryninja.architecture.InstructionTextToken")) –
+            "binaryninja.architecture.InstructionTextToken"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -319,18 +335,18 @@
     post_process_lines(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *length: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *in_lines: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*, *indent_spaces: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.post_process_lines)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **length** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **in_lines** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
               Python v3.14)")*]* *|*
               [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
               v3.14)")*[*[*DisassemblyTextLine*](#binaryninja.function.DisassemblyTextLine
-              "binaryninja.function.DisassemblyTextLine")*]*) –
+              "binaryninja.function.DisassemblyTextLine")*]*)
             - **indent_spaces** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     reset_deduplicated_comments() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#DisassemblyTextRenderer.reset_deduplicated_comments)
     :   Return type:
@@ -340,17 +356,17 @@
     :   Parameters:
         :   - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*DisassemblyTextLine*](#binaryninja.function.DisassemblyTextLine
-              "binaryninja.function.DisassemblyTextLine")*]*) –
+              "binaryninja.function.DisassemblyTextLine")*]*)
             - **cur_line** ([*DisassemblyTextLine*](#binaryninja.function.DisassemblyTextLine
-              "binaryninja.function.DisassemblyTextLine")) –
+              "binaryninja.function.DisassemblyTextLine"))
             - **comment** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **has_auto_annotations** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **leading_spaces** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **indent_spaces** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*
@@ -378,8 +394,8 @@
     __init__(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: LP_BNFunction | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.__init__)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
-            - **handle** (*LP_BNFunction* *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
+            - **handle** (*LP_BNFunction* *|* *None*)
 
     add_guided_source_blocks(*addresses: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.add_guided_source_blocks)
     :   `add_guided_source_blocks` adds blocks to the guided source block list for this
@@ -395,7 +411,7 @@
               "binaryninja.architecture.Architecture")*,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]**]*)
               – List of (architecture, address) tuples to add
-            - **addresses** –
+            - **addresses**
 
         Return type:
         :   *None*
@@ -526,7 +542,6 @@
         :   **func_type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
             v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
             [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-            –
 
         Return type:
         :   *None*
@@ -534,11 +549,11 @@
     apply_imported_types(*sym: [CoreSymbol](types.md#binaryninja.types.CoreSymbol "binaryninja.types.CoreSymbol")*, *type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.apply_imported_types)
     :   Parameters:
         :   - **sym** ([*CoreSymbol*](types.md#binaryninja.types.CoreSymbol
-              "binaryninja.types.CoreSymbol")) –
+              "binaryninja.types.CoreSymbol"))
             - **type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
               [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")
-              *|* *None*) –
+              *|* *None*)
 
         Return type:
         :   *None*
@@ -573,9 +588,9 @@
     clear_forced_var_version(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*, *def_addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.clear_forced_var_version)
     :   Parameters:
         :   - **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")) –
+              "binaryninja.variable.Variable"))
             - **def_addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -589,7 +604,7 @@
             - **def_addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)")) – Address of the definition site of the variable
             - **after** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -600,13 +615,12 @@
     create_auto_stack_var(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *var_type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.create_auto_stack_var)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **var_type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
               [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-              –
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -614,15 +628,14 @@
     create_auto_var(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*, *var_type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *ignore_disjoint_uses: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.create_auto_var)
     :   Parameters:
         :   - **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")) –
+              "binaryninja.variable.Variable"))
             - **var_type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
               [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-              –
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **ignore_disjoint_uses** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
 
         Return type:
         :   *None*
@@ -630,9 +643,9 @@
     create_forced_var_version(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*, *def_addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.create_forced_var_version)
     :   Parameters:
         :   - **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")) –
+              "binaryninja.variable.Variable"))
             - **def_addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -691,13 +704,12 @@
     create_user_stack_var(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *var_type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.create_user_stack_var)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **var_type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
               [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-              –
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -705,15 +717,14 @@
     create_user_var(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*, *var_type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *ignore_disjoint_uses: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.create_user_var)
     :   Parameters:
         :   - **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")) –
+              "binaryninja.variable.Variable"))
             - **var_type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
               [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-              –
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **ignore_disjoint_uses** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
 
         Return type:
         :   *None*
@@ -721,7 +732,7 @@
     delete_auto_stack_var(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.delete_auto_stack_var)
     :   Parameters:
         :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   *None*
@@ -729,7 +740,7 @@
     delete_user_stack_var(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.delete_user_stack_var)
     :   Parameters:
         :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   *None*
@@ -737,7 +748,7 @@
     delete_user_var(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.delete_user_var)
     :   Parameters:
         :   **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-            "binaryninja.variable.Variable")) –
+            "binaryninja.variable.Variable"))
 
         Return type:
         :   *None*
@@ -797,9 +808,9 @@
     get_block_annotations(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_block_annotations)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -807,28 +818,39 @@
             v3.14)")[[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
             "binaryninja.architecture.InstructionTextToken")]]
 
+    get_block_sort_hint(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_block_sort_hint)
+    :   Parameters:
+        :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture") *|* *None*)
+
+        Return type:
+        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") |
+            *None*
+
     get_call_reg_stack_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterStackName, [RegisterStackAdjustmentWithConfidence](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence "binaryninja.types.RegisterStackAdjustmentWithConfidence")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_call_reg_stack_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python
-            v3.14)")[RegisterStackName,
+            v3.14)")[*RegisterStackName*,
             [*RegisterStackAdjustmentWithConfidence*](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence
             "binaryninja.types.RegisterStackAdjustmentWithConfidence")]
 
     get_call_reg_stack_adjustment_for_reg_stack(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *reg_stack: RegisterStackName | [ILRegisterStack](lowlevelil.md#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack") | RegisterStackIndex*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [RegisterStackAdjustmentWithConfidence](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence "binaryninja.types.RegisterStackAdjustmentWithConfidence")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_call_reg_stack_adjustment_for_reg_stack)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **reg_stack** (*RegisterStackName* *|*
               [*ILRegisterStack*](lowlevelil.md#binaryninja.lowlevelil.ILRegisterStack
-              "binaryninja.lowlevelil.ILRegisterStack") *|* *RegisterStackIndex*) –
+              "binaryninja.lowlevelil.ILRegisterStack") *|* *RegisterStackIndex*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*RegisterStackAdjustmentWithConfidence*](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence
@@ -837,9 +859,9 @@
     get_call_stack_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [OffsetWithConfidence](types.md#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_call_stack_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*OffsetWithConfidence*](types.md#binaryninja.types.OffsetWithConfidence
@@ -848,9 +870,9 @@
     get_call_type_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_call_type_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") | *None*
@@ -881,7 +903,7 @@
     get_comment_at(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_comment_at)
     :   Parameters:
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -889,11 +911,11 @@
     get_constant_data(*state: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_constant_data)
     :   Parameters:
         :   - **state** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
@@ -902,11 +924,11 @@
     get_constant_data_and_builtin(*state: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [BuiltinType](enums.md#binaryninja.enums.BuiltinType "binaryninja.enums.BuiltinType")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_constant_data_and_builtin)
     :   Parameters:
         :   - **state** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
@@ -917,9 +939,9 @@
     get_constants_referenced_by(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ConstantReference](variable.md#binaryninja.variable.ConstantReference "binaryninja.variable.ConstantReference")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_constants_referenced_by)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -929,9 +951,9 @@
     get_constants_referenced_by_address_if_available(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ConstantReference](variable.md#binaryninja.variable.ConstantReference "binaryninja.variable.ConstantReference")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_constants_referenced_by_address_if_available)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -943,7 +965,7 @@
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
             v3.14)") *|*
             [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-            "binaryninja.highlevelil.HighLevelILInstruction")) –
+            "binaryninja.highlevelil.HighLevelILInstruction"))
 
         Return type:
         :   [*EarlyReturn*](enums.md#binaryninja.enums.EarlyReturn "binaryninja.enums.EarlyReturn")
@@ -953,26 +975,26 @@
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
             v3.14)") *|*
             [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-            "binaryninja.highlevelil.HighLevelILInstruction")) –
+            "binaryninja.highlevelil.HighLevelILInstruction"))
 
         Return type:
         :   [*ExprFolding*](enums.md#binaryninja.enums.ExprFolding "binaryninja.enums.ExprFolding")
 
     get_flags_read_by_lifted_il_instruction(*i: InstructionIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[FlagName][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_flags_read_by_lifted_il_instruction)
     :   Parameters:
-        :   **i** (*InstructionIndex*) –
+        :   **i** (*InstructionIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[FlagName]
+            v3.14)")[*FlagName*]
 
     get_flags_written_by_lifted_il_instruction(*i: InstructionIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[FlagName][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_flags_written_by_lifted_il_instruction)
     :   Parameters:
-        :   **i** (*InstructionIndex*) –
+        :   **i** (*InstructionIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[FlagName]
+            v3.14)")[*FlagName*]
 
     get_function_tags(*auto: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *tag_type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tag](binaryview.md#binaryninja.binaryview.Tag "binaryninja.binaryview.Tag")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_function_tags)
     :   `get_function_tags` gets a list of function Tags for the function.
@@ -1047,9 +1069,9 @@
     get_indirect_branches_at(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[IndirectBranchInfo](variable.md#binaryninja.variable.IndirectBranchInfo "binaryninja.variable.IndirectBranchInfo")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_indirect_branches_at)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1066,9 +1088,9 @@
 
         Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*HighlightColor*](highlight.md#binaryninja.highlight.HighlightColor
@@ -1077,9 +1099,9 @@
     get_instruction_containing_address(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_instruction_containing_address)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") |
@@ -1158,9 +1180,9 @@
     get_lifted_il_at(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_lifted_il_at)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*LowLevelILInstruction*](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction
@@ -1168,19 +1190,19 @@
 
     get_lifted_il_flag_definitions_for_use(*i: InstructionIndex*, *flag: FlagName | [ILFlag](lowlevelil.md#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag") | FlagIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[InstructionIndex][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_lifted_il_flag_definitions_for_use)
     :   Parameters:
-        :   - **i** (*InstructionIndex*) –
+        :   - **i** (*InstructionIndex*)
             - **flag** (*FlagName* *|* [*ILFlag*](lowlevelil.md#binaryninja.lowlevelil.ILFlag
-              "binaryninja.lowlevelil.ILFlag") *|* *FlagIndex*) –
+              "binaryninja.lowlevelil.ILFlag") *|* *FlagIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[InstructionIndex]
+            v3.14)")[*InstructionIndex*]
 
     get_lifted_il_flag_uses_for_definition(*i: InstructionIndex*, *flag: FlagName | [ILFlag](lowlevelil.md#binaryninja.lowlevelil.ILFlag "binaryninja.lowlevelil.ILFlag") | FlagIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_lifted_il_flag_uses_for_definition)
     :   Parameters:
-        :   - **i** (*InstructionIndex*) –
+        :   - **i** (*InstructionIndex*)
             - **flag** (*FlagName* *|* [*ILFlag*](lowlevelil.md#binaryninja.lowlevelil.ILFlag
-              "binaryninja.lowlevelil.ILFlag") *|* *FlagIndex*) –
+              "binaryninja.lowlevelil.ILFlag") *|* *FlagIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1281,9 +1303,9 @@
     get_low_level_il_exits_at(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_low_level_il_exits_at)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1399,13 +1421,13 @@
     get_parameter_at(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *func_type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *i: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_parameter_at)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **func_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
-              *None*) –
+              *None*)
             - **i** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -1413,10 +1435,10 @@
 
     get_parameter_at_low_level_il_instruction(*instr: InstructionIndex*, *func_type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *i: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_parameter_at_low_level_il_instruction)
     :   Parameters:
-        :   - **instr** (*InstructionIndex*) –
-            - **func_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+        :   - **instr** (*InstructionIndex*)
+            - **func_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **i** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -1472,7 +1494,7 @@
     :   Parameters:
         :   **reg** (*RegisterName* *|*
             [*ILRegister*](lowlevelil.md#binaryninja.lowlevelil.ILRegister
-            "binaryninja.lowlevelil.ILRegister") *|* *RegisterIndex*) –
+            "binaryninja.lowlevelil.ILRegister") *|* *RegisterIndex*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -1481,35 +1503,35 @@
     get_regs_read_by(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[RegisterName][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_regs_read_by)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[RegisterName]
+            v3.14)")[*RegisterName*]
 
     get_regs_written_by(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[RegisterName][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_regs_written_by)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[RegisterName]
+            v3.14)")[*RegisterName*]
 
     get_stack_contents_after(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_stack_contents_after)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -1548,13 +1570,13 @@
 
         Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
@@ -1563,11 +1585,11 @@
     get_stack_var_at_frame_offset(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_stack_var_at_frame_offset)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*Variable*](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")
@@ -1576,11 +1598,11 @@
     get_stack_var_at_frame_offset_after_instruction(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_stack_var_at_frame_offset_after_instruction)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*Variable*](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")
@@ -1589,9 +1611,9 @@
     get_stack_vars_referenced_by(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[StackVariableReference](variable.md#binaryninja.variable.StackVariableReference "binaryninja.variable.StackVariableReference")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_stack_vars_referenced_by)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1601,9 +1623,9 @@
     get_stack_vars_referenced_by_address_if_available(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[StackVariableReference](variable.md#binaryninja.variable.StackVariableReference "binaryninja.variable.StackVariableReference")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_stack_vars_referenced_by_address_if_available)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1615,7 +1637,7 @@
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
             v3.14)") *|*
             [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-            "binaryninja.highlevelil.HighLevelILInstruction")) –
+            "binaryninja.highlevelil.HighLevelILInstruction"))
 
         Return type:
         :   [*SwitchRecovery*](enums.md#binaryninja.enums.SwitchRecovery
@@ -1630,7 +1652,7 @@
             - **auto** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)")) – If None, gets all tags, if True, gets auto tags, if False, gets user tags
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*list*](https://docs.python.org/3/library/stdtypes.html#list "(in Python
@@ -1665,7 +1687,7 @@
     get_type_tokens(*settings: [DisassemblySettings](#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.get_type_tokens)
     :   Parameters:
         :   **settings** ([*DisassemblySettings*](#binaryninja.function.DisassemblySettings
-            "binaryninja.function.DisassemblySettings") *|* *None*) –
+            "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -1677,7 +1699,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*Variable*](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")
@@ -1696,9 +1718,9 @@
     is_call_instruction(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.is_call_instruction)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -1708,7 +1730,7 @@
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
             v3.14)") *|*
             [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-            "binaryninja.highlevelil.HighLevelILInstruction")) –
+            "binaryninja.highlevelil.HighLevelILInstruction"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -1734,9 +1756,9 @@
         Parameters:
         :   - **instr**
               ([*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **discriminator** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -1751,7 +1773,7 @@
     is_var_user_defined(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.is_var_user_defined)
     :   Parameters:
         :   **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-            "binaryninja.variable.Variable")) –
+            "binaryninja.variable.Variable"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -1759,7 +1781,7 @@
     language_representation(*language: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [LanguageRepresentationFunction](languagerepresentation.md#binaryninja.languagerepresentation.LanguageRepresentationFunction "binaryninja.languagerepresentation.LanguageRepresentationFunction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.language_representation)
     :   Parameters:
         :   **language** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*LanguageRepresentationFunction*](languagerepresentation.md#binaryninja.languagerepresentation.LanguageRepresentationFunction
@@ -1768,7 +1790,7 @@
     language_representation_if_available(*language: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [LanguageRepresentationFunction](languagerepresentation.md#binaryninja.languagerepresentation.LanguageRepresentationFunction "binaryninja.languagerepresentation.LanguageRepresentationFunction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.language_representation_if_available)
     :   Parameters:
         :   **language** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*LanguageRepresentationFunction*](languagerepresentation.md#binaryninja.languagerepresentation.LanguageRepresentationFunction
@@ -1846,7 +1868,7 @@
 
         Parameters:
         :   **update_type** ([*FunctionUpdateType*](enums.md#binaryninja.enums.FunctionUpdateType
-            "binaryninja.enums.FunctionUpdateType")) –
+            "binaryninja.enums.FunctionUpdateType"))
 
     release_advanced_analysis_data() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.release_advanced_analysis_data)
     :   Return type:
@@ -1918,7 +1940,7 @@
               "binaryninja.architecture.Architecture")*,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]**]*)
               – List of (architecture, address) tuples to remove
-            - **addresses** –
+            - **addresses**
 
         Return type:
         :   *None*
@@ -2079,12 +2101,12 @@
     set_auto_call_reg_stack_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *adjust: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[RegisterStackName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_call_reg_stack_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **adjust** ([*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping
               "(in Python v3.14)")*[**RegisterStackName**,*
-              [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]*) –
+              [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2092,12 +2114,12 @@
     set_auto_call_reg_stack_adjustment_for_reg_stack(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *reg_stack: RegisterStackName | [ILRegisterStack](lowlevelil.md#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack") | RegisterStackIndex*, *adjust*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_call_reg_stack_adjustment_for_reg_stack)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **reg_stack** (*RegisterStackName* *|*
               [*ILRegisterStack*](lowlevelil.md#binaryninja.lowlevelil.ILRegisterStack
-              "binaryninja.lowlevelil.ILRegisterStack") *|* *RegisterStackIndex*) –
+              "binaryninja.lowlevelil.ILRegisterStack") *|* *RegisterStackIndex*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2105,12 +2127,12 @@
     set_auto_call_stack_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](types.md#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_call_stack_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **adjust** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|* [*OffsetWithConfidence*](types.md#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")) –
+              "binaryninja.types.OffsetWithConfidence"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2119,7 +2141,7 @@
     :   Parameters:
         :   **value**
             ([*CallingConvention*](callingconvention.md#binaryninja.callingconvention.CallingConvention
-            "binaryninja.callingconvention.CallingConvention")) –
+            "binaryninja.callingconvention.CallingConvention"))
 
         Return type:
         :   *None*
@@ -2128,7 +2150,7 @@
     :   Parameters:
         :   **value** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
             v3.14)") *|* [*BoolWithConfidence*](types.md#binaryninja.types.BoolWithConfidence
-            "binaryninja.types.BoolWithConfidence")) –
+            "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   *None*
@@ -2138,7 +2160,7 @@
         :   **value** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
             Python v3.14)")*[**RegisterName* *|*
             [*ILRegister*](lowlevelil.md#binaryninja.lowlevelil.ILRegister
-            "binaryninja.lowlevelil.ILRegister") *|* *RegisterIndex**]*) –
+            "binaryninja.lowlevelil.ILRegister") *|* *RegisterIndex**]*)
 
         Return type:
         :   *None*
@@ -2147,7 +2169,7 @@
     :   Parameters:
         :   **value** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
             v3.14)") *|* [*BoolWithConfidence*](types.md#binaryninja.types.BoolWithConfidence
-            "binaryninja.types.BoolWithConfidence")) –
+            "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   *None*
@@ -2155,16 +2177,15 @@
     set_auto_indirect_branches(*source: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *branches: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]]*, *source_arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_indirect_branches)
     :   Parameters:
         :   - **source** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **branches** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
               "(in Python
               v3.14)")*[*[*Architecture*](architecture.md#binaryninja.architecture.Architecture
               "binaryninja.architecture.Architecture")*,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]**]*)
-              –
             - **source_arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2177,7 +2198,7 @@
             "binaryninja.types.InlineDuringAnalysisWithConfidence") *|*
             [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") *|*
             [*BoolWithConfidence*](types.md#binaryninja.types.BoolWithConfidence
-            "binaryninja.types.BoolWithConfidence")) –
+            "binaryninja.types.BoolWithConfidence"))
 
     set_auto_instr_highlight(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor") | [HighlightStandardColor](enums.md#binaryninja.enums.HighlightStandardColor "binaryninja.enums.HighlightStandardColor")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_instr_highlight)
     :   `set_auto_instr_highlight` highlights the instruction at the specified address with the
@@ -2198,14 +2219,32 @@
               "binaryninja.architecture.Architecture")) – (optional) Architecture of the instruction
               if different from self.arch
 
-    set_auto_parameter_vars(*value: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [ParameterVariables](variable.md#binaryninja.variable.ParameterVariables "binaryninja.variable.ParameterVariables") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_parameter_vars)
+    set_auto_parameter_locations(*value: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")] | [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [ParameterLocations](variable.md#binaryninja.variable.ParameterLocations "binaryninja.variable.ParameterLocations") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_parameter_locations)
     :   Parameters:
         :   **value** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-            Python v3.14)")*[*[*Variable*](variable.md#binaryninja.variable.Variable
-            "binaryninja.variable.Variable")*]* *|*
-            [*Variable*](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")
-            *|* [*ParameterVariables*](variable.md#binaryninja.variable.ParameterVariables
-            "binaryninja.variable.ParameterVariables") *|* *None*) –
+            Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+            "binaryninja.types.ValueLocation") *|*
+            [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            "binaryninja.variable.CoreVariable")*]* *|*
+            [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            "binaryninja.variable.CoreVariable") *|*
+            [*ValueLocation*](types.md#binaryninja.types.ValueLocation
+            "binaryninja.types.ValueLocation") *|*
+            [*ParameterLocations*](variable.md#binaryninja.variable.ParameterLocations
+            "binaryninja.variable.ParameterLocations") *|* *None*)
+
+        Return type:
+        :   *None*
+
+    set_auto_parameter_vars(*value: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")] | [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [ParameterVariables](variable.md#binaryninja.variable.ParameterVariables "binaryninja.variable.ParameterVariables") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_parameter_vars)
+    :   Parameters:
+        :   **value** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
+            Python v3.14)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            "binaryninja.variable.CoreVariable")*]* *|*
+            [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            "binaryninja.variable.CoreVariable") *|*
+            [*ParameterVariables*](variable.md#binaryninja.variable.ParameterVariables
+            "binaryninja.variable.ParameterVariables") *|* *None*)
 
         Return type:
         :   *None*
@@ -2214,7 +2253,7 @@
     :   Parameters:
         :   **value** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
             v3.14)") *|* [*BoolWithConfidence*](types.md#binaryninja.types.BoolWithConfidence
-            "binaryninja.types.BoolWithConfidence")) –
+            "binaryninja.types.BoolWithConfidence"))
 
         Return type:
         :   *None*
@@ -2224,35 +2263,26 @@
         :   **value** ([*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping "(in
             Python v3.14)")*[**RegisterStackName**,*
             [*RegisterStackAdjustmentWithConfidence*](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence
-            "binaryninja.types.RegisterStackAdjustmentWithConfidence")*]*) –
-
-    set_auto_return_regs(*value: [RegisterSet](types.md#binaryninja.types.RegisterSet "binaryninja.types.RegisterSet") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[RegisterName | [ILRegister](lowlevelil.md#binaryninja.lowlevelil.ILRegister "binaryninja.lowlevelil.ILRegister") | RegisterIndex]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_return_regs)
-    :   Parameters:
-        :   **value** ([*RegisterSet*](types.md#binaryninja.types.RegisterSet
-            "binaryninja.types.RegisterSet") *|*
-            [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")*[**RegisterName* *|*
-            [*ILRegister*](lowlevelil.md#binaryninja.lowlevelil.ILRegister
-            "binaryninja.lowlevelil.ILRegister") *|* *RegisterIndex**]*) –
-
-        Return type:
-        :   *None*
+            "binaryninja.types.RegisterStackAdjustmentWithConfidence")*]*)
 
     set_auto_return_type(*value: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_return_type)
     :   Parameters:
         :   **value** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
             v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
             [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-            –
 
         Return type:
         :   *None*
+
+    set_auto_return_value_location(*value: types.OptionalLocation*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_return_value_location)
+    :   Parameters:
+        :   **value** (*types.OptionalLocation*)
 
     set_auto_stack_adjustment(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](types.md#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_auto_stack_adjustment)
     :   Parameters:
         :   **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
             v3.14)") *|* [*OffsetWithConfidence*](types.md#binaryninja.types.OffsetWithConfidence
-            "binaryninja.types.OffsetWithConfidence")) –
+            "binaryninja.types.OffsetWithConfidence"))
 
         Return type:
         :   *None*
@@ -2262,7 +2292,6 @@
         :   **value** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
             v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
             [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-            –
 
         Return type:
         :   *None*
@@ -2270,14 +2299,14 @@
     set_call_reg_stack_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *adjust: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[RegisterStackName, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [RegisterStackAdjustmentWithConfidence](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence "binaryninja.types.RegisterStackAdjustmentWithConfidence")]*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_call_reg_stack_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **adjust** ([*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping
               "(in Python v3.14)")*[**RegisterStackName**,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") *|*
               [*RegisterStackAdjustmentWithConfidence*](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence
-              "binaryninja.types.RegisterStackAdjustmentWithConfidence")*]*) –
+              "binaryninja.types.RegisterStackAdjustmentWithConfidence")*]*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2285,16 +2314,16 @@
     set_call_reg_stack_adjustment_for_reg_stack(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *reg_stack: RegisterStackName | [ILRegisterStack](lowlevelil.md#binaryninja.lowlevelil.ILRegisterStack "binaryninja.lowlevelil.ILRegisterStack") | RegisterStackIndex*, *adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [RegisterStackAdjustmentWithConfidence](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence "binaryninja.types.RegisterStackAdjustmentWithConfidence")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_call_reg_stack_adjustment_for_reg_stack)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **reg_stack** (*RegisterStackName* *|*
               [*ILRegisterStack*](lowlevelil.md#binaryninja.lowlevelil.ILRegisterStack
-              "binaryninja.lowlevelil.ILRegisterStack") *|* *RegisterStackIndex*) –
+              "binaryninja.lowlevelil.ILRegisterStack") *|* *RegisterStackIndex*)
             - **adjust** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|*
               [*RegisterStackAdjustmentWithConfidence*](types.md#binaryninja.types.RegisterStackAdjustmentWithConfidence
-              "binaryninja.types.RegisterStackAdjustmentWithConfidence")) –
+              "binaryninja.types.RegisterStackAdjustmentWithConfidence"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2302,12 +2331,12 @@
     set_call_stack_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *adjust: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [OffsetWithConfidence](types.md#binaryninja.types.OffsetWithConfidence "binaryninja.types.OffsetWithConfidence")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_call_stack_adjustment)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **adjust** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|* [*OffsetWithConfidence*](types.md#binaryninja.types.OffsetWithConfidence
-              "binaryninja.types.OffsetWithConfidence")) –
+              "binaryninja.types.OffsetWithConfidence"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
     set_call_type_adjustment(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *adjust_type: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [TypeBuilder](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_call_type_adjustment)
     :   `set_call_type_adjustment` sets or removes the call type override at a call site to the
@@ -2359,14 +2388,14 @@
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **invert** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *static* set_default_session_data(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_default_session_data)
     :   Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   *None*
@@ -2376,18 +2405,18 @@
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*EarlyReturn*](enums.md#binaryninja.enums.EarlyReturn
-              "binaryninja.enums.EarlyReturn")) –
+              "binaryninja.enums.EarlyReturn"))
 
     set_expr_folding(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *value: [ExprFolding](enums.md#binaryninja.enums.ExprFolding "binaryninja.enums.ExprFolding")*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_expr_folding)
     :   Parameters:
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*ExprFolding*](enums.md#binaryninja.enums.ExprFolding
-              "binaryninja.enums.ExprFolding")) –
+              "binaryninja.enums.ExprFolding"))
 
     set_guided_source_blocks(*addresses: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_guided_source_blocks)
     :   `set_guided_source_blocks` sets the complete list of guided source blocks for this
@@ -2403,7 +2432,7 @@
               "binaryninja.architecture.Architecture")*,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]**]*)
               – List of (architecture, address) tuples
-            - **addresses** –
+            - **addresses**
 
         Return type:
         :   *None*
@@ -2438,23 +2467,22 @@
         :   - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction")) –
+              "binaryninja.highlevelil.HighLevelILInstruction"))
             - **value** ([*SwitchRecovery*](enums.md#binaryninja.enums.SwitchRecovery
-              "binaryninja.enums.SwitchRecovery")) –
+              "binaryninja.enums.SwitchRecovery"))
 
     set_user_indirect_branches(*source: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *branches: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]]*, *source_arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_user_indirect_branches)
     :   Parameters:
         :   - **source** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **branches** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
               "(in Python
               v3.14)")*[*[*Architecture*](architecture.md#binaryninja.architecture.Architecture
               "binaryninja.architecture.Architecture")*,*
               [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]**]*)
-              –
             - **source_arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -2467,7 +2495,7 @@
             "binaryninja.types.InlineDuringAnalysisWithConfidence") *|*
             [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") *|*
             [*BoolWithConfidence*](types.md#binaryninja.types.BoolWithConfidence
-            "binaryninja.types.BoolWithConfidence")) –
+            "binaryninja.types.BoolWithConfidence"))
 
     set_user_instr_highlight(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor") | [HighlightStandardColor](enums.md#binaryninja.enums.HighlightStandardColor "binaryninja.enums.HighlightStandardColor")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.set_user_instr_highlight)
     :   `set_user_instr_highlight` highlights the instruction at the specified address with the
@@ -2497,7 +2525,6 @@
         :   **value** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
             v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
             [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-            –
 
         Return type:
         :   *None*
@@ -2558,17 +2585,28 @@
         Return type:
         :   *None*
 
-    store_metadata(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *md: [Metadata](metadata.md#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[MetadataValueType] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[MetadataValueType] | [dict](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")*, *isAuto: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.store_metadata)
-    :   store_metadata stores an object for the given key in the current Function. Objects
-        stored using store_metadata can be retrieved when the database is reopened unless isAuto
-        is set to True.
+    store_metadata(*key: str*, *md: Metadata | int | bool | str | bytes | float | ~typing.List[MetadataValueType] | ~typing.Tuple[MetadataValueType] | dict*, *flags: MetadataStoreFlag | bool = <MetadataStoreFlag.MetadataStorePersistent: 1>*, *isAuto: bool | None = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#Function.store_metadata)
+    :   store_metadata stores an object for the given key in the current Function. See
+        `BinaryView.store_metadata` for the meaning of `flags`.
+
+        Unlike `BinaryView.store_metadata`, the default does not mark the file as modified,
+        preserving the historical behavior of Function metadata writes.
+
+        `flags` may also be passed as a legacy `isAuto` bool: `False` maps to the default
+        (persist, don’t dirty) and `True` maps to `MetadataStoreEphemeral` (don’t persist, don’t
+        dirty). The deprecated `isAuto` keyword is still accepted with the same meaning, taking
+        precedence over `flags`.
 
         Parameters:
         :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)")) – key value to associate the Metadata object with
             - **md** (*Varies*) – object to store
+            - **flags** ([*MetadataStoreFlag*](enums.md#binaryninja.enums.MetadataStoreFlag
+              "binaryninja.enums.MetadataStoreFlag") *|*
+              [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")) –
+              storage flags (see `MetadataStoreFlag`), or a legacy `isAuto` bool.
             - **isAuto** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) – whether the metadata is an auto metadata
+              v3.14)")) – deprecated alias for passing the legacy bool by keyword.
 
         Return type:
         :   *None*
@@ -2727,7 +2765,12 @@
     :   List of CoreVariable objects
 
     *property* global_pointer_value*: [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")*
-    :   Discovered value of the global pointer register, if the function uses one (read-only)
+    :   Deprecated. Use
+        [`global_pointer_values`](#binaryninja.function.Function.global_pointer_values
+        "binaryninja.function.Function.global_pointer_values") instead.
+
+    *property* global_pointer_values*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[RegisterName, [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")]]*
+    :   Discovered values of the global pointer registers, if the function uses any (read-only)
 
     *property* has_explicitly_defined_type*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
     :   Whether function has explicitly defined types (read-only)
@@ -2927,6 +2970,9 @@
     *property* needs_update*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
     :   Whether the function has analysis that needs to be updated (read-only)
 
+    *property* parameter_locations*: [ParameterLocations](variable.md#binaryninja.variable.ParameterLocations "binaryninja.variable.ParameterLocations")*
+    :   List of locations for the incoming function parameters
+
     *property* parameter_vars*: [ParameterVariables](variable.md#binaryninja.variable.ParameterVariables "binaryninja.variable.ParameterVariables")*
     :   List of variables for the incoming function parameters
 
@@ -2952,10 +2998,18 @@
     :   Number of entries removed from each register stack after return
 
     *property* return_regs*: [RegisterSet](types.md#binaryninja.types.RegisterSet "binaryninja.types.RegisterSet")*
-    :   Registers that are used for the return value
+    :   Registers that are used for the return value (read-only)
 
     *property* return_type*: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   Return type of the function
+
+    *property* return_value*: [ReturnValue](types.md#binaryninja.types.ReturnValue "binaryninja.types.ReturnValue")*
+    :   Return type and location
+
+    *property* return_value_location*: [ValueLocationWithConfidence](types.md#binaryninja.types.ValueLocationWithConfidence "binaryninja.types.ValueLocationWithConfidence") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    :   The location of the return value, or None if there isn’t a return value. If the return
+        value has been specified to be placed in the default location, this will return the
+        default location.
 
     *property* session_data*: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*
     :   Dictionary object where plugins can store arbitrary data associated with the function
@@ -3026,16 +3080,13 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    FunctionViewType(view_type: Union[ForwardRef(‘FunctionViewType’),
-    binaryninja.enums.FunctionGraphType, str])
-
     __init__(*view_type: [FunctionViewType](#binaryninja.function.FunctionViewType "binaryninja.function.FunctionViewType") | [FunctionGraphType](enums.md#binaryninja.enums.FunctionGraphType "binaryninja.enums.FunctionGraphType") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#FunctionViewType.__init__)
     :   Parameters:
         :   **view_type** ([*FunctionViewType*](#binaryninja.function.FunctionViewType
             "binaryninja.function.FunctionViewType") *|*
             [*FunctionGraphType*](enums.md#binaryninja.enums.FunctionGraphType
             "binaryninja.enums.FunctionGraphType") *|*
-            [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")) –
+            [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"))
 
     name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -3053,22 +3104,18 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ILReferenceSource(func: Optional[ForwardRef(‘Function’)], arch:
-    Optional[ForwardRef(‘architecture.Architecture’)], address: int, il_type:
-    binaryninja.enums.FunctionGraphType, expr_id: int)
-
     __init__(*func: [Function](#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *il_type: [FunctionGraphType](enums.md#binaryninja.enums.FunctionGraphType "binaryninja.enums.FunctionGraphType")*, *expr_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **func** ([*Function*](#binaryninja.function.Function "binaryninja.function.Function")
-              *|* *None*) –
+              *|* *None*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **il_type** ([*FunctionGraphType*](enums.md#binaryninja.enums.FunctionGraphType
-              "binaryninja.enums.FunctionGraphType")) –
+              "binaryninja.enums.FunctionGraphType"))
             - **expr_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -3076,7 +3123,7 @@
     *static* get_il_name(*il_type: [FunctionGraphType](enums.md#binaryninja.enums.FunctionGraphType "binaryninja.enums.FunctionGraphType")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#ILReferenceSource.get_il_name)
     :   Parameters:
         :   **il_type** ([*FunctionGraphType*](enums.md#binaryninja.enums.FunctionGraphType
-            "binaryninja.enums.FunctionGraphType")) –
+            "binaryninja.enums.FunctionGraphType"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
@@ -3112,7 +3159,7 @@
     __init__(*function: [Function](#binaryninja.function.Function "binaryninja.function.Function")*)[[source]](https://api.binary.ninja/_modules/binaryninja/function.html#TagList.__init__)
     :   Parameters:
         :   **function** ([*Function*](#binaryninja.function.Function
-            "binaryninja.function.Function")) –
+            "binaryninja.function.Function"))
 
 ## VariableReferenceSource
 
@@ -3120,15 +3167,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    VariableReferenceSource(var: ‘variable.Variable’, src:
-    binaryninja.function.ILReferenceSource)
-
     __init__(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*, *src: [ILReferenceSource](#binaryninja.function.ILReferenceSource "binaryninja.function.ILReferenceSource")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")) –
+              "binaryninja.variable.Variable"))
             - **src** ([*ILReferenceSource*](#binaryninja.function.ILReferenceSource
-              "binaryninja.function.ILReferenceSource")) –
+              "binaryninja.function.ILReferenceSource"))
 
         Return type:
         :   *None*

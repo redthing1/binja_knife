@@ -61,13 +61,13 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *current_address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *default: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#AddressField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
             - **current_address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **default** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* current_address
     :   current address to use as a base for relative calculations
@@ -98,9 +98,9 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#CheckboxField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* default
 
@@ -129,12 +129,12 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *choices: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*, *default: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#ChoiceField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **choices** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]*) –
+              Python v3.14)")*]*)
             - **default** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* choices*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
 
@@ -156,11 +156,11 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *default: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#DirectoryNameField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **default** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* default_name
 
@@ -177,11 +177,11 @@
     __init__(*title: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#FlowGraphReport.__init__)
     :   Parameters:
         :   - **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **graph** ([*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
-              "binaryninja.flowgraph.FlowGraph")) –
+              "binaryninja.flowgraph.FlowGraph"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     *property* graph
 
@@ -198,13 +198,13 @@
     __init__(*title: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *contents: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *plaintext: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#HTMLReport.__init__)
     :   Parameters:
         :   - **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **contents** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **plaintext** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     *property* contents
 
@@ -225,9 +225,9 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#IntegerField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* prompt
 
@@ -274,7 +274,7 @@
             "(in Python v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int
             "(in Python v3.14)")*]**,*
             [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-            v3.14)")*]**]**,* *None**]*) –
+            v3.14)")*]**]**,* *None**]*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -302,7 +302,7 @@
     __init__(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#LabelField.__init__)
     :   Parameters:
         :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     *property* text*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
 
@@ -315,13 +315,13 @@
     __init__(*title: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *contents: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *plaintext: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#MarkdownReport.__init__)
     :   Parameters:
         :   - **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **contents** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **plaintext** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     *property* contents
 
@@ -343,9 +343,9 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#MultilineTextField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* prompt
 
@@ -363,11 +363,11 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *ext: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *default: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#OpenFileNameField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **ext** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* ext
 
@@ -384,11 +384,11 @@
     __init__(*title: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *contents: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#PlainTextReport.__init__)
     :   Parameters:
         :   - **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **contents** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     *property* contents
 
@@ -420,13 +420,13 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *ext: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *default_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *default: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#SaveFileNameField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **ext** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **default** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* default_name
 
@@ -456,9 +456,9 @@
     __init__(*prompt: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/interaction.html#TextLineField.__init__)
     :   Parameters:
         :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **default** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
 
     *property* prompt
 
@@ -500,11 +500,11 @@ get_checkbox_input(*prompt: [str](https://docs.python.org/3/library/stdtypes.htm
 
     Parameters:
     :   - **prompt** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) –
+          v3.14)"))
         - **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) –
+          v3.14)"))
         - **default** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-          v3.14)")) –
+          v3.14)"))
 
 ## get_choice_input
 

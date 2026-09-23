@@ -33,9 +33,9 @@
     __init__(*initial_progress_text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *can_cancel: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/plugin.html#BackgroundTask.__init__)
     :   Parameters:
         :   - **initial_progress_text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **can_cancel** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     cancel()[[source]](https://api.binary.ninja/_modules/binaryninja/plugin.html#BackgroundTask.cancel)
 
@@ -75,9 +75,9 @@
     __init__(*initial_progress_text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *can_cancel: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/plugin.html#BackgroundTaskThread.__init__)
     :   Parameters:
         :   - **initial_progress_text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **can_cancel** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
     join(*timeout=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/plugin.html#BackgroundTaskThread.join)
 
@@ -147,12 +147,12 @@
 
         Parameters:
         :   **context** ([*PluginCommandContext*](#binaryninja.plugin.PluginCommandContext
-            "binaryninja.plugin.PluginCommandContext")) –
+            "binaryninja.plugin.PluginCommandContext"))
 
     is_valid(*context: [PluginCommandContext](#binaryninja.plugin.PluginCommandContext "binaryninja.plugin.PluginCommandContext")*)[[source]](https://api.binary.ninja/_modules/binaryninja/plugin.html#PluginCommand.is_valid)
     :   Parameters:
         :   **context** ([*PluginCommandContext*](#binaryninja.plugin.PluginCommandContext
-            "binaryninja.plugin.PluginCommandContext")) –
+            "binaryninja.plugin.PluginCommandContext"))
 
     *classmethod* register(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *description: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *action: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")], [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")]*, *is_valid: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")], [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/plugin.html#PluginCommand.register)
     :   `register` Register a plugin

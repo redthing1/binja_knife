@@ -25,6 +25,15 @@
     optionally overridden to call the rendering methods only when the expression type
     matches a custom filter.
 
+    Warning
+
+    Python constant renderers can be slow. The callbacks run while rendering every constant,
+    and each call crosses the FFI boundary, builds wrapper objects, and takes the GIL,
+    serializing analysis threads. Always override
+    [`is_valid_for_type`](#binaryninja.constantrenderer.ConstantRenderer.is_valid_for_type
+    "binaryninja.constantrenderer.ConstantRenderer.is_valid_for_type") to reject types you
+    do not handle. For large binaries, write the renderer in C++ instead.
+
     __init__(*handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.__init__)
 
     is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.is_valid_for_type)
@@ -125,7 +134,7 @@
 
     __init__(*handle: BNConstantRenderer*)[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.__init__)
     :   Parameters:
-        :   **handle** (*BNConstantRenderer*) –
+        :   **handle** (*BNConstantRenderer*)
 
     is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.is_valid_for_type)
     :   Determines if the rendering methods should be called for the given expression type. It

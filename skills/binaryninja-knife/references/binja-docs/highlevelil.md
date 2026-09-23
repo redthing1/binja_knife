@@ -4,6 +4,7 @@
 | --- | --- |
 | [`binaryninja.highlevelil.CoreHighLevelILInstruction`](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction") |  |
 | [`binaryninja.highlevelil.GotoLabel`](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") |  |
+| [`binaryninja.highlevelil.HighLevelILAbs`](#binaryninja.highlevelil.HighLevelILAbs "binaryninja.highlevelil.HighLevelILAbs") |  |
 | [`binaryninja.highlevelil.HighLevelILAdc`](#binaryninja.highlevelil.HighLevelILAdc "binaryninja.highlevelil.HighLevelILAdc") |  |
 | [`binaryninja.highlevelil.HighLevelILAdd`](#binaryninja.highlevelil.HighLevelILAdd "binaryninja.highlevelil.HighLevelILAdd") |  |
 | [`binaryninja.highlevelil.HighLevelILAddOverflow`](#binaryninja.highlevelil.HighLevelILAddOverflow "binaryninja.highlevelil.HighLevelILAddOverflow") |  |
@@ -24,11 +25,14 @@
 | [`binaryninja.highlevelil.HighLevelILBoolToInt`](#binaryninja.highlevelil.HighLevelILBoolToInt "binaryninja.highlevelil.HighLevelILBoolToInt") |  |
 | [`binaryninja.highlevelil.HighLevelILBp`](#binaryninja.highlevelil.HighLevelILBp "binaryninja.highlevelil.HighLevelILBp") |  |
 | [`binaryninja.highlevelil.HighLevelILBreak`](#binaryninja.highlevelil.HighLevelILBreak "binaryninja.highlevelil.HighLevelILBreak") |  |
+| [`binaryninja.highlevelil.HighLevelILBswap`](#binaryninja.highlevelil.HighLevelILBswap "binaryninja.highlevelil.HighLevelILBswap") |  |
 | [`binaryninja.highlevelil.HighLevelILCall`](#binaryninja.highlevelil.HighLevelILCall "binaryninja.highlevelil.HighLevelILCall") |  |
 | [`binaryninja.highlevelil.HighLevelILCallSsa`](#binaryninja.highlevelil.HighLevelILCallSsa "binaryninja.highlevelil.HighLevelILCallSsa") |  |
 | [`binaryninja.highlevelil.HighLevelILCarryBase`](#binaryninja.highlevelil.HighLevelILCarryBase "binaryninja.highlevelil.HighLevelILCarryBase") |  |
 | [`binaryninja.highlevelil.HighLevelILCase`](#binaryninja.highlevelil.HighLevelILCase "binaryninja.highlevelil.HighLevelILCase") |  |
 | [`binaryninja.highlevelil.HighLevelILCeil`](#binaryninja.highlevelil.HighLevelILCeil "binaryninja.highlevelil.HighLevelILCeil") |  |
+| [`binaryninja.highlevelil.HighLevelILCls`](#binaryninja.highlevelil.HighLevelILCls "binaryninja.highlevelil.HighLevelILCls") |  |
+| [`binaryninja.highlevelil.HighLevelILClz`](#binaryninja.highlevelil.HighLevelILClz "binaryninja.highlevelil.HighLevelILClz") |  |
 | [`binaryninja.highlevelil.HighLevelILCmpE`](#binaryninja.highlevelil.HighLevelILCmpE "binaryninja.highlevelil.HighLevelILCmpE") |  |
 | [`binaryninja.highlevelil.HighLevelILCmpNe`](#binaryninja.highlevelil.HighLevelILCmpNe "binaryninja.highlevelil.HighLevelILCmpNe") |  |
 | [`binaryninja.highlevelil.HighLevelILCmpSge`](#binaryninja.highlevelil.HighLevelILCmpSge "binaryninja.highlevelil.HighLevelILCmpSge") |  |
@@ -44,6 +48,7 @@
 | [`binaryninja.highlevelil.HighLevelILConstData`](#binaryninja.highlevelil.HighLevelILConstData "binaryninja.highlevelil.HighLevelILConstData") |  |
 | [`binaryninja.highlevelil.HighLevelILConstPtr`](#binaryninja.highlevelil.HighLevelILConstPtr "binaryninja.highlevelil.HighLevelILConstPtr") |  |
 | [`binaryninja.highlevelil.HighLevelILContinue`](#binaryninja.highlevelil.HighLevelILContinue "binaryninja.highlevelil.HighLevelILContinue") |  |
+| [`binaryninja.highlevelil.HighLevelILCtz`](#binaryninja.highlevelil.HighLevelILCtz "binaryninja.highlevelil.HighLevelILCtz") |  |
 | [`binaryninja.highlevelil.HighLevelILDeref`](#binaryninja.highlevelil.HighLevelILDeref "binaryninja.highlevelil.HighLevelILDeref") |  |
 | [`binaryninja.highlevelil.HighLevelILDerefField`](#binaryninja.highlevelil.HighLevelILDerefField "binaryninja.highlevelil.HighLevelILDerefField") |  |
 | [`binaryninja.highlevelil.HighLevelILDerefFieldSsa`](#binaryninja.highlevelil.HighLevelILDerefFieldSsa "binaryninja.highlevelil.HighLevelILDerefFieldSsa") |  |
@@ -92,7 +97,11 @@
 | [`binaryninja.highlevelil.HighLevelILLowPart`](#binaryninja.highlevelil.HighLevelILLowPart "binaryninja.highlevelil.HighLevelILLowPart") |  |
 | [`binaryninja.highlevelil.HighLevelILLsl`](#binaryninja.highlevelil.HighLevelILLsl "binaryninja.highlevelil.HighLevelILLsl") |  |
 | [`binaryninja.highlevelil.HighLevelILLsr`](#binaryninja.highlevelil.HighLevelILLsr "binaryninja.highlevelil.HighLevelILLsr") |  |
+| [`binaryninja.highlevelil.HighLevelILMaxs`](#binaryninja.highlevelil.HighLevelILMaxs "binaryninja.highlevelil.HighLevelILMaxs") |  |
+| [`binaryninja.highlevelil.HighLevelILMaxu`](#binaryninja.highlevelil.HighLevelILMaxu "binaryninja.highlevelil.HighLevelILMaxu") |  |
 | [`binaryninja.highlevelil.HighLevelILMemPhi`](#binaryninja.highlevelil.HighLevelILMemPhi "binaryninja.highlevelil.HighLevelILMemPhi") |  |
+| [`binaryninja.highlevelil.HighLevelILMins`](#binaryninja.highlevelil.HighLevelILMins "binaryninja.highlevelil.HighLevelILMins") |  |
+| [`binaryninja.highlevelil.HighLevelILMinu`](#binaryninja.highlevelil.HighLevelILMinu "binaryninja.highlevelil.HighLevelILMinu") |  |
 | [`binaryninja.highlevelil.HighLevelILMods`](#binaryninja.highlevelil.HighLevelILMods "binaryninja.highlevelil.HighLevelILMods") |  |
 | [`binaryninja.highlevelil.HighLevelILModsDp`](#binaryninja.highlevelil.HighLevelILModsDp "binaryninja.highlevelil.HighLevelILModsDp") |  |
 | [`binaryninja.highlevelil.HighLevelILModu`](#binaryninja.highlevelil.HighLevelILModu "binaryninja.highlevelil.HighLevelILModu") |  |
@@ -106,7 +115,11 @@
 | [`binaryninja.highlevelil.HighLevelILNot`](#binaryninja.highlevelil.HighLevelILNot "binaryninja.highlevelil.HighLevelILNot") |  |
 | [`binaryninja.highlevelil.HighLevelILOperationAndSize`](#binaryninja.highlevelil.HighLevelILOperationAndSize "binaryninja.highlevelil.HighLevelILOperationAndSize") |  |
 | [`binaryninja.highlevelil.HighLevelILOr`](#binaryninja.highlevelil.HighLevelILOr "binaryninja.highlevelil.HighLevelILOr") |  |
+| [`binaryninja.highlevelil.HighLevelILPassByRef`](#binaryninja.highlevelil.HighLevelILPassByRef "binaryninja.highlevelil.HighLevelILPassByRef") |  |
+| [`binaryninja.highlevelil.HighLevelILPopcnt`](#binaryninja.highlevelil.HighLevelILPopcnt "binaryninja.highlevelil.HighLevelILPopcnt") |  |
+| [`binaryninja.highlevelil.HighLevelILRbit`](#binaryninja.highlevelil.HighLevelILRbit "binaryninja.highlevelil.HighLevelILRbit") |  |
 | [`binaryninja.highlevelil.HighLevelILRet`](#binaryninja.highlevelil.HighLevelILRet "binaryninja.highlevelil.HighLevelILRet") |  |
+| [`binaryninja.highlevelil.HighLevelILReturnByRef`](#binaryninja.highlevelil.HighLevelILReturnByRef "binaryninja.highlevelil.HighLevelILReturnByRef") |  |
 | [`binaryninja.highlevelil.HighLevelILRlc`](#binaryninja.highlevelil.HighLevelILRlc "binaryninja.highlevelil.HighLevelILRlc") |  |
 | [`binaryninja.highlevelil.HighLevelILRol`](#binaryninja.highlevelil.HighLevelILRol "binaryninja.highlevelil.HighLevelILRol") |  |
 | [`binaryninja.highlevelil.HighLevelILRor`](#binaryninja.highlevelil.HighLevelILRor "binaryninja.highlevelil.HighLevelILRor") |  |
@@ -115,6 +128,8 @@
 | [`binaryninja.highlevelil.HighLevelILSbb`](#binaryninja.highlevelil.HighLevelILSbb "binaryninja.highlevelil.HighLevelILSbb") |  |
 | [`binaryninja.highlevelil.HighLevelILSplit`](#binaryninja.highlevelil.HighLevelILSplit "binaryninja.highlevelil.HighLevelILSplit") |  |
 | [`binaryninja.highlevelil.HighLevelILStructField`](#binaryninja.highlevelil.HighLevelILStructField "binaryninja.highlevelil.HighLevelILStructField") |  |
+| [`binaryninja.highlevelil.HighLevelILStructInit`](#binaryninja.highlevelil.HighLevelILStructInit "binaryninja.highlevelil.HighLevelILStructInit") |  |
+| [`binaryninja.highlevelil.HighLevelILStructInitField`](#binaryninja.highlevelil.HighLevelILStructInitField "binaryninja.highlevelil.HighLevelILStructInitField") |  |
 | [`binaryninja.highlevelil.HighLevelILSub`](#binaryninja.highlevelil.HighLevelILSub "binaryninja.highlevelil.HighLevelILSub") |  |
 | [`binaryninja.highlevelil.HighLevelILSwitch`](#binaryninja.highlevelil.HighLevelILSwitch "binaryninja.highlevelil.HighLevelILSwitch") |  |
 | [`binaryninja.highlevelil.HighLevelILSx`](#binaryninja.highlevelil.HighLevelILSx "binaryninja.highlevelil.HighLevelILSx") |  |
@@ -134,6 +149,7 @@
 | [`binaryninja.highlevelil.HighLevelILVarInitSsa`](#binaryninja.highlevelil.HighLevelILVarInitSsa "binaryninja.highlevelil.HighLevelILVarInitSsa") |  |
 | [`binaryninja.highlevelil.HighLevelILVarPhi`](#binaryninja.highlevelil.HighLevelILVarPhi "binaryninja.highlevelil.HighLevelILVarPhi") |  |
 | [`binaryninja.highlevelil.HighLevelILVarSsa`](#binaryninja.highlevelil.HighLevelILVarSsa "binaryninja.highlevelil.HighLevelILVarSsa") |  |
+| [`binaryninja.highlevelil.HighLevelILVarSsaPartial`](#binaryninja.highlevelil.HighLevelILVarSsaPartial "binaryninja.highlevelil.HighLevelILVarSsaPartial") |  |
 | [`binaryninja.highlevelil.HighLevelILWhile`](#binaryninja.highlevelil.HighLevelILWhile "binaryninja.highlevelil.HighLevelILWhile") |  |
 | [`binaryninja.highlevelil.HighLevelILWhileSsa`](#binaryninja.highlevelil.HighLevelILWhileSsa "binaryninja.highlevelil.HighLevelILWhileSsa") |  |
 | [`binaryninja.highlevelil.HighLevelILXor`](#binaryninja.highlevelil.HighLevelILXor "binaryninja.highlevelil.HighLevelILXor") |  |
@@ -145,34 +161,29 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    CoreHighLevelILInstruction(operation: binaryninja.enums.HighLevelILOperation,
-    attributes: int, source_operand: int, size: int, operands: Tuple[ExpressionIndex,
-    ExpressionIndex, ExpressionIndex, ExpressionIndex, ExpressionIndex], address: int,
-    parent: <function NewType.<locals>.new_type at 0x105107820>)
-
     __init__(*operation: [HighLevelILOperation](enums.md#binaryninja.enums.HighLevelILOperation "binaryninja.enums.HighLevelILOperation")*, *attributes: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *source_operand: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *operands: [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[ExpressionIndex, ExpressionIndex, ExpressionIndex, ExpressionIndex, ExpressionIndex]*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *parent: ExpressionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **operation** ([*HighLevelILOperation*](enums.md#binaryninja.enums.HighLevelILOperation
-              "binaryninja.enums.HighLevelILOperation")) –
+              "binaryninja.enums.HighLevelILOperation"))
             - **attributes** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **source_operand** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **operands** ([*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
               Python v3.14)")*[**ExpressionIndex**,* *ExpressionIndex**,* *ExpressionIndex**,*
-              *ExpressionIndex**,* *ExpressionIndex**]*) –
+              *ExpressionIndex**,* *ExpressionIndex**]*)
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **parent** (*ExpressionIndex*) –
+              v3.14)"))
+            - **parent** (*ExpressionIndex*)
 
         Return type:
         :   *None*
 
     *classmethod* from_BNHighLevelILInstruction(*instr: BNHighLevelILInstruction*) → [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#CoreHighLevelILInstruction.from_BNHighLevelILInstruction)
     :   Parameters:
-        :   **instr** (*BNHighLevelILInstruction*) –
+        :   **instr** (*BNHighLevelILInstruction*)
 
         Return type:
         :   [*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
@@ -198,14 +209,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    GotoLabel(function: ‘HighLevelILFunction’, id: int)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -222,41 +231,49 @@
 
     *property* uses*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
+## HighLevelILAbs
+
+*class* HighLevelILAbs[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILAbs)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
+
 ## HighLevelILAdc
 
 *class* HighLevelILAdc[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILAdc)
 :   Bases: [`HighLevelILCarryBase`](#binaryninja.highlevelil.HighLevelILCarryBase
     "binaryninja.highlevelil.HighLevelILCarryBase")
 
-    HighLevelILAdc(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILAdd
 
@@ -266,35 +283,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILAdd(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILAddOverflow
 
@@ -304,35 +306,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILAddOverflow(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILAddressOf
 
@@ -340,35 +327,20 @@
 :   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
     "binaryninja.highlevelil.HighLevelILUnaryBase")
 
-    HighLevelILAddressOf(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* vars_address_taken*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")]*
     :   Non-unique list of variables whose address is taken by instruction
@@ -388,35 +360,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILAnd(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILArrayIndex
 
@@ -424,42 +381,27 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILArrayIndex(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
     *property* index*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -470,42 +412,27 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILArrayIndexSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
     *property* index*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -519,35 +446,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILAsr(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILAssert
 
@@ -555,37 +467,22 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILAssert(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constraint*: [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*
 
@@ -596,37 +493,22 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILAssertSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constraint*: [PossibleValueSet](variable.md#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
 
@@ -637,29 +519,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SetVar`](commonil.md#binaryninja.commonil.SetVar "binaryninja.commonil.SetVar")
 
-    HighLevelILAssign(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -667,12 +540,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -686,29 +553,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILAssignMemSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -718,12 +576,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -736,29 +588,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SetVar`](commonil.md#binaryninja.commonil.SetVar "binaryninja.commonil.SetVar")
 
-    HighLevelILAssignUnpack(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -766,12 +609,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -786,29 +623,20 @@
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA"),
     [`Memory`](commonil.md#binaryninja.commonil.Memory "binaryninja.commonil.Memory")
 
-    HighLevelILAssignUnpackMemSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -818,12 +646,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -840,11 +662,11 @@
 
     __init__(*handle: LP_BNBasicBlock*, *owner: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILBasicBlock.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNBasicBlock*) –
+        :   - **handle** (*LP_BNBasicBlock*)
             - **owner** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     *property* il_function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
     :   IL Function of which this block is a part, if the block is part of an IL Function.
@@ -859,40 +681,25 @@
     [`BinaryOperation`](commonil.md#binaryninja.commonil.BinaryOperation
     "binaryninja.commonil.BinaryOperation")
 
-    HighLevelILBinaryBase(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* left*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -904,42 +711,27 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILBlock(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* body*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILBoolToInt
 
@@ -947,35 +739,20 @@
 :   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
     "binaryninja.highlevelil.HighLevelILUnaryBase")
 
-    HighLevelILBoolToInt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILBp
 
@@ -984,35 +761,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILBp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILBreak
 
@@ -1021,35 +783,43 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILBreak(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+## HighLevelILBswap
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
+*class* HighLevelILBswap[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILBswap)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
 
-    expr_index*: ExpressionIndex*
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
+        Return type:
+        :   *None*
 
 ## HighLevelILCall
 
@@ -1059,29 +829,20 @@
     [`Localcall`](commonil.md#binaryninja.commonil.Localcall
     "binaryninja.commonil.Localcall")
 
-    HighLevelILCall(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -1089,12 +850,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* params*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -1107,29 +862,20 @@
     "binaryninja.commonil.Localcall"), [`SSA`](commonil.md#binaryninja.commonil.SSA
     "binaryninja.commonil.SSA")
 
-    HighLevelILCallSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -1139,12 +885,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* params*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -1158,42 +898,27 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILCarryBase(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* carry*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* left*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -1205,42 +930,27 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILCase(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* values*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -1252,35 +962,66 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILCeil(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+## HighLevelILCls
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
+*class* HighLevelILCls[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILCls)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
 
-    expr_index*: ExpressionIndex*
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
+        Return type:
+        :   *None*
 
-    instr_index*: InstructionIndex*
+## HighLevelILClz
+
+*class* HighLevelILClz[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILClz)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
 
 ## HighLevelILCmpE
 
@@ -1288,35 +1029,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILCmpE(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpNe
 
@@ -1324,35 +1050,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILCmpNe(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpSge
 
@@ -1361,35 +1072,20 @@
     "binaryninja.highlevelil.HighLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    HighLevelILCmpSge(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpSgt
 
@@ -1398,35 +1094,20 @@
     "binaryninja.highlevelil.HighLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    HighLevelILCmpSgt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpSle
 
@@ -1435,35 +1116,20 @@
     "binaryninja.highlevelil.HighLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    HighLevelILCmpSle(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpSlt
 
@@ -1472,35 +1138,20 @@
     "binaryninja.highlevelil.HighLevelILComparisonBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    HighLevelILCmpSlt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpUge
 
@@ -1508,35 +1159,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILCmpUge(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpUgt
 
@@ -1544,35 +1180,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILCmpUgt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpUle
 
@@ -1580,35 +1201,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILCmpUle(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILCmpUlt
 
@@ -1616,35 +1222,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILCmpUlt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILComparisonBase
 
@@ -1654,35 +1245,20 @@
     [`Comparison`](commonil.md#binaryninja.commonil.Comparison
     "binaryninja.commonil.Comparison")
 
-    HighLevelILComparisonBase(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILConst
 
@@ -1691,42 +1267,27 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    HighLevelILConst(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constant*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILConstData
 
@@ -1735,44 +1296,29 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    HighLevelILConstData(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
 
     *property* constant*: [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData")*
 
     *property* constant_data*: [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData")*
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILConstPtr
 
@@ -1781,42 +1327,27 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    HighLevelILConstPtr(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constant*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* string*: [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [StringType](enums.md#binaryninja.enums.StringType "binaryninja.enums.StringType")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -1828,35 +1359,43 @@
     [`ControlFlow`](commonil.md#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    HighLevelILContinue(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+## HighLevelILCtz
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
+*class* HighLevelILCtz[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILCtz)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
 
-    expr_index*: ExpressionIndex*
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
+        Return type:
+        :   *None*
 
 ## HighLevelILDeref
 
@@ -1864,35 +1403,20 @@
 :   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
     "binaryninja.highlevelil.HighLevelILUnaryBase")
 
-    HighLevelILDeref(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILDerefField
 
@@ -1900,40 +1424,25 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILDerefField(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* member_index*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -1948,40 +1457,25 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILDerefFieldSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* member_index*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -1998,40 +1492,25 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILDerefSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -2044,35 +1523,20 @@
     "binaryninja.highlevelil.HighLevelILBinaryBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    HighLevelILDivs(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILDivsDp
 
@@ -2083,35 +1547,20 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    HighLevelILDivsDp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILDivu
 
@@ -2121,35 +1570,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILDivu(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILDivuDp
 
@@ -2159,35 +1593,20 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    HighLevelILDivuDp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILDoWhile
 
@@ -2196,44 +1615,29 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Loop`](commonil.md#binaryninja.commonil.Loop "binaryninja.commonil.Loop")
 
-    HighLevelILDoWhile(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
 
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
     *property* condition*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILDoWhileSsa
 
@@ -2243,27 +1647,20 @@
     [`Loop`](commonil.md#binaryninja.commonil.Loop "binaryninja.commonil.Loop"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILDoWhileSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
 
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -2271,18 +1668,10 @@
 
     *property* condition_phi*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILExternPtr
 
@@ -2291,42 +1680,27 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    HighLevelILExternPtr(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constant*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -2338,35 +1712,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFabs(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFadd
 
@@ -2376,35 +1735,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFadd(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpE
 
@@ -2414,35 +1758,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpE(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpGe
 
@@ -2452,35 +1781,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpGe(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpGt
 
@@ -2490,35 +1804,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpGt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpLe
 
@@ -2528,35 +1827,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpLe(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpLt
 
@@ -2566,35 +1850,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpLt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpNe
 
@@ -2604,35 +1873,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpNe(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpO
 
@@ -2642,35 +1896,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpO(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFcmpUo
 
@@ -2680,35 +1919,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFcmpUo(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFdiv
 
@@ -2718,35 +1942,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFdiv(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFloatConst
 
@@ -2755,42 +1964,27 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    HighLevelILFloatConst(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constant*: [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFloatConv
 
@@ -2800,35 +1994,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFloatConv(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFloatToInt
 
@@ -2838,35 +2017,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFloatToInt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFloor
 
@@ -2876,35 +2040,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFloor(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFmul
 
@@ -2914,35 +2063,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFmul(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFneg
 
@@ -2952,35 +2086,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFneg(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFor
 
@@ -2989,46 +2108,31 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Loop`](commonil.md#binaryninja.commonil.Loop "binaryninja.commonil.Loop")
 
-    HighLevelILFor(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
     *property* condition*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
     *property* init*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    instr_index*: InstructionIndex*
 
     *property* update*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -3040,27 +2144,20 @@
     [`Loop`](commonil.md#binaryninja.commonil.Loop "binaryninja.commonil.Loop"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILForSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
 
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -3068,20 +2165,12 @@
 
     *property* condition_phi*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
     *property* init*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    instr_index*: InstructionIndex*
 
     *property* update*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -3091,37 +2180,22 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILForceVer(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* dest*: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*
 
@@ -3132,37 +2206,22 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILForceVerSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* dest*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
 
@@ -3174,35 +2233,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFsqrt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFsub
 
@@ -3212,35 +2256,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFsub(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFtrunc
 
@@ -3250,35 +2279,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILFtrunc(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILFunction
 
@@ -3292,10 +2306,26 @@
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: BNHighLevelILFunction | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *source_func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.__init__)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
-            - **handle** (*BNHighLevelILFunction* *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
+            - **handle** (*BNHighLevelILFunction* *|* *None*)
             - **source_func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function") *|* *None*) –
+              "binaryninja.function.Function") *|* *None*)
+
+    absolute_value(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.absolute_value)
+    :   `absolute_value` signed absolute value of expression `value` of size `size`
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to take the absolute value of
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `abs.<size>(value)`
+
+        Return type:
+        :   ExpressionIndex
 
     add(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.add)
     :   `add` adds expression `a` to expression `b` returning an expression of `size` bytes
@@ -3503,6 +2533,22 @@
 
         Returns:
         :   a breakpoint expression.
+
+        Return type:
+        :   ExpressionIndex
+
+    byte_swap(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.byte_swap)
+    :   `byte_swap` reverses the byte order of expression `value` of size `size`
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to byte swap
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `bswap.<size>(value)`
 
         Return type:
         :   ExpressionIndex
@@ -3811,13 +2857,64 @@
         :   The index of the newly copied expression
 
         Return type:
+        :   *ExpressionIndex*
+
+    count_leading_signs(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.count_leading_signs)
+    :   `count_leading_signs` counts the leading sign bits in expression `value` of size `size`
+        (the number of bits below the sign bit that match it)
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count leading sign bits in
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `cls.<size>(value)`
+
+        Return type:
+        :   ExpressionIndex
+
+    count_leading_zeros(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.count_leading_zeros)
+    :   `count_leading_zeros` counts the leading zero bits in expression `value` of size `size`.
+        The result is `8 * size` when `value` is zero.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count leading zero bits in
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `clz.<size>(value)`
+
+        Return type:
+        :   ExpressionIndex
+
+    count_trailing_zeros(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.count_trailing_zeros)
+    :   `count_trailing_zeros` counts the trailing zero bits in expression `value` of size
+        `size`. The result is `8 * size` when `value` is zero.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count trailing zero bits in
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `ctz.<size>(value)`
+
+        Return type:
         :   ExpressionIndex
 
     create_graph(*settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CoreFlowGraph](flowgraph.md#binaryninja.flowgraph.CoreFlowGraph "binaryninja.flowgraph.CoreFlowGraph")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.create_graph)
     :   Parameters:
         :   **settings**
             ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-            "binaryninja.function.DisassemblySettings") *|* *None*) –
+            "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*CoreFlowGraph*](flowgraph.md#binaryninja.flowgraph.CoreFlowGraph
@@ -3827,7 +2924,7 @@
     :   Parameters:
         :   **settings**
             ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-            "binaryninja.function.DisassemblySettings") *|* *None*) –
+            "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*CoreFlowGraph*](flowgraph.md#binaryninja.flowgraph.CoreFlowGraph
@@ -3963,25 +3060,25 @@
     :   Parameters:
         :   - **operation** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*HighLevelILOperation*](enums.md#binaryninja.enums.HighLevelILOperation
-              "binaryninja.enums.HighLevelILOperation")) –
+              "binaryninja.enums.HighLevelILOperation"))
             - **a** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **b** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **c** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **d** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **e** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **source_location**
               ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
-              "binaryninja.commonil.ILSourceLocation") *|* *None*) –
+              "binaryninja.commonil.ILSourceLocation") *|* *None*)
 
         Return type:
-        :   ExpressionIndex
+        :   *ExpressionIndex*
 
     extern_pointer(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.extern_pointer)
     :   `extern_pointer` returns an expression for the external pointer `value` at offset
@@ -4475,10 +3572,10 @@
 
     get_expr_index_for_instruction(*instr: InstructionIndex*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_expr_index_for_instruction)
     :   Parameters:
-        :   **instr** (*InstructionIndex*) –
+        :   **instr** (*InstructionIndex*)
 
         Return type:
-        :   ExpressionIndex
+        :   *ExpressionIndex*
 
     get_expr_type(*expr_index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_expr_type)
     :   Get type of expression
@@ -4492,15 +3589,15 @@
 
     get_instruction_index_for_expr(*expr: ExpressionIndex*) → InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_instruction_index_for_expr)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
-        :   InstructionIndex | *None*
+        :   *InstructionIndex* | *None*
 
     get_label(*label_idx: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_label)
     :   Parameters:
         :   **label_idx** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
@@ -4509,7 +3606,7 @@
     get_label_uses(*label_idx: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_label_uses)
     :   Parameters:
         :   **label_idx** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4518,23 +3615,23 @@
 
     get_medium_level_il_expr_index(*expr: ExpressionIndex*) → ExpressionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_medium_level_il_expr_index)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
-        :   ExpressionIndex | *None*
+        :   *ExpressionIndex* | *None*
 
     get_medium_level_il_expr_indexes(*expr: ExpressionIndex*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[ExpressionIndex][[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_medium_level_il_expr_indexes)
     :   Parameters:
-        :   **expr** (*ExpressionIndex*) –
+        :   **expr** (*ExpressionIndex*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[ExpressionIndex]
+            v3.14)")[*ExpressionIndex*]
 
     get_non_ssa_instruction_index(*instr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_non_ssa_instruction_index)
     :   Parameters:
         :   **instr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
@@ -4542,7 +3639,7 @@
     get_ssa_instruction_index(*instr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_ssa_instruction_index)
     :   Parameters:
         :   **instr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
@@ -4550,7 +3647,7 @@
     get_ssa_memory_definition(*version: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_ssa_memory_definition)
     :   Parameters:
         :   **version** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
@@ -4559,7 +3656,7 @@
     get_ssa_memory_uses(*version: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_ssa_memory_uses)
     :   Parameters:
         :   **version** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4577,7 +3674,7 @@
         :   **ssa_var** ([*SSAVariable*](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable
             "binaryninja.mediumlevelil.SSAVariable") *|*
             [*HighLevelILVarSsa*](#binaryninja.highlevelil.HighLevelILVarSsa
-            "binaryninja.highlevelil.HighLevelILVarSsa")) –
+            "binaryninja.highlevelil.HighLevelILVarSsa"))
 
         Return type:
         :   [*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
@@ -4590,7 +3687,7 @@
         :   **ssa_var** ([*SSAVariable*](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable
             "binaryninja.mediumlevelil.SSAVariable") *|*
             [*HighLevelILVarSsa*](#binaryninja.highlevelil.HighLevelILVarSsa
-            "binaryninja.highlevelil.HighLevelILVarSsa")) –
+            "binaryninja.highlevelil.HighLevelILVarSsa"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4600,7 +3697,7 @@
     get_var_definitions(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_var_definitions)
     :   Parameters:
         :   **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-            "binaryninja.variable.Variable")) –
+            "binaryninja.variable.Variable"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4610,7 +3707,7 @@
     get_var_uses(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")][[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.get_var_uses)
     :   Parameters:
         :   **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-            "binaryninja.variable.Variable")) –
+            "binaryninja.variable.Variable"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -4717,8 +3814,8 @@
 
         Parameters:
         :   - **ssa_var** ([*SSAVariable*](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable
-              "binaryninja.mediumlevelil.SSAVariable")) –
-            - **instr** (*InstructionIndex*) –
+              "binaryninja.mediumlevelil.SSAVariable"))
+            - **instr** (*InstructionIndex*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -4728,8 +3825,8 @@
 
         Parameters:
         :   - **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")) –
-            - **instr** (*InstructionIndex*) –
+              "binaryninja.variable.Variable"))
+            - **instr** (*InstructionIndex*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -4793,6 +3890,78 @@
 
         Returns:
         :   The expression `(value).<size>`
+
+        Return type:
+        :   ExpressionIndex
+
+    max_signed(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.max_signed)
+    :   `max_signed` signed maximum of expressions `a` and `b` returning an expression of `size`
+        bytes
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `maxs.<size>(a, b)`
+
+        Return type:
+        :   ExpressionIndex
+
+    max_unsigned(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.max_unsigned)
+    :   `max_unsigned` unsigned maximum of expressions `a` and `b` returning an expression of
+        `size` bytes
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `maxu.<size>(a, b)`
+
+        Return type:
+        :   ExpressionIndex
+
+    min_signed(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.min_signed)
+    :   `min_signed` signed minimum of expressions `a` and `b` returning an expression of `size`
+        bytes
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `mins.<size>(a, b)`
+
+        Return type:
+        :   ExpressionIndex
+
+    min_unsigned(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *a: ExpressionIndex*, *b: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.min_unsigned)
+    :   `min_unsigned` unsigned minimum of expressions `a` and `b` returning an expression of
+        `size` bytes
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **a** (*ExpressionIndex*) – LHS expression
+            - **b** (*ExpressionIndex*) – RHS expression
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `minu.<size>(a, b)`
 
         Return type:
         :   ExpressionIndex
@@ -5003,11 +4172,44 @@
         Return type:
         :   ExpressionIndex
 
+    pass_by_ref(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *src: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.pass_by_ref)
+    :   `pass_by_ref` indicates that `value` is being passed by reference to a call with a
+        pointer size of `size`
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the pointer in bytes
+            - **src** (*ExpressionIndex*) – the expression containing the reference being passed
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `ref *src`
+
+        Return type:
+        :   ExpressionIndex
+
+    population_count(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.population_count)
+    :   `population_count` counts the number of set bits in expression `value` of size `size`
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to count set bits in
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `popcnt.<size>(value)`
+
+        Return type:
+        :   ExpressionIndex
+
     remove_derived_string_reference_for_expr(*expr: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | ExpressionIndex | InstructionIndex*)[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.remove_derived_string_reference_for_expr)
     :   Parameters:
         :   **expr** ([*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
             "binaryninja.highlevelil.HighLevelILInstruction") *|* *ExpressionIndex* *|*
-            *InstructionIndex*) –
+            *InstructionIndex*)
 
     replace_expr(*original: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | ExpressionIndex | InstructionIndex*, *new: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | ExpressionIndex | InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.replace_expr)
     :   `replace_expr` allows modification of HLIL expressions
@@ -5032,6 +4234,38 @@
 
         Returns:
         :   The expression `return sources...`
+
+        Return type:
+        :   ExpressionIndex
+
+    return_by_ref(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *dest: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.return_by_ref)
+    :   `return_by_ref` indicates that `dest` is being returned by passing a reference to a call
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the value in bytes
+            - **dest** (*ExpressionIndex*) – the expression containing the target of the return value
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `ref dest`
+
+        Return type:
+        :   ExpressionIndex
+
+    reverse_bits(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *value: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.reverse_bits)
+    :   `reverse_bits` reverses the bit order of expression `value` of size `size`
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the result in bytes
+            - **value** (*ExpressionIndex*) – the expression to reverse the bits of
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `rbit.<size>(value)`
 
         Return type:
         :   ExpressionIndex
@@ -5129,9 +4363,9 @@
     set_current_address(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.set_current_address)
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   *None*
@@ -5140,9 +4374,9 @@
     :   Parameters:
         :   - **expr** ([*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
               "binaryninja.highlevelil.HighLevelILInstruction") *|* *ExpressionIndex* *|*
-              *InstructionIndex*) –
+              *InstructionIndex*)
             - **str** ([*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
-              "binaryninja.binaryview.DerivedString")) –
+              "binaryninja.binaryview.DerivedString"))
 
     set_expr_attributes(*expr: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | ExpressionIndex | InstructionIndex*, *value: [Set](https://docs.python.org/3/library/typing.html#typing.Set "(in Python v3.14)")[[ILInstructionAttribute](enums.md#binaryninja.enums.ILInstructionAttribute "binaryninja.enums.ILInstructionAttribute")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ILInstructionAttribute](enums.md#binaryninja.enums.ILInstructionAttribute "binaryninja.enums.ILInstructionAttribute")]*)[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.set_expr_attributes)
     :   `set_expr_attributes` allows modification of instruction attributes but ONLY during
@@ -5180,7 +4414,6 @@
             - **expr_type** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
               v3.14)") *|* [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") *|*
               [*TypeBuilder*](types.md#binaryninja.types.TypeBuilder "binaryninja.types.TypeBuilder"))
-              –
 
         Return type:
         :   *None*
@@ -5254,6 +4487,45 @@
 
         Returns:
         :   The expression `src:offset.size`
+
+        Return type:
+        :   ExpressionIndex
+
+    struct_init(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *fields: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[ExpressionIndex]*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.struct_init)
+    :   `struct_init` initializes a structure with `fields`. Each field should be a
+        `struct_init_field`.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the structure in bytes
+            - **fields** (*List**[**ExpressionIndex**]*) – list of fields to initialize
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `struct { .field = expr, ... }`
+
+        Return type:
+        :   ExpressionIndex
+
+    struct_init_field(*size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *member_index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *src: ExpressionIndex*, *loc: [ILSourceLocation](commonil.md#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → ExpressionIndex[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILFunction.struct_init_field)
+    :   `struct_init_field` returns an initialization of the structure field at offset `offset`
+        and index `member_index` from expression `src` of size `size`. This should only be used
+        inside a `struct_init` expression.
+
+        Parameters:
+        :   - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – the size of the field in bytes
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – offset of field in the structure
+            - **member_index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)")) – index of field in the structure
+            - **src** (*ExpressionIndex*) – the expression containing the value
+            - **loc** ([*ILSourceLocation*](commonil.md#binaryninja.commonil.ILSourceLocation
+              "binaryninja.commonil.ILSourceLocation")) – location of returned expression
+
+        Returns:
+        :   The expression `.field = src`
 
         Return type:
         :   ExpressionIndex
@@ -5390,7 +4662,7 @@
               HighLevelILInstruction
             - **args** (*Any*) – Custom user-defined arguments
             - **kwargs** (*Any*) – Custom user-defined keyword arguments
-            - **cb** –
+            - **cb**
 
         Returns:
         :   An iterator of the results of the callback function
@@ -5639,6 +4911,12 @@
     *property* instructions*: [Generator](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")]*
     :   A generator of hlil instructions of the current function
 
+        These instructions are not in AST form; nested bodies are not children of the statements
+        containing them. Use [`root`](#binaryninja.highlevelil.HighLevelILFunction.root
+        "binaryninja.highlevelil.HighLevelILFunction.root") for the AST form shown in linear
+        view. See [AST and Non-AST
+        Forms](https://docs.binary.ninja/dev/bnil-hlil.html#ast-and-non-ast-forms).
+
     *property* medium_level_il*: [MediumLevelILFunction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction "binaryninja.mediumlevelil.MediumLevelILFunction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   Medium level IL for this function
 
@@ -5650,6 +4928,13 @@
 
     *property* root*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   Root of the abstract syntax tree
+
+        This is the AST form shown in linear view, where nested bodies are children of the
+        statement containing them.
+        [`instructions`](#binaryninja.highlevelil.HighLevelILFunction.instructions
+        "binaryninja.highlevelil.HighLevelILFunction.instructions") and the function’s basic
+        blocks yield non-AST instructions instead. See [AST and Non-AST
+        Forms](https://docs.binary.ninja/dev/bnil-hlil.html#ast-and-non-ast-forms).
 
     *property* source_function*: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*
 
@@ -5675,40 +4960,25 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILGoto(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* target*: [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel")*
 
@@ -5720,44 +4990,29 @@
     [`ControlFlow`](commonil.md#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    HighLevelILIf(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* condition*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
     *property* false*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* true*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -5768,42 +5023,27 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Constant`](commonil.md#binaryninja.commonil.Constant "binaryninja.commonil.Constant")
 
-    HighLevelILImport(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* constant*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILInstruction
 
@@ -5818,14 +5058,14 @@
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
@@ -5833,11 +5073,11 @@
     *classmethod* create(*func: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*, *instr_index: InstructionIndex | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILInstruction.create)
     :   Parameters:
         :   - **func** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex* *|* *None*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex* *|* *None*)
 
         Return type:
         :   [*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
@@ -5850,7 +5090,7 @@
 
         Parameters:
         :   **discriminator** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")) –
+            Python v3.14)"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
@@ -5858,10 +5098,22 @@
     get_lines(*settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Generator](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILInstruction.get_lines)
     :   Gets HLIL text lines with optional settings
 
+        Note
+
+        The instruction renders in whichever form it is currently in, so one that is not in AST
+        form renders without its nested body and ignores `DisassemblyOption` settings acting on
+        nested bodies (such as `ShowCollapseIndicators`). Instructions from iterating a function
+        or its basic blocks are not in AST form; use
+        [`ast`](#binaryninja.highlevelil.HighLevelILInstruction.ast
+        "binaryninja.highlevelil.HighLevelILInstruction.ast") or
+        [`HighLevelILFunction.root`](#binaryninja.highlevelil.HighLevelILFunction.root
+        "binaryninja.highlevelil.HighLevelILFunction.root"). See [AST and Non-AST
+        Forms](https://docs.binary.ninja/dev/bnil-hlil.html#ast-and-non-ast-forms).
+
         Parameters:
         :   **settings**
             ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-            "binaryninja.function.DisassemblySettings") *|* *None*) –
+            "binaryninja.function.DisassemblySettings") *|* *None*)
 
         Return type:
         :   [*Generator*](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python
@@ -5872,7 +5124,7 @@
     :   Parameters:
         :   **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
             Python v3.14)")*[*[*DataFlowQueryOption*](enums.md#binaryninja.enums.DataFlowQueryOption
-            "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*) –
+            "binaryninja.enums.DataFlowQueryOption")*]* *|* *None*)
 
         Return type:
         :   [*PossibleValueSet*](variable.md#binaryninja.variable.PossibleValueSet
@@ -5881,7 +5133,7 @@
     get_ssa_var_version(*var: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILInstruction.get_ssa_var_version)
     :   Parameters:
         :   **var** ([*Variable*](variable.md#binaryninja.variable.Variable
-            "binaryninja.variable.Variable")) –
+            "binaryninja.variable.Variable"))
 
         Return type:
         :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
@@ -5910,7 +5162,7 @@
             - **shallow** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
               v3.14)")) – Whether traversal occurs on block instructions
             - **kwargs** (*Any*) – Custom user-defined keyword arguments
-            - **cb** –
+            - **cb**
 
         Returns:
         :   An iterator of the results of the callback function
@@ -5948,9 +5200,9 @@
         :   - **cb** (*HighLevelILVisitorCallback*) – Callback function that takes the name of the
               operand, the operand, operand type, and parent instruction
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **parent** ([*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*) –
+              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*)
 
         Returns:
         :   True if all instructions were visited, False if the callback returned False
@@ -5983,9 +5235,9 @@
         :   - **cb** (*HighLevelILVisitorCallback*) – Callback function that takes the name of the
               operand, the operand, operand type, and parent instruction
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **parent** ([*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*) –
+              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*)
 
         Returns:
         :   True if all instructions were visited, False if the callback returned False
@@ -6004,9 +5256,9 @@
         :   - **cb** (*HighLevelILVisitorCallback*) – Callback function that takes the name of the
               operand, the operand, operand type, and parent instruction
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **parent** ([*HighLevelILInstruction*](#binaryninja.highlevelil.HighLevelILInstruction
-              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*) –
+              "binaryninja.highlevelil.HighLevelILInstruction") *|* *None*)
 
         Returns:
         :   True if all instructions were visited, False if the callback returned False
@@ -6018,7 +5270,7 @@
         [`HighLevelILInstruction.traverse`](#binaryninja.highlevelil.HighLevelILInstruction.traverse
         "binaryninja.highlevelil.HighLevelILInstruction.traverse") instead.
 
-    ILOperations*: [ClassVar](https://docs.python.org/3/library/typing.html#typing.ClassVar "(in Python v3.14)")[[Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[[HighLevelILOperation](enums.md#binaryninja.enums.HighLevelILOperation "binaryninja.enums.HighLevelILOperation"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]]]* *= {HighLevelILOperation.HLIL_NOP: [], HighLevelILOperation.HLIL_BLOCK: [('body', 'expr_list')], HighLevelILOperation.HLIL_IF: [('condition', 'expr'), ('true', 'expr'), ('false', 'expr')], HighLevelILOperation.HLIL_WHILE: [('condition', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_DO_WHILE: [('body', 'expr'), ('condition', 'expr')], HighLevelILOperation.HLIL_FOR: [('init', 'expr'), ('condition', 'expr'), ('update', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_SWITCH: [('condition', 'expr'), ('default', 'expr'), ('cases', 'expr_list')], HighLevelILOperation.HLIL_CASE: [('values', 'expr_list'), ('body', 'expr')], HighLevelILOperation.HLIL_BREAK: [], HighLevelILOperation.HLIL_CONTINUE: [], HighLevelILOperation.HLIL_JUMP: [('dest', 'expr')], HighLevelILOperation.HLIL_RET: [('src', 'expr_list')], HighLevelILOperation.HLIL_NORET: [], HighLevelILOperation.HLIL_GOTO: [('target', 'label')], HighLevelILOperation.HLIL_LABEL: [('target', 'label')], HighLevelILOperation.HLIL_VAR_DECLARE: [('var', 'var')], HighLevelILOperation.HLIL_VAR_INIT: [('dest', 'var'), ('src', 'expr')], HighLevelILOperation.HLIL_ASSIGN: [('dest', 'expr'), ('src', 'expr')], HighLevelILOperation.HLIL_ASSIGN_UNPACK: [('dest', 'expr_list'), ('src', 'expr')], HighLevelILOperation.HLIL_VAR: [('var', 'var')], HighLevelILOperation.HLIL_STRUCT_FIELD: [('src', 'expr'), ('offset', 'int'), ('member_index', 'member_index')], HighLevelILOperation.HLIL_ARRAY_INDEX: [('src', 'expr'), ('index', 'expr')], HighLevelILOperation.HLIL_SPLIT: [('high', 'expr'), ('low', 'expr')], HighLevelILOperation.HLIL_DEREF: [('src', 'expr')], HighLevelILOperation.HLIL_DEREF_FIELD: [('src', 'expr'), ('offset', 'int'), ('member_index', 'member_index')], HighLevelILOperation.HLIL_ADDRESS_OF: [('src', 'expr')], HighLevelILOperation.HLIL_CONST: [('constant', 'int')], HighLevelILOperation.HLIL_CONST_DATA: [('constant', 'ConstantData')], HighLevelILOperation.HLIL_CONST_PTR: [('constant', 'int')], HighLevelILOperation.HLIL_EXTERN_PTR: [('constant', 'int'), ('offset', 'int')], HighLevelILOperation.HLIL_FLOAT_CONST: [('constant', 'float')], HighLevelILOperation.HLIL_IMPORT: [('constant', 'int')], HighLevelILOperation.HLIL_ADD: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ADC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_SUB: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_SBB: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_AND: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_OR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_XOR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_LSL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_LSR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ASR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ROL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_RLC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_ROR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_RRC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_MUL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MULU_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MULS_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVU: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVU_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVS: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVS_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODU: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODU_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODS: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODS_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_NEG: [('src', 'expr')], HighLevelILOperation.HLIL_NOT: [('src', 'expr')], HighLevelILOperation.HLIL_SX: [('src', 'expr')], HighLevelILOperation.HLIL_ZX: [('src', 'expr')], HighLevelILOperation.HLIL_LOW_PART: [('src', 'expr')], HighLevelILOperation.HLIL_CALL: [('dest', 'expr'), ('params', 'expr_list')], HighLevelILOperation.HLIL_CMP_E: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_NE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SLT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_ULT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SLE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_ULE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SGE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_UGE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SGT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_UGT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_TEST_BIT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_BOOL_TO_INT: [('src', 'expr')], HighLevelILOperation.HLIL_ADD_OVERFLOW: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_SYSCALL: [('params', 'expr_list')], HighLevelILOperation.HLIL_TAILCALL: [('dest', 'expr'), ('params', 'expr_list')], HighLevelILOperation.HLIL_INTRINSIC: [('intrinsic', 'intrinsic'), ('params', 'expr_list')], HighLevelILOperation.HLIL_BP: [], HighLevelILOperation.HLIL_TRAP: [('vector', 'int')], HighLevelILOperation.HLIL_UNDEF: [], HighLevelILOperation.HLIL_UNIMPL: [], HighLevelILOperation.HLIL_UNIMPL_MEM: [('src', 'expr')], HighLevelILOperation.HLIL_FADD: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FSUB: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FMUL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FDIV: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FSQRT: [('src', 'expr')], HighLevelILOperation.HLIL_FNEG: [('src', 'expr')], HighLevelILOperation.HLIL_FABS: [('src', 'expr')], HighLevelILOperation.HLIL_FLOAT_TO_INT: [('src', 'expr')], HighLevelILOperation.HLIL_INT_TO_FLOAT: [('src', 'expr')], HighLevelILOperation.HLIL_FLOAT_CONV: [('src', 'expr')], HighLevelILOperation.HLIL_ROUND_TO_INT: [('src', 'expr')], HighLevelILOperation.HLIL_FLOOR: [('src', 'expr')], HighLevelILOperation.HLIL_CEIL: [('src', 'expr')], HighLevelILOperation.HLIL_FTRUNC: [('src', 'expr')], HighLevelILOperation.HLIL_FCMP_E: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_NE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_LT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_LE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_GE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_GT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_O: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_UO: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_UNREACHABLE: [], HighLevelILOperation.HLIL_WHILE_SSA: [('condition_phi', 'expr'), ('condition', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_DO_WHILE_SSA: [('body', 'expr'), ('condition_phi', 'expr'), ('condition', 'expr')], HighLevelILOperation.HLIL_FOR_SSA: [('init', 'expr'), ('condition_phi', 'expr'), ('condition', 'expr'), ('update', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_VAR_INIT_SSA: [('dest', 'var_ssa'), ('src', 'expr')], HighLevelILOperation.HLIL_ASSIGN_MEM_SSA: [('dest', 'expr'), ('dest_memory', 'int'), ('src', 'expr'), ('src_memory', 'int')], HighLevelILOperation.HLIL_ASSIGN_UNPACK_MEM_SSA: [('dest', 'expr_list'), ('dest_memory', 'int'), ('src', 'expr'), ('src_memory', 'int')], HighLevelILOperation.HLIL_VAR_SSA: [('var', 'var_ssa')], HighLevelILOperation.HLIL_ARRAY_INDEX_SSA: [('src', 'expr'), ('src_memory', 'int'), ('index', 'expr')], HighLevelILOperation.HLIL_DEREF_SSA: [('src', 'expr'), ('src_memory', 'int')], HighLevelILOperation.HLIL_DEREF_FIELD_SSA: [('src', 'expr'), ('src_memory', 'int'), ('offset', 'int'), ('member_index', 'member_index')], HighLevelILOperation.HLIL_CALL_SSA: [('dest', 'expr'), ('params', 'expr_list'), ('dest_memory', 'int'), ('src_memory', 'int')], HighLevelILOperation.HLIL_SYSCALL_SSA: [('params', 'expr_list'), ('dest_memory', 'int'), ('src_memory', 'int')], HighLevelILOperation.HLIL_INTRINSIC_SSA: [('intrinsic', 'intrinsic'), ('params', 'expr_list'), ('dest_memory', 'int'), ('src_memory', 'int')], HighLevelILOperation.HLIL_VAR_PHI: [('dest', 'var_ssa'), ('src', 'var_ssa_list')], HighLevelILOperation.HLIL_MEM_PHI: [('dest', 'int'), ('src', 'int_list')]}*
+    ILOperations*: [ClassVar](https://docs.python.org/3/library/typing.html#typing.ClassVar "(in Python v3.14)")[[Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[[HighLevelILOperation](enums.md#binaryninja.enums.HighLevelILOperation "binaryninja.enums.HighLevelILOperation"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]]]* *= {HighLevelILOperation.HLIL_NOP: [], HighLevelILOperation.HLIL_BLOCK: [('body', 'expr_list')], HighLevelILOperation.HLIL_IF: [('condition', 'expr'), ('true', 'expr'), ('false', 'expr')], HighLevelILOperation.HLIL_WHILE: [('condition', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_DO_WHILE: [('body', 'expr'), ('condition', 'expr')], HighLevelILOperation.HLIL_FOR: [('init', 'expr'), ('condition', 'expr'), ('update', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_SWITCH: [('condition', 'expr'), ('default', 'expr'), ('cases', 'expr_list')], HighLevelILOperation.HLIL_CASE: [('values', 'expr_list'), ('body', 'expr')], HighLevelILOperation.HLIL_BREAK: [], HighLevelILOperation.HLIL_CONTINUE: [], HighLevelILOperation.HLIL_JUMP: [('dest', 'expr')], HighLevelILOperation.HLIL_RET: [('src', 'expr_list')], HighLevelILOperation.HLIL_NORET: [], HighLevelILOperation.HLIL_GOTO: [('target', 'label')], HighLevelILOperation.HLIL_LABEL: [('target', 'label')], HighLevelILOperation.HLIL_VAR_DECLARE: [('var', 'var')], HighLevelILOperation.HLIL_VAR_INIT: [('dest', 'var'), ('src', 'expr')], HighLevelILOperation.HLIL_ASSIGN: [('dest', 'expr'), ('src', 'expr')], HighLevelILOperation.HLIL_ASSIGN_UNPACK: [('dest', 'expr_list'), ('src', 'expr')], HighLevelILOperation.HLIL_VAR: [('var', 'var')], HighLevelILOperation.HLIL_STRUCT_FIELD: [('src', 'expr'), ('offset', 'int'), ('member_index', 'member_index')], HighLevelILOperation.HLIL_ARRAY_INDEX: [('src', 'expr'), ('index', 'expr')], HighLevelILOperation.HLIL_SPLIT: [('high', 'expr'), ('low', 'expr')], HighLevelILOperation.HLIL_DEREF: [('src', 'expr')], HighLevelILOperation.HLIL_DEREF_FIELD: [('src', 'expr'), ('offset', 'int'), ('member_index', 'member_index')], HighLevelILOperation.HLIL_ADDRESS_OF: [('src', 'expr')], HighLevelILOperation.HLIL_PASS_BY_REF: [('src', 'expr')], HighLevelILOperation.HLIL_RETURN_BY_REF: [('src', 'expr')], HighLevelILOperation.HLIL_CONST: [('constant', 'int')], HighLevelILOperation.HLIL_CONST_DATA: [('constant', 'ConstantData')], HighLevelILOperation.HLIL_CONST_PTR: [('constant', 'int')], HighLevelILOperation.HLIL_EXTERN_PTR: [('constant', 'int'), ('offset', 'int')], HighLevelILOperation.HLIL_FLOAT_CONST: [('constant', 'float')], HighLevelILOperation.HLIL_IMPORT: [('constant', 'int')], HighLevelILOperation.HLIL_ADD: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ADC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_SUB: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_SBB: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_AND: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_OR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_XOR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_LSL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_LSR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ASR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ROL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_RLC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_ROR: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_RRC: [('left', 'expr'), ('right', 'expr'), ('carry', 'expr')], HighLevelILOperation.HLIL_MUL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MULU_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MULS_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVU: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVU_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVS: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_DIVS_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODU: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODU_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODS: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MODS_DP: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_NEG: [('src', 'expr')], HighLevelILOperation.HLIL_NOT: [('src', 'expr')], HighLevelILOperation.HLIL_SX: [('src', 'expr')], HighLevelILOperation.HLIL_ZX: [('src', 'expr')], HighLevelILOperation.HLIL_LOW_PART: [('src', 'expr')], HighLevelILOperation.HLIL_CALL: [('dest', 'expr'), ('params', 'expr_list')], HighLevelILOperation.HLIL_CMP_E: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_NE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SLT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_ULT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SLE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_ULE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SGE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_UGE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_SGT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_CMP_UGT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_TEST_BIT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_BOOL_TO_INT: [('src', 'expr')], HighLevelILOperation.HLIL_ADD_OVERFLOW: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_SYSCALL: [('params', 'expr_list')], HighLevelILOperation.HLIL_TAILCALL: [('dest', 'expr'), ('params', 'expr_list')], HighLevelILOperation.HLIL_INTRINSIC: [('intrinsic', 'intrinsic'), ('params', 'expr_list')], HighLevelILOperation.HLIL_BP: [], HighLevelILOperation.HLIL_TRAP: [('vector', 'int')], HighLevelILOperation.HLIL_UNDEF: [], HighLevelILOperation.HLIL_UNIMPL: [], HighLevelILOperation.HLIL_UNIMPL_MEM: [('src', 'expr')], HighLevelILOperation.HLIL_STRUCT_INIT: [('fields', 'expr_list')], HighLevelILOperation.HLIL_STRUCT_INIT_FIELD: [('offset', 'int'), ('member_index', 'member_index'), ('src', 'expr')], HighLevelILOperation.HLIL_FADD: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FSUB: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FMUL: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FDIV: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FSQRT: [('src', 'expr')], HighLevelILOperation.HLIL_FNEG: [('src', 'expr')], HighLevelILOperation.HLIL_FABS: [('src', 'expr')], HighLevelILOperation.HLIL_FLOAT_TO_INT: [('src', 'expr')], HighLevelILOperation.HLIL_INT_TO_FLOAT: [('src', 'expr')], HighLevelILOperation.HLIL_FLOAT_CONV: [('src', 'expr')], HighLevelILOperation.HLIL_ROUND_TO_INT: [('src', 'expr')], HighLevelILOperation.HLIL_FLOOR: [('src', 'expr')], HighLevelILOperation.HLIL_CEIL: [('src', 'expr')], HighLevelILOperation.HLIL_FTRUNC: [('src', 'expr')], HighLevelILOperation.HLIL_FCMP_E: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_NE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_LT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_LE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_GE: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_GT: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_O: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_FCMP_UO: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_UNREACHABLE: [], HighLevelILOperation.HLIL_WHILE_SSA: [('condition_phi', 'expr'), ('condition', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_DO_WHILE_SSA: [('body', 'expr'), ('condition_phi', 'expr'), ('condition', 'expr')], HighLevelILOperation.HLIL_FOR_SSA: [('init', 'expr'), ('condition_phi', 'expr'), ('condition', 'expr'), ('update', 'expr'), ('body', 'expr')], HighLevelILOperation.HLIL_VAR_INIT_SSA: [('dest', 'var_ssa'), ('src', 'expr')], HighLevelILOperation.HLIL_ASSIGN_MEM_SSA: [('dest', 'expr'), ('dest_memory', 'int'), ('src', 'expr'), ('src_memory', 'int')], HighLevelILOperation.HLIL_ASSIGN_UNPACK_MEM_SSA: [('dest', 'expr_list'), ('dest_memory', 'int'), ('src', 'expr'), ('src_memory', 'int')], HighLevelILOperation.HLIL_VAR_SSA: [('var', 'var_ssa')], HighLevelILOperation.HLIL_VAR_SSA_PARTIAL: [('var', 'var_ssa_dest_and_src'), ('prev', 'var_ssa_dest_and_src')], HighLevelILOperation.HLIL_ARRAY_INDEX_SSA: [('src', 'expr'), ('src_memory', 'int'), ('index', 'expr')], HighLevelILOperation.HLIL_DEREF_SSA: [('src', 'expr'), ('src_memory', 'int')], HighLevelILOperation.HLIL_DEREF_FIELD_SSA: [('src', 'expr'), ('src_memory', 'int'), ('offset', 'int'), ('member_index', 'member_index')], HighLevelILOperation.HLIL_CALL_SSA: [('dest', 'expr'), ('params', 'expr_list'), ('dest_memory', 'int'), ('src_memory', 'int')], HighLevelILOperation.HLIL_SYSCALL_SSA: [('params', 'expr_list'), ('dest_memory', 'int'), ('src_memory', 'int')], HighLevelILOperation.HLIL_INTRINSIC_SSA: [('intrinsic', 'intrinsic'), ('params', 'expr_list'), ('dest_memory', 'int'), ('src_memory', 'int')], HighLevelILOperation.HLIL_VAR_PHI: [('dest', 'var_ssa'), ('src', 'var_ssa_list')], HighLevelILOperation.HLIL_MEM_PHI: [('dest', 'int'), ('src', 'int_list')], HighLevelILOperation.HLIL_BSWAP: [('src', 'expr')], HighLevelILOperation.HLIL_POPCNT: [('src', 'expr')], HighLevelILOperation.HLIL_CLZ: [('src', 'expr')], HighLevelILOperation.HLIL_CTZ: [('src', 'expr')], HighLevelILOperation.HLIL_RBIT: [('src', 'expr')], HighLevelILOperation.HLIL_CLS: [('src', 'expr')], HighLevelILOperation.HLIL_MINS: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MAXS: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MINU: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_MAXU: [('left', 'expr'), ('right', 'expr')], HighLevelILOperation.HLIL_ABS: [('src', 'expr')]}*
 
     *property* address*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -6026,6 +5278,9 @@
 
     *property* ast*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
     :   This expression with full AST printing (read-only)
+
+        See [AST and Non-AST
+        Forms](https://docs.binary.ninja/dev/bnil-hlil.html#ast-and-non-ast-forms)
 
     *property* attributes*: [Set](https://docs.python.org/3/library/typing.html#typing.Set "(in Python v3.14)")[[ILInstructionAttribute](enums.md#binaryninja.enums.ILInstructionAttribute "binaryninja.enums.ILInstructionAttribute")]*
     :   The set of optional attributes placed on the instruction
@@ -6086,6 +5341,9 @@
 
     *property* non_ast*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
     :   This expression without full AST printing (read-only)
+
+        See [AST and Non-AST
+        Forms](https://docs.binary.ninja/dev/bnil-hlil.html#ast-and-non-ast-forms)
 
     *property* non_ssa_form*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   Non-SSA form of expression (read-only)
@@ -6157,35 +5415,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILIntToFloat(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILIntrinsic
 
@@ -6195,40 +5438,25 @@
     [`Intrinsic`](commonil.md#binaryninja.commonil.Intrinsic
     "binaryninja.commonil.Intrinsic")
 
-    HighLevelILIntrinsic(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* intrinsic*: [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic")*
 
@@ -6241,29 +5469,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILIntrinsicSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest_memory*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -6271,12 +5490,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* intrinsic*: [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic")*
 
@@ -6291,29 +5504,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILJump(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -6322,52 +5526,31 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
-
 ## HighLevelILLabel
 
 *class* HighLevelILLabel[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILLabel)
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILLabel(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* target*: [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel")*
 
@@ -6379,35 +5562,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILLowPart(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILLsl
 
@@ -6417,35 +5585,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILLsl(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILLsr
 
@@ -6455,35 +5608,67 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILLsr(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+## HighLevelILMaxs
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
+*class* HighLevelILMaxs[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILMaxs)
+:   Bases: [`HighLevelILBinaryBase`](#binaryninja.highlevelil.HighLevelILBinaryBase
+    "binaryninja.highlevelil.HighLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic"), [`Signed`](commonil.md#binaryninja.commonil.Signed
+    "binaryninja.commonil.Signed")
 
-    expr_index*: ExpressionIndex*
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
+        Return type:
+        :   *None*
 
-    instr_index*: InstructionIndex*
+## HighLevelILMaxu
+
+*class* HighLevelILMaxu[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILMaxu)
+:   Bases: [`HighLevelILBinaryBase`](#binaryninja.highlevelil.HighLevelILBinaryBase
+    "binaryninja.highlevelil.HighLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
 
 ## HighLevelILMemPhi
 
@@ -6493,29 +5678,20 @@
     [`Memory`](commonil.md#binaryninja.commonil.Memory "binaryninja.commonil.Memory"),
     [`Phi`](commonil.md#binaryninja.commonil.Phi "binaryninja.commonil.Phi")
 
-    HighLevelILMemPhi(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -6524,13 +5700,54 @@
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
-
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
+
+## HighLevelILMins
+
+*class* HighLevelILMins[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILMins)
+:   Bases: [`HighLevelILBinaryBase`](#binaryninja.highlevelil.HighLevelILBinaryBase
+    "binaryninja.highlevelil.HighLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic"), [`Signed`](commonil.md#binaryninja.commonil.Signed
+    "binaryninja.commonil.Signed")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
+
+## HighLevelILMinu
+
+*class* HighLevelILMinu[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILMinu)
+:   Bases: [`HighLevelILBinaryBase`](#binaryninja.highlevelil.HighLevelILBinaryBase
+    "binaryninja.highlevelil.HighLevelILBinaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
 
 ## HighLevelILMods
 
@@ -6539,35 +5756,20 @@
     "binaryninja.highlevelil.HighLevelILBinaryBase"),
     [`Signed`](commonil.md#binaryninja.commonil.Signed "binaryninja.commonil.Signed")
 
-    HighLevelILMods(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILModsDp
 
@@ -6578,35 +5780,20 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    HighLevelILModsDp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILModu
 
@@ -6616,35 +5803,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILModu(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILModuDp
 
@@ -6654,35 +5826,20 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    HighLevelILModuDp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILMul
 
@@ -6692,35 +5849,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILMul(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILMulsDp
 
@@ -6732,35 +5874,20 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    HighLevelILMulsDp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILMuluDp
 
@@ -6770,35 +5897,20 @@
     [`DoublePrecision`](commonil.md#binaryninja.commonil.DoublePrecision
     "binaryninja.commonil.DoublePrecision")
 
-    HighLevelILMuluDp(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILNeg
 
@@ -6808,35 +5920,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILNeg(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILNop
 
@@ -6844,35 +5941,20 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILNop(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILNoret
 
@@ -6881,35 +5963,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILNoret(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILNot
 
@@ -6919,35 +5986,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILNot(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILOperationAndSize
 
@@ -6955,15 +6007,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    HighLevelILOperationAndSize(operation: binaryninja.enums.HighLevelILOperation, size:
-    int)
-
     __init__(*operation: [HighLevelILOperation](enums.md#binaryninja.enums.HighLevelILOperation "binaryninja.enums.HighLevelILOperation")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **operation** ([*HighLevelILOperation*](enums.md#binaryninja.enums.HighLevelILOperation
-              "binaryninja.enums.HighLevelILOperation")) –
+              "binaryninja.enums.HighLevelILOperation"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -6980,35 +6029,87 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILOr(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+## HighLevelILPassByRef
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
+*class* HighLevelILPassByRef[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILPassByRef)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase")
 
-    expr_index*: ExpressionIndex*
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
+        Return type:
+        :   *None*
 
-    instr_index*: InstructionIndex*
+## HighLevelILPopcnt
+
+*class* HighLevelILPopcnt[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILPopcnt)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
+
+## HighLevelILRbit
+
+*class* HighLevelILRbit[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILRbit)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase"),
+    [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
+    "binaryninja.commonil.Arithmetic")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
 
 ## HighLevelILRet
 
@@ -7017,42 +6118,48 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Return`](commonil.md#binaryninja.commonil.Return "binaryninja.commonil.Return")
 
-    HighLevelILRet(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
-
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
+
+## HighLevelILReturnByRef
+
+*class* HighLevelILReturnByRef[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILReturnByRef)
+:   Bases: [`HighLevelILUnaryBase`](#binaryninja.highlevelil.HighLevelILUnaryBase
+    "binaryninja.highlevelil.HighLevelILUnaryBase")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
 
 ## HighLevelILRlc
 
@@ -7060,35 +6167,20 @@
 :   Bases: [`HighLevelILCarryBase`](#binaryninja.highlevelil.HighLevelILCarryBase
     "binaryninja.highlevelil.HighLevelILCarryBase")
 
-    HighLevelILRlc(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILRol
 
@@ -7098,35 +6190,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILRol(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILRor
 
@@ -7134,35 +6211,20 @@
 :   Bases: [`HighLevelILCarryBase`](#binaryninja.highlevelil.HighLevelILCarryBase
     "binaryninja.highlevelil.HighLevelILCarryBase")
 
-    HighLevelILRor(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILRoundToInt
 
@@ -7172,35 +6234,20 @@
     [`FloatingPoint`](commonil.md#binaryninja.commonil.FloatingPoint
     "binaryninja.commonil.FloatingPoint")
 
-    HighLevelILRoundToInt(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILRrc
 
@@ -7208,35 +6255,20 @@
 :   Bases: [`HighLevelILCarryBase`](#binaryninja.highlevelil.HighLevelILCarryBase
     "binaryninja.highlevelil.HighLevelILCarryBase")
 
-    HighLevelILRrc(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILSbb
 
@@ -7244,35 +6276,20 @@
 :   Bases: [`HighLevelILCarryBase`](#binaryninja.highlevelil.HighLevelILCarryBase
     "binaryninja.highlevelil.HighLevelILCarryBase")
 
-    HighLevelILSbb(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILSplit
 
@@ -7280,42 +6297,27 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILSplit(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
     *property* high*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    instr_index*: InstructionIndex*
 
     *property* low*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -7325,40 +6327,85 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILStructField(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
+    *property* member_index*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
+    *property* offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
-    instr_index*: InstructionIndex*
+    *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
+
+## HighLevelILStructInit
+
+*class* HighLevelILStructInit[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILStructInit)
+:   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
+    "binaryninja.highlevelil.HighLevelILInstruction")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
+
+    *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
+    :   Returns a list of tuples containing the name of the operand, the operand, and the type
+        of the operand. Useful for iterating over all operands of an instruction and
+        sub-instructions.
+
+    *property* fields*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
+
+## HighLevelILStructInitField
+
+*class* HighLevelILStructInitField[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILStructInitField)
+:   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
+    "binaryninja.highlevelil.HighLevelILInstruction")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
+
+    *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
+    :   Returns a list of tuples containing the name of the operand, the operand, and the type
+        of the operand. Useful for iterating over all operands of an instruction and
+        sub-instructions.
 
     *property* member_index*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -7374,35 +6421,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILSub(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILSwitch
 
@@ -7412,33 +6444,24 @@
     [`ControlFlow`](commonil.md#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    HighLevelILSwitch(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
 
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
     *property* cases*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
     *property* condition*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* default*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -7446,12 +6469,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILSx
 
@@ -7461,35 +6478,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILSx(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILSyscall
 
@@ -7498,40 +6500,25 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Syscall`](commonil.md#binaryninja.commonil.Syscall "binaryninja.commonil.Syscall")
 
-    HighLevelILSyscall(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* params*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -7543,29 +6530,20 @@
     [`Syscall`](commonil.md#binaryninja.commonil.Syscall "binaryninja.commonil.Syscall"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILSyscallSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest_memory*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -7573,12 +6551,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* params*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -7591,29 +6563,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Tailcall`](commonil.md#binaryninja.commonil.Tailcall "binaryninja.commonil.Tailcall")
 
-    HighLevelILTailcall(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -7621,12 +6584,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* params*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")]*
 
@@ -7636,35 +6593,20 @@
 :   Bases: [`HighLevelILComparisonBase`](#binaryninja.highlevelil.HighLevelILComparisonBase
     "binaryninja.highlevelil.HighLevelILComparisonBase")
 
-    HighLevelILTestBit(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILTrap
 
@@ -7673,40 +6615,25 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILTrap(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* vector*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
@@ -7718,40 +6645,25 @@
     [`UnaryOperation`](commonil.md#binaryninja.commonil.UnaryOperation
     "binaryninja.commonil.UnaryOperation")
 
-    HighLevelILUnaryBase(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -7762,35 +6674,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILUndef(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILUnimpl
 
@@ -7798,35 +6695,20 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILUnimpl(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILUnimplMem
 
@@ -7835,35 +6717,20 @@
     "binaryninja.highlevelil.HighLevelILUnaryBase"),
     [`Memory`](commonil.md#binaryninja.commonil.Memory "binaryninja.commonil.Memory")
 
-    HighLevelILUnimplMem(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILUnreachable
 
@@ -7872,35 +6739,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Terminal`](commonil.md#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    HighLevelILUnreachable(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILVar
 
@@ -7910,40 +6762,25 @@
     [`VariableInstruction`](commonil.md#binaryninja.commonil.VariableInstruction
     "binaryninja.commonil.VariableInstruction")
 
-    HighLevelILVar(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* var*: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*
 
@@ -7953,40 +6790,25 @@
 :   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
     "binaryninja.highlevelil.HighLevelILInstruction")
 
-    HighLevelILVarDeclare(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* var*: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*
 
@@ -7997,29 +6819,20 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`SetVar`](commonil.md#binaryninja.commonil.SetVar "binaryninja.commonil.SetVar")
 
-    HighLevelILVarInit(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")*
 
@@ -8027,12 +6840,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -8047,29 +6854,20 @@
     [`SetVar`](commonil.md#binaryninja.commonil.SetVar "binaryninja.commonil.SetVar"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILVarInitSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
 
@@ -8077,12 +6875,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -8097,29 +6889,20 @@
     [`Phi`](commonil.md#binaryninja.commonil.Phi "binaryninja.commonil.Phi"),
     [`SetVar`](commonil.md#binaryninja.commonil.SetVar "binaryninja.commonil.SetVar")
 
-    HighLevelILVarPhi(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* dest*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
 
@@ -8127,12 +6910,6 @@
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
     *property* src*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")]*
 
@@ -8147,42 +6924,59 @@
     [`SSAVariableInstruction`](commonil.md#binaryninja.commonil.SSAVariableInstruction
     "binaryninja.commonil.SSAVariableInstruction")
 
-    HighLevelILVarSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
 
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
 
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
-
     *property* var*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
+
+## HighLevelILVarSsaPartial
+
+*class* HighLevelILVarSsaPartial[[source]](https://api.binary.ninja/_modules/binaryninja/highlevelil.html#HighLevelILVarSsaPartial)
+:   Bases: [`HighLevelILInstruction`](#binaryninja.highlevelil.HighLevelILInstruction
+    "binaryninja.highlevelil.HighLevelILInstruction"),
+    [`SSAVariableInstruction`](commonil.md#binaryninja.commonil.SSAVariableInstruction
+    "binaryninja.commonil.SSAVariableInstruction")
+
+    __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
+            - **core_instr**
+              ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
+            - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
+
+        Return type:
+        :   *None*
+
+    *property* dest*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
+
+    *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
+    :   Returns a list of tuples containing the name of the operand, the operand, and the type
+        of the operand. Useful for iterating over all operands of an instruction and
+        sub-instructions.
+
+    *property* prev*: [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")*
 
 ## HighLevelILWhile
 
@@ -8191,44 +6985,29 @@
     "binaryninja.highlevelil.HighLevelILInstruction"),
     [`Loop`](commonil.md#binaryninja.commonil.Loop "binaryninja.commonil.Loop")
 
-    HighLevelILWhile(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
 
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
     *property* condition*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILWhileSsa
 
@@ -8238,27 +7017,20 @@
     [`Loop`](commonil.md#binaryninja.commonil.Loop "binaryninja.commonil.Loop"),
     [`SSA`](commonil.md#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    HighLevelILWhileSsa(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
 
     *property* body*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
@@ -8266,18 +7038,10 @@
 
     *property* condition_phi*: [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*
 
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
     *property* detailed_operands*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [ILIntrinsic](lowlevelil.md#binaryninja.lowlevelil.ILIntrinsic "binaryninja.lowlevelil.ILIntrinsic") | [Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable") | [SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Variable](variable.md#binaryninja.variable.Variable "binaryninja.variable.Variable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SSAVariable](mediumlevelil.md#binaryninja.mediumlevelil.SSAVariable "binaryninja.mediumlevelil.SSAVariable")] | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[HighLevelILInstruction](#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")] | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [GotoLabel](#binaryninja.highlevelil.GotoLabel "binaryninja.highlevelil.GotoLabel") | [ConstantData](variable.md#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") | [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*
     :   Returns a list of tuples containing the name of the operand, the operand, and the type
         of the operand. Useful for iterating over all operands of an instruction and
         sub-instructions.
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILXor
 
@@ -8287,35 +7051,20 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILXor(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*
 
 ## HighLevelILZx
 
@@ -8325,32 +7074,17 @@
     [`Arithmetic`](commonil.md#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    HighLevelILZx(function: ‘HighLevelILFunction’, expr_index: <function
-    NewType.<locals>.new_type at 0x105107820>, core_instr:
-    binaryninja.highlevelil.CoreHighLevelILInstruction, as_ast: bool, instr_index: <function
-    NewType.<locals>.new_type at 0x105092940>)
-
     __init__(*function: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *expr_index: ExpressionIndex*, *core_instr: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*, *as_ast: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *instr_index: InstructionIndex*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **function** ([*HighLevelILFunction*](#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **expr_index** (*ExpressionIndex*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **expr_index** (*ExpressionIndex*)
             - **core_instr**
               ([*CoreHighLevelILInstruction*](#binaryninja.highlevelil.CoreHighLevelILInstruction
-              "binaryninja.highlevelil.CoreHighLevelILInstruction")) –
+              "binaryninja.highlevelil.CoreHighLevelILInstruction"))
             - **as_ast** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
-            - **instr_index** (*InstructionIndex*) –
+              v3.14)"))
+            - **instr_index** (*InstructionIndex*)
 
         Return type:
         :   *None*
-
-    as_ast*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
-
-    core_instr*: [CoreHighLevelILInstruction](#binaryninja.highlevelil.CoreHighLevelILInstruction "binaryninja.highlevelil.CoreHighLevelILInstruction")*
-
-    expr_index*: ExpressionIndex*
-
-    function*: [HighLevelILFunction](#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*
-
-    instr_index*: InstructionIndex*

@@ -12,7 +12,7 @@
 
     __init__(*handle: LP_BNTypeLibrary*)[[source]](https://api.binary.ninja/_modules/binaryninja/typelibrary.html#TypeLibrary.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNTypeLibrary*) –
+        :   **handle** (*LP_BNTypeLibrary*)
 
     add_alternate_name(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typelibrary.html#TypeLibrary.add_alternate_name)
     :   Adds an extra name to this type library used during library lookups and dependency
@@ -20,7 +20,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   *None*
@@ -36,9 +36,9 @@
 
         Parameters:
         :   - **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
-            - **t** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
-            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              "binaryninja.types.QualifiedName"))
+            - **t** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
+            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
 
         Return type:
         :   *None*
@@ -54,9 +54,9 @@
 
         Parameters:
         :   - **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
-              "binaryninja.types.QualifiedName")) –
-            - **t** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
-            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              "binaryninja.types.QualifiedName"))
+            - **t** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
+            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
 
         Return type:
         :   *None*
@@ -71,7 +71,7 @@
 
         Parameters:
         :   **plat** ([*Platform*](platform.md#binaryninja.platform.Platform
-            "binaryninja.platform.Platform")) –
+            "binaryninja.platform.Platform"))
 
         Return type:
         :   *None*
@@ -87,9 +87,9 @@
         Parameters:
         :   - **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
               "binaryninja.types.QualifiedName") *|*
-              [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")) –
+              [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"))
             - **source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -106,7 +106,7 @@
 
         Parameters:
         :   **path** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -135,9 +135,9 @@
 
         Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **guid** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*TypeLibrary*](#binaryninja.typelibrary.TypeLibrary
@@ -149,9 +149,9 @@
 
         Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*TypeLibrary*](#binaryninja.typelibrary.TypeLibrary
@@ -194,7 +194,7 @@
 
         Parameters:
         :   **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
-            "binaryninja.types.QualifiedName")) –
+            "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")
@@ -206,7 +206,7 @@
 
         Parameters:
         :   **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
-            "binaryninja.types.QualifiedName")) –
+            "binaryninja.types.QualifiedName"))
 
         Return type:
         :   [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")
@@ -216,7 +216,7 @@
 
         Parameters:
         :   **path** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*TypeLibrary*](#binaryninja.typelibrary.TypeLibrary
@@ -227,9 +227,9 @@
 
         Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*TypeLibrary*](#binaryninja.typelibrary.TypeLibrary
@@ -264,6 +264,16 @@
         Return type:
         :   *None*
 
+    remove_alternate_name(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typelibrary.html#TypeLibrary.remove_alternate_name)
+    :   Removes an extra name from this type library instance that has not been finalized
+
+        Parameters:
+        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)"))
+
+        Return type:
+        :   *None*
+
     remove_metadata(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typelibrary.html#TypeLibrary.remove_metadata)
     :   remove_metadata removes the metadata associated with key from the current type library.
 
@@ -285,7 +295,7 @@
 
         Parameters:
         :   **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
-            "binaryninja.types.QualifiedName")) –
+            "binaryninja.types.QualifiedName"))
 
         Return type:
         :   *None*
@@ -297,7 +307,7 @@
         Parameters:
         :   **name** ([*QualifiedName*](types.md#binaryninja.types.QualifiedName
             "binaryninja.types.QualifiedName") *|*
-            [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")) –
+            [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"))
 
         Return type:
         :   *None*
@@ -333,7 +343,7 @@
 
         Parameters:
         :   **path** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   *None*

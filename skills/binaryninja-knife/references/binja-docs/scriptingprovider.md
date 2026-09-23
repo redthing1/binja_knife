@@ -54,7 +54,7 @@
             *name* is the thread name. By default, a unique name is constructed of the form
             “Thread-N” where N is a small decimal number.
 
-            *args* is the argument tuple for the target invocation. Defaults to ().
+            *args* is a list or tuple of arguments for the target invocation. Defaults to ().
 
             *kwargs* is a dictionary of keyword arguments for the target invocation. Defaults to {}.
 
@@ -88,7 +88,26 @@
 
     __init__(*provider*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#PythonScriptingInstance.__init__)
 
+    *abstract* perform_can_complete_arguments(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#PythonScriptingInstance.perform_can_complete_arguments)
+    :   Parameters:
+        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+
     *abstract* perform_cancel_script_input()[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#PythonScriptingInstance.perform_cancel_script_input)
+
+    *abstract* perform_complete_arguments(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#PythonScriptingInstance.perform_complete_arguments)
+    :   Parameters:
+        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
+            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)") | *None*, [*int*](https://docs.python.org/3/library/functions.html#int "(in
+            Python v3.14)")]
 
     *abstract* perform_complete_input(*text*, *state*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#PythonScriptingInstance.perform_complete_input)
 
@@ -128,7 +147,7 @@
                   v3.14)")*[**[*[*PythonScriptingInstance*](#binaryninja.scriptingprovider.PythonScriptingInstance
                   "binaryninja.scriptingprovider.PythonScriptingInstance")*]**,*
                   [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python
-                  v3.14)")*]*) –
+                  v3.14)")*]*)
                 - **set_value**
                   ([*Callable*](https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable
                   "(in Python
@@ -136,10 +155,10 @@
                   "binaryninja.scriptingprovider.PythonScriptingInstance")*,*
                   [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*,*
                   [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python
-                  v3.14)")*]**,* *None**]* *|* *None*) –
+                  v3.14)")*]**,* *None**]* *|* *None*)
                 - **depends_on** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
                   Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-                  Python v3.14)")*]*) –
+                  Python v3.14)")*]*)
 
             Return type:
             :   *None*
@@ -174,14 +193,14 @@
 
         Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **get_value**
               ([*Callable*](https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable
               "(in Python
               v3.14)")*[**[*[*PythonScriptingInstance*](#binaryninja.scriptingprovider.PythonScriptingInstance
               "binaryninja.scriptingprovider.PythonScriptingInstance")*]**,*
               [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python
-              v3.14)")*]*) –
+              v3.14)")*]*)
             - **set_value**
               ([*Callable*](https://docs.python.org/3/library/collections.abc.html#collections.abc.Callable
               "(in Python
@@ -189,21 +208,21 @@
               "binaryninja.scriptingprovider.PythonScriptingInstance")*,*
               [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*,*
               [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python
-              v3.14)")*]**,* *None**]* *|* *None*) –
+              v3.14)")*]**,* *None**]* *|* *None*)
             - **depends_on** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]* *|* *None*) –
+              Python v3.14)")*]* *|* *None*)
 
     *classmethod* unregister_magic_variable(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#PythonScriptingProvider.unregister_magic_variable)
     :   Remove a magic variable by name :param name: Variable name
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     apiName *= 'python3'*
 
-    magic_variables*: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [MagicVariable](#binaryninja.scriptingprovider.PythonScriptingProvider.MagicVariable "binaryninja.scriptingprovider.PythonScriptingProvider.MagicVariable")]* *= {'bv': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_address': PythonScriptingProvider.MagicVariable(get_value=<function _get_here>, set_value=<function _set_here>, depends_on=['current_ui_context']), 'current_basic_block': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_comment': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_comment>, set_value=<function _set_current_comment>, depends_on=[]), 'current_data_var': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_data_var>, set_value=None, depends_on=[]), 'current_function': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_hlil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_hlil>, set_value=None, depends_on=[]), 'current_hlil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_hlil_ssa>, set_value=None, depends_on=['current_hlil']), 'current_il_basic_block': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_basic_block>, set_value=None, depends_on=['current_il_instruction']), 'current_il_expr': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_expr>, set_value=None, depends_on=['current_il_expr_index', 'current_il_function']), 'current_il_expr_index': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_expr_index>, set_value=None, depends_on=['current_token']), 'current_il_function': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_function>, set_value=None, depends_on=['current_ui_view_location', 'current_llil', 'current_lifted_il', 'current_llil_ssa', 'current_mapped_mlil', 'current_mapped_mlil_ssa', 'current_mlil', 'current_mlil_ssa', 'current_hlil', 'current_hlil_ssa']), 'current_il_index': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_index>, set_value=None, depends_on=['current_ui_view_location']), 'current_il_instruction': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_instruction>, set_value=None, depends_on=['current_il_index', 'current_il_function']), 'current_il_instructions': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_instructions>, set_value=None, depends_on=['current_il_index', 'current_il_function', 'current_ui_view']), 'current_lifted_il': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_lifted_il>, set_value=None, depends_on=[]), 'current_llil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_llil>, set_value=None, depends_on=[]), 'current_llil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_llil_ssa>, set_value=None, depends_on=['current_llil']), 'current_mapped_mlil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mapped_mlil>, set_value=None, depends_on=[]), 'current_mapped_mlil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mapped_mlil_ssa>, set_value=None, depends_on=['current_mapped_mlil']), 'current_mlil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mlil>, set_value=None, depends_on=[]), 'current_mlil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mlil_ssa>, set_value=None, depends_on=['current_mlil']), 'current_project': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_project>, set_value=None, depends_on=['current_ui_context', 'current_view']), 'current_raw_offset': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_raw_offset>, set_value=<function _set_current_raw_offset>, depends_on=['current_ui_context']), 'current_sections': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_sections>, set_value=None, depends_on=[]), 'current_segment': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_segment>, set_value=None, depends_on=[]), 'current_selection': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_selection>, set_value=<function _set_current_selection>, depends_on=['current_ui_view']), 'current_symbol': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_symbol>, set_value=None, depends_on=[]), 'current_symbols': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_symbols>, set_value=None, depends_on=[]), 'current_thread': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_token': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_token>, set_value=None, depends_on=['current_ui_token_state']), 'current_ui_action_context': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_action_context>, set_value=None, depends_on=['current_ui_view', 'current_ui_action_handler']), 'current_ui_action_handler': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_action_handler>, set_value=None, depends_on=['current_ui_context']), 'current_ui_context': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_context>, set_value=None, depends_on=[]), 'current_ui_token_state': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_token_state>, set_value=None, depends_on=['current_ui_action_context']), 'current_ui_view': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_view>, set_value=None, depends_on=['current_ui_context']), 'current_ui_view_frame': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_view_frame>, set_value=None, depends_on=['current_ui_context']), 'current_ui_view_location': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_view_location>, set_value=None, depends_on=['current_ui_view_frame']), 'current_variable': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_variable>, set_value=None, depends_on=['current_ui_token_state']), 'current_view': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'dbg': PythonScriptingProvider.MagicVariable(get_value=<function _get_debugger>, set_value=None, depends_on=[]), 'dsc': PythonScriptingProvider.MagicVariable(get_value=<function _get_shared_cache>, set_value=None, depends_on=[]), 'here': PythonScriptingProvider.MagicVariable(get_value=<function _get_here>, set_value=<function _set_here>, depends_on=['current_ui_context']), 'kc': PythonScriptingProvider.MagicVariable(get_value=<function _get_kernel_cache>, set_value=None, depends_on=[]), 'kernel_cache': PythonScriptingProvider.MagicVariable(get_value=<function _get_kernel_cache>, set_value=None, depends_on=[]), 'shared_cache': PythonScriptingProvider.MagicVariable(get_value=<function _get_shared_cache>, set_value=None, depends_on=[])}*
+    magic_variables*: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [MagicVariable](#binaryninja.scriptingprovider.PythonScriptingProvider.MagicVariable "binaryninja.scriptingprovider.PythonScriptingProvider.MagicVariable")]* *= {'bv': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_address': PythonScriptingProvider.MagicVariable(get_value=<function _get_here>, set_value=<function _set_here>, depends_on=['current_ui_context']), 'current_basic_block': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_comment': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_comment>, set_value=<function _set_current_comment>, depends_on=[]), 'current_data_var': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_data_var>, set_value=None, depends_on=[]), 'current_function': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_hlil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_hlil>, set_value=None, depends_on=[]), 'current_hlil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_hlil_ssa>, set_value=None, depends_on=['current_hlil']), 'current_il_basic_block': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_basic_block>, set_value=None, depends_on=['current_il_instruction']), 'current_il_expr': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_expr>, set_value=None, depends_on=['current_il_expr_index', 'current_il_function']), 'current_il_expr_index': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_expr_index>, set_value=None, depends_on=['current_token']), 'current_il_function': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_function>, set_value=None, depends_on=['current_ui_view_location', 'current_llil', 'current_lifted_il', 'current_llil_ssa', 'current_mapped_mlil', 'current_mapped_mlil_ssa', 'current_mlil', 'current_mlil_ssa', 'current_hlil', 'current_hlil_ssa']), 'current_il_index': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_index>, set_value=None, depends_on=['current_ui_view_location']), 'current_il_instruction': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_instruction>, set_value=None, depends_on=['current_il_index', 'current_il_function']), 'current_il_instructions': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_il_instructions>, set_value=None, depends_on=['current_il_index', 'current_il_function', 'current_ui_view']), 'current_lifted_il': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_lifted_il>, set_value=None, depends_on=[]), 'current_llil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_llil>, set_value=None, depends_on=[]), 'current_llil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_llil_ssa>, set_value=None, depends_on=['current_llil']), 'current_mapped_mlil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mapped_mlil>, set_value=None, depends_on=[]), 'current_mapped_mlil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mapped_mlil_ssa>, set_value=None, depends_on=['current_mapped_mlil']), 'current_mlil': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mlil>, set_value=None, depends_on=[]), 'current_mlil_ssa': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_mlil_ssa>, set_value=None, depends_on=['current_mlil']), 'current_project': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_project>, set_value=None, depends_on=['current_ui_context', 'current_view']), 'current_raw_offset': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_raw_offset>, set_value=<function _set_current_raw_offset>, depends_on=['current_ui_context']), 'current_sections': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_sections>, set_value=None, depends_on=[]), 'current_segment': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_segment>, set_value=None, depends_on=[]), 'current_selection': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_selection>, set_value=<function _set_current_selection>, depends_on=['current_ui_view']), 'current_similarity_session': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_similarity_session>, set_value=None, depends_on=['current_ui_context']), 'current_symbol': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_symbol>, set_value=None, depends_on=[]), 'current_symbols': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_symbols>, set_value=None, depends_on=[]), 'current_thread': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'current_token': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_token>, set_value=None, depends_on=['current_ui_token_state']), 'current_ui_action_context': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_action_context>, set_value=None, depends_on=['current_ui_view', 'current_ui_action_handler']), 'current_ui_action_handler': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_action_handler>, set_value=None, depends_on=['current_ui_context']), 'current_ui_context': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_context>, set_value=None, depends_on=[]), 'current_ui_token_state': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_token_state>, set_value=None, depends_on=['current_ui_action_context']), 'current_ui_view': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_view>, set_value=None, depends_on=['current_ui_context']), 'current_ui_view_frame': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_view_frame>, set_value=None, depends_on=['current_ui_context']), 'current_ui_view_location': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_ui_view_location>, set_value=None, depends_on=['current_ui_view_frame']), 'current_variable': PythonScriptingProvider.MagicVariable(get_value=<function _get_current_variable>, set_value=None, depends_on=['current_ui_token_state']), 'current_view': PythonScriptingProvider.MagicVariable(get_value=<function <lambda>>, set_value=None, depends_on=[]), 'dbg': PythonScriptingProvider.MagicVariable(get_value=<function _get_debugger>, set_value=None, depends_on=[]), 'dsc': PythonScriptingProvider.MagicVariable(get_value=<function _get_shared_cache>, set_value=None, depends_on=[]), 'here': PythonScriptingProvider.MagicVariable(get_value=<function _get_here>, set_value=<function _set_here>, depends_on=['current_ui_context']), 'kc': PythonScriptingProvider.MagicVariable(get_value=<function _get_kernel_cache>, set_value=None, depends_on=[]), 'kernel_cache': PythonScriptingProvider.MagicVariable(get_value=<function _get_kernel_cache>, set_value=None, depends_on=[]), 'shared_cache': PythonScriptingProvider.MagicVariable(get_value=<function _get_shared_cache>, set_value=None, depends_on=[])}*
 
     name *= 'Python'*
 
@@ -215,7 +234,11 @@
 
     __init__(*provider*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.__init__)
 
+    can_complete_arguments(*text*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.can_complete_arguments)
+
     cancel_script_input(*text*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.cancel_script_input)
+
+    complete_arguments(*text*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.complete_arguments)
 
     complete_input(*text*, *state*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.complete_input)
 
@@ -227,12 +250,31 @@
 
     output(*text*)[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.output)
 
+    *abstract* perform_can_complete_arguments(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.perform_can_complete_arguments)
+    :   Parameters:
+        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+
     *abstract* perform_cancel_script_input()[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.perform_cancel_script_input)
+
+    *abstract* perform_complete_arguments(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.perform_complete_arguments)
+    :   Parameters:
+        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
+            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)") | *None*, [*int*](https://docs.python.org/3/library/functions.html#int "(in
+            Python v3.14)")]
 
     *abstract* perform_complete_input(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *state*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/scriptingprovider.html#ScriptingInstance.perform_complete_input)
     :   Parameters:
         :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")

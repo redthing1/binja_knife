@@ -14,7 +14,7 @@
 
     __init__(*handle: BNLineFormatter*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineformatter.html#CoreLineFormatter.__init__)
     :   Parameters:
-        :   **handle** (*BNLineFormatter*) –
+        :   **handle** (*BNLineFormatter*)
 
     format_lines(*in_lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*, *settings: [LineFormatterSettings](#binaryninja.lineformatter.LineFormatterSettings "binaryninja.lineformatter.LineFormatterSettings")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/lineformatter.html#CoreLineFormatter.format_lines)
     :   Reformats the given list of lines. Returns a new list of lines containing the
@@ -24,9 +24,9 @@
         :   - **in_lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
-              "binaryninja.function.DisassemblyTextLine")*]*) –
+              "binaryninja.function.DisassemblyTextLine")*]*)
             - **settings** ([*LineFormatterSettings*](#binaryninja.lineformatter.LineFormatterSettings
-              "binaryninja.lineformatter.LineFormatterSettings")) –
+              "binaryninja.lineformatter.LineFormatterSettings"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -52,9 +52,9 @@
         :   - **in_lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
               v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
-              "binaryninja.function.DisassemblyTextLine")*]*) –
+              "binaryninja.function.DisassemblyTextLine")*]*)
             - **settings** ([*LineFormatterSettings*](#binaryninja.lineformatter.LineFormatterSettings
-              "binaryninja.lineformatter.LineFormatterSettings")) –
+              "binaryninja.lineformatter.LineFormatterSettings"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -74,32 +74,27 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    LineFormatterSettings(hlil: binaryninja.highlevelil.HighLevelILFunction,
-    desired_line_length: int, minimum_content_length: int, tab_width: int, language_name:
-    Optional[str], comment_start_string: str, comment_end_string: str,
-    annotation_start_string: str, annotation_end_string: str)
-
     __init__(*hlil: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *desired_line_length: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *minimum_content_length: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *tab_width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *language_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *comment_start_string: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *comment_end_string: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *annotation_start_string: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *annotation_end_string: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **hlil**
               ([*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **desired_line_length** ([*int*](https://docs.python.org/3/library/functions.html#int
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **minimum_content_length** ([*int*](https://docs.python.org/3/library/functions.html#int
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **tab_width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **language_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)") *|* *None*) –
+              Python v3.14)") *|* *None*)
             - **comment_start_string** ([*str*](https://docs.python.org/3/library/stdtypes.html#str
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **comment_end_string** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **annotation_start_string** ([*str*](https://docs.python.org/3/library/stdtypes.html#str
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
             - **annotation_end_string** ([*str*](https://docs.python.org/3/library/stdtypes.html#str
-              "(in Python v3.14)")) –
+              "(in Python v3.14)"))
 
         Return type:
         :   *None*
@@ -110,10 +105,10 @@
         Parameters:
         :   - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
             - **hlil**
               ([*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
 
         Return type:
         :   [*LineFormatterSettings*](#binaryninja.lineformatter.LineFormatterSettings
@@ -125,10 +120,10 @@
         Parameters:
         :   - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*) –
+              "binaryninja.function.DisassemblySettings") *|* *None*)
             - **func**
               ([*LanguageRepresentationFunction*](languagerepresentation.md#binaryninja.languagerepresentation.LanguageRepresentationFunction
-              "binaryninja.languagerepresentation.LanguageRepresentationFunction")) –
+              "binaryninja.languagerepresentation.LanguageRepresentationFunction"))
 
         Return type:
         :   [*LineFormatterSettings*](#binaryninja.lineformatter.LineFormatterSettings

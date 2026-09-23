@@ -29,7 +29,7 @@
         :   **view** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
             v3.14)") *|* [*PathLike*](https://docs.python.org/3/library/os.html#os.PathLike "(in
             Python v3.14)") *|* [*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-            "binaryninja.binaryview.BinaryView")) –
+            "binaryninja.binaryview.BinaryView"))
 
         Return type:
         :   *None*
@@ -45,7 +45,7 @@
         Return type:
         :   *None*
 
-    detect_base_address(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *analysis: [Literal](https://docs.python.org/3/library/typing.html#typing.Literal "(in Python v3.14)")['basic', 'controlFlow', 'full'] = 'full'*, *min_strlen: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 10*, *alignment: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 1024*, *low_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *high_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 18446744073709551615*, *poi_analysis: [BaseAddressDetectionPOISetting](enums.md#binaryninja.enums.BaseAddressDetectionPOISetting "binaryninja.enums.BaseAddressDetectionPOISetting") = BaseAddressDetectionPOISetting.POIAnalysisAll*, *max_pointers: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 128*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basedetection.html#BaseAddressDetection.detect_base_address)
+    detect_base_address(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *analysis: [Literal](https://docs.python.org/3/library/typing.html#typing.Literal "(in Python v3.14)")['basic', 'controlFlow', 'full'] = 'full'*, *min_strlen: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 10*, *alignment: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 1024*, *low_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *high_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 18446744073709551615*, *poi_analysis: [BaseAddressDetectionPOISetting](enums.md#binaryninja.enums.BaseAddressDetectionPOISetting "binaryninja.enums.BaseAddressDetectionPOISetting") = BaseAddressDetectionPOISetting.POIAnalysisAll*, *max_pointers: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 128*, *analysis_mode: [BaseAddressDetectionAnalysisMode](enums.md#binaryninja.enums.BaseAddressDetectionAnalysisMode "binaryninja.enums.BaseAddressDetectionAnalysisMode") = BaseAddressDetectionAnalysisMode.InstructionAnalysisBaseAddressDetection*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basedetection.html#BaseAddressDetection.detect_base_address)
     :   `detect_base_address` runs initial analysis and attempts to identify candidate base
         addresses
 
@@ -74,9 +74,60 @@
               points-of-interest to use for analysis
             - **max_pointers** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
               Python v3.14)")) – maximum number of candidate pointers to collect per pointer cluster
+            - **analysis_mode**
+              ([*BaseAddressDetectionAnalysisMode*](enums.md#binaryninja.enums.BaseAddressDetectionAnalysisMode
+              "binaryninja.enums.BaseAddressDetectionAnalysisMode")) – base address detection
+              algorithm to use
 
         Returns:
         :   True if initial analysis completed with results, False otherwise
+
+        Return type:
+        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+
+    detect_base_address_with_instruction_analysis(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *analysis: [Literal](https://docs.python.org/3/library/typing.html#typing.Literal "(in Python v3.14)")['basic', 'controlFlow', 'full'] = 'full'*, *min_strlen: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 10*, *alignment: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 1024*, *low_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *high_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 18446744073709551615*, *poi_analysis: [BaseAddressDetectionPOISetting](enums.md#binaryninja.enums.BaseAddressDetectionPOISetting "binaryninja.enums.BaseAddressDetectionPOISetting") = BaseAddressDetectionPOISetting.POIAnalysisAll*, *max_pointers: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 128*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basedetection.html#BaseAddressDetection.detect_base_address_with_instruction_analysis)
+    :   `detect_base_address_with_instruction_analysis` uses instruction analysis to identify
+        candidate base addresses.
+
+        Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture") *|*
+              [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") *|*
+              *None*)
+            - **analysis** ([*Literal*](https://docs.python.org/3/library/typing.html#typing.Literal
+              "(in Python v3.14)")*[**'basic'**,* *'controlFlow'**,* *'full'**]*)
+            - **min_strlen** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **alignment** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **low_boundary** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)"))
+            - **high_boundary** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)"))
+            - **poi_analysis**
+              ([*BaseAddressDetectionPOISetting*](enums.md#binaryninja.enums.BaseAddressDetectionPOISetting
+              "binaryninja.enums.BaseAddressDetectionPOISetting"))
+            - **max_pointers** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)"))
+
+        Return type:
+        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+
+    detect_base_address_with_sampling(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *min_strlen: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 10*, *low_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *high_boundary: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 18446744073709551615*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basedetection.html#BaseAddressDetection.detect_base_address_with_sampling)
+    :   `detect_base_address_with_sampling` samples raw binary contents to identify candidate
+        base addresses.
+
+        Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture") *|*
+              [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") *|*
+              *None*)
+            - **min_strlen** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **low_boundary** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)"))
+            - **high_boundary** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
+              Python v3.14)"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -254,12 +305,12 @@
     __init__(*pointer: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [BaseAddressDetectionPOIType](enums.md#binaryninja.enums.BaseAddressDetectionPOIType "binaryninja.enums.BaseAddressDetectionPOIType")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **pointer** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type**
               ([*BaseAddressDetectionPOIType*](enums.md#binaryninja.enums.BaseAddressDetectionPOIType
-              "binaryninja.enums.BaseAddressDetectionPOIType")) –
+              "binaryninja.enums.BaseAddressDetectionPOIType"))
 
         Return type:
         :   *None*

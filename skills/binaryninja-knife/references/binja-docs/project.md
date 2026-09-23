@@ -16,7 +16,7 @@
 
     __init__(*handle: LP_BNProject*)[[source]](https://api.binary.ninja/_modules/binaryninja/project.html#Project.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNProject*) –
+        :   **handle** (*LP_BNProject*)
 
     bulk_operation()[[source]](https://api.binary.ninja/_modules/binaryninja/project.html#Project.bulk_operation)
     :   A context manager to speed up bulk project operations. Project modifications are synced
@@ -235,7 +235,7 @@
 
         Parameters:
         :   **folder** ([*ProjectFolder*](#binaryninja.project.ProjectFolder
-            "binaryninja.project.ProjectFolder") *|* *None*) –
+            "binaryninja.project.ProjectFolder") *|* *None*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -428,7 +428,7 @@
 
     __init__(*handle: LP_BNProjectFile*)[[source]](https://api.binary.ninja/_modules/binaryninja/project.html#ProjectFile.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNProjectFile*) –
+        :   **handle** (*LP_BNProjectFile*)
 
     add_dependency(*file: [ProjectFile](#binaryninja.project.ProjectFile "binaryninja.project.ProjectFile")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/project.html#ProjectFile.add_dependency)
     :   Add a ProjectFile as a dependency of this file
@@ -438,7 +438,7 @@
 
         Parameters:
         :   **file** ([*ProjectFile*](#binaryninja.project.ProjectFile
-            "binaryninja.project.ProjectFile")) –
+            "binaryninja.project.ProjectFile"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -507,7 +507,7 @@
 
         Parameters:
         :   **file** ([*ProjectFile*](#binaryninja.project.ProjectFile
-            "binaryninja.project.ProjectFile")) –
+            "binaryninja.project.ProjectFile"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -564,7 +564,7 @@
 
     __init__(*handle: LP_BNProjectFolder*)[[source]](https://api.binary.ninja/_modules/binaryninja/project.html#ProjectFolder.__init__)
     :   Parameters:
-        :   **handle** (*LP_BNProjectFolder*) –
+        :   **handle** (*LP_BNProjectFolder*)
 
     export(*dest: ~os.PathLike | str, progress_func: ~typing.Callable[[int, int], bool] = <function _nop>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/project.html#ProjectFolder.export)
     :   Recursively export this folder to disk

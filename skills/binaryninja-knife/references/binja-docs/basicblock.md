@@ -30,23 +30,9 @@
 
     __init__(*handle: LP_BNBasicBlock*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.__init__)
     :   Parameters:
-        :   - **handle** (*LP_BNBasicBlock*) –
+        :   - **handle** (*LP_BNBasicBlock*)
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView") *|* *None*) –
-
-    add_instruction_data(*data: [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.add_instruction_data)
-    :   Adds raw instruction data to the basic block.
-
-        Note
-
-        This method is intended for use by architecture plugins only.
-
-        Parameters:
-        :   **data** ([*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python
-            v3.14)")) – Raw instruction data to add to the basic block.
-
-        Return type:
-        :   *None*
+              "binaryninja.binaryview.BinaryView") *|* *None*)
 
     add_pending_outgoing_edge(*typ: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *fallthrough: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.add_pending_outgoing_edge)
     :   Adds a pending outgoing edge to the basic block. This is used to add edges that are not
@@ -103,30 +89,13 @@
     get_instruction_containing_address(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_instruction_containing_address)
     :   Parameters:
         :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
             v3.14)")[[*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
             v3.14)"), [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
             v3.14)")]
-
-    get_instruction_data(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_instruction_data)
-    :   Returns the raw instruction data for the basic block at the specified address.
-
-        Note
-
-        This method is intended for use by architecture plugins only.
-
-        Returns:
-        :   Raw instruction data as bytes.
-
-        Parameters:
-        :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
-
-        Return type:
-        :   [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")
 
     get_iterated_dominance_frontier(*blocks: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_iterated_dominance_frontier)
     :   Calculates the iterated dominance frontier of the given blocks (this is used to
@@ -135,7 +104,7 @@
         Parameters:
         :   **blocks** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
             Python v3.14)")*[*[*BasicBlock*](#binaryninja.basicblock.BasicBlock
-            "binaryninja.basicblock.BasicBlock")*]*) –
+            "binaryninja.basicblock.BasicBlock")*]*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -173,7 +142,7 @@
         Parameters:
         :   - **color** ([*HighlightColor*](highlight.md#binaryninja.highlight.HighlightColor
               "binaryninja.highlight.HighlightColor")) – Color value to use for highlighting
-            - **color** –
+            - **color**
 
         Return type:
         :   *None*
@@ -184,7 +153,7 @@
         Parameters:
         :   - **color** ([*HighlightColor*](highlight.md#binaryninja.highlight.HighlightColor
               "binaryninja.highlight.HighlightColor")) – Color value to use for highlighting
-            - **color** –
+            - **color**
 
         Example:
         :   ```
@@ -345,6 +314,9 @@
         don’t include B. If B has outgoing edges that can lead to different exit blocks, then
         this will only include B.
 
+    *property* sort_hint*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    :   Graph edge sorting hint for this block (read-only)
+
     *property* source_block*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   The corresponding assembly-level basic block for this basic block (read-only)
 
@@ -396,15 +368,15 @@
     __init__(*type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *source: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *target: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *back_edge: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *fall_through: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **type** ([*BranchType*](enums.md#binaryninja.enums.BranchType
-              "binaryninja.enums.BranchType")) –
+              "binaryninja.enums.BranchType"))
             - **source** ([*BasicBlock*](#binaryninja.basicblock.BasicBlock
-              "binaryninja.basicblock.BasicBlock")) –
+              "binaryninja.basicblock.BasicBlock"))
             - **target** ([*BasicBlock*](#binaryninja.basicblock.BasicBlock
-              "binaryninja.basicblock.BasicBlock")) –
+              "binaryninja.basicblock.BasicBlock"))
             - **back_edge** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **fall_through** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*
@@ -436,13 +408,13 @@
     __init__(*type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *target: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *fallthrough: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **type** ([*BranchType*](enums.md#binaryninja.enums.BranchType
-              "binaryninja.enums.BranchType")) –
+              "binaryninja.enums.BranchType"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **target** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **fallthrough** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*

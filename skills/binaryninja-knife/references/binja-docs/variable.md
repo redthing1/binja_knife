@@ -3,6 +3,7 @@
 | Class | Description |
 | --- | --- |
 | [`binaryninja.variable.AddressRange`](#binaryninja.variable.AddressRange "binaryninja.variable.AddressRange") |  |
+| [`binaryninja.variable.ArchitectureVariable`](#binaryninja.variable.ArchitectureVariable "binaryninja.variable.ArchitectureVariable") | `class ArchitectureVariable` is a wrapper around [`CoreVariable`](#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") that is bound to an… |
 | [`binaryninja.variable.ConstantData`](#binaryninja.variable.ConstantData "binaryninja.variable.ConstantData") |  |
 | [`binaryninja.variable.ConstantDataRegisterValue`](#binaryninja.variable.ConstantDataRegisterValue "binaryninja.variable.ConstantDataRegisterValue") |  |
 | [`binaryninja.variable.ConstantPointerRegisterValue`](#binaryninja.variable.ConstantPointerRegisterValue "binaryninja.variable.ConstantPointerRegisterValue") |  |
@@ -14,9 +15,12 @@
 | [`binaryninja.variable.ImportedAddressRegisterValue`](#binaryninja.variable.ImportedAddressRegisterValue "binaryninja.variable.ImportedAddressRegisterValue") |  |
 | [`binaryninja.variable.IndirectBranchInfo`](#binaryninja.variable.IndirectBranchInfo "binaryninja.variable.IndirectBranchInfo") |  |
 | [`binaryninja.variable.LookupTableEntry`](#binaryninja.variable.LookupTableEntry "binaryninja.variable.LookupTableEntry") |  |
+| [`binaryninja.variable.ParameterLocations`](#binaryninja.variable.ParameterLocations "binaryninja.variable.ParameterLocations") | Note  This object is a “passive” object. Any changes you make to it will not be reflected in… |
+| [`binaryninja.variable.ParameterPointerRegisterValue`](#binaryninja.variable.ParameterPointerRegisterValue "binaryninja.variable.ParameterPointerRegisterValue") |  |
 | [`binaryninja.variable.ParameterVariables`](#binaryninja.variable.ParameterVariables "binaryninja.variable.ParameterVariables") | Note  This object is a “passive” object. Any changes you make to it will not be reflected in… |
 | [`binaryninja.variable.PossibleValueSet`](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet") | class PossibleValueSet PossibleValueSet is used to define possible values that a variable can… |
 | [`binaryninja.variable.RegisterValue`](#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue") |  |
+| [`binaryninja.variable.ResultPointerRegisterValue`](#binaryninja.variable.ResultPointerRegisterValue "binaryninja.variable.ResultPointerRegisterValue") |  |
 | [`binaryninja.variable.ReturnAddressRegisterValue`](#binaryninja.variable.ReturnAddressRegisterValue "binaryninja.variable.ReturnAddressRegisterValue") |  |
 | [`binaryninja.variable.StackFrameOffsetRegisterValue`](#binaryninja.variable.StackFrameOffsetRegisterValue "binaryninja.variable.StackFrameOffsetRegisterValue") |  |
 | [`binaryninja.variable.StackVariableReference`](#binaryninja.variable.StackVariableReference "binaryninja.variable.StackVariableReference") |  |
@@ -31,14 +35,12 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    AddressRange(start: int, end: int)
-
     __init__(*start: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *end: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **start** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **end** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -47,29 +49,96 @@
 
     start*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
+## ArchitectureVariable
+
+*class* ArchitectureVariable[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable)
+:   Bases: [`CoreVariable`](#binaryninja.variable.CoreVariable
+    "binaryninja.variable.CoreVariable")
+
+    `class ArchitectureVariable` is a wrapper around
+    [`CoreVariable`](#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")
+    that is bound to an architecture (for register/flag naming) but not a function. This is
+    typically used in calling conventions for specifying value locations. Calling
+    conventions can be used outside functions to resolve type information, so only an
+    architecture is required.
+
+    __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *source_type: [VariableSourceType](enums.md#binaryninja.enums.VariableSourceType "binaryninja.enums.VariableSourceType")*, *index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *storage: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.__init__)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **source_type** ([*VariableSourceType*](enums.md#binaryninja.enums.VariableSourceType
+              "binaryninja.enums.VariableSourceType"))
+            - **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **storage** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+    *classmethod* flag(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *flag: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.flag)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **flag** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+              v3.14)") *|* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+    *classmethod* from_BNVariable(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *var: BNVariable*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.from_BNVariable)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **var** (*BNVariable*)
+
+    *classmethod* from_core_variable(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *var: [CoreVariable](#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.from_core_variable)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **var** ([*CoreVariable*](#binaryninja.variable.CoreVariable
+              "binaryninja.variable.CoreVariable"))
+
+    *classmethod* from_identifier(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *identifier: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.from_identifier)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **identifier** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+    *classmethod* reg(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *reg: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.reg)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **reg** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+              v3.14)") *|* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+    *classmethod* stack_offset(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ArchitectureVariable.stack_offset)
+    :   Parameters:
+        :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
+              "binaryninja.architecture.Architecture"))
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+    *property* arch*: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*
+
+    *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+
 ## ConstantData
 
 *class* ConstantData[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ConstantData)
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ConstantData(value: int, offset: int, type: binaryninja.enums.RegisterValueType =
-    <RegisterValueType.UndeterminedValue: 0>, confidence: int = 255, size: int = 0,
-    function: ‘_function.Function’ = None)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.UndeterminedValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *function: _function.Function = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **function** (*_function.Function*) –
+              v3.14)"))
+            - **function** (*_function.Function*)
 
         Return type:
         :   *None*
@@ -86,29 +155,21 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ConstantDataRegisterValue(value: int, offset: int, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.UndeterminedValue: 0>,
-    confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.UndeterminedValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
-
-    offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
-
-    value*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
 ## ConstantPointerRegisterValue
 
@@ -116,22 +177,18 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ConstantPointerRegisterValue(value: int, offset: int = 0, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.ConstantPointerValue: 3>,
-    confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ConstantPointerValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -146,18 +203,16 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ConstantReference(value: int, size: int, pointer: bool, intermediate: bool)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *pointer: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *intermediate: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **pointer** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **intermediate** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*
@@ -176,22 +231,18 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ConstantRegisterValue(value: int, offset: int = 0, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.ConstantValue: 2>, confidence:
-    int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ConstantValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -221,20 +272,35 @@
     __init__(*_source_type: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *storage: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **_source_type** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **storage** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
 
+    *classmethod* flag(*flag: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#CoreVariable.flag)
+    :   Parameters:
+        :   **flag** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)"))
+
     *classmethod* from_BNVariable(*var: BNVariable*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#CoreVariable.from_BNVariable)
     :   Parameters:
-        :   **var** (*BNVariable*) –
+        :   **var** (*BNVariable*)
 
     *classmethod* from_identifier(*identifier*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#CoreVariable.from_identifier)
+
+    *classmethod* reg(*reg: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#CoreVariable.reg)
+    :   Parameters:
+        :   **reg** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)"))
+
+    *classmethod* stack_offset(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#CoreVariable.stack_offset)
+    :   Parameters:
+        :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)"))
 
     to_BNVariable()[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#CoreVariable.to_BNVariable)
 
@@ -255,24 +321,19 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    EntryRegisterValue(value: int = 0, offset: int = 0, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.EntryValue: 1>, confidence: int
-    = 255, size: int = 0, reg: Optional[ForwardRef(‘binaryninja.architecture.RegisterName’)]
-    = None)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.EntryValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *reg: RegisterName | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **reg** (*RegisterName* *|* *None*) –
+              v3.14)"))
+            - **reg** (*RegisterName* *|* *None*)
 
         Return type:
         :   *None*
@@ -291,22 +352,18 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ExternalPointerRegisterValue(value: int, offset: int, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.ExternalPointerValue: 4>,
-    confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ExternalPointerValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -319,22 +376,18 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ImportedAddressRegisterValue(value: int, offset: int = 0, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.ImportedAddressValue: 7>,
-    confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ImportedAddressValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -349,22 +402,18 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    IndirectBranchInfo(source_arch: ‘binaryninja.architecture.Architecture’, source_addr:
-    int, dest_arch: ‘binaryninja.architecture.Architecture’, dest_addr: int, auto_defined:
-    bool)
-
     __init__(*source_arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *source_addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *dest_arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *dest_addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *auto_defined: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **source_arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **source_addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **dest_arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture")) –
+              "binaryninja.architecture.Architecture"))
             - **dest_addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **auto_defined** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) –
+              Python v3.14)"))
 
         Return type:
         :   *None*
@@ -385,18 +434,15 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    LookupTableEntry(from_values: List[int], to_value: int, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.LookupTableValue: 10>)
-
     __init__(*from_values: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*, *to_value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.LookupTableValue*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **from_values** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")*]*) –
+              Python v3.14)")*]*)
             - **to_value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
 
         Return type:
         :   *None*
@@ -405,7 +451,70 @@
 
     to_value*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
-    type*: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType")* *= 10*
+    type*: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType")* *= 12*
+
+## ParameterLocations
+
+*class* ParameterLocations[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ParameterLocations)
+:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
+    v3.14)")
+
+    Note
+
+    This object is a “passive” object. Any changes you make to it will not be reflected in
+    the core and vice-versa. If you wish to update a core version of this object you should
+    use the appropriate API.
+
+    __init__(*location_list: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ParameterLocations.__init__)
+    :   Parameters:
+        :   - **location_list** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
+              "(in Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              "binaryninja.types.ValueLocation")*]*)
+            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **func** ([*Function*](function.md#binaryninja.function.Function
+              "binaryninja.function.Function") *|* *None*)
+
+    with_confidence(*confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [ParameterLocations](#binaryninja.variable.ParameterLocations "binaryninja.variable.ParameterLocations")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ParameterLocations.with_confidence)
+    :   Parameters:
+        :   **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)"))
+
+        Return type:
+        :   [*ParameterLocations*](#binaryninja.variable.ParameterLocations
+            "binaryninja.variable.ParameterLocations")
+
+    *property* confidence*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+
+    *property* function*: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+
+    *property* locations*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*
+
+## ParameterPointerRegisterValue
+
+*class* ParameterPointerRegisterValue[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ParameterPointerRegisterValue)
+:   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
+    "binaryninja.variable.RegisterValue")
+
+    __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ParameterPointerValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
+              "binaryninja.enums.RegisterValueType"))
+            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+        Return type:
+        :   *None*
+
+    offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")* *= 0*
+
+    type*: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType")* *= 9*
 
 ## ParameterVariables
 
@@ -423,16 +532,16 @@
     :   Parameters:
         :   - **var_list** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*Variable*](#binaryninja.variable.Variable
-              "binaryninja.variable.Variable")*]*) –
+              "binaryninja.variable.Variable")*]*)
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function") *|* *None*) –
+              "binaryninja.function.Function") *|* *None*)
 
     with_confidence(*confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [ParameterVariables](#binaryninja.variable.ParameterVariables "binaryninja.variable.ParameterVariables")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ParameterVariables.with_confidence)
     :   Parameters:
         :   **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*ParameterVariables*](#binaryninja.variable.ParameterVariables
@@ -463,17 +572,17 @@
     __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *value: BNPossibleValueSet | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.__init__)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
-            - **value** (*BNPossibleValueSet* *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
+            - **value** (*BNPossibleValueSet* *|* *None*)
 
     add(*other: [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.add)
     :   Add two PossibleValueSets.
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -484,9 +593,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -497,9 +606,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -527,13 +636,12 @@
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
             "binaryninja.variable.PossibleValueSet")
 
-    *static* in_set_of_values(*values: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.in_set_of_values)
+    *static* in_set_of_values(*values: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.in_set_of_values)
     :   Create a PossibleValueSet object for a value in a set of values.
 
         Parameters:
-        :   **values** ([*list*](https://docs.python.org/3/library/stdtypes.html#list "(in Python
-            v3.14)")*(*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")*)*) – List of integer values
+        :   **values** (*Iterable**[*[*int*](https://docs.python.org/3/library/functions.html#int
+            "(in Python v3.14)")*]*) – Iterable of integer values
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -544,9 +652,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -557,9 +665,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -576,7 +684,7 @@
               Python v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in
               Python v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int "(in
               Python v3.14)")*]*) – Mapping used for resolution
-            - **mapping** –
+            - **mapping**
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -587,9 +695,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -600,7 +708,7 @@
 
         Parameters:
         :   **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -611,19 +719,18 @@
 
         Parameters:
         :   **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
             "binaryninja.variable.PossibleValueSet")
 
-    *static* not_in_set_of_values(*values: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.not_in_set_of_values)
+    *static* not_in_set_of_values(*values: [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.not_in_set_of_values)
     :   Create a PossibleValueSet object for a value NOT in a set of values.
 
         Parameters:
-        :   **values** ([*list*](https://docs.python.org/3/library/stdtypes.html#list "(in Python
-            v3.14)")*(*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")*)*) – List of integer values
+        :   **values** (*Iterable**[*[*int*](https://docs.python.org/3/library/functions.html#int
+            "(in Python v3.14)")*]*) – Iterable of integer values
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -634,9 +741,38 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
+
+        Return type:
+        :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
+            "binaryninja.variable.PossibleValueSet")
+
+    *static* parameter_pointer(*idx: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.parameter_pointer)
+    :   Create a PossibleValueSet object for a pointer to a parameter when the parameter is
+        stored at an unknown location in memory. This is typically used for calling conventions
+        that pass in a pointer to the storage location for parameters (usually larger than can
+        be held in a register).
+
+        Parameters:
+        :   - **idx** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – Index of the parameter
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)")) – Integer value of the offset
+
+        Return type:
+        :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
+            "binaryninja.variable.PossibleValueSet")
+
+    *static* result_pointer(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [PossibleValueSet](#binaryninja.variable.PossibleValueSet "binaryninja.variable.PossibleValueSet")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#PossibleValueSet.result_pointer)
+    :   Create a PossibleValueSet object for a pointer to the return value when the return value
+        is stored at an unknown location in memory. This is typically used for calling
+        conventions that pass in a pointer to the storage location for the return value.
+
+        Parameters:
+        :   **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+            v3.14)")) – Integer value of the offset
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -647,9 +783,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -660,9 +796,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -673,9 +809,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -686,9 +822,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -699,9 +835,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -743,9 +879,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -766,9 +902,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -779,9 +915,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -792,9 +928,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -825,9 +961,9 @@
 
         Parameters:
         :   - **other** ([*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
-              "binaryninja.variable.PossibleValueSet")) –
+              "binaryninja.variable.PossibleValueSet"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*PossibleValueSet*](#binaryninja.variable.PossibleValueSet
@@ -859,30 +995,27 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    RegisterValue(value: int, offset: int, type: binaryninja.enums.RegisterValueType =
-    <RegisterValueType.UndeterminedValue: 0>, confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.UndeterminedValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
 
     *classmethod* from_BNRegisterValue(*reg_value: BNRegisterValue | BNRegisterValueWithConfidence*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [RegisterValue](#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#RegisterValue.from_BNRegisterValue)
     :   Parameters:
-        :   - **reg_value** (*BNRegisterValue* *|* *BNRegisterValueWithConfidence*) –
+        :   - **reg_value** (*BNRegisterValue* *|* *BNRegisterValueWithConfidence*)
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
-              "binaryninja.architecture.Architecture") *|* *None*) –
+              "binaryninja.architecture.Architecture") *|* *None*)
 
         Return type:
         :   [*RegisterValue*](#binaryninja.variable.RegisterValue
@@ -891,7 +1024,7 @@
     *classmethod* to_BNRegisterValue(*reg_value: [RegisterValue](#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")*) → BNRegisterValue[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#RegisterValue.to_BNRegisterValue)
     :   Parameters:
         :   **reg_value** ([*RegisterValue*](#binaryninja.variable.RegisterValue
-            "binaryninja.variable.RegisterValue")) –
+            "binaryninja.variable.RegisterValue"))
 
         Return type:
         :   *BNRegisterValue*
@@ -906,28 +1039,50 @@
 
     value*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
+## ResultPointerRegisterValue
+
+*class* ResultPointerRegisterValue[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ResultPointerRegisterValue)
+:   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
+    "binaryninja.variable.RegisterValue")
+
+    __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ResultPointerValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    :   Parameters:
+        :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
+              "binaryninja.enums.RegisterValueType"))
+            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+            - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
+              v3.14)"))
+
+        Return type:
+        :   *None*
+
+    offset*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")* *= 0*
+
+    type*: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType")* *= 8*
+
 ## ReturnAddressRegisterValue
 
 *class* ReturnAddressRegisterValue[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#ReturnAddressRegisterValue)
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    ReturnAddressRegisterValue(value: int, offset: int = 0, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.ReturnAddressValue: 6>,
-    confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.ReturnAddressValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -942,22 +1097,18 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    StackFrameOffsetRegisterValue(value: int, offset: int = 0, type:
-    binaryninja.enums.RegisterValueType = <RegisterValueType.StackFrameOffset: 5>,
-    confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.StackFrameOffset*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -972,21 +1123,18 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    StackVariableReference(_source_operand: Optional[int], type: ‘binaryninja.types.Type’,
-    name: str, var: ‘Variable’, referenced_offset: int, size: int)
-
     __init__(*_source_operand: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *var: [Variable](#binaryninja.variable.Variable "binaryninja.variable.Variable")*, *referenced_offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **_source_operand** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)") *|* *None*) –
-            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              Python v3.14)") *|* *None*)
+            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
-            - **var** ([*Variable*](#binaryninja.variable.Variable "binaryninja.variable.Variable")) –
+              v3.14)"))
+            - **var** ([*Variable*](#binaryninja.variable.Variable "binaryninja.variable.Variable"))
             - **referenced_offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -1009,21 +1157,18 @@
 :   Bases: [`RegisterValue`](#binaryninja.variable.RegisterValue
     "binaryninja.variable.RegisterValue")
 
-    Undetermined(value: int = 0, offset: int = 0, type: binaryninja.enums.RegisterValueType
-    = <RegisterValueType.UndeterminedValue: 0>, confidence: int = 255, size: int = 0)
-
     __init__(*value: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *type: [RegisterValueType](enums.md#binaryninja.enums.RegisterValueType "binaryninja.enums.RegisterValueType") = RegisterValueType.UndeterminedValue*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*, *size: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **type** ([*RegisterValueType*](enums.md#binaryninja.enums.RegisterValueType
-              "binaryninja.enums.RegisterValueType")) –
+              "binaryninja.enums.RegisterValueType"))
             - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **size** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -1040,16 +1185,14 @@
 :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
     v3.14)")
 
-    ValueRange(start: int, end: int, step: int)
-
     __init__(*start: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *end: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *step: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **start** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **end** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **step** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -1078,13 +1221,13 @@
               [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
               "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
               [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **source_type** ([*VariableSourceType*](enums.md#binaryninja.enums.VariableSourceType
-              "binaryninja.enums.VariableSourceType")) –
+              "binaryninja.enums.VariableSourceType"))
             - **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **storage** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* from_BNVariable(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [LowLevelILFunction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction") | [MediumLevelILFunction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction "binaryninja.mediumlevelil.MediumLevelILFunction") | [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *var: BNVariable*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#Variable.from_BNVariable)
     :   Parameters:
@@ -1095,8 +1238,8 @@
               [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
               "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
               [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
-            - **var** (*BNVariable*) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
+            - **var** (*BNVariable*)
 
     *classmethod* from_core_variable(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [LowLevelILFunction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction") | [MediumLevelILFunction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction "binaryninja.mediumlevelil.MediumLevelILFunction") | [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *var: [CoreVariable](#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#Variable.from_core_variable)
     :   Parameters:
@@ -1107,9 +1250,9 @@
               [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
               "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
               [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **var** ([*CoreVariable*](#binaryninja.variable.CoreVariable
-              "binaryninja.variable.CoreVariable")) –
+              "binaryninja.variable.CoreVariable"))
 
     *classmethod* from_identifier(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [LowLevelILFunction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction") | [MediumLevelILFunction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction "binaryninja.mediumlevelil.MediumLevelILFunction") | [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *identifier: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#Variable.from_identifier)
     :   Parameters:
@@ -1120,9 +1263,9 @@
               [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
               "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
               [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **identifier** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     *classmethod* from_variable_name_and_type(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [LowLevelILFunction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILFunction "binaryninja.lowlevelil.LowLevelILFunction") | [MediumLevelILFunction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction "binaryninja.mediumlevelil.MediumLevelILFunction") | [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *var: [VariableNameAndType](#binaryninja.variable.VariableNameAndType "binaryninja.variable.VariableNameAndType")*)[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#Variable.from_variable_name_and_type)
     :   Parameters:
@@ -1133,9 +1276,9 @@
               [*MediumLevelILFunction*](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILFunction
               "binaryninja.mediumlevelil.MediumLevelILFunction") *|*
               [*HighLevelILFunction*](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction
-              "binaryninja.highlevelil.HighLevelILFunction")) –
+              "binaryninja.highlevelil.HighLevelILFunction"))
             - **var** ([*VariableNameAndType*](#binaryninja.variable.VariableNameAndType
-              "binaryninja.variable.VariableNameAndType")) –
+              "binaryninja.variable.VariableNameAndType"))
 
     set_name_and_type_async(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *new_type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/variable.html#Variable.set_name_and_type_async)
     :   `set_name_and_type_async` provides a way to asynchronously set both the name and type of
@@ -1143,8 +1286,8 @@
 
         Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
-            - **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              v3.14)") *|* *None*)
+            - **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
 
         Return type:
         :   *None*
@@ -1155,7 +1298,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)") *|* *None*) –
+            v3.14)") *|* *None*)
 
         Return type:
         :   *None*
@@ -1165,7 +1308,7 @@
         method should be used when speed is of concern.
 
         Parameters:
-        :   **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+        :   **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
 
         Return type:
         :   *None*
@@ -1182,8 +1325,6 @@
 
     *property* il_function*: function.ILFunctionType*
     :   returns the IL Function object which this variable belongs to
-
-    index*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
     *property* is_parameter_variable*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
     :   returns whether this variable is a function parameter
@@ -1205,8 +1346,6 @@
     *property* ssa_versions*: [Generator](https://docs.python.org/3/library/typing.html#typing.Generator "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")]*
     :   Returns the SSA versions associated with this variable. Doesn’t return anything for
         aliased variables.
-
-    storage*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
 
     *property* type*: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
 
@@ -1236,14 +1375,14 @@
     __init__(*_source_type: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *storage: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **_source_type** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")) –
+              Python v3.14)"))
             - **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **storage** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
-            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              v3.14)"))
+            - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
 
         Return type:
         :   *None*

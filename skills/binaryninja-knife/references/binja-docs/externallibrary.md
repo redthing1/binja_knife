@@ -16,7 +16,7 @@
 
     __init__(*handle: BNExternalLibrary*)[[source]](https://api.binary.ninja/_modules/binaryninja/externallibrary.html#ExternalLibrary.__init__)
     :   Parameters:
-        :   **handle** (*BNExternalLibrary*) –
+        :   **handle** (*BNExternalLibrary*)
 
     *property* backing_file*: [ProjectFile](project.md#binaryninja.project.ProjectFile "binaryninja.project.ProjectFile") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
     :   Get the file backing this external library
@@ -41,7 +41,7 @@
 
     __init__(*handle: BNExternalLocation*)[[source]](https://api.binary.ninja/_modules/binaryninja/externallibrary.html#ExternalLocation.__init__)
     :   Parameters:
-        :   **handle** (*BNExternalLocation*) –
+        :   **handle** (*BNExternalLocation*)
 
     *property* has_target_address*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
     :   Check if this ExternalLocation has a target address

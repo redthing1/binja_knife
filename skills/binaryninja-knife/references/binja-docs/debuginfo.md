@@ -24,24 +24,24 @@
     __init__(*address: int | None = None*, *short_name: str | None = None*, *full_name: str | None = None*, *raw_name: str | None = None*, *function_type: ~binaryninja.types.Type | None = None*, *platform: ~binaryninja.platform.Platform | None = None*, *components: ~typing.List[str] = <factory>*, *local_variables: ~typing.List[~binaryninja.variable.VariableNameAndType] = <factory>*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
     :   Parameters:
         :   - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **short_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **full_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **raw_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **function_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")
-              *|* *None*) –
+              *|* *None*)
             - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
-              "binaryninja.platform.Platform") *|* *None*) –
+              "binaryninja.platform.Platform") *|* *None*)
             - **components** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]*) –
+              Python v3.14)")*]*)
             - **local_variables** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
               "(in Python
               v3.14)")*[*[*VariableNameAndType*](variable.md#binaryninja.variable.VariableNameAndType
-              "binaryninja.variable.VariableNameAndType")*]*) –
+              "binaryninja.variable.VariableNameAndType")*]*)
 
         Return type:
         :   *None*
@@ -90,7 +90,7 @@
 
     __init__(*handle: BNDebugInfo*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.__init__)
     :   Parameters:
-        :   **handle** (*BNDebugInfo*) –
+        :   **handle** (*BNDebugInfo*)
 
         Return type:
         :   *None*
@@ -102,13 +102,13 @@
 
         Parameters:
         :   - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
-            - **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              v3.14)"))
+            - **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
+              v3.14)") *|* *None*)
             - **components** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]* *|* *None*) –
+              Python v3.14)")*]* *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -118,7 +118,7 @@
 
         Parameters:
         :   **new_func** ([*DebugFunctionInfo*](#binaryninja.debuginfo.DebugFunctionInfo
-            "binaryninja.debuginfo.DebugFunctionInfo")) –
+            "binaryninja.debuginfo.DebugFunctionInfo"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -129,11 +129,11 @@
 
         Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
-            - **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
+              v3.14)"))
+            - **new_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **components** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]* *|* *None*) –
+              Python v3.14)")*]* *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -143,7 +143,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)") *|* *None*) –
+            v3.14)") *|* *None*)
 
         Return type:
         :   [*Iterator*](https://docs.python.org/3/library/typing.html#typing.Iterator "(in Python
@@ -155,7 +155,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)") *|* *None*) –
+            v3.14)") *|* *None*)
 
         Return type:
         :   [*Iterator*](https://docs.python.org/3/library/typing.html#typing.Iterator "(in Python
@@ -165,9 +165,9 @@
     get_data_variable_by_address(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.get_data_variable_by_address)
     :   Parameters:
         :   - **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
@@ -177,9 +177,9 @@
     get_data_variable_by_name(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.get_data_variable_by_name)
     :   Parameters:
         :   - **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
@@ -191,7 +191,7 @@
 
         Parameters:
         :   **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -204,7 +204,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -215,9 +215,9 @@
     get_type_by_name(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.get_type_by_name)
     :   Parameters:
         :   - **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") | *None*
@@ -243,7 +243,7 @@
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
@@ -254,50 +254,50 @@
     remove_data_variable_by_address(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_data_variable_by_address)
     :   Parameters:
         :   - **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     remove_function_by_index(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *index: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_function_by_index)
     :   Parameters:
         :   - **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **index** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     remove_parser_data_variables(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_parser_data_variables)
     :   Parameters:
         :   **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     remove_parser_functions(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_parser_functions)
     :   Parameters:
         :   **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     remove_parser_info(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_parser_info)
     :   Parameters:
         :   **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     remove_parser_types(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_parser_types)
     :   Parameters:
         :   **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
     remove_type_by_name(*parser_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.remove_type_by_name)
     :   Parameters:
         :   - **parser_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
 
     types_from_parser(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Iterator](https://docs.python.org/3/library/typing.html#typing.Iterator "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]][[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfo.types_from_parser)
     :   Returns a generator of all types provided by a named DebugInfoParser
 
         Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)") *|* *None*) –
+            v3.14)") *|* *None*)
 
         Return type:
         :   [*Iterator*](https://docs.python.org/3/library/typing.html#typing.Iterator "(in Python
@@ -383,7 +383,7 @@
 
     __init__(*handle: BNDebugInfoParser*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/debuginfo.html#DebugInfoParser.__init__)
     :   Parameters:
-        :   **handle** (*BNDebugInfoParser*) –
+        :   **handle** (*BNDebugInfoParser*)
 
         Return type:
         :   *None*
@@ -393,7 +393,7 @@
 
         Parameters:
         :   **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-            "binaryninja.binaryview.BinaryView")) –
+            "binaryninja.binaryview.BinaryView"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -412,17 +412,17 @@
 
         Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **debug_view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView")) –
+              "binaryninja.binaryview.BinaryView"))
             - **debug_info** ([*DebugInfo*](#binaryninja.debuginfo.DebugInfo
-              "binaryninja.debuginfo.DebugInfo") *|* *None*) –
+              "binaryninja.debuginfo.DebugInfo") *|* *None*)
             - **progress** ([*Callable*](https://docs.python.org/3/library/typing.html#typing.Callable
               "(in Python v3.14)")*[**[*[*int*](https://docs.python.org/3/library/functions.html#int
               "(in Python v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int
               "(in Python v3.14)")*]**,*
               [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*]*
-              *|* *None*) –
+              *|* *None*)
 
         Return type:
         :   [*DebugInfo*](#binaryninja.debuginfo.DebugInfo "binaryninja.debuginfo.DebugInfo") |

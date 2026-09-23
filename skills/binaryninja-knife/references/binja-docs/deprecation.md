@@ -107,7 +107,7 @@ fail_if_not_removed(*method*)[[source]](https://api.binary.ninja/_modules/binary
 parse_version(*version: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [tuple](https://docs.python.org/3/library/stdtypes.html#tuple "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/deprecation.html#parse_version)
 :   Parameters:
     :   **version** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-        v3.14)")) –
+        v3.14)"))
 
     Return type:
     :   [*tuple*](https://docs.python.org/3/library/stdtypes.html#tuple "(in Python v3.14)")

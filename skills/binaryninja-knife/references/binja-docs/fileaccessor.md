@@ -34,6 +34,6 @@
     write(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *data: [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/fileaccessor.html#FileAccessor.write)
     :   Parameters:
         :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **data** ([*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python
-              v3.14)")) –
+              v3.14)"))

@@ -25,8 +25,8 @@
     __init__(*filename: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: LP_BNFileMetadata | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#FileMetadata.__init__)
     :   Parameters:
         :   - **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*) –
-            - **handle** (*LP_BNFileMetadata* *|* *None*) –
+              v3.14)") *|* *None*)
+            - **handle** (*LP_BNFileMetadata* *|* *None*)
 
     begin_undo_actions(*anonymous_allowed: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#FileMetadata.begin_undo_actions)
     :   `begin_undo_actions` starts recording actions taken so they can be undone at some point.
@@ -146,15 +146,15 @@
 
         Parameters:
         :   - **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **progress_func**
               ([*Callable*](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python
               v3.14)")*[**[*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)")*]**,* [*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")*]* *|* *None*) –
+              Python v3.14)")*]* *|* *None*)
             - **settings** ([*SaveSettings*](#binaryninja.filemetadata.SaveSettings
-              "binaryninja.filemetadata.SaveSettings") *|* *None*) –
+              "binaryninja.filemetadata.SaveSettings") *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -198,7 +198,7 @@
     get_view_of_type(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#FileMetadata.get_view_of_type)
     :   Parameters:
         :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) –
+            v3.14)"))
 
         Return type:
         :   [*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
@@ -258,6 +258,19 @@
             >>>
             ```
 
+    reopen_moved_database(*filename: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#FileMetadata.reopen_moved_database)
+    :   `reopen_moved_database` reopens the database backing this file metadata from a new path.
+
+        Parameters:
+        :   **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
+            v3.14)")) – path and filename to the moved bndb.
+
+        Returns:
+        :   true on success, false on failure
+
+        Return type:
+        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+
     revert_undo_actions(*id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#FileMetadata.revert_undo_actions)
     :   `revert_undo_actions` reverts the actions taken since a call to
         [`begin_undo_actions`](#binaryninja.filemetadata.FileMetadata.begin_undo_actions
@@ -298,9 +311,9 @@
               v3.14)")*[**[*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
               v3.14)")*]**,* [*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")*]* *|* *None*) –
+              Python v3.14)")*]* *|* *None*)
             - **settings** ([*SaveSettings*](#binaryninja.filemetadata.SaveSettings
-              "binaryninja.filemetadata.SaveSettings") *|* *None*) –
+              "binaryninja.filemetadata.SaveSettings") *|* *None*)
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -308,9 +321,9 @@
     *static* set_default_session_data(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *value: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#FileMetadata.set_default_session_data)
     :   Parameters:
         :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **value** ([*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   *None*
@@ -380,19 +393,16 @@
     :   Gets the backing Database of the file
 
     *property* display_name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
-    :   `display_name` is the synthesized name for UI display purposes.
+    :   `display_name` is a leaf-shaped human-readable name for UI presentation. It never
+        contains a directory path. Resolution order:
 
-        For container entries, this contains a virtual filename representing the extracted
-        artifact (e.g., “/path/to/entry”). For normal files, this equals `filename`.
+        - An explicitly set display name (project-assigned, transform-synthesized for container
+          entries, or set by a plugin or user).
+        - Otherwise the leaf of `filename`.
 
-        Use this property for tab titles, save dialog defaults, and other UI display purposes.
-        Use `filename` for the actual physical file path that can be reopened.
-
-        Note
-
-        For normal files, `filename` == `virtual_path` == `display_name`. For container files,
-        `filename` is the container path, `virtual_path` is the transform chain, and
-        `display_name` is the extracted entry name.
+        Use this for tab titles, save-dialog default leaf names, logs, and any UI surface where
+        you’d refer to the file by name. Use `filename` for the physical path that can be
+        reopened.
 
     *property* existing_views*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
 
@@ -402,6 +412,11 @@
     *property* has_database*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
     :   Whether the FileMetadata is backed by a database, or if specified, a specific
         BinaryViewType (read-only)
+
+    *property* is_container_entry*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    :   `True` if this file was produced by the container transform system (e.g. an entry
+        extracted from a Zip archive). `False` for plain files, databases, and FileMetadata that
+        has not yet been processed by the transform system.
 
     *property* modified*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
     :   Boolean result of whether the file is modified (Inverse of ‘saved’ property)
@@ -451,17 +466,20 @@
     *property* view*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
 
     *property* virtual_path*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
-    :   `virtual_path` is a logical (non-filesystem) path that describes how this file was
-        derived from container transform system.
+    :   `virtual_path` is a logical (non-filesystem) path describing how this file was derived
+        from the container transform system in the current session. There are three meaningful
+        states:
 
-        This path records provenance for files extracted from the transform system. It may
-        include a sequence of transform steps and selection names.
+        - Empty - not yet processed by the transform system.
+        - Equal to `filename` - processed, no transform chain applied (plain file, database, or
+          container system disabled via `files.container.mode`).
+        - Non-empty and different from `filename` - derived container entry.
 
-        Note
+        Session-scoped: save-as does not persist the chain. Reopening the saved artifact yields
+        whatever chain that session’s access path produces.
 
-        An empty virtual_path indicates the file has not yet been processed by the transform
-        system. If virtual_path matches filename, the file is not the result of an extraction or
-        transform.
+        Use this for cache keys or identity-sensitive operations. Use `filename` for the
+        physical path and `display_name` for UI display.
 
 ## NavigationHandler
 
@@ -480,9 +498,9 @@
     navigate(*view: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#NavigationHandler.navigate)
     :   Parameters:
         :   - **view** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) –
+              v3.14)"))
             - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) –
+              v3.14)"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
@@ -501,7 +519,7 @@
     is_option_set(*option: [SaveOption](enums.md#binaryninja.enums.SaveOption "binaryninja.enums.SaveOption")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/filemetadata.html#SaveSettings.is_option_set)
     :   Parameters:
         :   **option** ([*SaveOption*](enums.md#binaryninja.enums.SaveOption
-            "binaryninja.enums.SaveOption")) –
+            "binaryninja.enums.SaveOption"))
 
         Return type:
         :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
