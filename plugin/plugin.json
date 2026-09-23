@@ -1,0 +1,20 @@
+{
+  "pluginmetadataversion": 2,
+  "name": "Knife Server",
+  "type": ["core"],
+  "api": ["python3"],
+  "description": "A small local server for the bnk command-line workbench.",
+  "longdescription": "Keeps Binary Ninja available to the bnk command-line client, including in headless and container workflows.",
+  "license": {
+    "name": "MIT"
+  },
+  "platforms": ["Darwin", "Linux", "Windows"],
+  "installinstructions": {
+    "Darwin": "Link or copy this directory into ~/Library/Application Support/Binary Ninja/plugins/knife_server.",
+    "Linux": "Link or copy this directory into ~/.binaryninja/plugins/knife_server.",
+    "Windows": "Link or copy this directory into %APPDATA%\\Binary Ninja\\plugins\\knife_server."
+  },
+  "version": "0.1.0",
+  "author": "binja-knife contributors",
+  "minimumBinaryNinjaVersion": 9757
+}
