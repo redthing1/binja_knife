@@ -22,7 +22,7 @@ Plugin actions follow the visible workbench rather than mirroring Binary Ninja's
 
 Several sessions and requests may coexist in one Binary Ninja process. Session bookkeeping uses short state locks but does not serialize Binary Ninja operations globally. Opening the same path normally reuses its session; an explicit unused name may create an independent view.
 
-One narrow per-session lock groups a direct `edit` or `patch` into a coherent Binary Ninja undo entry and keeps save/undo history changes from interleaving. Reading and unrestricted Python do not pass through an operation lane.
+A narrow per-session lock keeps direct edits and saves from interleaving. Direct edits can roll back if they fail partway through. Reading and unrestricted Python do not pass through an operation lane.
 
 ## Transport
 

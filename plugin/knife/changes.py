@@ -76,14 +76,6 @@ class ChangeActions:
                 "after": view.get_disassembly(address) if is_code else None,
             }
 
-    def undo(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
-        only(args)
-        return self._history(session_name, redo=False)
-
-    def redo(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
-        only(args)
-        return self._history(session_name, redo=True)
-
     def save(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
         path = optional_string(args, "path")
         only(args, "path")
@@ -249,23 +241,6 @@ class ChangeActions:
             )
 
         return {"target": target, "kind": kind, "address": hex_address(address), "changes": changes}
-
-    def _history(self, session_name: str | None, *, redo: bool) -> dict[str, Any]:
-        with self.sessions.use(session_name) as session:
-            view = session.bv
-            source = view.file.redo_entries if redo else view.file.undo_entries
-            if not source:
-                raise SessionError(f"nothing to {'redo' if redo else 'undo'}", kind="history")
-            with session.changes:
-                view.redo() if redo else view.undo()
-                view.update_analysis_and_wait()
-            return {
-                "action": "redo" if redo else "undo",
-                "undo": len(view.file.undo_entries),
-                "redo": len(view.file.redo_entries),
-                "analysis_changed": bool(view.file.analysis_changed),
-                "modified": bool(view.file.modified),
-            }
 
 
 @contextmanager

@@ -18,7 +18,6 @@ from bnk.render import (
     edit_text,
     error_text,
     find_text,
-    history_text,
     inspect_text,
     open_text,
     patch_text,
@@ -366,7 +365,7 @@ def edit(
         typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to change."),
     ] = None,
 ) -> None:
-    """Set a common name, type, or comment as one undoable change."""
+    """Set a common name, type, or comment."""
     if comment == "-":
         comment = ""
     _remote(
@@ -390,7 +389,7 @@ def patch(
         typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to change."),
     ] = None,
 ) -> None:
-    """Replace raw bytes as one undoable change."""
+    """Replace raw bytes."""
     _remote(
         context,
         "patch",
@@ -398,30 +397,6 @@ def patch(
         session=session,
         text=patch_text,
     )
-
-
-@app.command(rich_help_panel="Change and persist")
-def undo(
-    context: typer.Context,
-    session: Annotated[
-        str | None,
-        typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to change."),
-    ] = None,
-) -> None:
-    """Undo the last Binary Ninja change."""
-    _remote(context, "undo", session=session, text=history_text)
-
-
-@app.command(rich_help_panel="Change and persist")
-def redo(
-    context: typer.Context,
-    session: Annotated[
-        str | None,
-        typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to change."),
-    ] = None,
-) -> None:
-    """Redo the last undone Binary Ninja change."""
-    _remote(context, "redo", session=session, text=history_text)
 
 
 @app.command(rich_help_panel="Change and persist")

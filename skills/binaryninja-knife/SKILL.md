@@ -15,7 +15,7 @@ The workbench is organized by intent:
 
 - connection and sessions: `status`, `version`, `open`, `sessions`, `summary`, `close`;
 - understanding: `find`, `inspect`, `code`, `refs`, `sections`, `segments`;
-- common changes: `edit`, `patch`, `undo`, `redo`, `save`, `export`;
+- common changes: `edit`, `patch`, `save`, `export`;
 - unrestricted Binary Ninja Python: `eval`, `exec`, `run`.
 
 Commands return concise text designed for the operation.
@@ -75,7 +75,6 @@ bnk edit parse_request --type 'bool parse_request(Request *req)'
 bnk edit 0x401234 --comment 'rejects malformed length'
 bnk edit parse_request::len --name length --type size_t
 bnk patch 0x401234 '90 90'
-bnk undo
 bnk save analysis.bndb
 bnk export patched.bin
 ```

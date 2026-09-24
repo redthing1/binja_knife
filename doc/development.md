@@ -20,8 +20,8 @@ Binary Ninja semantics must also be checked in a real matching environment. Use 
 ```text
 summary -> sections -> segments
 open -> find strings --refs -> inspect -> code
-edit -> undo -> redo -> save -> close -> reopen
-exec/run -> patch -> undo -> save -> export
+edit -> save -> close -> reopen
+exec/run -> patch -> save -> export
 ```
 
 Build both distributions with:

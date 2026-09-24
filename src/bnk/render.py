@@ -393,15 +393,6 @@ def patch_text(value: dict[str, Any]) -> str:
     return _rows(rows)
 
 
-def history_text(value: dict[str, Any]) -> str:
-    return (
-        f"{_line(value.get('action', 'changed'))}\n"
-        f"undo  {value.get('undo', '?')}\n"
-        f"redo  {value.get('redo', '?')}\n"
-        f"dirty  {_dirty(value)}"
-    )
-
-
 def save_text(value: dict[str, Any], *, verb: str = "saved") -> str:
     suffix = f"\nbytes  {value['bytes']}" if "bytes" in value else ""
     return f"{verb} {_line(value.get('session', '?'))}\npath  {_line(value.get('path', '?'))}{suffix}"

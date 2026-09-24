@@ -55,8 +55,6 @@ class Controller:
                     "segments": self._reading.segments,
                     "edit": self._changes.edit,
                     "patch": self._changes.patch,
-                    "undo": self._changes.undo,
-                    "redo": self._changes.redo,
                     "save": self._changes.save,
                     "export": self._changes.export,
                     "eval": self._python.evaluate,
