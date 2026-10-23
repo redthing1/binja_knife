@@ -27,7 +27,15 @@ uv tool install .
 bnk -h
 ```
 
-Link or copy [`plugin/`](plugin/) into Binary Ninja's plugin directory as `knife_server`. The Knife Server starts automatically and works equally well headlessly, in a container, or alongside the GUI.
+For a local runtime, supply your own Linux Binary Ninja archive:
+
+```sh
+bnk runtime install ./binaryninja-linux.tar.zst
+```
+
+Ordinary commands start it automatically. See [runtime setup](doc/runtime.md) for requirements, plugins, and portable bundles.
+
+For an existing installation, link or copy [`plugin/`](plugin/) into Binary Ninja's plugin directory as `knife_server`. The Knife Server starts automatically and works equally well headlessly, in a container, or alongside the GUI.
 
 When the client and Binary Ninja see different filesystems, pass an absolute plugin-visible path with `--server-path`.
 

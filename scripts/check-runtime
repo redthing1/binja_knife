@@ -1,0 +1,162 @@
+#!/usr/bin/env python3
+"""Exercise a real runtime in temporary XDG directories. Requires port 18812 free.
+
+Run with: uv run --locked python scripts/check-runtime ARCHIVE
+Accepts an original Binja archive or prepared bundle with the default plugins.
+"""
+from __future__ import annotations
+
+import argparse
+import concurrent.futures
+import json
+import os
+import re
+from pathlib import Path
+import signal
+import subprocess
+import sys
+import tempfile
+import time
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("archive", type=Path)
+    args = parser.parse_args()
+    archive = args.archive.resolve()
+    with tempfile.TemporaryDirectory(prefix="bnk-check-") as directory:
+        root = Path(directory)
+        env = {**os.environ, "XDG_DATA_HOME": str(root / "data"),
+               "XDG_STATE_HOME": str(root / "state")}
+        env.pop("BNK_CONNECT", None)
+        env.pop("BNK_SESSION", None)
+
+        def cli(*args, ok=True, timeout=180):
+            result = subprocess.run([sys.executable, "-m", "bnk", *map(str, args)],
+                                    env=env, capture_output=True, text=True, timeout=timeout)
+            if ok and result.returncode:
+                raise AssertionError(f"bnk {' '.join(map(str, args))}:\n{result.stdout}\n{result.stderr}")
+            return result
+
+        def contains(text, expected):
+            assert expected in text, (expected, text)
+
+        def supervisor():
+            return json.loads((Path(env["XDG_STATE_HOME"]) / "bnk/process.json").read_text())["pid"]
+
+        def children(pid):
+            return [int(p) for p in Path(f"/proc/{pid}/task/{pid}/children").read_text().split()]
+
+        try:
+            print("Installing and checking readiness", flush=True)
+            cli("runtime", "install", archive, timeout=600)
+            contains(cli("runtime", "status").stdout, "ready")
+            contains(cli("status").stdout, "binary ninja")
+            print("Checking native dependencies are supplied by the bundle", flush=True)
+            runtime = Path(env["XDG_DATA_HOME"]) / "bnk/runtime"
+            from bnk.runtime.native import library_path
+            libc = {"libc.so.6", "libm.so.6", "libpthread.so.0", "libdl.so.2", "librt.so.1",
+                    "libresolv.so.2", "libutil.so.1", "ld-linux-x86-64.so.2"}
+            for executable in ("binaryninja/binaryninja", "binaryninja/qt/platforms/libqxcb.so",
+                               "native/usr/bin/Xvfb", "native/usr/bin/xkbcomp"):
+                result = subprocess.run(["ldd", "-r", str(runtime / executable)], capture_output=True, text=True,
+                                        env={**env, "LD_LIBRARY_PATH": library_path(runtime)}, check=True)
+                assert "not found" not in result.stdout, result.stdout
+                assert "undefined symbol" not in result.stdout, result.stdout
+                for dependency in re.findall(r"=> (/.+?) \(", result.stdout):
+                    path = Path(dependency)
+                    assert path.is_relative_to(runtime) or path.name in libc, dependency
+            contains(cli("open", "/usr/bin/true", "-s", "smoke").stdout, "ELF")
+            contains(cli("eval", "__import__('sqlite3').connect(':memory:').execute('select 42').fetchone()").stdout, "42")
+            refused = cli("runtime", "install", archive, ok=False)
+            assert refused.returncode != 0
+            contains(refused.stderr, "runtime is running")
+            contains(cli("summary").stdout, "smoke")
+            entry = cli("eval", "hex(bv.entry_point)").stdout.strip().removeprefix("result  ").strip("'")
+            for command in (("summary",), ("sections",), ("segments",),
+                            ("find", "strings", "--limit", "3"), ("inspect", entry), ("code", entry)):
+                assert cli(*command).stdout
+            print("Checking edits, save/reopen, scripting, and export", flush=True)
+            cli("exec", "bv.set_comment_at(bv.entry_point, 'runtime persistence check')")
+            cli("patch", entry, "90")
+            contains(cli("eval", "bv.read(bv.entry_point, 1).hex()").stdout, "90")
+            offset = int(cli("eval", "bv.get_data_offset_for_address(bv.entry_point)").stdout.strip().removeprefix("result  "))
+            exported = root / "patched.bin"
+            cli("export", exported)
+            assert exported.read_bytes()[offset] == 0x90
+            database = root / "analysis.bndb"
+            cli("save", database)
+            cli("close")
+            cli("open", database, "-s", "smoke")
+            contains(cli("eval", "bv.get_comment_at(bv.entry_point)").stdout, "runtime persistence check")
+            contains(cli("eval", "bv.read(bv.entry_point, 1).hex()").stdout, "90")
+
+            print("Opening synthetic inputs through both default plugins", flush=True)
+            dump = root / "sample.w1dump"
+            payload = {"metadata": {"version": 1, "arch": "x86_64", "os": "linux", "pointer_size": 8},
+                       "thread": {}, "modules": [],
+                       "regions": [{"start": 0x1000, "end": 0x1010, "permissions": 5,
+                                    "is_code": True, "data": b"\x90" * 15 + b"\xc3"}]}
+            cli("exec", f"import msgpack; from pathlib import Path; Path({str(dump)!r}).write_bytes(msgpack.packb({payload!r}))")
+            contains(cli("open", dump, "-s", "dump").stdout, "W1Dump")
+            gba = bytearray(0x100)
+            gba[:4] = bytes.fromhex("feffffea")  # ARM branch to itself.
+            gba[0xB2] = 0x96
+            rom = root / "sample.gba"
+            rom.write_bytes(gba)
+            contains(cli("open", rom, "-s", "rom").stdout, "GBA")
+            contains(cli("summary", "-s", "rom").stdout, "armv7")
+
+            print("Checking shutdown, concurrent autostart, and explicit endpoints", flush=True)
+            pid = supervisor()
+            owned = children(pid)
+            cli("runtime", "stop")
+            assert all(not Path(f"/proc/{p}").exists() for p in owned)
+            assert cli("--connect", "127.0.0.1:18812", "status", ok=False).returncode != 0
+            contains(cli("runtime", "status").stdout, "stopped")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+                results = list(pool.map(lambda _: cli("status"), range(8)))
+            assert all("binary ninja" in result.stdout for result in results)
+            assert len(children(supervisor())) == 2
+
+            for executable in ("binaryninja", "Xvfb"):
+                print(f"Checking recovery after killing {executable}", flush=True)
+                pid = supervisor()
+                owned = children(pid)
+                victim = next(p for p in owned if Path(f"/proc/{p}/comm").read_text().strip() == executable)
+                os.kill(victim, signal.SIGKILL)
+                deadline = time.monotonic() + 45
+                while time.monotonic() < deadline:
+                    if children(pid) != owned and cli("--connect", "127.0.0.1:18812", "status", ok=False).returncode == 0:
+                        break
+                    time.sleep(0.2)
+                else:
+                    raise AssertionError(f"failed to recover from {executable} crash")
+                assert supervisor() == pid
+
+            print("Packing and reinstalling offline at a path containing spaces", flush=True)
+            bundle = root / "runtime.tar.zst"
+            cli("runtime", "pack", bundle)
+            cli("runtime", "stop")
+            env.update({"XDG_DATA_HOME": str(root / "relocated data"),
+                        "XDG_STATE_HOME": str(root / "relocated state"),
+                        "HTTP_PROXY": "http://127.0.0.1:9", "HTTPS_PROXY": "http://127.0.0.1:9",
+                        "ALL_PROXY": "http://127.0.0.1:9", "UV_OFFLINE": "1"})
+            cli("runtime", "install", bundle)
+            contains(cli("open", dump, "-s", "relocated").stdout, "W1Dump")
+            contains(cli("eval", "__import__('msgpack').__version__").stdout, "result")
+            cli("runtime", "stop")
+            cli("open", database, "-s", "saved")
+            contains(cli("eval", "bv.get_comment_at(bv.entry_point)").stdout, "runtime persistence check")
+            print("PASS: analysis, plugins, persistence, lifecycle, concurrency, crash recovery, offline relocation", flush=True)
+        finally:
+            if sys.exc_info()[0] is not None:
+                for name in ("install.log", "runtime.log"):
+                    path = Path(env["XDG_STATE_HOME"]) / "bnk" / name
+                    if path.is_file():
+                        print(f"\n{name}:\n" + "\n".join(path.read_text(errors="replace").splitlines()[-80:]), file=sys.stderr)
+            cli("runtime", "stop", ok=False)
+
+
+if __name__ == "__main__":
+    main()

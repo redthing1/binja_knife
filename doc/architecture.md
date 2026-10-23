@@ -34,6 +34,8 @@ The command model does not depend on deployment topology. Client and plugin may 
 
 The plugin starts its server automatically through three Binary Ninja settings: autostart, host, and port.
 
+`src/bnk/runtime/` installs Binary Ninja and supervises it under Xvfb. The CLI starts an installed runtime when its default connection fails, before sending a request. Explicit endpoints bypass startup; interrupted requests are never replayed. The plugin is independent of runtime management. See [runtime setup](runtime.md).
+
 ## Presentation and extension
 
 The client renders each operation directly. Addresses and target identities remain usable as the next command. Inspection retains the requested address alongside containing anchors; code can focus on an instruction or show a whole function. Multiline code remains multiline, and bounded results say when more exists.

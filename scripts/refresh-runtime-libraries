@@ -1,0 +1,80 @@
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# ///
+"""Refresh the Linux library manifest from Ubuntu 24.04 package metadata.
+
+Review the resulting manifest diff before committing. Packages are extracted,
+never installed into the host. libc is supplied by the host (glibc >= 2.39).
+"""
+import json
+import lzma
+import re
+import urllib.request
+from pathlib import Path
+
+BASE = "https://archive.ubuntu.com/ubuntu/"
+ROOTS = """xvfb x11-xkb-utils xkb-data fonts-dejavu-core libcurl4t64
+libegl1 libgl1 libfontconfig1 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0
+libxcb-keysyms1 libxcb-render-util0 libxcb-cursor0 libstdc++6 zlib1g
+libdbus-1-3 libsqlite3-0 libx11-xcb1 libxcb-shape0 libxcb-sync1 libxcb-glx0 libxcb-randr0 libxcb-xfixes0
+libwayland-cursor0 libwayland-egl1 libgbm1""".split()
+
+
+def main():
+    packages = {}
+    for suite in ("noble", "noble-updates", "noble-security"):
+        for component in ("main", "universe"):
+            url = f"{BASE}dists/{suite}/{component}/binary-amd64/Packages.xz"
+            print(f"Reading {url}", flush=True)
+            with urllib.request.urlopen(url, timeout=120) as response:
+                content = lzma.decompress(response.read()).decode()
+            for block in content.split("\n\n"):
+                fields = dict(line.split(": ", 1) for line in block.splitlines()
+                              if ": " in line and not line.startswith(" "))
+                if "Package" in fields:
+                    packages[fields["Package"]] = fields
+    selected = {}
+    providers = {}
+    for name, package in packages.items():
+        for provision in package.get("Provides", "").split(","):
+            virtual = re.split(r"[\s:(]", provision.strip())[0]
+            if virtual:
+                providers[virtual] = name
+
+    def visit(name):
+        if name in selected or name in {"libc6", "libc-bin", "debconf"}:
+            return
+        # Only native libraries and the explicitly selected tools/data are used.
+        # Package-manager integration and maintainer-script dependencies are not.
+        if name not in ROOTS and not name.startswith("lib"):
+            return
+        if name in {"libglx-mesa0", "libegl-mesa0"}:
+            return  # Xvfb/Qt software operation needs GL dispatch, not GPU drivers.
+        package = packages[name]
+        selected[name] = package
+        for group in (package.get("Depends", "") + "," + package.get("Pre-Depends", "")).split(","):
+            choices = [re.split(r"[\s:(]", choice.strip())[0] for choice in group.split("|")]
+            choices = [choice for choice in choices if choice]
+            if choices:
+                available = next((choice if choice in packages else providers[choice]
+                                  for choice in choices if choice in packages or choice in providers), None)
+                if available is None:
+                    raise ValueError(f"unresolved dependency of {name}: {group}")
+                visit(available)
+
+    for name in ROOTS:
+        visit(name)
+    result = {
+        "platform": "linux-x86_64", "glibc": "2.39",
+        "packages": [{"name": name, "version": item["Version"],
+                      "url": BASE + item["Filename"], "sha256": item["SHA256"]}
+                     for name, item in sorted(selected.items())],
+    }
+    destination = Path(__file__).resolve().parents[1] / "src/bnk/runtime/defaults/libraries.json"
+    destination.write_text(json.dumps(result, indent=2) + "\n")
+    print(f"Wrote {len(selected)} packages to {destination}")
+
+
+if __name__ == "__main__":
+    main()

@@ -42,6 +42,8 @@ Opening the same path normally reuses its retained session. An explicit unused n
 
 Headless use is normal; a GUI is not assumed.
 
+Install a local runtime once with `bnk runtime install ARCHIVE`; ordinary commands start it automatically. Diagnose startup with `bnk runtime status` and `bnk runtime logs`. Explicit endpoints bypass local startup. Save work before `bnk runtime stop`, which discards in-memory sessions.
+
 ## Follow evidence directly
 
 The ordinary reading loop is intentionally short:

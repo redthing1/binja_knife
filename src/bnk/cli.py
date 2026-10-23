@@ -12,6 +12,7 @@ from bnk import __version__
 from bnk.client import BnkError, request
 from bnk.endpoint import DEFAULT_CONNECT, Endpoint, EndpointError
 from bnk.protocol import API_VERSION
+from bnk.runtime.cli import app as runtime_app
 from bnk.render import (
     close_text,
     code_text,
@@ -60,6 +61,8 @@ app = typer.Typer(
     rich_markup_mode=None,
 )
 
+app.add_typer(runtime_app, name="runtime", cls=CompactGroup, rich_help_panel="Local runtime")
+
 
 @app.callback()
 def root(
@@ -79,6 +82,8 @@ def root(
     except EndpointError as error:
         raise typer.BadParameter(str(error), param_hint="--connect") from error
     context.obj = endpoint
+    source = context.get_parameter_source("connect")
+    context.meta["local_runtime"] = source is not None and source.name == "DEFAULT"
 
 
 @app.command(rich_help_panel="Connection")
@@ -86,7 +91,7 @@ def status(context: typer.Context) -> None:
     """Show the connection, versions, and server uptime."""
     endpoint = _endpoint(context)
     try:
-        response = request(endpoint, "status")
+        response = _request(context, "status")
         if not isinstance(response, dict):
             raise BnkError("status returned an invalid result", kind="protocol")
         value = {
@@ -540,12 +545,29 @@ def _remote(
     session: str | None = None,
 ) -> None:
     try:
-        response = request(_endpoint(context), action, args, session=session)
+        response = _request(context, action, args, session=session)
         if not isinstance(response, dict):
             raise BnkError(f"{action} returned an invalid result", kind="protocol")
         typer.echo(text(response))
     except BnkError as error:
         _fail(error)
+
+
+def _request(context: typer.Context, action: str, args: dict[str, Any] | None = None, **kwargs: Any) -> Any:
+    endpoint = _endpoint(context)
+    try:
+        return request(endpoint, action, args, **kwargs)
+    except BnkError as error:
+        # Only retry a failed connection: a dropped response may follow an edit
+        # that already executed. Explicit endpoints never start a local process.
+        if not error.details.get("connect_failed") or not context.meta.get("local_runtime"):
+            raise
+        from bnk.runtime.paths import runtime_dir
+        if not (runtime_dir() / "runtime.json").is_file():
+            raise
+        from bnk.runtime.process import ensure_started
+        ensure_started()
+        return request(endpoint, action, args, **kwargs)
 
 
 def _client_path(value: str) -> str:

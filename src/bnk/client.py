@@ -21,6 +21,7 @@ def request(
     *,
     session: str | None = None,
     connect_timeout: float = 2.0,
+    response_timeout: float | None = None,
 ) -> Any:
     message = {
         "api": API_VERSION,
@@ -39,10 +40,11 @@ def request(
         raise BnkError(
             f"cannot connect to bnk at {endpoint}",
             kind="connection",
+            details={"connect_failed": True},
         ) from error
 
     try:
-        connection.settimeout(None)
+        connection.settimeout(response_timeout)
         with connection, connection.makefile("rwb") as stream:
             write_message(stream, message)
             result = read_message(stream)

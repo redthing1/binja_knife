@@ -23,4 +23,6 @@ module-name = "bnk"
 source-include = [
     "plugin/**",
     "tests/**",
+    "scripts/**",
+    "doc/**",
 ]

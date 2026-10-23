@@ -1,0 +1,3 @@
+# <repo_url> [ref] [deps=a,b]; refs resolve at installation time.
+https://github.com/redthing1/binja_dumpling.git main deps=msgpack
+https://github.com/redthing1/binja_gameroms_plugin.git main
