@@ -186,9 +186,11 @@ def _start_display(runtime: Path, env: dict[str, str]) -> tuple[subprocess.Popen
     read_fd, write_fd = os.pipe()
     child = None
     try:
+        # -noreset prevents Xvfb from resetting and rewriting the display number
+        # after its last client disconnects; by then the -displayfd read end is gone.
         child = subprocess.Popen(
             [str(runtime / "native/usr/bin/Xvfb"), "-displayfd", str(write_fd),
-             "-screen", "0", "1024x768x24", "-ac", "-nolisten", "tcp",
+             "-screen", "0", "1024x768x24", "-ac", "-nolisten", "tcp", "-noreset",
              "-xkbdir", str(runtime / "native/usr/share/X11/xkb")],
             cwd=runtime / "native/usr/bin", env=env,
             pass_fds=(write_fd,), start_new_session=True,
