@@ -16,6 +16,7 @@ from typer.testing import CliRunner
 from bnk.cli import app
 from bnk.client import BnkError
 from bnk.runtime.install import install, plugin_spec, unpack
+from bnk.runtime.native import library_path, load_manifest
 from bnk.runtime.process import stop
 
 
@@ -146,6 +147,45 @@ class RuntimeTests(unittest.TestCase):
                 else:
                     with self.assertRaises(ValueError):
                         unpack(source, destination)
+
+    def test_native_manifests_cover_both_runtime_architectures(self):
+        for name in ("x86_64", "aarch64"):
+            with self.subTest(name=name):
+                path, manifest = load_manifest(name)
+                self.assertEqual(path.name, f"{name}.json")
+                self.assertEqual(manifest["triplet"], f"{name}-linux-gnu")
+                self.assertEqual(manifest["platform"], f"linux-{name}")
+                self.assertGreater(len(manifest["packages"]), 0)
+
+    def test_unknown_architecture_is_rejected_clearly(self):
+        with self.assertRaises(BnkError) as error:
+            load_manifest("riscv64")
+        self.assertIn("unsupported architecture riscv64", str(error.exception))
+        self.assertIn("aarch64", str(error.exception))
+
+    def test_library_path_follows_the_installed_manifest(self):
+        native = self.runtime / "native"
+        native.mkdir()
+        (native / "libraries.json").write_text(json.dumps({"triplet": "aarch64-linux-gnu"}))
+        self.assertEqual(
+            library_path(self.runtime).split(":"),
+            [
+                str(self.runtime / "binaryninja"),
+                str(native / "usr/lib/aarch64-linux-gnu"),
+                str(native / "lib/aarch64-linux-gnu"),
+            ],
+        )
+
+    def test_library_path_uses_host_triplet_for_old_bundles(self):
+        with patch("bnk.runtime.native.machine", return_value="aarch64"):
+            self.assertEqual(
+                library_path(self.runtime).split(":"),
+                [
+                    str(self.runtime / "binaryninja"),
+                    str(self.runtime / "native/usr/lib/aarch64-linux-gnu"),
+                    str(self.runtime / "native/lib/aarch64-linux-gnu"),
+                ],
+            )
 
     def test_plugin_manifest_defaults_to_main_and_supports_docker_syntax(self):
         self.assertEqual(plugin_spec("https://example.test/plugin.git"),

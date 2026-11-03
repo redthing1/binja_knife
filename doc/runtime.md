@@ -5,7 +5,7 @@ bnk runtime install ./binaryninja-linux.tar.zst
 bnk open ./program
 ```
 
-Supply your own Linux Binary Ninja ZIP or tar archive with bundled Python. Setup requires Linux x86-64, glibc 2.39+, `/bin/sh`, `git`, `uv`, `zstd`, and network access. Installation prepares and checks the runtime before replacing any previous installation, then starts it on `127.0.0.1:18812`.
+Supply your own Linux Binary Ninja ZIP or tar archive with bundled Python. Setup requires Linux x86-64 or AArch64, glibc 2.39+, `/bin/sh`, `git`, `uv`, `zstd`, and network access. Installation prepares and checks the runtime before replacing any previous installation, then starts it on `127.0.0.1:18812`.
 
 Use `--license-file PATH` if the archive lacks a license. `BN_LICENSE` takes precedence at startup and is not saved to disk.
 
@@ -28,7 +28,7 @@ bnk runtime pack ./binja-runtime.tar.zst
 bnk runtime install ./binja-runtime.tar.zst
 ```
 
-A prepared bundle installs offline on another compatible system with `zstd`. It preserves the application, plugin versions, dependencies, and any license stored in the installation. Logs and analysis sessions are excluded.
+A prepared bundle installs offline on another compatible system of the same architecture with `zstd`. It preserves the application, plugin versions, dependencies, and any license stored in the installation. Logs and analysis sessions are excluded.
 
 ## Plugins
 

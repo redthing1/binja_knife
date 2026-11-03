@@ -54,9 +54,10 @@ def main():
             contains(cli("status").stdout, "binary ninja")
             print("Checking native dependencies are supplied by the bundle", flush=True)
             runtime = Path(env["XDG_DATA_HOME"]) / "bnk/runtime"
-            from bnk.runtime.native import library_path
+            from bnk.runtime.native import library_path, machine
+            loaders = {"x86_64": "ld-linux-x86-64.so.2", "aarch64": "ld-linux-aarch64.so.1"}
             libc = {"libc.so.6", "libm.so.6", "libpthread.so.0", "libdl.so.2", "librt.so.1",
-                    "libresolv.so.2", "libutil.so.1", "ld-linux-x86-64.so.2"}
+                    "libresolv.so.2", "libutil.so.1", loaders[machine()]}
             for executable in ("binaryninja/binaryninja", "binaryninja/qt/platforms/libqxcb.so",
                                "native/usr/bin/Xvfb", "native/usr/bin/xkbcomp"):
                 result = subprocess.run(["ldd", "-r", str(runtime / executable)], capture_output=True, text=True,

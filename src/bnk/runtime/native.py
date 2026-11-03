@@ -16,14 +16,42 @@ from bnk.client import BnkError
 from bnk.runtime.paths import cache_dir
 
 DEFAULTS = Path(__file__).with_name("defaults")
+LIBRARIES = DEFAULTS / "libraries"
+MANIFEST_NAME = "libraries.json"
+
+MACHINE_ALIASES = {"amd64": "x86_64", "arm64": "aarch64"}
+TRIPLETS = {"x86_64": "x86_64-linux-gnu", "aarch64": "aarch64-linux-gnu"}
+
+
+def machine() -> str:
+    """Return the architecture name used by runtime manifests."""
+    name = platform.machine()
+    return MACHINE_ALIASES.get(name, name)
+
+
+def load_manifest(name: str | None = None) -> tuple[Path, dict]:
+    """Return the native library manifest for an architecture and its data."""
+    architecture = name or machine()
+    path = LIBRARIES / f"{architecture}.json"
+    if not path.is_file():
+        supported = ", ".join(sorted(item.stem for item in LIBRARIES.glob("*.json")))
+        raise BnkError(
+            f"unsupported architecture {architecture}; supported: {supported or 'none'}",
+            kind="runtime",
+        )
+    return path, json.loads(path.read_text())
 
 
 def check_platform() -> None:
-    if platform.system() != "Linux" or platform.machine() != "x86_64":
-        raise BnkError("local runtimes require Linux x86-64", kind="runtime")
+    if platform.system() != "Linux":
+        raise BnkError("local runtimes require Linux", kind="runtime")
+    _, manifest = load_manifest()
     libc, version = platform.libc_ver()
-    if libc != "glibc" or tuple(map(int, version.split(".")[:2])) < (2, 39):
-        raise BnkError("local runtimes require glibc 2.39 or newer", kind="runtime")
+    minimum = tuple(map(int, manifest["glibc"].split(".")))
+    if libc != "glibc" or tuple(map(int, version.split(".")[:2])) < minimum:
+        raise BnkError(
+            f"local runtimes require glibc {manifest['glibc']} or newer", kind="runtime"
+        )
 
 
 def extract_deb(content: bytes, destination: Path) -> None:
@@ -54,11 +82,11 @@ def extract_deb(content: bytes, destination: Path) -> None:
 
 
 def install_libraries(destination: Path, report: Callable[[str], None]) -> None:
-    manifest = json.loads((DEFAULTS / "libraries.json").read_text())
+    manifest_path, manifest = load_manifest()
     cache = cache_dir() / "packages"
     cache.mkdir(parents=True, exist_ok=True)
     destination.mkdir(parents=True)
-    report("Preparing native runtime libraries")
+    report(f"Preparing native runtime libraries for {manifest['platform']}")
     for package in manifest["packages"]:
         cached = cache / package["sha256"]
         content = cached.read_bytes() if cached.exists() else b""
@@ -69,6 +97,11 @@ def install_libraries(destination: Path, report: Callable[[str], None]) -> None:
                 raise ValueError(f"checksum mismatch for {package['name']}")
             cached.write_bytes(content)
         extract_deb(content, destination)
+    _relocate_xvfb(destination)
+    shutil.copy2(manifest_path, destination / MANIFEST_NAME)
+
+
+def _relocate_xvfb(destination: Path) -> None:
     # Xvfb's compiled xkbcomp directory has no command-line override. Make the
     # locked binary use its working directory (native/usr/bin) instead of /usr/bin.
     # Keep ELF offsets unchanged; fail closed if a package update changes the layout.
@@ -78,11 +111,20 @@ def install_libraries(destination: Path, report: Callable[[str], None]) -> None:
     if content.count(old) != 1:
         raise ValueError("unexpected Xvfb layout: cannot relocate xkbcomp")
     xvfb.write_bytes(content.replace(old, b"\0.\0".ljust(len(old), b"\0")))
-    shutil.copy2(DEFAULTS / "libraries.json", destination / "libraries.json")
 
 
 def library_path(runtime: Path) -> str:
+    """Return the library search path for an installed or staged runtime."""
+    triplet = _triplet(runtime)
     return ":".join(str(path) for path in (
-        runtime / "binaryninja", runtime / "native/usr/lib/x86_64-linux-gnu",
-        runtime / "native/lib/x86_64-linux-gnu",
+        runtime / "binaryninja", runtime / "native/usr/lib" / triplet,
+        runtime / "native/lib" / triplet,
     ))
+
+
+def _triplet(runtime: Path) -> str:
+    try:
+        return json.loads((runtime / "native" / MANIFEST_NAME).read_text())["triplet"]
+    except (OSError, ValueError, KeyError):
+        # Bundles prepared before manifests recorded a triplet use the host.
+        return TRIPLETS.get(machine(), "")
