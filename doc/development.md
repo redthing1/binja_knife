@@ -52,6 +52,6 @@ Keep the CLI and plugin independent. The plugin may use Binary Ninja and the sta
 
 ## Runtime dependencies
 
-`src/bnk/runtime/defaults/libraries/` records native packages and checksums from Ubuntu 24.04 for each supported architecture. Refresh it with `uv run --script scripts/refresh-runtime-libraries`, review the diff, and run the runtime check above. Installation extracts packages locally without running their setup scripts. Binary Ninja supplies Qt and Python; the host supplies glibc.
+`src/bnk/runtime/defaults/libraries/` records native packages and checksums from an Ubuntu 24.04 snapshot for each supported architecture. Snapshot URLs keep pinned versions available after the live archive removes them. Refresh it with `uv run --script scripts/refresh-runtime-libraries`, review the diff, and run the runtime check above. Installation extracts packages locally without running their setup scripts. Binary Ninja supplies Qt and Python; the host supplies glibc.
 
 Xvfb's compiled `xkbcomp` path is relocated to its private working directory. The patch checks the original string and preserves ELF offsets. Keep this check and the dependency audit when updating packages. Plugin refs default to `main` and resolve separately at installation time.

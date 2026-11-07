@@ -11,11 +11,12 @@ import json
 import lzma
 import re
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 ARCHIVES = {
-    "x86_64": ("amd64", "https://archive.ubuntu.com/ubuntu/"),
-    "aarch64": ("arm64", "https://ports.ubuntu.com/ubuntu-ports/"),
+    "x86_64": "amd64",
+    "aarch64": "arm64",
 }
 ROOTS = """xvfb x11-xkb-utils xkb-data fonts-dejavu-core libcurl4t64
 libegl1 libgl1 libfontconfig1 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0
@@ -89,7 +90,10 @@ def manifest(arch, package_arch, base):
 def main():
     destination = Path(__file__).resolve().parents[1] / "src/bnk/runtime/defaults/libraries"
     destination.mkdir(parents=True, exist_ok=True)
-    for arch, (package_arch, base) in ARCHIVES.items():
+    # Use one immutable archive view for metadata and packages on both architectures.
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    base = f"https://snapshot.ubuntu.com/ubuntu/{timestamp}/"
+    for arch, package_arch in ARCHIVES.items():
         result = manifest(arch, package_arch, base)
         path = destination / f"{arch}.json"
         path.write_text(json.dumps(result, indent=2) + "\n")
