@@ -21,12 +21,12 @@ Use `bnk -h` for the command map and `bnk COMMAND -h` for exact syntax.
 
 ## References
 
-- [Analysis workflow](references/workflow.md): annotation quality, confidence, notes, and checkpoints during sustained reversing.
-- [Python API patterns](references/python-api.md): execution context, target resolution, IL traversal, and verified mutations.
-- [API documentation guide](references/docs-guide.md): finding version-matched Binary Ninja APIs before using unfamiliar calls.
-- [Runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md): installation, plugins, and remote endpoints.
+- [Analysis workflow](references/workflow.md): read before beginning analysis. Covers annotation quality, confidence, notes, and checkpoints.
+- [Python API patterns](references/python-api.md): read before Binary Ninja scripting. Covers execution context, target resolution, IL traversal, and verified mutations.
+- [API documentation guide](references/docs-guide.md): read before scripting, then consult the included module pages for the APIs the script uses.
+- [Runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md): consult for installation, plugins, and remote endpoints.
 
-Read the relevant reference when the work calls for it.
+Check the APIs used by `eval`, `exec`, and scripts in the included docs before execution. Reuse what you have already checked during the task.
 
 ## First moves
 
@@ -69,6 +69,6 @@ Avoid massive, unbounded sweeps over every function's HLIL, MLIL, or LLIL: they 
 
 Inspect current state before editing and resolve ambiguous targets. Use evidence-backed names and types; keep hypotheses explicit. After type or boundary changes, wait for analysis as needed and recheck the resulting interpretation. Keep writes to a shared view sequential.
 
-Use direct commands for common queries and edits, and Python for composed analysis or API-only operations. Python requests receive a fresh namespace; changes to the retained view persist. For unfamiliar APIs, consult the documentation guide and relevant module page, then reuse that reference work.
+Use direct commands for common queries and edits, and Python for composed analysis or API-only operations. Python requests receive a fresh namespace; changes to the retained view persist.
 
 Keep output focused and save large result sets in project artifacts. `save` preserves analysis; `export` writes binary bytes. Preserve the user's retained workspace and close temporary sessions when finished.

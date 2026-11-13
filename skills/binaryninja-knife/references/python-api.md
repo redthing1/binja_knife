@@ -2,6 +2,8 @@
 
 Use Python for custom correlation, reusable passes, and operations beyond the direct commands. Keep each pass tied to a question and a selected set of targets.
 
+Consult the [documentation guide](docs-guide.md) and included API entries before scripting. Reuse calls already checked during the task.
+
 ## Execution
 
 ```sh
@@ -51,4 +53,4 @@ result = {
 
 Supply a complete C declaration, including the function name. Verify its consequences in the affected code and save with `bnk save` at a checkpoint.
 
-For unfamiliar calls, use the [documentation guide](docs-guide.md). The [BinaryView](binja-docs/binaryview.md), [Function](binja-docs/function.md), and [IL](binja-docs/highlevelil.md) references cover target lookup, annotations, and traversal. Check user/auto behavior and analysis requirements, and reuse the APIs already grounded for the investigation.
+The [BinaryView](binja-docs/binaryview.md), [Function](binja-docs/function.md), and [IL](binja-docs/highlevelil.md) references cover target lookup, annotations, and traversal.

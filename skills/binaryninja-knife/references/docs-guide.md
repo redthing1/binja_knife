@@ -1,22 +1,10 @@
 # Binary Ninja Python API docs
 
-Use this reference before an unfamiliar Binary Ninja Python API call. The mirror exists because method names, object relationships, mutation behavior, and analysis semantics are easy to misremember across releases.
+Consult the included API documentation before writing or running Binary Ninja Python. Use documented calls rather than guessing from memory.
 
-## Version and location
+## Find and verify an API
 
-The mirror records its API version in:
-
-- `binja-docs/INDEX.md` records the version and module list;
-- `binja-docs/.binja-docs.json` records the generated mirror metadata;
-- `binja-docs/*.md` contains one page per `binaryninja` module.
-
-Compare the mirror version with the runtime shown by `bnk status`. If the major/minor release differs, treat the mirror as orientation rather than exact authority and refresh it deliberately.
-
-These pages document Binary Ninja Python. They do not document `bnk` command syntax; use `bnk -h` and leaf help for that.
-
-## Find an API
-
-Search the likely owning module first:
+The paths below are relative to the skill directory. Search the likely owning module first:
 
 ```sh
 rg -n "get_code_refs\\(" references/binja-docs/binaryview.md
@@ -40,9 +28,17 @@ Useful starting pages:
 - `filemetadata.md` and `database.md` — files, databases, undo, and save state;
 - `mainthread.md` and `interaction.md` — GUI-sensitive work.
 
-Read the signature and the surrounding property or method description. Check whether a value is an iterator, whether an operation is asynchronous, whether a mutation is user or auto state, and whether later reads require analysis to finish.
+Read the relevant API entries, and reuse what you have already checked during the task. Look up additional APIs as needed.
 
-Once an API has been grounded for the current work, use it normally; repeated calls do not require ritual rereading.
+If the included docs do not cover an API, consult the matching installed SDK source or official API documentation before using it. For `bnk` command syntax, use `bnk -h` and leaf help.
+
+Recheck failed calls against the docs. Verify an API difference before diagnosing a version mismatch.
+
+## Runtime and reference versions
+
+The reference version and module list are recorded in `binja-docs/INDEX.md` and `binja-docs/.binja-docs.json`. Module pages are under `binja-docs/*.md`.
+
+Compare the mirror version with the runtime shown by `bnk status`. If the major/minor release differs, treat the mirror as orientation rather than exact authority and refresh it deliberately.
 
 ## Refreshing the mirror
 
