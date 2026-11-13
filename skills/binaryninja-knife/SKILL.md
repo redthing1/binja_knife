@@ -1,59 +1,74 @@
 ---
 name: binaryninja-knife
-description: Drive Binary Ninja through bnk retained sessions and use version-matched API references for custom analysis.
+description: Use Binary Ninja through bnk for interactive analysis, database annotation, and custom Python workflows.
 ---
 
 # Binary Ninja Knife
 
-Use `bnk -h` for commands and `bnk COMMAND -h` for options. Commands operate on retained Binary Ninja views; headless use is supported.
+Use `bnk` to investigate binaries and improve their analysis. Named sessions retain a BinaryView between commands; saving a BNDB preserves the analysis on disk. Headless sessions are ordinary workspaces.
 
-## Open and select
+## Interface
 
-```sh
-bnk open ./program
-bnk summary
-bnk open ./other-program -s other
-```
+| Surface | Commands | Purpose |
+| --- | --- | --- |
+| Sessions | `sessions`, `open`, `summary`, `close` | Retain, select, and inspect a workspace |
+| Reading | `find`, `inspect`, `code`, `refs`, `sections`, `segments` | Find anchors, follow evidence, and read IL |
+| Changes | `edit`, `patch`, `save`, `export` | Annotate, change bytes, and persist work |
+| Python | `eval`, `exec`, `run` | Custom queries, related edits, and reusable passes |
+| Connection and setup | `status`, `version`, `runtime` | Inspect the endpoint and manage a local runtime |
 
-With one session, commands select it automatically. With several, use `-s NAME` or `BNK_SESSION`. Reopening a path reuses its session; an unused name creates an independent view.
+Use `bnk -h` for the command map and `bnk COMMAND -h` for exact syntax.
 
-Use `open PATH --list-views` to discover view types and `--view NAME` for a specific choice. An explicit view must match on reuse. Saving preserves the selected view.
+## References
 
-Paths normally resolve on the client. Use `--server-path` for absolute paths visible only to the plugin and `--connect HOST:PORT` for another server.
+- [Analysis workflow](references/workflow.md): annotation quality, confidence, notes, and checkpoints during sustained reversing.
+- [Python API patterns](references/python-api.md): execution context, target resolution, IL traversal, and verified mutations.
+- [API documentation guide](references/docs-guide.md): finding version-matched Binary Ninja APIs before using unfamiliar calls.
+- [Runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md): installation, plugins, and remote endpoints.
 
-For a local runtime, use `bnk runtime install ARCHIVE`. Ordinary commands start it as needed. `runtime status`, `logs`, and `plugins` inspect its state; close sessions before changing plugins. See [runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md) for installation and updates.
+Read the relevant reference when the work calls for it.
 
-## Read and edit
+## First moves
 
-```sh
-bnk find strings 'parse failed' --refs
-bnk inspect 0x401234
-bnk refs 0x401234
-bnk code main
-bnk code main --level mlil --ssa
-```
+1. Run `bnk sessions` and reuse existing work on the target.
+2. If needed, open it with `bnk open PATH -s NAME`. Let normal analysis finish.
+3. Check `bnk summary -s NAME` for the path, view, architecture, platform, and analysis state.
 
-Results provide addresses and names for subsequent commands. `sections` and `segments` show mappings; `inspect --vars` shows variables. `code` defaults to HLIL; a name reads the whole function and an address focuses on that location. `refs --from` follows outgoing references.
+With one ready session, commands select it automatically. With several, use `-s NAME` or `BNK_SESSION`. Use `open PATH --list-views` and `--view NAME` to choose a view; a separately named session can hold an independent interpretation for comparison.
 
-```sh
-bnk edit parse_packet --name parse_request
-bnk edit parse_request --type 'bool parse_request(Request *req)'
-bnk edit parse_request::len --name length --type size_t
-bnk save analysis.bndb
-```
+Paths normally resolve on the client. `--server-path` accepts an absolute path visible only to the plugin; `--connect HOST:PORT` selects another server.
 
-Use `function::#IDENTIFIER` when variable names collide. `patch` changes bytes; `save` preserves analysis and `export` writes binary bytes. Save or explicitly discard changes before closing a dirty session.
+## Analysis workflow
 
-## Python and API references
+For non-trivial reversing, improve two artifacts together:
 
-Use Python for composed or specialized analysis:
+- **BNDB:** names, types, comments, tags, user references, and recovered functions.
+- **Notes:** evidence and open questions organized by subsystem or topic.
 
-```sh
-bnk eval 'len(bv.functions)'
-bnk exec 'result = bv.arch.name'
-bnk run analysis.py -- arg1 arg2
-```
+The working loop is:
 
-Each request gets `bn`, `bv`, `session`, `args`, a request-local `print`, and an optional final `result`. Edits remain in the view. `run` sends local source; `run --server` reads a plugin-visible script.
+1. Pick a question and a concrete anchor: a string, symbol, address, table, reference, or observed behavior.
+2. Follow relevant references and functions with `find`, `inspect`, `refs`, and `code`.
+3. Record findings and uncertainty; improve the database as the evidence supports it.
+4. Verify conclusions and edits against the affected code and its callers or data uses.
+5. Save the database at meaningful checkpoints.
 
-Before using unfamiliar Binary Ninja APIs, read [references/docs-guide.md](references/docs-guide.md) and the relevant module page. Check the reference version against `bnk status` and confirm signatures, mutation behavior, and analysis completion.
+Carry returned addresses and names into subsequent commands. Keep notes synchronized when names or conclusions change.
+
+## IL choice and analysis gaps
+
+Start with HLIL for function behavior. Use MLIL, LLIL, or disassembly when they answer a specific question about data flow, registers, instructions, lifting, or misleading decompiler output.
+
+If HLIL is unavailable or implausible, inspect analysis state, skip reasons, function boundaries, and platform assumptions. Normal analysis can finish while individual functions are automatically skipped for complexity. Investigate relevant gaps individually and use the available representation where appropriate.
+
+## Working practices
+
+Keep investigation targeted. Searches, references, and inexpensive inventories help select useful functions before generating IL. Use result limits for exploration, then expand relevant results when the question requires complete coverage.
+
+Avoid massive, unbounded sweeps over every function's HLIL, MLIL, or LLIL: they can be extremely slow. Give broader passes a concrete purpose, filter candidates, work in bounded groups, and retain useful results.
+
+Inspect current state before editing and resolve ambiguous targets. Use evidence-backed names and types; keep hypotheses explicit. After type or boundary changes, wait for analysis as needed and recheck the resulting interpretation. Keep writes to a shared view sequential.
+
+Use direct commands for common queries and edits, and Python for composed analysis or API-only operations. Python requests receive a fresh namespace; changes to the retained view persist. For unfamiliar APIs, consult the documentation guide and relevant module page, then reuse that reference work.
+
+Keep output focused and save large result sets in project artifacts. `save` preserves analysis; `export` writes binary bytes. Preserve the user's retained workspace and close temporary sessions when finished.
