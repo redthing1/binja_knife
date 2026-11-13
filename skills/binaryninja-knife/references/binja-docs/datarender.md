@@ -8,8 +8,8 @@
 ## DataRenderer
 
 *class* DataRenderer[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     DataRenderer objects tell the Linear View how to render specific types.
 
@@ -48,7 +48,7 @@
     Note that the formatting is sub-optimal to work around an issue with Sphinx and
     reStructured text
 
-    __init__(*context: [TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.__init__)
+    __init__(*context: [TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.__init__)
     :   Parameters:
         :   **context** ([*TypeContext*](#binaryninja.datarender.TypeContext
             "binaryninja.datarender.TypeContext") *|* *None*)
@@ -57,65 +57,65 @@
 
     perform_free_object(*ctxt*)[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_free_object)
 
-    perform_get_lines_for_data(*ctxt*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *prefix: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *context: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_get_lines_for_data)
+    perform_get_lines_for_data(*ctxt*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *addr: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *prefix: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *width: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *context: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_get_lines_for_data)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
-            - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **addr** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **prefix** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
+              v3.15)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
               "binaryninja.architecture.InstructionTextToken")*]*)
-            - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **width** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **context** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*TypeContext*](#binaryninja.datarender.TypeContext
+              Python v3.15)")*[*[*TypeContext*](#binaryninja.datarender.TypeContext
               "binaryninja.datarender.TypeContext")*]*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    perform_get_lines_for_data_with_language(*ctxt*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *prefix: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *context: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext")]*, *language: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_get_lines_for_data_with_language)
+    perform_get_lines_for_data_with_language(*ctxt*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *addr: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *prefix: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]*, *width: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *context: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext")]*, *language: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_get_lines_for_data_with_language)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
-            - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **addr** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **prefix** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
+              v3.15)")*[*[*InstructionTextToken*](architecture.md#binaryninja.architecture.InstructionTextToken
               "binaryninja.architecture.InstructionTextToken")*]*)
-            - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **width** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **context** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*TypeContext*](#binaryninja.datarender.TypeContext
+              Python v3.15)")*[*[*TypeContext*](#binaryninja.datarender.TypeContext
               "binaryninja.datarender.TypeContext")*]*)
-            - **language** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **language** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    perform_is_valid_for_data(*ctxt*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *context: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext")]*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_is_valid_for_data)
+    perform_is_valid_for_data(*ctxt*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *addr: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *context: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeContext](#binaryninja.datarender.TypeContext "binaryninja.datarender.TypeContext")]*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.perform_is_valid_for_data)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
-            - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **addr** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
             - **context** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*TypeContext*](#binaryninja.datarender.TypeContext
+              Python v3.15)")*[*[*TypeContext*](#binaryninja.datarender.TypeContext
               "binaryninja.datarender.TypeContext")*]*)
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     register_generic()[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#DataRenderer.register_generic)
 
@@ -124,14 +124,14 @@
 ## TypeContext
 
 *class* TypeContext[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#TypeContext)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*_type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *_offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#TypeContext.__init__)
+    __init__(*_type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *_offset: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/datarender.html#TypeContext.__init__)
     :   Parameters:
         :   - **_type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type"))
-            - **_offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **_offset** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
     *property* offset
     :   The offset into the given type object

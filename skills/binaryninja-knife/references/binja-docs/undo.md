@@ -8,8 +8,8 @@
 ## UndoAction
 
 *class* UndoAction[[source]](https://api.binary.ninja/_modules/binaryninja/undo.html#UndoAction)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Class representing an action in an UndoEntry
 
@@ -17,13 +17,13 @@
     :   Parameters:
         :   **handle** (*LP_BNUndoAction*)
 
-    *property* summary_text*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* summary_text*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
 
 ## UndoEntry
 
 *class* UndoEntry[[source]](https://api.binary.ninja/_modules/binaryninja/undo.html#UndoEntry)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Class representing an entry in undo/redo history
 
@@ -31,7 +31,7 @@
     :   Parameters:
         :   **handle** (*LP_BNUndoEntry*)
 
-    *property* actions*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[UndoAction](#binaryninja.undo.UndoAction "binaryninja.undo.UndoAction")]*
+    *property* actions*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[UndoAction](#binaryninja.undo.UndoAction "binaryninja.undo.UndoAction")]*
     :   Get the list of actions in this entry
 
         Returns:

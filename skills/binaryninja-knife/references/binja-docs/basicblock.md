@@ -9,8 +9,8 @@
 ## BasicBlock
 
 *class* BasicBlock[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     The `class BasicBlock` object is returned during analysis and should not be directly
     instantiated.
@@ -28,13 +28,13 @@
     >>>       pass # Optionally do something here with instructions
     ```
 
-    __init__(*handle: LP_BNBasicBlock*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.__init__)
+    __init__(*handle: LP_BNBasicBlock*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.__init__)
     :   Parameters:
         :   - **handle** (*LP_BNBasicBlock*)
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|* *None*)
 
-    add_pending_outgoing_edge(*typ: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *fallthrough: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.add_pending_outgoing_edge)
+    add_pending_outgoing_edge(*typ: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *addr: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *fallthrough: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = False*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.add_pending_outgoing_edge)
     :   Adds a pending outgoing edge to the basic block. This is used to add edges that are not
         yet resolved.
 
@@ -45,17 +45,17 @@
         Parameters:
         :   - **typ** ([*BranchType*](enums.md#binaryninja.enums.BranchType
               "binaryninja.enums.BranchType")) – The type of the branch.
-            - **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – The address of the target basic block.
+            - **addr** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – The address of the target basic block.
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
               "binaryninja.architecture.Architecture")) – The architecture of the target basic block.
-            - **fallthrough** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")) – Whether this edge is a fallthrough edge.
+            - **fallthrough** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)")) – Whether this edge is a fallthrough edge.
 
         Return type:
         :   *None*
 
-    clear_pending_outgoing_edges() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.clear_pending_outgoing_edges)
+    clear_pending_outgoing_edges() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.clear_pending_outgoing_edges)
     :   Clears all pending outgoing edges for the basic block. This is used to remove edges that
         have not yet been resolved.
 
@@ -66,7 +66,7 @@
         Return type:
         :   *None*
 
-    get_disassembly_text(*settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_disassembly_text)
+    get_disassembly_text(*settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_disassembly_text)
     :   `get_disassembly_text` returns a list of DisassemblyTextLine objects for the current
         basic block.
 
@@ -83,35 +83,35 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    get_instruction_containing_address(*addr: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_instruction_containing_address)
+    get_instruction_containing_address(*addr: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)"), [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_instruction_containing_address)
     :   Parameters:
-        :   **addr** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **addr** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-            v3.14)")[[*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-            v3.14)"), [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")]
+            v3.15)")[[*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python
+            v3.15)"), [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)")]
 
-    get_iterated_dominance_frontier(*blocks: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_iterated_dominance_frontier)
+    get_iterated_dominance_frontier(*blocks: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_iterated_dominance_frontier)
     :   Calculates the iterated dominance frontier of the given blocks (this is used to
         determine φ node placement)
 
         Parameters:
         :   **blocks** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-            Python v3.14)")*[*[*BasicBlock*](#binaryninja.basicblock.BasicBlock
+            Python v3.15)")*[*[*BasicBlock*](#binaryninja.basicblock.BasicBlock
             "binaryninja.basicblock.BasicBlock")*]*)
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*BasicBlock*](#binaryninja.basicblock.BasicBlock
+            v3.15)")[[*BasicBlock*](#binaryninja.basicblock.BasicBlock
             "binaryninja.basicblock.BasicBlock")]
 
-    get_pending_outgoing_edges() → [list](https://docs.python.org/3/library/stdtypes.html#list "(in Python v3.14)")[[PendingBasicBlockEdge](#binaryninja.basicblock.PendingBasicBlockEdge "binaryninja.basicblock.PendingBasicBlockEdge")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_pending_outgoing_edges)
+    get_pending_outgoing_edges() → [list](https://docs.python.org/3/builtins/stdtypes.html#list "(in Python v3.15)")[[PendingBasicBlockEdge](#binaryninja.basicblock.PendingBasicBlockEdge "binaryninja.basicblock.PendingBasicBlockEdge")][[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.get_pending_outgoing_edges)
     :   Returns a list of pending outgoing edges for the basic block. These are edges that have
         not yet been resolved.
 
@@ -123,15 +123,15 @@
         :   List of PendingBasicBlockEdge objects.
 
         Return type:
-        :   [*list*](https://docs.python.org/3/library/stdtypes.html#list "(in Python
-            v3.14)")[[*PendingBasicBlockEdge*](#binaryninja.basicblock.PendingBasicBlockEdge
+        :   [*list*](https://docs.python.org/3/builtins/stdtypes.html#list "(in Python
+            v3.15)")[[*PendingBasicBlockEdge*](#binaryninja.basicblock.PendingBasicBlockEdge
             "binaryninja.basicblock.PendingBasicBlockEdge")]
 
-    mark_recent_use() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.mark_recent_use)
+    mark_recent_use() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.mark_recent_use)
     :   Return type:
         :   *None*
 
-    set_auto_highlight(*color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.set_auto_highlight)
+    set_auto_highlight(*color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.set_auto_highlight)
     :   `set_auto_highlight` highlights the current BasicBlock with the supplied color.
 
         Warning
@@ -147,7 +147,7 @@
         Return type:
         :   *None*
 
-    set_user_highlight(*color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.set_user_highlight)
+    set_user_highlight(*color: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlock.set_user_highlight)
     :   `set_user_highlight` highlights the current BasicBlock with the supplied color
 
         Parameters:
@@ -164,16 +164,16 @@
         Return type:
         :   *None*
 
-    *property* annotations*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]]*
+    *property* annotations*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[InstructionTextToken](architecture.md#binaryninja.architecture.InstructionTextToken "binaryninja.architecture.InstructionTextToken")]]*
     :   List of automatic annotations for the start of this block (read-only)
 
     *property* arch*: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*
     :   Basic block architecture (read-only)
 
-    *property* can_exit*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* can_exit*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether basic block can return or is tagged as ‘No Return’ (read-only)
 
-    *property* disassembly_text*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*
+    *property* disassembly_text*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*
     :   `disassembly_text` property which returns a list of function.DisassemblyTextLine objects
         for the current basic block.
 
@@ -183,7 +183,7 @@
             [<0x100000f30: _main:>, ...]
             ```
 
-    *property* dominance_frontier*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* dominance_frontier*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   Dominance frontier for this basic block (read-only)
 
         The dominance frontier of a basic block B is the set of blocks that are not strictly
@@ -191,14 +191,14 @@
         the blocks where B’s dominance “stops” - the blocks that have at least one predecessor
         not dominated by B, while having another predecessor that is dominated by B.
 
-    *property* dominator_tree_children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* dominator_tree_children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   List of child blocks in the dominator tree for this basic block (read-only)
 
         The dominator tree children of a basic block B are the blocks dominated by B. See
         [`BasicBlock.dominators`](#binaryninja.basicblock.BasicBlock.dominators
         "binaryninja.basicblock.BasicBlock.dominators") for the definition of a dominator.
 
-    *property* dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   List of dominators for this basic block (read-only).
 
         A dominator of a basic block B is a block that must be executed before B can be
@@ -208,22 +208,22 @@
         "binaryninja.basicblock.BasicBlock.strict_dominators") for dominators that don’t include
         B.
 
-    *property* end*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* end*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Basic block end (read-only)
 
-    *property* fallthrough_to_function*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* fallthrough_to_function*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the basic block has a fallthrough edge to a function.
 
-    *property* function*: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* function*: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Basic block function (read-only)
 
     *property* function_graph_type*: [FunctionGraphType](enums.md#binaryninja.enums.FunctionGraphType "binaryninja.enums.FunctionGraphType")*
     :   Type of function graph from which this block represents instructions
 
-    *property* has_invalid_instructions*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* has_invalid_instructions*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether basic block has any invalid instructions (read-only)
 
-    *property* has_undetermined_outgoing_edges*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* has_undetermined_outgoing_edges*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether basic block has undetermined outgoing edges (read-only)
 
     *property* highlight*: [HighlightColor](highlight.md#binaryninja.highlight.HighlightColor "binaryninja.highlight.HighlightColor")*
@@ -236,14 +236,14 @@
             <color: blue>
             ```
 
-    *property* il_function*: _function.ILFunctionType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* il_function*: _function.ILFunctionType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   IL Function of which this block is a part, if the block is part of an IL Function.
 
-    *property* il_function_if_available*: _function.ILFunctionType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* il_function_if_available*: _function.ILFunctionType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   IL Function of which this block is a part, if the block is part of an IL Function, and
         if the function has generated IL already.
 
-    *property* immediate_dominator*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* immediate_dominator*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Immediate dominator of this basic block (read-only)
 
         The immediate dominator of a basic block B is the dominator closest to B in the control
@@ -251,7 +251,7 @@
         dominate any other dominator of B except itself. Each basic block except the entry block
         has a unique immediate dominator.
 
-    *property* immediate_post_dominator*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* immediate_post_dominator*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Immediate post-dominator of this basic block (read-only)
 
         The immediate post-dominator of a basic block B is the post-dominator closest to B in
@@ -260,33 +260,33 @@
         If B has outgoing edges that can lead to different exit blocks, then this will not
         exist.
 
-    *property* incoming_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlockEdge](#binaryninja.basicblock.BasicBlockEdge "binaryninja.basicblock.BasicBlockEdge")]*
+    *property* incoming_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlockEdge](#binaryninja.basicblock.BasicBlockEdge "binaryninja.basicblock.BasicBlockEdge")]*
     :   List of basic block incoming edges (read-only)
 
-    *property* index*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* index*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Basic block index in list of blocks for the function (read-only)
 
-    *property* instruction_count*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* instruction_count*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
-    *property* is_high_level_il*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_high_level_il*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the basic block contains High Level IL
 
-    *property* is_il*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_il*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the basic block contains IL
 
-    *property* is_low_level_il*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_low_level_il*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the basic block contains Low Level IL
 
-    *property* is_medium_level_il*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_medium_level_il*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the basic block contains Medium Level IL
 
-    *property* length*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* length*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Basic block length (read-only)
 
-    *property* outgoing_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlockEdge](#binaryninja.basicblock.BasicBlockEdge "binaryninja.basicblock.BasicBlockEdge")]*
+    *property* outgoing_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlockEdge](#binaryninja.basicblock.BasicBlockEdge "binaryninja.basicblock.BasicBlockEdge")]*
     :   List of basic block outgoing edges (read-only)
 
-    *property* post_dominance_frontier*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* post_dominance_frontier*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   Post-dominance frontier for this basic block (read-only)
 
         The post-dominance frontier of a basic block B is the set of blocks that are not
@@ -295,7 +295,7 @@
         that have at least one successor not post-dominated by B, while having another successor
         that is post-dominated by B.
 
-    *property* post_dominator_tree_children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* post_dominator_tree_children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   List of child blocks in the post-dominator tree for this basic block (read-only)
 
         The post-dominator tree children of a basic block B are the blocks post-dominated by B.
@@ -303,7 +303,7 @@
         "binaryninja.basicblock.BasicBlock.post_dominators") for the definition of a
         post-dominator.
 
-    *property* post_dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* post_dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   List of post-dominators for this basic block (read-only)
 
         A post-dominator of a basic block B is a block that must be executed after B is
@@ -314,23 +314,23 @@
         don’t include B. If B has outgoing edges that can lead to different exit blocks, then
         this will only include B.
 
-    *property* sort_hint*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* sort_hint*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Graph edge sorting hint for this block (read-only)
 
-    *property* source_block*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* source_block*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   The corresponding assembly-level basic block for this basic block (read-only)
 
-    *property* start*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* start*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Basic block start (read-only)
 
-    *property* strict_dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* strict_dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   List of strict dominators for this basic block (read-only)
 
         A strict dominator of a basic block B is a dominator of B that is not B itself. See
         [`BasicBlock.dominators`](#binaryninja.basicblock.BasicBlock.dominators
         "binaryninja.basicblock.BasicBlock.dominators") for the definition of a dominator.
 
-    *property* strict_post_dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
+    *property* strict_post_dominators*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")]*
     :   List of strict post-dominators for this basic block (read-only)
 
         A strict post-dominator of a basic block B is a post-dominator of B that is not B
@@ -339,14 +339,14 @@
         "binaryninja.basicblock.BasicBlock.post_dominators") for the definition of a
         post-dominator.
 
-    *property* view*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* view*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   BinaryView that contains the basic block (read-only)
 
 ## BasicBlockEdge
 
 *class* BasicBlockEdge[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#BasicBlockEdge)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class BasicBlockEdge` represents the edges that connect basic blocks in graph view.
 
@@ -365,7 +365,7 @@
     [<TrueBranch: x86_64@0x6>, <FalseBranch: x86_64@0x1f>]
     ```
 
-    __init__(*type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *source: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *target: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *back_edge: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *fall_through: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *source: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *target: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *back_edge: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*, *fall_through: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
         :   - **type** ([*BranchType*](enums.md#binaryninja.enums.BranchType
               "binaryninja.enums.BranchType"))
@@ -373,17 +373,17 @@
               "binaryninja.basicblock.BasicBlock"))
             - **target** ([*BasicBlock*](#binaryninja.basicblock.BasicBlock
               "binaryninja.basicblock.BasicBlock"))
-            - **back_edge** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)"))
-            - **fall_through** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)"))
+            - **back_edge** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
+            - **fall_through** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
 
         Return type:
         :   *None*
 
-    back_edge*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    back_edge*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
 
-    fall_through*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    fall_through*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
 
     source*: [BasicBlock](#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*
 
@@ -394,8 +394,8 @@
 ## PendingBasicBlockEdge
 
 *class* PendingBasicBlockEdge[[source]](https://api.binary.ninja/_modules/binaryninja/basicblock.html#PendingBasicBlockEdge)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class PendingBasicBlockEdge` represents a pending edge that has not yet been resolved.
 
@@ -405,24 +405,24 @@
         - **target** – The address of the target basic block.
         - **fall_through** – Whether this edge is a fallthrough edge.
 
-    __init__(*type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *target: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *fallthrough: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*, *target: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *fallthrough: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
         :   - **type** ([*BranchType*](enums.md#binaryninja.enums.BranchType
               "binaryninja.enums.BranchType"))
             - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
               "binaryninja.architecture.Architecture"))
-            - **target** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **fallthrough** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)"))
+            - **target** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **fallthrough** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
 
         Return type:
         :   *None*
 
     arch*: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture")*
 
-    fallthrough*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    fallthrough*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
 
-    target*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    target*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
     type*: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType")*

@@ -14,12 +14,12 @@
 ## DownloadInstance
 
 *class* DownloadInstance[[source]](https://api.binary.ninja/_modules/binaryninja/downloadprovider.html#DownloadInstance)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     *class* Response[[source]](https://api.binary.ninja/_modules/binaryninja/downloadprovider.html#DownloadInstance.Response)
-    :   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-        v3.14)")
+    :   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+        v3.15)")
 
         __init__(*status_code*, *headers*, *content*)[[source]](https://api.binary.ninja/_modules/binaryninja/downloadprovider.html#DownloadInstance.Response.__init__)
 
@@ -44,8 +44,8 @@
 ## DownloadProvider
 
 *class* DownloadProvider[[source]](https://api.binary.ninja/_modules/binaryninja/downloadprovider.html#DownloadProvider)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     __init__(*handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/downloadprovider.html#DownloadProvider.__init__)
 

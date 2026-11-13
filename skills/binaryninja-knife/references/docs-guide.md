@@ -42,10 +42,14 @@ Compare the mirror version with the runtime shown by `bnk status`. If the major/
 
 ## Refreshing the mirror
 
-The maintainer refreshes the mirror deliberately when the targeted Binary Ninja release changes:
+To match an installed release, regenerate from its bundled API docs:
+
+```sh
+uv run --script references/binja-docs/sync.py --source-dir "$BN_INSTALL_DIR/api-docs" --version VERSION
+```
+
+To adopt the version published on the official API site:
 
 ```sh
 uv run --script references/binja-docs/sync.py --update-version
 ```
-
-This adopts the version currently published by the official API site.

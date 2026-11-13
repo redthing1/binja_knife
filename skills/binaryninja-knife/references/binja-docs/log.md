@@ -34,174 +34,174 @@
 ## Logger
 
 *class* Logger[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*session_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *logger_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.__init__)
+    __init__(*session_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *logger_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.__init__)
     :   Parameters:
-        :   - **session_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **logger_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **session_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
+            - **logger_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)"))
 
-    log(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log)
-    :   Parameters:
-        :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
-              "binaryninja.enums.LogLevel"))
-            - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_alert(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_alert)
-    :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_alert_for_exception(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_alert_for_exception)
-    :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_alert_with_traceback(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_alert_with_traceback)
-    :   Parameters:
-        :   - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
-
-        Return type:
-        :   *None*
-
-    log_debug(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_debug)
-    :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_debug_for_exception(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_debug_for_exception)
-    :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_debug_with_traceback(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_debug_with_traceback)
-    :   Parameters:
-        :   - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
-
-        Return type:
-        :   *None*
-
-    log_error(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_error)
-    :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_error_for_exception(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_error_for_exception)
-    :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
-
-        Return type:
-        :   *None*
-
-    log_error_with_traceback(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_error_with_traceback)
-    :   Parameters:
-        :   - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
-
-        Return type:
-        :   *None*
-
-    log_for_exception(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_for_exception)
+    log(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log)
     :   Parameters:
         :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
               "binaryninja.enums.LogLevel"))
-            - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
 
         Return type:
         :   *None*
 
-    log_info(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_info)
+    log_alert(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_alert)
     :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   *None*
 
-    log_info_for_exception(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_info_for_exception)
+    log_alert_for_exception(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_alert_for_exception)
     :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   *None*
 
-    log_info_with_traceback(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_info_with_traceback)
+    log_alert_with_traceback(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_alert_with_traceback)
     :   Parameters:
-        :   - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
+        :   - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* *None*)
 
         Return type:
         :   *None*
 
-    log_warn(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_warn)
+    log_debug(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_debug)
     :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   *None*
 
-    log_warn_for_exception(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_warn_for_exception)
+    log_debug_for_exception(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_debug_for_exception)
     :   Parameters:
-        :   **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   *None*
 
-    log_warn_with_traceback(*message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_warn_with_traceback)
+    log_debug_with_traceback(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_debug_with_traceback)
     :   Parameters:
-        :   - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
+        :   - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* *None*)
 
         Return type:
         :   *None*
 
-    log_with_traceback(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_with_traceback)
+    log_error(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_error)
+    :   Parameters:
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_error_for_exception(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_error_for_exception)
+    :   Parameters:
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_error_with_traceback(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_error_with_traceback)
+    :   Parameters:
+        :   - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* *None*)
+
+        Return type:
+        :   *None*
+
+    log_for_exception(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_for_exception)
     :   Parameters:
         :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
               "binaryninja.enums.LogLevel"))
-            - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
+            - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_info(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_info)
+    :   Parameters:
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_info_for_exception(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_info_for_exception)
+    :   Parameters:
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_info_with_traceback(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_info_with_traceback)
+    :   Parameters:
+        :   - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* *None*)
+
+        Return type:
+        :   *None*
+
+    log_warn(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_warn)
+    :   Parameters:
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_warn_for_exception(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_warn_for_exception)
+    :   Parameters:
+        :   **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
+
+        Return type:
+        :   *None*
+
+    log_warn_with_traceback(*message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_warn_with_traceback)
+    :   Parameters:
+        :   - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* *None*)
+
+        Return type:
+        :   *None*
+
+    log_with_traceback(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#Logger.log_with_traceback)
+    :   Parameters:
+        :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
+              "binaryninja.enums.LogLevel"))
+            - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* *None*)
 
         Return type:
         :   *None*
@@ -220,7 +220,7 @@ is_output_redirected_to_log()[[source]](https://api.binary.ninja/_modules/binary
 
 ## log
 
-log(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *session: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log)
+log(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *session: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log)
 :   `log` writes messages to the log console for the given log level.
 
     > | LogLevelName | LogLevel | Description |
@@ -234,26 +234,26 @@ log(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.Lo
     Parameters:
     :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
           "binaryninja.enums.LogLevel")) – Log level to use
-        - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
-        - **session** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-          v3.14)"))
+        - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
+        - **session** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_alert
 
-log_alert(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_alert)
+log_alert(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_alert)
 :   `log_alert` Logs message console and to a pop up window if run through the GUI.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
@@ -268,47 +268,47 @@ log_alert(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any 
 
 ## log_alert_for_exception
 
-log_alert_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_alert_for_exception)
+log_alert_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_alert_for_exception)
 :   `log_alert_for_exception` Logs message console, including a stack trace for the current
     exception. A pop up window is created if run through the GUI.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_alert_with_traceback
 
-log_alert_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_alert_with_traceback)
+log_alert_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_alert_with_traceback)
 :   `log_alert_with_traceback` Logs message console, including a stack trace. A pop up
     window is created if run through the GUI.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – optional explicit trace string to attach; if omitted, the current Python
-          stack is used.
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – optional explicit trace string to attach; if omitted, the current
+          Python stack is used.
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_debug
 
-log_debug(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_debug)
+log_debug(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_debug)
 :   `log_debug` Logs debugging information messages to the console.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
@@ -322,48 +322,48 @@ log_debug(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any 
 
 ## log_debug_for_exception
 
-log_debug_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_debug_for_exception)
+log_debug_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_debug_for_exception)
 :   `log_debug_for_exception` Logs debugging information messages to the console, including
     a stack trace for the current exception.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_debug_with_traceback
 
-log_debug_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_debug_with_traceback)
+log_debug_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_debug_with_traceback)
 :   `log_debug_with_traceback` Logs debugging information messages to the console, including
     a stack trace.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – optional explicit trace string to attach; if omitted, the current Python
-          stack is used.
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – optional explicit trace string to attach; if omitted, the current
+          Python stack is used.
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_error
 
-log_error(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_error)
+log_error(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_error)
 :   `log_error` Logs message to console, if run through the GUI it logs with **Error** icon,
     focusing the error console.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
@@ -378,41 +378,41 @@ log_error(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any 
 
 ## log_error_for_exception
 
-log_error_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_error_for_exception)
+log_error_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_error_for_exception)
 :   `log_error_for_exception` Logs message to console, including a stack trace for the
     current exception. When run through the GUI it logs with **Error** icon, focusing the
     error console.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_error_with_traceback
 
-log_error_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_error_with_traceback)
+log_error_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_error_with_traceback)
 :   `log_error_with_traceback` Logs message to console, including a stack trace. When run
     through the GUI it logs with **Error** icon, focusing the error console.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – optional explicit trace string to attach; if omitted, the current Python
-          stack is used.
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – optional explicit trace string to attach; if omitted, the current
+          Python stack is used.
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_for_exception
 
-log_for_exception(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *session: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_for_exception)
+log_for_exception(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *session: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") = 0*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_for_exception)
 :   `log_for_exception` writes messages to the log console for the given log level,
     including a stack trace for the current exception.
 
@@ -427,26 +427,26 @@ log_for_exception(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binary
     Parameters:
     :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
           "binaryninja.enums.LogLevel")) – Log level to use
-        - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
-        - **session** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-          v3.14)"))
+        - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
+        - **session** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_info
 
-log_info(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_info)
+log_info(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_info)
 :   `log_info` Logs general information messages to the console.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
@@ -460,49 +460,49 @@ log_info(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "
 
 ## log_info_for_exception
 
-log_info_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_info_for_exception)
+log_info_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_info_for_exception)
 :   `log_info_for_exception` Logs general information messages to the console, including a
     stack trace for the current exception.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_info_with_traceback
 
-log_info_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_info_with_traceback)
+log_info_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_info_with_traceback)
 :   `log_info_with_traceback` Logs general information messages to the console, including a
     stack trace.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – optional explicit trace string to attach; if omitted, the current Python
-          stack is used.
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – optional explicit trace string to attach; if omitted, the current
+          Python stack is used.
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_to_file
 
-log_to_file(*min_level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *path: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *append: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_to_file)
+log_to_file(*min_level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *path: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *append: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_to_file)
 :   `log_to_file` redirects minimum log level to a file named `path`, optionally appending
     rather than overwriting.
 
     Parameters:
     :   - **min_level** (*enums.Log_Level*) – minimum level to log
-        - **path** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – path to log to
-        - **append** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-          v3.14)")) – optional flag for specifying appending. True = append, False = overwrite.
+        - **path** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – path to log to
+        - **append** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python
+          v3.15)")) – optional flag for specifying appending. True = append, False = overwrite.
 
     Return type:
     :   *None*
@@ -542,15 +542,15 @@ log_to_stdout(*min_level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binary
 
 ## log_warn
 
-log_warn(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_warn)
+log_warn(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_warn)
 :   `log_warn` Logs message to console, if run through the GUI it logs with **Warning**
     icon.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
@@ -565,40 +565,40 @@ log_warn(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "
 
 ## log_warn_for_exception
 
-log_warn_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_warn_for_exception)
+log_warn_for_exception(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_warn_for_exception)
 :   `log_warn_for_exception` Logs message to console, including a stack trace for the
     current exception. When run through the GUI it logs with **Warning** icon.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_warn_with_traceback
 
-log_warn_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_warn_with_traceback)
+log_warn_with_traceback(*text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_warn_with_traceback)
 :   `log_warn_with_traceback` Logs message to console, including a stack trace. When run
     through the GUI it logs with **Warning** icon.
 
     Parameters:
-    :   - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – optional explicit trace string to attach; if omitted, the current Python
-          stack is used.
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
+    :   - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – optional explicit trace string to attach; if omitted, the current
+          Python stack is used.
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*
 
 ## log_with_traceback
 
-log_with_traceback(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")*, *logger: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *session: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 0*, *stack_trace: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_with_traceback)
+log_with_traceback(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binaryninja.enums.LogLevel")*, *text: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")*, *logger: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *session: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") = 0*, *stack_trace: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/log.html#log_with_traceback)
 :   `log_with_traceback` writes messages to the log console for the given log level,
     including a stack trace.
 
@@ -613,16 +613,16 @@ log_with_traceback(*level: [LogLevel](enums.md#binaryninja.enums.LogLevel "binar
     Parameters:
     :   - **level** ([*LogLevel*](enums.md#binaryninja.enums.LogLevel
           "binaryninja.enums.LogLevel")) – Log level to use
-        - **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – message to print
-        - **stack_trace** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")) – optional explicit trace string to attach (shown behind the log entry’s
-          “Details…” link). If omitted, the current Python stack is used. Callers can pass
+        - **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")) – message to print
+        - **stack_trace** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – optional explicit trace string to attach (shown behind the log
+          entry’s “Details…” link). If omitted, the current Python stack is used. Callers can pass
           subprocess output, a decoded exception, etc.
-        - **logger** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)"))
-        - **session** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-          v3.14)"))
+        - **logger** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)"))
+        - **session** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+          v3.15)"))
 
     Return type:
     :   *None*

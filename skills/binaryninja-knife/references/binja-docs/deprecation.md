@@ -15,17 +15,17 @@
 
 *exception* DeprecatedWarning[[source]](https://api.binary.ninja/_modules/binaryninja/deprecation.html#DeprecatedWarning)
 :   Bases:
-    [`DeprecationWarning`](https://docs.python.org/3/library/exceptions.html#DeprecationWarning
-    "(in Python v3.14)")
+    [`DeprecationWarning`](https://docs.python.org/3/builtins/exceptions.html#DeprecationWarning
+    "(in Python v3.15)")
 
     A warning class for deprecated methods
 
     This is a specialization of the built-in
-    [`DeprecationWarning`](https://docs.python.org/3/library/exceptions.html#DeprecationWarning
-    "(in Python v3.14)"), adding parameters that allow us to get information into the
+    [`DeprecationWarning`](https://docs.python.org/3/builtins/exceptions.html#DeprecationWarning
+    "(in Python v3.15)"), adding parameters that allow us to get information into the
     __str__ that ends up being sent through the
     [`warnings`](https://docs.python.org/3/library/warnings.html#module-warnings "(in Python
-    v3.14)") system. The attributes aren’t able to be retrieved after the warning gets
+    v3.15)") system. The attributes aren’t able to be retrieved after the warning gets
     raised and passed through the system as only the class–not the instance–and message are
     what gets preserved.
 
@@ -34,7 +34,7 @@
         - **deprecated_in** – The version that `function` is deprecated in
         - **removed_in** – The version or
           [`datetime.date`](https://docs.python.org/3/library/datetime.html#datetime.date "(in
-          Python v3.14)") specifying when `function` gets removed.
+          Python v3.15)") specifying when `function` gets removed.
         - **details** – Optional details about the deprecation. Most often this will include
           directions on what to use instead of the now deprecated code.
 
@@ -55,7 +55,7 @@
 
 ## deprecated
 
-deprecated(*deprecated_in: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *removed_in=None*, *current_version=None*, *details=''*)[[source]](https://api.binary.ninja/_modules/binaryninja/deprecation.html#deprecated)
+deprecated(*deprecated_in: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *removed_in=None*, *current_version=None*, *details=''*)[[source]](https://api.binary.ninja/_modules/binaryninja/deprecation.html#deprecated)
 :   Decorate a function to signify its deprecation
 
     This function wraps a method that will soon be removed and does two things:
@@ -64,22 +64,22 @@ deprecated(*deprecated_in: [str](https://docs.python.org/3/library/stdtypes.html
     >   e.g., “Deprecated since 0.9.11. Use foo instead.”
     > - Raises a `DeprecatedWarning` via the
     >   [`warnings`](https://docs.python.org/3/library/warnings.html#module-warnings "(in Python
-    >   v3.14)") module, which is a subclass of the built-in
-    >   [`DeprecationWarning`](https://docs.python.org/3/library/exceptions.html#DeprecationWarning
-    >   "(in Python v3.14)"). Note that built-in
-    >   [`DeprecationWarning`](https://docs.python.org/3/library/exceptions.html#DeprecationWarning
-    >   "(in Python v3.14)") are ignored by default, so for users to be informed of said
+    >   v3.15)") module, which is a subclass of the built-in
+    >   [`DeprecationWarning`](https://docs.python.org/3/builtins/exceptions.html#DeprecationWarning
+    >   "(in Python v3.15)"). Note that built-in
+    >   [`DeprecationWarning`](https://docs.python.org/3/builtins/exceptions.html#DeprecationWarning
+    >   "(in Python v3.15)") are ignored by default, so for users to be informed of said
     >   warnings they will need to enable them–see the
     >   [`warnings`](https://docs.python.org/3/library/warnings.html#module-warnings "(in Python
-    >   v3.14)") module documentation for more details.
+    >   v3.15)") module documentation for more details.
 
     Parameters:
-    :   - **deprecated_in** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-          Python v3.14)")) – The version at which the decorated method is considered deprecated.
+    :   - **deprecated_in** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – The version at which the decorated method is considered deprecated.
           This will usually be the next version to be released when the decorator is added.
         - **removed_in** – The version or
           [`datetime.date`](https://docs.python.org/3/library/datetime.html#datetime.date "(in
-          Python v3.14)") when the decorated method will be removed. The default is **None**,
+          Python v3.15)") when the decorated method will be removed. The default is **None**,
           specifying that the function is not currently planned to be removed.
         - **current_version** – The source of version information for the currently running code.
           This will usually be a __version__ attribute on your library. The default is None. When
@@ -99,15 +99,15 @@ fail_if_not_removed(*method*)[[source]](https://api.binary.ninja/_modules/binary
     causes unittests to fail, making it easier to keep track of when code should be removed.
 
     Raises:
-    :   [`AssertionError`](https://docs.python.org/3/library/exceptions.html#AssertionError "(in
-        Python v3.14)") if an `UnsupportedWarning` is raised while running the test method.
+    :   [`AssertionError`](https://docs.python.org/3/builtins/exceptions.html#AssertionError
+        "(in Python v3.15)") if an `UnsupportedWarning` is raised while running the test method.
 
 ## parse_version
 
-parse_version(*version: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [tuple](https://docs.python.org/3/library/stdtypes.html#tuple "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/deprecation.html#parse_version)
+parse_version(*version: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [tuple](https://docs.python.org/3/builtins/stdtypes.html#tuple "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/deprecation.html#parse_version)
 :   Parameters:
-    :   **version** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-        v3.14)"))
+    :   **version** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+        v3.15)"))
 
     Return type:
-    :   [*tuple*](https://docs.python.org/3/library/stdtypes.html#tuple "(in Python v3.14)")
+    :   [*tuple*](https://docs.python.org/3/builtins/stdtypes.html#tuple "(in Python v3.15)")

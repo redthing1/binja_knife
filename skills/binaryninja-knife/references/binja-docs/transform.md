@@ -11,8 +11,8 @@
 ## Transform
 
 *class* Transform[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#Transform)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class Transform` allows users to implement custom transformations. New transformations
     may be added at runtime, so an instance of a transform is created like:
@@ -43,17 +43,17 @@
     :   `can_decode` checks if this transform can decode the given input.
 
         Parameters:
-        :   **input** – can be a [`bytes`](https://docs.python.org/3/library/stdtypes.html#bytes
-            "(in Python v3.14)"),
-            [`bytearray`](https://docs.python.org/3/library/stdtypes.html#bytearray "(in Python
-            v3.14)"), `DataBuffer`, or `BinaryView`
+        :   **input** – can be a [`bytes`](https://docs.python.org/3/builtins/stdtypes.html#bytes
+            "(in Python v3.15)"),
+            [`bytearray`](https://docs.python.org/3/builtins/stdtypes.html#bytearray "(in Python
+            v3.15)"), `DataBuffer`, or `BinaryView`
 
         Returns:
-        :   [`bool`](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [`bool`](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
             indicating whether the transform can decode the input
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     decode(*input_buf*, *params={}*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#Transform.decode)
 
@@ -135,14 +135,14 @@
         :   - **context** ([*TransformContext*](#binaryninja.transform.TransformContext
               "binaryninja.transform.TransformContext")) – Transform context containing input data and
               state
-            - **params** ([*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python
-              v3.14)")) – Optional transform parameters (e.g., passwords, settings)
+            - **params** ([*dict*](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python
+              v3.15)")) – Optional transform parameters (e.g., passwords, settings)
 
         Returns:
         :   True if processing complete, False if user input required
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     encode(*input_buf*, *params={}*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#Transform.encode)
 
@@ -171,8 +171,8 @@
 ## TransformContext
 
 *class* TransformContext[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `TransformContext` represents a node in the container extraction tree, containing the
     input data, transformation state, and relationships to parent/child contexts.
@@ -211,28 +211,28 @@
 
     __init__(*handle*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.__init__)
 
-    clear_transform_parameter(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.clear_transform_parameter)
+    clear_transform_parameter(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.clear_transform_parameter)
     :   Clear a transform parameter
 
         Parameters:
-        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
-    create_child(*data: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")*, *filename: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *result: [TransformResult](enums.md#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult") = TransformResult.TransformSuccess*, *message: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *filename_is_descriptor: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.create_child)
+    create_child(*data: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")*, *filename: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *result: [TransformResult](enums.md#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult") = TransformResult.TransformSuccess*, *message: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *filename_is_descriptor: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = False*) → [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.create_child)
     :   Create a new child context with the given data, filename, result status, and message
 
         Parameters:
         :   - **data** ([*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
               "binaryninja.databuffer.DataBuffer")) – The data for the child context
-            - **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – The filename for the child context (default: “”)
+            - **filename** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – The filename for the child context (default: “”)
             - **result** ([*TransformResult*](enums.md#binaryninja.enums.TransformResult
               "binaryninja.enums.TransformResult")) – Transform result for the child (default:
               TransformResult.TransformSuccess)
-            - **message** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Extraction message for the child (default: “”)
+            - **message** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Extraction message for the child (default: “”)
             - **filename_is_descriptor**
-              ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")) –
+              ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")) –
               Whether the filename is a descriptor that should be combined with parent (default:
               False)
 
@@ -240,28 +240,28 @@
         :   [*TransformContext*](#binaryninja.transform.TransformContext
             "binaryninja.transform.TransformContext")
 
-    get_child(*filename: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.get_child)
+    get_child(*filename: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.get_child)
     :   Get a child context by filename
 
         Parameters:
-        :   **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **filename** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   [*TransformContext*](#binaryninja.transform.TransformContext
             "binaryninja.transform.TransformContext") | *None*
 
-    has_transform_parameter(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.has_transform_parameter)
+    has_transform_parameter(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.has_transform_parameter)
     :   Check if a transform parameter exists
 
         Parameters:
-        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_available_files(*files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_available_files)
+    set_available_files(*files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_available_files)
     :   Populate the list of files available for extraction (Discovery Phase).
 
         Container transforms call this during the **Discovery Phase** to enumerate files without
@@ -277,10 +277,10 @@
 
         Parameters:
         :   **files** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-            Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)")*]*) – List of filenames that can be extracted from this container
+            Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)")*]*) – List of filenames that can be extracted from this container
 
-    set_requested_files(*files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_requested_files)
+    set_requested_files(*files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_requested_files)
     :   Specify which files to extract from this container (Extraction Phase).
 
         Call this after `available_files` has been populated to indicate which files should be
@@ -295,10 +295,10 @@
 
         Parameters:
         :   **files** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-            Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)")*]*) – List of filenames to extract (must be subset of `available_files`)
+            Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)")*]*) – List of filenames to extract (must be subset of `available_files`)
 
-    set_transform_name(*transform_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_transform_name)
+    set_transform_name(*transform_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_transform_name)
     :   Manually specify which transform to apply to this context.
 
         Use this when auto-detection is not possible or when you want to override the detected
@@ -309,8 +309,8 @@
         transform.
 
         Parameters:
-        :   **transform_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)")) – Name of the transform to apply (e.g., “Base64”, “Gzip”, “XOR”)
+        :   **transform_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)")) – Name of the transform to apply (e.g., “Base64”, “Gzip”, “XOR”)
 
         **Example:**
 
@@ -327,7 +327,7 @@
                 print("Base64 decoded successfully")
         ```
 
-    set_transform_parameter(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *data: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_transform_parameter)
+    set_transform_parameter(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *data: [DataBuffer](databuffer.md#binaryninja.databuffer.DataBuffer "binaryninja.databuffer.DataBuffer")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformContext.set_transform_parameter)
     :   Set a parameter for the transform (e.g., password, encryption key).
 
         Transform parameters provide additional input required for decoding, such as passwords
@@ -335,8 +335,8 @@
         transform’s decode operation.
 
         Parameters:
-        :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Parameter name (e.g., “password”, “key”)
+        :   - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Parameter name (e.g., “password”, “key”)
             - **data** ([*DataBuffer*](databuffer.md#binaryninja.databuffer.DataBuffer
               "binaryninja.databuffer.DataBuffer")) – Parameter value as a DataBuffer
 
@@ -360,7 +360,7 @@
                         print("Archive decrypted successfully")
         ```
 
-    *property* available_files*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
+    *property* available_files*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*
     :   Get the list of files available for extraction from this container.
 
         This property is populated during the **Discovery Phase** of container extraction, when
@@ -379,7 +379,8 @@
         :   List of filenames that can be extracted from this container
 
         Return type:
-        :   *List*[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]
+        :   *List*[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")]
 
         **Example (Full Mode - Automatic):**
 
@@ -415,7 +416,7 @@
                 session.process_from(container)
         ```
 
-    *property* available_transforms*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
+    *property* available_transforms*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*
     :   Get the list of transforms that can decode this context’s input.
 
         Binary Ninja auto-detects which transforms can handle the current data by checking each
@@ -426,36 +427,37 @@
         :   List of transform names that can decode this data
 
         Return type:
-        :   *List*[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]
+        :   *List*[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")]
 
-    *property* child_count*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* child_count*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Get the number of child contexts
 
-    *property* children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")]*
+    *property* children*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")]*
     :   Get all child contexts
 
-    *property* extraction_message*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* extraction_message*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Get the extraction message
 
     *property* extraction_result*: [TransformResult](enums.md#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult")*
     :   Get the extraction result
 
-    *property* filename*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* filename*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Get the filename for this context
 
-    *property* has_available_files*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* has_available_files*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this context has available files for selection
 
-    *property* has_requested_files*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* has_requested_files*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this context has requested files
 
-    *property* input*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* input*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get the input BinaryView for this context
 
-    *property* is_database*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_database*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this context represents a database file
 
-    *property* is_interactive*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_interactive*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this context is in interactive mode.
 
         This flag indicates whether the transform session is operating in interactive mode
@@ -467,15 +469,15 @@
         :   True if in interactive mode, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    *property* is_leaf*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_leaf*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this context is a leaf (has no children)
 
-    *property* is_root*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_root*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this context is the root (has no parent)
 
-    *property* metadata_obj*: [Metadata](metadata.md#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* metadata_obj*: [Metadata](metadata.md#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get the metadata associated with this extraction context.
 
         Container transforms can store format-specific metadata during extraction (e.g.,
@@ -489,10 +491,10 @@
         :   [*Metadata*](metadata.md#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata")
             or *None*
 
-    *property* parent*: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* parent*: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get the parent context
 
-    *property* requested_files*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
+    *property* requested_files*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*
     :   Get the list of files requested for extraction from this container.
 
         This property contains the filenames that have been selected for extraction during the
@@ -503,7 +505,8 @@
         :   List of filenames requested for extraction
 
         Return type:
-        :   *List*[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]
+        :   *List*[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")]
 
     *property* settings*: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*
     :   Get the settings object for this transform context.
@@ -519,7 +522,7 @@
         Return type:
         :   [*Settings*](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")
 
-    *property* transform_name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* transform_name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Get the name of the transform that created this context
 
     *property* transform_result*: [TransformResult](enums.md#binaryninja.enums.TransformResult "binaryninja.enums.TransformResult")*
@@ -528,8 +531,8 @@
 ## TransformParameter
 
 *class* TransformParameter[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformParameter)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     __init__(*name*, *long_name=None*, *fixed_length=0*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformParameter.__init__)
 
@@ -545,8 +548,8 @@
 ## TransformSession
 
 *class* TransformSession[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `TransformSession` manages the extraction workflow for container files (ZIP, TAR, IMG4,
     etc.), handling multi-stage extraction, file selection, and transform application.
@@ -557,16 +560,16 @@
 
     Parameters:
     :   - **filename_or_view**
-          (*Union**[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)")*,* *'binaryview.BinaryView'**]*) – Path to the file to process, or an existing
+          (*Union**[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)")*,* *'binaryview.BinaryView'**]*) – Path to the file to process, or an existing
           BinaryView to start from.
         - **mode** ([*TransformSessionMode*](enums.md#binaryninja.enums.TransformSessionMode
           "binaryninja.enums.TransformSessionMode")) – Session mode controlling extraction
           behavior. Can be `TransformSessionMode.Full` (automatic),
           `TransformSessionMode.Interactive` (requires user selection), or None to use the default
           mode from settings. Defaults to None.
-        - **options** ([*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python
-          v3.14)")) – Dictionary of session-time settings overrides that apply only to this
+        - **options** ([*dict*](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python
+          v3.15)")) – Dictionary of session-time settings overrides that apply only to this
           session. These ephemeral settings override global settings and are accessible to
           transforms via `TransformContext.settings`. For example,
           `{'files.universal.architecturePreference': ['x86_64']}` to prefer x86_64 when opening
@@ -623,17 +626,17 @@
     - `current_view`: The current BinaryView (after processing)
     - `root_context`: The root of the extraction tree
 
-    __init__(*filename_or_view: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *mode=None*, *options: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")] = {}*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.__init__)
+    __init__(*filename_or_view: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *mode=None*, *options: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")] = {}*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.__init__)
     :   Parameters:
-        :   - **filename_or_view** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)") *|* [*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
+        :   - **filename_or_view** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)") *|* [*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
             - **options** ([*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping
-              "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*,* [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
-              Python v3.14)")*]*)
+              "(in Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*,* [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
+              Python v3.15)")*]*)
 
-    process() → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.process)
+    process() → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.process)
     :   Process the transform session from the root context.
 
         Returns:
@@ -642,7 +645,7 @@
             password), additional parameters, or if an error occurred during transformation.
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
         In **Full Mode** (default), automatically processes the entire container tree. In
         **Interactive Mode**, processes one stage at a time, returning `False` when user input
@@ -655,7 +658,7 @@
         - Transform requires additional parameters
         - Transform encountered an error during processing
 
-    process_from(*context: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.process_from)
+    process_from(*context: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.process_from)
     :   Process the transform session starting from a specific context.
 
         Returns:
@@ -664,7 +667,7 @@
             password), additional parameters, or if an error occurred during transformation.
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
         Parameters:
         :   **context** ([*TransformContext*](#binaryninja.transform.TransformContext
@@ -674,7 +677,7 @@
         current stage. In **Full Mode**, this recursively processes all child contexts and
         returns `False` if any stage is incomplete.
 
-    set_interactive(*interactive: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.set_interactive)
+    set_interactive(*interactive: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.set_interactive)
     :   Set whether this session is running in interactive mode.
 
         This flag allows transforms to adjust their behavior: in interactive mode, transforms
@@ -684,11 +687,11 @@
         Call this before `process()` to establish the session’s mode.
 
         Parameters:
-        :   **interactive** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-            Python v3.14)")) – True for interactive mode (UI), False for non-interactive
+        :   **interactive** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+            Python v3.15)")) – True for interactive mode (UI), False for non-interactive
             (headless/scripting)
 
-    set_selected_contexts(*contexts: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")] | [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.set_selected_contexts)
+    set_selected_contexts(*contexts: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")] | [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#TransformSession.set_selected_contexts)
     :   Mark contexts as selected for analysis and resource management. This allows Binary Ninja
         to release resources for unselected branches of the extraction tree.
 
@@ -712,22 +715,22 @@
                         print(f"Loaded: {bv.file.virtual_path}")
         ```
 
-    *property* current_context*: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* current_context*: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get the current transform context
 
-    *property* current_view*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* current_view*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get the current BinaryView for this session
 
-    *property* has_any_stages*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* has_any_stages*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this session has any processing stages
 
-    *property* has_single_path*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* has_single_path*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Check if this session has a single processing path
 
-    *property* root_context*: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* root_context*: [TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get the root transform context
 
-    *property* selected_contexts*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")]*
+    *property* selected_contexts*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TransformContext](#binaryninja.transform.TransformContext "binaryninja.transform.TransformContext")]*
     :   Get the currently selected contexts.
 
         Selected contexts are the extraction outputs that will be loaded into Binary Ninja for
@@ -751,7 +754,7 @@
     >>> ['Zip', 'ZipPython']
     ```
 
-    can_decode(*input*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.can_decode)
+    can_decode(*input*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.can_decode)
     :   Detect ZIP archives by checking for “PK” magic bytes and valid ZIP signature.
 
         Checks the first 4 bytes for ZIP file signatures (local file header, central directory,
@@ -764,28 +767,28 @@
         :   True if valid ZIP archive
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    perform_decode(*data: [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")*, *params: [dict](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")*) → [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.perform_decode)
+    perform_decode(*data: [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)")*, *params: [dict](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)")*) → [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.perform_decode)
     :   Extract a single file from a ZIP archive.
 
         Extracts the file specified in params[‘filename’], or the first file if not specified.
         For multi-file extraction and password handling, use `perform_decode_with_context()`.
 
         Parameters:
-        :   - **data** ([*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python
-              v3.14)")) – Raw ZIP archive bytes
-            - **params** ([*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python
-              v3.14)")) – May contain ‘filename’ key
+        :   - **data** ([*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python
+              v3.15)")) – Raw ZIP archive bytes
+            - **params** ([*dict*](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python
+              v3.15)")) – May contain ‘filename’ key
 
         Returns:
         :   Extracted file data, or None on failure
 
         Return type:
-        :   [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") |
+        :   [*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)") |
             *None*
 
-    perform_decode_with_context(*context*, *params*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.perform_decode_with_context)
+    perform_decode_with_context(*context*, *params*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.perform_decode_with_context)
     :   Extract files from a ZIP archive using two-phase container extraction.
 
         **Phase 1 (Discovery):** Enumerates files and populates `context.available_files`.
@@ -803,7 +806,7 @@
         :   True if all extractions succeeded, False if user input needed or extraction failed
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     perform_encode(*data*, *params*)[[source]](https://api.binary.ninja/_modules/binaryninja/transform.html#ZipPython.perform_encode)
 

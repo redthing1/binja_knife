@@ -7,7 +7,7 @@
 
 ## escape_unicode_string
 
-escape_unicode_string(*data: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") | [bytearray](https://docs.python.org/3/library/stdtypes.html#bytearray "(in Python v3.14)")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/unicode.html#escape_unicode_string)
+escape_unicode_string(*data: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)") | [bytearray](https://docs.python.org/3/builtins/stdtypes.html#bytearray "(in Python v3.15)")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/unicode.html#escape_unicode_string)
 :   Escapes a string for display, passing through any text that decodes to a codepoint in
     one of the enabled Unicode blocks as unaltered UTF-8.
 
@@ -21,10 +21,11 @@ escape_unicode_string(*data: [str](https://docs.python.org/3/library/stdtypes.ht
     Rust.
 
     Parameters:
-    :   - **data** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-          v3.14)") *|* [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python
-          v3.14)") *|* [*bytearray*](https://docs.python.org/3/library/stdtypes.html#bytearray
-          "(in Python v3.14)")) – string or raw bytes to escape
+    :   - **data** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+          v3.15)") *|* [*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in
+          Python v3.15)") *|*
+          [*bytearray*](https://docs.python.org/3/builtins/stdtypes.html#bytearray "(in Python
+          v3.15)")) – string or raw bytes to escape
         - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
           "binaryninja.binaryview.BinaryView") *|* *None*) – view whose settings select the
           enabled blocks, or None to use the global settings
@@ -43,11 +44,11 @@ escape_unicode_string(*data: [str](https://docs.python.org/3/library/stdtypes.ht
         ```
 
     Return type:
-    :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+    :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
 
 ## unicode_display_width
 
-unicode_display_width(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/unicode.html#unicode_display_width)
+unicode_display_width(*text: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/unicode.html#unicode_display_width)
 :   Width of a string in character cells, following Unicode Standard Annex #11 (East Asian
     Width).
 
@@ -59,8 +60,8 @@ unicode_display_width(*text: [str](https://docs.python.org/3/library/stdtypes.ht
     character count, is the measurement that `InstructionTextToken.width` is expressed in.
 
     Parameters:
-    :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-        v3.14)")) – string to measure
+    :   **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+        v3.15)")) – string to measure
 
     Returns:
     :   width of the string in character cells
@@ -74,4 +75,4 @@ unicode_display_width(*text: [str](https://docs.python.org/3/library/stdtypes.ht
         ```
 
     Return type:
-    :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+    :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")

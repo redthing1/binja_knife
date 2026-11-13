@@ -41,7 +41,7 @@
 :   Bases: [`VariableInstruction`](#binaryninja.commonil.VariableInstruction
     "binaryninja.commonil.VariableInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -51,17 +51,17 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
 ## BaseILInstruction
 
 *class* BaseILInstruction[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#BaseILInstruction)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -89,7 +89,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -99,7 +99,7 @@
 :   Bases: [`ControlFlow`](#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -109,7 +109,7 @@
 :   Bases: [`Arithmetic`](#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -119,7 +119,7 @@
 :   Bases: [`BinaryOperation`](#binaryninja.commonil.BinaryOperation
     "binaryninja.commonil.BinaryOperation")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -129,7 +129,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -139,7 +139,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -149,7 +149,7 @@
 :   Bases: [`Arithmetic`](#binaryninja.commonil.Arithmetic
     "binaryninja.commonil.Arithmetic")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -159,29 +159,29 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
 ## ILSourceLocation
 
 *class* ILSourceLocation[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     ILSourceLocation is used to indicate where expressions were defined during the lifting
     process and gets propagated through the lifting process as an instruction’s
     address/source_operand properties. These are used for, for example, integer display
     types and expression addresses.
 
-    __init__(*address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *source_operand: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation.__init__)
+    __init__(*address: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *source_operand: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation.__init__)
     :   Parameters:
-        :   - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **source_operand** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)"))
+        :   - **address** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **source_operand** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
 
-    *classmethod* from_instruction(*instr: [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [MediumLevelILInstruction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction "binaryninja.mediumlevelil.MediumLevelILInstruction") | [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *il_direct: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [ILSourceLocation](#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation")[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation.from_instruction)
+    *classmethod* from_instruction(*instr: [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [MediumLevelILInstruction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction "binaryninja.mediumlevelil.MediumLevelILInstruction") | [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *il_direct: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = True*) → [ILSourceLocation](#binaryninja.commonil.ILSourceLocation "binaryninja.commonil.ILSourceLocation")[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#ILSourceLocation.from_instruction)
     :   Get the source location of a given instruction :param instr: Instruction, Low, Medium,
         or High level :return: Its location
 
@@ -193,24 +193,24 @@
               "binaryninja.mediumlevelil.MediumLevelILInstruction") *|*
               [*HighLevelILInstruction*](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction
               "binaryninja.highlevelil.HighLevelILInstruction"))
-            - **il_direct** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)"))
+            - **il_direct** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
 
         Return type:
         :   [*ILSourceLocation*](#binaryninja.commonil.ILSourceLocation
             "binaryninja.commonil.ILSourceLocation")
 
-    address*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    address*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
-    il_direct*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")* *= True*
+    il_direct*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")* *= True*
 
-    source_hlil_instruction*: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    source_hlil_instruction*: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    source_llil_instruction*: [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    source_llil_instruction*: [LowLevelILInstruction](lowlevelil.md#binaryninja.lowlevelil.LowLevelILInstruction "binaryninja.lowlevelil.LowLevelILInstruction") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    source_mlil_instruction*: [MediumLevelILInstruction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction "binaryninja.mediumlevelil.MediumLevelILInstruction") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    source_mlil_instruction*: [MediumLevelILInstruction](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILInstruction "binaryninja.mediumlevelil.MediumLevelILInstruction") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    source_operand*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    source_operand*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
 ## Intrinsic
 
@@ -218,7 +218,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -228,7 +228,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -237,7 +237,7 @@
 *class* Localcall[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Localcall)
 :   Bases: [`Call`](#binaryninja.commonil.Call "binaryninja.commonil.Call")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -247,7 +247,7 @@
 :   Bases: [`ControlFlow`](#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -257,7 +257,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -266,7 +266,7 @@
 *class* Phi[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Phi)
 :   Bases: [`SSA`](#binaryninja.commonil.SSA "binaryninja.commonil.SSA")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -276,7 +276,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -285,7 +285,7 @@
 *class* Return[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Return)
 :   Bases: [`Terminal`](#binaryninja.commonil.Terminal "binaryninja.commonil.Terminal")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -295,7 +295,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -306,17 +306,17 @@
     [`VariableInstruction`](#binaryninja.commonil.VariableInstruction
     "binaryninja.commonil.VariableInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
 ## SetReg
 
 *class* SetReg[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#SetReg)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -326,7 +326,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -336,7 +336,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -346,7 +346,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -356,7 +356,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -365,7 +365,7 @@
 *class* Syscall[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Syscall)
 :   Bases: [`Call`](#binaryninja.commonil.Call "binaryninja.commonil.Call")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -374,7 +374,7 @@
 *class* Tailcall[[source]](https://api.binary.ninja/_modules/binaryninja/commonil.html#Tailcall)
 :   Bases: [`Localcall`](#binaryninja.commonil.Localcall "binaryninja.commonil.Localcall")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -384,7 +384,7 @@
 :   Bases: [`ControlFlow`](#binaryninja.commonil.ControlFlow
     "binaryninja.commonil.ControlFlow")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -394,7 +394,7 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*
 
@@ -404,6 +404,6 @@
 :   Bases: [`BaseILInstruction`](#binaryninja.commonil.BaseILInstruction
     "binaryninja.commonil.BaseILInstruction")
 
-    __init__() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Return type:
         :   *None*

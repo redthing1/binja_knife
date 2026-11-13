@@ -14,40 +14,40 @@
     :   Parameters:
         :   **handle** (*BNPlatform*)
 
-    adjust_type_parser_input(*parser: [TypeParser](typeparser.md#binaryninja.typeparser.TypeParser "binaryninja.typeparser.TypeParser")*, *arguments: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*, *source_files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")], [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#CorePlatform.adjust_type_parser_input)
+    adjust_type_parser_input(*parser: [TypeParser](typeparser.md#binaryninja.typeparser.TypeParser "binaryninja.typeparser.TypeParser")*, *arguments: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*, *source_files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]]*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")], [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]]][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#CorePlatform.adjust_type_parser_input)
     :   Modify the arguments passed to the Type Parser with Platform-specific features.
 
         Parameters:
         :   - **parser** ([*TypeParser*](typeparser.md#binaryninja.typeparser.TypeParser
               "binaryninja.typeparser.TypeParser")) – Type Parser instance
             - **arguments** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]*) – Default arguments passed to the parser
+              Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]*) – Default arguments passed to the parser
             - **source_files** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
               "(in Python
-              v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
-              Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*,* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]**]*) – Source file names and contents
+              v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
+              Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*,* [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]**]*) – Source file names and contents
 
         Returns:
         :   A tuple of (modified arguments, modified source files)
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-            v3.14)")[[*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")], [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-            Python v3.14)")[[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-            "(in Python v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)"), [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")]]]
+            v3.15)")[[*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
+            v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")], [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
+            Python v3.15)")[[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+            "(in Python v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)"), [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)")]]]
 
 ## Platform
 
 *class* Platform[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     > `class Platform` contains all information related to the execution environment of the
     > binary, mainly the calling conventions used, the operating system, and the architecture.
@@ -82,41 +82,41 @@
     >>> thumb2 = Platform["thumb2"]
     ```
 
-    __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.__init__)
+    __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.__init__)
     :   Parameters:
         :   **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
             "binaryninja.architecture.Architecture") *|* *None*)
 
     add_related_platform(*arch*, *platform*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.add_related_platform)
 
-    adjust_type_parser_input(*parser: [TypeParser](typeparser.md#binaryninja.typeparser.TypeParser "binaryninja.typeparser.TypeParser")*, *arguments: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*, *source_files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")], [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]]][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.adjust_type_parser_input)
+    adjust_type_parser_input(*parser: [TypeParser](typeparser.md#binaryninja.typeparser.TypeParser "binaryninja.typeparser.TypeParser")*, *arguments: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*, *source_files: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]]*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")], [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]]][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.adjust_type_parser_input)
     :   Modify the arguments passed to the Type Parser with Platform-specific features.
 
         Parameters:
         :   - **parser** ([*TypeParser*](typeparser.md#binaryninja.typeparser.TypeParser
               "binaryninja.typeparser.TypeParser")) – Type Parser instance
             - **arguments** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]*) – Default arguments passed to the parser
+              Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]*) – Default arguments passed to the parser
             - **source_files** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
               "(in Python
-              v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
-              Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*,* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]**]*) – Source file names and contents
+              v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
+              Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*,* [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]**]*) – Source file names and contents
 
         Returns:
         :   A tuple of (modified arguments, modified source files)
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-            v3.14)")[[*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")], [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-            Python v3.14)")[[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-            "(in Python v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-            Python v3.14)"), [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")]]]
+            v3.15)")[[*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
+            v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")], [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
+            Python v3.15)")[[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+            "(in Python v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)"), [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)")]]]
 
     generate_auto_platform_type_id(*name*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.generate_auto_platform_type_id)
 
@@ -136,14 +136,14 @@
 
     get_related_platform(*arch*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_related_platform)
 
-    get_related_platforms() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Platform](#binaryninja.platform.Platform "binaryninja.platform.Platform")][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_related_platforms)
+    get_related_platforms() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Platform](#binaryninja.platform.Platform "binaryninja.platform.Platform")][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_related_platforms)
     :   `get_related_platforms` returns a list of all related platforms for a given platform
 
         Returns:
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*Platform*](#binaryninja.platform.Platform "binaryninja.platform.Platform")]
+            v3.15)")[[*Platform*](#binaryninja.platform.Platform "binaryninja.platform.Platform")]
 
     get_system_call_name(*number*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_system_call_name)
 
@@ -151,30 +151,30 @@
 
     get_type_by_name(*name*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_type_by_name)
 
-    get_type_libraries_by_name(*name*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeLibrary](typelibrary.md#binaryninja.typelibrary.TypeLibrary "binaryninja.typelibrary.TypeLibrary")][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_type_libraries_by_name)
+    get_type_libraries_by_name(*name*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeLibrary](typelibrary.md#binaryninja.typelibrary.TypeLibrary "binaryninja.typelibrary.TypeLibrary")][[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_type_libraries_by_name)
     :   Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*TypeLibrary*](typelibrary.md#binaryninja.typelibrary.TypeLibrary
+            v3.15)")[[*TypeLibrary*](typelibrary.md#binaryninja.typelibrary.TypeLibrary
             "binaryninja.typelibrary.TypeLibrary")]
 
     get_variable_by_name(*name*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.get_variable_by_name)
 
-    parse_types_from_source(*source*, *filename=None*, *include_dirs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *auto_type_source=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.parse_types_from_source)
+    parse_types_from_source(*source*, *filename=None*, *include_dirs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *auto_type_source=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.parse_types_from_source)
     :   `parse_types_from_source` parses the source string and any needed headers searching for
         them in the optional list of directories provided in `include_dirs`. Note that this API
         does not allow the source to rely on existing types that only exist in a specific view.
         Use `BinaryView.parse_type_string` instead.
 
         Parameters:
-        :   - **source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – source string to be parsed
-            - **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – optional source filename
-            - **include_dirs** ([*list*](https://docs.python.org/3/library/stdtypes.html#list "(in
-              Python v3.14)")*(*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*)*) – optional list of string filename include directories
-            - **auto_type_source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) – optional source of types if used for automatically generated types
+        :   - **source** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – source string to be parsed
+            - **filename** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – optional source filename
+            - **include_dirs** ([*list*](https://docs.python.org/3/builtins/stdtypes.html#list "(in
+              Python v3.15)")*(*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*)*) – optional list of string filename include directories
+            - **auto_type_source** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")) – optional source of types if used for automatically generated types
 
         Returns:
         :   `BasicTypeParserResult` (a SyntaxError is thrown on parse error)
@@ -191,20 +191,20 @@
             >>>
             ```
 
-    parse_types_from_source_file(*filename*, *include_dirs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *auto_type_source=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.parse_types_from_source_file)
+    parse_types_from_source_file(*filename*, *include_dirs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *auto_type_source=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.parse_types_from_source_file)
     :   `parse_types_from_source_file` parses the source file `filename` and any needed headers
         searching for them in the optional list of directories provided in `include_dirs`. Note
         that this API does not allow the source to rely on existing types that only exist in a
         specific view. Use `BinaryView.parse_type_string` instead.
 
         Parameters:
-        :   - **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – filename of file to be parsed
-            - **include_dirs** ([*list*](https://docs.python.org/3/library/stdtypes.html#list "(in
-              Python v3.14)")*(*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*)*) – optional list of string filename include directories
-            - **auto_type_source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) – optional source of types if used for automatically generated types
+        :   - **filename** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – filename of file to be parsed
+            - **include_dirs** ([*list*](https://docs.python.org/3/builtins/stdtypes.html#list "(in
+              Python v3.15)")*(*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*)*) – optional list of string filename include directories
+            - **auto_type_source** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")) – optional source of types if used for automatically generated types
 
         Returns:
         :   `BasicTypeParserResult` (a SyntaxError is thrown on parse error)
@@ -228,8 +228,8 @@
     :   `register` registers the platform for given OS name.
 
         Parameters:
-        :   **os** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – OS name to register
+        :   **os** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – OS name to register
 
         Return type:
         :   *None*
@@ -248,7 +248,7 @@
 
     view_init(*view*)[[source]](https://api.binary.ninja/_modules/binaryninja/platform.html#Platform.view_init)
 
-    *property* address_size*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* address_size*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
     *property* arch
 
@@ -259,8 +259,8 @@
         :   returns the list of supported CallingConvention objects
 
         Type:
-        :   [*list*](https://docs.python.org/3/library/stdtypes.html#list "(in Python
-            v3.14)")([*CallingConvention*](callingconvention.md#binaryninja.callingconvention.CallingConvention
+        :   [*list*](https://docs.python.org/3/builtins/stdtypes.html#list "(in Python
+            v3.15)")([*CallingConvention*](callingconvention.md#binaryninja.callingconvention.CallingConvention
             "binaryninja.callingconvention.CallingConvention"))
 
     *property* cdecl_calling_convention
@@ -289,9 +289,9 @@
 
     global_regs *= []*
 
-    *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
 
-    *class property* os_list*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]*
+    *class property* os_list*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]*
     :   Built-in mutable sequence.
 
         If no argument is given, the constructor creates a new empty list. The argument must be
@@ -314,7 +314,7 @@
 
     type_include_dirs *= []*
 
-    *property* type_libraries*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeLibrary](typelibrary.md#binaryninja.typelibrary.TypeLibrary "binaryninja.typelibrary.TypeLibrary")]*
+    *property* type_libraries*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeLibrary](typelibrary.md#binaryninja.typelibrary.TypeLibrary "binaryninja.typelibrary.TypeLibrary")]*
 
     *property* types
     :   List of platform-specific types (read-only)

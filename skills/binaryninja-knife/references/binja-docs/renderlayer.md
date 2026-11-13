@@ -11,7 +11,7 @@
 :   Bases: [`RenderLayer`](#binaryninja.renderlayer.RenderLayer
     "binaryninja.renderlayer.RenderLayer")
 
-    apply_to_flow_graph(*graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#CoreRenderLayer.apply_to_flow_graph)
+    apply_to_flow_graph(*graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#CoreRenderLayer.apply_to_flow_graph)
     :   Apply this Render Layer to a Flow Graph, potentially modifying its nodes, their edges,
         their lines, and their lines’ content.
 
@@ -27,7 +27,7 @@
         Return type:
         :   *None*
 
-    apply_to_linear_view_object(*obj: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *prev: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *next: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#CoreRenderLayer.apply_to_linear_view_object)
+    apply_to_linear_view_object(*obj: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *prev: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *next: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#CoreRenderLayer.apply_to_linear_view_object)
     :   Apply this Render Layer to the lines produced by a LinearViewObject for rendering in
         Linear View, potentially modifying the lines and their contents.
 
@@ -50,7 +50,7 @@
               located directly below this one
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+              v3.15)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
               "binaryninja.lineardisassembly.LinearDisassemblyLine")*]*) – Original lines rendered by
               the Linear View Object
 
@@ -59,14 +59,14 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+            v3.15)")[[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
             "binaryninja.lineardisassembly.LinearDisassemblyLine")]
 
 ## RenderLayer
 
 *class* RenderLayer[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     RenderLayer is a plugin class that allows you to customize the presentation of Linear
     and Graph view output, adding, changing, or removing lines before they are presented in
@@ -74,7 +74,7 @@
 
     __init__(*handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.__init__)
 
-    apply_to_block(*block: [BasicBlock](basicblock.md#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_block)
+    apply_to_block(*block: [BasicBlock](basicblock.md#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_block)
     :   Apply to lines generated by a Basic Block, of any type. If not overridden, this function
         will call the appropriate `apply_to_X_level_il_block` function. Subclasses should return
         a modified list of lines to be rendered in the UI.
@@ -84,7 +84,7 @@
               "binaryninja.basicblock.BasicBlock")) – Basic Block containing those lines
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+              v3.15)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
               "binaryninja.function.DisassemblyTextLine")*]*) – Original lines of text for the block
 
         Returns:
@@ -92,10 +92,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    apply_to_disassembly_block(*block: [BasicBlock](basicblock.md#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_disassembly_block)
+    apply_to_disassembly_block(*block: [BasicBlock](basicblock.md#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_disassembly_block)
     :   Apply this Render Layer to a single Basic Block of Disassembly lines. Subclasses should
         return a modified list of lines to be rendered in the UI.
 
@@ -108,7 +108,7 @@
               "binaryninja.basicblock.BasicBlock")) – Basic Block containing those lines
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+              v3.15)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
               "binaryninja.function.DisassemblyTextLine")*]*) – Original lines of text for the block
 
         Returns:
@@ -116,10 +116,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    apply_to_flow_graph(*graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_flow_graph)
+    apply_to_flow_graph(*graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_flow_graph)
     :   Apply this Render Layer to a Flow Graph, potentially modifying its nodes, their edges,
         their lines, and their lines’ content.
 
@@ -135,7 +135,7 @@
         Return type:
         :   *None*
 
-    apply_to_high_level_il_block(*block: [HighLevelILBasicBlock](highlevelil.md#binaryninja.highlevelil.HighLevelILBasicBlock "binaryninja.highlevelil.HighLevelILBasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_high_level_il_block)
+    apply_to_high_level_il_block(*block: [HighLevelILBasicBlock](highlevelil.md#binaryninja.highlevelil.HighLevelILBasicBlock "binaryninja.highlevelil.HighLevelILBasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_high_level_il_block)
     :   Apply this Render Layer to a single Basic Block of High Level IL lines. Subclasses
         should return a modified list of lines to be rendered in the UI.
 
@@ -156,7 +156,7 @@
               "binaryninja.highlevelil.HighLevelILBasicBlock")) – Basic Block containing those lines
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+              v3.15)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
               "binaryninja.function.DisassemblyTextLine")*]*) – Original lines of text for the block
 
         Returns:
@@ -164,10 +164,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    apply_to_high_level_il_body(*function: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_high_level_il_body)
+    apply_to_high_level_il_body(*function: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_high_level_il_body)
     :   Apply this Render Layer to the entire body of a High Level IL function. Subclasses
         should return a modified list of lines to be rendered in the UI.
 
@@ -182,7 +182,7 @@
               "binaryninja.function.Function")) – Function containing those lines
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+              v3.15)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
               "binaryninja.lineardisassembly.LinearDisassemblyLine")*]*) – Original lines of text for
               the function
 
@@ -191,10 +191,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+            v3.15)")[[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
             "binaryninja.lineardisassembly.LinearDisassemblyLine")]
 
-    apply_to_linear_view_object(*obj: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *prev: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *next: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_linear_view_object)
+    apply_to_linear_view_object(*obj: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *prev: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *next: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_linear_view_object)
     :   Apply this Render Layer to the lines produced by a LinearViewObject for rendering in
         Linear View, potentially modifying the lines and their contents.
 
@@ -217,7 +217,7 @@
               located directly below this one
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+              v3.15)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
               "binaryninja.lineardisassembly.LinearDisassemblyLine")*]*) – Original lines rendered by
               the Linear View Object
 
@@ -226,10 +226,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+            v3.15)")[[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
             "binaryninja.lineardisassembly.LinearDisassemblyLine")]
 
-    apply_to_low_level_il_block(*block: [LowLevelILBasicBlock](lowlevelil.md#binaryninja.lowlevelil.LowLevelILBasicBlock "binaryninja.lowlevelil.LowLevelILBasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_low_level_il_block)
+    apply_to_low_level_il_block(*block: [LowLevelILBasicBlock](lowlevelil.md#binaryninja.lowlevelil.LowLevelILBasicBlock "binaryninja.lowlevelil.LowLevelILBasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_low_level_il_block)
     :   Apply this Render Layer to a single Basic Block of Low Level IL lines. Subclasses should
         return a modified list of lines to be rendered in the UI.
 
@@ -244,7 +244,7 @@
               "binaryninja.lowlevelil.LowLevelILBasicBlock")) – Basic Block containing those lines
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+              v3.15)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
               "binaryninja.function.DisassemblyTextLine")*]*) – Original lines of text for the block
 
         Returns:
@@ -252,10 +252,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    apply_to_medium_level_il_block(*block: [MediumLevelILBasicBlock](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILBasicBlock "binaryninja.mediumlevelil.MediumLevelILBasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_medium_level_il_block)
+    apply_to_medium_level_il_block(*block: [MediumLevelILBasicBlock](mediumlevelil.md#binaryninja.mediumlevelil.MediumLevelILBasicBlock "binaryninja.mediumlevelil.MediumLevelILBasicBlock")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_medium_level_il_block)
     :   Apply this Render Layer to a single Basic Block of Medium Level IL lines. Subclasses
         should return a modified list of lines to be rendered in the UI.
 
@@ -271,7 +271,7 @@
               lines
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+              v3.15)")*[*[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
               "binaryninja.function.DisassemblyTextLine")*]*) – Original lines of text for the block
 
         Returns:
@@ -279,10 +279,10 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
-    apply_to_misc_linear_lines(*obj: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *prev: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *next: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_misc_linear_lines)
+    apply_to_misc_linear_lines(*obj: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *prev: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *next: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *lines: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")][[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.apply_to_misc_linear_lines)
     :   Apply to lines generated by Linear View that are not part of a function. It is up to
         your implementation to figure out which type of Linear View Object lines these are, and
         what to do with them. Subclasses should return a modified list of lines to be rendered
@@ -302,7 +302,7 @@
               located directly below this one
             - **lines** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
               Python
-              v3.14)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
+              v3.15)")*[*[*LinearDisassemblyLine*](lineardisassembly.md#binaryninja.lineardisassembly.LinearDisassemblyLine
               "binaryninja.lineardisassembly.LinearDisassemblyLine")*]*) – Original lines rendered by
               obj
 
@@ -311,7 +311,7 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
+            v3.15)")[[*DisassemblyTextLine*](function.md#binaryninja.function.DisassemblyTextLine
             "binaryninja.function.DisassemblyTextLine")]
 
     *classmethod* register()[[source]](https://api.binary.ninja/_modules/binaryninja/renderlayer.html#RenderLayer.register)

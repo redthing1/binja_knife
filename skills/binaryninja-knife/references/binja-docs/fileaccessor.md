@@ -22,8 +22,8 @@
 ## FileAccessor
 
 *class* FileAccessor[[source]](https://api.binary.ninja/_modules/binaryninja/fileaccessor.html#FileAccessor)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     __init__()[[source]](https://api.binary.ninja/_modules/binaryninja/fileaccessor.html#FileAccessor.__init__)
 
@@ -31,9 +31,9 @@
 
     read(*offset*, *length*)[[source]](https://api.binary.ninja/_modules/binaryninja/fileaccessor.html#FileAccessor.read)
 
-    write(*offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *data: [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/fileaccessor.html#FileAccessor.write)
+    write(*offset: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *data: [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/fileaccessor.html#FileAccessor.write)
     :   Parameters:
-        :   - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **data** ([*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python
-              v3.14)"))
+        :   - **offset** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **data** ([*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python
+              v3.15)"))

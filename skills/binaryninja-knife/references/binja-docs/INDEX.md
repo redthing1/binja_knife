@@ -1,6 +1,6 @@
-# Binary Ninja Python API Docs (v6.0.10601)
+# Binary Ninja Python API Docs (v6.0.10905)
 
-Source: Binary Ninja 6.0.10601 bundled api-docs
+Source: Binary Ninja 6.0.10905 bundled api-docs
 
 These files are the Binary Ninja Python API module docs, converted to Markdown.
 The version and module list are recorded in `.binja-docs.json` alongside this file.

@@ -50,8 +50,8 @@ Notes:
 ## Completer
 
 *class* Completer[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     __init__(*namespace=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.__init__)
     :   Create a new completer for the command line.
@@ -76,47 +76,47 @@ Notes:
         WARNING: this can still invoke arbitrary C code, if an object with a __getattr__ hook is
         evaluated.
 
-    can_complete_arguments(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.can_complete_arguments)
+    can_complete_arguments(*text: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.can_complete_arguments)
     :   A faster check to see if argument assistance is even needed currently.
 
         Parameters:
-        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Returns:
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    complete(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *state*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.complete)
+    complete(*text: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *state*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.complete)
     :   Return the next possible completion for ‘text’.
 
         This is called successively with state == 0, 1, 2, … until it returns None. The
         completion should begin with ‘text’.
 
         Parameters:
-        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") |
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") |
             *None*
 
-    complete_arguments(*text: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.complete_arguments)
+    complete_arguments(*text: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)"), [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.complete_arguments)
     :   Given input up to the contents of ‘text’, return a HTML string containing the arguments
         for the function.
 
         Used in UI to display and highlight arguments of a function as the user types them.
 
         Parameters:
-        :   **text** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **text** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)") | *None*, [*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")]
+            v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)") | *None*, [*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)")]
 
     global_matches(*text*)[[source]](https://api.binary.ninja/_modules/binaryninja/bncompleter.html#Completer.global_matches)
     :   Compute matches when text is a simple name.

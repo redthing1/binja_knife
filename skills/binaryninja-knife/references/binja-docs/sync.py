@@ -33,23 +33,16 @@ def load_manifest() -> dict:
     return json.loads(MANIFEST.read_text(encoding="utf-8"))
 
 
-def fetch(session: requests.Session, url: str, timeout: float) -> str:
+def fetch(session: requests.Session, url: str, timeout: float, source_dir: Path | None = None) -> str:
+    if source_dir is not None:
+        name = urlparse(url).path.rsplit("/", 1)[-1] or "index.html"
+        return (source_dir / name).read_text(encoding="utf-8", errors="replace")
     response = session.get(url, timeout=timeout)
     response.raise_for_status()
     return response.content.decode("utf-8", errors="replace")
 
 
-def detect_version(session: requests.Session, base_url: str, timeout: float) -> str:
-    inv_url = urljoin(base_url, "objects.inv")
-    try:
-        inventory = fetch(session, inv_url, timeout)
-        match = re.search(r"^# Version:\s*(\S+)", inventory, re.MULTILINE)
-        if match:
-            return match.group(1)
-    except requests.RequestException:
-        pass
-
-    root_html = fetch(session, base_url, timeout)
+def detect_version(root_html: str) -> str:
     soup = BeautifulSoup(root_html, "html.parser")
     title = soup.title.string if soup.title else ""
     match = re.search(r"Documentation v([^\s<]+)", title)
@@ -126,11 +119,11 @@ def page_to_markdown(html: str, page_url: str, base_url: str) -> str:
     return clean_markdown(rendered)
 
 
-def write_index(out_dir: Path, base_url: str, version: str, pages: list[tuple[str, str]]) -> str:
+def write_index(out_dir: Path, source: str, version: str, pages: list[tuple[str, str]]) -> str:
     module_list = "\n".join(f"- `{name}.md`" for name, _ in pages)
     text = f"""# Binary Ninja Python API Docs (v{version})
 
-Source: {base_url}
+Source: {source}
 
 These files are the Binary Ninja Python API module docs, converted to Markdown.
 The version and module list are recorded in `.binja-docs.json` alongside this file.
@@ -154,22 +147,28 @@ def main() -> int:
     manifest = load_manifest()
     parser = argparse.ArgumentParser(description="Sync vendored Binary Ninja Python API docs.")
     parser.add_argument("--base-url", default=manifest.get("base_url", DEFAULT_BASE_URL))
+    parser.add_argument("--source-dir", type=Path, help="Read bundled Sphinx HTML from this directory.")
     version_group = parser.add_mutually_exclusive_group(required=True)
-    version_group.add_argument("--version", help="expected docs version, for example: 5.3")
+    version_group.add_argument("--version", help="expected docs version, for example: 6.0.10905")
     version_group.add_argument(
         "--update-version",
         action="store_true",
-        help="accept the version reported by the live docs",
+        help="accept the version reported by the docs source",
     )
     parser.add_argument("--timeout", type=float, default=30.0)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
+    if args.source_dir is not None:
+        args.source_dir = args.source_dir.expanduser().resolve()
+        if not (args.source_dir / "index.html").is_file():
+            parser.error("--source-dir must contain index.html")
 
     base_url = args.base_url.rstrip("/") + "/"
     session = requests.Session()
     session.headers["User-Agent"] = "binaryninja-knife-doc-sync/1"
 
-    detected_version = detect_version(session, base_url, args.timeout)
+    root_html = fetch(session, base_url, args.timeout, args.source_dir)
+    detected_version = detect_version(root_html)
     if args.version and detected_version != args.version:
         print(
             f"refusing to sync v{detected_version}; expected v{args.version}. "
@@ -179,20 +178,20 @@ def main() -> int:
         return 2
 
     version = detected_version if args.update_version else args.version
-    root_html = fetch(session, base_url, args.timeout)
     pages = module_pages(root_html, base_url)
+    source = f"Binary Ninja {version} bundled api-docs" if args.source_dir else base_url
 
     previous_files = {path.name for path in DOCS_DIR.glob("*.md") if path.name != "INDEX.md"}
     with tempfile.TemporaryDirectory(prefix="binja-docs-") as tmp:
         tmp_dir = Path(tmp)
         files: list[str] = []
 
-        write_index(tmp_dir, base_url, version, pages)
+        write_index(tmp_dir, source, version, pages)
         files.append("INDEX.md")
 
         for module, url in pages:
             name = f"{module}.md"
-            markdown = page_to_markdown(fetch(session, url, args.timeout), url, base_url)
+            markdown = page_to_markdown(fetch(session, url, args.timeout, args.source_dir), url, base_url)
             (tmp_dir / name).write_text(markdown, encoding="utf-8")
             files.append(name)
 

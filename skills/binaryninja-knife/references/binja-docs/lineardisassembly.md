@@ -10,10 +10,10 @@
 ## LinearDisassemblyLine
 
 *class* LinearDisassemblyLine[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearDisassemblyLine)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*line_type: [LinearDisassemblyLineType](enums.md#binaryninja.enums.LinearDisassemblyLineType "binaryninja.enums.LinearDisassemblyLineType")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *block: [BasicBlock](basicblock.md#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *contents: [DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearDisassemblyLine.__init__)
+    __init__(*line_type: [LinearDisassemblyLineType](enums.md#binaryninja.enums.LinearDisassemblyLineType "binaryninja.enums.LinearDisassemblyLineType")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *block: [BasicBlock](basicblock.md#binaryninja.basicblock.BasicBlock "binaryninja.basicblock.BasicBlock") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *contents: [DisassemblyTextLine](function.md#binaryninja.function.DisassemblyTextLine "binaryninja.function.DisassemblyTextLine")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearDisassemblyLine.__init__)
     :   Parameters:
         :   - **line_type**
               ([*LinearDisassemblyLineType*](enums.md#binaryninja.enums.LinearDisassemblyLineType
@@ -31,10 +31,10 @@
 ## LinearViewCursor
 
 *class* LinearViewCursor[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*root_object: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.__init__)
+    __init__(*root_object: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.__init__)
     :   Parameters:
         :   **root_object** ([*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject") *|* *None*)
@@ -59,13 +59,13 @@
         :   [*LinearViewCursor*](#binaryninja.lineardisassembly.LinearViewCursor
             "binaryninja.lineardisassembly.LinearViewCursor")
 
-    next() → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.next)
+    next() → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.next)
     :   Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    previous() → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.previous)
+    previous() → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.previous)
     :   Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     remove_render_layer(*layer: [RenderLayer](renderlayer.md#binaryninja.renderlayer.RenderLayer "binaryninja.renderlayer.RenderLayer")*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewCursor.remove_render_layer)
     :   Remove a Render Layer from being applied to this cursor
@@ -88,19 +88,19 @@
 
     *property* before_begin
 
-    *property* current_object*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* current_object*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
-    *property* lines*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*
+    *property* lines*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")]*
 
     *property* ordering_index
 
     *property* ordering_index_total
 
-    *property* path*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearViewObjectIdentifier](#binaryninja.lineardisassembly.LinearViewObjectIdentifier "binaryninja.lineardisassembly.LinearViewObjectIdentifier")]*
+    *property* path*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearViewObjectIdentifier](#binaryninja.lineardisassembly.LinearViewObjectIdentifier "binaryninja.lineardisassembly.LinearViewObjectIdentifier")]*
 
-    *property* path_objects*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")]*
+    *property* path_objects*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")]*
 
-    *property* render_layers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[RenderLayer](renderlayer.md#binaryninja.renderlayer.RenderLayer "binaryninja.renderlayer.RenderLayer")]*
+    *property* render_layers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[RenderLayer](renderlayer.md#binaryninja.renderlayer.RenderLayer "binaryninja.renderlayer.RenderLayer")]*
     :   Get the list of Render Layers which will be applied to this cursor, at the end of calls
         to lines().
 
@@ -112,32 +112,32 @@
 ## LinearViewObject
 
 *class* LinearViewObject[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*handle*, *parent: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.__init__)
+    __init__(*handle*, *parent: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.__init__)
     :   Parameters:
         :   **parent** ([*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject") *|* *None*)
 
-    child_for_address(*addr*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.child_for_address)
+    child_for_address(*addr*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.child_for_address)
     :   Return type:
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject") | *None*
 
-    child_for_identifier(*ident*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.child_for_identifier)
+    child_for_identifier(*ident*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.child_for_identifier)
     :   Return type:
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject") | *None*
 
-    child_for_ordering_index(*idx*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.child_for_ordering_index)
+    child_for_ordering_index(*idx*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.child_for_ordering_index)
     :   Return type:
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject") | *None*
 
     compare_children(*a*, *b*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.compare_children)
 
-    *static* data_only(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.data_only)
+    *static* data_only(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.data_only)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -149,7 +149,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* disassembly(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.disassembly)
+    *static* disassembly(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.disassembly)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -161,13 +161,13 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    get_lines(*prev_obj*, *next_obj*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[LinearDisassemblyLine](#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.get_lines)
+    get_lines(*prev_obj*, *next_obj*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[LinearDisassemblyLine](#binaryninja.lineardisassembly.LinearDisassemblyLine "binaryninja.lineardisassembly.LinearDisassemblyLine")][[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.get_lines)
     :   Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*LinearDisassemblyLine*](#binaryninja.lineardisassembly.LinearDisassemblyLine
+            v3.15)")[[*LinearDisassemblyLine*](#binaryninja.lineardisassembly.LinearDisassemblyLine
             "binaryninja.lineardisassembly.LinearDisassemblyLine")]
 
-    *static* hlil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.hlil)
+    *static* hlil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.hlil)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -179,7 +179,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* hlil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.hlil_ssa_form)
+    *static* hlil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.hlil_ssa_form)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -191,33 +191,21 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* language_representation(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *language: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = 'Pseudo C'*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.language_representation)
+    *static* language_representation(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *language: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = 'Pseudo C'*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.language_representation)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
               "binaryninja.function.DisassemblySettings") *|* *None*)
-            - **language** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **language** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
 
         Return type:
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* lifted_il(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.lifted_il)
-    :   Parameters:
-        :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
-              "binaryninja.binaryview.BinaryView"))
-            - **settings**
-              ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*)
-
-        Return type:
-        :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
-            "binaryninja.lineardisassembly.LinearViewObject")
-
-    *static* llil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.llil)
+    *static* lifted_il(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.lifted_il)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -229,7 +217,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* llil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.llil_ssa_form)
+    *static* llil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.llil)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -241,7 +229,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* mlil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mlil)
+    *static* llil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.llil_ssa_form)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -253,7 +241,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* mlil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mlil_ssa_form)
+    *static* mlil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mlil)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -265,7 +253,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* mmlil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mmlil)
+    *static* mlil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mlil_ssa_form)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -277,7 +265,19 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* mmlil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mmlil_ssa_form)
+    *static* mmlil(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mmlil)
+    :   Parameters:
+        :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
+              "binaryninja.binaryview.BinaryView"))
+            - **settings**
+              ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
+              "binaryninja.function.DisassemblySettings") *|* *None*)
+
+        Return type:
+        :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
+            "binaryninja.lineardisassembly.LinearViewObject")
+
+    *static* mmlil_ssa_form(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.mmlil_ssa_form)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
@@ -291,7 +291,7 @@
 
     ordering_index_for_child(*child*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.ordering_index_for_child)
 
-    *static* single_function_disassembly(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_disassembly)
+    *static* single_function_disassembly(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_disassembly)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -303,7 +303,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_hlil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_hlil)
+    *static* single_function_hlil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_hlil)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -315,7 +315,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_hlil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_hlil_ssa_form)
+    *static* single_function_hlil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_hlil_ssa_form)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -327,33 +327,21 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_language_representation(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *language: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = 'Pseudo C'*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_language_representation)
+    *static* single_function_language_representation(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *language: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = 'Pseudo C'*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_language_representation)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
             - **settings**
               ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
               "binaryninja.function.DisassemblySettings") *|* *None*)
-            - **language** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **language** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
 
         Return type:
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_lifted_il(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_lifted_il)
-    :   Parameters:
-        :   - **func** ([*Function*](function.md#binaryninja.function.Function
-              "binaryninja.function.Function"))
-            - **settings**
-              ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
-              "binaryninja.function.DisassemblySettings") *|* *None*)
-
-        Return type:
-        :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
-            "binaryninja.lineardisassembly.LinearViewObject")
-
-    *static* single_function_llil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_llil)
+    *static* single_function_lifted_il(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_lifted_il)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -365,7 +353,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_llil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_llil_ssa_form)
+    *static* single_function_llil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_llil)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -377,7 +365,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_mlil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mlil)
+    *static* single_function_llil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_llil_ssa_form)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -389,7 +377,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_mlil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mlil_ssa_form)
+    *static* single_function_mlil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mlil)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -401,7 +389,7 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_mmlil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mmlil)
+    *static* single_function_mlil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mlil_ssa_form)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -413,7 +401,19 @@
         :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
             "binaryninja.lineardisassembly.LinearViewObject")
 
-    *static* single_function_mmlil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mmlil_ssa_form)
+    *static* single_function_mmlil(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mmlil)
+    :   Parameters:
+        :   - **func** ([*Function*](function.md#binaryninja.function.Function
+              "binaryninja.function.Function"))
+            - **settings**
+              ([*DisassemblySettings*](function.md#binaryninja.function.DisassemblySettings
+              "binaryninja.function.DisassemblySettings") *|* *None*)
+
+        Return type:
+        :   [*LinearViewObject*](#binaryninja.lineardisassembly.LinearViewObject
+            "binaryninja.lineardisassembly.LinearViewObject")
+
+    *static* single_function_mmlil_ssa_form(*func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObject.single_function_mmlil_ssa_form)
     :   Parameters:
         :   - **func** ([*Function*](function.md#binaryninja.function.Function
               "binaryninja.function.Function"))
@@ -427,40 +427,40 @@
 
     *property* cursor*: [LinearViewCursor](#binaryninja.lineardisassembly.LinearViewCursor "binaryninja.lineardisassembly.LinearViewCursor")*
 
-    *property* end*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* end*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
-    *property* first_child*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* first_child*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
     *property* identifier*: [LinearViewObjectIdentifier](#binaryninja.lineardisassembly.LinearViewObjectIdentifier "binaryninja.lineardisassembly.LinearViewObjectIdentifier")*
 
-    *property* last_child*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* last_child*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
-    *property* next*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* next*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
     *property* ordering_index
 
     *property* ordering_index_total
 
-    *property* parent*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* parent*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
-    *property* previous*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* previous*: [LinearViewObject](#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
-    *property* start*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* start*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
 ## LinearViewObjectIdentifier
 
 *class* LinearViewObjectIdentifier[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObjectIdentifier)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *start: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *end: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObjectIdentifier.__init__)
+    __init__(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *start: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *end: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/lineardisassembly.html#LinearViewObjectIdentifier.__init__)
     :   Parameters:
-        :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **start** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*)
-            - **end** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*)
+        :   - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **start** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)") *|* *None*)
+            - **end** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)") *|* *None*)
 
     *property* address
 

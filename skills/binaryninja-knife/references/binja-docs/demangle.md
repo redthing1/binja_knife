@@ -21,7 +21,7 @@
 *class* CoreDemangler[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#CoreDemangler)
 :   Bases: [`Demangler`](#binaryninja.demangle.Demangler "binaryninja.demangle.Demangler")
 
-    demangle(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#CoreDemangler.demangle)
+    demangle(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#CoreDemangler.demangle)
     :   Demangle a raw name into a Type and QualifiedName.
 
         The result of this function is a DemangleResult with Type and QualifiedName fields for
@@ -51,8 +51,8 @@
         supported for one deprecation cycle.
 
         Parameters:
-        :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Raw mangled name
+        :   - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Raw mangled name
             - **config** ([*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
               "binaryninja.demangle.DemanglerConfig")) – Platform/view/options used while demangling
 
@@ -64,7 +64,7 @@
         :   [*DemangleResult*](#binaryninja.demangle.DemangleResult
             "binaryninja.demangle.DemangleResult") | *None*
 
-    is_mangled_string(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#CoreDemangler.is_mangled_string)
+    is_mangled_string(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#CoreDemangler.is_mangled_string)
     :   Determine if a given name is mangled and this demangler can process it
 
         The most recently registered demangler that claims a name is a mangled string (returns
@@ -78,25 +78,25 @@
         "binaryninja.demangle.CoreDemangler.demangle"), but simply implies that it may succeed.
 
         Parameters:
-        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – Raw mangled name string
+        :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – Raw mangled name string
 
         Returns:
         :   True if the demangler thinks it can handle the name
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
 ## DemangleResult
 
 *class* DemangleResult[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemangleResult)
 :   Bases: [`NamedTuple`](https://docs.python.org/3/library/typing.html#typing.NamedTuple
-    "(in Python v3.14)")
+    "(in Python v3.15)")
 
     Tuple-compatible demangle result. A successful result always has a QualifiedName; the
     type may be None when the demangler can recover only a name.
 
-    *static* __new__(*_cls*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *name: [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*)
+    *static* __new__(*_cls*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *name: [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*)
     :   Create new instance of DemangleResult(type, name)
 
         Parameters:
@@ -107,14 +107,14 @@
     name*: [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*
     :   Alias for field number 1
 
-    type*: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    type*: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Alias for field number 0
 
 ## Demangler
 
 *class* Demangler[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Pluggable name demangling interface. See
     [`register`](#binaryninja.demangle.Demangler.register
@@ -133,7 +133,7 @@
 
     __init__(*handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.__init__)
 
-    demangle(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.demangle)
+    demangle(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.demangle)
     :   Demangle a raw name into a Type and QualifiedName.
 
         The result of this function is a DemangleResult with Type and QualifiedName fields for
@@ -162,8 +162,8 @@
         supported for one deprecation cycle.
 
         Parameters:
-        :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Raw mangled name
+        :   - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Raw mangled name
             - **config** ([*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
               "binaryninja.demangle.DemanglerConfig")) – Platform/view/options used while demangling
 
@@ -175,12 +175,12 @@
         :   [*DemangleResult*](#binaryninja.demangle.DemangleResult
             "binaryninja.demangle.DemangleResult") | *None*
 
-    *static* demangle_any(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.demangle_any)
+    *static* demangle_any(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.demangle_any)
     :   Demangle a raw name using an optional prebuilt DemanglerConfig.
 
         Parameters:
-        :   - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **config** ([*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
               "binaryninja.demangle.DemanglerConfig") *|* *None*)
 
@@ -188,7 +188,7 @@
         :   [*DemangleResult*](#binaryninja.demangle.DemangleResult
             "binaryninja.demangle.DemangleResult") | *None*
 
-    is_mangled_string(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.is_mangled_string)
+    is_mangled_string(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.is_mangled_string)
     :   Determine if a given name is mangled and this demangler can process it
 
         The most recently registered demangler that claims a name is a mangled string (returns
@@ -201,14 +201,14 @@
         "binaryninja.demangle.Demangler.demangle"), but simply implies that it may succeed.
 
         Parameters:
-        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – Raw mangled name string
+        :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – Raw mangled name string
 
         Returns:
         :   True if the demangler thinks it can handle the name
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     *classmethod* promote(*demangler*)[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#Demangler.promote)
     :   Promote a demangler to the highest-priority position.
@@ -240,15 +240,15 @@
 ## DemanglerConfig
 
 *class* DemanglerConfig[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemanglerConfig)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Platform, view, and simplification options used by demangler APIs.
 
     Use `default`, `for_platform`, or `for_binary_view` when the configuration should
     inherit the corresponding core defaults.
 
-    __init__(*arch_or_platform: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *simplify: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemanglerConfig.__init__)
+    __init__(*arch_or_platform: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *simplify: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = False*)[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemanglerConfig.__init__)
     :   Parameters:
         :   - **arch_or_platform**
               ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
@@ -257,8 +257,8 @@
               *|* *None*)
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|* *None*)
-            - **simplify** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)"))
+            - **simplify** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
 
     *classmethod* default() → [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemanglerConfig.default)
     :   Create the core default demangler configuration.
@@ -278,14 +278,14 @@
         :   [*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
             "binaryninja.demangle.DemanglerConfig")
 
-    *classmethod* for_platform(*platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform")*, *simplify: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemanglerConfig.for_platform)
+    *classmethod* for_platform(*platform: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform")*, *simplify: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = False*) → [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#DemanglerConfig.for_platform)
     :   Create a configuration for a platform.
 
         Parameters:
         :   - **platform** ([*Platform*](platform.md#binaryninja.platform.Platform
               "binaryninja.platform.Platform"))
-            - **simplify** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)"))
+            - **simplify** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
 
         Return type:
         :   [*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
@@ -293,13 +293,13 @@
 
 ## demangle_any
 
-demangle_any(*mangled_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_any)
+demangle_any(*mangled_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *config: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_any)
 :   Attempt to demangle a mangled name, trying all relevant demanglers and using whichever
     one accepts it.
 
     Parameters:
-    :   - **mangled_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-          Python v3.14)")) – a mangled symbol name
+    :   - **mangled_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – a mangled symbol name
         - **config** (*Optional**[*[*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
           "binaryninja.demangle.DemanglerConfig")*]*) – Platform/view/options used while
           demangling. If omitted, the core default standalone platform is used.
@@ -323,7 +323,7 @@ demangle_any(*mangled_name: [str](https://docs.python.org/3/library/stdtypes.htm
 
 ## demangle_generic
 
-demangle_generic(*archOrPlatform: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform")*, *mangled_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *simplify: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = False*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_generic)
+demangle_generic(*archOrPlatform: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform")*, *mangled_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *simplify: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = False*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")]] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_generic)
 :   Compatibility wrapper for the legacy generic demangler API.
 
     Deprecated since version 5.4: Use demangle_any with a DemanglerConfig instead.
@@ -333,23 +333,23 @@ demangle_generic(*archOrPlatform: [Architecture](architecture.md#binaryninja.arc
           ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
           "binaryninja.architecture.Architecture") *|*
           [*Platform*](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform"))
-        - **mangled_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-          Python v3.14)"))
+        - **mangled_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)"))
         - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
           "binaryninja.binaryview.BinaryView") *|* *None*)
-        - **simplify** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-          v3.14)"))
+        - **simplify** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+          Python v3.15)"))
 
     Return type:
     :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-        v3.14)")[[*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") | *None*,
+        v3.15)")[[*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") | *None*,
         [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-        v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-        v3.14)")]] | *None*
+        v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+        v3.15)")]] | *None*
 
 ## demangle_gnu3
 
-demangle_gnu3(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*, *mangled_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *options=None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_gnu3)
+demangle_gnu3(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*, *mangled_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *options=None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_gnu3)
 :   `demangle_gnu3` demangles a mangled name to a Type object.
 
     Warning
@@ -366,8 +366,8 @@ demangle_gnu3(*arch: [Architecture](architecture.md#binaryninja.architecture.Arc
           *|* [*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
           "binaryninja.demangle.DemanglerConfig")) – A prebuilt configuration, or an Architecture
           or Platform for the symbol
-        - **mangled_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-          Python v3.14)")) – a mangled GNU3 name
+        - **mangled_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – a mangled GNU3 name
         - **arch**
 
     Returns:
@@ -379,7 +379,7 @@ demangle_gnu3(*arch: [Architecture](architecture.md#binaryninja.architecture.Arc
 
 ## demangle_llvm
 
-demangle_llvm(*mangled_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *options: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_llvm)
+demangle_llvm(*mangled_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *options: [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_llvm)
 :   `demangle_llvm` demangles a mangled name using the LLVM demangler.
 
     Warning
@@ -390,8 +390,8 @@ demangle_llvm(*mangled_name: [str](https://docs.python.org/3/library/stdtypes.ht
     and pass it to `demangle_any` instead.
 
     Parameters:
-    :   - **mangled_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-          Python v3.14)")) – a mangled (msvc/gnu3/rust/dlang) name
+    :   - **mangled_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – a mangled (msvc/gnu3/rust/dlang) name
         - **options** (*Optional**[*[*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
           "binaryninja.demangle.DemanglerConfig")*]*) – a prebuilt demangler configuration
 
@@ -412,7 +412,7 @@ demangle_llvm(*mangled_name: [str](https://docs.python.org/3/library/stdtypes.ht
 
 ## demangle_ms
 
-demangle_ms(*archOrPlatform: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*, *mangled_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *options=False*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_ms)
+demangle_ms(*archOrPlatform: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform") | [DemanglerConfig](#binaryninja.demangle.DemanglerConfig "binaryninja.demangle.DemanglerConfig")*, *mangled_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *options=False*) → [DemangleResult](#binaryninja.demangle.DemangleResult "binaryninja.demangle.DemangleResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#demangle_ms)
 :   `demangle_ms` demangles a mangled Microsoft Visual Studio C++ name to a Type object.
 
     Warning
@@ -430,8 +430,8 @@ demangle_ms(*archOrPlatform: [Architecture](architecture.md#binaryninja.architec
           *|* [*DemanglerConfig*](#binaryninja.demangle.DemanglerConfig
           "binaryninja.demangle.DemanglerConfig")) – A prebuilt configuration, or an Architecture
           or Platform for the symbol
-        - **mangled_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-          Python v3.14)")) – a mangled Microsoft Visual Studio C++ name
+        - **mangled_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+          Python v3.15)")) – a mangled Microsoft Visual Studio C++ name
         - **archOrPlatform**
 
     Returns:
@@ -451,15 +451,15 @@ demangle_ms(*archOrPlatform: [Architecture](architecture.md#binaryninja.architec
 
 ## simplify_demangled_template_name
 
-simplify_demangled_template_name(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#simplify_demangled_template_name)
+simplify_demangled_template_name(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [Iterable](https://docs.python.org/3/library/typing.html#typing.Iterable "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")*) → [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")[[source]](https://api.binary.ninja/_modules/binaryninja/demangle.html#simplify_demangled_template_name)
 :   `simplify_demangled_template_name` simplifies standard-library template spelling in an
     already demangled qualified name.
 
     Parameters:
-    :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-        v3.14)") *|* [*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
-        "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-        Python v3.14)")*]* *|* [*QualifiedName*](types.md#binaryninja.types.QualifiedName
+    :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+        v3.15)") *|* [*Iterable*](https://docs.python.org/3/library/typing.html#typing.Iterable
+        "(in Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+        Python v3.15)")*]* *|* [*QualifiedName*](types.md#binaryninja.types.QualifiedName
         "binaryninja.types.QualifiedName"))
 
     Return type:

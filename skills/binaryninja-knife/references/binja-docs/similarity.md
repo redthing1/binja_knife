@@ -47,7 +47,7 @@ Only)
 
     A similarity provider type implemented by the core or a native plugin.
 
-    create(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilarityProviderType.create)
+    create(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilarityProviderType.create)
     :   Create a provider using `settings_obj`, or return `None`. Returns `None` outside
         Ultimate.
 
@@ -59,7 +59,7 @@ Only)
         :   [*SimilarityProvider*](#binaryninja.similarity.SimilarityProvider
             "binaryninja.similarity.SimilarityProvider") | *None*
 
-    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilarityProviderType.get_default_settings)
+    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilarityProviderType.get_default_settings)
     :   Return settings used to configure new providers.
 
         Return type:
@@ -100,7 +100,7 @@ Only)
 
     A resolver type implemented by the core or a native plugin.
 
-    create(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilaritySessionResolverType.create)
+    create(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilaritySessionResolverType.create)
     :   Create a resolver for `session` using `settings_obj`, or return `None`.
 
         Parameters:
@@ -113,7 +113,7 @@ Only)
         :   [*SimilaritySessionResolver*](#binaryninja.similarity.SimilaritySessionResolver
             "binaryninja.similarity.SimilaritySessionResolver") | *None*
 
-    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilaritySessionResolverType.get_default_settings)
+    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#CoreSimilaritySessionResolverType.get_default_settings)
     :   Return settings used to configure new resolvers.
 
         Return type:
@@ -123,16 +123,16 @@ Only)
 ## DiffRenderer
 
 *class* DiffRenderer[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Renders functions with similarity range annotations.
 
-    __init__(*handle: LP_BNDiffRenderer | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.__init__)
+    __init__(*handle: LP_BNDiffRenderer | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.__init__)
     :   Parameters:
         :   **handle** (*LP_BNDiffRenderer* *|* *None*)
 
-    add_range_annotation(*annotation: [SimilarityRangeAnnotation](#binaryninja.similarity.SimilarityRangeAnnotation "binaryninja.similarity.SimilarityRangeAnnotation")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.add_range_annotation)
+    add_range_annotation(*annotation: [SimilarityRangeAnnotation](#binaryninja.similarity.SimilarityRangeAnnotation "binaryninja.similarity.SimilarityRangeAnnotation")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.add_range_annotation)
     :   Add an annotation to subsequent renders.
 
         Note
@@ -147,7 +147,7 @@ Only)
         Return type:
         :   *None*
 
-    render(*context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *source: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.render)
+    render(*context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *source: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.render)
     :   Render graph and linear views for `source`.
 
         Parameters:
@@ -161,14 +161,14 @@ Only)
         Return type:
         :   *None*
 
-    render_flow_graph(*context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *group: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.render_flow_graph)
+    render_flow_graph(*context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *group: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.render_flow_graph)
     :   Render an annotated flow graph into `context`.
 
         Parameters:
         :   - **context** ([*SimilarityRenderContext*](#binaryninja.similarity.SimilarityRenderContext
               "binaryninja.similarity.SimilarityRenderContext"))
-            - **group** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **group** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **graph** ([*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
               "binaryninja.flowgraph.FlowGraph"))
             - **entity** ([*SimilarityEntityRef*](#binaryninja.similarity.SimilarityEntityRef
@@ -177,14 +177,14 @@ Only)
         Return type:
         :   *None*
 
-    render_linear_view(*context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *group: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *data: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *linear_view: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.render_linear_view)
+    render_linear_view(*context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *group: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *data: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *linear_view: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#DiffRenderer.render_linear_view)
     :   Render an annotated linear view into `context`.
 
         Parameters:
         :   - **context** ([*SimilarityRenderContext*](#binaryninja.similarity.SimilarityRenderContext
               "binaryninja.similarity.SimilarityRenderContext"))
-            - **group** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **group** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **data** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
             - **linear_view**
@@ -199,56 +199,56 @@ Only)
 ## SimilarityEntityInfo
 
 *class* SimilarityEntityInfo[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityEntityInfo)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     The type, address, and display name of a session entity.
 
-    __init__(*type: [SimilarityEntityType](enums.md#binaryninja.enums.SimilarityEntityType "binaryninja.enums.SimilarityEntityType")*, *address: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*type: [SimilarityEntityType](enums.md#binaryninja.enums.SimilarityEntityType "binaryninja.enums.SimilarityEntityType")*, *address: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
         :   - **type** ([*SimilarityEntityType*](enums.md#binaryninja.enums.SimilarityEntityType
               "binaryninja.enums.SimilarityEntityType"))
-            - **address** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+            - **address** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
 
         Return type:
         :   *None*
 
-    address*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    address*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
-    name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")* *= ''*
+    name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")* *= ''*
 
     type*: [SimilarityEntityType](enums.md#binaryninja.enums.SimilarityEntityType "binaryninja.enums.SimilarityEntityType")*
 
 ## SimilarityEntityRef
 
 *class* SimilarityEntityRef[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityEntityRef)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Identifies an entity within a session node.
 
-    __init__(*node_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *entity_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*node_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *entity_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
-        :   - **node_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **entity_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **node_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **entity_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
         :   *None*
 
-    entity_id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    entity_id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
-    node_id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    node_id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
 ## SimilarityProvider
 
 *class* SimilarityProvider[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Visits session nodes and produces similarity results.
 
@@ -256,91 +256,91 @@ Only)
     Visits made by a session keep the visited node and both edge endpoints active. Direct
     calls must provide active views.
 
-    __init__(*provider_type: [SimilarityProviderType](#binaryninja.similarity.SimilarityProviderType "binaryninja.similarity.SimilarityProviderType") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: LP_BNSimilarityProvider | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.__init__)
+    __init__(*provider_type: [SimilarityProviderType](#binaryninja.similarity.SimilarityProviderType "binaryninja.similarity.SimilarityProviderType") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle: LP_BNSimilarityProvider | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.__init__)
     :   Parameters:
         :   - **provider_type**
               ([*SimilarityProviderType*](#binaryninja.similarity.SimilarityProviderType
               "binaryninja.similarity.SimilarityProviderType") *|* *None*)
             - **handle** (*LP_BNSimilarityProvider* *|* *None*)
 
-    apply(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilarityApplyStatus](enums.md#binaryninja.enums.SimilarityApplyStatus "binaryninja.enums.SimilarityApplyStatus")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.apply)
+    apply(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilarityApplyStatus](enums.md#binaryninja.enums.SimilarityApplyStatus "binaryninja.enums.SimilarityApplyStatus")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.apply)
     :   Call the provider’s apply hook for `result`.
 
         Parameters:
         :   - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
-            - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
         :   [*SimilarityApplyStatus*](enums.md#binaryninja.enums.SimilarityApplyStatus
             "binaryninja.enums.SimilarityApplyStatus")
 
-    get_name(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.get_name)
+    get_name(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.get_name)
     :   Return the display name of `result`.
 
         Parameters:
         :   - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
-            - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") |
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") |
             *None*
 
-    perform_apply(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilarityApplyStatus](enums.md#binaryninja.enums.SimilarityApplyStatus "binaryninja.enums.SimilarityApplyStatus")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_apply)
+    perform_apply(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilarityApplyStatus](enums.md#binaryninja.enums.SimilarityApplyStatus "binaryninja.enums.SimilarityApplyStatus")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_apply)
     :   Transfer typical metadata from the result target. Overrides can call this before adding
         provider metadata.
 
         Parameters:
         :   - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
-            - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
         :   [*SimilarityApplyStatus*](enums.md#binaryninja.enums.SimilarityApplyStatus
             "binaryninja.enums.SimilarityApplyStatus")
 
-    perform_get_name(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_get_name)
+    perform_get_name(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_get_name)
     :   Return a display name for `result`.
 
         Parameters:
         :   - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
-            - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") |
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") |
             *None*
 
-    perform_render(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_render)
+    perform_render(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_render)
     :   Add views for `result` to `context`.
 
         Parameters:
         :   - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
-            - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **context** ([*SimilarityRenderContext*](#binaryninja.similarity.SimilarityRenderContext
               "binaryninja.similarity.SimilarityRenderContext"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
         :   *None*
 
-    perform_update_settings(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_update_settings)
+    perform_update_settings(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_update_settings)
     :   Replace this provider’s settings only if they are valid.
 
         Return `False` without changing the current settings when the new settings are invalid
@@ -354,9 +354,9 @@ Only)
             "binaryninja.settings.Settings"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    perform_visit_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *results: [SimilarityProviderResults](#binaryninja.similarity.SimilarityProviderResults "binaryninja.similarity.SimilarityProviderResults")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_visit_node)
+    perform_visit_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *results: [SimilarityProviderResults](#binaryninja.similarity.SimilarityProviderResults "binaryninja.similarity.SimilarityProviderResults")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_visit_node)
     :   Visit a node and write results for it, returning `False` to discard the visit.
 
         Process `node.scheduled_entities`. Omitted results are removed for those entities only.
@@ -372,10 +372,10 @@ Only)
               "binaryninja.similarity.SimilaritySessionCompletion"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") |
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") |
             *None*
 
-    perform_visit_node_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *results: [SimilarityProviderResults](#binaryninja.similarity.SimilarityProviderResults "binaryninja.similarity.SimilarityProviderResults")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_visit_node_edge)
+    perform_visit_node_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *results: [SimilarityProviderResults](#binaryninja.similarity.SimilarityProviderResults "binaryninja.similarity.SimilarityProviderResults")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.perform_visit_node_edge)
     :   Visit an edge and write results for it, returning `False` to discard the visit.
 
         Parameters:
@@ -391,26 +391,26 @@ Only)
               "binaryninja.similarity.SimilaritySessionCompletion"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") |
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") |
             *None*
 
-    render(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.render)
+    render(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *context: [SimilarityRenderContext](#binaryninja.similarity.SimilarityRenderContext "binaryninja.similarity.SimilarityRenderContext")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.render)
     :   Add views for `result` to `context`.
 
         Parameters:
         :   - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
-            - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **context** ([*SimilarityRenderContext*](#binaryninja.similarity.SimilarityRenderContext
               "binaryninja.similarity.SimilarityRenderContext"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
         :   *None*
 
-    visit_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.visit_node)
+    visit_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.visit_node)
     :   Perform a complete visit of `node`. The core manages the result updates.
 
         Parameters:
@@ -423,7 +423,7 @@ Only)
         Return type:
         :   *None*
 
-    visit_node_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.visit_node_edge)
+    visit_node_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProvider.visit_node_edge)
     :   Perform a complete visit of the edge from `from_node` to `to_node`.
 
         Parameters:
@@ -438,7 +438,7 @@ Only)
         Return type:
         :   *None*
 
-    *property* id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   This provider’s ID.
 
     *property* type*: [SimilarityProviderType](#binaryninja.similarity.SimilarityProviderType "binaryninja.similarity.SimilarityProviderType")*
@@ -447,8 +447,8 @@ Only)
 ## SimilarityProviderResults
 
 *class* SimilarityProviderResults[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderResults)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Writes results for one provider visit.
 
@@ -460,7 +460,7 @@ Only)
     :   Parameters:
         :   **handle** (*LP_BNSimilarityProviderResults*)
 
-    add_result(*source: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*, *target: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*, *similarity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderResults.add_result)
+    add_result(*source: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*, *target: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*, *similarity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *confidence: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderResults.add_result)
     :   Add a result for a scheduled entity and return its ID, or zero on failure.
 
         The ID is unique within the node. A later visit replaces the result and gives it a new
@@ -471,29 +471,29 @@ Only)
               "binaryninja.similarity.SimilarityEntityRef"))
             - **target** ([*SimilarityEntityRef*](#binaryninja.similarity.SimilarityEntityRef
               "binaryninja.similarity.SimilarityEntityRef"))
-            - **similarity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **similarity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
+            - **confidence** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
     *property* handle
 
 ## SimilarityProviderType
 
 *class* SimilarityProviderType[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Creates similarity providers with the given settings.
 
-    __init__(*handle: LP_BNSimilarityProviderType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.__init__)
+    __init__(*handle: LP_BNSimilarityProviderType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.__init__)
     :   Parameters:
         :   **handle** (*LP_BNSimilarityProviderType* *|* *None*)
 
-    create(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.create)
+    create(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.create)
     :   Create a provider using `settings_obj`, or return `None`. Custom types must override
         this method.
 
@@ -505,14 +505,14 @@ Only)
         :   [*SimilarityProvider*](#binaryninja.similarity.SimilarityProvider
             "binaryninja.similarity.SimilarityProvider") | *None*
 
-    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.get_default_settings)
+    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.get_default_settings)
     :   Return settings used to configure new providers.
 
         Return type:
         :   [*Settings*](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")
             | *None*
 
-    register() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.register)
+    register() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityProviderType.register)
     :   Register this provider type for the process lifetime.
 
         Return type:
@@ -525,17 +525,17 @@ Only)
 ## SimilarityRangeAnnotation
 
 *class* SimilarityRangeAnnotation[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRangeAnnotation)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     An added, removed, or changed address range `[start, end)`.
 
-    __init__(*start: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *end: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *type: [SimilarityAnnotationType](enums.md#binaryninja.enums.SimilarityAnnotationType "binaryninja.enums.SimilarityAnnotationType")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*start: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *end: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *type: [SimilarityAnnotationType](enums.md#binaryninja.enums.SimilarityAnnotationType "binaryninja.enums.SimilarityAnnotationType")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
-        :   - **start** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **end** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **start** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **end** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **type**
               ([*SimilarityAnnotationType*](enums.md#binaryninja.enums.SimilarityAnnotationType
               "binaryninja.enums.SimilarityAnnotationType"))
@@ -543,30 +543,30 @@ Only)
         Return type:
         :   *None*
 
-    end*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    end*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
-    start*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    start*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
     type*: [SimilarityAnnotationType](enums.md#binaryninja.enums.SimilarityAnnotationType "binaryninja.enums.SimilarityAnnotationType")*
 
 ## SimilarityRenderContext
 
 *class* SimilarityRenderContext[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Holds views used to display a similarity result.
 
-    __init__(*handle: LP_BNSimilarityRenderContext | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext.__init__)
+    __init__(*handle: LP_BNSimilarityRenderContext | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext.__init__)
     :   Parameters:
         :   **handle** (*LP_BNSimilarityRenderContext* *|* *None*)
 
-    add_flow_graph(*group: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext.add_flow_graph)
+    add_flow_graph(*group: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext.add_flow_graph)
     :   Add a flow graph to `group`.
 
         Parameters:
-        :   - **group** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **group** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **graph** ([*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
               "binaryninja.flowgraph.FlowGraph"))
             - **entity** ([*SimilarityEntityRef*](#binaryninja.similarity.SimilarityEntityRef
@@ -575,12 +575,12 @@ Only)
         Return type:
         :   *None*
 
-    add_linear_view(*group: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *data: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *linear_view: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext.add_linear_view)
+    add_linear_view(*group: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *data: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView")*, *linear_view: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject")*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityRenderContext.add_linear_view)
     :   Add a linear view backed by `data` to `group`.
 
         Parameters:
-        :   - **group** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **group** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **data** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView"))
             - **linear_view**
@@ -595,41 +595,41 @@ Only)
     *property* preferred_view_type*: [FunctionViewType](function.md#binaryninja.function.FunctionViewType "binaryninja.function.FunctionViewType")*
     :   Function representation preferred by renderers writing to this context.
 
-    *property* views*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilarityView](#binaryninja.similarity.SimilarityView "binaryninja.similarity.SimilarityView")]*
+    *property* views*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilarityView](#binaryninja.similarity.SimilarityView "binaryninja.similarity.SimilarityView")]*
     :   Views in the order they were added.
 
 ## SimilarityResult
 
 *class* SimilarityResult[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityResult)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     A match produced by a provider.
 
     Similarity and confidence range from 0 to 255, where 255 is strongest. Automatic
     metadata transfer requires `target` to identify an active function.
 
-    __init__(*provider_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *similarity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *target: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*provider_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *similarity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *confidence: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *target: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
-        :   - **provider_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)"))
-            - **similarity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **provider_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
+            - **similarity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
+            - **confidence** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
             - **target** ([*SimilarityEntityRef*](#binaryninja.similarity.SimilarityEntityRef
               "binaryninja.similarity.SimilarityEntityRef"))
 
         Return type:
         :   *None*
 
-    confidence*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    confidence*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   The provider’s confidence in the match.
 
-    provider_id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    provider_id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   The provider which produced the match.
 
-    similarity*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    similarity*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   The similarity of the two entities.
 
     target*: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef")*
@@ -638,16 +638,16 @@ Only)
 ## SimilaritySession
 
 *class* SimilaritySession[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Runs similarity providers and resolvers over a graph of binaries.
 
-    __init__(*handle: LP_BNSimilaritySession | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.__init__)
+    __init__(*handle: LP_BNSimilaritySession | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.__init__)
     :   Parameters:
         :   **handle** (*LP_BNSimilaritySession* *|* *None*)
 
-    add_provider(*provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.add_provider)
+    add_provider(*provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.add_provider)
     :   Add a provider and schedule entities processed by earlier runs for the next run.
 
         Note
@@ -661,7 +661,7 @@ Only)
         Return type:
         :   *None*
 
-    add_receiver(*receiver: [SimilaritySessionReceiver](#binaryninja.similarity.SimilaritySessionReceiver "binaryninja.similarity.SimilaritySessionReceiver")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.add_receiver)
+    add_receiver(*receiver: [SimilaritySessionReceiver](#binaryninja.similarity.SimilaritySessionReceiver "binaryninja.similarity.SimilaritySessionReceiver")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.add_receiver)
     :   Add a receiver. A running session keeps using the receiver list it started with.
 
         Parameters:
@@ -672,7 +672,7 @@ Only)
         Return type:
         :   *None*
 
-    add_resolver(*resolver: [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.add_resolver)
+    add_resolver(*resolver: [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.add_resolver)
     :   Add a resolver and mark entities processed by earlier runs for resolution.
 
         Note
@@ -685,31 +685,31 @@ Only)
             "binaryninja.similarity.SimilaritySessionResolver"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    get_provider(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.get_provider)
+    get_provider(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.get_provider)
     :   Return the provider with `id`.
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*SimilarityProvider*](#binaryninja.similarity.SimilarityProvider
             "binaryninja.similarity.SimilarityProvider") | *None*
 
-    get_resolver(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.get_resolver)
+    get_resolver(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.get_resolver)
     :   Return the resolver with `id`, if present.
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*SimilaritySessionResolver*](#binaryninja.similarity.SimilaritySessionResolver
             "binaryninja.similarity.SimilaritySessionResolver") | *None*
 
-    remove_provider(*provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.remove_provider)
+    remove_provider(*provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.remove_provider)
     :   Remove a provider, clear its results, and mark affected entities for resolution.
 
         Note
@@ -723,7 +723,7 @@ Only)
         Return type:
         :   *None*
 
-    remove_receiver(*receiver: [SimilaritySessionReceiver](#binaryninja.similarity.SimilaritySessionReceiver "binaryninja.similarity.SimilaritySessionReceiver")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.remove_receiver)
+    remove_receiver(*receiver: [SimilaritySessionReceiver](#binaryninja.similarity.SimilaritySessionReceiver "binaryninja.similarity.SimilaritySessionReceiver")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.remove_receiver)
     :   Remove a receiver. A running session keeps using the receiver list it started with.
 
         Parameters:
@@ -734,7 +734,7 @@ Only)
         Return type:
         :   *None*
 
-    remove_resolver(*resolver: [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.remove_resolver)
+    remove_resolver(*resolver: [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.remove_resolver)
     :   Remove a resolver.
 
         Note
@@ -747,7 +747,7 @@ Only)
             "binaryninja.similarity.SimilaritySessionResolver"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     run() → [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.run)
     :   Start a background run with the current graph, providers, and resolvers.
@@ -762,7 +762,7 @@ Only)
         :   [*SimilaritySessionCompletion*](#binaryninja.similarity.SimilaritySessionCompletion
             "binaryninja.similarity.SimilaritySessionCompletion")
 
-    update_provider_settings(*provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.update_provider_settings)
+    update_provider_settings(*provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.update_provider_settings)
     :   Update a provider already in the session and schedule previously processed entities
         again.
 
@@ -776,9 +776,9 @@ Only)
               "binaryninja.settings.Settings"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    update_resolver_settings(*resolver: [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.update_resolver_settings)
+    update_resolver_settings(*resolver: [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySession.update_resolver_settings)
     :   Update a resolver already in the session and mark previously processed entities for
         resolution.
 
@@ -793,32 +793,32 @@ Only)
               "binaryninja.settings.Settings"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     *property* graph*: [SimilaritySessionGraph](#binaryninja.similarity.SimilaritySessionGraph "binaryninja.similarity.SimilaritySessionGraph")*
     :   The session’s dependency graph.
 
-    *property* id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   This session’s ID.
 
-    *property* providers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")]*
+    *property* providers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")]*
     :   Providers in this session.
 
-    *property* receivers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionReceiver](#binaryninja.similarity.SimilaritySessionReceiver "binaryninja.similarity.SimilaritySessionReceiver")]*
+    *property* receivers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionReceiver](#binaryninja.similarity.SimilaritySessionReceiver "binaryninja.similarity.SimilaritySessionReceiver")]*
     :   Receivers in this session.
 
-    *property* resolvers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")]*
+    *property* resolvers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver")]*
     :   Resolvers in this session.
 
 ## SimilaritySessionCompletion
 
 *class* SimilaritySessionCompletion[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Tracks stop requests, progress, and timing for a session run.
 
-    __init__(*handle: LP_BNSimilaritySessionCompletion | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.__init__)
+    __init__(*handle: LP_BNSimilaritySessionCompletion | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.__init__)
     :   Create an independent completion state, or wrap `handle` when provided.
 
         Independent states are normally only needed when calling providers or resolvers
@@ -827,7 +827,7 @@ Only)
         Parameters:
         :   **handle** (*LP_BNSimilaritySessionCompletion* *|* *None*)
 
-    get_progress(*query: [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")*) → [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.get_progress)
+    get_progress(*query: [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")*) → [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.get_progress)
     :   Return progress matching `query` from 0.0 to 1.0.
 
         Parameters:
@@ -836,9 +836,9 @@ Only)
             "binaryninja.similarity.SimilaritySessionCompletionQuery"))
 
         Return type:
-        :   [*float*](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")
+        :   [*float*](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")
 
-    get_timing(*query: [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")*) → [timedelta](https://docs.python.org/3/library/datetime.html#datetime.timedelta "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.get_timing)
+    get_timing(*query: [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")*) → [timedelta](https://docs.python.org/3/library/datetime.html#datetime.timedelta "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.get_timing)
     :   Return elapsed time matching `query`.
 
         Parameters:
@@ -848,15 +848,15 @@ Only)
 
         Return type:
         :   [*timedelta*](https://docs.python.org/3/library/datetime.html#datetime.timedelta "(in
-            Python v3.14)")
+            Python v3.15)")
 
-    request_stop() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.request_stop)
+    request_stop() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.request_stop)
     :   Ask the active run to stop.
 
         Return type:
         :   *None*
 
-    set_progress(*query: [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")*, *progress: [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.set_progress)
+    set_progress(*query: [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")*, *progress: [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletion.set_progress)
     :   Increase provider or resolver progress for a node. Progress cannot decrease.
 
         Note
@@ -867,72 +867,72 @@ Only)
         :   - **query**
               ([*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
               "binaryninja.similarity.SimilaritySessionCompletionQuery"))
-            - **progress** ([*float*](https://docs.python.org/3/library/functions.html#float "(in
-              Python v3.14)"))
+            - **progress** ([*float*](https://docs.python.org/3/builtins/functions.html#float "(in
+              Python v3.15)"))
 
         Return type:
         :   *None*
 
-    *property* is_finished*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_finished*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the run has finished.
 
-    *property* is_stop_requested*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* is_stop_requested*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Whether the run has been asked to stop.
 
-    *property* progress*: [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")*
+    *property* progress*: [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")*
     :   Overall progress from 0.0 to 1.0.
 
 ## SimilaritySessionCompletionQuery
 
 *class* SimilaritySessionCompletionQuery[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Chooses which session completion data to read or update.
 
     A query cannot select both a provider and a resolver. Omitting all IDs selects the whole
     session.
 
-    __init__(*node_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *provider_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *resolver_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*node_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *provider_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *resolver_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
-        :   - **node_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*)
-            - **provider_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)") *|* *None*)
-            - **resolver_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)") *|* *None*)
+        :   - **node_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)") *|* *None*)
+            - **provider_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)") *|* *None*)
+            - **resolver_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)") *|* *None*)
 
         Return type:
         :   *None*
 
-    *classmethod* for_node(*node_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.for_node)
+    *classmethod* for_node(*node_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.for_node)
     :   Select a node.
 
         Parameters:
-        :   **node_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **node_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
             "binaryninja.similarity.SimilaritySessionCompletionQuery")
 
-    *classmethod* for_provider(*provider_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.for_provider)
+    *classmethod* for_provider(*provider_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.for_provider)
     :   Select a provider across the session.
 
         Parameters:
-        :   **provider_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)"))
+        :   **provider_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)"))
 
         Return type:
         :   [*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
             "binaryninja.similarity.SimilaritySessionCompletionQuery")
 
-    *classmethod* for_resolver(*resolver_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.for_resolver)
+    *classmethod* for_resolver(*resolver_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.for_resolver)
     :   Select a resolver across the session.
 
         Parameters:
-        :   **resolver_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)"))
+        :   **resolver_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)"))
 
         Return type:
         :   [*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
@@ -945,39 +945,39 @@ Only)
         :   [*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
             "binaryninja.similarity.SimilaritySessionCompletionQuery")
 
-    with_provider(*provider_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.with_provider)
+    with_provider(*provider_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.with_provider)
     :   Select a provider within the current selection.
 
         Parameters:
-        :   **provider_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)"))
+        :   **provider_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)"))
 
         Return type:
         :   [*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
             "binaryninja.similarity.SimilaritySessionCompletionQuery")
 
-    with_resolver(*resolver_id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.with_resolver)
+    with_resolver(*resolver_id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionCompletionQuery](#binaryninja.similarity.SimilaritySessionCompletionQuery "binaryninja.similarity.SimilaritySessionCompletionQuery")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionCompletionQuery.with_resolver)
     :   Select a resolver within the current selection.
 
         Parameters:
-        :   **resolver_id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)"))
+        :   **resolver_id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)"))
 
         Return type:
         :   [*SimilaritySessionCompletionQuery*](#binaryninja.similarity.SimilaritySessionCompletionQuery
             "binaryninja.similarity.SimilaritySessionCompletionQuery")
 
-    node_id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    node_id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    provider_id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    provider_id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    resolver_id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    resolver_id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
 ## SimilaritySessionGraph
 
 *class* SimilaritySessionGraph[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     A graph that controls node processing order and cannot contain cycles.
 
@@ -988,7 +988,7 @@ Only)
     :   Parameters:
         :   **handle** (*LP_BNSimilaritySessionGraph*)
 
-    add_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.add_edge)
+    add_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.add_edge)
     :   Make `to_node` run after `from_node`.
 
         Parameters:
@@ -998,9 +998,9 @@ Only)
               "binaryninja.similarity.SimilaritySessionNode"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    add_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.add_node)
+    add_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.add_node)
     :   Add `node`, moving it unless either graph is currently running.
 
         Parameters:
@@ -1010,7 +1010,7 @@ Only)
         Return type:
         :   *None*
 
-    add_receiver(*receiver: [SimilaritySessionGraphReceiver](#binaryninja.similarity.SimilaritySessionGraphReceiver "binaryninja.similarity.SimilaritySessionGraphReceiver")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.add_receiver)
+    add_receiver(*receiver: [SimilaritySessionGraphReceiver](#binaryninja.similarity.SimilaritySessionGraphReceiver "binaryninja.similarity.SimilaritySessionGraphReceiver")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.add_receiver)
     :   Add a graph-change receiver.
 
         Parameters:
@@ -1021,27 +1021,27 @@ Only)
         Return type:
         :   *None*
 
-    get_node(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.get_node)
+    get_node(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.get_node)
     :   Return the node with `id`.
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
             "binaryninja.similarity.SimilaritySessionNode") | *None*
 
-    get_schedule() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]][[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.get_schedule)
+    get_schedule() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]][[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.get_schedule)
     :   Return groups of nodes in processing order. Nodes in the same group may run in parallel.
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
+            v3.15)")[[*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
+            v3.15)")[[*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
             "binaryninja.similarity.SimilaritySessionNode")]]
 
-    is_valid_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.is_valid_edge)
+    is_valid_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.is_valid_edge)
     :   Return whether an edge can be added without duplicating an edge or creating a cycle.
 
         Parameters:
@@ -1051,9 +1051,9 @@ Only)
               "binaryninja.similarity.SimilaritySessionNode"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    remove_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.remove_edge)
+    remove_edge(*from_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *to_node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.remove_edge)
     :   Remove the edge from `from_node` to `to_node`.
 
         Parameters:
@@ -1063,9 +1063,9 @@ Only)
               "binaryninja.similarity.SimilaritySessionNode"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    remove_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.remove_node)
+    remove_node(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.remove_node)
     :   Remove `node` and its edges from this graph.
 
         Parameters:
@@ -1075,7 +1075,7 @@ Only)
         Return type:
         :   *None*
 
-    remove_receiver(*receiver: [SimilaritySessionGraphReceiver](#binaryninja.similarity.SimilaritySessionGraphReceiver "binaryninja.similarity.SimilaritySessionGraphReceiver")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.remove_receiver)
+    remove_receiver(*receiver: [SimilaritySessionGraphReceiver](#binaryninja.similarity.SimilaritySessionGraphReceiver "binaryninja.similarity.SimilaritySessionGraphReceiver")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraph.remove_receiver)
     :   Remove a graph-change receiver.
 
         Parameters:
@@ -1086,26 +1086,26 @@ Only)
         Return type:
         :   *None*
 
-    *property* nodes*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]*
+    *property* nodes*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]*
     :   Nodes in this graph.
 
-    *property* receivers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionGraphReceiver](#binaryninja.similarity.SimilaritySessionGraphReceiver "binaryninja.similarity.SimilaritySessionGraphReceiver")]*
+    *property* receivers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionGraphReceiver](#binaryninja.similarity.SimilaritySessionGraphReceiver "binaryninja.similarity.SimilaritySessionGraphReceiver")]*
     :   Graph-change receivers currently registered with this graph.
 
 ## SimilaritySessionGraphReceiver
 
 *class* SimilaritySessionGraphReceiver[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraphReceiver)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Receives notifications after nodes or edges are added to or removed from a session
     graph.
 
-    __init__(*handle: LP_BNSimilaritySessionGraphReceiver | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraphReceiver.__init__)
+    __init__(*handle: LP_BNSimilaritySessionGraphReceiver | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraphReceiver.__init__)
     :   Parameters:
         :   **handle** (*LP_BNSimilaritySessionGraphReceiver* *|* *None*)
 
-    perform_on_graph_changed() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraphReceiver.perform_on_graph_changed)
+    perform_on_graph_changed() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionGraphReceiver.perform_on_graph_changed)
     :   Handle a node or edge being added to or removed from the graph.
 
         Return type:
@@ -1114,12 +1114,12 @@ Only)
 ## SimilaritySessionNode
 
 *class* SimilaritySessionNode[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     The main unit of similarity processing.
 
-    __init__(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *file: [FileMetadata](filemetadata.md#binaryninja.filemetadata.FileMetadata "binaryninja.filemetadata.FileMetadata") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: LP_BNSimilaritySessionNode | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.__init__)
+    __init__(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *file: [FileMetadata](filemetadata.md#binaryninja.filemetadata.FileMetadata "binaryninja.filemetadata.FileMetadata") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle: LP_BNSimilaritySessionNode | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.__init__)
     :   Parameters:
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|* *None*)
@@ -1127,30 +1127,30 @@ Only)
               "binaryninja.filemetadata.FileMetadata") *|* *None*)
             - **handle** (*LP_BNSimilaritySessionNode* *|* *None*)
 
-    add_scheduled_entity(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.add_scheduled_entity)
+    add_scheduled_entity(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.add_scheduled_entity)
     :   Schedule an entity for the next provider round.
 
         Nodes initially schedule all available entities. The session consumes each scheduled
         batch before resolution; resolvers can call this method to request another round.
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    clear_resolved_result(*entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.clear_resolved_result)
+    clear_resolved_result(*entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.clear_resolved_result)
     :   Clear the selected result for `entity`.
 
         Parameters:
-        :   **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    create_entity(*info: [SimilarityEntityInfo](#binaryninja.similarity.SimilarityEntityInfo "binaryninja.similarity.SimilarityEntityInfo")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.create_entity)
+    create_entity(*info: [SimilarityEntityInfo](#binaryninja.similarity.SimilarityEntityInfo "binaryninja.similarity.SimilarityEntityInfo")*) → [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.create_entity)
     :   Add an entity without scheduling it.
 
         An existing entity with the same type and address is reused. A non-empty name refreshes
@@ -1161,65 +1161,65 @@ Only)
             "binaryninja.similarity.SimilarityEntityInfo"))
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
-    get_entity(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilarityEntityInfo](#binaryninja.similarity.SimilarityEntityInfo "binaryninja.similarity.SimilarityEntityInfo") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_entity)
+    get_entity(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilarityEntityInfo](#binaryninja.similarity.SimilarityEntityInfo "binaryninja.similarity.SimilarityEntityInfo") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_entity)
     :   Return information about an entity.
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*SimilarityEntityInfo*](#binaryninja.similarity.SimilarityEntityInfo
             "binaryninja.similarity.SimilarityEntityInfo") | *None*
 
-    get_entity_function(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_entity_function)
+    get_entity_function(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_entity_function)
     :   Return the function represented by an entity, if available.
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
             | *None*
 
-    get_resolved_result(*entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_resolved_result)
+    get_resolved_result(*entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_resolved_result)
     :   Return the selected result for `entity`.
 
         Parameters:
-        :   **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") |
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") |
             *None*
 
-    get_result(*result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [SimilarityResult](#binaryninja.similarity.SimilarityResult "binaryninja.similarity.SimilarityResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_result)
+    get_result(*result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [SimilarityResult](#binaryninja.similarity.SimilarityResult "binaryninja.similarity.SimilarityResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_result)
     :   Return a stored result by its ID, which is unique within the node.
 
         Parameters:
-        :   **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*SimilarityResult*](#binaryninja.similarity.SimilarityResult
             "binaryninja.similarity.SimilarityResult") | *None*
 
-    get_results(*entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_results)
+    get_results(*entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.get_results)
     :   Return the result IDs for `entity`.
 
         Parameters:
-        :   **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)")]
+            v3.15)")[[*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)")]
 
-    remove_entity(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.remove_entity)
+    remove_entity(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.remove_entity)
     :   Remove an entity, its schedule, its provider results, and its selected result.
 
         To only unschedule it, use
@@ -1227,13 +1227,13 @@ Only)
         "binaryninja.similarity.SimilaritySessionNode.remove_scheduled_entity").
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    remove_scheduled_entity(*id: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.remove_scheduled_entity)
+    remove_scheduled_entity(*id: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.remove_scheduled_entity)
     :   Unschedule an entity without removing it.
 
         To remove it, use
@@ -1241,52 +1241,52 @@ Only)
         "binaryninja.similarity.SimilaritySessionNode.remove_entity").
 
         Parameters:
-        :   **id** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **id** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+            v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_resolved_result(*entity: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *result: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.set_resolved_result)
+    set_resolved_result(*entity: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *result: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionNode.set_resolved_result)
     :   Select one of `entity`’s results.
 
         Parameters:
-        :   - **entity** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **result** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **entity** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **result** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    *property* entities*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
+    *property* entities*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*
     :   All entities, including entities used only as match targets.
 
     *property* file*: [FileMetadata](filemetadata.md#binaryninja.filemetadata.FileMetadata "binaryninja.filemetadata.FileMetadata")*
     :   The file backing this node.
 
-    *property* id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   This node’s ID.
 
-    *property* incoming_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
+    *property* incoming_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*
     :   IDs of nodes that must run before this node, in ascending order.
 
-    *property* incoming_nodes*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]*
+    *property* incoming_nodes*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]*
     :   Nodes that must run before this node, ordered by ID.
 
     *property* load_options*: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*
     :   Options used when opening this node’s view. Modify them before running the session.
 
-    *property* outgoing_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
+    *property* outgoing_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*
     :   IDs of nodes that depend on this node, in ascending order.
 
-    *property* outgoing_nodes*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]*
+    *property* outgoing_nodes*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")]*
     :   Nodes that depend on this node, ordered by ID.
 
-    *property* scheduled_entities*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
+    *property* scheduled_entities*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*
     :   Entities waiting for provider processing.
 
-    *property* view*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* view*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   The open view, if one is available.
 
         A file-backed node’s view may be unavailable outside a session run. The session closes
@@ -1295,8 +1295,8 @@ Only)
 ## SimilaritySessionReceiver
 
 *class* SimilaritySessionReceiver[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Receives session-start and entity-update notifications.
 
@@ -1305,11 +1305,11 @@ Only)
     "binaryninja.similarity.SimilaritySession.run") returns. Update callbacks run on workers
     and may overlap across nodes and sessions.
 
-    __init__(*handle: LP_BNSimilaritySessionReceiver | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver.__init__)
+    __init__(*handle: LP_BNSimilaritySessionReceiver | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver.__init__)
     :   Parameters:
         :   **handle** (*LP_BNSimilaritySessionReceiver* *|* *None*)
 
-    perform_on_start(*completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver.perform_on_start)
+    perform_on_start(*completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver.perform_on_start)
     :   Handle the start of a session run.
 
         This is mainly used to get the completion state for the run.
@@ -1322,7 +1322,7 @@ Only)
         Return type:
         :   *None*
 
-    perform_on_update(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*, *entities: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver.perform_on_update)
+    perform_on_update(*node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *provider: [SimilarityProvider](#binaryninja.similarity.SimilarityProvider "binaryninja.similarity.SimilarityProvider")*, *entities: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionReceiver.perform_on_update)
     :   Handle entities whose provider results, resolution state, or applied metadata changed.
 
         Custom receivers must override this method.
@@ -1333,8 +1333,8 @@ Only)
             - **provider** ([*SimilarityProvider*](#binaryninja.similarity.SimilarityProvider
               "binaryninja.similarity.SimilarityProvider"))
             - **entities** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")*]*)
+              Python v3.15)")*[*[*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)")*]*)
 
         Return type:
         :   *None*
@@ -1342,15 +1342,15 @@ Only)
 ## SimilaritySessionResolver
 
 *class* SimilaritySessionResolver[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Selects provider results to apply to session entities.
 
     Calls for nodes in the same processing group may run at the same time. Do not keep the
     session after a callback returns.
 
-    __init__(*resolver_type: [SimilaritySessionResolverType](#binaryninja.similarity.SimilaritySessionResolverType "binaryninja.similarity.SimilaritySessionResolverType") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: LP_BNSimilaritySessionResolver | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.__init__)
+    __init__(*resolver_type: [SimilaritySessionResolverType](#binaryninja.similarity.SimilaritySessionResolverType "binaryninja.similarity.SimilaritySessionResolverType") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle: LP_BNSimilaritySessionResolver | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.__init__)
     :   Parameters:
         :   - **resolver_type**
               ([*SimilaritySessionResolverType*](#binaryninja.similarity.SimilaritySessionResolverType
@@ -1359,7 +1359,7 @@ Only)
               "binaryninja.similarity.SimilaritySession") *|* *None*)
             - **handle** (*LP_BNSimilaritySessionResolver* *|* *None*)
 
-    perform_prepare_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.perform_prepare_for_node)
+    perform_prepare_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.perform_prepare_for_node)
     :   Prepare `node` before its providers are visited.
 
         This is useful for large graphs where views may be unavailable, but the resolver needs
@@ -1377,7 +1377,7 @@ Only)
         Return type:
         :   *None*
 
-    perform_resolve_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entities: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.perform_resolve_for_node)
+    perform_resolve_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entities: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.perform_resolve_for_node)
     :   Select results for `node` after its providers have run.
 
         Call
@@ -1394,8 +1394,8 @@ Only)
             - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
             - **entities** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")*]*)
+              Python v3.15)")*[*[*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)")*]*)
             - **completion**
               ([*SimilaritySessionCompletion*](#binaryninja.similarity.SimilaritySessionCompletion
               "binaryninja.similarity.SimilaritySessionCompletion"))
@@ -1403,7 +1403,7 @@ Only)
         Return type:
         :   *None*
 
-    perform_update_settings(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.perform_update_settings)
+    perform_update_settings(*settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.perform_update_settings)
     :   Replace this resolver’s settings only if they are valid.
 
         Return `False` without changing the current settings when the new settings are invalid
@@ -1417,9 +1417,9 @@ Only)
             "binaryninja.settings.Settings"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    prepare_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.prepare_for_node)
+    prepare_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.prepare_for_node)
     :   Prepare `node` in `session` before its providers are visited.
 
         Parameters:
@@ -1434,7 +1434,7 @@ Only)
         Return type:
         :   *None*
 
-    resolve_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entities: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.resolve_for_node)
+    resolve_for_node(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *node: [SimilaritySessionNode](#binaryninja.similarity.SimilaritySessionNode "binaryninja.similarity.SimilaritySessionNode")*, *entities: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*, *completion: [SimilaritySessionCompletion](#binaryninja.similarity.SimilaritySessionCompletion "binaryninja.similarity.SimilaritySessionCompletion")*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolver.resolve_for_node)
     :   Select results for `node` in `session`.
 
         Parameters:
@@ -1443,8 +1443,8 @@ Only)
             - **node** ([*SimilaritySessionNode*](#binaryninja.similarity.SimilaritySessionNode
               "binaryninja.similarity.SimilaritySessionNode"))
             - **entities** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)")*]*)
+              Python v3.15)")*[*[*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)")*]*)
             - **completion**
               ([*SimilaritySessionCompletion*](#binaryninja.similarity.SimilaritySessionCompletion
               "binaryninja.similarity.SimilaritySessionCompletion"))
@@ -1452,7 +1452,7 @@ Only)
         Return type:
         :   *None*
 
-    *property* id*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* id*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   This resolver’s ID.
 
     *property* type*: [SimilaritySessionResolverType](#binaryninja.similarity.SimilaritySessionResolverType "binaryninja.similarity.SimilaritySessionResolverType")*
@@ -1461,16 +1461,16 @@ Only)
 ## SimilaritySessionResolverType
 
 *class* SimilaritySessionResolverType[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Creates resolvers with the given settings.
 
-    __init__(*handle: LP_BNSimilaritySessionResolverType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.__init__)
+    __init__(*handle: LP_BNSimilaritySessionResolverType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.__init__)
     :   Parameters:
         :   **handle** (*LP_BNSimilaritySessionResolverType* *|* *None*)
 
-    create(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.create)
+    create(*session: [SimilaritySession](#binaryninja.similarity.SimilaritySession "binaryninja.similarity.SimilaritySession")*, *settings_obj: [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")*) → [SimilaritySessionResolver](#binaryninja.similarity.SimilaritySessionResolver "binaryninja.similarity.SimilaritySessionResolver") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.create)
     :   Create a resolver for `session`, or return `None`. Custom types must override this
         method.
 
@@ -1484,14 +1484,14 @@ Only)
         :   [*SimilaritySessionResolver*](#binaryninja.similarity.SimilaritySessionResolver
             "binaryninja.similarity.SimilaritySessionResolver") | *None*
 
-    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.get_default_settings)
+    get_default_settings() → [Settings](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.get_default_settings)
     :   Return settings used to configure new resolvers.
 
         Return type:
         :   [*Settings*](settings.md#binaryninja.settings.Settings "binaryninja.settings.Settings")
             | *None*
 
-    register() → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.register)
+    register() → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilaritySessionResolverType.register)
     :   Register this resolver type for the process lifetime.
 
         Return type:
@@ -1504,15 +1504,15 @@ Only)
 ## SimilarityView
 
 *class* SimilarityView[[source]](https://api.binary.ninja/_modules/binaryninja/similarity.html#SimilarityView)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     A graph or linear view produced for a similarity result.
 
-    __init__(*group: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *type: [SimilarityViewType](enums.md#binaryninja.enums.SimilarityViewType "binaryninja.enums.SimilarityViewType")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *data: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *linear_view: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*group: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *type: [SimilarityViewType](enums.md#binaryninja.enums.SimilarityViewType "binaryninja.enums.SimilarityViewType")*, *graph: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *data: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *linear_view: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *entity: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
-        :   - **group** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **group** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **type** ([*SimilarityViewType*](enums.md#binaryninja.enums.SimilarityViewType
               "binaryninja.enums.SimilarityViewType"))
             - **graph** ([*FlowGraph*](flowgraph.md#binaryninja.flowgraph.FlowGraph
@@ -1528,14 +1528,14 @@ Only)
         Return type:
         :   *None*
 
-    data*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    data*: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    entity*: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    entity*: [SimilarityEntityRef](#binaryninja.similarity.SimilarityEntityRef "binaryninja.similarity.SimilarityEntityRef") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    graph*: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    graph*: [FlowGraph](flowgraph.md#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
-    group*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    group*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
 
-    linear_view*: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")* *= None*
+    linear_view*: [LinearViewObject](lineardisassembly.md#binaryninja.lineardisassembly.LinearViewObject "binaryninja.lineardisassembly.LinearViewObject") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")* *= None*
 
     type*: [SimilarityViewType](enums.md#binaryninja.enums.SimilarityViewType "binaryninja.enums.SimilarityViewType")*

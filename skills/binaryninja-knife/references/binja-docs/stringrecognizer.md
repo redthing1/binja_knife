@@ -16,7 +16,7 @@
     :   Parameters:
         :   **handle** (*BNStringRecognizer*)
 
-    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.is_valid_for_type)
+    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.is_valid_for_type)
     :   Determines if the string recognizer should be called for the given expression type. It
         is optional to override this method. If the method isn’t overridden, all expression
         types are passed to the string recognizer.
@@ -33,9 +33,9 @@
         :   True if the expression should be passed to the string recognizer, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    recognize_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_constant)
+    recognize_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_constant)
     :   Can be overridden to recognize strings for a constant that is not a pointer. The
         expression type and value of the expression are given. If no string is found for this
         expression, this method should return None.
@@ -50,8 +50,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -61,7 +61,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_constant_data(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_constant_data)
+    recognize_constant_data(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_constant_data)
     :   Can be overridden to recognize strings for constant data expressions (HLIL_CONST_DATA).
         These expressions are generated by the outline resolver when it recovers constant data
         streams from scattered stores. The instruction provides access to the data buffer and
@@ -85,7 +85,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_constant_pointer)
+    recognize_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_constant_pointer)
     :   Can be overridden to recognize strings for a constant pointer. The expression type and
         value of the expression are given. If no string is found for this expression, this
         method should return None.
@@ -100,8 +100,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -111,7 +111,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_extern_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_extern_pointer)
+    recognize_extern_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *offset: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_extern_pointer)
     :   Can be overridden to recognize strings for an external symbol. The expression type and
         value of the expression are given. If no string is found for this expression, this
         method should return None.
@@ -126,10 +126,10 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
-            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Offset into the external symbol
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
+            - **offset** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Offset into the external symbol
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -139,7 +139,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_import(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_import)
+    recognize_import(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_import)
     :   Can be overridden to recognize strings for an imported symbol. The expression type and
         value of the expression are given. If no string is found for this expression, this
         method should return None.
@@ -154,8 +154,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -165,7 +165,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_struct_init(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *vals: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_struct_init)
+    recognize_struct_init(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *vals: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)"), [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CoreStringRecognizer.recognize_struct_init)
     :   Can be overridden to recognize strings for a structure initializer expression
         (HLIL_STRUCT_INIT). These are produced when the optimizer folds a run of structure field
         assignments into a single initializer. This is only called when all fields of the
@@ -185,9 +185,9 @@
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
               Structure type of the initializer
             - **vals** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python
-              v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")*]*) – Dictionary mapping field offset to the constant value assigned to that
+              v3.15)")*[*[*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")*,* [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")*]*) – Dictionary mapping field offset to the constant value assigned to that
               field
 
         Returns:
@@ -201,41 +201,41 @@
 ## CustomStringType
 
 *class* CustomStringType[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CustomStringType)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     Represents a custom string type. String types contain the name of the string type and
     the prefix and postfix used to render them in code.
 
     __init__(*handle*)[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CustomStringType.__init__)
 
-    *static* register(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *string_prefix=''*, *string_postfix=''*) → [CustomStringType](#binaryninja.stringrecognizer.CustomStringType "binaryninja.stringrecognizer.CustomStringType")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CustomStringType.register)
+    *static* register(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *string_prefix=''*, *string_postfix=''*) → [CustomStringType](#binaryninja.stringrecognizer.CustomStringType "binaryninja.stringrecognizer.CustomStringType")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#CustomStringType.register)
     :   Registers a new custom string type. This can be used when creating new
         [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
         "binaryninja.binaryview.DerivedString") objects.
 
         Parameters:
-        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
         Return type:
         :   [*CustomStringType*](#binaryninja.stringrecognizer.CustomStringType
             "binaryninja.stringrecognizer.CustomStringType")
 
-    *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Name of the custom string type.
 
-    *property* string_postfix*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* string_postfix*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Postfix added after the closing quote in a custom string.
 
-    *property* string_prefix*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* string_prefix*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Prefix added before the opening quote in a custom string.
 
 ## StringRecognizer
 
 *class* StringRecognizer[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class StringRecognizer` recognizes custom strings found in high level expressions.
 
@@ -268,7 +268,7 @@
 
     __init__(*handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.__init__)
 
-    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.is_valid_for_type)
+    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.is_valid_for_type)
     :   Determines if the string recognizer should be called for the given expression type. It
         is optional to override this method. If the method isn’t overridden, all expression
         types are passed to the string recognizer.
@@ -285,9 +285,9 @@
         :   True if the expression should be passed to the string recognizer, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    recognize_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_constant)
+    recognize_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_constant)
     :   Can be overridden to recognize strings for a constant that is not a pointer. The
         expression type and value of the expression are given. If no string is found for this
         expression, this method should return None.
@@ -302,8 +302,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -313,7 +313,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_constant_data(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_constant_data)
+    recognize_constant_data(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_constant_data)
     :   Can be overridden to recognize strings for constant data expressions (HLIL_CONST_DATA).
         These expressions are generated by the outline resolver when it recovers constant data
         streams from scattered stores. The instruction provides access to the data buffer and
@@ -337,7 +337,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_constant_pointer)
+    recognize_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_constant_pointer)
     :   Can be overridden to recognize strings for a constant pointer. The expression type and
         value of the expression are given. If no string is found for this expression, this
         method should return None.
@@ -352,8 +352,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -363,7 +363,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_extern_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *offset: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_extern_pointer)
+    recognize_extern_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *offset: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_extern_pointer)
     :   Can be overridden to recognize strings for an external symbol. The expression type and
         value of the expression are given. If no string is found for this expression, this
         method should return None.
@@ -378,10 +378,10 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
-            - **offset** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Offset into the external symbol
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
+            - **offset** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Offset into the external symbol
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -391,7 +391,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_import(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_import)
+    recognize_import(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_import)
     :   Can be overridden to recognize strings for an imported symbol. The expression type and
         value of the expression are given. If no string is found for this expression, this
         method should return None.
@@ -406,8 +406,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
 
         Returns:
         :   Optional [`DerivedString`](binaryview.md#binaryninja.binaryview.DerivedString
@@ -417,7 +417,7 @@
         :   [*DerivedString*](binaryview.md#binaryninja.binaryview.DerivedString
             "binaryninja.binaryview.DerivedString") | *None*
 
-    recognize_struct_init(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *vals: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_struct_init)
+    recognize_struct_init(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *vals: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)"), [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*) → [DerivedString](binaryview.md#binaryninja.binaryview.DerivedString "binaryninja.binaryview.DerivedString") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.recognize_struct_init)
     :   Can be overridden to recognize strings for a structure initializer expression
         (HLIL_STRUCT_INIT). These are produced when the optimizer folds a run of structure field
         assignments into a single initializer. This is only called when all fields of the
@@ -437,9 +437,9 @@
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) –
               Structure type of the initializer
             - **vals** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python
-              v3.14)")*[*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")*]*) – Dictionary mapping field offset to the constant value assigned to that
+              v3.15)")*[*[*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")*,* [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")*]*) – Dictionary mapping field offset to the constant value assigned to that
               field
 
         Returns:
@@ -453,6 +453,6 @@
     register()[[source]](https://api.binary.ninja/_modules/binaryninja/stringrecognizer.html#StringRecognizer.register)
     :   Registers the string recognizer.
 
-    *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
 
     recognizer_name *= None*

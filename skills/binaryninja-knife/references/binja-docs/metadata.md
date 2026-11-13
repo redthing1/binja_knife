@@ -7,64 +7,65 @@
 ## Metadata
 
 *class* Metadata[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*value: [Metadata](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Metadata](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[MetadataValueType] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[MetadataValueType] | [dict](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Metadata](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [bytes](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") | [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[MetadataValueType] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[MetadataValueType] | [dict](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")] | [dict](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *signed: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *raw: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle: BNMetadata | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.__init__)
+    __init__(*value: [Metadata](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)") | [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Metadata](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)") | [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[MetadataValueType] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[MetadataValueType] | [dict](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)")] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[Metadata](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata") | [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [bytes](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)") | [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)") | [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[MetadataValueType] | [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[MetadataValueType] | [dict](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)")] | [dict](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *signed: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *raw: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle: BNMetadata | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.__init__)
     :   The ‘raw’ parameter is no longer needed it was a workaround for a Python 2 limitation.
         To pass raw data into this API, simply use a bytes object.
 
         Parameters:
         :   - **value** ([*Metadata*](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata")
-              *|* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
-              *|* [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
-              *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") *|*
-              [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") *|*
-              [*float*](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")
-              *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-              v3.14)")*[*[*Metadata*](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata")
-              *|* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
-              *|* [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
-              *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") *|*
-              [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") *|*
-              [*float*](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")
-              *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-              v3.14)")*[**MetadataValueType**]* *|*
+              *|* [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
+              *|* [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
+              *|* [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
+              *|* [*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python
+              v3.15)") *|* [*float*](https://docs.python.org/3/builtins/functions.html#float "(in
+              Python v3.15)") *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List
+              "(in Python v3.15)")*[*[*Metadata*](#binaryninja.metadata.Metadata
+              "binaryninja.metadata.Metadata") *|*
+              [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") *|*
+              [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") *|*
+              [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") *|*
+              [*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python v3.15)")
+              *|* [*float*](https://docs.python.org/3/builtins/functions.html#float "(in Python
+              v3.15)") *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
+              Python v3.15)")*[**MetadataValueType**]* *|*
               [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-              v3.14)")*[**MetadataValueType**]* *|*
-              [*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")*]*
+              v3.15)")*[**MetadataValueType**]* *|*
+              [*dict*](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)")*]*
               *|* [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-              v3.14)")*[*[*Metadata*](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata")
-              *|* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
-              *|* [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
-              *|* [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") *|*
-              [*bytes*](https://docs.python.org/3/library/stdtypes.html#bytes "(in Python v3.14)") *|*
-              [*float*](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")
-              *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-              v3.14)")*[**MetadataValueType**]* *|*
+              v3.15)")*[*[*Metadata*](#binaryninja.metadata.Metadata "binaryninja.metadata.Metadata")
+              *|* [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
+              *|* [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
+              *|* [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
+              *|* [*bytes*](https://docs.python.org/3/builtins/stdtypes.html#bytes "(in Python
+              v3.15)") *|* [*float*](https://docs.python.org/3/builtins/functions.html#float "(in
+              Python v3.15)") *|* [*List*](https://docs.python.org/3/library/typing.html#typing.List
+              "(in Python v3.15)")*[**MetadataValueType**]* *|*
               [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-              v3.14)")*[**MetadataValueType**]* *|*
-              [*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")*]*
-              *|* [*dict*](https://docs.python.org/3/library/stdtypes.html#dict "(in Python v3.14)")
+              v3.15)")*[**MetadataValueType**]* *|*
+              [*dict*](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)")*]*
+              *|* [*dict*](https://docs.python.org/3/builtins/stdtypes.html#dict "(in Python v3.15)")
               *|* *None*)
-            - **signed** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)") *|* *None*)
-            - **raw** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)") *|* *None*)
+            - **signed** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python
+              v3.15)") *|* *None*)
+            - **raw** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python
+              v3.15)") *|* *None*)
             - **handle** (*BNMetadata* *|* *None*)
 
     append(*value*)[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.append)
     :   Appends a value to the Metadata array.
 
-    get(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *default: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)") = None*) → [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.get)
+    get(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *default: [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)") = None*) → [Any](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.get)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **default** ([*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in
-              Python v3.14)"))
+              Python v3.15)"))
 
         Return type:
-        :   [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.14)")
+        :   [*Any*](https://docs.python.org/3/library/typing.html#typing.Any "(in Python v3.15)")
 
     get_dict()[[source]](https://api.binary.ninja/_modules/binaryninja/metadata.html#Metadata.get_dict)
 

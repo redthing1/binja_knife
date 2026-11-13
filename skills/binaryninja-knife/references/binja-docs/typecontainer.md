@@ -7,8 +7,8 @@
 ## TypeContainer
 
 *class* TypeContainer[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     A `TypeContainer` is a generic interface to access various Binary Ninja models that
     contain types. Types are stored with both a unique id and a unique name.
@@ -38,7 +38,7 @@
         Parameters:
         :   **handle** (*LP_BNTypeContainer*) – Handle pointer
 
-    add_types(*types: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[_types.QualifiedNameType, _types.Type]*, *progress_func: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.14)")[[[int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"), [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")], [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[_types.QualifiedName, [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.add_types)
+    add_types(*types: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.15)")[_types.QualifiedNameType, _types.Type]*, *progress_func: [Callable](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python v3.15)")[[[int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)"), [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")], [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.15)")[_types.QualifiedName, [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.add_types)
     :   Add or update types to a Type Container. If the Type Container already contains a type
         with the same name as a type being added, the existing type will be replaced with the
         definition given to this function, and references will be updated in the source model.
@@ -48,14 +48,14 @@
 
         Parameters:
         :   - **types** ([*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping "(in
-              Python v3.14)")*[**_types.QualifiedNameType**,* *_types.Type**]*) – Dict from name ->
+              Python v3.15)")*[**_types.QualifiedNameType**,* *_types.Type**]*) – Dict from name ->
               definition of new types to add
             - **progress_func**
               ([*Callable*](https://docs.python.org/3/library/typing.html#typing.Callable "(in Python
-              v3.14)")*[**[*[*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")*,* [*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")*]**,* [*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)")*]* *|* *None*) – Optional function to call for progress updates
+              v3.15)")*[**[*[*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")*,* [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")*]**,* [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)")*]* *|* *None*) – Optional function to call for progress updates
 
         Returns:
         :   Dict from name -> id of type in Type Container for all added types if successful, None
@@ -63,35 +63,35 @@
 
         Return type:
         :   [*Mapping*](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python
-            v3.14)")[_types.QualifiedName,
-            [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] |
+            v3.15)")[_types.QualifiedName,
+            [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] |
             *None*
 
-    delete_type(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.delete_type)
+    delete_type(*type_id: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.delete_type)
     :   Delete a type in the Type Container. Behavior of references to this type is not
         specified and you may end up with broken references if any still exist.
 
         Parameters:
-        :   **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – Id of type to delete
+        :   **type_id** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – Id of type to delete
 
         Returns:
         :   True if successful
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     *classmethod* empty()[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.empty)
     :   Get an empty Type Container which contains no types (immutable) Useful when a function
         requires a Type Container but you don’t have one. :return: Empty type container
 
-    get_type_by_id(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_by_id)
+    get_type_by_id(*type_id: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_by_id)
     :   Get the definition of the type in the Type Container with the given id. If no type with
         that id exists, returns None.
 
         Parameters:
-        :   **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – Id of type
+        :   **type_id** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – Id of type
 
         Returns:
         :   Type object, if exists, else, None
@@ -99,7 +99,7 @@
         Return type:
         :   [*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type") | *None*
 
-    get_type_by_name(*type_name: _types.QualifiedNameType*) → _types.Type | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_by_name)
+    get_type_by_name(*type_name: _types.QualifiedNameType*) → _types.Type | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_by_name)
     :   Get the definition of the type in the Type Container with the given name. If no type
         with that name exists, returns None.
 
@@ -112,7 +112,7 @@
         Return type:
         :   _types.Type | *None*
 
-    get_type_id(*type_name: _types.QualifiedNameType*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_id)
+    get_type_id(*type_name: _types.QualifiedNameType*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_id)
     :   Get the unique id of the type in the Type Container with the given name. If no type with
         that name exists, returns None.
 
@@ -123,16 +123,16 @@
         :   Type id, if exists, else, None
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") |
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") |
             *None*
 
-    get_type_name(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_name)
+    get_type_name(*type_id: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.get_type_name)
     :   Get the unique name of the type in the Type Container with the given id. If no type with
         that id exists, returns None.
 
         Parameters:
-        :   **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – Id of type
+        :   **type_id** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – Id of type
 
         Returns:
         :   Type name, if exists, else, None
@@ -141,15 +141,15 @@
         :   [*QualifiedName*](types.md#binaryninja.types.QualifiedName
             "binaryninja.types.QualifiedName") | *None*
 
-    parse_type_string(*source: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *import_dependencies: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[_types.QualifiedNameType, _types.Type] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeParserError](typeparser.md#binaryninja.typeparser.TypeParserError "binaryninja.typeparser.TypeParserError")]][[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.parse_type_string)
+    parse_type_string(*source: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *import_dependencies: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = True*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[_types.QualifiedNameType, _types.Type] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeParserError](typeparser.md#binaryninja.typeparser.TypeParserError "binaryninja.typeparser.TypeParserError")]][[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.parse_type_string)
     :   Parse a single type and name from a string containing their definition, with knowledge
         of the types in the Type Container.
 
         Parameters:
-        :   - **source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Source code to parse
-            - **import_dependencies** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) – If Type Library / Type Archive types should be imported during
+        :   - **source** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Source code to parse
+            - **import_dependencies** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool
+              "(in Python v3.15)")) – If Type Library / Type Archive types should be imported during
               parsing
 
         Returns:
@@ -158,33 +158,33 @@
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-            v3.14)")[[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
-            Python v3.14)")[_types.QualifiedNameType, _types.Type] | *None*,
+            v3.15)")[[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in
+            Python v3.15)")[_types.QualifiedNameType, _types.Type] | *None*,
             [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*TypeParserError*](typeparser.md#binaryninja.typeparser.TypeParserError
+            v3.15)")[[*TypeParserError*](typeparser.md#binaryninja.typeparser.TypeParserError
             "binaryninja.typeparser.TypeParserError")]]
 
-    parse_types_from_source(*source: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *file_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *include_dirs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *auto_type_source: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*, *import_dependencies: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)") = True*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[TypeParserResult](typeparser.md#binaryninja.typeparser.TypeParserResult "binaryninja.typeparser.TypeParserResult") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[TypeParserError](typeparser.md#binaryninja.typeparser.TypeParserError "binaryninja.typeparser.TypeParserError")]][[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.parse_types_from_source)
+    parse_types_from_source(*source: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *file_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *options: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *include_dirs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *auto_type_source: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*, *import_dependencies: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)") = True*) → [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[TypeParserResult](typeparser.md#binaryninja.typeparser.TypeParserResult "binaryninja.typeparser.TypeParserResult") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)"), [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[TypeParserError](typeparser.md#binaryninja.typeparser.TypeParserError "binaryninja.typeparser.TypeParserError")]][[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.parse_types_from_source)
     :   Parse an entire block of source into types, variables, and functions, with knowledge of
         the types in the Type Container.
 
         Parameters:
-        :   - **source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Source code to parse
-            - **file_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Name of the file containing the source (optional: exists on disk)
+        :   - **source** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Source code to parse
+            - **file_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Name of the file containing the source (optional: exists on disk)
             - **options** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]* *|* *None*) – Optional string arguments to pass as options, e.g.
+              Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]* *|* *None*) – Optional string arguments to pass as options, e.g.
               command line arguments
             - **include_dirs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]* *|* *None*) – Optional list of directories to include in the header
+              "(in Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]* *|* *None*) – Optional list of directories to include in the header
               search path
-            - **auto_type_source** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")) – Optional source of types if used for automatically generated types
-            - **import_dependencies** ([*bool*](https://docs.python.org/3/library/functions.html#bool
-              "(in Python v3.14)")) – If Type Library / Type Archive types should be imported during
+            - **auto_type_source** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")) – Optional source of types if used for automatically generated types
+            - **import_dependencies** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool
+              "(in Python v3.15)")) – If Type Library / Type Archive types should be imported during
               parsing
 
         Returns:
@@ -192,40 +192,40 @@
 
         Return type:
         :   [*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python
-            v3.14)")[[*TypeParserResult*](typeparser.md#binaryninja.typeparser.TypeParserResult
+            v3.15)")[[*TypeParserResult*](typeparser.md#binaryninja.typeparser.TypeParserResult
             "binaryninja.typeparser.TypeParserResult") | *None*,
             [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*TypeParserError*](typeparser.md#binaryninja.typeparser.TypeParserError
+            v3.15)")[[*TypeParserError*](typeparser.md#binaryninja.typeparser.TypeParserError
             "binaryninja.typeparser.TypeParserError")]]
 
-    rename_type(*type_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *new_name: _types.QualifiedNameType*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.rename_type)
+    rename_type(*type_id: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *new_name: _types.QualifiedNameType*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/typecontainer.html#TypeContainer.rename_type)
     :   Rename a type in the Type Container. All references to this type will be updated (by id)
         to use the new name.
 
         Parameters:
-        :   - **type_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – Id of type to update
+        :   - **type_id** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – Id of type to update
             - **new_name** (*_types.QualifiedNameType*) – New name for the type
 
         Returns:
         :   True if successful
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     *property* container_type*: [TypeContainerType](enums.md#binaryninja.enums.TypeContainerType "binaryninja.enums.TypeContainerType")*
     :   Get the type of underlying model the Type Container is accessing. :return: Container
         type enum
 
-    *property* id*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* id*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Get an id string for the Type Container. This will be unique within a given analysis
         session, but may not be globally unique. :return: Identifier string
 
-    *property* mutable*: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*
+    *property* mutable*: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*
     :   Test if the Type Container supports mutable operations (add, rename, delete) :return:
         True if mutable
 
-    *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Get a user-friendly name for the Type Container. :return: Display name
 
     *property* platform*: [Platform](platform.md#binaryninja.platform.Platform "binaryninja.platform.Platform")*
@@ -233,19 +233,19 @@
         exactly one associated Platform (as opposed to, e.g. Type Libraries). :return:
         Associated Platform object
 
-    *property* type_count*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* type_count*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Get the number of types in a Type Container. :return: Number of types in the container
 
-    *property* type_ids*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* type_ids*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get all type ids in a Type Container. :return: List of all type ids
 
-    *property* type_names*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* type_names*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get all type names in a Type Container. :return: List of all type names
 
-    *property* type_names_and_ids*: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* type_names_and_ids*: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName")] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get a mapping of all type ids and type names in a Type Container. :return: Dict of type
         id -> type name
 
-    *property* types*: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)"), [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    *property* types*: [Mapping](https://docs.python.org/3/library/typing.html#typing.Mapping "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)"), [Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[QualifiedName](types.md#binaryninja.types.QualifiedName "binaryninja.types.QualifiedName"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
     :   Get a mapping of all types in a Type Container. :return: All types in a dict of type id
         -> (type name, type definition)

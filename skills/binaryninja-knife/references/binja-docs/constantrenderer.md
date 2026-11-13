@@ -8,8 +8,8 @@
 ## ConstantRenderer
 
 *class* ConstantRenderer[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class ConstantRenderer` allows custom rendering of constants in high level
     representations.
@@ -36,7 +36,7 @@
 
     __init__(*handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.__init__)
 
-    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.is_valid_for_type)
+    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.is_valid_for_type)
     :   Determines if the rendering methods should be called for the given expression type. It
         is optional to override this method. If the method isn’t overridden, all expression
         types are passed to the rendering methods.
@@ -53,12 +53,12 @@
         :   True if the constant should be passed to the rendering methods, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     register()[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.register)
     :   Registers the constant renderer.
 
-    render_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.render_constant)
+    render_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.render_constant)
     :   Can be overridden to render a constant that is not a pointer. The expression type and
         value of the expression are given. If the expression is not handled by this constant
         renderer, this method should return False.
@@ -71,8 +71,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
             - **tokens**
               ([*HighLevelILTokenEmitter*](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter
               "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) – Token emitter for
@@ -87,9 +87,9 @@
         :   True if the constant was rendered, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    render_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *symbol_display: [SymbolDisplayType](enums.md#binaryninja.enums.SymbolDisplayType "binaryninja.enums.SymbolDisplayType")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.render_constant_pointer)
+    render_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *symbol_display: [SymbolDisplayType](enums.md#binaryninja.enums.SymbolDisplayType "binaryninja.enums.SymbolDisplayType")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#ConstantRenderer.render_constant_pointer)
     :   Can be overridden to render a constant pointer. The expression type and value of the
         expression are given. If the expression is not handled by this constant renderer, this
         method should return False.
@@ -102,8 +102,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
             - **tokens**
               ([*HighLevelILTokenEmitter*](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter
               "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) – Token emitter for
@@ -120,9 +120,9 @@
         :   True if the constant was rendered, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    *property* name*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* name*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
 
     renderer_name *= None*
 
@@ -136,7 +136,7 @@
     :   Parameters:
         :   **handle** (*BNConstantRenderer*)
 
-    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.is_valid_for_type)
+    is_valid_for_type(*func: [HighLevelILFunction](highlevelil.md#binaryninja.highlevelil.HighLevelILFunction "binaryninja.highlevelil.HighLevelILFunction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.is_valid_for_type)
     :   Determines if the rendering methods should be called for the given expression type. It
         is optional to override this method. If the method isn’t overridden, all expression
         types are passed to the rendering methods.
@@ -153,9 +153,9 @@
         :   True if the constant should be passed to the rendering methods, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    render_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.render_constant)
+    render_constant(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.render_constant)
     :   Can be overridden to render a constant that is not a pointer. The expression type and
         value of the expression are given. If the expression is not handled by this constant
         renderer, this method should return False.
@@ -168,8 +168,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
             - **tokens**
               ([*HighLevelILTokenEmitter*](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter
               "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) – Token emitter for
@@ -184,9 +184,9 @@
         :   True if the constant was rendered, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    render_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *symbol_display: [SymbolDisplayType](enums.md#binaryninja.enums.SymbolDisplayType "binaryninja.enums.SymbolDisplayType")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.render_constant_pointer)
+    render_constant_pointer(*instr: [HighLevelILInstruction](highlevelil.md#binaryninja.highlevelil.HighLevelILInstruction "binaryninja.highlevelil.HighLevelILInstruction")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*, *val: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *tokens: [HighLevelILTokenEmitter](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter "binaryninja.languagerepresentation.HighLevelILTokenEmitter")*, *settings: [DisassemblySettings](function.md#binaryninja.function.DisassemblySettings "binaryninja.function.DisassemblySettings") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *symbol_display: [SymbolDisplayType](enums.md#binaryninja.enums.SymbolDisplayType "binaryninja.enums.SymbolDisplayType")*, *precedence: [OperatorPrecedence](enums.md#binaryninja.enums.OperatorPrecedence "binaryninja.enums.OperatorPrecedence")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/constantrenderer.html#CoreConstantRenderer.render_constant_pointer)
     :   Can be overridden to render a constant pointer. The expression type and value of the
         expression are given. If the expression is not handled by this constant renderer, this
         method should return False.
@@ -199,8 +199,8 @@
               "binaryninja.highlevelil.HighLevelILInstruction")) – High level expression
             - **type** ([*Type*](types.md#binaryninja.types.Type "binaryninja.types.Type")) – Type of
               the expression
-            - **val** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)")) – Value of the expression
+            - **val** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)")) – Value of the expression
             - **tokens**
               ([*HighLevelILTokenEmitter*](languagerepresentation.md#binaryninja.languagerepresentation.HighLevelILTokenEmitter
               "binaryninja.languagerepresentation.HighLevelILTokenEmitter")) – Token emitter for
@@ -217,4 +217,4 @@
         :   True if the constant was rendered, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")

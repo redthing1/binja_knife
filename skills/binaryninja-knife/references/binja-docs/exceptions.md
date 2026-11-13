@@ -10,31 +10,31 @@
 ## ExternalLinkException
 
 *exception* ExternalLinkException[[source]](https://api.binary.ninja/_modules/binaryninja/exceptions.html#ExternalLinkException)
-:   Bases: [`Exception`](https://docs.python.org/3/library/exceptions.html#Exception "(in
-    Python v3.14)")
+:   Bases: [`Exception`](https://docs.python.org/3/builtins/exceptions.html#Exception "(in
+    Python v3.15)")
 
     Exception raised when external library/location operations fail
 
 ## ILException
 
 *exception* ILException[[source]](https://api.binary.ninja/_modules/binaryninja/exceptions.html#ILException)
-:   Bases: [`Exception`](https://docs.python.org/3/library/exceptions.html#Exception "(in
-    Python v3.14)")
+:   Bases: [`Exception`](https://docs.python.org/3/builtins/exceptions.html#Exception "(in
+    Python v3.15)")
 
     Exception raised when IL operations fail
 
 ## ProjectException
 
 *exception* ProjectException[[source]](https://api.binary.ninja/_modules/binaryninja/exceptions.html#ProjectException)
-:   Bases: [`Exception`](https://docs.python.org/3/library/exceptions.html#Exception "(in
-    Python v3.14)")
+:   Bases: [`Exception`](https://docs.python.org/3/builtins/exceptions.html#Exception "(in
+    Python v3.15)")
 
     Exception raised when project operations fail
 
 ## RelocationWriteException
 
 *exception* RelocationWriteException[[source]](https://api.binary.ninja/_modules/binaryninja/exceptions.html#RelocationWriteException)
-:   Bases: [`Exception`](https://docs.python.org/3/library/exceptions.html#Exception "(in
-    Python v3.14)")
+:   Bases: [`Exception`](https://docs.python.org/3/builtins/exceptions.html#Exception "(in
+    Python v3.15)")
 
     Exception raised when a relocation fails to apply

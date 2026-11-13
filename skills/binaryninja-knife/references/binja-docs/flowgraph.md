@@ -36,15 +36,15 @@
 ## EdgeStyle
 
 *class* EdgeStyle[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#EdgeStyle)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*style: [EdgePenStyle](enums.md#binaryninja.enums.EdgePenStyle "binaryninja.enums.EdgePenStyle") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *width: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *theme_color: [ThemeColor](enums.md#binaryninja.enums.ThemeColor "binaryninja.enums.ThemeColor") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#EdgeStyle.__init__)
+    __init__(*style: [EdgePenStyle](enums.md#binaryninja.enums.EdgePenStyle "binaryninja.enums.EdgePenStyle") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *width: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *theme_color: [ThemeColor](enums.md#binaryninja.enums.ThemeColor "binaryninja.enums.ThemeColor") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#EdgeStyle.__init__)
     :   Parameters:
         :   - **style** ([*EdgePenStyle*](enums.md#binaryninja.enums.EdgePenStyle
               "binaryninja.enums.EdgePenStyle") *|* *None*)
-            - **width** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)") *|* *None*)
+            - **width** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)") *|* *None*)
             - **theme_color** ([*ThemeColor*](enums.md#binaryninja.enums.ThemeColor
               "binaryninja.enums.ThemeColor") *|* *None*)
 
@@ -53,8 +53,8 @@
 ## FlowGraph
 
 *class* FlowGraph[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraph)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class FlowGraph` implements a directed flow graph to be shown in the UI. This class
     allows plugins to create custom flow graphs and render them in the UI using the flow
@@ -91,7 +91,7 @@
     graphs that have disjoint subgraphs will not render correctly. This will be fixed in a
     future version.
 
-    __init__(*handle: LP_BNCustomFlowGraph | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraph.__init__)
+    __init__(*handle: LP_BNCustomFlowGraph | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraph.__init__)
     :   Parameters:
         :   **handle** (*LP_BNCustomFlowGraph* *|* *None*)
 
@@ -118,7 +118,7 @@
         :   Index of node
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
     clear()[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraph.clear)
     :   `clear` clears all the nodes in the graph
@@ -204,8 +204,8 @@
     :   `show` displays the graph in a new tab in the UI.
 
         Parameters:
-        :   **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – Title to show in the new tab
+        :   **title** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – Title to show in the new tab
 
     update()[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraph.update)
     :   `update` can be overridden by subclasses to allow a graph to be updated after it has
@@ -263,13 +263,13 @@
     *property* is_workflow_graph
     :   Set if flow graph should be treated as a workflow graph
 
-    *property* node_count*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    *property* node_count*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
     :   Number of nodes in graph (read-only)
 
     *property* nodes
     :   List of nodes in graph (read-only)
 
-    *property* render_layers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[RenderLayer](renderlayer.md#binaryninja.renderlayer.RenderLayer "binaryninja.renderlayer.RenderLayer")]*
+    *property* render_layers*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[RenderLayer](renderlayer.md#binaryninja.renderlayer.RenderLayer "binaryninja.renderlayer.RenderLayer")]*
     :   Get the list of Render Layers which will be applied to this Flow Graph, after it calls
         populate_nodes. :return: List of Render Layers
 
@@ -293,61 +293,62 @@
 ## FlowGraphEdge
 
 *class* FlowGraphEdge[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphEdge)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*branch_type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType") | [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *source: [FlowGraphNode](#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")*, *target: [FlowGraphNode](#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")*, *points: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)"), [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")]]*, *back_edge: [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")*, *style: [EdgeStyle](#binaryninja.flowgraph.EdgeStyle "binaryninja.flowgraph.EdgeStyle")*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphEdge.__init__)
+    __init__(*branch_type: [BranchType](enums.md#binaryninja.enums.BranchType "binaryninja.enums.BranchType") | [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *source: [FlowGraphNode](#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")*, *target: [FlowGraphNode](#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")*, *points: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)"), [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")]]*, *back_edge: [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")*, *style: [EdgeStyle](#binaryninja.flowgraph.EdgeStyle "binaryninja.flowgraph.EdgeStyle")*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphEdge.__init__)
     :   Parameters:
         :   - **branch_type** ([*BranchType*](enums.md#binaryninja.enums.BranchType
               "binaryninja.enums.BranchType") *|*
-              [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)"))
+              [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)"))
             - **source** ([*FlowGraphNode*](#binaryninja.flowgraph.FlowGraphNode
               "binaryninja.flowgraph.FlowGraphNode"))
             - **target** ([*FlowGraphNode*](#binaryninja.flowgraph.FlowGraphNode
               "binaryninja.flowgraph.FlowGraphNode"))
             - **points** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-              "(in Python v3.14)")*[*[*float*](https://docs.python.org/3/library/functions.html#float
-              "(in Python v3.14)")*,* [*float*](https://docs.python.org/3/library/functions.html#float
-              "(in Python v3.14)")*]**]*)
-            - **back_edge** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in
-              Python v3.14)"))
+              Python v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+              "(in Python v3.15)")*[*[*float*](https://docs.python.org/3/builtins/functions.html#float
+              "(in Python v3.15)")*,*
+              [*float*](https://docs.python.org/3/builtins/functions.html#float "(in Python
+              v3.15)")*]**]*)
+            - **back_edge** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in
+              Python v3.15)"))
             - **style** ([*EdgeStyle*](#binaryninja.flowgraph.EdgeStyle
               "binaryninja.flowgraph.EdgeStyle"))
 
 ## FlowGraphLayout
 
 *class* FlowGraphLayout[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*handle: BNCustomFlowGraphLayout | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout.__init__)
+    __init__(*handle: BNCustomFlowGraphLayout | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout.__init__)
     :   Parameters:
         :   **handle** (*BNCustomFlowGraphLayout* *|* *None*)
 
-    layout(*graph: [FlowGraph](#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *nodes: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FlowGraphNode](#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")]*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout.layout)
+    layout(*graph: [FlowGraph](#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *nodes: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[FlowGraphNode](#binaryninja.flowgraph.FlowGraphNode "binaryninja.flowgraph.FlowGraphNode")]*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout.layout)
     :   Parameters:
         :   - **graph** ([*FlowGraph*](#binaryninja.flowgraph.FlowGraph
               "binaryninja.flowgraph.FlowGraph"))
             - **nodes** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*FlowGraphNode*](#binaryninja.flowgraph.FlowGraphNode
+              Python v3.15)")*[*[*FlowGraphNode*](#binaryninja.flowgraph.FlowGraphNode
               "binaryninja.flowgraph.FlowGraphNode")*]*)
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    register(*name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout.register)
+    register(*name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayout.register)
     :   Register a custom layout with the API
 
         Parameters:
-        :   **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
 ## FlowGraphLayoutRequest
 
 *class* FlowGraphLayoutRequest[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayoutRequest)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     __init__(*graph: [FlowGraph](#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph")*, *callback=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphLayoutRequest.__init__)
     :   Parameters:
@@ -365,10 +366,10 @@
 ## FlowGraphNode
 
 *class* FlowGraphNode[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*graph: [FlowGraph](#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.__init__)
+    __init__(*graph: [FlowGraph](#binaryninja.flowgraph.FlowGraph "binaryninja.flowgraph.FlowGraph") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.__init__)
     :   Parameters:
         :   **graph** ([*FlowGraph*](#binaryninja.flowgraph.FlowGraph
             "binaryninja.flowgraph.FlowGraph") *|* *None*)
@@ -387,26 +388,27 @@
 
     is_valid_for_graph(*graph*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.is_valid_for_graph)
 
-    set_outgoing_edge_points(*edge_num: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *points: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)"), [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.set_outgoing_edge_points)
+    set_outgoing_edge_points(*edge_num: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *points: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)"), [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.set_outgoing_edge_points)
     :   Parameters:
-        :   - **edge_num** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **edge_num** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **points** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-              "(in Python v3.14)")*[*[*float*](https://docs.python.org/3/library/functions.html#float
-              "(in Python v3.14)")*,* [*float*](https://docs.python.org/3/library/functions.html#float
-              "(in Python v3.14)")*]**]*)
+              Python v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+              "(in Python v3.15)")*[*[*float*](https://docs.python.org/3/builtins/functions.html#float
+              "(in Python v3.15)")*,*
+              [*float*](https://docs.python.org/3/builtins/functions.html#float "(in Python
+              v3.15)")*]**]*)
 
-    set_visibility_region(*x: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *y: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *w: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *h: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.set_visibility_region)
+    set_visibility_region(*x: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *y: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *w: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *h: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*)[[source]](https://api.binary.ninja/_modules/binaryninja/flowgraph.html#FlowGraphNode.set_visibility_region)
     :   Parameters:
-        :   - **x** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **y** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **w** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
-            - **h** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **x** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **y** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **w** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
+            - **h** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
 
     *property* basic_block
     :   Basic block associated with this part of the flow graph (well not automatically cause
@@ -435,7 +437,7 @@
     *property* lines
     :   Flow graph block list of text lines
 
-    *property* outgoing_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[FlowGraphEdge](#binaryninja.flowgraph.FlowGraphEdge "binaryninja.flowgraph.FlowGraphEdge")]*
+    *property* outgoing_edges*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[FlowGraphEdge](#binaryninja.flowgraph.FlowGraphEdge "binaryninja.flowgraph.FlowGraphEdge")]*
     :   Flow graph block list of outgoing edges (read-only)
 
     *property* width

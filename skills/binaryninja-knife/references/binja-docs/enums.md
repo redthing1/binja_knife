@@ -129,7 +129,7 @@
 
 *class* ActionType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ActionType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -145,7 +145,7 @@
 
 *class* AnalysisMode[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#AnalysisMode)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -161,7 +161,7 @@
 
 *class* AnalysisSkipReason[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#AnalysisSkipReason)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -187,7 +187,7 @@
 
 *class* AnalysisState[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#AnalysisState)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -209,7 +209,7 @@
 
 *class* AnalysisWarningActionType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#AnalysisWarningActionType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -225,7 +225,7 @@
 
 *class* BaseAddressDetectionAnalysisMode[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BaseAddressDetectionAnalysisMode)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -237,7 +237,7 @@
 
 *class* BaseAddressDetectionConfidence[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BaseAddressDetectionConfidence)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -251,7 +251,7 @@
 
 *class* BaseAddressDetectionPOISetting[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BaseAddressDetectionPOISetting)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -265,7 +265,7 @@
 
 *class* BaseAddressDetectionPOIType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BaseAddressDetectionPOIType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -283,7 +283,7 @@
 
 *class* BinaryViewEventType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BinaryViewEventType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -295,7 +295,7 @@
 
 *class* BraceRequirement[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BraceRequirement)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -309,7 +309,7 @@
 
 *class* BranchType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BranchType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -337,7 +337,7 @@
 
 *class* BuiltinType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#BuiltinType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -359,7 +359,7 @@
 
 *class* CallingConventionName[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#CallingConventionName)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -389,7 +389,7 @@
 
 *class* CollaborationPermissionLevel[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#CollaborationPermissionLevel)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -403,7 +403,7 @@
 
 *class* DataFlowQueryOption[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DataFlowQueryOption)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -415,7 +415,7 @@
 
 *class* DeadStoreElimination[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DeadStoreElimination)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -429,7 +429,7 @@
 
 *class* DerivedStringLocationType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DerivedStringLocationType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -441,7 +441,7 @@
 
 *class* DisassemblyAddressMode[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DisassemblyAddressMode)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -471,7 +471,7 @@
 
 *class* DisassemblyBlockLabels[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DisassemblyBlockLabels)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -485,7 +485,7 @@
 
 *class* DisassemblyCallParameterHints[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DisassemblyCallParameterHints)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -499,7 +499,7 @@
 
 *class* DisassemblyOption[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#DisassemblyOption)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -545,7 +545,7 @@
 
 *class* EarlyReturn[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#EarlyReturn)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -563,7 +563,7 @@
 
 *class* EdgePenStyle[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#EdgePenStyle)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -583,7 +583,7 @@
 
 *class* Endianness[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#Endianness)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -595,7 +595,7 @@
 
 *class* ExprFolding[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ExprFolding)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -609,7 +609,7 @@
 
 *class* FindFlag[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FindFlag)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -623,7 +623,7 @@
 
 *class* FindRangeType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FindRangeType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -637,7 +637,7 @@
 
 *class* FindType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FindType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -655,7 +655,7 @@
 
 *class* FirmwareNinjaMemoryAccessType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FirmwareNinjaMemoryAccessType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -669,7 +669,7 @@
 
 *class* FirmwareNinjaMemoryHeuristic[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FirmwareNinjaMemoryHeuristic)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -691,7 +691,7 @@
 
 *class* FirmwareNinjaSectionAnalysisMode[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FirmwareNinjaSectionAnalysisMode)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -705,7 +705,7 @@
 
 *class* FirmwareNinjaSectionType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FirmwareNinjaSectionType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -721,7 +721,7 @@
 
 *class* FlagRole[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FlagRole)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -753,7 +753,7 @@
 
 *class* FlowGraphOption[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FlowGraphOption)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -777,7 +777,7 @@
 
 *class* ForceVersionReason[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ForceVersionReason)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -789,7 +789,7 @@
 
 *class* FormInputFieldType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FormInputFieldType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -819,7 +819,7 @@
 
 *class* FunctionAnalysisSkipOverride[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FunctionAnalysisSkipOverride)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -833,7 +833,7 @@
 
 *class* FunctionGraphType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FunctionGraphType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -865,7 +865,7 @@
 
 *class* FunctionUpdateType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#FunctionUpdateType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -879,7 +879,7 @@
 
 *class* HighLevelILOperation[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#HighLevelILOperation)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1171,7 +1171,7 @@
 
 *class* HighlightColorStyle[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#HighlightColorStyle)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1185,7 +1185,7 @@
 
 *class* HighlightStandardColor[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#HighlightStandardColor)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1213,7 +1213,7 @@
 
 *class* ILBranchDependence[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ILBranchDependence)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1227,7 +1227,7 @@
 
 *class* ILInstructionAttribute[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ILInstructionAttribute)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1265,7 +1265,7 @@
 
 *class* ImplicitRegisterExtend[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ImplicitRegisterExtend)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1279,7 +1279,7 @@
 
 *class* InlineDuringAnalysis[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#InlineDuringAnalysis)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1293,7 +1293,7 @@
 
 *class* InstructionTextTokenContext[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#InstructionTextTokenContext)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1331,7 +1331,7 @@
 
 *class* InstructionTextTokenType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#InstructionTextTokenType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1445,7 +1445,7 @@
 
 *class* IntegerDisplayType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#IntegerDisplayType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1485,7 +1485,7 @@
 
 *class* IntrinsicClass[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#IntrinsicClass)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1497,7 +1497,7 @@
 
 *class* LinearDisassemblyLineType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LinearDisassemblyLineType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1547,7 +1547,7 @@
 
 *class* LinearSweepAnalysisCapability[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LinearSweepAnalysisCapability)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1559,7 +1559,7 @@
 
 *class* LinearViewObjectIdentifierType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LinearViewObjectIdentifierType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1573,7 +1573,7 @@
 
 *class* LogLevel[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LogLevel)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1591,7 +1591,7 @@
 
 *class* LowLevelILFlagCondition[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LowLevelILFlagCondition)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1643,7 +1643,7 @@
 
 *class* LowLevelILOperation[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#LowLevelILOperation)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -1959,7 +1959,7 @@
 
 *class* MediumLevelILOperation[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MediumLevelILOperation)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2287,7 +2287,7 @@
 
 *class* MemberAccess[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MemberAccess)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2303,7 +2303,7 @@
 
 *class* MemberScope[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MemberScope)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2321,7 +2321,7 @@
 
 *class* MergeConflictDataType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MergeConflictDataType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2335,7 +2335,7 @@
 
 *class* MessageBoxButtonResult[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MessageBoxButtonResult)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2351,7 +2351,7 @@
 
 *class* MessageBoxButtonSet[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MessageBoxButtonSet)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2365,7 +2365,7 @@
 
 *class* MessageBoxIcon[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MessageBoxIcon)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2381,7 +2381,7 @@
 
 *class* MetadataStoreFlag[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MetadataStoreFlag)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2395,7 +2395,7 @@
 
 *class* MetadataType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#MetadataType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2421,7 +2421,7 @@
 
 *class* ModificationStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ModificationStatus)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2435,7 +2435,7 @@
 
 *class* NameType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#NameType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2623,7 +2623,7 @@
 
 *class* NamedTypeReferenceClass[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#NamedTypeReferenceClass)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2643,7 +2643,7 @@
 
 *class* OperatorPrecedence[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#OperatorPrecedence)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2691,7 +2691,7 @@
 
 *class* PluginCommandType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginCommandType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2723,7 +2723,7 @@
 
 *class* PluginDependencyConflictStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginDependencyConflictStatus)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2735,7 +2735,7 @@
 
 *class* PluginDependencyDecision[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginDependencyDecision)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2749,7 +2749,7 @@
 
 *class* PluginLoadPhase[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginLoadPhase)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2763,7 +2763,7 @@
 
 *class* PluginLoadStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginLoadStatus)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2777,7 +2777,7 @@
 
 *class* PluginOrigin[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginOrigin)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2791,7 +2791,7 @@
 
 *class* PluginStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginStatus)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2821,7 +2821,7 @@
 
 *class* PluginType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PluginType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2841,7 +2841,7 @@
 
 *class* PointerBaseType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PointerBaseType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2857,7 +2857,7 @@
 
 *class* PointerSuffix[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#PointerSuffix)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2875,7 +2875,7 @@
 
 *class* ReferenceType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ReferenceType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2891,7 +2891,7 @@
 
 *class* RegisterValueType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#RegisterValueType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2937,7 +2937,7 @@
 
 *class* RelocationType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#RelocationType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2957,7 +2957,7 @@
 
 *class* RemoteFileType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#RemoteFileType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2973,7 +2973,7 @@
 
 *class* RenderLayerDefaultEnableState[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#RenderLayerDefaultEnableState)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -2987,7 +2987,7 @@
 
 *class* ReportType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ReportType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3003,7 +3003,7 @@
 
 *class* SaveOption[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SaveOption)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3017,7 +3017,7 @@
 
 *class* ScopeType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ScopeType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3035,7 +3035,7 @@
 
 *class* ScriptingProviderExecuteResult[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ScriptingProviderExecuteResult)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3051,7 +3051,7 @@
 
 *class* ScriptingProviderInputReadyState[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ScriptingProviderInputReadyState)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3065,7 +3065,7 @@
 
 *class* SectionSemantics[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SectionSemantics)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3083,7 +3083,7 @@
 
 *class* SegmentFlag[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SegmentFlag)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3105,7 +3105,7 @@
 
 *class* SettingsScope[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SettingsScope)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3125,7 +3125,7 @@
 
 *class* SimilarityAnnotationType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityAnnotationType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3139,7 +3139,7 @@
 
 *class* SimilarityApplyStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityApplyStatus)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3157,7 +3157,7 @@
 
 *class* SimilarityEntityType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityEntityType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3167,7 +3167,7 @@
 
 *class* SimilarityViewType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SimilarityViewType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3179,7 +3179,7 @@
 
 *class* StringType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#StringType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3195,7 +3195,7 @@
 
 *class* StructureVariant[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#StructureVariant)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3209,7 +3209,7 @@
 
 *class* SwitchRecovery[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SwitchRecovery)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3223,7 +3223,7 @@
 
 *class* SymbolBinding[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SymbolBinding)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3239,7 +3239,7 @@
 
 *class* SymbolDisplayResult[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SymbolDisplayResult)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3253,7 +3253,7 @@
 
 *class* SymbolDisplayType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SymbolDisplayType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3267,7 +3267,7 @@
 
 *class* SymbolType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SymbolType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3293,7 +3293,7 @@
 
 *class* SyncStatus[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#SyncStatus)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3315,7 +3315,7 @@
 
 *class* TagReferenceType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TagReferenceType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3329,7 +3329,7 @@
 
 *class* TagTypeType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TagTypeType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3343,7 +3343,7 @@
 
 *class* ThemeColor[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ThemeColor)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3605,7 +3605,7 @@
 
 *class* TokenEscapingType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TokenEscapingType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3621,7 +3621,7 @@
 
 *class* TransformCapabilities[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TransformCapabilities)
 :   Bases: [`IntFlag`](https://docs.python.org/3/library/enum.html#enum.IntFlag "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3635,7 +3635,7 @@
 
 *class* TransformResult[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TransformResult)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3651,7 +3651,7 @@
 
 *class* TransformSessionMode[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TransformSessionMode)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3665,7 +3665,7 @@
 
 *class* TransformType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TransformType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3691,7 +3691,7 @@
 
 *class* TypeClass[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TypeClass)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3727,7 +3727,7 @@
 
 *class* TypeContainerType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TypeContainerType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3753,7 +3753,7 @@
 
 *class* TypeDefinitionLineType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TypeDefinitionLineType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3783,7 +3783,7 @@
 
 *class* TypeParserErrorSeverity[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TypeParserErrorSeverity)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3803,7 +3803,7 @@
 
 *class* TypeParserOption[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TypeParserOption)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3815,7 +3815,7 @@
 
 *class* TypeReferenceType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#TypeReferenceType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3829,7 +3829,7 @@
 
 *class* UpdateResult[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#UpdateResult)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3845,7 +3845,7 @@
 
 *class* ValueLocationSource[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#ValueLocationSource)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 
@@ -3861,7 +3861,7 @@
 
 *class* VariableSourceType[[source]](https://api.binary.ninja/_modules/binaryninja/enums.html#VariableSourceType)
 :   Bases: [`IntEnum`](https://docs.python.org/3/library/enum.html#enum.IntEnum "(in Python
-    v3.14)")
+    v3.15)")
 
     __new__(*value*)
 

@@ -7,8 +7,8 @@
 ## Settings
 
 *class* Settings[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     [`Settings`](#binaryninja.settings.Settings "binaryninja.settings.Settings") provides a
     way to define and access settings in a hierarchical fashion. The value of a setting can
@@ -131,40 +131,40 @@
     True
     ```
 
-    __init__(*instance_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.__init__)
+    __init__(*instance_id: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle=None*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.__init__)
     :   Parameters:
-        :   **instance_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)") *|* *None*)
+        :   **instance_id** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)") *|* *None*)
 
-    contains(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.contains)
+    contains(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.contains)
     :   `contains` determine if a setting identifier exists in the active settings schema
 
         Parameters:
-        :   **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – the setting identifier
+        :   **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")) – the setting identifier
 
         Returns:
         :   True if the identifier exists in this active settings schema, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    deserialize_schema(*schema: str*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*, *merge: bool = True*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.deserialize_schema)
+    deserialize_schema(*schema: str*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*, *merge: bool = True*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.deserialize_schema)
     :   Parameters:
-        :   - **schema** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **schema** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **scope** ([*SettingsScope*](enums.md#binaryninja.enums.SettingsScope
               "binaryninja.enums.SettingsScope"))
-            - **merge** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)"))
+            - **merge** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python
+              v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    deserialize_settings(*contents: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.deserialize_settings)
+    deserialize_settings(*contents: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.deserialize_settings)
     :   Parameters:
-        :   - **contents** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **contents** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -173,24 +173,24 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    get_bool(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_bool)
+    get_bool(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_bool)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
               *|* *None*)
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     get_bool_with_scope(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>) -> (<class 'bool'>*, *<flag 'SettingsScope'>*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_bool_with_scope)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -201,22 +201,22 @@
         Return type:
         :   (<class ‘bool’>, <flag ‘SettingsScope’>)
 
-    get_double(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [float](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_double)
+    get_double(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [float](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_double)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
               *|* *None*)
 
         Return type:
-        :   [*float*](https://docs.python.org/3/library/functions.html#float "(in Python v3.14)")
+        :   [*float*](https://docs.python.org/3/builtins/functions.html#float "(in Python v3.15)")
 
     get_double_with_scope(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>) -> (<class 'float'>*, *<flag 'SettingsScope'>*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_double_with_scope)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -227,22 +227,22 @@
         Return type:
         :   (<class ‘float’>, <flag ‘SettingsScope’>)
 
-    get_integer(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_integer)
+    get_integer(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_integer)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
               *|* *None*)
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
     get_integer_with_scope(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>) -> (<class 'int'>*, *<flag 'SettingsScope'>*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_integer_with_scope)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -253,22 +253,22 @@
         Return type:
         :   (<class ‘int’>, <flag ‘SettingsScope’>)
 
-    get_json(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_json)
+    get_json(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_json)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
               *|* *None*)
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
 
     get_json_with_scope(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>) -> (<class 'str'>*, *<flag 'SettingsScope'>*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_json_with_scope)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -279,22 +279,22 @@
         Return type:
         :   (<class ‘str’>, <flag ‘SettingsScope’>)
 
-    get_string(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_string)
+    get_string(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_string)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
               *|* *None*)
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
 
-    get_string_list(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_string_list)
+    get_string_list(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *resource: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_string_list)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -302,13 +302,13 @@
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")]
+            v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")]
 
     get_string_list_with_scope(*key: str, resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None, scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>) -> (typing.List[str], <flag 'SettingsScope'>*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_string_list_with_scope)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -318,13 +318,13 @@
 
         Return type:
         :   ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")], <flag ‘SettingsScope’>)
+            v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")], <flag ‘SettingsScope’>)
 
     get_string_with_scope(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>) -> (<class 'str'>*, *<flag 'SettingsScope'>*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.get_string_with_scope)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -335,7 +335,7 @@
         Return type:
         :   (<class ‘str’>, <flag ‘SettingsScope’>)
 
-    is_empty(*resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.is_empty)
+    is_empty(*resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.is_empty)
     :   `is_empty` determine if the active settings schema is empty
 
         Parameters:
@@ -350,68 +350,68 @@
         :   True if the active settings schema is empty, False otherwise
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    keys() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.keys)
+    keys() → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.keys)
     :   `keys` retrieve the list of setting identifiers in the active settings schema
 
         Returns:
         :   list of setting identifiers
 
         Return type:
-        :   [*list*](https://docs.python.org/3/library/stdtypes.html#list "(in Python
-            v3.14)")([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)"))
+        :   [*list*](https://docs.python.org/3/builtins/stdtypes.html#list "(in Python
+            v3.15)")([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)"))
 
-    load_settings_file(*filename: str = ''*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*, *view: ~binaryninja.binaryview.BinaryView | None = None*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.load_settings_file)
+    load_settings_file(*filename: str = ''*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*, *view: ~binaryninja.binaryview.BinaryView | None = None*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.load_settings_file)
     :   Parameters:
-        :   - **filename** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **filename** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **scope** ([*SettingsScope*](enums.md#binaryninja.enums.SettingsScope
               "binaryninja.enums.SettingsScope"))
             - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|* *None*)
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    query_property_string(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *property_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.query_property_string)
+    query_property_string(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *property_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.query_property_string)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **property_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **property_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)"))
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
 
-    query_property_string_list(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *property_name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.query_property_string_list)
+    query_property_string_list(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *property_name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.query_property_string_list)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **property_name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **property_name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)"))
 
         Return type:
         :   [*List*](https://docs.python.org/3/library/typing.html#typing.List "(in Python
-            v3.14)")[[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")]
+            v3.15)")[[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+            v3.15)")]
 
-    register_group(*group: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *title: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.register_group)
+    register_group(*group: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *title: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.register_group)
     :   `register_group` registers a group in the schema for this
         [`Settings`](#binaryninja.settings.Settings "binaryninja.settings.Settings") instance
 
         Parameters:
-        :   - **group** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – a unique identifier
-            - **title** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – a user friendly name appropriate for UI presentation
+        :   - **group** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – a unique identifier
+            - **title** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – a user friendly name appropriate for UI presentation
 
         Returns:
         :   True on success, False on failure.
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
         Example:
         :   ```
@@ -420,21 +420,21 @@
             >>>
             ```
 
-    register_setting(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *properties: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.register_setting)
+    register_setting(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *properties: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.register_setting)
     :   `register_setting` registers a new setting with this
         [`Settings`](#binaryninja.settings.Settings "binaryninja.settings.Settings") instance
 
         Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – a unique setting identifier in the form **‘<group>.<name>’**
-            - **properties** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)")) – a JSON string describes the setting schema
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – a unique setting identifier in the form **‘<group>.<name>’**
+            - **properties** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)")) – a JSON string describes the setting schema
 
         Returns:
         :   True on success, False on failure.
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
         Example:
         :   ```
@@ -444,10 +444,10 @@
             True
             ```
 
-    reset(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.reset)
+    reset(*key: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.reset)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -456,9 +456,9 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    reset_all(*resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*, *schema_only=True*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.reset_all)
+    reset_all(*resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*, *schema_only=True*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.reset_all)
     :   Parameters:
         :   - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
@@ -468,13 +468,13 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    serialize_schema() → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.serialize_schema)
+    serialize_schema() → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.serialize_schema)
     :   Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
 
-    serialize_settings(*resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.serialize_settings)
+    serialize_settings(*resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.serialize_settings)
     :   Parameters:
         :   - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
@@ -484,14 +484,14 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")
+        :   [*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")
 
-    set_bool(*key: str*, *value: bool*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_bool)
+    set_bool(*key: str*, *value: bool*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_bool)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **value** ([*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **value** ([*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -500,14 +500,14 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_double(*key: str*, *value: float*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_double)
+    set_double(*key: str*, *value: float*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_double)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **value** ([*float*](https://docs.python.org/3/library/functions.html#float "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **value** ([*float*](https://docs.python.org/3/builtins/functions.html#float "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -516,14 +516,14 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_integer(*key: str*, *value: int*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_integer)
+    set_integer(*key: str*, *value: int*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_integer)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **value** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **value** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -532,14 +532,14 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_json(*key: str*, *value: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_json)
+    set_json(*key: str*, *value: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_json)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **value** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **value** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -548,9 +548,9 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_resource_id(*resource_id: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_resource_id)
+    set_resource_id(*resource_id: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") = ''*)[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_resource_id)
     :   `set_resource_id` Sets the resource identifier for this class:Settings instance. When
         accessing setting values at the `SettingsResourceScope` level, the resource identifier
         is passed along through the backing store interface.
@@ -564,18 +564,18 @@
         available during `BinaryView` creation and initialization.
 
         Parameters:
-        :   **resource_id** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-            v3.14)")) – a unique identifier
+        :   **resource_id** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+            Python v3.15)")) – a unique identifier
 
         Return type:
         :   *None*
 
-    set_string(*key: str*, *value: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_string)
+    set_string(*key: str*, *value: str*, *resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None*, *scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_string)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **value** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **value** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -584,15 +584,15 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    set_string_list(*key: str, value: ~typing.List[str], resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None, scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_string_list)
+    set_string_list(*key: str, value: ~typing.List[str], resource: ~binaryninja.binaryview.BinaryView | ~binaryninja.function.Function | None = None, scope: ~binaryninja.enums.SettingsScope = <SettingsScope.SettingsAutoScope: 1>*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.set_string_list)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
             - **value** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)")*]*)
+              Python v3.15)")*[*[*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)")*]*)
             - **resource** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView") *|*
               [*Function*](function.md#binaryninja.function.Function "binaryninja.function.Function")
@@ -601,20 +601,20 @@
               "binaryninja.enums.SettingsScope"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    update_property(*key: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*, *setting_property: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.update_property)
+    update_property(*key: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*, *setting_property: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/settings.html#Settings.update_property)
     :   Parameters:
-        :   - **key** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)"))
-            - **setting_property** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in
-              Python v3.14)"))
+        :   - **key** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)"))
+            - **setting_property** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in
+              Python v3.15)"))
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     default_handle *= <binaryninja._binaryninjacore.LP_BNSettings object>*
 
-    *property* instance_id*: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)")*
+    *property* instance_id*: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)")*
     :   Returns the `instance_id` for this [`Settings`](#binaryninja.settings.Settings
         "binaryninja.settings.Settings") repository (read-only)

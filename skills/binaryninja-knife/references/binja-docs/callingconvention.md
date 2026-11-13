@@ -9,39 +9,39 @@
 ## CallLayout
 
 *class* CallLayout[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallLayout)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
-    __init__(*parameters: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *stack_adjustment: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*, *reg_stack_adjustments: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterIndex, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*) → [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")
+    __init__(*parameters: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *stack_adjustment: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*, *reg_stack_adjustments: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[RegisterIndex, [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*) → [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")
     :   Parameters:
         :   - **parameters** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*]*)
             - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*)
-            - **stack_adjustment** ([*int*](https://docs.python.org/3/library/functions.html#int "(in
-              Python v3.14)"))
+            - **stack_adjustment** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
             - **reg_stack_adjustments**
               ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python
-              v3.14)")*[**RegisterIndex**,*
-              [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*]*)
+              v3.15)")*[**RegisterIndex**,*
+              [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*]*)
 
         Return type:
         :   *None*
 
-    parameters*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*
+    parameters*: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*
 
-    reg_stack_adjustments*: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterIndex, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")]*
+    reg_stack_adjustments*: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[RegisterIndex, [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")]*
 
-    return_value*: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*
+    return_value*: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*
 
-    stack_adjustment*: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*
+    stack_adjustment*: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*
 
 ## CallingConvention
 
 *class* CallingConvention[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     `class CallingConvention` describes how parameters, return values, and the stack are
     handled when a function is called. Subclasses of `CallingConvention` define the behavior
@@ -93,16 +93,16 @@
         - **stack_args_pushed_left_to_right** – Whether arguments passed on the stack are pushed
           left-to-right, as opposed to the more common right-to-left order.
 
-    __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *name: [str](https://docs.python.org/3/library/stdtypes.html#str "(in Python v3.14)") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *handle=None*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.__init__)
+    __init__(*arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *name: [str](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python v3.15)") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *handle=None*, *confidence: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.__init__)
     :   Parameters:
         :   - **arch** ([*Architecture*](architecture.md#binaryninja.architecture.Architecture
               "binaryninja.architecture.Architecture") *|* *None*)
-            - **name** ([*str*](https://docs.python.org/3/library/stdtypes.html#str "(in Python
-              v3.14)") *|* *None*)
-            - **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-              v3.14)"))
+            - **name** ([*str*](https://docs.python.org/3/builtins/stdtypes.html#str "(in Python
+              v3.15)") *|* *None*)
+            - **confidence** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+              Python v3.15)"))
 
-    default_is_arg_type_reg_compatible(*type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.default_is_arg_type_reg_compatible)
+    default_is_arg_type_reg_compatible(*type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.default_is_arg_type_reg_compatible)
     :   `default_is_arg_type_reg_compatible` is the default implementation of
         [`is_arg_type_reg_compatible`](#binaryninja.callingconvention.CallingConvention.is_arg_type_reg_compatible
         "binaryninja.callingconvention.CallingConvention.is_arg_type_reg_compatible"). The
@@ -117,9 +117,9 @@
         :   whether the argument type is register compatible
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    default_is_return_type_reg_compatible(*type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.default_is_return_type_reg_compatible)
+    default_is_return_type_reg_compatible(*type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.default_is_return_type_reg_compatible)
     :   `default_is_return_type_reg_compatible` is the default implementation of
         [`is_return_type_reg_compatible`](#binaryninja.callingconvention.CallingConvention.is_return_type_reg_compatible
         "binaryninja.callingconvention.CallingConvention.is_return_type_reg_compatible"). The
@@ -135,9 +135,9 @@
         :   whether the return type is register compatible
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    get_call_layout(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: types.ReturnValueOrType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: types.ParamsType*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CallLayout](#binaryninja.callingconvention.CallLayout "binaryninja.callingconvention.CallLayout")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_call_layout)
+    get_call_layout(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: types.ReturnValueOrType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: types.ParamsType*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CallLayout](#binaryninja.callingconvention.CallLayout "binaryninja.callingconvention.CallLayout")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_call_layout)
     :   `get_call_layout` computes the complete call layout (parameter locations, return value
         location, and stack adjustments) for a call with the given return value and parameters.
         It is recommended to only override this method if the calling convention behavior cannot
@@ -165,7 +165,7 @@
               "binaryninja.function.Function")) – function used to resolve the architecture of the
               resulting locations
             - **permitted_regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
+              "(in Python v3.15)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
               register indices that argument passing is restricted to; if not provided, the calling
               convention’s default registers are used
 
@@ -176,7 +176,7 @@
         :   [*CallLayout*](#binaryninja.callingconvention.CallLayout
             "binaryninja.callingconvention.CallLayout")
 
-    get_default_call_layout(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: types.ReturnValueOrType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: types.ParamsType*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CallLayout](#binaryninja.callingconvention.CallLayout "binaryninja.callingconvention.CallLayout")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_call_layout)
+    get_default_call_layout(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: types.ReturnValueOrType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: types.ParamsType*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CallLayout](#binaryninja.callingconvention.CallLayout "binaryninja.callingconvention.CallLayout")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_call_layout)
     :   `get_default_call_layout` is the default implementation of
         [`get_call_layout`](#binaryninja.callingconvention.CallingConvention.get_call_layout
         "binaryninja.callingconvention.CallingConvention.get_call_layout"). The default
@@ -201,7 +201,7 @@
               "binaryninja.function.Function")) – function used to resolve the architecture of the
               resulting locations
             - **permitted_regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
+              "(in Python v3.15)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
               register indices that argument passing is restricted to; if not provided, the calling
               convention’s default registers are used
 
@@ -226,7 +226,7 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    get_default_parameter_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: types.ParamsType*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_parameter_locations)
+    get_default_parameter_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: types.ParamsType*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_parameter_locations)
     :   `get_default_parameter_locations` is the default implementation of
         [`get_parameter_locations`](#binaryninja.callingconvention.CallingConvention.get_parameter_locations
         "binaryninja.callingconvention.CallingConvention.get_parameter_locations"). The default
@@ -253,7 +253,7 @@
               "binaryninja.architecture.Architecture")) – architecture used to resolve the resulting
               locations
             - **permitted_regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
+              "(in Python v3.15)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
               register indices that argument passing is restricted to; if not provided, the calling
               convention’s default registers are used
 
@@ -264,7 +264,7 @@
         :   *List*[[*ValueLocation*](types.md#binaryninja.types.ValueLocation
             "binaryninja.types.ValueLocation")]
 
-    get_default_parameter_ordering_for_variables(*params: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_parameter_ordering_for_variables)
+    get_default_parameter_ordering_for_variables(*params: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_parameter_ordering_for_variables)
     :   `get_default_parameter_ordering_for_variables` is the default implementation of
         [`get_parameter_ordering_for_variables`](#binaryninja.callingconvention.CallingConvention.get_parameter_ordering_for_variables
         "binaryninja.callingconvention.CallingConvention.get_parameter_ordering_for_variables").
@@ -275,7 +275,7 @@
 
         Parameters:
         :   **params** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in
-            Python v3.14)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+            Python v3.15)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")*,* [*Type*](types.md#binaryninja.types.Type
             "binaryninja.types.Type")*]*) – map of parameter variables to their types
 
@@ -286,7 +286,7 @@
         :   *List*[[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")]
 
-    get_default_register_stack_adjustments(*return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterIndex, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_register_stack_adjustments)
+    get_default_register_stack_adjustments(*return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[RegisterIndex, [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_register_stack_adjustments)
     :   `get_default_register_stack_adjustments` is the default implementation of
         [`get_register_stack_adjustments`](#binaryninja.callingconvention.CallingConvention.get_register_stack_adjustments
         "binaryninja.callingconvention.CallingConvention.get_register_stack_adjustments"). The
@@ -297,17 +297,17 @@
         :   - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*) – optional location of the return value
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*]*) – locations of the parameters
 
         Returns:
         :   a map from register stack index to its adjustment
 
         Return type:
-        :   *Dict*[RegisterIndex, [*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")]
+        :   *Dict*[RegisterIndex, [*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)")]
 
-    get_default_return_value_location(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: types.ReturnValueOrType*) → [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_return_value_location)
+    get_default_return_value_location(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: types.ReturnValueOrType*) → [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_return_value_location)
     :   `get_default_return_value_location` is the default implementation of
         [`get_return_value_location`](#binaryninja.callingconvention.CallingConvention.get_return_value_location
         "binaryninja.callingconvention.CallingConvention.get_return_value_location"). The
@@ -335,7 +335,7 @@
         :   *Optional*[[*ValueLocation*](types.md#binaryninja.types.ValueLocation
             "binaryninja.types.ValueLocation")]
 
-    get_default_stack_adjustment_for_locations(*return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_stack_adjustment_for_locations)
+    get_default_stack_adjustment_for_locations(*return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_default_stack_adjustment_for_locations)
     :   `get_default_stack_adjustment_for_locations` is the default implementation of
         [`get_stack_adjustment_for_locations`](#binaryninja.callingconvention.CallingConvention.get_stack_adjustment_for_locations
         "binaryninja.callingconvention.CallingConvention.get_stack_adjustment_for_locations").
@@ -348,8 +348,8 @@
         :   - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*) – optional location of the return value
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-              "(in Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+              "(in Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*,* [*Type*](types.md#binaryninja.types.Type
               "binaryninja.types.Type")*]**]*) – list of `(location, type)` tuples for the parameters
 
@@ -357,7 +357,7 @@
         :   the stack adjustment in bytes
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
     get_incoming_flag_value(*reg: RegisterName*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_incoming_flag_value)
     :   `get_incoming_flag_value` gets the known value of a flag on entry to a function.
@@ -389,7 +389,7 @@
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
             "binaryninja.variable.RegisterValue")
 
-    get_incoming_var_for_parameter_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_incoming_var_for_parameter_var)
+    get_incoming_var_for_parameter_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_incoming_var_for_parameter_var)
     :   `get_incoming_var_for_parameter_var` gets the incoming variable that corresponds to the
         given parameter variable. This is the inverse of
         [`get_parameter_var_for_incoming_var`](#binaryninja.callingconvention.CallingConvention.get_parameter_var_for_incoming_var
@@ -419,7 +419,7 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    get_parameter_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: types.ParamsType*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_parameter_locations)
+    get_parameter_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: types.ParamsType*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_parameter_locations)
     :   `get_parameter_locations` computes the locations of the parameters for a call with the
         given return value and parameters.
 
@@ -439,7 +439,7 @@
               "binaryninja.architecture.Architecture")) – architecture used to resolve the resulting
               locations
             - **permitted_regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
+              "(in Python v3.15)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
               register indices that argument passing is restricted to; if not provided, the calling
               convention’s default registers are used
 
@@ -450,7 +450,7 @@
         :   *List*[[*ValueLocation*](types.md#binaryninja.types.ValueLocation
             "binaryninja.types.ValueLocation")]
 
-    get_parameter_ordering_for_variables(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_parameter_ordering_for_variables)
+    get_parameter_ordering_for_variables(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_parameter_ordering_for_variables)
     :   `get_parameter_ordering_for_variables` computes the order in which the given parameter
         variables are passed. Used by the heuristic calling convention detection to create a
         function type from a list of parameter variables.
@@ -463,7 +463,7 @@
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView")) – binary view providing type information
             - **params** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in
-              Python v3.14)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+              Python v3.15)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
               "binaryninja.variable.CoreVariable")*,* [*Type*](types.md#binaryninja.types.Type
               "binaryninja.types.Type")*]*) – map of parameter variables to their types
 
@@ -474,7 +474,7 @@
         :   *List*[[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")]
 
-    get_parameter_var_for_incoming_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_parameter_var_for_incoming_var)
+    get_parameter_var_for_incoming_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_parameter_var_for_incoming_var)
     :   `get_parameter_var_for_incoming_var` gets the parameter variable that corresponds to the
         given incoming variable. This is the inverse of
         [`get_incoming_var_for_parameter_var`](#binaryninja.callingconvention.CallingConvention.get_incoming_var_for_parameter_var
@@ -493,7 +493,7 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    get_register_stack_adjustments(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterIndex, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_register_stack_adjustments)
+    get_register_stack_adjustments(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[RegisterIndex, [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_register_stack_adjustments)
     :   `get_register_stack_adjustments` computes the per-register-stack adjustments (for
         architectures with register stacks, such as the x87 floating point stack) for a call
         with the given return value and parameter locations.
@@ -508,17 +508,17 @@
             - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*) – optional location of the return value
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*]*) – locations of the parameters
 
         Returns:
         :   a map from register stack index to its adjustment
 
         Return type:
-        :   *Dict*[RegisterIndex, [*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")]
+        :   *Dict*[RegisterIndex, [*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)")]
 
-    get_return_value_location(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: types.ReturnValueOrType*) → [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_return_value_location)
+    get_return_value_location(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: types.ReturnValueOrType*) → [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_return_value_location)
     :   `get_return_value_location` computes the location of the return value for the given
         return value type and location structure.
 
@@ -538,7 +538,7 @@
         :   *Optional*[[*ValueLocation*](types.md#binaryninja.types.ValueLocation
             "binaryninja.types.ValueLocation")]
 
-    get_returned_indirect_return_value_pointer() → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_returned_indirect_return_value_pointer)
+    get_returned_indirect_return_value_pointer() → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_returned_indirect_return_value_pointer)
     :   `get_returned_indirect_return_value_pointer` gets the location in which the hidden
         indirect return value pointer is returned to the caller, for calling conventions that
         return it.
@@ -551,7 +551,7 @@
         :   *Optional*[[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")]
 
-    get_stack_adjustment_for_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_stack_adjustment_for_locations)
+    get_stack_adjustment_for_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.get_stack_adjustment_for_locations)
     :   `get_stack_adjustment_for_locations` computes the stack adjustment applied on return for
         a call with the given return value and parameter locations.
 
@@ -565,8 +565,8 @@
             - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*) – optional location of the return value
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-              "(in Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+              "(in Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*,* [*Type*](types.md#binaryninja.types.Type
               "binaryninja.types.Type")*]**]*) – list of `(location, type)` tuples for the parameters
 
@@ -574,9 +574,9 @@
         :   the stack adjustment in bytes
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
-    is_arg_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.is_arg_type_reg_compatible)
+    is_arg_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.is_arg_type_reg_compatible)
     :   `is_arg_type_reg_compatible` determines whether a value of the given type can be passed
         as an argument in registers.
 
@@ -590,9 +590,9 @@
         :   whether the argument type is register compatible
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    is_non_reg_arg_indirect(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.is_non_reg_arg_indirect)
+    is_non_reg_arg_indirect(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.is_non_reg_arg_indirect)
     :   `is_non_reg_arg_indirect` determines whether an argument that cannot be passed in
         registers is passed indirectly by pointer as opposed to being passed directly on the
         stack.
@@ -607,9 +607,9 @@
         :   whether the non-register argument is passed indirectly by pointer
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    is_return_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.is_return_type_reg_compatible)
+    is_return_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.is_return_type_reg_compatible)
     :   `is_return_type_reg_compatible` determines whether a value of the given type can be
         returned in registers, as opposed to being returned indirectly through memory.
 
@@ -623,7 +623,7 @@
         :   whether the return type is register compatible
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
     perform_get_incoming_flag_value(*flag: FlagName*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function")*) → [RegisterValue](variable.md#binaryninja.variable.RegisterValue "binaryninja.variable.RegisterValue")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.perform_get_incoming_flag_value)
     :   Deprecated, override get_incoming_flag_value instead.
@@ -649,7 +649,7 @@
         :   [*RegisterValue*](variable.md#binaryninja.variable.RegisterValue
             "binaryninja.variable.RegisterValue")
 
-    perform_get_incoming_var_for_parameter_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.perform_get_incoming_var_for_parameter_var)
+    perform_get_incoming_var_for_parameter_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.perform_get_incoming_var_for_parameter_var)
     :   Deprecated, override get_incoming_var_for_parameter_var instead.
 
         Parameters:
@@ -662,7 +662,7 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    perform_get_parameter_var_for_incoming_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.perform_get_parameter_var_for_incoming_var)
+    perform_get_parameter_var_for_incoming_var(*in_var: [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.perform_get_parameter_var_for_incoming_var)
     :   Deprecated, override get_parameter_var_for_incoming_var instead.
 
         Parameters:
@@ -675,10 +675,10 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    with_confidence(*confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")*) → [CallingConvention](#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.with_confidence)
+    with_confidence(*confidence: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")*) → [CallingConvention](#binaryninja.callingconvention.CallingConvention "binaryninja.callingconvention.CallingConvention")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CallingConvention.with_confidence)
     :   Parameters:
-        :   **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **confidence** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)"))
 
         Return type:
         :   [*CallingConvention*](#binaryninja.callingconvention.CallingConvention
@@ -743,12 +743,12 @@
 :   Bases: [`CallingConvention`](#binaryninja.callingconvention.CallingConvention
     "binaryninja.callingconvention.CallingConvention")
 
-    __init__(*handle*, *confidence: [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.__init__)
+    __init__(*handle*, *confidence: [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)") = 255*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.__init__)
     :   Parameters:
-        :   **confidence** ([*int*](https://docs.python.org/3/library/functions.html#int "(in Python
-            v3.14)"))
+        :   **confidence** ([*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)"))
 
-    get_call_layout(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: types.ReturnValueOrType | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: types.ParamsType*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [CallLayout](#binaryninja.callingconvention.CallLayout "binaryninja.callingconvention.CallLayout")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_call_layout)
+    get_call_layout(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: types.ReturnValueOrType | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: types.ParamsType*, *func: [Function](function.md#binaryninja.function.Function "binaryninja.function.Function") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [CallLayout](#binaryninja.callingconvention.CallLayout "binaryninja.callingconvention.CallLayout")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_call_layout)
     :   `get_call_layout` computes the complete call layout (parameter locations, return value
         location, and stack adjustments) for a call with the given return value and parameters.
         It is recommended to only override this method if the calling convention behavior cannot
@@ -774,7 +774,7 @@
               "binaryninja.function.Function")) – function used to resolve the architecture of the
               resulting locations
             - **permitted_regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
+              "(in Python v3.15)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
               register indices that argument passing is restricted to; if not provided, the calling
               convention’s default registers are used
 
@@ -846,7 +846,7 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    get_parameter_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: types.ParamsType*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_parameter_locations)
+    get_parameter_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: types.ParamsType*, *arch: [Architecture](architecture.md#binaryninja.architecture.Architecture "binaryninja.architecture.Architecture") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*, *permitted_regs: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[architecture.RegisterIndex] | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)") = None*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_parameter_locations)
     :   `get_parameter_locations` computes the locations of the parameters for a call with the
         given return value and parameters.
 
@@ -864,7 +864,7 @@
               "binaryninja.architecture.Architecture")) – architecture used to resolve the resulting
               locations
             - **permitted_regs** ([*List*](https://docs.python.org/3/library/typing.html#typing.List
-              "(in Python v3.14)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
+              "(in Python v3.15)")*[**architecture.RegisterIndex**]* *|* *None*) – optional set of
               register indices that argument passing is restricted to; if not provided, the calling
               convention’s default registers are used
 
@@ -875,7 +875,7 @@
         :   *List*[[*ValueLocation*](types.md#binaryninja.types.ValueLocation
             "binaryninja.types.ValueLocation")]
 
-    get_parameter_ordering_for_variables(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_parameter_ordering_for_variables)
+    get_parameter_ordering_for_variables(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]*) → [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_parameter_ordering_for_variables)
     :   `get_parameter_ordering_for_variables` computes the order in which the given parameter
         variables are passed. Used by the heuristic calling convention detection to create a
         function type from a list of parameter variables.
@@ -886,7 +886,7 @@
         :   - **view** ([*BinaryView*](binaryview.md#binaryninja.binaryview.BinaryView
               "binaryninja.binaryview.BinaryView")) – binary view providing type information
             - **params** ([*Dict*](https://docs.python.org/3/library/typing.html#typing.Dict "(in
-              Python v3.14)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
+              Python v3.15)")*[*[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
               "binaryninja.variable.CoreVariable")*,* [*Type*](types.md#binaryninja.types.Type
               "binaryninja.types.Type")*]*) – map of parameter variables to their types
 
@@ -916,7 +916,7 @@
         :   [*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")
 
-    get_register_stack_adjustments(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.14)")[RegisterIndex, [int](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_register_stack_adjustments)
+    get_register_stack_adjustments(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation")]*) → [Dict](https://docs.python.org/3/library/typing.html#typing.Dict "(in Python v3.15)")[RegisterIndex, [int](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")][[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_register_stack_adjustments)
     :   `get_register_stack_adjustments` computes the per-register-stack adjustments (for
         architectures with register stacks, such as the x87 floating point stack) for a call
         with the given return value and parameter locations.
@@ -929,17 +929,17 @@
             - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*) – optional location of the return value
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*]*) – locations of the parameters
 
         Returns:
         :   a map from register stack index to its adjustment
 
         Return type:
-        :   *Dict*[RegisterIndex, [*int*](https://docs.python.org/3/library/functions.html#int "(in
-            Python v3.14)")]
+        :   *Dict*[RegisterIndex, [*int*](https://docs.python.org/3/builtins/functions.html#int "(in
+            Python v3.15)")]
 
-    get_return_value_location(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: types.ReturnValueOrType*) → [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_return_value_location)
+    get_return_value_location(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: types.ReturnValueOrType*) → [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_return_value_location)
     :   `get_return_value_location` computes the location of the return value for the given
         return value type and location structure.
 
@@ -957,7 +957,7 @@
         :   *Optional*[[*ValueLocation*](types.md#binaryninja.types.ValueLocation
             "binaryninja.types.ValueLocation")]
 
-    get_returned_indirect_return_value_pointer() → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_returned_indirect_return_value_pointer)
+    get_returned_indirect_return_value_pointer() → [CoreVariable](variable.md#binaryninja.variable.CoreVariable "binaryninja.variable.CoreVariable") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_returned_indirect_return_value_pointer)
     :   `get_returned_indirect_return_value_pointer` gets the location in which the hidden
         indirect return value pointer is returned to the caller, for calling conventions that
         return it.
@@ -970,7 +970,7 @@
         :   *Optional*[[*CoreVariable*](variable.md#binaryninja.variable.CoreVariable
             "binaryninja.variable.CoreVariable")]
 
-    get_stack_adjustment_for_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.14)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.14)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_stack_adjustment_for_locations)
+    get_stack_adjustment_for_locations(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *return_value: [ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *params: [List](https://docs.python.org/3/library/typing.html#typing.List "(in Python v3.15)")[[Tuple](https://docs.python.org/3/library/typing.html#typing.Tuple "(in Python v3.15)")[[ValueLocation](types.md#binaryninja.types.ValueLocation "binaryninja.types.ValueLocation"), [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")]]*)[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.get_stack_adjustment_for_locations)
     :   `get_stack_adjustment_for_locations` computes the stack adjustment applied on return for
         a call with the given return value and parameter locations.
 
@@ -982,8 +982,8 @@
             - **return_value** ([*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation") *|* *None*) – optional location of the return value
             - **params** ([*List*](https://docs.python.org/3/library/typing.html#typing.List "(in
-              Python v3.14)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
-              "(in Python v3.14)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
+              Python v3.15)")*[*[*Tuple*](https://docs.python.org/3/library/typing.html#typing.Tuple
+              "(in Python v3.15)")*[*[*ValueLocation*](types.md#binaryninja.types.ValueLocation
               "binaryninja.types.ValueLocation")*,* [*Type*](types.md#binaryninja.types.Type
               "binaryninja.types.Type")*]**]*) – list of `(location, type)` tuples for the parameters
 
@@ -991,9 +991,9 @@
         :   the stack adjustment in bytes
 
         Return type:
-        :   [*int*](https://docs.python.org/3/library/functions.html#int "(in Python v3.14)")
+        :   [*int*](https://docs.python.org/3/builtins/functions.html#int "(in Python v3.15)")
 
-    is_arg_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.is_arg_type_reg_compatible)
+    is_arg_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.is_arg_type_reg_compatible)
     :   `is_arg_type_reg_compatible` determines whether a value of the given type can be passed
         as an argument in registers.
 
@@ -1007,9 +1007,9 @@
         :   whether the argument type is register compatible
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    is_non_reg_arg_indirect(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.is_non_reg_arg_indirect)
+    is_non_reg_arg_indirect(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.is_non_reg_arg_indirect)
     :   `is_non_reg_arg_indirect` determines whether an argument that cannot be passed in
         registers is passed indirectly by pointer as opposed to being passed directly on the
         stack.
@@ -1024,9 +1024,9 @@
         :   whether the non-register argument is passed indirectly by pointer
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")
 
-    is_return_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/library/constants.html#None "(in Python v3.14)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.is_return_type_reg_compatible)
+    is_return_type_reg_compatible(*view: [BinaryView](binaryview.md#binaryninja.binaryview.BinaryView "binaryninja.binaryview.BinaryView") | [None](https://docs.python.org/3/builtins/constants.html#None "(in Python v3.15)")*, *type: [Type](types.md#binaryninja.types.Type "binaryninja.types.Type")*) → [bool](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")[[source]](https://api.binary.ninja/_modules/binaryninja/callingconvention.html#CoreCallingConvention.is_return_type_reg_compatible)
     :   `is_return_type_reg_compatible` determines whether a value of the given type can be
         returned in registers, as opposed to being returned indirectly through memory.
 
@@ -1040,4 +1040,4 @@
         :   whether the return type is register compatible
 
         Return type:
-        :   [*bool*](https://docs.python.org/3/library/functions.html#bool "(in Python v3.14)")
+        :   [*bool*](https://docs.python.org/3/builtins/functions.html#bool "(in Python v3.15)")

@@ -7,8 +7,8 @@
 ## FunctionRecognizer
 
 *class* FunctionRecognizer[[source]](https://api.binary.ninja/_modules/binaryninja/functionrecognizer.html#FunctionRecognizer)
-:   Bases: [`object`](https://docs.python.org/3/library/functions.html#object "(in Python
-    v3.14)")
+:   Bases: [`object`](https://docs.python.org/3/builtins/functions.html#object "(in Python
+    v3.15)")
 
     __init__()[[source]](https://api.binary.ninja/_modules/binaryninja/functionrecognizer.html#FunctionRecognizer.__init__)
 
