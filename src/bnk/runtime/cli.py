@@ -19,58 +19,13 @@ app = typer.Typer(
     context_settings={"help_option_names": ["-h", "--help"]},
 )
 
-plugins_app = typer.Typer(help="Install, update, and inspect runtime plugins.", invoke_without_command=True,
-                          add_completion=False, context_settings={"help_option_names": ["-h", "--help"]})
+plugins_app = typer.Typer(
+    help="Install, update, and inspect runtime plugins.",
+    invoke_without_command=True,
+    add_completion=False,
+    context_settings={"help_option_names": ["-h", "--help"]},
+)
 app.add_typer(plugins_app, name="plugins")
-
-
-@plugins_app.callback()
-def plugins(context: typer.Context) -> None:
-    """Show desired sources, installed versions, and current load state."""
-    if context.invoked_subcommand:
-        return
-    from bnk.runtime.plugins import health, running
-    from bnk.runtime.process import supervisor_pid
-    try:
-        metadata = json.loads((runtime_dir() / "runtime.json").read_text())
-        loaded = health() if supervisor_pid(state_dir()) is not None else None
-        for item in metadata["plugins"]:
-            state = "stopped" if loaded is None else "running" if running(item, loaded) else "failed or unrecognized"
-            typer.echo(f"{item['name']}  {state}\n  source  {item['repo']} @ {item['ref']}\n"
-                       f"  commit  {item['commit']} ({item['build']})")
-            if item.get("api_commit"):
-                typer.echo(f"  api     {item['api_commit']}")
-            typer.echo("  files   " + ", ".join(item["artifacts"]))
-    except (BnkError, OSError, ValueError) as error:
-        _fail(error)
-
-
-@plugins_app.command("add")
-def plugins_add(
-    repo: Annotated[str, typer.Argument(help="Plugin Git repository.")],
-    ref: Annotated[str, typer.Option(help="Git ref to resolve.")] = "main",
-    build: Annotated[str, typer.Option(help="Build method: python or cmake.")] = "python",
-    deps: Annotated[list[str] | None, typer.Option("--dep", help="Additional Python dependency; repeatable.")] = None,
-) -> None:
-    """Install and validate a plugin."""
-    from bnk.runtime.plugins import PluginSpec
-    from bnk.runtime.install import change_plugins
-    try:
-        change_plugins(spec=PluginSpec(repo, ref, deps or [], build), report=lambda text: typer.echo(text, err=True))
-        typer.echo("Plugin ready.")
-    except (BnkError, OSError, ValueError) as error:
-        _fail(error)
-
-
-@plugins_app.command("update")
-def plugins_update(name: Annotated[str | None, typer.Argument(help="Installed name; omit to update all.")] = None) -> None:
-    """Update one plugin or all configured refs."""
-    from bnk.runtime.install import change_plugins
-    try:
-        change_plugins(name=name, report=lambda text: typer.echo(text, err=True))
-        typer.echo("Plugins ready.")
-    except (BnkError, OSError, ValueError) as error:
-        _fail(error)
 
 
 def _fail(error: Exception) -> Never:
@@ -144,4 +99,56 @@ def pack(
         pack_runtime(archive)
         typer.echo(f"Packed {archive}")
     except (BnkError, OSError, ValueError, tarfile.TarError) as error:
+        _fail(error)
+
+
+@plugins_app.callback()
+def plugins(context: typer.Context) -> None:
+    """Show desired sources, installed versions, and current load state."""
+    if context.invoked_subcommand:
+        return
+    from bnk.runtime.plugins import health, running
+    from bnk.runtime.process import supervisor_pid
+    try:
+        metadata = json.loads((runtime_dir() / "runtime.json").read_text())
+        loaded = health() if supervisor_pid(state_dir()) is not None else None
+        for item in metadata["plugins"]:
+            state = "stopped"
+            if loaded is not None:
+                state = "running" if running(item, loaded) else "failed or unrecognized"
+            typer.echo(f"{item['name']}  {state}")
+            typer.echo(f"  source  {item['repo']} @ {item['ref']}")
+            typer.echo(f"  commit  {item['commit']} ({item['build']})")
+            if item.get("api_commit"):
+                typer.echo(f"  api     {item['api_commit']}")
+            typer.echo("  files   " + ", ".join(item["artifacts"]))
+    except (BnkError, OSError, ValueError) as error:
+        _fail(error)
+
+
+@plugins_app.command("add")
+def plugins_add(
+    repo: Annotated[str, typer.Argument(help="Plugin Git repository.")],
+    ref: Annotated[str, typer.Option(help="Git ref to resolve.")] = "main",
+    build: Annotated[str, typer.Option(help="Build method: python or cmake.")] = "python",
+    deps: Annotated[list[str] | None, typer.Option("--dep", help="Additional Python dependency; repeatable.")] = None,
+) -> None:
+    """Install and validate a plugin."""
+    from bnk.runtime.plugins import PluginSpec
+    from bnk.runtime.install import change_plugins
+    try:
+        change_plugins(spec=PluginSpec(repo, ref, deps or [], build), report=lambda text: typer.echo(text, err=True))
+        typer.echo("Plugin ready.")
+    except (BnkError, OSError, ValueError) as error:
+        _fail(error)
+
+
+@plugins_app.command("update")
+def plugins_update(name: Annotated[str | None, typer.Argument(help="Installed name; omit to update all.")] = None) -> None:
+    """Update one plugin or all configured refs."""
+    from bnk.runtime.install import change_plugins
+    try:
+        change_plugins(name=name, report=lambda text: typer.echo(text, err=True))
+        typer.echo("Plugins ready.")
+    except (BnkError, OSError, ValueError) as error:
         _fail(error)

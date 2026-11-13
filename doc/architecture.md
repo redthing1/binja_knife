@@ -1,45 +1,29 @@
 # Architecture
 
-Bnk has two deliberately small sides:
+The client sends one JSON request per TCP connection. The plugin executes an action against a retained Binary Ninja view and returns data for the client to render.
 
-```text
-Typer client
-  -> one request over TCP
-  -> Binary Ninja plugin
-  -> one named action
-  -> purpose-built text
-```
+| Component | Owns |
+| --- | --- |
+| `src/bnk/` | CLI, transport, and text rendering |
+| `plugin/knife/` | Binary Ninja views, sessions, and actions |
+| `src/bnk/runtime/` | Optional local installation and process supervision |
 
-The client owns command-line parsing, connection handling, and presentation. It does not import Binary Ninja.
-
-The plugin owns Binary Ninja objects and retained sessions. It is self-contained apart from Binary Ninja and the Python standard library; it does not import the client package.
-
-Plugin actions follow the visible workbench rather than mirroring Binary Ninja's class tree: reading, common changes and persistence, and unrestricted Python. Specialized analysis stays in Python instead of accumulating wrapper commands.
+The client does not import Binary Ninja. The plugin depends only on Binary Ninja and the standard library and can run independently of the managed runtime.
 
 ## Sessions
 
-`open` selects a view, waits for its analysis, then retains it under a readable name. `--view` selects an exact BinaryView type; `--list-views` discovers applicable types without retaining a session. Ambiguous structured views require a choice. Databases retain the view selected when saving. A command selects an explicit session, `BNK_SESSION`, or the sole ready session.
+Opening a file selects a view, waits for analysis, and retains it under a name. An explicit view must match when reusing a session. Saving records the selected view in the database.
 
-Several sessions and requests may coexist in one Binary Ninja process. Session bookkeeping uses short state locks but does not serialize Binary Ninja operations globally. Opening the same path normally reuses its session; an explicit view must match. An explicit unused name may create an independent view.
+Session bookkeeping uses short locks; analysis and requests may overlap. Direct edits and saves share a per-session lock. A session in use cannot close. Plugin maintenance requires no open sessions and blocks new opens until replacement finishes.
 
-A narrow per-session lock keeps direct edits and saves from interleaving. Direct edits can roll back if they fail partway through. Reading and unrestricted Python do not pass through an operation lane.
+## Actions
 
-## Transport
+Direct commands cover common reading, editing, and persistence operations. Composed analysis uses `eval`, `exec`, or `run` in a fresh namespace with `bn`, `bv`, `session`, `args`, and `print`. Scripts can set `result` to return a value.
 
-Each TCP connection carries one private newline-delimited JSON exchange; Binary Ninja objects stay in the plugin, and CLI commands render purpose-built text.
+Binary Ninja objects stay in the plugin. Results contain addresses and names usable by subsequent commands; the client renders bounded lists and multiline code.
 
-## Deployment
+## Runtime
 
-The command model does not depend on deployment topology. Client and plugin may run natively, in one container, or across a reachable host/container boundary. `--connect` selects the endpoint. Binary, database, and export paths are used by the plugin; the client normally resolves and validates them first, while `--server-path` accepts an absolute path visible only to the plugin.
+The managed runtime runs Binary Ninja under Xvfb. A failed default connection triggers startup; explicit endpoints bypass it. Interrupted requests are never replayed.
 
-The plugin starts its server automatically through three Binary Ninja settings: autostart, host, and port.
-
-`src/bnk/runtime/` installs Binary Ninja and supervises it under Xvfb. The CLI starts an installed runtime when its default connection fails, before sending a request. Explicit endpoints bypass startup; interrupted requests are never replayed. The plugin is independent of runtime management. See [runtime setup](runtime.md).
-
-Plugin installation and updates share preparation, load validation, and activation with rollback. Python preparation copies the plugin; native preparation delegates to CMake with the installed core's pinned SDK. Runtime metadata records sources, resolved commits, artifact hashes, and native SDK revisions. A maintenance request atomically refuses open sessions and prevents new opens before the runtime stops for replacement.
-
-## Presentation and extension
-
-The client renders each operation directly. Addresses and target identities remain usable as the next command. Inspection retains the requested address alongside containing anchors; code can focus on an instruction or show a whole function. Multiline code remains multiline, and bounded results say when more exists.
-
-`eval`, `exec`, and `run` execute in a fresh namespace containing `bn`, `bv`, `session`, `args`, a request-local `print`, and the optional final value `result`. Client-side scripts send their source; `run --server` reads an explicit plugin-visible path. Script changes use normal Binary Ninja authority and remain in the retained view.
+Archive installation and plugin updates share staged validation, activation, and rollback. Python plugins are copied; native plugins build through CMake with the installed core's SDK. Metadata records sources, commits, and artifacts. See [runtime setup](runtime.md) for operation.

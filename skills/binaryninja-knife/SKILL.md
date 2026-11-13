@@ -1,108 +1,59 @@
 ---
 name: binaryninja-knife
-description: Drive Binary Ninja through the bnk CLI using retained headless sessions, and consult version-matched Binary Ninja API docs when working with unfamiliar APIs.
+description: Drive Binary Ninja through bnk retained sessions and use version-matched API references for custom analysis.
 ---
 
 # Binary Ninja Knife
 
-Use `bnk` to work with Binary Ninja from the command line. The Binary Ninja plugin owns retained `BinaryView` sessions, so short client commands operate on the same analyzed state.
+Use `bnk -h` for commands and `bnk COMMAND -h` for options. Commands operate on retained Binary Ninja views; headless use is supported.
 
-## Start with the CLI
-
-Run `bnk -h` for the implemented command map and `bnk COMMAND -h` for exact syntax. Use the available commands as shown rather than guessing command names or options.
-
-The workbench is organized by intent:
-
-- connection and sessions: `status`, `version`, `open`, `sessions`, `summary`, `close`;
-- understanding: `find`, `inspect`, `code`, `refs`, `sections`, `segments`;
-- common changes: `edit`, `patch`, `save`, `export`;
-- unrestricted Binary Ninja Python: `eval`, `exec`, `run`.
-
-Commands return concise text designed for the operation.
-
-## Sessions and paths
-
-With one ready session, view commands select it automatically. With several, use `-s NAME` or `BNK_SESSION`.
+## Open and select
 
 ```sh
 bnk open ./program
 bnk summary
-
 bnk open ./other-program -s other
-bnk summary -s other
 ```
 
-Binary, database, and export paths are ultimately used by the Binary Ninja plugin. An ordinary path is first resolved and validated by the client, which is convenient when both sides share paths. Use `--server-path` for an absolute path visible only to Binary Ninja, such as a different container mount:
+With one session, commands select it automatically. With several, use `-s NAME` or `BNK_SESSION`. Reopening a path reuses its session; an unused name creates an independent view.
+
+Use `open PATH --list-views` to discover view types and `--view NAME` for a specific choice. An explicit view must match on reuse. Saving preserves the selected view.
+
+Paths normally resolve on the client. Use `--server-path` for absolute paths visible only to the plugin and `--connect HOST:PORT` for another server.
+
+For a local runtime, use `bnk runtime install ARCHIVE`. Ordinary commands start it as needed. `runtime status`, `logs`, and `plugins` inspect its state; close sessions before changing plugins. See [runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md) for installation and updates.
+
+## Read and edit
 
 ```sh
-bnk open /targets/program --server-path -s program
-```
-
-Use `bnk open PATH --list-views` to discover applicable BinaryView types, then `--view NAME` for an exact choice. Ambiguous structured views require a choice. Opening the same path normally reuses its retained session; an explicit view must match. Use an unused `-s NAME` for an independent view. `save` records the selected view for database reopening.
-
-Several sessions and requests may coexist in one Binary Ninja process.
-
-Headless use is normal; a GUI is not assumed.
-
-Install a local runtime once with `bnk runtime install ARCHIVE`; ordinary commands start it automatically. Diagnose startup with `bnk runtime status` and `bnk runtime logs`. `bnk runtime plugins` shows installed commits and actual load state. Add a repository with `bnk runtime plugins add REPO`, using `--build cmake` for conventional native plugins, or update configured refs with `bnk runtime plugins update [NAME]`. Close all sessions before changing plugins. See [runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md) for requirements and build conventions.
-
-Explicit endpoints bypass local startup. Save work before `bnk runtime stop`, which discards in-memory sessions.
-
-## Follow evidence directly
-
-The ordinary reading loop is intentionally short:
-
-```sh
-bnk summary
-bnk sections
-bnk segments
 bnk find strings 'parse failed' --refs
-bnk refs 0x401020
-bnk inspect 0x400800
-bnk code 0x400800
+bnk inspect 0x401234
+bnk refs 0x401234
 bnk code main
 bnk code main --level mlil --ssa
-bnk code main --at 0x400800
 ```
 
-`summary` gives compact view and analysis orientation, including useful inventory counts. `sections` shows logical regions; `segments` shows virtual ranges, file mappings, and permissions.
-
-`find` lists strings, functions, or symbols without a query and filters them when a query is supplied; exact bytes require a pattern. A result address or name is meant to feed directly into `inspect`, `refs`, `code`, or `edit`.
-
-`inspect` keeps the requested address visible and shows containing instruction, string, or data anchors when relevant. `code FUNCTION` reads a function from the start; `code ADDRESS` focuses on that instruction, including addresses inside its bytes. HLIL is the default, with MLIL, LLIL, and native disassembly available through `--level`. `refs` keeps exact-address results separate from any referenced containing anchor. `refs --from` reads an instruction site or a whole named function, including possible call sites without resolved targets; at a numeric function entry it shows both scopes separately.
-
-Function inspection shows parameters and a local count. Use `bnk inspect main --vars` for a bounded variable inventory, or inspect a specific `main::variable`. Exact `function::#IDENTIFIER` targets remain available when names collide.
-
-Use `edit` for ordinary durable annotations and `patch` for raw bytes:
+Results provide addresses and names for subsequent commands. `sections` and `segments` show mappings; `inspect --vars` shows variables. `code` defaults to HLIL; a name reads the whole function and an address focuses on that location. `refs --from` follows outgoing references.
 
 ```sh
 bnk edit parse_packet --name parse_request
 bnk edit parse_request --type 'bool parse_request(Request *req)'
-bnk edit 0x401234 --comment 'rejects malformed length'
 bnk edit parse_request::len --name length --type size_t
-bnk patch 0x401234 '90 90'
 bnk save analysis.bndb
-bnk export patched.bin
 ```
 
-Comments report whether they were stored in function or view scope. `save` preserves analysis in a BNDB, while `export` writes current binary bytes.
+Use `function::#IDENTIFIER` when variable names collide. `patch` changes bytes; `save` preserves analysis and `export` writes binary bytes. Save or explicitly discard changes before closing a dirty session.
 
-## Use Python for real programs
+## Python and API references
 
-Do not force composed, specialized, or uncommon work through direct commands. Use the unrestricted scripting surface:
+Use Python for composed or specialized analysis:
 
 ```sh
 bnk eval 'len(bv.functions)'
-bnk exec 'print(bv.entry_point); result = bv.arch.name'
-bnk exec - < analysis_snippet.py
+bnk exec 'result = bv.arch.name'
 bnk run analysis.py -- arg1 arg2
-bnk run /mounted/analysis.py --server -- arg1
 ```
 
-Each request receives a fresh namespace with `bn`, the selected `bv`, `session`, `args`, request-local `print`, and an optional final value named `result`. A normal `run` transmits local source and needs no shared filesystem; `--server` reads the path on Binary Ninja's side. Scripts are unrestricted and changes remain in the retained view.
+Each request gets `bn`, `bv`, `session`, `args`, a request-local `print`, and an optional final `result`. Edits remain in the view. `run` sends local source; `run --server` reads a plugin-visible script.
 
-## Binary Ninja API documentation
-
-Before writing a script that uses an unfamiliar Binary Ninja API—or changing bnk's plugin—read [references/docs-guide.md](references/docs-guide.md) and search the relevant vendored module page. Use it to confirm names, signatures, return values, and mutation behavior instead of guessing from memory.
-
-CLI syntax comes from `bnk -h`; Binary Ninja Python semantics come from the bundled API docs.
+Before using unfamiliar Binary Ninja APIs, read [references/docs-guide.md](references/docs-guide.md) and the relevant module page. Check the reference version against `bnk status` and confirm signatures, mutation behavior, and analysis completion.

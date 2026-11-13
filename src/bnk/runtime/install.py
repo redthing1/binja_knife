@@ -139,7 +139,7 @@ def install(source: Path, *, plugins: Path | None = None, license_file: Path | N
                 shutil.copyfile(license_file.expanduser(), staged / "binaryninja/license.dat")
                 (staged / "binaryninja/license.dat").chmod(0o600)
             validate(staged, work / "validation", state, report)
-            activate(staged, runtime, state, work / "previous")
+            activate(staged, runtime, state)
     return runtime
 
 
@@ -161,20 +161,29 @@ def validate(staged: Path, validation: Path, state: Path, report=print) -> None:
         stop(validation)
 
 
-def activate(staged: Path, runtime: Path, state: Path, previous: Path) -> None:
+def activate(staged: Path, runtime: Path, state: Path) -> None:
+    previous = runtime.with_name(runtime.name + ".previous")
+    if previous.exists():
+        raise BnkError(f"previous installation needs recovery: {previous}", kind="runtime")
     if runtime.exists():
         runtime.rename(previous)
     try:
         staged.rename(runtime)
         start(runtime, state)
         validate_plugins(runtime, 18812)
-    except BaseException:
-        stop(state)
-        if runtime.exists():
-            shutil.rmtree(runtime)
-        if previous.exists():
-            previous.rename(runtime)
+    except BaseException as error:
+        try:
+            stop(state)
+            if runtime.exists():
+                shutil.rmtree(runtime)
+            if previous.exists():
+                previous.rename(runtime)
+        except Exception as recovery_error:
+            backup = f"; previous installation retained at {previous}" if previous.exists() else ""
+            raise BnkError(f"runtime recovery failed: {recovery_error}{backup}", kind="runtime") from error
         raise
+    if previous.exists():
+        shutil.rmtree(previous)
 
 
 def change_plugins(*, spec: PluginSpec | None = None, name: str | None = None, report=print) -> None:
@@ -211,20 +220,22 @@ def change_plugins(*, spec: PluginSpec | None = None, name: str | None = None, r
                 for item in selected:
                     for artifact in item.get("artifacts", []):
                         path = staged / artifact
-                        if path.is_dir():
+                        if path.is_dir() and not path.is_symlink():
                             shutil.rmtree(path)
                         else:
                             path.unlink(missing_ok=True)
-                    desired = spec if spec is not None else PluginSpec(**{k: item[k] for k in ("repo", "ref", "deps", "build")})
+                    desired = spec or PluginSpec(item["repo"], item["ref"], item["deps"], item["build"])
                     receipt = prepare(staged, desired, item["name"], report)
                     receipts = [r for r in receipts if r["name"] != item["name"]] + [receipt]
-                if any(item.get("build", "python") == "python" for item in selected):
+                if any(item["build"] == "python" for item in selected):
                     dependencies(staged, receipts)
                 metadata["plugins"] = receipts
                 (staged / "runtime.json").write_text(json.dumps(metadata, indent=2) + "\n")
                 validate(staged, work / "validation", state, report)
-                activate(staged, runtime, state, work / "previous")
+                activate(staged, runtime, state)
         except BaseException:
+            if runtime.with_name(runtime.name + ".previous").exists():
+                raise
             if supervisor_pid(state) is not None:
                 request(Endpoint("127.0.0.1", 18812), "maintenance", {"enabled": False})
             start(runtime, state)

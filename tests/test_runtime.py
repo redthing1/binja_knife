@@ -15,7 +15,7 @@ from typer.testing import CliRunner
 
 from bnk.cli import app
 from bnk.client import BnkError
-from bnk.runtime.install import install, unpack
+from bnk.runtime.install import activate, install, unpack
 from bnk.runtime.plugins import PluginSpec, plugin_spec
 from bnk.runtime.native import library_path, load_manifest
 from bnk.runtime.process import stop
@@ -281,6 +281,31 @@ class RuntimeTests(unittest.TestCase):
             with self.assertRaises(BnkError):
                 install(self.prepared_archive(), report=lambda text: None)
         self.assertEqual((self.runtime / "previous").read_text(), "keep")
+
+    def test_failed_rollback_survives_staging_cleanup(self):
+        (self.runtime / "original").write_text("keep")
+        with tempfile.TemporaryDirectory(dir=self.root) as directory:
+            staged = Path(directory) / "staged"
+            staged.mkdir()
+            (staged / "replacement").write_text("new")
+            with patch("bnk.runtime.install.start", side_effect=BnkError("startup failed")), \
+                 patch("bnk.runtime.install.stop", side_effect=BnkError("stop failed")):
+                with self.assertRaisesRegex(BnkError, "previous installation retained"):
+                    activate(staged, self.runtime, self.root / "state")
+        previous = self.runtime.with_name("runtime.previous")
+        self.assertEqual((previous / "original").read_text(), "keep")
+        self.assertTrue((self.runtime / "replacement").exists())
+
+    def test_activation_preserves_an_existing_recovery_copy(self):
+        previous = self.runtime.with_name("runtime.previous")
+        previous.mkdir()
+        (previous / "original").write_text("keep")
+        staged = self.root / "staged"
+        staged.mkdir()
+        with self.assertRaisesRegex(BnkError, "needs recovery"):
+            activate(staged, self.runtime, self.root / "state")
+        self.assertEqual((previous / "original").read_text(), "keep")
+        self.assertTrue(staged.exists())
 
 
 if __name__ == "__main__":

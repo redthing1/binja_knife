@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import json
 import os
 import re
@@ -63,8 +62,8 @@ def plugin_spec(line: str) -> PluginSpec:
         if not sep or key not in {"deps", "build"} or key in options or not value:
             raise ValueError(f"invalid plugin option: {token}")
         options[key] = value
-    return PluginSpec(repo, ref, options.get("deps", "").split(",") if options.get("deps") else [],
-                      options.get("build", "python"))
+    deps = options["deps"].split(",") if "deps" in options else []
+    return PluginSpec(repo, ref, deps, options.get("build", "python"))
 
 
 def _checkout(repo: str, ref: str, destination: Path) -> str:
@@ -94,6 +93,33 @@ def _sdk(runtime: Path) -> tuple[Path, str]:
     return destination, revision
 
 
+def _build_native(runtime: Path, checkout: Path, work: Path) -> dict:
+    plugins = runtime / "plugins"
+    sdk, revision = _sdk(runtime)
+    build = work / "build"
+    install_root = work / "install"
+    payload = install_root / "plugins"
+    run(["cmake", "-S", str(checkout), "-B", str(build), "-DCMAKE_BUILD_TYPE=Release",
+         f"-DBN_API_PATH={sdk}", f"-DBN_INSTALL_DIR={runtime / 'binaryninja'}",
+         "-DBN_USER_PLUGINS_DIR=/plugins"])
+    run(["cmake", "--build", str(build), "--parallel", str(min(os.cpu_count() or 2, 8))])
+    run(["cmake", "--install", str(build)], env={**os.environ, "DESTDIR": str(install_root)})
+    installed = (build / "install_manifest.txt").read_text().splitlines()
+    files = [(install_root / path.lstrip("/")).resolve() for path in installed]
+    if not files or any(not path.is_relative_to(payload.resolve()) for path in files):
+        raise ValueError("CMake must install plugin files under BN_USER_PLUGINS_DIR")
+    artifacts = []
+    for path in sorted(payload.iterdir()):
+        destination = plugins / path.name
+        if destination.exists() or destination.is_symlink():
+            raise ValueError(f"plugin artifact already exists: {path.name}")
+        shutil.move(path, destination)
+        artifacts.append(str(destination.relative_to(runtime)))
+    if not any(Path(path).suffix == ".so" for path in artifacts):
+        raise ValueError("CMake did not install a native plugin library")
+    return {"api_commit": revision, "artifacts": artifacts}
+
+
 def prepare(runtime: Path, spec: PluginSpec, name: str, report=print) -> dict:
     report(f"Preparing {name} ({spec.ref}, {spec.build})")
     plugins = runtime / "plugins"
@@ -108,34 +134,7 @@ def prepare(runtime: Path, spec: PluginSpec, name: str, report=print) -> dict:
             shutil.copytree(source, plugins / name, ignore=shutil.ignore_patterns(".git", "__pycache__"))
             receipt["artifacts"] = [f"plugins/{name}"]
         else:
-            sdk, revision = _sdk(runtime)
-            build = work / "build"
-            install_root = work / "install"
-            payload = install_root / "plugins"
-            run(["cmake", "-S", str(checkout), "-B", str(build), "-DCMAKE_BUILD_TYPE=Release",
-                 f"-DBN_API_PATH={sdk}", f"-DBN_INSTALL_DIR={runtime / 'binaryninja'}",
-                 "-DBN_USER_PLUGINS_DIR=/plugins"])
-            run(["cmake", "--build", str(build), "--parallel", str(min(os.cpu_count() or 2, 8))])
-            run(["cmake", "--install", str(build)], env={**os.environ, "DESTDIR": str(install_root)})
-            installed = (build / "install_manifest.txt").read_text().splitlines()
-            if not installed or any(not (install_root / p.lstrip("/")).resolve().is_relative_to(payload.resolve())
-                                    for p in installed):
-                raise ValueError("CMake must install plugin files under BN_USER_PLUGINS_DIR")
-            artifacts = []
-            for path in sorted(payload.iterdir()):
-                destination = plugins / path.name
-                if destination.exists() or destination.is_symlink():
-                    raise ValueError(f"plugin artifact already exists: {path.name}")
-                shutil.move(path, destination)
-                artifacts.append(str(destination.relative_to(runtime)))
-            if not any(Path(path).suffix == ".so" for path in artifacts):
-                raise ValueError("CMake did not install a native plugin library")
-            receipt.update(api_commit=revision, artifacts=artifacts)
-        receipt["sha256"] = {str(path.relative_to(runtime)): hashlib.sha256(path.read_bytes()).hexdigest()
-                             for artifact in receipt["artifacts"]
-                             for path in ([runtime / artifact] if (runtime / artifact).is_file()
-                                          else sorted((runtime / artifact).rglob("*")))
-                             if path.is_file()}
+            receipt.update(_build_native(runtime, checkout, work))
         return receipt
 
 

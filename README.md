@@ -2,61 +2,41 @@
 
 a sharp, stateful cli for binary ninja.
 
-`bnk` keeps analyzed binaries alive between commands, turning the shell into a fast, continuous reversing workspace.
-
-- retained, named sessions—headless by default
-- focused tools for exploring and changing a binary
-- unrestricted Binary Ninja Python when the workflow needs more
+`bnk` keeps analyzed binaries open between commands. Use it headlessly or with an existing Binary Ninja installation.
 
 ```sh
 bnk open ./program
-bnk summary
 bnk find strings 'parse failed' --refs
 bnk inspect 0x401234
 bnk code main
+bnk save analysis.bndb
 ```
 
-With one open session, commands select it automatically. Use `-s NAME` when you want several.
+With one session, commands select it automatically. Use `-s NAME` for several sessions. Run `bnk -h` for commands and `bnk COMMAND -h` for options.
 
-Use `bnk open PATH --list-views` to discover applicable view types, then `--view NAME` to choose one. Saved databases retain the selected view.
-
-## quick start
-
-Install the client:
+## Install
 
 ```sh
 uv tool install .
-bnk -h
-```
-
-For a local runtime, supply your own Linux Binary Ninja archive:
-
-```sh
 bnk runtime install ./binaryninja-linux.tar.zst
 ```
 
-Ordinary commands start it automatically. See [runtime setup](doc/runtime.md) for requirements, plugins, and portable bundles.
+Supply your own Linux Binary Ninja archive. The runtime starts automatically when needed. See [runtime setup](doc/runtime.md) for requirements, plugins, bundles, and existing installations.
 
-For an existing installation, link or copy [`plugin/`](plugin/) into Binary Ninja's plugin directory as `knife_server`. The Knife Server starts automatically and works equally well headlessly, in a container, or alongside the GUI.
+## Python
 
-When the client and Binary Ninja see different filesystems, pass an absolute plugin-visible path with `--server-path`.
-
-## full power, close at hand
-
-The direct commands cover the everyday loop: orienting to the binary, reading its sections and segments, finding evidence, following references, reading IL, making common edits, patching bytes, and saving the result. `bnk -h` is the compact map.
-
-For everything else, `eval`, `exec`, and `run` expose the real Binary Ninja Python API without giving up the retained session:
+Use the Binary Ninja API for composed analysis:
 
 ```sh
 bnk eval 'len(bv.functions)'
-bnk exec 'print(bv.entry_point); result = bv.arch.name'
+bnk exec 'result = bv.arch.name'
 bnk run analysis.py -- arg1 arg2
 ```
 
-## agents
+Scripts share the session's `bv`; edits remain available to later commands.
 
-The repository includes an [agent skill](skills/binaryninja-knife/SKILL.md) with a Binary Ninja API reference. Run `./scripts/link-skill` to link it into `~/.agents/skills/rt1_tools/`, or pass another skill directory.
+## Agents and development
 
-## develop
+The [agent skill](skills/binaryninja-knife/SKILL.md) includes API references. Link it with `./scripts/link-skill [SKILL_DIRECTORY]`.
 
-Development notes live in [`doc/development.md`](doc/development.md). For the small client/plugin split, see [`doc/architecture.md`](doc/architecture.md).
+See [development](doc/development.md) for checks and [architecture](doc/architecture.md) for the client/plugin split.
