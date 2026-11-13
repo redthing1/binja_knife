@@ -144,6 +144,25 @@ class SessionStoreTests(unittest.TestCase):
         self.assertEqual(raised.exception.kind, "session_ambiguous")
         self.assertEqual(raised.exception.details["candidates"], ["one", "two"])
 
+    def test_view_request_cannot_reuse_another_view(self):
+        self.open(name="one")
+        with self.assertRaises(SessionError) as error:
+            self.store.open("one", {"path": str(self.path), "view": "Raw"})
+        self.assertEqual(error.exception.kind, "session_conflict")
+        self.assertEqual(len(self.views), 1)
+
+    def test_maintenance_refuses_sessions_and_blocks_new_opens(self):
+        self.open()
+        with self.assertRaises(SessionError):
+            self.store.maintenance(None, {})
+        self.store.close(None, {})
+        self.store.maintenance(None, {})
+        with self.assertRaises(SessionError) as error:
+            self.open()
+        self.assertEqual(error.exception.kind, "session_busy")
+        self.store.maintenance(None, {"enabled": False})
+        self.open()
+
     def test_unnamed_reuse_prefers_the_derived_name_among_duplicates(self) -> None:
         self.open(name="other")
         self.open(name="game.bin")

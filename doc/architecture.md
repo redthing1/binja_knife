@@ -18,9 +18,9 @@ Plugin actions follow the visible workbench rather than mirroring Binary Ninja's
 
 ## Sessions
 
-`open` loads and analyzes a `BinaryView`, then retains it under a readable name. A command selects an explicit session, `BNK_SESSION`, or the sole ready session.
+`open` selects a view, waits for its analysis, then retains it under a readable name. `--view` selects an exact BinaryView type; `--list-views` discovers applicable types without retaining a session. Ambiguous structured views require a choice. Databases retain the view selected when saving. A command selects an explicit session, `BNK_SESSION`, or the sole ready session.
 
-Several sessions and requests may coexist in one Binary Ninja process. Session bookkeeping uses short state locks but does not serialize Binary Ninja operations globally. Opening the same path normally reuses its session; an explicit unused name may create an independent view.
+Several sessions and requests may coexist in one Binary Ninja process. Session bookkeeping uses short state locks but does not serialize Binary Ninja operations globally. Opening the same path normally reuses its session; an explicit view must match. An explicit unused name may create an independent view.
 
 A narrow per-session lock keeps direct edits and saves from interleaving. Direct edits can roll back if they fail partway through. Reading and unrestricted Python do not pass through an operation lane.
 
@@ -35,6 +35,8 @@ The command model does not depend on deployment topology. Client and plugin may 
 The plugin starts its server automatically through three Binary Ninja settings: autostart, host, and port.
 
 `src/bnk/runtime/` installs Binary Ninja and supervises it under Xvfb. The CLI starts an installed runtime when its default connection fails, before sending a request. Explicit endpoints bypass startup; interrupted requests are never replayed. The plugin is independent of runtime management. See [runtime setup](runtime.md).
+
+Plugin installation and updates share preparation, load validation, and activation with rollback. Python preparation copies the plugin; native preparation delegates to CMake with the installed core's pinned SDK. Runtime metadata records sources, resolved commits, artifact hashes, and native SDK revisions. A maintenance request atomically refuses open sessions and prevents new opens before the runtime stops for replacement.
 
 ## Presentation and extension
 

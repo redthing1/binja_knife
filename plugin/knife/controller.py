@@ -5,10 +5,12 @@ import threading
 import binaryninja as bn
 
 from .changes import ChangeActions
+from .arguments import only
 from .reading import ReadActions
 from .scripting import PythonActions
 from .server import KnifeServer
 from .sessions import SessionStore
+from .loading import ViewLoader
 
 SETTINGS_GROUP = "knife_server"
 AUTOSTART = "knife_server.autostart"
@@ -21,7 +23,7 @@ class Controller:
         self._lock = threading.Lock()
         self._server: KnifeServer | None = None
         self._thread: threading.Thread | None = None
-        self._sessions = SessionStore(bn.load)
+        self._sessions = SessionStore(ViewLoader(bn))
         self._reading = ReadActions(self._sessions)
         self._changes = ChangeActions(bn, self._sessions)
         self._python = PythonActions(bn, self._sessions)
@@ -31,6 +33,12 @@ class Controller:
     def autostart(self) -> None:
         if bn.Settings().get_bool(AUTOSTART):
             self.start()
+
+    def plugin_status(self, session_name, args):
+        only(args)
+        return {"plugins": [{"path": plugin.path, "running": plugin.running}
+                            for repo in bn.RepositoryManager().repositories if repo.path == "user"
+                            for plugin in repo.plugins]}
 
     def start(self) -> None:
         with self._lock:
@@ -44,6 +52,8 @@ class Controller:
                 log_error=bn.log_error,
                 actions={
                     "sessions": self._sessions.list_sessions,
+                    "maintenance": self._sessions.maintenance,
+                    "plugins": self.plugin_status,
                     "open": self._sessions.open,
                     "summary": self._sessions.summary,
                     "close": self._sessions.close,

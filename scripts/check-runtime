@@ -11,6 +11,7 @@ import concurrent.futures
 import json
 import os
 import re
+import shutil
 from pathlib import Path
 import signal
 import subprocess
@@ -68,6 +69,13 @@ def main():
                     path = Path(dependency)
                     assert path.is_relative_to(runtime) or path.name in libc, dependency
             contains(cli("open", "/usr/bin/true", "-s", "smoke").stdout, "ELF")
+            contains(cli("open", "/usr/bin/true", "--list-views").stdout, "ELF")
+            refused = cli("open", "/usr/bin/true", "-s", "smoke", "--view", "Raw", ok=False)
+            assert refused.returncode != 0
+            contains(refused.stderr, "uses ELF")
+            refused = cli("runtime", "plugins", "update", "binja_gameroms_plugin", ok=False)
+            assert refused.returncode != 0
+            contains(refused.stderr, "close all sessions")
             contains(cli("eval", "__import__('sqlite3').connect(':memory:').execute('select 42').fetchone()").stdout, "42")
             refused = cli("runtime", "install", archive, ok=False)
             assert refused.returncode != 0
@@ -107,6 +115,40 @@ def main():
             rom.write_bytes(gba)
             contains(cli("open", rom, "-s", "rom").stdout, "GBA")
             contains(cli("summary", "-s", "rom").stdout, "armv7")
+            rom_database = root / "rom.bndb"
+            cli("save", rom_database, "-s", "rom")
+            cli("close", "-s", "rom", "--discard")
+            contains(cli("open", rom_database, "-s", "rom").stdout, "GBA")
+
+            print("Checking plugin updates and native ABI rejection", flush=True)
+            for name in ("smoke", "dump", "rom"):
+                cli("close", "-s", name, "--discard")
+            cli("runtime", "plugins", "update", "binja_gameroms_plugin", timeout=600)
+            fixture = root / "native-smoke"
+            shutil.copytree(Path(__file__).resolve().parents[1] / "tests/fixtures/native-plugin", fixture)
+
+            def git(*args):
+                return subprocess.run(["git", "-C", str(fixture), *args], capture_output=True,
+                                      text=True, check=True).stdout.strip()
+
+            git("init", "-q", "-b", "main")
+            git("add", ".")
+            git("-c", "user.name=Test", "-c", "user.email=test@example.test", "commit", "-qm", "Working plugin")
+            cli("runtime", "plugins", "add", fixture, "--build", "cmake", timeout=600)
+            contains(cli("runtime", "plugins").stdout, "native-smoke  running")
+            before = (runtime / "runtime.json").read_bytes()
+            source = fixture / "plugin.c"
+            source.write_text(source.read_text().replace("BN_DECLARE_CORE_ABI_VERSION",
+                              "BINARYNINJAPLUGIN uint32_t CorePluginABIVersion(void) { return 0; }"))
+            git("add", ".")
+            git("-c", "user.name=Test", "-c", "user.email=test@example.test", "commit", "-qm", "Rejected ABI")
+            refused = cli("runtime", "plugins", "update", "native-smoke", ok=False, timeout=600)
+            assert refused.returncode != 0
+            contains(refused.stderr, "plugins failed to load: native-smoke")
+            assert (runtime / "runtime.json").read_bytes() == before
+            contains(cli("runtime", "plugins").stdout, "native-smoke  running")
+            git("-c", "user.name=Test", "-c", "user.email=test@example.test", "revert", "--no-edit", "HEAD")
+            cli("runtime", "plugins", "update", "native-smoke", timeout=600)
 
             print("Checking shutdown, concurrent autostart, and explicit endpoints", flush=True)
             pid = supervisor()
@@ -144,6 +186,7 @@ def main():
                         "HTTP_PROXY": "http://127.0.0.1:9", "HTTPS_PROXY": "http://127.0.0.1:9",
                         "ALL_PROXY": "http://127.0.0.1:9", "UV_OFFLINE": "1"})
             cli("runtime", "install", bundle)
+            contains(cli("runtime", "plugins").stdout, "native-smoke  running")
             contains(cli("open", dump, "-s", "relocated").stdout, "W1Dump")
             contains(cli("eval", "__import__('msgpack').__version__").stdout, "result")
             cli("runtime", "stop")

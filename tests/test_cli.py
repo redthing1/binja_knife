@@ -52,6 +52,20 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.exit_code, 0, result.output)
         self.assertEqual(result.output, f"bnk {__version__} (api 1)\n")
 
+    def test_view_selection_and_discovery(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "sample"
+            path.touch()
+            with patch("bnk.cli.request", return_value={"views": ["ELF", "Raw"]}) as request:
+                result = self.runner.invoke(app, ["open", str(path), "--list-views"])
+                self.assertEqual(result.exit_code, 0, result.output)
+                self.assertEqual(result.output, "ELF\nRaw\n")
+                self.assertTrue(request.call_args.args[2]["list_views"])
+            with patch("bnk.cli.request", return_value={}) as request:
+                result = self.runner.invoke(app, ["open", str(path), "--view", "Custom"])
+                self.assertEqual(result.exit_code, 0, result.output)
+                self.assertEqual(request.call_args.args[2]["view"], "Custom")
+
     def test_status_is_purpose_built_text(self) -> None:
         with running_server() as (server, _errors):
             host, port = server.server_address[:2]

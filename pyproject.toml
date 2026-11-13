@@ -15,9 +15,6 @@ bnk = "bnk.cli:main"
 requires = ["uv_build>=0.11.8,<0.12"]
 build-backend = "uv_build"
 
-[tool.uv]
-exclude-newer = "2026-09-11T00:00:00Z"
-
 [tool.uv.build-backend]
 module-name = "bnk"
 source-include = [

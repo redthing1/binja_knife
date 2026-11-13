@@ -18,6 +18,8 @@ bnk code main
 
 With one open session, commands select it automatically. Use `-s NAME` when you want several.
 
+Use `bnk open PATH --list-views` to discover applicable view types, then `--view NAME` to choose one. Saved databases retain the selected view.
+
 ## quick start
 
 Install the client:

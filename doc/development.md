@@ -30,7 +30,7 @@ For the managed runtime, stop any server on port 18812 and run:
 uv run --locked python scripts/check-runtime ./binja-runtime.tar.zst
 ```
 
-This uses temporary XDG directories and real Binary Ninja processes to check analysis, persistence, both default plugins, concurrent startup, shutdown, crash recovery, and offline bundle relocation. It accepts an original Binja archive or a prepared bundle and cleans up its test server.
+This uses temporary XDG directories and real Binary Ninja processes to check analysis, view selection and persistence, both default plugins, plugin updates, native ABI rejection and rollback, concurrent startup, shutdown, crash recovery, and offline bundle relocation. It requires Git, CMake, and C/C++ compilers for the native fixture. It accepts an original Binja archive or a prepared bundle and cleans up its test server. Set `KNIFE_REPO` to a Git checkout containing the plugin revision under test.
 
 Build both distributions with:
 

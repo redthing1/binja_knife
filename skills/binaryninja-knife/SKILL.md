@@ -38,11 +38,15 @@ Binary, database, and export paths are ultimately used by the Binary Ninja plugi
 bnk open /targets/program --server-path -s program
 ```
 
-Opening the same path normally reuses its retained session. An explicit unused name may intentionally open an independent view of the same path. Several sessions and requests may coexist in one Binary Ninja process; do not assume a container-per-session model.
+Use `bnk open PATH --list-views` to discover applicable BinaryView types, then `--view NAME` for an exact choice. Ambiguous structured views require a choice. Opening the same path normally reuses its retained session; an explicit view must match. Use an unused `-s NAME` for an independent view. `save` records the selected view for database reopening.
+
+Several sessions and requests may coexist in one Binary Ninja process.
 
 Headless use is normal; a GUI is not assumed.
 
-Install a local runtime once with `bnk runtime install ARCHIVE`; ordinary commands start it automatically. Diagnose startup with `bnk runtime status` and `bnk runtime logs`. Explicit endpoints bypass local startup. Save work before `bnk runtime stop`, which discards in-memory sessions.
+Install a local runtime once with `bnk runtime install ARCHIVE`; ordinary commands start it automatically. Diagnose startup with `bnk runtime status` and `bnk runtime logs`. `bnk runtime plugins` shows installed commits and actual load state. Add a repository with `bnk runtime plugins add REPO`, using `--build cmake` for conventional native plugins, or update configured refs with `bnk runtime plugins update [NAME]`. Close all sessions before changing plugins. See [runtime setup](https://github.com/redthing1/binja_knife/blob/main/doc/runtime.md) for requirements and build conventions.
+
+Explicit endpoints bypass local startup. Save work before `bnk runtime stop`, which discards in-memory sessions.
 
 ## Follow evidence directly
 

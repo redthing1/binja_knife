@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(bnk_smoke LANGUAGES C CXX)
+find_path(BN_API_PATH NAMES binaryninjaapi.h REQUIRED)
+set(HEADLESS ON CACHE BOOL "Build without UI support")
+add_subdirectory("${BN_API_PATH}" api EXCLUDE_FROM_ALL)
+add_library(bnk_smoke SHARED plugin.c)
+target_include_directories(bnk_smoke PRIVATE "${BN_API_PATH}")
+bn_install_plugin(bnk_smoke)

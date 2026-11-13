@@ -56,6 +56,18 @@ class SessionStore:
         self._clock = clock
         self._lock = threading.Lock()
         self._sessions: dict[str, OpeningSession | Session] = {}
+        self._maintenance = False
+        self._discovering = 0
+
+    def maintenance(self, session_name: str | None, args: dict[str, Any]) -> dict[str, bool]:
+        enabled = args.get("enabled", True)
+        if set(args) - {"enabled"} or type(enabled) is not bool:
+            raise SessionError("maintenance expects a boolean enabled flag", kind="invalid_request")
+        with self._lock:
+            if enabled and (self._sessions or self._discovering):
+                raise SessionError("close all sessions before changing plugins", kind="session_busy")
+            self._maintenance = enabled
+        return {"enabled": enabled}
 
     def list_sessions(
         self,
@@ -76,27 +88,45 @@ class SessionStore:
     ) -> dict[str, Any]:
         path_value = args.get("path")
         server_path = args.get("server_path", False)
+        view_type = args.get("view")
+        list_views = args.get("list_views", False)
+        if view_type is not None and (not isinstance(view_type, str) or not view_type):
+            raise SessionError("view must be a non-empty string", kind="invalid_request")
+        if type(list_views) is not bool:
+            raise SessionError("list_views must be a boolean", kind="invalid_request")
         if not isinstance(path_value, str) or not path_value:
             raise SessionError("path must be a non-empty string", kind="path")
         if type(server_path) is not bool:
             raise SessionError("server_path must be a boolean", kind="invalid_request")
-        if set(args) - {"path", "server_path"}:
+        if set(args) - {"path", "server_path", "view", "list_views"}:
             raise SessionError("open received unknown arguments", kind="invalid_request")
 
         path = _resolve_path(path_value, server_path=server_path)
+        if list_views:
+            with self._lock:
+                if self._maintenance:
+                    raise SessionError("runtime is stopping for plugin maintenance", kind="session_busy")
+                self._discovering += 1
+            try:
+                return self._loader(path, update_analysis=False, list_views=True)
+            finally:
+                with self._lock:
+                    self._discovering -= 1
         name = session_name if session_name is not None else Path(path).name
 
         reservation: OpeningSession | None = None
         reused: Session | None = None
         with self._lock:
+            if self._maintenance:
+                raise SessionError("runtime is stopping for plugin maintenance", kind="session_busy")
             if session_name is None:
-                reused = self._unnamed_reuse(path)
+                reused = self._unnamed_reuse(path, view_type)
                 if reused is None:
                     reservation = self._reserve(name, path)
             else:
                 existing = self._sessions.get(name)
                 if existing is not None:
-                    reused = self._named_reuse(existing, name, path)
+                    reused = self._named_reuse(existing, name, path, view_type)
                 else:
                     reservation = self._reserve(name, path)
 
@@ -109,7 +139,8 @@ class SessionStore:
         assert reservation is not None
         view: Any | None = None
         try:
-            view = self._loader(path, update_analysis=True)
+            options = {"view_type": view_type} if view_type is not None else {}
+            view = self._loader(path, update_analysis=True, **options)
             if view is None:
                 raise SessionError(
                     f"Binary Ninja could not open {path}",
@@ -214,11 +245,12 @@ class SessionStore:
         finally:
             self._release(session)
 
-    def _unnamed_reuse(self, path: str) -> Session | None:
+    def _unnamed_reuse(self, path: str, view_type: str | None) -> Session | None:
         matching = [
             session
             for session in self._sessions.values()
             if isinstance(session, Session) and session.path == path
+            and (view_type is None or session.bv.view_type == view_type)
         ]
         if matching:
             derived_name = Path(path).name
@@ -253,6 +285,7 @@ class SessionStore:
         existing: OpeningSession | Session,
         name: str,
         path: str,
+        view_type: str | None,
     ) -> Session:
         if isinstance(existing, OpeningSession):
             if existing.path == path:
@@ -268,6 +301,9 @@ class SessionStore:
                 kind="session_conflict",
                 details={"session": name, "path": path, "existing_path": existing.path},
             )
+        if view_type is not None and existing.bv.view_type != view_type:
+            raise SessionError(f"session '{name}' uses {existing.bv.view_type}; choose another name with -s",
+                               kind="session_conflict")
         existing.active_uses += 1
         return existing
 

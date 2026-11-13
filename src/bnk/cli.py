@@ -120,6 +120,8 @@ def sessions(context: typer.Context) -> None:
 def open_binary(
     context: typer.Context,
     path: Annotated[str, typer.Argument(help="Binary path to open and analyze.")],
+    view: Annotated[str | None, typer.Option(help="BinaryView type to load.")] = None,
+    list_views: Annotated[bool, typer.Option("--list-views", help="List applicable views without analyzing or retaining a session.")] = False,
     session: Annotated[
         str | None,
         typer.Option("--session", "-s", envvar="BNK_SESSION", help="Name for the session."),
@@ -140,9 +142,11 @@ def open_binary(
     _remote(
         context,
         "open",
-        args={"path": resolved, "server_path": server_path},
+        args={"path": resolved, "server_path": server_path,
+              **({"view": view} if view is not None else {}),
+              **({"list_views": True} if list_views else {})},
         session=session,
-        text=open_text,
+        text=(lambda value: "\n".join(value["views"])) if list_views else open_text,
     )
 
 

@@ -15,7 +15,8 @@ from typer.testing import CliRunner
 
 from bnk.cli import app
 from bnk.client import BnkError
-from bnk.runtime.install import install, plugin_spec, unpack
+from bnk.runtime.install import install, unpack
+from bnk.runtime.plugins import PluginSpec, plugin_spec
 from bnk.runtime.native import library_path, load_manifest
 from bnk.runtime.process import stop
 
@@ -33,7 +34,7 @@ class RuntimeTests(unittest.TestCase):
         self.addCleanup(self.env.stop)
         self.runtime = self.root / "data/bnk/runtime"
         self.runtime.mkdir(parents=True)
-        (self.runtime / "runtime.json").write_text('{"format": 1}')
+        (self.runtime / "runtime.json").write_text('{"format": 2}')
         self.runner = CliRunner()
 
     def test_default_connection_starts_once_before_retry(self):
@@ -187,23 +188,79 @@ class RuntimeTests(unittest.TestCase):
                 ],
             )
 
-    def test_plugin_manifest_defaults_to_main_and_supports_docker_syntax(self):
+    def test_plugin_manifest_has_explicit_build_and_dependencies(self):
         self.assertEqual(plugin_spec("https://example.test/plugin.git"),
-                         ("https://example.test/plugin.git", "main", []))
+                         PluginSpec("https://example.test/plugin.git"))
         self.assertEqual(plugin_spec("https://example.test/plugin.git main deps=msgpack,foo"),
-                         ("https://example.test/plugin.git", "main", ["msgpack", "foo"]))
-        self.assertEqual(plugin_spec("repo deps=msgpack"), ("repo", "main", ["msgpack"]))
+                         PluginSpec("https://example.test/plugin.git", "main", ["msgpack", "foo"]))
+        self.assertEqual(plugin_spec("repo deps=msgpack"), PluginSpec("repo", deps=["msgpack"]))
+        self.assertEqual(plugin_spec("repo build=cmake"), PluginSpec("repo", build="cmake"))
         with self.assertRaises(ValueError):
             plugin_spec("repo main unexpected")
+
+    def test_local_plugin_repository_is_recorded_as_an_absolute_path(self):
+        from contextlib import chdir
+        with chdir(self.root):
+            spec = PluginSpec("./data/../data")
+        self.assertEqual(spec.repo, str(self.root / "data"))
+        self.assertEqual(spec.name, "data")
 
     def prepared_archive(self):
         source = self.root / "bundle.tar"
         with tarfile.open(source, "w") as archive:
             item = tarfile.TarInfo("runtime/runtime.json")
-            content = b'{"format": 1}'
+            content = b'{"format": 2}'
             item.size = len(content)
             archive.addfile(item, io.BytesIO(content))
         return source
+
+    def test_update_preparation_failure_keeps_original_files_and_restarts(self):
+        from bnk.runtime.install import change_plugins
+        record = {"name": "example", "repo": "example", "ref": "main", "deps": [],
+                  "build": "python", "commit": "before", "artifacts": ["plugins/example"]}
+        metadata = {"format": 2, "plugins": [record]}
+        (self.runtime / "runtime.json").write_text(json.dumps(metadata))
+        original = self.runtime / "plugins/example"
+        original.mkdir(parents=True)
+        (original / "__init__.py").write_text("original")
+        with patch("bnk.runtime.install.supervisor_pid", return_value=None), \
+             patch("bnk.runtime.install.prepare", side_effect=BnkError("build failed")), \
+             patch("bnk.runtime.install.start") as restart:
+            with self.assertRaisesRegex(BnkError, "build failed"):
+                change_plugins(name="example")
+        self.assertEqual((original / "__init__.py").read_text(), "original")
+        self.assertEqual(json.loads((self.runtime / "runtime.json").read_text()), metadata)
+        restart.assert_called_once()
+        self.assertEqual(list((self.root / "data/bnk").glob(".plugins-*")), [])
+
+    def test_plugin_validation_rejects_native_library_that_did_not_load(self):
+        from bnk.runtime.plugins import validate_plugins
+        (self.runtime / "runtime.json").write_text(json.dumps({"plugins": [
+            {"name": "native", "build": "cmake", "artifacts": ["plugins/native.so"]}]}))
+        with patch("bnk.runtime.plugins.health", return_value={"native.so": False}), \
+             patch("bnk.runtime.plugins.time.monotonic", side_effect=[0, 11]):
+            with self.assertRaisesRegex(BnkError, "native"):
+                validate_plugins(self.runtime, 12345)
+
+    def test_failed_stop_releases_maintenance(self):
+        from bnk.runtime.install import change_plugins
+        from knife.sessions import SessionStore
+        from tests.test_sessions import FakeView
+
+        binary = self.root / "binary"
+        binary.touch()
+        sessions = SessionStore(lambda *args, **kwargs: FakeView())
+        (self.runtime / "runtime.json").write_text(json.dumps({"format": 2, "plugins": [
+            {"name": "example", "repo": "example", "ref": "main", "deps": [],
+             "build": "python", "artifacts": ["plugins/example"]}]}))
+        with patch("bnk.runtime.install.supervisor_pid", return_value=123), \
+             patch("bnk.runtime.install.stop", side_effect=BnkError("stop failed")), \
+             patch("bnk.runtime.install.start"), \
+             patch("bnk.runtime.install.request", side_effect=lambda endpoint, action, args=None:
+                   sessions.maintenance(None, args or {})):
+            with self.assertRaisesRegex(BnkError, "stop failed"):
+                change_plugins(name="example")
+        sessions.open(None, {"path": str(binary)})
 
     def test_failed_validation_preserves_previous_installation(self):
         (self.runtime / "previous").write_text("keep")
@@ -219,6 +276,7 @@ class RuntimeTests(unittest.TestCase):
         (self.runtime / "previous").write_text("keep")
         with patch("bnk.runtime.install.check_platform"), \
              patch("bnk.runtime.install.start", side_effect=[None, BnkError("port occupied")]), \
+             patch("bnk.runtime.install.validate_plugins"), \
              patch("bnk.runtime.install.stop", return_value=False):
             with self.assertRaises(BnkError):
                 install(self.prepared_archive(), report=lambda text: None)

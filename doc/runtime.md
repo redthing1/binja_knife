@@ -32,13 +32,29 @@ A prepared bundle installs offline on another compatible system of the same arch
 
 ## Plugins
 
-Knife and the [default plugins](../src/bnk/runtime/defaults/plugins.manifest) follow `main` when preparing an original archive. Resolved commits are recorded in `runtime.json`. Override the plugin list with `--plugins PATH`:
+Knife and the [default plugins](../src/bnk/runtime/defaults/plugins.manifest) resolve `main` when preparing an original archive. Startup preserves the installed versions. Inspect, add, or explicitly update plugins with:
 
-```text
-<repo_url> [ref] [deps=<dependency1,dependency2,...>]
+```sh
+bnk runtime plugins
+bnk runtime plugins add https://example.org/team/plugin.git
+bnk runtime plugins add https://example.org/team/native-plugin.git --build cmake
+bnk runtime plugins update plugin
+bnk runtime plugins update
 ```
 
-The default ref is `main`. Blank lines and `#` comments are ignored. An empty manifest installs only Knife. Dependencies and plugin `requirements.txt` files are installed into the bundled Python's private package directory. `KNIFE_REPO` overrides the Knife source repository.
+The inventory shows configured refs, installed commits, artifacts, and current load state. Updates require all sessions to be closed. They stop the runtime, prepare replacements in staging, check that every managed plugin loads, and restart with the new installation. Failures preserve the previous installation and restart it. Validation output is retained beside `bnk runtime logs` as `install.log`.
+
+Python plugins install their repository as a plugin directory. `--ref REF` selects a Git ref; repeat `--dep PACKAGE` for additional dependencies. Plugin `requirements.txt` files and configured dependencies are resolved together into a fresh shared Python package directory whenever Python plugins change.
+
+Native plugins use `--build cmake` and require CMake, a build tool, and the compilers and dependencies required by their project. Bnk checks out the SDK revision named by the installed Binary Ninja's `api_REVISION.txt` and passes `BN_API_PATH`, `BN_INSTALL_DIR`, and `BN_USER_PLUGINS_DIR` to CMake. The project's install rules must put its plugin libraries and resources under `BN_USER_PLUGINS_DIR`; the standard `bn_install_plugin` helper does this for libraries. The SDK is cached by commit. Prepared bundles need no SDK or compiler.
+
+Override the initial plugin list with `bnk runtime install ARCHIVE --plugins PATH`:
+
+```text
+<repo> [ref] [deps=a,b] [build=python|cmake]
+```
+
+The default ref is `main` and build method is `python`. Blank lines and `#` comments are ignored. An empty manifest installs only Knife. `KNIFE_REPO` overrides the Knife source repository.
 
 ## Storage
 
@@ -47,6 +63,7 @@ The default ref is `main`. Blank lines and `#` comments are ignored. An empty ma
 | `~/.local/share/bnk/runtime` | Application, libraries, plugins | `XDG_DATA_HOME` |
 | `~/.local/state/bnk` | Binja profile, logs, process state | `XDG_STATE_HOME` |
 | `~/.cache/bnk/packages` | Downloaded native packages | `XDG_CACHE_HOME` |
+| `~/.cache/bnk/binaryninja-api` | Native plugin SDKs | `XDG_CACHE_HOME` |
 
 Profile links and settings are regenerated on startup so the runtime can move. The profile is separate from desktop Binary Ninja settings.
 

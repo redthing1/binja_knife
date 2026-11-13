@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any, Iterator
 
 from .arguments import choice, only, optional_string, parse_address, required_string
+from .loading import VIEW_METADATA
 from .sessions import Session, SessionError, SessionStore
 from .targets import hex_address, resolve_address, resolve_function, try_function, try_variable
 
@@ -85,6 +86,7 @@ class ChangeActions:
             settings.set_option(self.bn.SaveOption.TrimSnapshots)
             settings.set_option(self.bn.SaveOption.RemoveUndoData)
             with session.changes:
+                view.file.raw.store_metadata(VIEW_METADATA, view.view_type)
                 if path is None:
                     if not view.file.has_database:
                         raise SessionError(
