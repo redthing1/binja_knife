@@ -52,6 +52,14 @@ class CliTests(unittest.TestCase):
         self.assertEqual(result.exit_code, 0, result.output)
         self.assertEqual(result.output, f"bnk {__version__} (api 1)\n")
 
+    def test_field_selection_preserves_literal_names_and_order(self):
+        with patch("bnk.cli.request", return_value={}) as request:
+            result = self.runner.invoke(
+                app, ["inspect", "type:demo::Context", "--field", "a.b", "--field", "inner"]
+            )
+        self.assertEqual(result.exit_code, 0, result.output)
+        self.assertEqual(request.call_args.args[2]["fields"], ["a.b", "inner"])
+
     def test_view_selection_and_discovery(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "sample"

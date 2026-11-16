@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import shlex
 from typing import Any
 
 from bnk.protocol import API_VERSION
@@ -148,6 +149,11 @@ def find_text(value: dict[str, Any]) -> str:
                 f"{_line(item.get('address', '?'))}  {_line(item.get('type', '?'))}  "
                 f"{_line(item.get('name', '?'))}"
             )
+        elif kind == "types":
+            lines.append(
+                f"{_type_target(item['target'])}  {_byte_size(item['size'])}  {_line(item['kind'])}\n"
+                f"  {_line(item['text'])}"
+            )
         else:
             lines.append(f"{_line(item.get('address', '?'))}  {_line(item.get('bytes', ''))}")
     if value.get("more"):
@@ -156,6 +162,8 @@ def find_text(value: dict[str, Any]) -> str:
 
 
 def inspect_text(value: dict[str, Any]) -> str:
+    if value.get("type_target"):
+        return "\n".join(_type_lines(value["type_info"]))
     function = value.get("function")
     variable = value.get("variable")
     if value.get("variable_target") and isinstance(variable, dict):
@@ -163,13 +171,13 @@ def inspect_text(value: dict[str, Any]) -> str:
         rows = [
             ("variable", f"{function_name}::{_line(variable.get('name', '?'))}"),
             ("function", f"{function_name} @ {_line(function.get('address', '?'))}"),
-            ("type", _line(variable.get("type", ""))),
+            ("type", _type_summary(variable["type"])),
             ("parameter", "yes" if variable.get("parameter") else "no"),
             ("exact", f"{function_name}::{_line(variable.get('target', '?'))}"),
         ]
         if isinstance(function, dict) and function.get("skip_reason"):
             rows.append(("analysis", f"skipped: {_line(function['skip_reason'])}"))
-        return _rows(rows)
+        return "\n".join([_rows(rows), *_type_lines(value.get("type_info"), embedded=True)])
 
     address = _line(value.get("address", "unknown"))
     rows = [
@@ -227,7 +235,7 @@ def inspect_text(value: dict[str, Any]) -> str:
     if isinstance(data, dict):
         detail = (
             f"{_anchor(_line(data.get('address', '?')), address)}  "
-            f"{_line(data.get('type', '?'))}"
+            f"{_type_summary(data['type'])}"
         )
         if data.get("value") is not None:
             detail += f" = {_line(data['value'])}"
@@ -237,13 +245,15 @@ def inspect_text(value: dict[str, Any]) -> str:
     if value.get("view_comment"):
         rows.append(("view comment", _line(value["view_comment"])))
     lines = [_rows(rows)]
+    lines.extend(_type_lines(value.get("type_info"), embedded=True))
     parameters = value.get("parameters")
     variables = value.get("variables")
     if isinstance(parameters, list) and parameters and not isinstance(variables, list):
         function_name = function.get("name", "?") if isinstance(function, dict) else "?"
         lines.append("parameters")
         lines.extend(
-            f"  {_line(function_name)}::{_line(item.get('name', '?'))}  {_line(item.get('type', ''))}"
+            f"  {_line(function_name)}::{_line(item.get('name', '?'))}  "
+            f"{_type_summary(item['type'])}"
             for item in parameters if isinstance(item, dict)
         )
     if isinstance(value.get("local_count"), int):
@@ -260,12 +270,118 @@ def inspect_text(value: dict[str, Any]) -> str:
             suffix = "  parameter" if variable.get("parameter") else ""
             if variable.get("ambiguous"):
                 suffix += f"  [{function_name}::{variable.get('target', '?')}]"
-            lines.append(f"  {_line(target)}  {_line(variable.get('type', ''))}{_line(suffix)}")
+            lines.append(f"  {_line(target)}  {_type_summary(variable['type'])}{_line(suffix)}")
         if value.get("variables_more"):
             lines.append(
                 f"  … {value['variables_more']} more; rerun with --limit above {len(variables)}"
             )
     return "\n".join(lines)
+
+
+def _type_target(target: str) -> str:
+    return shlex.quote(target if target.isprintable() else _line(target))
+
+
+def _type_summary(info: dict[str, Any]) -> str:
+    text = _line(info["text"])
+    if info.get("target"):
+        text += f"  [{_type_target(info['target'])}]"
+    related = info.get("pointee") or info.get("element")
+    if related and related.get("target"):
+        text += f"  -> {_type_target(related['target'])}"
+    return text
+
+
+def _type_base(member: dict[str, Any]) -> str:
+    base = member.get("base")
+    if base is None:
+        return ""
+    label = _type_target(base["target"]) if base.get("target") else _line(base["text"])
+    return f"  [base {label} +{hex(base['offset'])}]"
+
+
+def _type_offset(member: dict[str, Any]) -> str:
+    offset = hex(member["offset"])
+    if member["bits"]:
+        offset += f" bit {member['bit_position']}..{member['bit_position'] + member['bits'] - 1}"
+    return offset
+
+
+def _byte_size(size: int) -> str:
+    return f"{size} byte{'s' if size != 1 else ''}"
+
+
+def _type_lines(info: dict[str, Any] | None, *, embedded: bool = False) -> list[str]:
+    if info is None:
+        return []
+    if (
+        embedded
+        and not any(key in info for key in ("members", "values", "selected", "unresolved"))
+        and "count" not in info["layout"]
+    ):
+        return []
+    declared = info["type"]
+    layout = info["layout"]
+    rows = []
+    if not embedded:
+        rows.extend(
+            [
+                ("type", _line(info.get("name", declared["text"]))),
+                ("kind", _line(declared["kind"])),
+                ("size", _byte_size(declared["size"])),
+                ("alignment", str(declared["alignment"])),
+            ]
+        )
+        if info.get("target"):
+            rows.append(("target", _type_target(info["target"])))
+        if info.get("exact") and info["exact"] != info.get("target"):
+            rows.append(("exact", _type_target(info["exact"])))
+    for step in info["steps"]:
+        rows.append(
+            (
+                "field",
+                (f"{_line(step['parent'])}.{_line(step['name'])} "
+                 f"+{_type_offset(step)}  {_type_summary(step['type'])}{_type_base(step)}"),
+            )
+        )
+    if info.get("selected"):
+        selected = info["selected"]
+        rows.append(("selected", f"{_type_summary(selected)} ({_byte_size(selected['size'])})"))
+    if embedded or info.get("aliases") or "pointer_size" in info:
+        rows.append(
+            (
+                "layout",
+                f"{_type_summary(layout)} ({_byte_size(layout['size'])}, alignment {layout['alignment']})",
+            )
+        )
+        if "pointer_size" in info:
+            rows.append(("pointer", _byte_size(info["pointer_size"])))
+    if info.get("unresolved"):
+        rows.append(("status", _line(info["unresolved"])))
+    lines = [_rows(rows)] if rows else []
+    members = info.get("members", [])
+    if members:
+        lines.append(info.get("variant", "struct") + " members (offset, size, name, type)")
+        for member in members:
+            offset = _type_offset(member)
+            size = (
+                f"{member['bits']} bit{'s' if member['bits'] != 1 else ''}"
+                if member["bits"]
+                else _byte_size(member["type"]["size"])
+            )
+            lines.append(
+                f"  {offset:<16} {size:<9} {_line(member['name'])}  "
+                f"{_type_summary(member['type'])}{_type_base(member)}"
+            )
+    values = info.get("values", [])
+    if values:
+        lines.append("enum values")
+        lines.extend(f"  {_line(v['name'])} = {v['value']} ({hex(v['value'])})" for v in values)
+    if "count" in layout:
+        lines.append(f"elements  {layout['count']}  {_type_summary(layout['element'])}")
+    if info.get("more"):
+        lines.append(f"… more entries; rerun with --limit above {len(members or values)}")
+    return lines
 
 
 def code_text(value: dict[str, Any]) -> str:
@@ -414,7 +530,8 @@ def error_text(message: str, *, kind: str, details: dict[str, Any]) -> str:
     candidates = _string_list(details.get("candidates"))
     if candidates:
         label = "sessions" if kind.startswith("session_") else "candidates"
-        lines.append(f"{label}: {', '.join(_line(item) for item in candidates)}")
+        rendered = (_type_target(item) if item.startswith("type:") else _line(item) for item in candidates)
+        lines.append(f"{label}: {', '.join(rendered)}")
     openings = _string_list(details.get("openings"))
     if openings:
         lines.append(f"opening: {', '.join(_line(item) for item in openings)}")

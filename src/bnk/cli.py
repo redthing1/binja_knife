@@ -192,7 +192,7 @@ def close(
 @app.command(rich_help_panel="Understand")
 def find(
     context: typer.Context,
-    kind: Annotated[str, typer.Argument(help="strings, functions, symbols, or bytes")],
+    kind: Annotated[str, typer.Argument(help="strings, functions, symbols, types, or bytes")],
     query: Annotated[
         str | None,
         typer.Argument(help="Optional substring, or a required exact hex pattern for bytes."),
@@ -215,7 +215,7 @@ def find(
         bool, typer.Option("--exports", help="Show exported symbols only.")
     ] = False,
 ) -> None:
-    """List or search strings, functions, symbols, or exact bytes."""
+    """List or search strings, functions, symbols, types, or exact bytes."""
     if imports and exports:
         raise typer.BadParameter("choose at most one of --imports and --exports")
     symbol_filter = "imports" if imports else "exports" if exports else "all"
@@ -238,11 +238,15 @@ def find(
 @app.command(rich_help_panel="Understand")
 def inspect(
     context: typer.Context,
-    target: Annotated[str, typer.Argument(help="Address, symbol, function, or variable target.")],
+    target: Annotated[str, typer.Argument(help="Address, symbol, function, variable, or type:NAME.")],
+    fields: Annotated[
+        list[str] | None,
+        typer.Option("--field", help="Select a field; repeat for nested members."),
+    ] = None,
     show_vars: Annotated[
         bool, typer.Option("--vars", help="List the function's variables.")
     ] = False,
-    limit: Annotated[int, typer.Option("--limit", "-n", min=1, help="Maximum variables with --vars.")] = 50,
+    limit: Annotated[int, typer.Option("--limit", "-n", min=1, help="Maximum variables, members, or enum values.")] = 50,
     session: Annotated[
         str | None,
         typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to inspect."),
@@ -252,7 +256,7 @@ def inspect(
     _remote(
         context,
         "inspect",
-        args={"target": target, "vars": show_vars, "limit": limit},
+        args={"target": target, "vars": show_vars, "limit": limit, "fields": fields or []},
         session=session,
         text=inspect_text,
     )
@@ -360,7 +364,7 @@ def edit(
         typer.Argument(help="Function, address, or variable such as main::length."),
     ],
     name: Annotated[str | None, typer.Option("--name", help="Set a user name.")] = None,
-    type_text: Annotated[str | None, typer.Option("--type", help="Set a C type.")] = None,
+    type_text: Annotated[str | None, typer.Option("--type", help="Set a C type or registered type:NAME.")] = None,
     comment: Annotated[
         str | None,
         typer.Option("--comment", help="Set a comment; use - to remove it."),

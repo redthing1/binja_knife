@@ -55,6 +55,8 @@ The working loop is:
 
 Carry returned addresses and names into subsequent commands. Keep notes synchronized when names or conclusions change.
 
+`find types` and `inspect type:NAME` expose recovered layouts. Use `inspect TARGET --field NAME` to follow fields in a type or typed value, and reuse returned type targets with `edit --type`.
+
 ## IL choice and analysis gaps
 
 Start with HLIL for function behavior. Use MLIL, LLIL, or disassembly when they answer a specific question about data flow, registers, instructions, lifting, or misleading decompiler output.

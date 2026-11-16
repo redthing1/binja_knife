@@ -6,6 +6,7 @@ from types import SimpleNamespace
 from typing import Any, Iterator
 
 from knife.reading import ReadActions
+from knife.sessions import SessionError
 
 
 class OneView:
@@ -18,6 +19,51 @@ class OneView:
 
 
 class ReadingTests(unittest.TestCase):
+    def test_type_discovery_and_inspection_do_not_resolve_addresses(self):
+        from tests.test_type_info import Name, Ty, View, member, structure
+
+        ty = structure("Context", [member("id", Ty("Integer", "uint32_t"), 4)])
+        reading = ReadActions(OneView(View([(Name(("demo", "Context")), "ctx", ty)])))
+        found = reading.find(None, {"kind": "types", "query": "context"})
+        target = found["items"][0]["target"]
+        inspected = reading.inspect(None, {"target": target, "fields": ["id"]})
+        self.assertEqual(target, "type:demo::Context")
+        self.assertEqual(inspected["type_info"]["steps"][0]["offset"], 4)
+        self.assertEqual(inspected["type_info"]["selected"]["text"], "uint32_t")
+        with self.assertRaises(SessionError):
+            reading.inspect(None, {"target": target, "vars": True})
+
+    def test_field_selection_uses_typed_data_when_a_string_shares_its_address(self):
+        from tests.test_type_info import Ty, member, structure
+
+        ty = structure("Header", [member("length", Ty("Integer", "uint32_t"), 8)])
+        string = SimpleNamespace(
+            start=0x1000, type=SimpleNamespace(name="AsciiString"), length=6, value="header"
+        )
+        data = SimpleNamespace(address=0x1000, type=ty, value=None)
+        view = SimpleNamespace(
+            start=0x1000,
+            end=0x2000,
+            get_function_at=lambda address: None,
+            get_functions_containing=lambda address: [],
+            get_string_at=lambda address: string,
+            get_symbol_at=lambda address: None,
+            get_data_var_at=lambda address: data,
+            get_sections_at=lambda address: [],
+            get_segment_at=lambda address: None,
+            get_basic_blocks_at=lambda address: [],
+            get_comment_at=lambda address: "",
+            get_code_refs=lambda address: [],
+            get_data_refs=lambda address: [],
+        )
+
+        result = ReadActions(OneView(view)).inspect(
+            None, {"target": "0x1000", "fields": ["length"]}
+        )
+
+        self.assertEqual(result["data"]["type"]["text"], "Header")
+        self.assertEqual(result["type_info"]["steps"][0]["offset"], 8)
+
     def test_inspect_keeps_a_numeric_address_inside_a_function(self) -> None:
         block = SimpleNamespace(start=0x1000, end=0x1020)
         function = SimpleNamespace(

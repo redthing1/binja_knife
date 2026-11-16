@@ -8,6 +8,7 @@ from .arguments import choice, only, optional_string, parse_address, required_st
 from .loading import VIEW_METADATA
 from .sessions import Session, SessionError, SessionStore
 from .targets import hex_address, resolve_address, resolve_function, try_function, try_variable
+from .type_info import TypeInfo, is_type_target
 
 
 class ChangeActions:
@@ -188,20 +189,21 @@ class ChangeActions:
         if type_text is not None:
             if not type_text.strip():
                 raise SessionError("type must not be empty", kind="edit")
+            registered = TypeInfo(view).resolve(type_text).ty if is_type_target(type_text) else None
             if variable is not None:
                 before = str(variable.type)
-                parsed, _ = view.parse_type_string(type_text)
+                parsed = registered if registered is not None else view.parse_type_string(type_text)[0]
                 variable.set_type_async(parsed)
                 view.update_analysis_and_wait()
                 after = str(variable.type)
             elif function is not None:
                 before = str(function.type)
-                function.set_user_type(type_text)
+                function.set_user_type(registered if registered is not None else type_text)
                 view.update_analysis_and_wait()
                 after = str(function.type)
             else:
                 before = str(data.type)
-                parsed, _ = view.parse_type_string(type_text)
+                parsed = registered if registered is not None else view.parse_type_string(type_text)[0]
                 existing_name = name
                 if existing_name is None:
                     symbol = view.get_symbol_at(address)

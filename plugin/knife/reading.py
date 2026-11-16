@@ -13,6 +13,7 @@ from .arguments import (
     optional_string,
     parse_address,
     required_string,
+    string_list,
 )
 from .sessions import SessionError, SessionStore
 from .targets import (
@@ -23,6 +24,7 @@ from .targets import (
     try_function,
     try_variable,
 )
+from .type_info import TypeInfo, is_type_target
 
 
 class ReadActions:
@@ -30,7 +32,7 @@ class ReadActions:
         self.sessions = sessions
 
     def find(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
-        kind = choice(args, "kind", {"strings", "functions", "symbols", "bytes"})
+        kind = choice(args, "kind", {"strings", "functions", "symbols", "types", "bytes"})
         query = optional_string(args, "query")
         result_limit = limit(args)
         case_sensitive = boolean(args, "case_sensitive", False)
@@ -50,6 +52,8 @@ class ReadActions:
                 )
             elif kind == "functions":
                 items, more = _find_functions(session.bv, query, result_limit, case_sensitive)
+            elif kind == "types":
+                items, more = TypeInfo(session.bv).find(query, case_sensitive, result_limit)
             elif kind == "symbols":
                 items, more = _find_symbols(
                     session.bv, query, result_limit, case_sensitive, symbol_filter
@@ -69,10 +73,23 @@ class ReadActions:
     def inspect(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
         target = required_string(args, "target")
         show_vars = boolean(args, "vars", False)
-        variable_limit = limit(args)
-        only(args, "target", "vars", "limit")
+        result_limit = limit(args)
+        fields = string_list(args, "fields")
+        only(args, "target", "vars", "limit", "fields")
+        if show_vars and fields:
+            raise SessionError("choose --vars or --field", kind="invalid_request")
         with self.sessions.use(session_name) as session:
             view = session.bv
+            types = TypeInfo(view)
+            if is_type_target(target):
+                if show_vars:
+                    raise SessionError("--vars requires a function target", kind="invalid_request")
+                named = types.resolve(target)
+                return {
+                    "target": target,
+                    "type_target": True,
+                    "type_info": types.describe(named.ty, named=named, fields=fields, limit=result_limit),
+                }
             variable = try_variable(view, target)
             if variable is not None:
                 if show_vars:
@@ -80,9 +97,10 @@ class ReadActions:
                 function = resolve_function(view, target.rsplit("::", 1)[0])
                 return {
                     "target": target,
-                    "variable": _variable_item(variable),
+                    "variable": _variable_item(variable, types),
                     "function": _function_item(function),
                     "variable_target": True,
+                    "type_info": types.describe(variable.type, fields=fields, limit=result_limit),
                 }
 
             if parse_address(target) is not None:
@@ -132,27 +150,31 @@ class ReadActions:
                     _string_item(view, string, include_refs=False) if string is not None else None
                 ),
                 "data": (
-                    _data_item(view, data)
-                    if data is not None and function is None and string is None else None
+                    _data_item(view, data, types)
+                    if data is not None and function is None and (string is None or fields) else None
                 ),
                 "view_comment": str(view.get_comment_at(address) or ""),
             }
+            if result["data"] is not None:
+                result["type_info"] = types.describe(data.type, fields=fields, limit=result_limit)
+            elif fields:
+                raise SessionError("--field requires a type, variable, or data target", kind="invalid_request")
             if function is not None:
                 result["function_comment"] = str(function.get_comment_at(address) or "")
                 if address == int(function.start) or show_vars:
                     variables = _useful_variables(function)
                     if not show_vars:
                         result["parameters"] = [
-                            _variable_item(item) for item in variables if item.is_parameter_variable
+                            _variable_item(item, types) for item in variables if item.is_parameter_variable
                         ]
                     result["local_count"] = sum(not item.is_parameter_variable for item in variables)
                     if show_vars:
                         names = Counter(str(item.name) for item in variables)
                         result["variables"] = [
-                            {**_variable_item(item), "ambiguous": names[str(item.name)] > 1}
-                            for item in variables[:variable_limit]
+                            {**_variable_item(item, types), "ambiguous": names[str(item.name)] > 1}
+                            for item in variables[:result_limit]
                         ]
-                        result["variables_more"] = max(0, len(variables) - variable_limit)
+                        result["variables_more"] = max(0, len(variables) - result_limit)
             return result
 
     def code(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
@@ -602,7 +624,7 @@ def _string_item(view: Any, string: Any, *, include_refs: bool) -> dict[str, Any
     return item
 
 
-def _data_item(view: Any, data: Any) -> dict[str, Any]:
+def _data_item(view: Any, data: Any, types: TypeInfo) -> dict[str, Any]:
     value = data.value
     shown_value: str | None = None
     if isinstance(value, bool):
@@ -613,7 +635,7 @@ def _data_item(view: Any, data: Any) -> dict[str, Any]:
         shown_value = str(value)
     return {
         "address": hex_address(data.address),
-        "type": str(data.type),
+        "type": types.summary(data.type),
         "value": shown_value,
     }
 
@@ -655,11 +677,11 @@ def _symbol_item(symbol: Any) -> dict[str, Any]:
     }
 
 
-def _variable_item(variable: Any) -> dict[str, Any]:
+def _variable_item(variable: Any, types: TypeInfo) -> dict[str, Any]:
     return {
         "target": f"#{int(variable.identifier)}",
         "name": str(variable.name),
-        "type": str(variable.type),
+        "type": types.summary(variable.type),
         "parameter": bool(variable.is_parameter_variable),
     }
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import shlex
 import unittest
 
 from bnk.render import (
@@ -16,6 +17,65 @@ from bnk.render import (
 
 
 class RenderTests(unittest.TestCase):
+    def test_type_targets_can_be_copied_as_shell_arguments(self):
+        target = 'type:#debug:["demo::Params\\\\special"]'
+        rendered = find_text(
+            {
+                "kind": "types",
+                "items": [
+                    {
+                        "target": target,
+                        "size": 8,
+                        "kind": "Structure",
+                        "text": "struct demo::Params",
+                    }
+                ],
+            }
+        )
+        self.assertEqual(shlex.split(rendered.splitlines()[0])[0], target)
+        error = error_text(
+            "ambiguous type", kind="target_ambiguous", details={"candidates": [target]}
+        )
+        self.assertEqual(shlex.split(error.split("candidates: ")[1]), [target])
+
+    def test_type_layout_retains_bits_inheritance_and_bounds(self):
+        from knife.type_info import TypeInfo
+        from tests.test_type_info import Ty, View, member, structure
+
+        integer = Ty("Integer", "uint32_t")
+        base = Ty("NamedTypeReference", "Base", type_id="base", name="Base")
+        ty = structure(
+            "Context",
+            [
+                member("flags", integer, 12, base=base, base_offset=8, bits=3, bit_position=2),
+                member("other", integer),
+            ],
+        )
+        types = TypeInfo(View([]))
+        info = types.describe(ty, fields=[], limit=1)
+        rendered = inspect_text({"type_target": True, "type_info": info})
+        self.assertIn("0xc bit 2..4", rendered)
+        self.assertIn("3 bits", rendered)
+        self.assertIn("[base Base +0x8]", rendered)
+        self.assertIn("more entries", rendered)
+        selected = inspect_text(
+            {"type_target": True, "type_info": types.describe(ty, fields=["flags"], limit=1)}
+        )
+        self.assertIn("+0xc bit 2..4", selected)
+        self.assertIn("[base Base +0x8]", selected)
+
+    def test_type_links_are_shared_by_data_parameters_and_variables(self):
+        summary = {"text": "Context*", "pointee": {"target": "type:Context"}}
+        variable = {"name": "context", "target": "#123", "type": summary}
+        data = inspect_text({"address": "0x1000", "data": {"type": summary}})
+        parameter = inspect_text({"function": {"name": "init"}, "parameters": [variable]})
+        local = inspect_text({"function": {"name": "init"}, "variables": [variable]})
+        direct = inspect_text({
+            "variable_target": True, "function": {"name": "init"}, "variable": variable,
+        })
+        for rendered in (data, parameter, local, direct):
+            self.assertIn("Context*  -> type:Context", rendered)
+
     def test_one_line_rows_escape_controls_and_backslashes(self) -> None:
         rendered = sessions_text(
             {
@@ -125,7 +185,7 @@ class RenderTests(unittest.TestCase):
                 "variable_target": True,
                 "function": {"name": "main", "address": "0x1000"},
                 "variable": {
-                    "name": "argc", "target": "#123", "type": "int32_t", "parameter": True,
+                    "name": "argc", "target": "#123", "type": {"text": "int32_t"}, "parameter": True,
                 },
             }
         )
