@@ -195,6 +195,9 @@ class RuntimeTests(unittest.TestCase):
                          PluginSpec("https://example.test/plugin.git", "main", ["msgpack", "foo"]))
         self.assertEqual(plugin_spec("repo deps=msgpack"), PluginSpec("repo", deps=["msgpack"]))
         self.assertEqual(plugin_spec("repo build=cmake"), PluginSpec("repo", build="cmake"))
+        self.assertEqual(plugin_spec("repo build=cargo"), PluginSpec("repo", build="cargo"))
+        with self.assertRaisesRegex(ValueError, "Python dependencies"):
+            plugin_spec("repo build=cargo deps=msgpack")
         with self.assertRaises(ValueError):
             plugin_spec("repo main unexpected")
 

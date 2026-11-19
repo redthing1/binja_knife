@@ -16,9 +16,11 @@ from bnk.endpoint import Endpoint
 from bnk.runtime.native import library_path
 from bnk.runtime.paths import cache_dir
 
+SDK_REPO = "https://github.com/Vector35/binaryninja-api"
 
-def run(args: list[str], *, env: dict[str, str] | None = None) -> str:
-    result = subprocess.run(args, env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+def run(args: list[str], *, cwd: Path | None = None, env: dict[str, str] | None = None) -> str:
+    result = subprocess.run(args, cwd=cwd, env=env, text=True, capture_output=True)
     if result.returncode:
         raise BnkError(f"{args[0]} failed: {result.stderr.strip() or result.stdout.strip()}", kind="runtime")
     return result.stdout.strip()
@@ -39,9 +41,9 @@ class PluginSpec:
         return name
 
     def __post_init__(self) -> None:
-        if self.build not in {"python", "cmake"}:
-            raise ValueError("plugin build must be python or cmake")
-        if self.build == "cmake" and self.deps:
+        if self.build not in {"python", "cmake", "cargo"}:
+            raise ValueError("plugin build must be python, cmake, or cargo")
+        if self.build != "python" and self.deps:
             raise ValueError("Python dependencies apply to Python plugins")
         if not self.repo or not self.ref:
             raise ValueError("plugin repository and ref must be non-empty")
@@ -53,7 +55,7 @@ class PluginSpec:
 def plugin_spec(line: str) -> PluginSpec:
     tokens = shlex.split(line)
     if not tokens:
-        raise ValueError("expected <repo> [ref] [deps=a,b] [build=python|cmake]")
+        raise ValueError("expected <repo> [ref] [deps=a,b] [build=python|cmake|cargo]")
     repo, *rest = tokens
     ref = rest.pop(0) if rest and "=" not in rest[0] else "main"
     options = {}
@@ -88,19 +90,17 @@ def _sdk(runtime: Path) -> tuple[Path, str]:
         root.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(prefix=".sdk-", dir=root) as directory:
             checkout = Path(directory) / "repo"
-            _checkout("https://github.com/Vector35/binaryninja-api.git", revision, checkout)
+            _checkout(f"{SDK_REPO}.git", revision, checkout)
             checkout.rename(destination)
     return destination, revision
 
 
-def _build_native(runtime: Path, checkout: Path, work: Path) -> dict:
-    plugins = runtime / "plugins"
-    sdk, revision = _sdk(runtime)
+def _build_cmake(install: Path, sdk: Path, checkout: Path, work: Path) -> list[Path]:
     build = work / "build"
     install_root = work / "install"
     payload = install_root / "plugins"
     run(["cmake", "-S", str(checkout), "-B", str(build), "-DCMAKE_BUILD_TYPE=Release",
-         f"-DBN_API_PATH={sdk}", f"-DBN_INSTALL_DIR={runtime / 'binaryninja'}",
+         f"-DBN_API_PATH={sdk}", f"-DBN_INSTALL_DIR={install}",
          "-DBN_USER_PLUGINS_DIR=/plugins"])
     run(["cmake", "--build", str(build), "--parallel", str(min(os.cpu_count() or 2, 8))])
     run(["cmake", "--install", str(build)], env={**os.environ, "DESTDIR": str(install_root)})
@@ -108,15 +108,56 @@ def _build_native(runtime: Path, checkout: Path, work: Path) -> dict:
     files = [(install_root / path.lstrip("/")).resolve() for path in installed]
     if not files or any(not path.is_relative_to(payload.resolve()) for path in files):
         raise ValueError("CMake must install plugin files under BN_USER_PLUGINS_DIR")
+    if not any(path.suffix == ".so" for path in payload.iterdir()):
+        raise ValueError("CMake did not install a native plugin library")
+    return sorted(payload.iterdir())
+
+
+def _build_cargo(install: Path, sdk: Path, checkout: Path, work: Path) -> list[Path]:
+    manifest = checkout / "Cargo.toml"
+    if not manifest.is_file() or not (checkout / "Cargo.lock").is_file():
+        raise ValueError("Cargo plugins require Cargo.toml and Cargo.lock at the repository root")
+
+    config = work / "sdk.toml"
+    rust = sdk / "rust"
+    config.write_text(
+        f'[patch."{SDK_REPO}"]\n'
+        f'binaryninja = {{ path = {json.dumps(str(rust), ensure_ascii=False)} }}\n'
+        f'binaryninjacore-sys = {{ path = {json.dumps(str(rust / "binaryninjacore-sys"), ensure_ascii=False)} }}\n',
+        encoding="utf-8",
+    )
+    env = {**os.environ, "BINARYNINJADIR": str(install)}
+    options = ["--config", str(config)]
+    # Resolve the SDK substitution in the disposable checkout before building.
+    run(["cargo", "update", "--workspace", *options], cwd=checkout, env=env)
+    build = work / "build"
+    output = run(["cargo", "build", "--lib", "--release", "--locked", "--target-dir", str(build),
+                  "--message-format=json-render-diagnostics", *options], cwd=checkout, env=env)
+
+    libraries = []
+    for line in output.splitlines():
+        if not line.startswith("{"):
+            continue
+        message = json.loads(line)
+        if (message.get("reason") == "compiler-artifact"
+                and message["manifest_path"] == str(manifest)
+                and "cdylib" in message["target"]["crate_types"]):
+            libraries.extend(Path(name) for name in message["filenames"] if name.endswith(".so"))
+    if len(libraries) != 1 or not libraries[0].is_file() or not libraries[0].resolve().is_relative_to(build):
+        raise ValueError("Cargo must build one cdylib from the root package")
+    return libraries
+
+
+def _build_native(runtime: Path, checkout: Path, work: Path, method: str) -> dict:
+    sdk, revision = _sdk(runtime)
+    build = _build_cargo if method == "cargo" else _build_cmake
     artifacts = []
-    for path in sorted(payload.iterdir()):
-        destination = plugins / path.name
+    for path in build(runtime / "binaryninja", sdk, checkout, work):
+        destination = runtime / "plugins" / path.name
         if destination.exists() or destination.is_symlink():
             raise ValueError(f"plugin artifact already exists: {path.name}")
         shutil.move(path, destination)
         artifacts.append(str(destination.relative_to(runtime)))
-    if not any(Path(path).suffix == ".so" for path in artifacts):
-        raise ValueError("CMake did not install a native plugin library")
     return {"api_commit": revision, "artifacts": artifacts}
 
 
@@ -125,7 +166,7 @@ def prepare(runtime: Path, spec: PluginSpec, name: str, report=print) -> dict:
     plugins = runtime / "plugins"
     plugins.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="bnk-plugin-") as directory:
-        work = Path(directory)
+        work = Path(directory).resolve()
         checkout = work / "repo"
         commit = _checkout(spec.repo, spec.ref, checkout)
         receipt = {"name": name, **asdict(spec), "commit": commit}
@@ -134,7 +175,7 @@ def prepare(runtime: Path, spec: PluginSpec, name: str, report=print) -> dict:
             shutil.copytree(source, plugins / name, ignore=shutil.ignore_patterns(".git", "__pycache__"))
             receipt["artifacts"] = [f"plugins/{name}"]
         else:
-            receipt.update(_build_native(runtime, checkout, work))
+            receipt.update(_build_native(runtime, checkout, work, spec.build))
         return receipt
 
 

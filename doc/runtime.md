@@ -27,6 +27,7 @@ Use `bnk open PATH --list-views` to inspect view types and `--view NAME` to choo
 bnk runtime plugins
 bnk runtime plugins add REPO
 bnk runtime plugins add REPO --build cmake
+bnk runtime plugins add REPO --build cargo
 bnk runtime plugins update NAME
 ```
 
@@ -36,12 +37,20 @@ bnk runtime plugins update NAME
 
 Python plugins install as directories. Their `requirements.txt` files and any `--dep PACKAGE` options resolve together in the bundled Python environment.
 
-Native builds require CMake and the project's compilers and dependencies. Bnk supplies `BN_API_PATH`, `BN_INSTALL_DIR`, and `BN_USER_PLUGINS_DIR` using the SDK pinned by `api_REVISION.txt`. Install rules must target `BN_USER_PLUGINS_DIR`; Binary Ninja's `bn_install_plugin` helper supports this.
+Native builds use the SDK selected by the runtime's `api_REVISION.txt`.
+
+- **CMake** uses the project's compilers and dependencies. Bnk sets `BN_API_PATH`,
+  `BN_INSTALL_DIR`, and `BN_USER_PLUGINS_DIR`. Install rules target
+  `BN_USER_PLUGINS_DIR`, which Binary Ninja's `bn_install_plugin` helper supports.
+- **Cargo** requires a Rust toolchain supported by the SDK and libclang. The repository
+  root contains `Cargo.toml` declaring a `cdylib` library and a committed `Cargo.lock`.
+  Bnk redirects the Vector35 Rust SDK dependencies to the runtime's SDK in the
+  temporary checkout.
 
 To customize initial setup, pass `--plugins FILE` with manifest entries:
 
 ```text
-<repo> [ref] [deps=a,b] [build=python|cmake]
+<repo> [ref] [deps=a,b] [build=python|cmake|cargo]
 ```
 
 Blank lines and comments are ignored. An empty manifest installs only Knife.

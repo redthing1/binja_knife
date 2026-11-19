@@ -130,7 +130,7 @@ def plugins(context: typer.Context) -> None:
 def plugins_add(
     repo: Annotated[str, typer.Argument(help="Plugin Git repository.")],
     ref: Annotated[str, typer.Option(help="Git ref to resolve.")] = "main",
-    build: Annotated[str, typer.Option(help="Build method: python or cmake.")] = "python",
+    build: Annotated[str, typer.Option(help="Build method: python, cmake, or cargo.")] = "python",
     deps: Annotated[list[str] | None, typer.Option("--dep", help="Additional Python dependency; repeatable.")] = None,
 ) -> None:
     """Install and validate a plugin."""

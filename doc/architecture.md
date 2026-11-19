@@ -26,4 +26,4 @@ Binary Ninja objects stay in the plugin. Results contain addresses and names usa
 
 The managed runtime runs Binary Ninja under Xvfb. A failed default connection triggers startup; explicit endpoints bypass it. Interrupted requests are never replayed.
 
-Archive installation and plugin updates share staged validation, activation, and rollback. Python plugins are copied; native plugins build through CMake with the installed core's SDK. Metadata records sources, commits, and artifacts. See [runtime setup](runtime.md) for operation.
+Archive installation and plugin updates share staged validation, activation, and rollback. Knife copies Python plugins and builds native plugins with the installed core's SDK. Metadata records sources, commits, and artifacts. See [runtime setup](runtime.md) for operation.
