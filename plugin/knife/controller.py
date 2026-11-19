@@ -59,6 +59,7 @@ class Controller:
                     "close": self._sessions.close,
                     "find": self._reading.find,
                     "inspect": self._reading.inspect,
+                    "read": self._reading.read,
                     "code": self._reading.code,
                     "refs": self._reading.refs,
                     "sections": self._reading.sections,

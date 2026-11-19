@@ -23,6 +23,7 @@ from bnk.render import (
     open_text,
     patch_text,
     python_text,
+    read_text,
     refs_text,
     save_text,
     sections_text,
@@ -260,6 +261,22 @@ def inspect(
         session=session,
         text=inspect_text,
     )
+
+
+@app.command(rich_help_panel="Understand")
+def read(
+    context: typer.Context,
+    target: Annotated[str, typer.Argument(help="Address or symbol to read from.")],
+    length: Annotated[
+        int, typer.Option("--length", help="Number of bytes to read (1 to 4096).")
+    ] = 64,
+    session: Annotated[
+        str | None,
+        typer.Option("--session", "-s", envvar="BNK_SESSION", help="Session to read."),
+    ] = None,
+) -> None:
+    """Show bytes from the current view as hex and ASCII."""
+    _remote(context, "read", args={"target": target, "length": length}, session=session, text=read_text)
 
 
 @app.command(rich_help_panel="Understand")

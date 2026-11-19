@@ -177,6 +177,26 @@ class ReadActions:
                         result["variables_more"] = max(0, len(variables) - result_limit)
             return result
 
+    def read(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
+        only(args, "target", "length")
+        target = required_string(args, "target")
+        length = args.get("length", 64)
+        if type(length) is not int or not 1 <= length <= 4096:
+            raise SessionError("length must be an integer from 1 to 4096", kind="invalid_request")
+
+        with self.sessions.use(session_name) as session:
+            view = session.bv
+            address = resolve_address(view, target)
+            data = view.read(address, length)
+            if not data:
+                raise SessionError(f"no bytes readable at {hex_address(address)}", kind="read")
+            return {
+                "address": hex_address(address),
+                "address_size": view.address_size,
+                "length": length,
+                "bytes": data.hex(),
+            }
+
     def code(self, session_name: str | None, args: dict[str, Any]) -> dict[str, Any]:
         target = required_string(args, "target")
         level = choice(args, "level", {"hlil", "mlil", "llil", "disasm"}, "hlil")

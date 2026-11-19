@@ -19,6 +19,27 @@ class OneView:
 
 
 class ReadingTests(unittest.TestCase):
+    def test_read_bounds_each_request_and_preserves_short_reads(self):
+        def read(address, length):
+            self.assertEqual((address, length), (0x1004, 64))
+            return b"\x00\xff"
+
+        view = SimpleNamespace(
+            get_symbols_by_name=lambda name: [SimpleNamespace(address=0x1004)],
+            address_size=4,
+            read=read,
+        )
+        reading = ReadActions(OneView(view))
+
+        result = reading.read(None, {"target": "table"})
+
+        self.assertEqual(result, {
+            "address": "0x1004", "address_size": 4, "length": 64, "bytes": "00ff",
+        })
+        for invalid in (0, 4097, True, "64"):
+            with self.subTest(length=invalid), self.assertRaisesRegex(SessionError, "1 to 4096"):
+                reading.read(None, {"target": "table", "length": invalid})
+
     def test_type_discovery_and_inspection_do_not_resolve_addresses(self):
         from tests.test_type_info import Name, Ty, View, member, structure
 

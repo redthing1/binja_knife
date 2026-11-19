@@ -384,6 +384,20 @@ def _type_lines(info: dict[str, Any] | None, *, embedded: bool = False) -> list[
     return lines
 
 
+def read_text(value: dict[str, Any]) -> str:
+    address = int(value["address"], 16)
+    width = value["address_size"] * 2
+    data = bytes.fromhex(value["bytes"])
+    lines = []
+    for offset in range(0, len(data), 16):
+        chunk = data[offset:offset + 16]
+        ascii_text = "".join(chr(byte) if 32 <= byte < 127 else "." for byte in chunk)
+        lines.append(f"0x{address + offset:0{width}x}  {chunk.hex(' '):<47}  |{ascii_text}|")
+    if len(data) < value["length"]:
+        lines.append(f"read {len(data)} of {value['length']} bytes (stopped at {address + len(data):#x})")
+    return "\n".join(lines)
+
+
 def code_text(value: dict[str, Any]) -> str:
     level = _line(value.get("level", "code"))
     if value.get("ssa"):
