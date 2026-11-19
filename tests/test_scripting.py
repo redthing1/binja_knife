@@ -2,11 +2,16 @@ from __future__ import annotations
 
 import unittest
 from contextlib import contextmanager
+from threading import Event
 from types import SimpleNamespace
 from typing import Any, Iterator
 
 from knife.scripting import PythonActions
 from knife.sessions import SessionError
+
+from bnk.client import request
+from bnk.endpoint import Endpoint
+from tests.support import running_server
 
 
 class OneSession:
@@ -50,6 +55,32 @@ class ScriptingTests(unittest.TestCase):
         self.assertEqual(raised.exception.kind, "python")
         self.assertEqual(raised.exception.details["output"], "before\n")
         self.assertIn("ValueError: bad", raised.exception.details["traceback"])
+
+    def test_client_receives_flushed_output_before_script_finishes(self) -> None:
+        resume = Event()
+        chunks = []
+        python = PythonActions(SimpleNamespace(resume=resume), self.sessions)
+
+        def receive(chunk: str) -> None:
+            chunks.append(chunk)
+            if chunk == "working ✓":
+                resume.set()
+
+        source = (
+            "print('working ✓', end='', flush=True)\n"
+            "assert bn.resume.wait(5)\n"
+            "print(' done', end='')\n"
+            "result = 42\n"
+        )
+        with running_server(actions={"exec": python.execute}) as (server, errors):
+            result = request(
+                Endpoint(*server.server_address[:2]), "exec", {"source": source},
+                on_output=receive, response_timeout=10,
+            )
+
+        self.assertEqual(chunks, ["working ✓", " done"])
+        self.assertEqual(result, {"output": "", "has_result": True, "result": "42"})
+        self.assertEqual(errors, [])
 
     def test_failed_result_repr_preserves_script_output(self) -> None:
         with self.assertRaises(SessionError) as raised:

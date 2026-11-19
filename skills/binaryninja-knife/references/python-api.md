@@ -16,6 +16,8 @@ Code runs in the selected session with `bn`, `bv`, `session`, `args`, and a requ
 
 Each invocation has a fresh Python namespace. Edits to the retained BinaryView remain available to later commands. `eval` returns its expression value; `exec` and `run` return `result` when set. `run` transmits local source; `run --server` reads a plugin-visible path.
 
+The CLI displays script output as it runs. Use `print(..., flush=True)` to send a partial line immediately. Interrupting the CLI leaves the script running in Binary Ninja.
+
 Return concise findings or before/after summaries using addresses, names, and type text. Bound displayed collections and write large results to project files.
 
 ## Resolve targets and traverse IL

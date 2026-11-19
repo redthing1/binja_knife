@@ -6,6 +6,7 @@ import socketserver
 import time
 import traceback
 from collections.abc import Callable, Mapping
+from contextvars import ContextVar
 from typing import Any, BinaryIO
 
 from . import __version__
@@ -16,6 +17,7 @@ API_VERSION = 1
 VersionProvider = Callable[[], str]
 LogError = Callable[[str], None]
 Action = Callable[[str | None, dict[str, Any]], Any]
+script_output: ContextVar[Callable[[str], None] | None] = ContextVar("script_output", default=None)
 
 
 class RequestError(Exception):
@@ -112,10 +114,24 @@ class RequestHandler(socketserver.StreamRequestHandler):
         handler = self.server.actions.get(action)
         if handler is None:
             raise RequestError(f"unknown action: {action}", kind="unknown_action")
-        return handler(session, args)
+        stream_output = request.get("stream_output", False)
+        if type(stream_output) is not bool:
+            raise RequestError("stream_output must be a boolean")
+        if not stream_output:
+            return handler(session, args)
+        token = script_output.set(self._send_output)
+        try:
+            return handler(session, args)
+        finally:
+            script_output.reset(token)
+
+    def _send_output(self, text: str) -> None:
+        self._write({"output": text})
 
     def _write(self, message: dict[str, Any]) -> None:
-        data = json.dumps(message, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+        data = json.dumps(message, ensure_ascii=False, separators=(",", ":")).encode(
+            "utf-8", errors="backslashreplace"
+        )
         try:
             self.wfile.write(data + b"\n")
             self.wfile.flush()

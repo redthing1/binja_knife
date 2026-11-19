@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import socket
+from collections.abc import Callable
 from typing import Any
 
 from bnk.endpoint import Endpoint
@@ -22,6 +23,7 @@ def request(
     session: str | None = None,
     connect_timeout: float = 2.0,
     response_timeout: float | None = None,
+    on_output: Callable[[str], None] | None = None,
 ) -> Any:
     message = {
         "api": API_VERSION,
@@ -30,6 +32,8 @@ def request(
     }
     if session is not None:
         message["session"] = session
+    if on_output is not None:
+        message["stream_output"] = True
 
     try:
         connection = socket.create_connection(
@@ -48,6 +52,12 @@ def request(
         with connection, connection.makefile("rwb") as stream:
             write_message(stream, message)
             result = read_message(stream)
+            while "output" in result and "ok" not in result:
+                output = result["output"]
+                if on_output is None or not isinstance(output, str):
+                    raise ProtocolError("server sent unexpected output")
+                on_output(output)
+                result = read_message(stream)
             if result.get("ok") is False:
                 _raise_remote(result.get("error"))
             if result.get("ok") is not True:

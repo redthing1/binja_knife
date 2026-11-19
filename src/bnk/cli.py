@@ -499,6 +499,7 @@ def evaluate(
         args={"source": expression, "args": []},
         session=session,
         text=python_text,
+        stream_output=True,
     )
 
 
@@ -521,6 +522,7 @@ def execute(
         args={"source": source, "args": arg or []},
         session=session,
         text=python_text,
+        stream_output=True,
     )
 
 
@@ -551,7 +553,7 @@ def run_script(
             args["filename"] = str(script_path)
         except (OSError, UnicodeError) as error:
             _fail(BnkError(f"cannot read script {path}: {error}", kind="path"))
-    _remote(context, "run", args=args, session=session, text=python_text)
+    _remote(context, "run", args=args, session=session, text=python_text, stream_output=True)
 
 
 def _endpoint(context: typer.Context) -> Endpoint:
@@ -568,12 +570,24 @@ def _remote(
     text: Callable[[dict[str, Any]], str],
     args: dict[str, Any] | None = None,
     session: str | None = None,
+    stream_output: bool = False,
 ) -> None:
+    partial_line = False
+
+    def show_output(chunk: str) -> None:
+        nonlocal partial_line
+        typer.echo(chunk, nl=False, color=True)
+        if chunk:
+            partial_line = not chunk.endswith("\n")
+
     try:
-        response = _request(context, action, args, session=session)
+        options = {"on_output": show_output} if stream_output else {}
+        response = _request(context, action, args, session=session, **options)
         if not isinstance(response, dict):
             raise BnkError(f"{action} returned an invalid result", kind="protocol")
-        typer.echo(text(response))
+        rendered = text(response)
+        if rendered or not stream_output:
+            typer.echo(("\n" if partial_line else "") + rendered)
     except BnkError as error:
         _fail(error)
 

@@ -329,12 +329,16 @@ class CliTests(unittest.TestCase):
         remote.assert_called_once_with(ANY, "segments", {"limit": 8}, session="game")
 
     def test_run_transmits_local_source_and_trailing_arguments(self) -> None:
+        def respond(*args, on_output, **kwargs):
+            on_output("['one']")
+            return {"output": "", "has_result": True, "result": "4"}
+
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory, "analysis.py")
             path.write_text("print(args)\nresult = len(bv.functions)\n")
             with patch(
                 "bnk.cli.request",
-                return_value={"output": "['one']\n", "has_result": True, "result": "4"},
+                side_effect=respond,
             ) as remote:
                 result = self.runner.invoke(
                     app,
@@ -353,6 +357,7 @@ class CliTests(unittest.TestCase):
                 "filename": str(path.resolve()),
             },
             session="game",
+            on_output=ANY,
         )
 
 

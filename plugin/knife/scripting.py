@@ -4,10 +4,39 @@ import builtins
 import io
 import traceback
 from pathlib import Path
+from threading import RLock
 from typing import Any
 
 from .arguments import only, optional_string, required_string, string_list
+from .server import script_output
 from .sessions import Session, SessionError, SessionStore
+
+
+class _ScriptOutput(io.StringIO):
+    def __init__(self) -> None:
+        super().__init__()
+        self._emit = script_output.get()
+        self._lock = RLock()
+
+    def write(self, text: str) -> int:
+        with self._lock:
+            written = super().write(text)
+            if self._emit is not None and ("\n" in text or self.tell() >= 8192):
+                self.flush()
+            return written
+
+    def flush(self) -> None:
+        with self._lock:
+            if self._emit is not None and self.tell():
+                self._emit(self.getvalue())
+                self.seek(0)
+                self.truncate()
+
+    def finish(self) -> str:
+        with self._lock:
+            self.flush()
+            self._emit = None
+            return self.getvalue()
 
 
 class PythonActions:
@@ -53,7 +82,7 @@ class PythonActions:
     def _execute(
         self, session: Session, source: str, args: list[str], *, mode: str, filename: str
     ) -> dict[str, Any]:
-        output = io.StringIO()
+        output = _ScriptOutput()
 
         def local_print(*values: Any, **kwargs: Any) -> None:
             kwargs = dict(kwargs)
@@ -86,10 +115,10 @@ class PythonActions:
             raise SessionError(
                 f"{type(error).__name__}: {error}",
                 kind="python",
-                details={"traceback": traceback.format_exc(), "output": output.getvalue()},
+                details={"traceback": traceback.format_exc(), "output": output.finish()},
             ) from error
         return {
-            "output": output.getvalue(),
+            "output": output.finish(),
             "has_result": has_result,
             "result": result_text,
         }
